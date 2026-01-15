@@ -17,8 +17,8 @@ BPSINK_PID=$!
 sleep 2
 
 # 2. Start HDTN Node 1
-echo "Starting HDTN Node 1..."
-$BUILD_DIR/module/hdtn_one_process/hdtn-one-process     --hdtn-config-file=$TEST_DIR/node1_config.json     --contact-plan-file=$TEST_DIR/contact_plan.json     > $TEST_DIR/hdtn.log 2>&1 &
+echo "Starting HDTN Node 10..."
+$BUILD_DIR/module/hdtn_one_process/hdtn-one-process     --hdtn-config-file=$TEST_DIR/node10_config.json     --contact-plan-file=$TEST_DIR/contact_plan.json     > $TEST_DIR/hdtn.log 2>&1 &
 HDTN_PID=$!
 
 sleep 15
