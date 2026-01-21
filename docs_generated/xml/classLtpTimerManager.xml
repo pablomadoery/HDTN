@@ -1,0 +1,690 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpTimerManager" kind="class" language="C++" prot="public">
+    <compoundname>LtpTimerManager</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="LtpTimerManager_8h" local="no">LtpTimerManager.h</includes>
+    <innerclass refid="structLtpTimerManager_1_1timer__data__t" prot="private">LtpTimerManager::timer_data_t</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename idType</type>
+      </param>
+      <param>
+        <type>typename hashType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" prot="public" static="no">
+        <type>boost::function&lt; void(void *classPtr, const idType &amp;serialNumber, std::vector&lt; uint8_t &gt; &amp;userData)&gt;</type>
+        <definition>typedef boost::function&lt;void(void * classPtr, const idType &amp; serialNumber, std::vector&lt;uint8_t&gt; &amp; userData)&gt; LtpTimerManager&lt; idType, hashType &gt;::LtpTimerExpiredCallback_t</definition>
+        <argsstring></argsstring>
+        <name>LtpTimerExpiredCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@typdef LtpTimerExpiredCallback_t Type of callback to be invoked on timer expiry. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="47" column="29" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classLtpTimerManager_1a048fc35c369b7242936620796b717a63" prot="private" static="no">
+        <type>std::list&lt; <ref refid="structLtpTimerManager_1_1timer__data__t" kindref="compound">timer_data_t</ref>, <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; <ref refid="structLtpTimerManager_1_1timer__data__t" kindref="compound">timer_data_t</ref> &gt; &gt;</type>
+        <definition>typedef std::list&lt;timer_data_t, FreeListAllocatorDynamic&lt;timer_data_t&gt; &gt; LtpTimerManager&lt; idType, hashType &gt;::timer_data_list_t</definition>
+        <argsstring></argsstring>
+        <name>timer_data_list_t</name>
+        <briefdescription>
+<para>Type of list holding timer context data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="194" column="23" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtpTimerManager_1aeb6dbf70873a14fb398eddf4503bc50d" prot="private" static="no">
+        <type>std::unordered_map&lt; idType, typename timer_data_list_t::iterator, hashType, std::equal_to&lt; idType &gt;, <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; std::pair&lt; const idType, typename timer_data_list_t::iterator &gt; &gt; &gt;</type>
+        <definition>typedef std::unordered_map&lt;idType, typename timer_data_list_t::iterator, hashType, std::equal_to&lt;idType&gt;, FreeListAllocatorDynamic&lt;std::pair&lt;const idType, typename timer_data_list_t::iterator&gt; &gt; &gt; LtpTimerManager&lt; idType, hashType &gt;::id_to_data_map_t</definition>
+        <argsstring></argsstring>
+        <name>id_to_data_map_t</name>
+        <briefdescription>
+<para>Type of map holding timer context data iterators, mapped by idType, hashed by hashType. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="199" column="2" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classLtpTimerManager_1a5030dd35df0f6746618f45601ebb4989" prot="public" static="no" mutable="no">
+        <type><ref refid="UserDataRecycler_8h_1a98eb9ed867850226c22f259624d7ad73" kindref="member">UserDataRecyclerVecUint8</ref></type>
+        <definition>UserDataRecyclerVecUint8 LtpTimerManager&lt; idType, hashType &gt;::m_userDataRecycler</definition>
+        <argsstring></argsstring>
+        <name>m_userDataRecycler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="163" column="30" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1af37d8503f0f53121ca47c814178ade36" compoundref="LtpEngine_8cpp" startline="1124" endline="1189">LtpEngine::CancelAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a13ba463ed9a6b5a93c96b4dce61755d3" compoundref="LtpSessionReceiver_8cpp" startline="364" endline="755">LtpSessionReceiver::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1ac85ce5836f8fc5186fc5eb9c8eab7b60" compoundref="LtpEngine_8cpp" startline="619" endline="790">LtpEngine::GetNextPacketToSend</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1ab6156df15ea95c2a8e8e5e10ba98fa3e" compoundref="LtpSessionReceiver_8cpp" startline="260" endline="309">LtpSessionReceiver::NextDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">LtpSessionSender::NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">LtpSessionSender::NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a767d5de028f51c9a66140b6ca29ca001" compoundref="LtpSessionReceiver_8cpp" startline="312" endline="361">LtpSessionReceiver::ReportAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpTimerManager_1ae658e013eb0f1adeed40dc82dd03704c" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer &amp;</type>
+        <definition>boost::asio::deadline_timer&amp; LtpTimerManager&lt; idType, hashType &gt;::m_deadlineTimerRef</definition>
+        <argsstring></argsstring>
+        <name>m_deadlineTimerRef</name>
+        <briefdescription>
+<para>Our managed timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="166" column="34" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpTimerManager_1a6fe9e971450c3319ffd27346e1318cd7" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration &amp;</type>
+        <definition>boost::posix_time::time_duration&amp; LtpTimerManager&lt; idType, hashType &gt;::m_transmissionToAckReceivedTimeRef</definition>
+        <argsstring></argsstring>
+        <name>m_transmissionToAckReceivedTimeRef</name>
+        <briefdescription>
+<para>Timer wait duration, can be adjusted from outside this class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="168" column="39" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpTimerManager_1a4f0afc4cabd7586485a8fb627fc0b857" prot="private" static="no" mutable="no">
+        <type><ref refid="classLtpTimerManager_1a048fc35c369b7242936620796b717a63" kindref="member">timer_data_list_t</ref></type>
+        <definition>timer_data_list_t LtpTimerManager&lt; idType, hashType &gt;::m_listTimerData</definition>
+        <argsstring></argsstring>
+        <name>m_listTimerData</name>
+        <briefdescription>
+<para>Timer context data queue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="201" column="23" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="201" bodyend="-1"/>
+        <referencedby refid="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" compoundref="LtpTimerManager_8cpp" startline="21" endline="39">LtpTimerManager&lt; idType, hashType &gt;::LtpTimerManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpTimerManager_1a33aa97aee8e2460108605b9026615671" prot="private" static="no" mutable="no">
+        <type><ref refid="classLtpTimerManager_1aeb6dbf70873a14fb398eddf4503bc50d" kindref="member">id_to_data_map_t</ref></type>
+        <definition>id_to_data_map_t LtpTimerManager&lt; idType, hashType &gt;::m_mapIdToTimerData</definition>
+        <argsstring></argsstring>
+        <name>m_mapIdToTimerData</name>
+        <briefdescription>
+<para>Timer context data iterators referencing m_listTimerData, mapped by idType. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="203" column="22" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="203" bodyend="-1"/>
+        <referencedby refid="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" compoundref="LtpTimerManager_8cpp" startline="21" endline="39">LtpTimerManager&lt; idType, hashType &gt;::LtpTimerManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpTimerManager_1a0e6f5a9b7d71c1edddc4cb9b6ec5fa75" prot="private" static="no" mutable="no">
+        <type>idType</type>
+        <definition>idType LtpTimerManager&lt; idType, hashType &gt;::m_activeSerialNumberBeingTimed</definition>
+        <argsstring></argsstring>
+        <name>m_activeSerialNumberBeingTimed</name>
+        <briefdescription>
+<para>Serial number of current active timer, when set to 0 indicates no current active timer since a zero serial number is unreachable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="207" column="12" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpTimerManager_1a870f460479af5f2a560825e9384b52a7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LtpTimerManager&lt; idType, hashType &gt;::m_isTimerActive</definition>
+        <argsstring></argsstring>
+        <name>m_isTimerActive</name>
+        <briefdescription>
+<para>Whether the timer manager is active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="209" column="10" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpTimerManager_1a7a5ca6251ee7823f937188a58a590732" prot="private" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* LtpTimerManager&lt; idType, hashType &gt;::m_timerIsDeletedPtr</definition>
+        <argsstring></argsstring>
+        <name>m_timerIsDeletedPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timer manager deleted pointer, whether the timer manager has been destructed.<orderedlist>
+<listitem><para>NULL -&gt; Timer manager has been destructed while NOT active, no further action needed.</para>
+</listitem><listitem><para>non-NULL AND (*m_timerIsDeletedPtr == true) -&gt; Timer manager has been destructed while active, if observed through timer callback delete pointer and return immediately. </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="213" column="11" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpTimerManager_1a7857f141b384405b4ec45ede1ce0b226" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpTimerManager&lt; idType, hashType &gt;::LtpTimerManager</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpTimerManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="42" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpTimerManager&lt; idType, hashType &gt;::OnTimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e, bool *isTimerDeleted)</argsstring>
+        <name>OnTimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>isTimerDeleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle managed timer expiry.</para>
+<para>If the timer manager is due deletion, deletes isTimerDeleted and returns immediately. If the expiry did NOT occur due to the timer being manually cancelled, caches the timer context data, calls <ref refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" kindref="member">LtpTimerManager::DeleteTimer()</ref> to delete the expired timer and retain any data the caller might want back, then invokes the timer callback.</para>
+<para>Tries to auto-recycle user data after callback completes.</para>
+<para>Regardless of the reason the expiration occurred: If there are any more timers left in the queue, starts the managed timer, for the next timer in the queue, asynchronously with itself as a completion handler to achieve a processing loop. Else, sets the timer manager as inactive since there is no more work left to do. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTimerDeleted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer indicating whether the time manager has been deleted (see m_timerIsDeletedPtr docs for how to handle). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="160" column="28" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="127" bodyend="165"/>
+        <referencedby refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" compoundref="LtpTimerManager_8cpp" startline="55" endline="61">LtpTimerManager&lt; uint64_t, std::hash&lt; uint64_t &gt; &gt;::Reset</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpTimerManager&lt; idType, hashType &gt;::LtpTimerManager</definition>
+        <argsstring>(boost::asio::deadline_timer &amp;deadlineTimerRef, boost::posix_time::time_duration &amp;transmissionToAckReceivedTimeRef, const uint64_t hashMapNumBuckets)</argsstring>
+        <name>LtpTimerManager</name>
+        <param>
+          <type>boost::asio::deadline_timer &amp;</type>
+          <declname>deadlineTimerRef</declname>
+        </param>
+        <param>
+          <type>boost::posix_time::time_duration &amp;</type>
+          <declname>transmissionToAckReceivedTimeRef</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>hashMapNumBuckets</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reserve space for hashMapNumBuckets timers. Call <ref refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" kindref="member">LtpTimerManager::Reset()</ref> to prepare the timer manager. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deadlineTimerRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Our managed timer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transmissionToAckReceivedTimeRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timer wait duration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hashMapNumBuckets</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of queued timers to reserve. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="56" column="20" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="21" bodyend="39"/>
+        <references refid="classLtpTimerManager_1a4f0afc4cabd7586485a8fb627fc0b857" compoundref="LtpTimerManager_8h" startline="201">LtpTimerManager&lt; idType, hashType &gt;::m_listTimerData</references>
+        <references refid="classLtpTimerManager_1a33aa97aee8e2460108605b9026615671" compoundref="LtpTimerManager_8h" startline="203">LtpTimerManager&lt; idType, hashType &gt;::m_mapIdToTimerData</references>
+        <references refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" compoundref="LtpTimerManager_8cpp" startline="55" endline="61">LtpTimerManager&lt; idType, hashType &gt;::Reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1a876a7da9864194cff2f7041f3363e602" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpTimerManager&lt; idType, hashType &gt;::~LtpTimerManager</definition>
+        <argsstring>()</argsstring>
+        <name>~LtpTimerManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If timer manager is NOT active, delete m_timerIsDeletedPtr and set to NULL. Else, set *m_timerIsDeletedPtr to True and let the current active timer completion handler delete it.</para>
+<para>Call <ref refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" kindref="member">LtpTimerManager::Reset()</ref> to release all managed resources. <simplesect kind="post"><para>Assumes external code will handle deleting m_timerIsDeletedPtr to prevent a memory leak. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="67" column="20" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="42" bodyend="52"/>
+        <references refid="test__async_8cpp_1a77ad624cc83a2a71aa4d5ad991d811d7" compoundref="test__async_8cpp" startline="17" endline="20">Reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpTimerManager&lt; idType, hashType &gt;::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform timer manager reset.</para>
+<para>Clears queued timers, cancels current active timer, then sets timer manager state to inactive. <simplesect kind="post"><para>The object is ready to be reused. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="74" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="55" bodyend="61"/>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" compoundref="LtpTimerManager_8cpp" startline="21" endline="39">LtpTimerManager&lt; idType, hashType &gt;::LtpTimerManager</referencedby>
+        <referencedby refid="classLtpEngine_1a97feb8f9afbd72c0059d3962a528582b" compoundref="LtpEngine_8cpp" startline="275" endline="339">LtpEngine::Reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpTimerManager&lt; idType, hashType &gt;::StartTimer</definition>
+        <argsstring>(void *classPtr, const idType serialNumber, const LtpTimerExpiredCallback_t *callbackPtr, std::vector&lt; uint8_t &gt; &amp;&amp;userData=std::vector&lt; uint8_t &gt;())</argsstring>
+        <name>StartTimer</name>
+        <param>
+          <type>void *</type>
+          <declname>classPtr</declname>
+        </param>
+        <param>
+          <type>const idType</type>
+          <declname>serialNumber</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref> *</type>
+          <declname>callbackPtr</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+          <defval>std::vector&lt; uint8_t &gt;()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Queue a new timer to manage.</para>
+<para>If a timer associated with serialNumber already exists, returns immediately. Else, queues a new timer for processing, and if the timer manager is inactive (thus timer queue empty) sets the manager to active and actively waits on the newly queued timer by starting the managed timer asynchronously with <ref refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" kindref="member">LtpTimerManager::OnTimerExpired()</ref> as a completion handler. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>classPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type-erased data pointer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serialNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The serial number associated with the timer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callbackPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to invoke on timer expiry. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attached user data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if a NEW timer was queued successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="87" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="65" bodyend="83"/>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a13ba463ed9a6b5a93c96b4dce61755d3" compoundref="LtpSessionReceiver_8cpp" startline="364" endline="755">LtpSessionReceiver::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1ac85ce5836f8fc5186fc5eb9c8eab7b60" compoundref="LtpEngine_8cpp" startline="619" endline="790">LtpEngine::GetNextPacketToSend</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1ab6156df15ea95c2a8e8e5e10ba98fa3e" compoundref="LtpSessionReceiver_8cpp" startline="260" endline="309">LtpSessionReceiver::NextDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">LtpSessionSender::NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">LtpSessionSender::NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpTimerManager&lt; idType, hashType &gt;::DeleteTimer</definition>
+        <argsstring>(const idType serialNumber)</argsstring>
+        <name>DeleteTimer</name>
+        <param>
+          <type>const idType</type>
+          <declname>serialNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a queued timer.</para>
+<para>Calls DeleteTimer(serialNumber, userDataReturned, callbackPtrReturned, classPtrReturned) to delete the queued timer. On successful deletion, discards all of the timer context data. This is the only overload of DeleteTimer that auto recycles user data. Other overloads require manual recycle. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serialNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The serial number associated with the timer to delete. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the timer exists and could be deleted successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="97" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="86" bodyend="93"/>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1af37d8503f0f53121ca47c814178ade36" compoundref="LtpEngine_8cpp" startline="1124" endline="1189">LtpEngine::CancelAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a13ba463ed9a6b5a93c96b4dce61755d3" compoundref="LtpSessionReceiver_8cpp" startline="364" endline="755">LtpSessionReceiver::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a767d5de028f51c9a66140b6ca29ca001" compoundref="LtpSessionReceiver_8cpp" startline="312" endline="361">LtpSessionReceiver::ReportAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a21e6baee2709fdb2dfbbb4679d98081a" compoundref="LtpSessionReceiver_8cpp" startline="126" endline="172">LtpSessionReceiver::~LtpSessionReceiver</referencedby>
+        <referencedby refid="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" compoundref="LtpSessionSender_8cpp" startline="98" endline="128">LtpSessionSender::~LtpSessionSender</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1af7c8ee07a7e2f142cedc5c7e2f18a4fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpTimerManager&lt; idType, hashType &gt;::DeleteTimer</definition>
+        <argsstring>(const idType serialNumber, std::vector&lt; uint8_t &gt; &amp;userDataReturned)</argsstring>
+        <name>DeleteTimer</name>
+        <param>
+          <type>const idType</type>
+          <declname>serialNumber</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userDataReturned</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a queued timer.</para>
+<para>Calls DeleteTimer(serialNumber, userDataReturned, callbackPtrReturned, classPtrReturned) to delete the queued timer. On successful deletion, returns the attached user data to the caller from the timer context data. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serialNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The serial number associated with the timer to delete. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userDataReturned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attached user data of the timer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the timer exists and could be deleted successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="107" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1ad020dae53b3d2a303dc6741297130e17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpTimerManager&lt; idType, hashType &gt;::DeleteTimer</definition>
+        <argsstring>(const idType serialNumber, std::vector&lt; uint8_t &gt; &amp;userDataReturned, const LtpTimerExpiredCallback_t *&amp;callbackPtrReturned, void *&amp;classPtrReturned)</argsstring>
+        <name>DeleteTimer</name>
+        <param>
+          <type>const idType</type>
+          <declname>serialNumber</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userDataReturned</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref> *&amp;</type>
+          <declname>callbackPtrReturned</declname>
+        </param>
+        <param>
+          <type>void *&amp;</type>
+          <declname>classPtrReturned</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a queued timer.</para>
+<para>If a timer associated with serialNumber does NOT exist, returns immediately. Else, deletes the queued timer from the queue (without cancelling for performance reasons), then sets m_activeSerialNumberBeingTimed to 0.</para>
+<para>On successful deletion, returns the attached user data and the callback and the type-erased data pointer from the timer context data. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serialNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The serial number associated with the timer to delete. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userDataReturned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attached user data of the timer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callbackPtrReturned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback of the timer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>classPtrReturned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type-erased data pointer of the timer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the timer exists and could be deleted successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="121" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="103" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1a70f5efbc69ef57484eeba2a42a36937e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpTimerManager&lt; idType, hashType &gt;::AdjustRunningTimers</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;diffNewMinusOld)</argsstring>
+        <name>AdjustRunningTimers</name>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>diffNewMinusOld</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adjust timer wait duration across all current and future queued timers.</para>
+<para>If the timer manager is NOT active, returns immediately. Else, adjusts all queued timers by the given difference. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>diffNewMinusOld</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The difference from the current timer wait duration, should be a negative duration when new duration &lt; current duration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="130" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="168" bodyend="175"/>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a78364e8c88d84aafa75a6b6ff8f51d5e" compoundref="LtpEngine_8cpp" startline="1718" endline="1728">LtpEngine::SetDelays</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1ab1df8c56b45edc2f979c83c662cb87c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpTimerManager&lt; idType, hashType &gt;::Empty</definition>
+        <argsstring>() const</argsstring>
+        <name>Empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query whether the timer queue is empty.</para>
+<para><simplesect kind="return"><para>True if the timer queue is empty, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="136" column="25" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="178" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpTimerManager_1a90963557aaea25ae44adccd1025d9316" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT const boost::posix_time::time_duration &amp;</type>
+        <definition>const boost::posix_time::time_duration &amp; LtpTimerManager&lt; idType, hashType &gt;::GetTimeDurationRef</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTimeDurationRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the timer wait duration.</para>
+<para><simplesect kind="return"><para>The timer wait duration. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpTimerManager.h" line="142" column="59" bodyfile="common/ltp/src/LtpTimerManager.cpp" bodystart="183" bodyend="185"/>
+        <referencedby refid="classLtpSessionReceiver_1a13ba463ed9a6b5a93c96b4dce61755d3" compoundref="LtpSessionReceiver_8cpp" startline="364" endline="755">LtpSessionReceiver::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LtpTimerManager&lt; idType, hashType &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LtpTimerManager&lt; idType, hashType &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="3">
+        <label>UserDataRecycler&lt; std::vector&lt; uint8_t &gt; &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpTimerManager.h" line="40" column="1" bodyfile="common/ltp/include/LtpTimerManager.h" bodystart="40" bodyend="214"/>
+    <listofallmembers>
+      <member refid="classLtpTimerManager_1a70f5efbc69ef57484eeba2a42a36937e" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>AdjustRunningTimers</name></member>
+      <member refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>DeleteTimer</name></member>
+      <member refid="classLtpTimerManager_1af7c8ee07a7e2f142cedc5c7e2f18a4fd" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>DeleteTimer</name></member>
+      <member refid="classLtpTimerManager_1ad020dae53b3d2a303dc6741297130e17" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>DeleteTimer</name></member>
+      <member refid="classLtpTimerManager_1ab1df8c56b45edc2f979c83c662cb87c6" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>Empty</name></member>
+      <member refid="classLtpTimerManager_1a90963557aaea25ae44adccd1025d9316" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>GetTimeDurationRef</name></member>
+      <member refid="classLtpTimerManager_1aeb6dbf70873a14fb398eddf4503bc50d" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>id_to_data_map_t</name></member>
+      <member refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>LtpTimerExpiredCallback_t</name></member>
+      <member refid="classLtpTimerManager_1a7857f141b384405b4ec45ede1ce0b226" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>LtpTimerManager</name></member>
+      <member refid="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>LtpTimerManager</name></member>
+      <member refid="classLtpTimerManager_1a0e6f5a9b7d71c1edddc4cb9b6ec5fa75" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_activeSerialNumberBeingTimed</name></member>
+      <member refid="classLtpTimerManager_1ae658e013eb0f1adeed40dc82dd03704c" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_deadlineTimerRef</name></member>
+      <member refid="classLtpTimerManager_1a870f460479af5f2a560825e9384b52a7" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_isTimerActive</name></member>
+      <member refid="classLtpTimerManager_1a4f0afc4cabd7586485a8fb627fc0b857" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_listTimerData</name></member>
+      <member refid="classLtpTimerManager_1a33aa97aee8e2460108605b9026615671" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_mapIdToTimerData</name></member>
+      <member refid="classLtpTimerManager_1a7a5ca6251ee7823f937188a58a590732" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_timerIsDeletedPtr</name></member>
+      <member refid="classLtpTimerManager_1a6fe9e971450c3319ffd27346e1318cd7" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_transmissionToAckReceivedTimeRef</name></member>
+      <member refid="classLtpTimerManager_1a5030dd35df0f6746618f45601ebb4989" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>m_userDataRecycler</name></member>
+      <member refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>OnTimerExpired</name></member>
+      <member refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>Reset</name></member>
+      <member refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>StartTimer</name></member>
+      <member refid="classLtpTimerManager_1a048fc35c369b7242936620796b717a63" prot="private" virt="non-virtual"><scope>LtpTimerManager</scope><name>timer_data_list_t</name></member>
+      <member refid="classLtpTimerManager_1a876a7da9864194cff2f7041f3363e602" prot="public" virt="non-virtual"><scope>LtpTimerManager</scope><name>~LtpTimerManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

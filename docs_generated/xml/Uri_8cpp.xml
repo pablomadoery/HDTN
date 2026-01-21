@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Uri_8cpp" kind="file" language="C++">
+    <compoundname>Uri.cpp</compoundname>
+    <includes refid="Uri_8h" local="yes">Uri.h</includes>
+    <includes local="no">inttypes.h</includes>
+    <includes local="no">boost/format.hpp</includes>
+    <includes local="no">boost/tokenizer.hpp</includes>
+    <includes local="no">boost/lexical_cast.hpp</includes>
+    <includes local="no">boost/multiprecision/cpp_int.hpp</includes>
+    <includes local="no">boost/multiprecision/detail/bitscan.hpp</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="9">
+        <label>boost/lexical_cast.hpp</label>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>boost/format.hpp</label>
+      </node>
+      <node id="10">
+        <label>boost/multiprecision/cpp_int.hpp</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>Uri.h</label>
+        <link refid="Uri_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>boost/multiprecision/detail/bitscan.hpp</label>
+      </node>
+      <node id="5">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="1">
+        <label>common/util/src/Uri.cpp</label>
+        <link refid="Uri_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="Uri_8cpp_1a8d5bc4c5fa22414d45abf053264892af" prot="public" static="yes" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t bitScanIndexMinValStrLengths[64]</definition>
+        <argsstring>[64]</argsstring>
+        <name>bitScanIndexMinValStrLengths</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/Uri.cpp" line="153" column="22" bodyfile="common/util/src/Uri.cpp" bodystart="153" bodyend="-1"/>
+        <referencedby refid="classUri_1a3b2ee59189a452abe0015ca3b242c8cf" compoundref="Uri_8cpp" startline="242" endline="250">Uri::GetStringLengthOfUint</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="Uri_8cpp_1afdfb8ee8e35a66ef173ebc60b8e5df0f" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t tenToThe[20]</definition>
+        <argsstring>[20]</argsstring>
+        <name>tenToThe</name>
+        <initializer>= {
+    1u,
+    10u,
+    100u,
+    1000u,
+    10000u,
+    100000u,
+    1000000u,
+    10000000u,
+    100000000u,
+    1000000000u,
+    10000000000u,
+    100000000000u,
+    1000000000000u,
+    10000000000000u,
+    100000000000000u,
+    1000000000000000u,
+    10000000000000000u,
+    100000000000000000u,
+    1000000000000000000u,
+    10000000000000000000u
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/Uri.cpp" line="219" column="23" bodyfile="common/util/src/Uri.cpp" bodystart="219" bodyend="-1"/>
+        <referencedby refid="classUri_1a3b2ee59189a452abe0015ca3b242c8cf" compoundref="Uri_8cpp" startline="242" endline="250">Uri::GetStringLengthOfUint</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Uri_8h" kindref="compound">Uri.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/format.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/tokenizer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/lexical_cast.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/multiprecision/cpp_int.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/multiprecision/detail/bitscan.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" kindref="member">Uri::GetIpnUriString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidNodeNumber,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidServiceNumber)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::format<sp/>fmtTemplate(</highlight><highlight class="stringliteral">&quot;ipn:%d.%d&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::format<sp/>fmt(fmtTemplate);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>fmt<sp/>%<sp/>eidNodeNumber<sp/>%<sp/>eidServiceNumber;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fmt.str();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30" refid="classUri_1a25005e5cf294b1c369241e339c347c1e" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classUri_1a25005e5cf294b1c369241e339c347c1e" kindref="member">Uri::GetIpnUriStringAnyServiceNumber</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidNodeNumber)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::format<sp/>fmtTemplate(</highlight><highlight class="stringliteral">&quot;ipn:%d.*&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::format<sp/>fmt(fmtTemplate);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>fmt<sp/>%<sp/>eidNodeNumber;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fmt.str();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>0<sp/>on<sp/>failure,<sp/>or<sp/>bytesWritten<sp/>including<sp/>the<sp/>null<sp/>character</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classUri_1a4b62cd167e2c14e7f347032600baf80b" refkind="member"><highlight class="normal">std::size_t<sp/><ref refid="classUri_1a4b62cd167e2c14e7f347032600baf80b" kindref="member">Uri::WriteIpnUriCstring</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidNodeNumber,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidServiceNumber,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structbuffer" kindref="compound">buffer</ref>,<sp/>std::size_t<sp/>maxBufferSize)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//snprintf<sp/>returns<sp/>The<sp/>number<sp/>of<sp/>characters<sp/>that<sp/>would<sp/>have<sp/>been<sp/>written<sp/>if<sp/>n<sp/>had<sp/>been<sp/>sufficiently<sp/>large,<sp/>not<sp/>counting<sp/>the<sp/>terminating<sp/>null<sp/>character.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>returned<sp/>=<sp/>snprintf(<ref refid="structbuffer" kindref="compound">buffer</ref>,<sp/>maxBufferSize,<sp/></highlight><highlight class="stringliteral">&quot;ipn:%&quot;</highlight><highlight class="normal"><sp/>PRIu64<sp/></highlight><highlight class="stringliteral">&quot;.%&quot;</highlight><highlight class="normal"><sp/>PRIu64,<sp/>eidNodeNumber,<sp/>eidServiceNumber);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//only<sp/>when<sp/>this<sp/>returned<sp/>value<sp/>is<sp/>non-negative<sp/>and<sp/>less<sp/>than<sp/>n,<sp/>the<sp/>string<sp/>has<sp/>been<sp/>completely<sp/>written.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>didError<sp/>=<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(returned<sp/>&lt;<sp/>0))<sp/>+<sp/>(static_cast&lt;bool&gt;((</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(returned))<sp/>&gt;=<sp/>maxBufferSize));</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>noError<sp/>=<sp/>!didError;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">((returned<sp/>+<sp/>1)<sp/>*<sp/>noError);<sp/></highlight><highlight class="comment">//+1<sp/>for<sp/>the<sp/>null<sp/>character</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46" refid="classUri_1a74326bfeee2b152704bd1e9ec84f43ce" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classUri_1a74326bfeee2b152704bd1e9ec84f43ce" kindref="member">Uri::GetIpnUriCstringLengthRequiredIncludingNullTerminator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidNodeNumber,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>eidServiceNumber)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>6<sp/>+<sp/><ref refid="classUri_1a3b2ee59189a452abe0015ca3b242c8cf" kindref="member">GetStringLengthOfUint</ref>(eidNodeNumber)<sp/>+<sp/><ref refid="classUri_1a3b2ee59189a452abe0015ca3b242c8cf" kindref="member">GetStringLengthOfUint</ref>(eidServiceNumber);<sp/></highlight><highlight class="comment">//6<sp/>=&gt;<sp/>ipn:.\0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classUri_1ab610ab33584a298de7885f6d713db018" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUri_1ab610ab33584a298de7885f6d713db018" kindref="member">Uri::ParseIpnUriString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>uri,<sp/>uint64_t<sp/>&amp;<sp/>eidNodeNumber,<sp/>uint64_t<sp/>&amp;<sp/>eidServiceNumber,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>serviceNumberIsWildCard)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((uri.length()<sp/>&lt;<sp/>7)<sp/>||<sp/>(uri[0]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(uri[1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;p&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(uri[2]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;n&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(uri[3]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>ParseIpnSspString(uri.cbegin()<sp/>+<sp/>4,<sp/>uri.cend(),<sp/>eidNodeNumber,<sp/>eidServiceNumber);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classUri_1aa8310e24cfd3da82f119c16fdf09cc48" kindref="member">ParseIpnSspString</ref>(uri.data()<sp/>+<sp/>4,<sp/>uri.length()<sp/>-<sp/>4,<sp/>eidNodeNumber,<sp/>eidServiceNumber,<sp/>serviceNumberIsWildCard);<sp/></highlight><highlight class="comment">//more<sp/>efficient<sp/>(no<sp/>string<sp/>copies)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57" refid="classUri_1a26a81ccbd4ce0b44b2089010715ee6fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUri_1a26a81ccbd4ce0b44b2089010715ee6fa" kindref="member">Uri::ParseIpnUriCstring</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>data,<sp/>uint64_t<sp/>bufferSize,<sp/>uint64_t<sp/>&amp;<sp/>bytesDecodedIncludingNullChar,<sp/>uint64_t<sp/>&amp;<sp/>eidNodeNumber,<sp/>uint64_t<sp/>&amp;<sp/>eidServiceNumber,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>serviceNumberIsWildCard)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>lengthNotIncludingNullChar<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>data2<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bufferSize<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--bufferSize;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*data2++<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++lengthNotIncludingNullChar;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((lengthNotIncludingNullChar<sp/>&lt;<sp/>7)<sp/>||<sp/>(data[0]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(data[1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;p&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(data[2]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;n&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(data[3]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>bytesDecodedIncludingNullChar<sp/>=<sp/>lengthNotIncludingNullChar<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classUri_1aa8310e24cfd3da82f119c16fdf09cc48" kindref="member">ParseIpnSspString</ref>(data<sp/>+<sp/>4,<sp/>lengthNotIncludingNullChar<sp/>-<sp/>4,<sp/>eidNodeNumber,<sp/>eidServiceNumber,<sp/>serviceNumberIsWildCard);<sp/></highlight><highlight class="comment">//more<sp/>efficient<sp/>(no<sp/>string<sp/>copies)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//parse<sp/>just<sp/>the<sp/>scheme<sp/>specific<sp/>part</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classUri_1aa8310e24cfd3da82f119c16fdf09cc48" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUri_1aa8310e24cfd3da82f119c16fdf09cc48" kindref="member">Uri::ParseIpnSspString</ref>(std::string::const_iterator<sp/>stringSspCbegin,<sp/>std::string::const_iterator<sp/>stringSspCend,<sp/>uint64_t<sp/>&amp;<sp/>eidNodeNumber,<sp/>uint64_t<sp/>&amp;<sp/>eidServiceNumber)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::tokenizer&lt;boost::char_separator&lt;char&gt;<sp/>&gt;<sp/>tokenizer;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::char_separator&lt;char&gt;<sp/>sep(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>boost::keep_empty_tokens);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>tokenizer<sp/>tokens(stringSspCbegin,<sp/>stringSspCend,<sp/>sep);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>tokenizer::const_iterator<sp/>it<sp/>=<sp/>tokens.begin();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>tokens.end())<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eidNodeNumber<sp/>=<sp/>boost::lexical_cast&lt;uint64_t&gt;(*it);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_lexical_cast<sp/>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>++it;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>tokens.end())<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eidServiceNumber<sp/>=<sp/>boost::lexical_cast&lt;uint64_t&gt;(*it);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_lexical_cast<sp/>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>++it;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>tokens.end());<sp/></highlight><highlight class="comment">//should<sp/>be<sp/>end<sp/>at<sp/>this<sp/>point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classUri_1a8af9ef17fef44fc9641f705c40fd096b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUri_1aa8310e24cfd3da82f119c16fdf09cc48" kindref="member">Uri::ParseIpnSspString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>data,<sp/>std::size_t<sp/>length,<sp/>uint64_t<sp/>&amp;<sp/>eidNodeNumber,<sp/>uint64_t<sp/>&amp;<sp/>eidServiceNumber,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*<sp/>serviceNumberIsWildCard)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>dotPosition<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dotPosition<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dotPosition<sp/>=<sp/>&amp;data[i];</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//double<sp/>dots</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dotPosition<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//dot<sp/>not<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>lastChar<sp/>=<sp/>&amp;data[length-1];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sizeStr1<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dotPosition<sp/>-<sp/>data);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sizeStr2<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(lastChar<sp/>-<sp/>dotPosition);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>serviceNumberStartChar<sp/>=<sp/>dotPosition<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sizeStr1<sp/>&amp;&amp;<sp/>sizeStr2)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eidNodeNumber<sp/>=<sp/>boost::lexical_cast&lt;uint64_t&gt;(data,<sp/>sizeStr1);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_lexical_cast&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(serviceNumberIsWildCard)<sp/>{<sp/></highlight><highlight class="comment">//doing<sp/>wildcard<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wildDetected<sp/>=<sp/>(sizeStr2<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>((*serviceNumberStartChar)<sp/>==<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*serviceNumberIsWildCard<sp/>=<sp/>wildDetected;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(wildDetected)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eidServiceNumber<sp/>=<sp/>boost::lexical_cast&lt;uint64_t&gt;(serviceNumberStartChar,<sp/>sizeStr2);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_lexical_cast<sp/>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="Uri_8cpp_1a8d5bc4c5fa22414d45abf053264892af" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="Uri_8cpp_1a8d5bc4c5fa22414d45abf053264892af" kindref="member">bitScanIndexMinValStrLengths</ref>[64]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>1,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>1,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>1,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>1,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>3,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>3,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>3,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>4,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>4,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>4,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>4,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>5,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>5,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>5,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>6,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>6,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>6,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>7,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>7,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>7,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>7,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>8,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>8,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>8,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>9,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>9,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>9,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>10,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>10,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>10,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>10,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>11,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>34</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>11,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>35</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>11,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>36</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>12,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>37</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>12,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>38</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>12,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>39</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>13,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>13,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>13,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>13,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>43</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>14,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>44</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>14,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>45</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>14,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>46</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>15,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>47</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>15,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>48</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>15,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>49</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>16,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>16,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>51</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>16,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>52</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>16,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>53</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>17,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>54</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>17,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>55</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>17,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>56</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>18,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>57</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>18,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>58</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>18,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>59</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>19,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>60</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>19,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>19,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>62</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>19,<sp/></highlight><highlight class="comment">//1<sp/>&lt;&lt;<sp/>63</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="219" refid="Uri_8cpp_1afdfb8ee8e35a66ef173ebc60b8e5df0f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/><ref refid="Uri_8cpp_1afdfb8ee8e35a66ef173ebc60b8e5df0f" kindref="member">tenToThe</ref>[20]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>1u,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>10u,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>100u,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>1000u,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>10000u,</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>100000u,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>1000000u,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>10000000u,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>100000000u,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>1000000000u,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>10000000000u,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>100000000000u,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>1000000000000u,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>10000000000000u,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>100000000000000u,</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>1000000000000000u,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>10000000000000000u,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>100000000000000000u,</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>1000000000000000000u,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>10000000000000000000u</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="classUri_1a3b2ee59189a452abe0015ca3b242c8cf" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classUri_1a3b2ee59189a452abe0015ca3b242c8cf" kindref="member">Uri::GetStringLengthOfUint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//idea<sp/>from<sp/>https://stackoverflow.com/questions/25892665/performance-of-log10-function-returning-an-int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//bitscan<sp/>seems<sp/>to<sp/>have<sp/>undefined<sp/>behavior<sp/>on<sp/>a<sp/>value<sp/>of<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>msb<sp/>=<sp/>boost::multiprecision::detail::find_msb&lt;uint64_t&gt;(val<sp/>+<sp/>(val<sp/>==<sp/>0));</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>lowGuessStringLength<sp/>=<sp/><ref refid="Uri_8cpp_1a8d5bc4c5fa22414d45abf053264892af" kindref="member">bitScanIndexMinValStrLengths</ref>[msb];<sp/></highlight><highlight class="comment">//based<sp/>on<sp/>base<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lowGuessStringLength<sp/>+<sp/>(val<sp/>&gt;=<sp/><ref refid="Uri_8cpp_1afdfb8ee8e35a66ef173ebc60b8e5df0f" kindref="member">tenToThe</ref>[lowGuessStringLength]);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/util/src/Uri.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classboost_1_1asio_1_1dir__monitor__impl" kind="class" language="C++" prot="public">
+    <compoundname>boost::asio::dir_monitor_impl</compoundname>
+    <includes refid="fsevents_2dir__monitor__impl_8hpp" local="no">dir_monitor_impl.hpp</includes>
+    <innerclass refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle" prot="public">boost::asio::dir_monitor_impl::windows_handle</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classboost_1_1asio_1_1dir__monitor__impl_1a8f06105947e59e05368af6c83813ca04" prot="private" static="no">
+        <type>boost::bimap&lt; int, std::string &gt;</type>
+        <definition>typedef boost::bimap&lt;int, std::string&gt; boost::asio::dir_monitor_impl::watch_descriptors_t</definition>
+        <argsstring></argsstring>
+        <name>watch_descriptors_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="219" column="26" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classboost_1_1asio_1_1dir__monitor__impl_1aa105086e927c0293039e49b66bbe24f5" prot="private" static="no">
+        <type>std::map&lt; std::string, boost::filesystem::directory_entry &gt;</type>
+        <definition>typedef std::map&lt;std::string, boost::filesystem::directory_entry&gt; boost::asio::dir_monitor_impl::dir_entry_map</definition>
+        <argsstring></argsstring>
+        <name>dir_entry_map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="67" column="22" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classboost_1_1asio_1_1dir__monitor__impl_1aa70c4879d133c1fa729488d98d44b9c9" prot="private" static="no">
+        <type>boost::bimap&lt; std::string, int &gt;</type>
+        <definition>typedef boost::bimap&lt;std::string, int&gt; boost::asio::dir_monitor_impl::dir_to_handle_bimap_t</definition>
+        <argsstring></argsstring>
+        <name>dir_to_handle_bimap_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="68" column="26" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool boost::asio::dir_monitor_impl::run_</definition>
+        <argsstring></argsstring>
+        <name>run_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="266" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="266" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="76" endline="81">destroy</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="83" endline="101">popfront_event</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" prot="private" static="no" mutable="no">
+        <type>dispatch_queue_t</type>
+        <definition>dispatch_queue_t boost::asio::dir_monitor_impl::queue_</definition>
+        <argsstring></argsstring>
+        <name>queue_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="267" column="22" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="267" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="42" endline="52">~dir_monitor_impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" prot="private" static="no" mutable="no">
+        <type>FSEventStreamRef</type>
+        <definition>FSEventStreamRef boost::asio::dir_monitor_impl::fsevents_</definition>
+        <argsstring></argsstring>
+        <name>fsevents_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="270" column="22" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="270" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="174" endline="183">stop_fsevents</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex boost::asio::dir_monitor_impl::dirs_mutex_</definition>
+        <argsstring></argsstring>
+        <name>dirs_mutex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="272" column="18" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="272" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="54" endline="60">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="70" endline="74">already_added_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a461b3fb7b45e9eda0c222e5f5c5cbed1" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="160" endline="169">remove_all_directories</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="62" endline="68">remove_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" prot="private" static="no" mutable="no">
+        <type>boost::unordered_set&lt; std::string &gt;</type>
+        <definition>boost::unordered_set&lt;std::string&gt; boost::asio::dir_monitor_impl::dirs_</definition>
+        <argsstring></argsstring>
+        <name>dirs_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="273" column="26" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="273" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="54" endline="60">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="70" endline="74">already_added_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a461b3fb7b45e9eda0c222e5f5c5cbed1" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="160" endline="169">remove_all_directories</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="62" endline="68">remove_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex boost::asio::dir_monitor_impl::events_mutex_</definition>
+        <argsstring></argsstring>
+        <name>events_mutex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="275" column="18" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="275" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="76" endline="81">destroy</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="83" endline="101">popfront_event</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable boost::asio::dir_monitor_impl::events_cond_</definition>
+        <argsstring></argsstring>
+        <name>events_cond_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="276" column="31" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="276" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="76" endline="81">destroy</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="83" endline="101">popfront_event</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; <ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref> &gt;</type>
+        <definition>std::deque&lt; dir_monitor_event &gt; boost::asio::dir_monitor_impl::events_</definition>
+        <argsstring></argsstring>
+        <name>events_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="277" column="16" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="277" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="83" endline="101">popfront_event</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aaec7682b47b2afda91f9827b26f3752b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int boost::asio::dir_monitor_impl::fd_</definition>
+        <argsstring></argsstring>
+        <name>fd_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="209" column="9" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="209" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1abc9835df3079a2e7df21dcbcd87a4830" compoundref="inotify_2dir__monitor__impl_8hpp" startline="47" endline="66">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" compoundref="inotify_2dir__monitor__impl_8hpp" startline="68" endline="79">remove_directory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a029ee5c95f97a65701d1a5db1b94955e" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service boost::asio::dir_monitor_impl::inotify_io_service_</definition>
+        <argsstring></argsstring>
+        <name>inotify_io_service_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="211" column="29" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="211" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="inotify_2dir__monitor__impl_8hpp" startline="99" endline="109">destroy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aac92f84ce57e1d0ed6a5fff406690e2e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::asio::io_service::work &gt;</type>
+        <definition>std::unique_ptr&lt;boost::asio::io_service::work&gt; boost::asio::dir_monitor_impl::inotify_work_</definition>
+        <argsstring></argsstring>
+        <name>inotify_work_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="212" column="21" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="212" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="inotify_2dir__monitor__impl_8hpp" startline="99" endline="109">destroy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1ac18f91fe40fba78d632b4f5e6083ed89" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread boost::asio::dir_monitor_impl::inotify_work_thread_</definition>
+        <argsstring></argsstring>
+        <name>inotify_work_thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="213" column="17" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="213" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="inotify_2dir__monitor__impl_8hpp" startline="99" endline="109">destroy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aff415b1f6b3f17cb9ed4fb5beabaad81" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::asio::posix::stream_descriptor &gt;</type>
+        <definition>std::unique_ptr&lt;boost::asio::posix::stream_descriptor&gt; boost::asio::dir_monitor_impl::stream_descriptor_</definition>
+        <argsstring></argsstring>
+        <name>stream_descriptor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="215" column="21" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="215" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a6e7897ce33ef946254c29b7a9e3ce2c7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="158" endline="163">begin_read</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="inotify_2dir__monitor__impl_8hpp" startline="99" endline="109">destroy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a19ca2895910b2ea89b6b7463b782494a" prot="private" static="no" mutable="no">
+        <type>std::array&lt; char, 4096 &gt;</type>
+        <definition>std::array&lt;char, 4096&gt; boost::asio::dir_monitor_impl::read_buffer_</definition>
+        <argsstring></argsstring>
+        <name>read_buffer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="216" column="16" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="216" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a6e7897ce33ef946254c29b7a9e3ce2c7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="158" endline="163">begin_read</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aef8daff05eacda78d0c4b840fd03b44a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string boost::asio::dir_monitor_impl::pending_read_buffer_</definition>
+        <argsstring></argsstring>
+        <name>pending_read_buffer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="217" column="17" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="217" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a2b3817676e1d1867b29b94ccdfdf819c" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex boost::asio::dir_monitor_impl::watch_descriptors_mutex_</definition>
+        <argsstring></argsstring>
+        <name>watch_descriptors_mutex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="218" column="16" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="218" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1abc9835df3079a2e7df21dcbcd87a4830" compoundref="inotify_2dir__monitor__impl_8hpp" startline="47" endline="66">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a41e729bbe8213d6c0ace6f82160fb6b2" compoundref="inotify_2dir__monitor__impl_8hpp" startline="202" endline="207">get_dirname</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" compoundref="inotify_2dir__monitor__impl_8hpp" startline="68" endline="79">remove_directory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1ab4f1f13e68d91063fe3fb97db0f0ecac" prot="private" static="no" mutable="no">
+        <type><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a8f06105947e59e05368af6c83813ca04" kindref="member">watch_descriptors_t</ref></type>
+        <definition>watch_descriptors_t boost::asio::dir_monitor_impl::watch_descriptors_</definition>
+        <argsstring></argsstring>
+        <name>watch_descriptors_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="220" column="25" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="220" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1abc9835df3079a2e7df21dcbcd87a4830" compoundref="inotify_2dir__monitor__impl_8hpp" startline="47" endline="66">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a41e729bbe8213d6c0ace6f82160fb6b2" compoundref="inotify_2dir__monitor__impl_8hpp" startline="202" endline="207">get_dirname</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" compoundref="inotify_2dir__monitor__impl_8hpp" startline="68" endline="79">remove_directory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a5c3004dfe3373b16fad1e1b56f548a16" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex boost::asio::dir_monitor_impl::events_mutex_</definition>
+        <argsstring></argsstring>
+        <name>events_mutex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="221" column="16" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1aa812153285ce7ba620a4854512c1bd50" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable boost::asio::dir_monitor_impl::events_cond_</definition>
+        <argsstring></argsstring>
+        <name>events_cond_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="222" column="29" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int boost::asio::dir_monitor_impl::kqueue_</definition>
+        <argsstring></argsstring>
+        <name>kqueue_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="379" column="9" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="379" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="116" endline="136">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="171" endline="192">destroy</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="84" endline="101">dir_monitor_impl</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="103" endline="114">~dir_monitor_impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a766edaad625a215952bc44f19606ba23" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex boost::asio::dir_monitor_impl::entries_mutex_</definition>
+        <argsstring></argsstring>
+        <name>entries_mutex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="380" column="18" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="380" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="116" endline="136">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a6cc0c375a4287c5358f1821bdf808f68" prot="private" static="no" mutable="no">
+        <type>boost::unordered_map&lt; std::string, <ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa105086e927c0293039e49b66bbe24f5" kindref="member">dir_entry_map</ref> &gt;</type>
+        <definition>boost::unordered_map&lt;std::string, dir_entry_map&gt; boost::asio::dir_monitor_impl::entries_</definition>
+        <argsstring></argsstring>
+        <name>entries_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="381" column="26" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="381" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="116" endline="136">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a771b9d9505fa4d15d6796ed77ecd2bf4" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; boost::asio::dir_monitor_impl::work_thread_ptr_</definition>
+        <argsstring></argsstring>
+        <name>work_thread_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="383" column="21" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="383" bodyend="-1"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="84" endline="101">dir_monitor_impl</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="103" endline="114">~dir_monitor_impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a6414b9a03259f63ea546b9ebac19b359" prot="private" static="no" mutable="no">
+        <type><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa70c4879d133c1fa729488d98d44b9c9" kindref="member">dir_to_handle_bimap_t</ref></type>
+        <definition>dir_to_handle_bimap_t boost::asio::dir_monitor_impl::dirs_</definition>
+        <argsstring></argsstring>
+        <name>dirs_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="387" column="27" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classboost_1_1asio_1_1dir__monitor__impl_1a5ed7ee15fdd6f9b0bd00348f1402411b" prot="private" static="no" mutable="no">
+        <type>boost::ptr_unordered_map&lt; std::string, <ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle" kindref="compound">windows_handle</ref> &gt;</type>
+        <definition>boost::ptr_unordered_map&lt;std::string, windows_handle&gt; boost::asio::dir_monitor_impl::dirs_</definition>
+        <argsstring></argsstring>
+        <name>dirs_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="91" column="30" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>boost::asio::dir_monitor_impl::dir_monitor_impl</definition>
+        <argsstring>()</argsstring>
+        <name>dir_monitor_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="32" column="5" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="32" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>boost::asio::dir_monitor_impl::~dir_monitor_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~dir_monitor_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="42" column="5" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="42" bodyend="52"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="267">queue_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="174" endline="183">stop_fsevents</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::add_directory</definition>
+        <argsstring>(const boost::filesystem::path &amp;dirname)</argsstring>
+        <name>add_directory</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="54" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="54" bodyend="60"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="174" endline="183">stop_fsevents</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a44963f08942e6ce463718bdd084bd8f7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="81" endline="97">check_sub_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::remove_directory</definition>
+        <argsstring>(const boost::filesystem::path &amp;dirname)</argsstring>
+        <name>remove_directory</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="62" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="62" bodyend="68"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="174" endline="183">stop_fsevents</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a44963f08942e6ce463718bdd084bd8f7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="81" endline="97">check_sub_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool boost::asio::dir_monitor_impl::already_added_directory</definition>
+        <argsstring>(const boost::filesystem::path &amp;dirname)</argsstring>
+        <name>already_added_directory</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="70" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="70" bodyend="74"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="185" endline="228">fsevents_callback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::destroy</definition>
+        <argsstring>()</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="76" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="76" bodyend="81"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="103" endline="114">~dir_monitor_impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+        <definition>dir_monitor_event boost::asio::dir_monitor_impl::popfront_event</definition>
+        <argsstring>(boost::system::error_code &amp;ec)</argsstring>
+        <name>popfront_event</name>
+        <param>
+          <type>boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="83" column="23" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="83" bodyend="101"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::pushback_event</definition>
+        <argsstring>(dir_monitor_event ev)</argsstring>
+        <name>pushback_event</name>
+        <param>
+          <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="103" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="103" bodyend="111"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1aafc2e467883d6a3df9e67d5429925aad" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="262" endline="305">compare</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="185" endline="228">fsevents_callback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>boost::asio::dir_monitor_impl::dir_monitor_impl</definition>
+        <argsstring>()</argsstring>
+        <name>dir_monitor_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="38" column="5" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="38" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1abc9835df3079a2e7df21dcbcd87a4830" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::add_directory</definition>
+        <argsstring>(const std::string &amp;dirname)</argsstring>
+        <name>add_directory</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="47" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="47" bodyend="66"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a44963f08942e6ce463718bdd084bd8f7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="81" endline="97">check_sub_directory</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aaec7682b47b2afda91f9827b26f3752b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="209">fd_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab4f1f13e68d91063fe3fb97db0f0ecac" compoundref="inotify_2dir__monitor__impl_8hpp" startline="220">watch_descriptors_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a2b3817676e1d1867b29b94ccdfdf819c" compoundref="inotify_2dir__monitor__impl_8hpp" startline="218">watch_descriptors_mutex_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::remove_directory</definition>
+        <argsstring>(const std::string &amp;dirname)</argsstring>
+        <name>remove_directory</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="68" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="68" bodyend="79"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a44963f08942e6ce463718bdd084bd8f7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="81" endline="97">check_sub_directory</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aaec7682b47b2afda91f9827b26f3752b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="209">fd_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab4f1f13e68d91063fe3fb97db0f0ecac" compoundref="inotify_2dir__monitor__impl_8hpp" startline="220">watch_descriptors_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a2b3817676e1d1867b29b94ccdfdf819c" compoundref="inotify_2dir__monitor__impl_8hpp" startline="218">watch_descriptors_mutex_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a44963f08942e6ce463718bdd084bd8f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::check_sub_directory</definition>
+        <argsstring>(const std::string &amp;dirname, bool add_sub_directory)</argsstring>
+        <name>check_sub_directory</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>add_sub_directory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="81" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="81" bodyend="97"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="54" endline="60">add_directory</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="62" endline="68">remove_directory</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1abc9835df3079a2e7df21dcbcd87a4830" compoundref="inotify_2dir__monitor__impl_8hpp" startline="47" endline="66">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" compoundref="inotify_2dir__monitor__impl_8hpp" startline="68" endline="79">remove_directory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::destroy</definition>
+        <argsstring>()</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="99" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="99" bodyend="109"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a029ee5c95f97a65701d1a5db1b94955e" compoundref="inotify_2dir__monitor__impl_8hpp" startline="211">inotify_io_service_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aac92f84ce57e1d0ed6a5fff406690e2e" compoundref="inotify_2dir__monitor__impl_8hpp" startline="212">inotify_work_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ac18f91fe40fba78d632b4f5e6083ed89" compoundref="inotify_2dir__monitor__impl_8hpp" startline="213">inotify_work_thread_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aff415b1f6b3f17cb9ed4fb5beabaad81" compoundref="inotify_2dir__monitor__impl_8hpp" startline="215">stream_descriptor_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+        <definition>dir_monitor_event boost::asio::dir_monitor_impl::popfront_event</definition>
+        <argsstring>(boost::system::error_code &amp;ec)</argsstring>
+        <name>popfront_event</name>
+        <param>
+          <type>boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="111" column="23" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="111" bodyend="127"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::pushback_event</definition>
+        <argsstring>(dir_monitor_event ev)</argsstring>
+        <name>pushback_event</name>
+        <param>
+          <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="129" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="129" bodyend="137"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a6e7897ce33ef946254c29b7a9e3ce2c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::begin_read</definition>
+        <argsstring>()</argsstring>
+        <name>begin_read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="158" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="158" bodyend="163"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a19ca2895910b2ea89b6b7463b782494a" compoundref="inotify_2dir__monitor__impl_8hpp" startline="216">read_buffer_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aff415b1f6b3f17cb9ed4fb5beabaad81" compoundref="inotify_2dir__monitor__impl_8hpp" startline="215">stream_descriptor_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>boost::asio::dir_monitor_impl::dir_monitor_impl</definition>
+        <argsstring>()</argsstring>
+        <name>dir_monitor_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="84" column="5" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="84" bodyend="101"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="379">kqueue_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aaee31d7d02c83c1cc707a50266d2bd44" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="72" endline="83">throw_system_error</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a771b9d9505fa4d15d6796ed77ecd2bf4" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="383">work_thread_ptr_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>boost::asio::dir_monitor_impl::~dir_monitor_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~dir_monitor_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="103" column="5" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="103" bodyend="114"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="76" endline="81">destroy</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="379">kqueue_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a771b9d9505fa4d15d6796ed77ecd2bf4" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="383">work_thread_ptr_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::add_directory</definition>
+        <argsstring>(std::string dirname, int wd)</argsstring>
+        <name>add_directory</name>
+        <param>
+          <type>std::string</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>wd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="116" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="116" bodyend="136"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a6cc0c375a4287c5358f1821bdf808f68" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="381">entries_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a766edaad625a215952bc44f19606ba23" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="380">entries_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="379">kqueue_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7a889013c9c273cf5fcf35ef2b2fe2ec" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="237" endline="260">scan</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aaee31d7d02c83c1cc707a50266d2bd44" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="72" endline="83">throw_system_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::remove_directory</definition>
+        <argsstring>(const std::string &amp;dirname)</argsstring>
+        <name>remove_directory</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="138" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="138" bodyend="144"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a19f62d720c636c758c2241266fc47801" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::remove_directory</definition>
+        <argsstring>(const int descriptor)</argsstring>
+        <name>remove_directory</name>
+        <param>
+          <type>const int</type>
+          <declname>descriptor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="146" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="146" bodyend="158"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a461b3fb7b45e9eda0c222e5f5c5cbed1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::remove_all_directories</definition>
+        <argsstring>()</argsstring>
+        <name>remove_all_directories</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="160" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="160" bodyend="169"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="171" endline="192">destroy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::destroy</definition>
+        <argsstring>()</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="171" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="171" bodyend="192"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="379">kqueue_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a461b3fb7b45e9eda0c222e5f5c5cbed1" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="160" endline="169">remove_all_directories</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aaee31d7d02c83c1cc707a50266d2bd44" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="72" endline="83">throw_system_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+        <definition>dir_monitor_event boost::asio::dir_monitor_impl::popfront_event</definition>
+        <argsstring>(boost::system::error_code &amp;ec)</argsstring>
+        <name>popfront_event</name>
+        <param>
+          <type>boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="194" column="23" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="194" bodyend="210"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::pushback_event</definition>
+        <argsstring>(dir_monitor_event ev)</argsstring>
+        <name>pushback_event</name>
+        <param>
+          <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="212" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="212" bodyend="222"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>boost::asio::dir_monitor_impl::dir_monitor_impl</definition>
+        <argsstring>()</argsstring>
+        <name>dir_monitor_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="40" column="5" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1adb99d1d66d563d5cb5d27e58561e5466" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::add_directory</definition>
+        <argsstring>(std::string dirname, HANDLE handle)</argsstring>
+        <name>add_directory</name>
+        <param>
+          <type>std::string</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>HANDLE</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="45" column="10" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="45" bodyend="48"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::remove_directory</definition>
+        <argsstring>(const std::string &amp;dirname)</argsstring>
+        <name>remove_directory</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="50" column="10" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="50" bodyend="53"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::destroy</definition>
+        <argsstring>()</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="55" column="10" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="55" bodyend="60"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+        <definition>dir_monitor_event boost::asio::dir_monitor_impl::popfront_event</definition>
+        <argsstring>(boost::system::error_code &amp;ec)</argsstring>
+        <name>popfront_event</name>
+        <param>
+          <type>boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="62" column="23" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="62" bodyend="78"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::pushback_event</definition>
+        <argsstring>(dir_monitor_event ev)</argsstring>
+        <name>pushback_event</name>
+        <param>
+          <type><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" line="80" column="10" bodyfile="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp" bodystart="80" bodyend="88"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="277">events_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="276">events_cond_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ac63495416a0f98967a2fe184b3ebae1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>CFArrayRef</type>
+        <definition>CFArrayRef boost::asio::dir_monitor_impl::make_array</definition>
+        <argsstring>(const boost::unordered_set&lt; std::string &gt; &amp;in)</argsstring>
+        <name>make_array</name>
+        <param>
+          <type>const boost::unordered_set&lt; std::string &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="114" column="16" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="114" bodyend="123"/>
+        <references refid="Environment_8cpp_1ad8ab729381f270b100f3d05b6c6676fc" compoundref="Environment_8cpp" startline="22">str</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::start_fsevents</definition>
+        <argsstring>()</argsstring>
+        <name>start_fsevents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="125" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="125" bodyend="172"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="270">fsevents_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="185" endline="228">fsevents_callback</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ac63495416a0f98967a2fe184b3ebae1a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="114" endline="123">make_array</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="267">queue_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="54" endline="60">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="62" endline="68">remove_directory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::stop_fsevents</definition>
+        <argsstring>()</argsstring>
+        <name>stop_fsevents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="174" column="10" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="174" bodyend="183"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="270">fsevents_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="54" endline="60">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="62" endline="68">remove_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="42" endline="52">~dir_monitor_impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a06eef898275370ebe1e9c32dc9c31331" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int boost::asio::dir_monitor_impl::init_fd</definition>
+        <argsstring>()</argsstring>
+        <name>init_fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="140" column="9" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="140" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::end_read</definition>
+        <argsstring>(const boost::system::error_code &amp;ec, std::size_t bytes_transferred)</argsstring>
+        <name>end_read</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="166" column="10" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="166" bodyend="200"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="54" endline="60">add_directory</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caae9a8ad02c0c7c8463d743ffdf3249d16" compoundref="basic__dir__monitor_8hpp" startline="22">boost::asio::dir_monitor_event::added</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a6e7897ce33ef946254c29b7a9e3ce2c7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="158" endline="163">begin_read</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a41e729bbe8213d6c0ace6f82160fb6b2" compoundref="inotify_2dir__monitor__impl_8hpp" startline="202" endline="207">get_dirname</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caadfbb04dbed0897e2aac05a96cf7e1392" compoundref="basic__dir__monitor_8hpp" startline="24">boost::asio::dir_monitor_event::modified</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caa7ff86a2a442d3b9b8ce094f099e1316c" compoundref="basic__dir__monitor_8hpp" startline="21">boost::asio::dir_monitor_event::null</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aef8daff05eacda78d0c4b840fd03b44a" compoundref="inotify_2dir__monitor__impl_8hpp" startline="217">pending_read_buffer_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a19ca2895910b2ea89b6b7463b782494a" compoundref="inotify_2dir__monitor__impl_8hpp" startline="216">read_buffer_</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa1f3230361dbbe664592982bcca34ef5" compoundref="basic__dir__monitor_8hpp" startline="23">boost::asio::dir_monitor_event::removed</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caa327c08c6651880b182876010f3b8e61f" compoundref="basic__dir__monitor_8hpp" startline="26">boost::asio::dir_monitor_event::renamed_new_name</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa299c4ec0ad83ba2feb965cccee64319" compoundref="basic__dir__monitor_8hpp" startline="25">boost::asio::dir_monitor_event::renamed_old_name</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a6e7897ce33ef946254c29b7a9e3ce2c7" compoundref="inotify_2dir__monitor__impl_8hpp" startline="158" endline="163">begin_read</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a41e729bbe8213d6c0ace6f82160fb6b2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string boost::asio::dir_monitor_impl::get_dirname</definition>
+        <argsstring>(int wd)</argsstring>
+        <name>get_dirname</name>
+        <param>
+          <type>int</type>
+          <declname>wd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" line="202" column="17" bodyfile="common/util/include/dir_monitor/inotify/dir_monitor_impl.hpp" bodystart="202" bodyend="207"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab4f1f13e68d91063fe3fb97db0f0ecac" compoundref="inotify_2dir__monitor__impl_8hpp" startline="220">watch_descriptors_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a2b3817676e1d1867b29b94ccdfdf819c" compoundref="inotify_2dir__monitor__impl_8hpp" startline="218">watch_descriptors_mutex_</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" compoundref="inotify_2dir__monitor__impl_8hpp" startline="166" endline="200">end_read</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a2906d0cf9e25d67b4cf6c05113bde1b0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int boost::asio::dir_monitor_impl::init_kqueue</definition>
+        <argsstring>()</argsstring>
+        <name>init_kqueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="225" column="9" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="225" bodyend="235"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aaee31d7d02c83c1cc707a50266d2bd44" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="72" endline="83">throw_system_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1a7a889013c9c273cf5fcf35ef2b2fe2ec" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::scan</definition>
+        <argsstring>(std::string const &amp;dir, dir_entry_map &amp;entries) const</argsstring>
+        <name>scan</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa105086e927c0293039e49b66bbe24f5" kindref="member">dir_entry_map</ref> &amp;</type>
+          <declname>entries</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="237" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="237" bodyend="260"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="116" endline="136">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1aafc2e467883d6a3df9e67d5429925aad" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::compare</definition>
+        <argsstring>(std::string const &amp;dir, dir_entry_map &amp;old_entries, dir_entry_map &amp;new_entries)</argsstring>
+        <name>compare</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa105086e927c0293039e49b66bbe24f5" kindref="member">dir_entry_map</ref> &amp;</type>
+          <declname>old_entries</declname>
+        </param>
+        <param>
+          <type><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa105086e927c0293039e49b66bbe24f5" kindref="member">dir_entry_map</ref> &amp;</type>
+          <declname>new_entries</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="262" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="262" bodyend="305"/>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caae9a8ad02c0c7c8463d743ffdf3249d16" compoundref="basic__dir__monitor_8hpp" startline="22">boost::asio::dir_monitor_event::added</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caadfbb04dbed0897e2aac05a96cf7e1392" compoundref="basic__dir__monitor_8hpp" startline="24">boost::asio::dir_monitor_event::modified</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa1f3230361dbbe664592982bcca34ef5" compoundref="basic__dir__monitor_8hpp" startline="23">boost::asio::dir_monitor_event::removed</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="307" endline="376">work_thread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void boost::asio::dir_monitor_impl::work_thread</definition>
+        <argsstring>()</argsstring>
+        <name>work_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="307" column="10" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="307" bodyend="376"/>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aafc2e467883d6a3df9e67d5429925aad" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="262" endline="305">compare</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="273">dirs_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="272">dirs_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a6cc0c375a4287c5358f1821bdf808f68" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="381">entries_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a766edaad625a215952bc44f19606ba23" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="380">entries_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="275">events_mutex_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="379">kqueue_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="62" endline="68">remove_directory</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="266">run_</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a7a889013c9c273cf5fcf35ef2b2fe2ec" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="237" endline="260">scan</references>
+        <references refid="namespacezmq_1adea7e522720e4ecd0c53d30016d7f3c7" compoundref="zmq_8hpp" startline="716" endline="719">zmq::swap</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="84" endline="101">dir_monitor_impl</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void boost::asio::dir_monitor_impl::fsevents_callback</definition>
+        <argsstring>(ConstFSEventStreamRef streamRef, void *clientCallBackInfo, size_t numEvents, void *eventPaths, const FSEventStreamEventFlags eventFlags[], const FSEventStreamEventId eventIds[])</argsstring>
+        <name>fsevents_callback</name>
+        <param>
+          <type>ConstFSEventStreamRef</type>
+          <declname>streamRef</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>clientCallBackInfo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>numEvents</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>eventPaths</declname>
+        </param>
+        <param>
+          <type>const FSEventStreamEventFlags</type>
+          <declname>eventFlags</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const FSEventStreamEventId</type>
+          <declname>eventIds</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="185" column="17" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="185" bodyend="228"/>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caae9a8ad02c0c7c8463d743ffdf3249d16" compoundref="basic__dir__monitor_8hpp" startline="22">boost::asio::dir_monitor_event::added</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="70" endline="74">already_added_directory</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caadfbb04dbed0897e2aac05a96cf7e1392" compoundref="basic__dir__monitor_8hpp" startline="24">boost::asio::dir_monitor_event::modified</references>
+        <references refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="103" endline="111">pushback_event</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa7b622a5d1e77f42f318a2d39ebae42b" compoundref="basic__dir__monitor_8hpp" startline="30">boost::asio::dir_monitor_event::recursive_rescan</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa1f3230361dbbe664592982bcca34ef5" compoundref="basic__dir__monitor_8hpp" startline="23">boost::asio::dir_monitor_event::removed</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caa327c08c6651880b182876010f3b8e61f" compoundref="basic__dir__monitor_8hpp" startline="26">boost::asio::dir_monitor_event::renamed_new_name</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa299c4ec0ad83ba2feb965cccee64319" compoundref="basic__dir__monitor_8hpp" startline="25">boost::asio::dir_monitor_event::renamed_old_name</references>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" compoundref="fsevents_2dir__monitor__impl_8hpp" startline="125" endline="172">start_fsevents</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classboost_1_1asio_1_1dir__monitor__impl_1aaee31d7d02c83c1cc707a50266d2bd44" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void boost::asio::dir_monitor_impl::throw_system_error</definition>
+        <argsstring>(const char *msg)</argsstring>
+        <name>throw_system_error</name>
+        <param>
+          <type>const char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" line="72" column="17" bodyfile="common/util/include/dir_monitor/kqueue/dir_monitor_impl.hpp" bodystart="72" bodyend="83"/>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="116" endline="136">add_directory</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="171" endline="192">destroy</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="84" endline="101">dir_monitor_impl</referencedby>
+        <referencedby refid="classboost_1_1asio_1_1dir__monitor__impl_1a2906d0cf9e25d67b4cf6c05113bde1b0" compoundref="kqueue_2dir__monitor__impl_8hpp" startline="225" endline="235">init_kqueue</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="29" column="1" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="30" bodyend="278"/>
+    <listofallmembers>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>add_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1abc9835df3079a2e7df21dcbcd87a4830" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>add_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a577cd26afef62fff33baa1a921940199" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>add_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1adb99d1d66d563d5cb5d27e58561e5466" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>add_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>already_added_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a6e7897ce33ef946254c29b7a9e3ce2c7" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>begin_read</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a44963f08942e6ce463718bdd084bd8f7" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>check_sub_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aafc2e467883d6a3df9e67d5429925aad" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>compare</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>destroy</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>destroy</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>destroy</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>destroy</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aa105086e927c0293039e49b66bbe24f5" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dir_entry_map</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dir_monitor_impl</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dir_monitor_impl</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dir_monitor_impl</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dir_monitor_impl</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aa70c4879d133c1fa729488d98d44b9c9" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dir_to_handle_bimap_t</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dirs_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a6414b9a03259f63ea546b9ebac19b359" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dirs_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a5ed7ee15fdd6f9b0bd00348f1402411b" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dirs_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>dirs_mutex_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a16b07362263c9f0bc9bb68efc5d41f7b" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>end_read</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a6cc0c375a4287c5358f1821bdf808f68" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>entries_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a766edaad625a215952bc44f19606ba23" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>entries_mutex_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>events_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>events_cond_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aa812153285ce7ba620a4854512c1bd50" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>events_cond_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>events_mutex_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a5c3004dfe3373b16fad1e1b56f548a16" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>events_mutex_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aaec7682b47b2afda91f9827b26f3752b" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>fd_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>fsevents_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>fsevents_callback</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a41e729bbe8213d6c0ace6f82160fb6b2" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>get_dirname</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a06eef898275370ebe1e9c32dc9c31331" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>init_fd</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a2906d0cf9e25d67b4cf6c05113bde1b0" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>init_kqueue</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a029ee5c95f97a65701d1a5db1b94955e" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>inotify_io_service_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aac92f84ce57e1d0ed6a5fff406690e2e" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>inotify_work_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ac18f91fe40fba78d632b4f5e6083ed89" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>inotify_work_thread_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a833097e708790c24e5a4fd9c033e50" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>kqueue_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ac63495416a0f98967a2fe184b3ebae1a" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>make_array</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aef8daff05eacda78d0c4b840fd03b44a" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>pending_read_buffer_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>popfront_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>popfront_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>popfront_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>popfront_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>pushback_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>pushback_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>pushback_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>pushback_event</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>queue_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a19ca2895910b2ea89b6b7463b782494a" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>read_buffer_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a461b3fb7b45e9eda0c222e5f5c5cbed1" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>remove_all_directories</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>remove_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>remove_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>remove_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a19f62d720c636c758c2241266fc47801" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>remove_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>remove_directory</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>run_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a7a889013c9c273cf5fcf35ef2b2fe2ec" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>scan</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>start_fsevents</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>stop_fsevents</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aff415b1f6b3f17cb9ed4fb5beabaad81" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>stream_descriptor_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1aaee31d7d02c83c1cc707a50266d2bd44" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>throw_system_error</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ab4f1f13e68d91063fe3fb97db0f0ecac" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>watch_descriptors_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a2b3817676e1d1867b29b94ccdfdf819c" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>watch_descriptors_mutex_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a8f06105947e59e05368af6c83813ca04" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>watch_descriptors_t</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>work_thread</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a771b9d9505fa4d15d6796ed77ecd2bf4" prot="private" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>work_thread_ptr_</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>~dir_monitor_impl</name></member>
+      <member refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" prot="public" virt="non-virtual"><scope>boost::asio::dir_monitor_impl</scope><name>~dir_monitor_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

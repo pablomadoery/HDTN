@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTcpAsyncSender" kind="class" language="C++" prot="public">
+    <compoundname>TcpAsyncSender</compoundname>
+    <includes refid="TcpAsyncSender_8h" local="no">TcpAsyncSender.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTcpAsyncSender_1a591e3a8a7bbcae7f63dfeaf6e192e59a" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service&amp; TcpAsyncSender::m_ioServiceRef</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="87" column="30" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1a1c84825cc9a463127f5da43711bc63e0" compoundref="TcpAsyncSender_8cpp" startline="69" endline="71">AsyncSend_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1a28f0b8268562fdb73af43cd70793d7b7" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt;</type>
+        <definition>std::shared_ptr&lt;boost::asio::ip::tcp::socket&gt; TcpAsyncSender::m_tcpSocketPtr</definition>
+        <argsstring></argsstring>
+        <name>m_tcpSocketPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="88" column="21" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</referencedby>
+        <referencedby refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" compoundref="TcpAsyncSender_8cpp" startline="74" endline="98">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1a5f0538e8584d42e059f6058718de5adb" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::unique_ptr&lt; <ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> &gt; &gt;</type>
+        <definition>std::queue&lt;std::unique_ptr&lt;TcpAsyncSenderElement&gt; &gt; TcpAsyncSender::m_queueTcpAsyncSenderElements</definition>
+        <argsstring></argsstring>
+        <name>m_queueTcpAsyncSenderElements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="89" column="16" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</referencedby>
+        <referencedby refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" compoundref="TcpAsyncSender_8cpp" startline="74" endline="98">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1aa10addab19c235ea1d12fcae2b070d3a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; TcpAsyncSender::m_writeInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_writeInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="92" column="17" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</referencedby>
+        <referencedby refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" compoundref="TcpAsyncSender_8cpp" startline="74" endline="98">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1aa75da6d3587e9ab49733e4223cc6be2a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; TcpAsyncSender::m_sendErrorOccurred</definition>
+        <argsstring></argsstring>
+        <name>m_sendErrorOccurred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="93" column="17" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</referencedby>
+        <referencedby refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" compoundref="TcpAsyncSender_8cpp" startline="74" endline="98">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1a4ee2c69799bc4be19f744b52dc47d03d" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref></type>
+        <definition>OnFailedBundleVecSendCallback_t TcpAsyncSender::m_onFailedBundleVecSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleVecSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="95" column="37" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" compoundref="TcpAsyncSender_8cpp" startline="109" endline="116">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classTcpAsyncSender_1a281e9d246703a30ac84b4b5cc2ae5fc9" compoundref="TcpAsyncSender_8cpp" startline="100" endline="102">SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1a4c16e829cfdbe30e33f7a4107bfc28d5" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref></type>
+        <definition>OnFailedBundleZmqSendCallback_t TcpAsyncSender::m_onFailedBundleZmqSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleZmqSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="96" column="37" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" compoundref="TcpAsyncSender_8cpp" startline="109" endline="116">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classTcpAsyncSender_1a120904a273dbe79d4817344cba189dc7" compoundref="TcpAsyncSender_8cpp" startline="103" endline="105">SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpAsyncSender_1a8096b22771499824174a5feb4b143ac9" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpAsyncSender::m_userAssignedUuid</definition>
+        <argsstring></argsstring>
+        <name>m_userAssignedUuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="97" column="14" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" compoundref="TcpAsyncSender_8cpp" startline="109" endline="116">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classTcpAsyncSender_1a49676fc0e85596d3382ff235d529b7e9" compoundref="TcpAsyncSender_8cpp" startline="106" endline="108">SetUserAssignedUuid</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classTcpAsyncSender_1a562710fc279d8abc8001f31912bc2ec7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TcpAsyncSender::TcpAsyncSender</definition>
+        <argsstring>()</argsstring>
+        <name>TcpAsyncSender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="68" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::DoFailedBundleCallback</definition>
+        <argsstring>(std::unique_ptr&lt; TcpAsyncSenderElement &gt; &amp;el)</argsstring>
+        <name>DoFailedBundleCallback</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> &gt; &amp;</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="82" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="109" bodyend="116"/>
+        <references refid="classTcpAsyncSender_1a4ee2c69799bc4be19f744b52dc47d03d" compoundref="TcpAsyncSender_8h" startline="95">m_onFailedBundleVecSendCallback</references>
+        <references refid="classTcpAsyncSender_1a4c16e829cfdbe30e33f7a4107bfc28d5" compoundref="TcpAsyncSender_8h" startline="96">m_onFailedBundleZmqSendCallback</references>
+        <references refid="classTcpAsyncSender_1a8096b22771499824174a5feb4b143ac9" compoundref="TcpAsyncSender_8h" startline="97">m_userAssignedUuid</references>
+        <referencedby refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</referencedby>
+        <referencedby refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" compoundref="TcpAsyncSender_8cpp" startline="74" endline="98">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::HandleTcpSend</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleTcpSend</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="84" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="74" bodyend="98"/>
+        <references refid="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" compoundref="TcpAsyncSender_8cpp" startline="109" endline="116">DoFailedBundleCallback</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classTcpAsyncSender_1a5f0538e8584d42e059f6058718de5adb" compoundref="TcpAsyncSender_8h" startline="89">m_queueTcpAsyncSenderElements</references>
+        <references refid="classTcpAsyncSender_1aa75da6d3587e9ab49733e4223cc6be2a" compoundref="TcpAsyncSender_8h" startline="93">m_sendErrorOccurred</references>
+        <references refid="classTcpAsyncSender_1a28f0b8268562fdb73af43cd70793d7b7" compoundref="TcpAsyncSender_8h" startline="88">m_tcpSocketPtr</references>
+        <references refid="classTcpAsyncSender_1aa10addab19c235ea1d12fcae2b070d3a" compoundref="TcpAsyncSender_8h" startline="92">m_writeInProgress</references>
+        <references refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a334c4a4c42fdb79d7ebc3e73b517e6f8">hdtn::Logger::none</references>
+        <referencedby refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTcpAsyncSender_1affc8aff94498e92cf3a3696dc86a8e49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>TcpAsyncSender::TcpAsyncSender</definition>
+        <argsstring>(std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt; &amp;tcpSocketPtr, boost::asio::io_service &amp;ioServiceRef)</argsstring>
+        <name>TcpAsyncSender</name>
+        <param>
+          <type>std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt; &amp;</type>
+          <declname>tcpSocketPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioServiceRef</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="71" column="22" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1a245ed107cc429f17c719584dcf4c53e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>TcpAsyncSender::~TcpAsyncSender</definition>
+        <argsstring>()</argsstring>
+        <name>~TcpAsyncSender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="73" column="22" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::AsyncSend_NotThreadSafe</definition>
+        <argsstring>(TcpAsyncSenderElement *senderElementNeedingDeleted)</argsstring>
+        <name>AsyncSend_NotThreadSafe</name>
+        <param>
+          <type><ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> *</type>
+          <declname>senderElementNeedingDeleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="75" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="51" bodyend="67"/>
+        <references refid="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" compoundref="TcpAsyncSender_8cpp" startline="109" endline="116">DoFailedBundleCallback</references>
+        <references refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" compoundref="TcpAsyncSender_8cpp" startline="74" endline="98">HandleTcpSend</references>
+        <references refid="classTcpAsyncSender_1a5f0538e8584d42e059f6058718de5adb" compoundref="TcpAsyncSender_8h" startline="89">m_queueTcpAsyncSenderElements</references>
+        <references refid="classTcpAsyncSender_1aa75da6d3587e9ab49733e4223cc6be2a" compoundref="TcpAsyncSender_8h" startline="93">m_sendErrorOccurred</references>
+        <references refid="classTcpAsyncSender_1a28f0b8268562fdb73af43cd70793d7b7" compoundref="TcpAsyncSender_8h" startline="88">m_tcpSocketPtr</references>
+        <references refid="classTcpAsyncSender_1aa10addab19c235ea1d12fcae2b070d3a" compoundref="TcpAsyncSender_8h" startline="92">m_writeInProgress</references>
+        <referencedby refid="classTcpAsyncSender_1a1c84825cc9a463127f5da43711bc63e0" compoundref="TcpAsyncSender_8cpp" startline="69" endline="71">AsyncSend_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1a1c84825cc9a463127f5da43711bc63e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::AsyncSend_ThreadSafe</definition>
+        <argsstring>(TcpAsyncSenderElement *senderElementNeedingDeleted)</argsstring>
+        <name>AsyncSend_ThreadSafe</name>
+        <param>
+          <type><ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> *</type>
+          <declname>senderElementNeedingDeleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="76" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="69" bodyend="71"/>
+        <references refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" compoundref="TcpAsyncSender_8cpp" startline="51" endline="67">AsyncSend_NotThreadSafe</references>
+        <references refid="classTcpAsyncSender_1a591e3a8a7bbcae7f63dfeaf6e192e59a" compoundref="TcpAsyncSender_8h" startline="87">m_ioServiceRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1a281e9d246703a30ac84b4b5cc2ae5fc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::SetOnFailedBundleVecSendCallback</definition>
+        <argsstring>(const OnFailedBundleVecSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleVecSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="78" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="100" bodyend="102"/>
+        <references refid="classTcpAsyncSender_1a4ee2c69799bc4be19f744b52dc47d03d" compoundref="TcpAsyncSender_8h" startline="95">m_onFailedBundleVecSendCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1a120904a273dbe79d4817344cba189dc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::SetOnFailedBundleZmqSendCallback</definition>
+        <argsstring>(const OnFailedBundleZmqSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleZmqSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="79" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="103" bodyend="105"/>
+        <references refid="classTcpAsyncSender_1a4c16e829cfdbe30e33f7a4107bfc28d5" compoundref="TcpAsyncSender_8h" startline="96">m_onFailedBundleZmqSendCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpAsyncSender_1a49676fc0e85596d3382ff235d529b7e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TcpAsyncSender::SetUserAssignedUuid</definition>
+        <argsstring>(uint64_t userAssignedUuid)</argsstring>
+        <name>SetUserAssignedUuid</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>userAssignedUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TcpAsyncSender.h" line="80" column="27" bodyfile="common/util/src/TcpAsyncSender.cpp" bodystart="106" bodyend="108"/>
+        <references refid="classTcpAsyncSender_1a8096b22771499824174a5feb4b143ac9" compoundref="TcpAsyncSender_8h" startline="97">m_userAssignedUuid</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/TcpAsyncSender.h" line="66" column="1" bodyfile="common/util/include/TcpAsyncSender.h" bodystart="66" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classTcpAsyncSender_1af2c047b991ddb36e1fc10e234a716024" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>AsyncSend_NotThreadSafe</name></member>
+      <member refid="classTcpAsyncSender_1a1c84825cc9a463127f5da43711bc63e0" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>AsyncSend_ThreadSafe</name></member>
+      <member refid="classTcpAsyncSender_1a1918625aefab69a2b8d25ed4b26f98d3" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>DoFailedBundleCallback</name></member>
+      <member refid="classTcpAsyncSender_1ae635f1085cc728bb4132980d6b0d5a1d" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>HandleTcpSend</name></member>
+      <member refid="classTcpAsyncSender_1a591e3a8a7bbcae7f63dfeaf6e192e59a" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_ioServiceRef</name></member>
+      <member refid="classTcpAsyncSender_1a4ee2c69799bc4be19f744b52dc47d03d" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_onFailedBundleVecSendCallback</name></member>
+      <member refid="classTcpAsyncSender_1a4c16e829cfdbe30e33f7a4107bfc28d5" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classTcpAsyncSender_1a5f0538e8584d42e059f6058718de5adb" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_queueTcpAsyncSenderElements</name></member>
+      <member refid="classTcpAsyncSender_1aa75da6d3587e9ab49733e4223cc6be2a" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_sendErrorOccurred</name></member>
+      <member refid="classTcpAsyncSender_1a28f0b8268562fdb73af43cd70793d7b7" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_tcpSocketPtr</name></member>
+      <member refid="classTcpAsyncSender_1a8096b22771499824174a5feb4b143ac9" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_userAssignedUuid</name></member>
+      <member refid="classTcpAsyncSender_1aa10addab19c235ea1d12fcae2b070d3a" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>m_writeInProgress</name></member>
+      <member refid="classTcpAsyncSender_1a281e9d246703a30ac84b4b5cc2ae5fc9" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classTcpAsyncSender_1a120904a273dbe79d4817344cba189dc7" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classTcpAsyncSender_1a49676fc0e85596d3382ff235d529b7e9" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classTcpAsyncSender_1a562710fc279d8abc8001f31912bc2ec7" prot="private" virt="non-virtual"><scope>TcpAsyncSender</scope><name>TcpAsyncSender</name></member>
+      <member refid="classTcpAsyncSender_1affc8aff94498e92cf3a3696dc86a8e49" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>TcpAsyncSender</name></member>
+      <member refid="classTcpAsyncSender_1a245ed107cc429f17c719584dcf4c53e8" prot="public" virt="non-virtual"><scope>TcpAsyncSender</scope><name>~TcpAsyncSender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

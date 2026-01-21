@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classDeadlineTimer" kind="class" language="C++" prot="public">
+    <compoundname>DeadlineTimer</compoundname>
+    <includes refid="DeadlineTimer_8h" local="no">DeadlineTimer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDeadlineTimer_1af3b3a9c8caeb9969ff07810b57de3886" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service DeadlineTimer::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="35" column="33" bodyfile="common/util/include/DeadlineTimer.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDeadlineTimer_1a2cc038bbed1082e91e8df2c1ba8907cf" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration DeadlineTimer::m_sleepValTimeDuration</definition>
+        <argsstring></argsstring>
+        <name>m_sleepValTimeDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="36" column="42" bodyfile="common/util/include/DeadlineTimer.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" compoundref="DeadlineTimer_8cpp" startline="16" endline="28">SleepUntilNextInterval</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDeadlineTimer_1ad70bffab132b82769e19c580c822fe34" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer DeadlineTimer::m_deadlineTimer</definition>
+        <argsstring></argsstring>
+        <name>m_deadlineTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="37" column="37" bodyfile="common/util/include/DeadlineTimer.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classDeadlineTimer_1a655a10685e2f4c335e29c523890a6cab" compoundref="DeadlineTimer_8cpp" startline="30" endline="37">Cancel</referencedby>
+        <referencedby refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" compoundref="DeadlineTimer_8cpp" startline="16" endline="28">SleepUntilNextInterval</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDeadlineTimer_1a5736f6bade549795f8871ad0413fab78" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; DeadlineTimer::m_enabled</definition>
+        <argsstring></argsstring>
+        <name>m_enabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="38" column="21" bodyfile="common/util/include/DeadlineTimer.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classDeadlineTimer_1a259ce40a448bce6b3f3155dbee14ecde" compoundref="DeadlineTimer_8cpp" startline="38" endline="40">Disable</referencedby>
+        <referencedby refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" compoundref="DeadlineTimer_8cpp" startline="16" endline="28">SleepUntilNextInterval</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDeadlineTimer_1ac81f283c6c5d63441dd7e29c22431cd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>DeadlineTimer::DeadlineTimer</definition>
+        <argsstring>(unsigned int intervalMs)</argsstring>
+        <name>DeadlineTimer</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>intervalMs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="28" column="26" bodyfile="common/util/src/DeadlineTimer.cpp" bodystart="8" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool DeadlineTimer::SleepUntilNextInterval</definition>
+        <argsstring>()</argsstring>
+        <name>SleepUntilNextInterval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="29" column="31" bodyfile="common/util/src/DeadlineTimer.cpp" bodystart="16" bodyend="28"/>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classDeadlineTimer_1ad70bffab132b82769e19c580c822fe34" compoundref="DeadlineTimer_8h" startline="37">m_deadlineTimer</references>
+        <references refid="classDeadlineTimer_1a5736f6bade549795f8871ad0413fab78" compoundref="DeadlineTimer_8h" startline="38">m_enabled</references>
+        <references refid="classDeadlineTimer_1a2cc038bbed1082e91e8df2c1ba8907cf" compoundref="DeadlineTimer_8h" startline="36">m_sleepValTimeDuration</references>
+        <references refid="DeadlineTimer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DeadlineTimer_8cpp" startline="6">subprocess</references>
+        <referencedby refid="TestDeadlineTimer_8cpp_1a11ef71ebf5867faa18597d6a8f3f7ac5" compoundref="TestDeadlineTimer_8cpp" startline="7" endline="25">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDeadlineTimer_1a655a10685e2f4c335e29c523890a6cab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void DeadlineTimer::Cancel</definition>
+        <argsstring>()</argsstring>
+        <name>Cancel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="30" column="31" bodyfile="common/util/src/DeadlineTimer.cpp" bodystart="30" bodyend="37"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classDeadlineTimer_1ad70bffab132b82769e19c580c822fe34" compoundref="DeadlineTimer_8h" startline="37">m_deadlineTimer</references>
+        <references refid="DeadlineTimer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DeadlineTimer_8cpp" startline="6">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classDeadlineTimer_1a259ce40a448bce6b3f3155dbee14ecde" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void DeadlineTimer::Disable</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>Disable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="31" column="31" bodyfile="common/util/src/DeadlineTimer.cpp" bodystart="38" bodyend="40"/>
+        <references refid="classDeadlineTimer_1a5736f6bade549795f8871ad0413fab78" compoundref="DeadlineTimer_8h" startline="38">m_enabled</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDeadlineTimer_1a1ab17050e0f81d7f0dbf86ce3de62a7c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DeadlineTimer::DeadlineTimer</definition>
+        <argsstring>()=delete</argsstring>
+        <name>DeadlineTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DeadlineTimer.h" line="34" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/DeadlineTimer.h" line="25" column="1" bodyfile="common/util/include/DeadlineTimer.h" bodystart="26" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classDeadlineTimer_1a655a10685e2f4c335e29c523890a6cab" prot="public" virt="non-virtual"><scope>DeadlineTimer</scope><name>Cancel</name></member>
+      <member refid="classDeadlineTimer_1ac81f283c6c5d63441dd7e29c22431cd8" prot="public" virt="non-virtual"><scope>DeadlineTimer</scope><name>DeadlineTimer</name></member>
+      <member refid="classDeadlineTimer_1a1ab17050e0f81d7f0dbf86ce3de62a7c" prot="private" virt="non-virtual"><scope>DeadlineTimer</scope><name>DeadlineTimer</name></member>
+      <member refid="classDeadlineTimer_1a259ce40a448bce6b3f3155dbee14ecde" prot="public" virt="non-virtual"><scope>DeadlineTimer</scope><name>Disable</name></member>
+      <member refid="classDeadlineTimer_1ad70bffab132b82769e19c580c822fe34" prot="private" virt="non-virtual"><scope>DeadlineTimer</scope><name>m_deadlineTimer</name></member>
+      <member refid="classDeadlineTimer_1a5736f6bade549795f8871ad0413fab78" prot="private" virt="non-virtual"><scope>DeadlineTimer</scope><name>m_enabled</name></member>
+      <member refid="classDeadlineTimer_1af3b3a9c8caeb9969ff07810b57de3886" prot="private" virt="non-virtual"><scope>DeadlineTimer</scope><name>m_ioService</name></member>
+      <member refid="classDeadlineTimer_1a2cc038bbed1082e91e8df2c1ba8907cf" prot="private" virt="non-virtual"><scope>DeadlineTimer</scope><name>m_sleepValTimeDuration</name></member>
+      <member refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" prot="public" virt="non-virtual"><scope>DeadlineTimer</scope><name>SleepUntilNextInterval</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

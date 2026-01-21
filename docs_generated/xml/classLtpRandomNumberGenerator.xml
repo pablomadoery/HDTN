@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpRandomNumberGenerator" kind="class" language="C++" prot="public">
+    <compoundname>LtpRandomNumberGenerator</compoundname>
+    <includes refid="LtpRandomNumberGenerator_8h" local="no">LtpRandomNumberGenerator.h</includes>
+    <innerclass refid="classLtpRandomNumberGenerator_1_1Rng" prot="public">LtpRandomNumberGenerator::Rng</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" prot="private" static="no" mutable="no">
+        <type><ref refid="classLtpRandomNumberGenerator_1_1Rng" kindref="compound">Rng</ref></type>
+        <definition>Rng LtpRandomNumberGenerator::m_rng</definition>
+        <argsstring></argsstring>
+        <name>m_rng</name>
+        <briefdescription>
+<para>The LTP (hybrid pseudo and hardware) random number generator (containing state info). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="156" column="9" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="156" bodyend="-1"/>
+        <referencedby refid="classLtpRandomNumberGenerator_1aec9c86590ba80db50b0dd366108797d1" compoundref="LtpRandomNumberGenerator_8cpp" startline="203" endline="205">GetInternalRngRef</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a0e2d149fb326ed15bffa4a5d9451f0ea" compoundref="LtpRandomNumberGenerator_8cpp" startline="189" endline="195">GetRandomSerialNumber32</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a3bffda826841b75f8985cfeb69104c0b" compoundref="LtpRandomNumberGenerator_8cpp" startline="143" endline="149">GetRandomSerialNumber64</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1adb3b315615bc03ab57a1df81d59b0fd1" compoundref="LtpRandomNumberGenerator_8cpp" startline="157" endline="173">GetRandomSession32</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a0f6d0f3c422b758fd667a8dd9724cadb" compoundref="LtpRandomNumberGenerator_8cpp" startline="111" endline="128">GetRandomSession64</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1a81ee541b17be3d33cee77f95276599b0" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t LtpRandomNumberGenerator::m_birthdayParadoxPreventer_incrementalPart_U32</definition>
+        <argsstring></argsstring>
+        <name>m_birthdayParadoxPreventer_incrementalPart_U32</name>
+        <briefdescription>
+<para>Circular birthday paradox prevention value, stays in range [1, 2^21 - 1] for 32-bit session numbers, and [1, 2^24 - 1] for 64-bit session numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="158" column="14" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="158" bodyend="-1"/>
+        <referencedby refid="classLtpRandomNumberGenerator_1a37b57ba0e767bd129bfcef26f5ac06b0" compoundref="LtpRandomNumberGenerator_8cpp" startline="206" endline="208">GetInternalBirthdayParadoxRef</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1adb3b315615bc03ab57a1df81d59b0fd1" compoundref="LtpRandomNumberGenerator_8cpp" startline="157" endline="173">GetRandomSession32</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a0f6d0f3c422b758fd667a8dd9724cadb" compoundref="LtpRandomNumberGenerator_8cpp" startline="111" endline="128">GetRandomSession64</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t LtpRandomNumberGenerator::m_engineIndex</definition>
+        <argsstring></argsstring>
+        <name>m_engineIndex</name>
+        <briefdescription>
+<para>Engine index, encoded into the upper portion of a session number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="160" column="13" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="160" bodyend="-1"/>
+        <referencedby refid="classLtpRandomNumberGenerator_1aff463f95089e6ae1accdcf6253c0415d" compoundref="LtpRandomNumberGenerator_8cpp" startline="200" endline="202">GetEngineIndex</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a24a9078495f8bc4cfa965dbd5c40f231" compoundref="LtpRandomNumberGenerator_8cpp" startline="179" endline="183">GetPingSession32</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a8d350e2e011c273997c69e306afd9cce" compoundref="LtpRandomNumberGenerator_8cpp" startline="133" endline="137">GetPingSession64</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1adb3b315615bc03ab57a1df81d59b0fd1" compoundref="LtpRandomNumberGenerator_8cpp" startline="157" endline="173">GetRandomSession32</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1a0f6d0f3c422b758fd667a8dd9724cadb" compoundref="LtpRandomNumberGenerator_8cpp" startline="111" endline="128">GetRandomSession64</referencedby>
+        <referencedby refid="classLtpRandomNumberGenerator_1ab7e8b241cccaf423d11973255a247546" compoundref="LtpRandomNumberGenerator_8cpp" startline="197" endline="199">SetEngineIndex</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a2b1f176a752fb02881047ae1c9adec8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpRandomNumberGenerator::LtpRandomNumberGenerator</definition>
+        <argsstring>()</argsstring>
+        <name>LtpRandomNumberGenerator</name>
+        <briefdescription>
+<para>Start birthday paradox prevention value from 1. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="59" column="20" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a0f6d0f3c422b758fd667a8dd9724cadb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::GetRandomSession64</definition>
+        <argsstring>()</argsstring>
+        <name>GetRandomSession64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a hardware-generated random 64-bit session number.</para>
+<para><itemizedlist>
+<listitem><para>bits 63..61 (3 bits): Engine index. (never 0, starts at 1)</para>
+</listitem><listitem><para>bit 60 (1 bit): Set to 0 to leave room for incrementing without rolling into the engine index.</para>
+</listitem><listitem><para>bits 59..24 (36 bits): Random part.</para>
+</listitem><listitem><para>bits 23..0 (24 bits): Birthday paradox prevention part, stays in range <ulink url="i.e. [1, 2^24 - 1]">1, 16777215</ulink>. <simplesect kind="return"><para>The random 64-bit session number. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="69" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="111" bodyend="128"/>
+        <references refid="classLtpRandomNumberGenerator_1a81ee541b17be3d33cee77f95276599b0" compoundref="LtpRandomNumberGenerator_8h" startline="158">m_birthdayParadoxPreventer_incrementalPart_U32</references>
+        <references refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" compoundref="LtpRandomNumberGenerator_8h" startline="160">m_engineIndex</references>
+        <references refid="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" compoundref="LtpRandomNumberGenerator_8h" startline="156">m_rng</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a59ca6572b13b413f46a086b67a42ab73" compoundref="LtpEngine_8cpp" startline="874" endline="912">LtpEngine::DoTransmissionRequest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a8d350e2e011c273997c69e306afd9cce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::GetPingSession64</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPingSession64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get 64-bit ping session number.</para>
+<para><itemizedlist>
+<listitem><para>bits 63..56 (8 bits): Engine index.</para>
+</listitem><listitem><para>bits 55..0 (56 bits): Set to 0xffffff for reserved number denoting ping. <simplesect kind="return"><para>The 64-bit ping session number. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="77" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="133" bodyend="137"/>
+        <references refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" compoundref="LtpRandomNumberGenerator_8h" startline="160">m_engineIndex</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a19ffc0a88adc0bff38f30e61a6c3f724" compoundref="LtpEngine_8cpp" startline="1599" endline="1702">LtpEngine::OnHousekeeping_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a3bffda826841b75f8985cfeb69104c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::GetRandomSerialNumber64</definition>
+        <argsstring>()</argsstring>
+        <name>GetRandomSerialNumber64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a hardware-generated random 64-bit serial number.</para>
+<para><itemizedlist>
+<listitem><para>bit 63 (1 bit): Set to 0 to leave room for incrementing without rolling back around to zero.</para>
+</listitem><listitem><para>bits 62..16 (47 bits): Random part.</para>
+</listitem><listitem><para>bits 15..0 (16 bits): Set to 1 for incrementing ltp serial numbers by 1 (never want a serial number to be 0). <simplesect kind="return"><para>The random 64-bit serial number. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="86" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="143" bodyend="149"/>
+        <references refid="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" compoundref="LtpRandomNumberGenerator_8h" startline="156">m_rng</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a2a0acd32a99c179e39419dbc2e6a280b" compoundref="LtpEngine_8cpp" startline="1382" endline="1469">LtpEngine::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1a59ca6572b13b413f46a086b67a42ab73" compoundref="LtpEngine_8cpp" startline="874" endline="912">LtpEngine::DoTransmissionRequest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1adb3b315615bc03ab57a1df81d59b0fd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint32_t</type>
+        <definition>uint32_t LtpRandomNumberGenerator::GetRandomSession32</definition>
+        <argsstring>()</argsstring>
+        <name>GetRandomSession32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a hardware-generated random 32-bit session number.</para>
+<para><itemizedlist>
+<listitem><para>bits 31..29 (3 bits): Engine index.</para>
+</listitem><listitem><para>bit 28 (1 bit): Set to 0 to leave room for incrementing without rolling into the engine index.</para>
+</listitem><listitem><para>bits 27..21 (7 bits): Random part.</para>
+</listitem><listitem><para>bits 20..0 (21 bits): Birthday paradox prevention part, stays in range <ulink url="i.e. [1, 2^21 - 1]">1, 2097151</ulink>. <simplesect kind="return"><para>The random 32-bit session number. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="96" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="157" bodyend="173"/>
+        <references refid="classLtpRandomNumberGenerator_1a81ee541b17be3d33cee77f95276599b0" compoundref="LtpRandomNumberGenerator_8h" startline="158">m_birthdayParadoxPreventer_incrementalPart_U32</references>
+        <references refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" compoundref="LtpRandomNumberGenerator_8h" startline="160">m_engineIndex</references>
+        <references refid="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" compoundref="LtpRandomNumberGenerator_8h" startline="156">m_rng</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a59ca6572b13b413f46a086b67a42ab73" compoundref="LtpEngine_8cpp" startline="874" endline="912">LtpEngine::DoTransmissionRequest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a24a9078495f8bc4cfa965dbd5c40f231" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint32_t</type>
+        <definition>uint32_t LtpRandomNumberGenerator::GetPingSession32</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPingSession32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get 32-bit ping session number.</para>
+<para><itemizedlist>
+<listitem><para>bits 31..24 (8 bits): Engine index.</para>
+</listitem><listitem><para>bits 23..0 (24 bits): Set to 0xffffff for reserved number denoting ping. <simplesect kind="return"><para>The 32-bit ping session number. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="104" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="179" bodyend="183"/>
+        <references refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" compoundref="LtpRandomNumberGenerator_8h" startline="160">m_engineIndex</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a19ffc0a88adc0bff38f30e61a6c3f724" compoundref="LtpEngine_8cpp" startline="1599" endline="1702">LtpEngine::OnHousekeeping_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a0e2d149fb326ed15bffa4a5d9451f0ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint32_t</type>
+        <definition>uint32_t LtpRandomNumberGenerator::GetRandomSerialNumber32</definition>
+        <argsstring>()</argsstring>
+        <name>GetRandomSerialNumber32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a hardware-generated random 32-bit serial number.</para>
+<para><itemizedlist>
+<listitem><para>bit 31 (1 bit): Set to 0 to leave room for incrementing without rolling back around to zero.</para>
+</listitem><listitem><para>bits 30..16 (15 bits): Random part.</para>
+</listitem><listitem><para>bits 15..0 (16 bits): Set to 1 for incrementing ltp serial numbers by 1 (never want a serial number to be 0). <simplesect kind="return"><para>The random 32-bit serial number. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="113" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="189" bodyend="195"/>
+        <references refid="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" compoundref="LtpRandomNumberGenerator_8h" startline="156">m_rng</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a2a0acd32a99c179e39419dbc2e6a280b" compoundref="LtpEngine_8cpp" startline="1382" endline="1469">LtpEngine::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1a59ca6572b13b413f46a086b67a42ab73" compoundref="LtpEngine_8cpp" startline="874" endline="912">LtpEngine::DoTransmissionRequest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1ab7e8b241cccaf423d11973255a247546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpRandomNumberGenerator::SetEngineIndex</definition>
+        <argsstring>(const uint8_t engineIndex)</argsstring>
+        <name>SetEngineIndex</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>engineIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the engine index.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>engineIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The engine index to set, must be in range [1, 7]. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="119" column="25" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="197" bodyend="199"/>
+        <references refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" compoundref="LtpRandomNumberGenerator_8h" startline="160">m_engineIndex</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1aff463f95089e6ae1accdcf6253c0415d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint8_t</type>
+        <definition>uint8_t LtpRandomNumberGenerator::GetEngineIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>GetEngineIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the engine index.</para>
+<para><simplesect kind="return"><para>The engine index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="125" column="28" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="200" bodyend="202"/>
+        <references refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" compoundref="LtpRandomNumberGenerator_8h" startline="160">m_engineIndex</references>
+        <referencedby refid="classLtpEngine_1a91161ddb66cf94e6803426cedf8947fa" compoundref="LtpEngine_8cpp" startline="344" endline="346">LtpEngine::GetEngineIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1aec9c86590ba80db50b0dd366108797d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT <ref refid="classLtpRandomNumberGenerator_1_1Rng" kindref="compound">Rng</ref> &amp;</type>
+        <definition>LtpRandomNumberGenerator::Rng &amp; LtpRandomNumberGenerator::GetInternalRngRef</definition>
+        <argsstring>()</argsstring>
+        <name>GetInternalRngRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the LTP (hybrid pseudo and hardware) random number generator (containing state info).</para>
+<para><simplesect kind="return"><para>The LTP (hybrid pseudo and hardware) random number generator (containing state info). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="131" column="24" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="203" bodyend="205"/>
+        <references refid="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" compoundref="LtpRandomNumberGenerator_8h" startline="156">m_rng</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a37b57ba0e767bd129bfcef26f5ac06b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint32_t &amp;</type>
+        <definition>uint32_t &amp; LtpRandomNumberGenerator::GetInternalBirthdayParadoxRef</definition>
+        <argsstring>()</argsstring>
+        <name>GetInternalBirthdayParadoxRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the Circular birthday paradox prevention value for unit testing.</para>
+<para><simplesect kind="return"><para>The Circular birthday paradox prevention value by reference. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="137" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="206" bodyend="208"/>
+        <references refid="classLtpRandomNumberGenerator_1a81ee541b17be3d33cee77f95276599b0" compoundref="LtpRandomNumberGenerator_8h" startline="158">m_birthdayParadoxPreventer_incrementalPart_U32</references>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a962eee701e277cbc7e5676a68064137d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint8_t</type>
+        <definition>uint8_t LtpRandomNumberGenerator::GetEngineIndexFromRandomSessionNumber</definition>
+        <argsstring>(uint64_t randomSessionNumber)</argsstring>
+        <name>GetEngineIndexFromRandomSessionNumber</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>randomSessionNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the engine index part of a random session number.</para>
+<para>Assumes the number engine index resides in the top 8 bits, typically generated by <ref refid="classLtpRandomNumberGenerator_1a0f6d0f3c422b758fd667a8dd9724cadb" kindref="member">LtpRandomNumberGenerator::GetRandomSession64()</ref> or the 32-bit variant. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>randomSessionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The random session number to parse. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The engine index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="145" column="35" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="209" bodyend="214"/>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">LtpUdpEngineManager::HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a120bb1dfb97cb935e2f510f08ca85e4b" compoundref="LtpIpcEngine_8cpp" startline="318" endline="377">LtpIpcEngine::VerifyIpcPacketReceive</referencedby>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1af6de3663ff93e1f1b33ab04331ed0716" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="237" endline="296">LtpEncapLocalStreamEngine::VerifyLtpPacketReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1a05e247cde0a867ae0ca2c15f11445ef8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpRandomNumberGenerator::IsPingSession</definition>
+        <argsstring>(const uint64_t sessionNumber, const bool is32Bit)</argsstring>
+        <name>IsPingSession</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>sessionNumber</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>is32Bit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query whether the given session number denotes a ping session.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sessionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The session number to check. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is32Bit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the session number is 32-bit. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the given session number denotes a ping session. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="153" column="32" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="215" bodyend="224"/>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1af37d8503f0f53121ca47c814178ade36" compoundref="LtpEngine_8cpp" startline="1124" endline="1189">LtpEngine::CancelAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1a0b02d328adf04ed92e2126736c44c201" compoundref="LtpEngine_8cpp" startline="1191" endline="1228">LtpEngine::CancelSegmentTimerExpiredCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>LtpRandomNumberGenerator::Rng</label>
+        <link refid="classLtpRandomNumberGenerator_1_1Rng"/>
+      </node>
+      <node id="1">
+        <label>LtpRandomNumberGenerator</label>
+        <link refid="classLtpRandomNumberGenerator"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="32" column="1" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="32" bodyend="161"/>
+    <listofallmembers>
+      <member refid="classLtpRandomNumberGenerator_1aff463f95089e6ae1accdcf6253c0415d" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetEngineIndex</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a962eee701e277cbc7e5676a68064137d" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetEngineIndexFromRandomSessionNumber</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a37b57ba0e767bd129bfcef26f5ac06b0" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetInternalBirthdayParadoxRef</name></member>
+      <member refid="classLtpRandomNumberGenerator_1aec9c86590ba80db50b0dd366108797d1" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetInternalRngRef</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a24a9078495f8bc4cfa965dbd5c40f231" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetPingSession32</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a8d350e2e011c273997c69e306afd9cce" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetPingSession64</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a0e2d149fb326ed15bffa4a5d9451f0ea" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetRandomSerialNumber32</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a3bffda826841b75f8985cfeb69104c0b" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetRandomSerialNumber64</name></member>
+      <member refid="classLtpRandomNumberGenerator_1adb3b315615bc03ab57a1df81d59b0fd1" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetRandomSession32</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a0f6d0f3c422b758fd667a8dd9724cadb" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>GetRandomSession64</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a05e247cde0a867ae0ca2c15f11445ef8" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>IsPingSession</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a2b1f176a752fb02881047ae1c9adec8d" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>LtpRandomNumberGenerator</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a81ee541b17be3d33cee77f95276599b0" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>m_birthdayParadoxPreventer_incrementalPart_U32</name></member>
+      <member refid="classLtpRandomNumberGenerator_1aacc53a5b64a635077ccab4c1a878fe86" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>m_engineIndex</name></member>
+      <member refid="classLtpRandomNumberGenerator_1a6e90399a85c2d713e1c72d1681eeb4d9" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>m_rng</name></member>
+      <member refid="classLtpRandomNumberGenerator_1ab7e8b241cccaf423d11973255a247546" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator</scope><name>SetEngineIndex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

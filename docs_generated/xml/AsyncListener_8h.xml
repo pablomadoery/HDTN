@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="AsyncListener_8h" kind="file" language="C++">
+    <compoundname>AsyncListener.h</compoundname>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">boost/process.hpp</includes>
+    <includes local="no">boost/smart_ptr/make_unique.hpp</includes>
+    <includes local="no">boost/thread/thread.hpp</includes>
+    <includedby refid="GStreamerAppSrcOutduct_8h" local="yes">common/streaming/BpOutduct/include/GStreamerAppSrcOutduct.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>boost/thread/thread.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/smart_ptr/make_unique.hpp</label>
+      </node>
+      <node id="2">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/streaming/include/AsyncListener.h</label>
+        <link refid="AsyncListener_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/process.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>common/streaming/BpOutduct/src/GStreamerAppSrcOutduct.cpp</label>
+        <link refid="GStreamerAppSrcOutduct_8cpp"/>
+      </node>
+      <node id="7">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp</label>
+        <link refid="BpReceiveStream_8cpp"/>
+      </node>
+      <node id="3">
+        <label>common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h</label>
+        <link refid="BpReceiveStream_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamRunner.cpp</label>
+        <link refid="BpReceiveStreamRunner_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</label>
+        <link refid="BpReceiveStreamMain_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/streaming/BpOutduct/include/GStreamerAppSrcOutduct.h</label>
+        <link refid="GStreamerAppSrcOutduct_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>common/streaming/include/AsyncListener.h</label>
+        <link refid="AsyncListener_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>common/bpcodec/apps/BpReceiveStream/include/BpReceiveStreamRunner.h</label>
+        <link refid="BpReceiveStreamRunner_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classAsyncListener" prot="public">AsyncListener</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THIS<sp/>IS<sp/>NOT<sp/>THREAD<sp/>SAFE<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/process.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/smart_ptr/make_unique.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight></codeline>
+<codeline lineno="22" refid="classAsyncListener" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAsyncListener" kindref="compound">AsyncListener</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAsyncListener_1afb343d333420ce24313c1a03f0aa4a80" kindref="member">AsyncListener</ref>(T<sp/>&amp;queue,<sp/>boost::posix_time::time_duration<sp/>timeout);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAsyncListener_1acf356bed5186869eb4d8667a0950ebb4" kindref="member">~AsyncListener</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1a550f75ef2b3b80b7cb445941601bc57b" kindref="member">TryWaitForIncomingDataAvailable</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1a8882d3ff965e15d7d18e944cdeb2996e" kindref="member">Lock</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1ae3d93eb48cc321c221a011f14cd42842" kindref="member">Unlock</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1a60f1058285a0dbb5ab1fa7331c6606fa" kindref="member">Notify</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1acb4782fe077b66ee7ef216c5e5bcf4c0" kindref="member">PopFront</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classAsyncListener_1a5c19a74552ccb79d627913ad094d9db7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>&amp;<ref refid="classAsyncListener_1a5c19a74552ccb79d627913ad094d9db7" kindref="member">m_queue</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="classAsyncListener_1abd62a2cc49376846f0a36f63a8a9d833" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/><ref refid="classAsyncListener_1abd62a2cc49376846f0a36f63a8a9d833" kindref="member">m_mux</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classAsyncListener_1a36c30a8ed974f5b8b25744bf1c3aa30d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::condition_variable<sp/><ref refid="classAsyncListener_1a36c30a8ed974f5b8b25744bf1c3aa30d" kindref="member">m_cv</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43" refid="classAsyncListener_1ac228f1595b95946b137ab1348bd60607" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::posix_time::time_duration<sp/><ref refid="classAsyncListener_1ac228f1595b95946b137ab1348bd60607" kindref="member">m_timeout</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="49" refid="classAsyncListener_1afb343d333420ce24313c1a03f0aa4a80" refkind="member"><highlight class="normal"><ref refid="classAsyncListener_1afb343d333420ce24313c1a03f0aa4a80" kindref="member">AsyncListener&lt;T&gt;::AsyncListener</ref>(T<sp/>&amp;queue,<sp/>boost::posix_time::time_duration<sp/>timeout)<sp/>:<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>m_queue(queue),<sp/>m_timeout(timeout)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="55" refid="classAsyncListener_1acf356bed5186869eb4d8667a0950ebb4" refkind="member"><highlight class="normal"><ref refid="classAsyncListener_1acf356bed5186869eb4d8667a0950ebb4" kindref="member">AsyncListener&lt;T&gt;::~AsyncListener</ref>()</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="65" refid="classAsyncListener_1a550f75ef2b3b80b7cb445941601bc57b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1a550f75ef2b3b80b7cb445941601bc57b" kindref="member">AsyncListener&lt;T&gt;::TryWaitForIncomingDataAvailable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex::scoped_lock<sp/>lock(m_mux);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_queue.empty())<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cv.timed_wait(lock,<sp/>m_timeout);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!m_queue.empty();<sp/></highlight><highlight class="comment">//true<sp/>=&gt;<sp/>data<sp/>available,<sp/>false<sp/>=&gt;<sp/>data<sp/>not<sp/>avaiable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="76" refid="classAsyncListener_1acb4782fe077b66ee7ef216c5e5bcf4c0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1acb4782fe077b66ee7ef216c5e5bcf4c0" kindref="member">AsyncListener&lt;T&gt;::PopFront</ref>()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>m_queue.pop_front();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="84" refid="classAsyncListener_1a8882d3ff965e15d7d18e944cdeb2996e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1a8882d3ff965e15d7d18e944cdeb2996e" kindref="member">AsyncListener&lt;T&gt;::Lock</ref>()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mux.lock();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="90" refid="classAsyncListener_1ae3d93eb48cc321c221a011f14cd42842" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1ae3d93eb48cc321c221a011f14cd42842" kindref="member">AsyncListener&lt;T&gt;::Unlock</ref>()</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mux.unlock();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="96" refid="classAsyncListener_1a60f1058285a0dbb5ab1fa7331c6606fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAsyncListener_1a60f1058285a0dbb5ab1fa7331c6606fa" kindref="member">AsyncListener&lt;T&gt;::Notify</ref>()</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cv.notify_one();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/streaming/include/AsyncListener.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpReceiveStream" kind="class" language="C++" prot="public">
+    <compoundname>BpReceiveStream</compoundname>
+    <basecompoundref refid="classBpSinkPattern" prot="public" virt="non-virtual">BpSinkPattern</basecompoundref>
+    <includes refid="BpReceiveStream_8h" local="no">BpReceiveStream.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpReceiveStream_1af5b18ea2a919a91ff5c4f0293c152c8f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpReceiveStream::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="55" column="17" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" prot="private" static="no" mutable="no">
+        <type>boost::circular_buffer&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt;</type>
+        <definition>boost::circular_buffer&lt;padded_vector_uint8_t&gt; BpReceiveStream::m_incomingBundleQueue</definition>
+        <argsstring></argsstring>
+        <name>m_incomingBundleQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="58" column="28" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+        <referencedby refid="classBpReceiveStream_1a57e58c7f702154d4bd76403fce00ef83" compoundref="BpReceiveStream_8cpp" startline="138" endline="150">ProcessPayload</referencedby>
+        <referencedby refid="classBpReceiveStream_1a54a105fc26b749d3b4052076f69db54b" compoundref="BpReceiveStream_8cpp" startline="152" endline="160">TryWaitForIncomingDataAvailable</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1adc77c0b8ce33428400bad60436c3bda5" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t BpReceiveStream::m_numCircularBufferVectors</definition>
+        <argsstring></argsstring>
+        <name>m_numCircularBufferVectors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="59" column="12" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a13eb02a2d796bf0cd507a0fbe9b25f38" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpReceiveStream::m_outgoingRtpHostname</definition>
+        <argsstring></argsstring>
+        <name>m_outgoingRtpHostname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="62" column="17" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1acc7dff8732623c77f55e9db0cb909d85" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t BpReceiveStream::m_outgoingRtpPort</definition>
+        <argsstring></argsstring>
+        <name>m_outgoingRtpPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="63" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1aa921097f8ada6dd15076905fc6e9f769" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t BpReceiveStream::m_maxOutgoingRtpPacketSizeBytes</definition>
+        <argsstring></argsstring>
+        <name>m_maxOutgoingRtpPacketSizeBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="64" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a48334495e5188e0b7a24f1b7c6a2fa5d" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t BpReceiveStream::m_maxOutgoingRtpPayloadSizeBytes</definition>
+        <argsstring></argsstring>
+        <name>m_maxOutgoingRtpPayloadSizeBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="65" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a552a0bcd8b76930ac4a8a38023810bbb" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service BpReceiveStream::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="68" column="25" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1abd6e7fdc1d33d79860d68ef44240bf2a" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::socket</type>
+        <definition>boost::asio::ip::udp::socket BpReceiveStream::socket</definition>
+        <argsstring></argsstring>
+        <name>socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="69" column="34" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+        <referencedby refid="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" compoundref="BpReceiveStream_8cpp" startline="162" endline="168">SendUdpPacket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a38d58100f76e6bb069c7e6bc138ff4a6" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint BpReceiveStream::m_udpEndpoint</definition>
+        <argsstring></argsstring>
+        <name>m_udpEndpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="70" column="36" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+        <referencedby refid="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" compoundref="BpReceiveStream_8cpp" startline="162" endline="168">SendUdpPacket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1aa98714b1fd8cac1810e938e06519e98a" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpReceiveStream::m_sentPacketsMutex</definition>
+        <argsstring></argsstring>
+        <name>m_sentPacketsMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="71" column="18" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1af8b8642c03444c7bc89624a455f0f346" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpReceiveStream::m_cvSentPacket</definition>
+        <argsstring></argsstring>
+        <name>m_cvSentPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="72" column="31" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1aa3f503d371f1dffbadb55a27a86fcdcf" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t BpReceiveStream::m_outductType</definition>
+        <argsstring></argsstring>
+        <name>m_outductType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="75" column="13" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1ad208d0954178eeab6a8c953773658db3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classGStreamerAppSrcOutduct" kindref="compound">GStreamerAppSrcOutduct</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GStreamerAppSrcOutduct&gt; BpReceiveStream::m_gstreamerAppSrcOutductPtr</definition>
+        <argsstring></argsstring>
+        <name>m_gstreamerAppSrcOutductPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="76" column="21" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a45d97c82e4beab2ba715327e2e3f97a8" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpReceiveStream::m_incomingQueueCv</definition>
+        <argsstring></argsstring>
+        <name>m_incomingQueueCv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="79" column="31" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a57e58c7f702154d4bd76403fce00ef83" compoundref="BpReceiveStream_8cpp" startline="138" endline="150">ProcessPayload</referencedby>
+        <referencedby refid="classBpReceiveStream_1a54a105fc26b749d3b4052076f69db54b" compoundref="BpReceiveStream_8cpp" startline="152" endline="160">TryWaitForIncomingDataAvailable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a8ffcbcc57f368274444cdc81633c2c49" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpReceiveStream::m_incomingQueueMutex</definition>
+        <argsstring></argsstring>
+        <name>m_incomingQueueMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="80" column="18" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+        <referencedby refid="classBpReceiveStream_1a57e58c7f702154d4bd76403fce00ef83" compoundref="BpReceiveStream_8cpp" startline="138" endline="150">ProcessPayload</referencedby>
+        <referencedby refid="classBpReceiveStream_1a54a105fc26b749d3b4052076f69db54b" compoundref="BpReceiveStream_8cpp" startline="152" endline="160">TryWaitForIncomingDataAvailable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a339a67983af0368f7530f8003f1dad5e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpReceiveStream::m_processingThread</definition>
+        <argsstring></argsstring>
+        <name>m_processingThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="81" column="21" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a979501a7cb2760b54e7cf4c06dc9a4dc" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpReceiveStream::m_totalRtpPacketsReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalRtpPacketsReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="84" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1a0c6cb9ba1a1313660393bf0fce0eeb1a" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpReceiveStream::m_totalRtpPacketsSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalRtpPacketsSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="85" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" compoundref="BpReceiveStream_8cpp" startline="162" endline="168">SendUdpPacket</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1acb43e517d4dc264835775503ad009272" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpReceiveStream::m_totalRtpPacketsFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalRtpPacketsFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="86" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpReceiveStream_1af91428dbd02aea5d02c172409a043201" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpReceiveStream::m_totalRtpBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalRtpBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="87" column="14" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" compoundref="BpReceiveStream_8cpp" startline="162" endline="168">SendUdpPacket</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">~BpReceiveStream</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BpReceiveStream::BpReceiveStream</definition>
+        <argsstring>(size_t numCircularBufferVectors, bp_recv_stream_params_t params)</argsstring>
+        <name>BpReceiveStream</name>
+        <param>
+          <type>size_t</type>
+          <declname>numCircularBufferVectors</declname>
+        </param>
+        <param>
+          <type><ref refid="structbp__recv__stream__params__t" kindref="compound">bp_recv_stream_params_t</ref></type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="39" column="5" bodyfile="common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp" bodystart="22" bodyend="64"/>
+        <references refid="structbp__recv__stream__params__t_1a5b1f5b2b746f1a08751bc9eb104d1729" compoundref="BpReceiveStream_8h" startline="34">bp_recv_stream_params_t::gstCaps</references>
+        <references refid="BpReceiveStream_8h_1a5e771f6e8b55428c8458cfcddae1cafaa788cec1506c765a3f78a32777bd582b0" compoundref="BpReceiveStream_8h" startline="24">GSTREAMER_APPSRC_OUTDUCT</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBpReceiveStream_1ad208d0954178eeab6a8c953773658db3" compoundref="BpReceiveStream_8h" startline="76">m_gstreamerAppSrcOutductPtr</references>
+        <references refid="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" compoundref="BpReceiveStream_8h" startline="58">m_incomingBundleQueue</references>
+        <references refid="classBpReceiveStream_1a552a0bcd8b76930ac4a8a38023810bbb" compoundref="BpReceiveStream_8h" startline="68">m_ioService</references>
+        <references refid="classBpReceiveStream_1adc77c0b8ce33428400bad60436c3bda5" compoundref="BpReceiveStream_8h" startline="59">m_numCircularBufferVectors</references>
+        <references refid="classBpReceiveStream_1aa3f503d371f1dffbadb55a27a86fcdcf" compoundref="BpReceiveStream_8h" startline="75">m_outductType</references>
+        <references refid="classBpReceiveStream_1a13eb02a2d796bf0cd507a0fbe9b25f38" compoundref="BpReceiveStream_8h" startline="62">m_outgoingRtpHostname</references>
+        <references refid="classBpReceiveStream_1acc7dff8732623c77f55e9db0cb909d85" compoundref="BpReceiveStream_8h" startline="63">m_outgoingRtpPort</references>
+        <references refid="classBpReceiveStream_1a339a67983af0368f7530f8003f1dad5e" compoundref="BpReceiveStream_8h" startline="81">m_processingThread</references>
+        <references refid="classBpReceiveStream_1a38d58100f76e6bb069c7e6bc138ff4a6" compoundref="BpReceiveStream_8h" startline="70">m_udpEndpoint</references>
+        <references refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</references>
+        <references refid="classGStreamerAppSrcOutduct_1a783311e46b1cca09fdd0398106d5ed87" compoundref="GStreamerAppSrcOutduct_8cpp" startline="23" endline="26">GStreamerAppSrcOutduct::SetGStreamerAppSrcOutductInstance</references>
+        <references refid="structbp__recv__stream__params__t_1a5d8033f2a10dfebfd11672587781740e" compoundref="BpReceiveStream_8h" startline="33">bp_recv_stream_params_t::shmSocketPath</references>
+        <references refid="classBpReceiveStream_1abd6e7fdc1d33d79860d68ef44240bf2a" compoundref="BpReceiveStream_8h" startline="69">socket</references>
+        <references refid="TelemetryConnection_8h_1a5792b7506df852d6af678728eaf991dca61f2529360aec54f5dc9804b842cf3fa">socket</references>
+        <references refid="BpReceiveStream_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpReceiveStream_8cpp" startline="18">subprocess</references>
+        <references refid="BpReceiveStream_8h_1a5e771f6e8b55428c8458cfcddae1cafaae5e3c99dc08044bcc4034f23269de73e" compoundref="BpReceiveStream_8h" startline="23">UDP_OUTDUCT</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BpReceiveStream::~BpReceiveStream</definition>
+        <argsstring>() override</argsstring>
+        <name>~BpReceiveStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="40" column="13" bodyfile="common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp" bodystart="66" bodyend="80"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpReceiveStream_1ad208d0954178eeab6a8c953773658db3" compoundref="BpReceiveStream_8h" startline="76">m_gstreamerAppSrcOutductPtr</references>
+        <references refid="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" compoundref="BpReceiveStream_8h" startline="58">m_incomingBundleQueue</references>
+        <references refid="classBpReceiveStream_1af5b18ea2a919a91ff5c4f0293c152c8f" compoundref="BpReceiveStream_8h" startline="55">m_running</references>
+        <references refid="classBpReceiveStream_1af91428dbd02aea5d02c172409a043201" compoundref="BpReceiveStream_8h" startline="87">m_totalRtpBytesSent</references>
+        <references refid="classBpReceiveStream_1acb43e517d4dc264835775503ad009272" compoundref="BpReceiveStream_8h" startline="86">m_totalRtpPacketsFailedToSend</references>
+        <references refid="classBpReceiveStream_1a979501a7cb2760b54e7cf4c06dc9a4dc" compoundref="BpReceiveStream_8h" startline="84">m_totalRtpPacketsReceived</references>
+        <references refid="classBpReceiveStream_1a0c6cb9ba1a1313660393bf0fce0eeb1a" compoundref="BpReceiveStream_8h" startline="85">m_totalRtpPacketsSent</references>
+        <references refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">BpSinkPattern::Stop</references>
+        <references refid="BpReceiveStream_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpReceiveStream_8cpp" startline="18">subprocess</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classBpReceiveStream_1a57e58c7f702154d4bd76403fce00ef83" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BpReceiveStream::ProcessPayload</definition>
+        <argsstring>(const uint8_t *data, const uint64_t size) override</argsstring>
+        <name>ProcessPayload</name>
+        <reimplements refid="classBpSinkPattern_1a832c385bf442c81c6c641577a059d1ad">ProcessPayload</reimplements>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="43" column="18" bodyfile="common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp" bodystart="138" bodyend="150"/>
+        <references refid="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" compoundref="BpReceiveStream_8h" startline="58">m_incomingBundleQueue</references>
+        <references refid="classBpReceiveStream_1a45d97c82e4beab2ba715327e2e3f97a8" compoundref="BpReceiveStream_8h" startline="79">m_incomingQueueCv</references>
+        <references refid="classBpReceiveStream_1a8ffcbcc57f368274444cdc81633c2c49" compoundref="BpReceiveStream_8h" startline="80">m_incomingQueueMutex</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpReceiveStream::ProcessIncomingBundlesThread</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessIncomingBundlesThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="46" column="10" bodyfile="common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp" bodystart="82" bodyend="135"/>
+        <references refid="BpReceiveStream_8h_1a5e771f6e8b55428c8458cfcddae1cafaa788cec1506c765a3f78a32777bd582b0" compoundref="BpReceiveStream_8h" startline="24">GSTREAMER_APPSRC_OUTDUCT</references>
+        <references refid="classBpReceiveStream_1ad208d0954178eeab6a8c953773658db3" compoundref="BpReceiveStream_8h" startline="76">m_gstreamerAppSrcOutductPtr</references>
+        <references refid="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" compoundref="BpReceiveStream_8h" startline="58">m_incomingBundleQueue</references>
+        <references refid="classBpReceiveStream_1a8ffcbcc57f368274444cdc81633c2c49" compoundref="BpReceiveStream_8h" startline="80">m_incomingQueueMutex</references>
+        <references refid="classBpReceiveStream_1aa921097f8ada6dd15076905fc6e9f769" compoundref="BpReceiveStream_8h" startline="64">m_maxOutgoingRtpPacketSizeBytes</references>
+        <references refid="classBpReceiveStream_1aa3f503d371f1dffbadb55a27a86fcdcf" compoundref="BpReceiveStream_8h" startline="75">m_outductType</references>
+        <references refid="classBpReceiveStream_1af5b18ea2a919a91ff5c4f0293c152c8f" compoundref="BpReceiveStream_8h" startline="55">m_running</references>
+        <references refid="classBpReceiveStream_1a979501a7cb2760b54e7cf4c06dc9a4dc" compoundref="BpReceiveStream_8h" startline="84">m_totalRtpPacketsReceived</references>
+        <references refid="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" compoundref="BpReceiveStream_8cpp" startline="162" endline="168">SendUdpPacket</references>
+        <references refid="classBpReceiveStream_1a54a105fc26b749d3b4052076f69db54b" compoundref="BpReceiveStream_8cpp" startline="152" endline="160">TryWaitForIncomingDataAvailable</references>
+        <references refid="BpReceiveStream_8h_1a5e771f6e8b55428c8458cfcddae1cafaae5e3c99dc08044bcc4034f23269de73e" compoundref="BpReceiveStream_8h" startline="23">UDP_OUTDUCT</references>
+        <referencedby refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" compoundref="BpReceiveStream_8cpp" startline="22" endline="64">BpReceiveStream</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpReceiveStream_1a54a105fc26b749d3b4052076f69db54b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BpReceiveStream::TryWaitForIncomingDataAvailable</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;timeout)</argsstring>
+        <name>TryWaitForIncomingDataAvailable</name>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="50" column="10" bodyfile="common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp" bodystart="152" bodyend="160"/>
+        <references refid="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" compoundref="BpReceiveStream_8h" startline="58">m_incomingBundleQueue</references>
+        <references refid="classBpReceiveStream_1a45d97c82e4beab2ba715327e2e3f97a8" compoundref="BpReceiveStream_8h" startline="79">m_incomingQueueCv</references>
+        <references refid="classBpReceiveStream_1a8ffcbcc57f368274444cdc81633c2c49" compoundref="BpReceiveStream_8h" startline="80">m_incomingQueueMutex</references>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int BpReceiveStream::SendUdpPacket</definition>
+        <argsstring>(padded_vector_uint8_t &amp;message)</argsstring>
+        <name>SendUdpPacket</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="53" column="9" bodyfile="common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp" bodystart="162" bodyend="168"/>
+        <references refid="classBpReceiveStream_1af91428dbd02aea5d02c172409a043201" compoundref="BpReceiveStream_8h" startline="87">m_totalRtpBytesSent</references>
+        <references refid="classBpReceiveStream_1a0c6cb9ba1a1313660393bf0fce0eeb1a" compoundref="BpReceiveStream_8h" startline="85">m_totalRtpPacketsSent</references>
+        <references refid="classBpReceiveStream_1a38d58100f76e6bb069c7e6bc138ff4a6" compoundref="BpReceiveStream_8h" startline="70">m_udpEndpoint</references>
+        <references refid="classBpReceiveStream_1abd6e7fdc1d33d79860d68ef44240bf2a" compoundref="BpReceiveStream_8h" startline="69">socket</references>
+        <referencedby refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" compoundref="BpReceiveStream_8cpp" startline="82" endline="135">ProcessIncomingBundlesThread</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BpSinkPattern</label>
+        <link refid="classBpSinkPattern"/>
+      </node>
+      <node id="1">
+        <label>BpReceiveStream</label>
+        <link refid="classBpReceiveStream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>BundleViewV6::Bpv6PrimaryBlockView</label>
+        <link refid="structBundleViewV6_1_1Bpv6PrimaryBlockView"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>OutductManager</label>
+        <link refid="classOutductManager"/>
+      </node>
+      <node id="3">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Bpv6FragmentManager</label>
+        <link refid="classBpv6FragmentManager"/>
+      </node>
+      <node id="6">
+        <label>BundleViewV6</label>
+        <link refid="classBundleViewV6"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_primaryBlockView</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>InductManager</label>
+        <link refid="classInductManager"/>
+      </node>
+      <node id="8">
+        <label>Bpv6CbhePrimaryBlock</label>
+        <link refid="structBpv6CbhePrimaryBlock"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_custodianEid</edgelabel>
+          <edgelabel>m_destinationEid</edgelabel>
+          <edgelabel>m_reportToEid</edgelabel>
+          <edgelabel>m_sourceNodeId</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_creationTimestamp</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BpSinkPattern</label>
+        <link refid="classBpSinkPattern"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_tcpclInductPtr</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_outductManager</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_custodySignalRfc5050RenderedBundleView</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_fragmentManager</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_inductManager</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_lastPreviousNode</edgelabel>
+          <edgelabel>m_myEid</edgelabel>
+          <edgelabel>m_myEidEcho</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BpReceiveStream</label>
+        <link refid="classBpReceiveStream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="9">
+        <label>PrimaryBlock</label>
+        <link refid="structPrimaryBlock"/>
+      </node>
+      <node id="10">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+      <node id="11">
+        <label>TimestampUtil::bpv6_creation_timestamp_t</label>
+        <link refid="structTimestampUtil_1_1bpv6__creation__timestamp__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" line="37" column="1" bodyfile="common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h" bodystart="37" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classBpSinkPattern_1aac318733369a21b22eb174e138944fdf" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>AcsNeedToSend_TimerExpired</name></member>
+      <member refid="classBpReceiveStream_1a582c687537ec3cb6d516e72c7fe6b06b" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>BpReceiveStream</name></member>
+      <member refid="classBpSinkPattern_1abbeb8dc7637274af0d054e8f8193b795" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>BpSinkPattern</name></member>
+      <member refid="classBpSinkPattern_1a84883da86c0e643d8af644529065471a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>bundle_userdata_pair_t</name></member>
+      <member refid="classBpSinkPattern_1ae10d64a6f4e442290e7ac76d2cf8565c" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>bundleid_finaldesteid_pair_t</name></member>
+      <member refid="classBpSinkPattern_1a6d027fe06ac18c2d95c9e6ab18fefd5f" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>desteid_bundle_pair_t</name></member>
+      <member refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>Forward_ThreadSafe</name></member>
+      <member refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>Init</name></member>
+      <member refid="classBpSinkPattern_1a46859c04ef870a0bc4d6c4347858830f" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>LogStats</name></member>
+      <member refid="classBpSinkPattern_1a9c650d168fd7df7c18488f05a3959f9a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_bpsecPimpl</name></member>
+      <member refid="classBpSinkPattern_1a4294101733cc3a87fdac9a4500e0f37a" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_bpv7Priority</name></member>
+      <member refid="classBpSinkPattern_1a2c75006cdda1cd90dee967789e81f1b1" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_bundleToSendQueue</name></member>
+      <member refid="classBpSinkPattern_1a8b0cca8e366764b0d56443543841d609" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_conditionVariableSenderReader</name></member>
+      <member refid="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_currentlySendingBundleIdSet</name></member>
+      <member refid="classBpSinkPattern_1a2845d1fba6408a94ae402251fd9fc9d9" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_custodySignalRfc5050RenderedBundleView</name></member>
+      <member refid="classBpSinkPattern_1a31e31fe208e1e64efcb1eef4ad26c757" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_custodyTransferManagerPtr</name></member>
+      <member refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_cvCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpReceiveStream_1af8b8642c03444c7bc89624a455f0f346" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_cvSentPacket</name></member>
+      <member refid="classBpSinkPattern_1ac9a522b650c96f4604af1519c1db5b1f" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>M_EXTRA_PROCESSING_TIME_MS</name></member>
+      <member refid="classBpSinkPattern_1a0ab30e7f6c5598aa44c4a2435eac4cfb" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_fragmentManager</name></member>
+      <member refid="classBpReceiveStream_1ad208d0954178eeab6a8c953773658db3" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_gstreamerAppSrcOutductPtr</name></member>
+      <member refid="classBpSinkPattern_1a4ce2f934fa6448723c7029355afa9c6a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_hasSendCapability</name></member>
+      <member refid="classBpSinkPattern_1aa49978992196bfcb5708fc1a9c1872be" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_hasSendCapabilityOverTcpclBidirectionalInduct</name></member>
+      <member refid="classBpSinkPattern_1ad303a941a31e9f5256e1d7d35aa31f54" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_hopCounts</name></member>
+      <member refid="classBpReceiveStream_1a0d2b75e054e46eaf41bf6d211466ffb0" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_incomingBundleQueue</name></member>
+      <member refid="classBpReceiveStream_1a45d97c82e4beab2ba715327e2e3f97a8" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_incomingQueueCv</name></member>
+      <member refid="classBpReceiveStream_1a8ffcbcc57f368274444cdc81633c2c49" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_incomingQueueMutex</name></member>
+      <member refid="classBpSinkPattern_1a826c5e13c03e5152f5909c13d8ea27ee" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_inductManager</name></member>
+      <member refid="classBpReceiveStream_1a552a0bcd8b76930ac4a8a38023810bbb" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_ioService</name></member>
+      <member refid="classBpSinkPattern_1a8995e45daf64f063db8b10cde2a8466f" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classBpSinkPattern_1af60fe4231f60f8a56ef5f55433cf83ce" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_lastBundleBytesRx</name></member>
+      <member refid="classBpSinkPattern_1a9c76ac8092dbe5bc79347adfedc04a19" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_lastBundlesRx</name></member>
+      <member refid="classBpSinkPattern_1a57ad577a240a8cf6a8507429bf04287e" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_lastPayloadBytesRx</name></member>
+      <member refid="classBpSinkPattern_1a5b750ec15058cdc74bf0d080c6703267" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_lastPreviousNode</name></member>
+      <member refid="classBpSinkPattern_1acc2bea34685162d2eaf130767ef264fd" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_lastPtime</name></member>
+      <member refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_linkIsDown</name></member>
+      <member refid="classBpReceiveStream_1aa921097f8ada6dd15076905fc6e9f769" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_maxOutgoingRtpPacketSizeBytes</name></member>
+      <member refid="classBpReceiveStream_1a48334495e5188e0b7a24f1b7c6a2fa5d" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_maxOutgoingRtpPayloadSizeBytes</name></member>
+      <member refid="classBpSinkPattern_1afa36d8b15cd131b5b19eb026a48c6166" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_mutexCtm</name></member>
+      <member refid="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_mutexCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSinkPattern_1ac24ae1ffcb7fc8d1e04ea07aef5ee897" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_mutexQueueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSinkPattern_1aec22cb7952f843fbf1de4b825b7bc9d1" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_mutexSendBundleQueue</name></member>
+      <member refid="classBpSinkPattern_1ad8edd963272397358f3d6505c869fb19" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_myEid</name></member>
+      <member refid="classBpSinkPattern_1a91e055f23c6bc105aa7df4cd8779ae4e" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_myEidEcho</name></member>
+      <member refid="classBpSinkPattern_1a0386fa4c77be6130afa8a734a6a35cb4" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_myEidUriString</name></member>
+      <member refid="classBpSinkPattern_1ac63a938225932067e70f80aeb340937c" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_nextCtebCustodyId</name></member>
+      <member refid="classBpReceiveStream_1adc77c0b8ce33428400bad60436c3bda5" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_numCircularBufferVectors</name></member>
+      <member refid="classBpSinkPattern_1aaff166774c87bc8a626cccfea507b22b" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_opportunisticConvergenceLayerName</name></member>
+      <member refid="classBpSinkPattern_1a67c112efe38511f55809262dcf0dff8f" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_outductManager</name></member>
+      <member refid="classBpReceiveStream_1aa3f503d371f1dffbadb55a27a86fcdcf" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_outductType</name></member>
+      <member refid="classBpReceiveStream_1a13eb02a2d796bf0cd507a0fbe9b25f38" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_outgoingRtpHostname</name></member>
+      <member refid="classBpReceiveStream_1acc7dff8732623c77f55e9db0cb909d85" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_outgoingRtpPort</name></member>
+      <member refid="classBpReceiveStream_1a339a67983af0368f7530f8003f1dad5e" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_processingThread</name></member>
+      <member refid="classBpSinkPattern_1a8790ad20c49e94f346946de04c20a2fd" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_queueBundlesThatFailedToSend</name></member>
+      <member refid="classBpReceiveStream_1af5b18ea2a919a91ff5c4f0293c152c8f" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_running</name></member>
+      <member refid="classBpSinkPattern_1a4c21270e6349bab68caf15a4bc30056a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_runningSenderThread</name></member>
+      <member refid="classBpReceiveStream_1aa98714b1fd8cac1810e938e06519e98a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_sentPacketsMutex</name></member>
+      <member refid="classBpSinkPattern_1ac6b572e3c44009f7806ecb63c48c5811" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_tcpclInductPtr</name></member>
+      <member refid="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_tcpclOpportunisticRemoteNodeId</name></member>
+      <member refid="classBpSinkPattern_1a7cdade5c19452e5ff1e802de53a97f13" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_threadSenderReaderPtr</name></member>
+      <member refid="classBpSinkPattern_1a6cbd46273045ba74d2cf3de308e0f48b" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_timerAcs</name></member>
+      <member refid="classBpSinkPattern_1ac3c718222674450119f08fc9661847b7" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_timerTransferRateStats</name></member>
+      <member refid="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalBundleBytesRx</name></member>
+      <member refid="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalBundlesVersion6Rx</name></member>
+      <member refid="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalBundlesVersion7Rx</name></member>
+      <member refid="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalPayloadBytesRx</name></member>
+      <member refid="classBpReceiveStream_1af91428dbd02aea5d02c172409a043201" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalRtpBytesSent</name></member>
+      <member refid="classBpReceiveStream_1acb43e517d4dc264835775503ad009272" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalRtpPacketsFailedToSend</name></member>
+      <member refid="classBpReceiveStream_1a979501a7cb2760b54e7cf4c06dc9a4dc" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalRtpPacketsReceived</name></member>
+      <member refid="classBpReceiveStream_1a0c6cb9ba1a1313660393bf0fce0eeb1a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_totalRtpPacketsSent</name></member>
+      <member refid="classBpReceiveStream_1a38d58100f76e6bb069c7e6bc138ff4a6" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>m_udpEndpoint</name></member>
+      <member refid="classBpSinkPattern_1aeb9447ca6ccbd4aec535b6659f806f4c" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>OnDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>OnFailedBundleVecSendCallback</name></member>
+      <member refid="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>OnNewOpportunisticLinkCallback</name></member>
+      <member refid="classBpSinkPattern_1ae271d63d9de09b799ecc32482600f9dd" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>OnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>OnSuccessfulBundleSendCallback</name></member>
+      <member refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>Process</name></member>
+      <member refid="classBpReceiveStream_1a314f97b7a45316bd5c7ff9e429ac81c4" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>ProcessIncomingBundlesThread</name></member>
+      <member refid="classBpReceiveStream_1a57e58c7f702154d4bd76403fce00ef83" prot="protected" virt="virtual"><scope>BpReceiveStream</scope><name>ProcessPayload</name></member>
+      <member refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>SendAcsFromTimerThread</name></member>
+      <member refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>SenderReaderThreadFunc</name></member>
+      <member refid="classBpReceiveStream_1aa42812c702517a1a47c6cef4317b3792" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>SendUdpPacket</name></member>
+      <member refid="classBpReceiveStream_1abd6e7fdc1d33d79860d68ef44240bf2a" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>socket</name></member>
+      <member refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" prot="public" virt="non-virtual"><scope>BpReceiveStream</scope><name>Stop</name></member>
+      <member refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>TransferRate_TimerExpired</name></member>
+      <member refid="classBpReceiveStream_1a54a105fc26b749d3b4052076f69db54b" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>TryWaitForIncomingDataAvailable</name></member>
+      <member refid="classBpSinkPattern_1a2bdf40e14a56613c8e82a52c00a433e0" prot="private" virt="non-virtual"><scope>BpReceiveStream</scope><name>WholeBundleReadyCallback</name></member>
+      <member refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" prot="public" virt="virtual"><scope>BpReceiveStream</scope><name>~BpReceiveStream</name></member>
+      <member refid="classBpSinkPattern_1a561bbf1180f3a2016e8577b5418eaa98" prot="public" virt="virtual"><scope>BpReceiveStream</scope><name>~BpSinkPattern</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

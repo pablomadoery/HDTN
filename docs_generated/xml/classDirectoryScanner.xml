@@ -1,0 +1,882 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classDirectoryScanner" kind="class" language="C++" prot="public">
+    <compoundname>DirectoryScanner</compoundname>
+    <includes refid="DirectoryScanner_8h" local="no">DirectoryScanner.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDirectoryScanner_1a01c16bd33e5094aec5bb7f456512c4f8" prot="public" static="no">
+        <type>std::list&lt; boost::filesystem::path &gt;</type>
+        <definition>typedef std::list&lt;boost::filesystem::path&gt; DirectoryScanner::path_list_t</definition>
+        <argsstring></argsstring>
+        <name>path_list_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="40" column="23" bodyfile="common/util/include/DirectoryScanner.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" prot="public" static="no">
+        <type>std::set&lt; boost::filesystem::path &gt;</type>
+        <definition>typedef std::set&lt;boost::filesystem::path&gt; DirectoryScanner::path_set_t</definition>
+        <argsstring></argsstring>
+        <name>path_set_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="41" column="22" bodyfile="common/util/include/DirectoryScanner.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDirectoryScanner_1aadf051421201a258c98985324ac298a6" prot="public" static="no">
+        <type>std::pair&lt; uintmax_t, unsigned int &gt;</type>
+        <definition>typedef std::pair&lt;uintmax_t, unsigned int&gt; DirectoryScanner::filesize_queuecount_pair_t</definition>
+        <argsstring></argsstring>
+        <name>filesize_queuecount_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="42" column="23" bodyfile="common/util/include/DirectoryScanner.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDirectoryScanner_1a80309755cd72290ac5ac4a9b244869fa" prot="public" static="no">
+        <type>std::map&lt; boost::filesystem::path, <ref refid="classDirectoryScanner_1aadf051421201a258c98985324ac298a6" kindref="member">filesize_queuecount_pair_t</ref> &gt;</type>
+        <definition>typedef std::map&lt;boost::filesystem::path, filesize_queuecount_pair_t&gt; DirectoryScanner::path_to_size_map_t</definition>
+        <argsstring></argsstring>
+        <name>path_to_size_map_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="43" column="22" bodyfile="common/util/include/DirectoryScanner.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDirectoryScanner_1a38916c5e36b84621ed000626cf1a0082" prot="public" static="no">
+        <type>std::pair&lt; boost::posix_time::ptime, path_to_size_map_t::iterator &gt;</type>
+        <definition>typedef std::pair&lt;boost::posix_time::ptime, path_to_size_map_t::iterator&gt; DirectoryScanner::ptime_plus_mapit_pair_t</definition>
+        <argsstring></argsstring>
+        <name>ptime_plus_mapit_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="44" column="23" bodyfile="common/util/include/DirectoryScanner.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDirectoryScanner_1a1b13c0db0d0cbe16314240e37d9cd17c" prot="public" static="no">
+        <type>std::queue&lt; <ref refid="classDirectoryScanner_1a38916c5e36b84621ed000626cf1a0082" kindref="member">ptime_plus_mapit_pair_t</ref> &gt;</type>
+        <definition>typedef std::queue&lt;ptime_plus_mapit_pair_t&gt; DirectoryScanner::timer_queue_t</definition>
+        <argsstring></argsstring>
+        <name>timer_queue_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="45" column="24" bodyfile="common/util/include/DirectoryScanner.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDirectoryScanner_1ab96647f721735a10b2c2f3f8ac5e599f" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex DirectoryScanner::m_pathsOfFilesListMutex</definition>
+        <argsstring></argsstring>
+        <name>m_pathsOfFilesListMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="71" column="18" bodyfile="common/util/include/DirectoryScanner.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a90fe119d7bd47c7af00bb7681c032dac" compoundref="DirectoryScanner_8cpp" startline="110" endline="113">GetNextFilePath</referencedby>
+        <referencedby refid="classDirectoryScanner_1a35a139b8834da7f65ec0599a67e9cf8a" compoundref="DirectoryScanner_8cpp" startline="115" endline="123">GetNextFilePathTimeout</referencedby>
+        <referencedby refid="classDirectoryScanner_1aaa577b2f733cc2867cfd37be87507848" compoundref="DirectoryScanner_8cpp" startline="125" endline="130">InterruptTimedWait</referencedby>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a654b76f06724e6d60d426200183344f0" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable DirectoryScanner::m_pathsOfFilesListCv</definition>
+        <argsstring></argsstring>
+        <name>m_pathsOfFilesListCv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="72" column="31" bodyfile="common/util/include/DirectoryScanner.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a35a139b8834da7f65ec0599a67e9cf8a" compoundref="DirectoryScanner_8cpp" startline="115" endline="123">GetNextFilePathTimeout</referencedby>
+        <referencedby refid="classDirectoryScanner_1aaa577b2f733cc2867cfd37be87507848" compoundref="DirectoryScanner_8cpp" startline="125" endline="130">InterruptTimedWait</referencedby>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" prot="private" static="no" mutable="no">
+        <type><ref refid="classDirectoryScanner_1a01c16bd33e5094aec5bb7f456512c4f8" kindref="member">path_list_t</ref></type>
+        <definition>path_list_t DirectoryScanner::m_pathsOfFilesList</definition>
+        <argsstring></argsstring>
+        <name>m_pathsOfFilesList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="73" column="17" bodyfile="common/util/include/DirectoryScanner.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</referencedby>
+        <referencedby refid="classDirectoryScanner_1a51111ec210fe7a0b6b81ea68d1a0666c" compoundref="DirectoryScanner_8cpp" startline="57" endline="59">GetListOfFilesAbsolute</referencedby>
+        <referencedby refid="classDirectoryScanner_1afc089dea821c3930b69c88ba8199de5e" compoundref="DirectoryScanner_8cpp" startline="61" endline="69">GetListOfFilesRelativeCopy</referencedby>
+        <referencedby refid="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" compoundref="DirectoryScanner_8cpp" startline="98" endline="108">GetNextFilePath_NotThreadSafe</referencedby>
+        <referencedby refid="classDirectoryScanner_1a246be923e7fb6c4488818715f1d93abe" compoundref="DirectoryScanner_8cpp" startline="50" endline="52">GetNumberOfFilesToSend</referencedby>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a8aa07e7721c036abe30ed74ec9a21fd7" prot="private" static="no" mutable="no">
+        <type>path_list_t::iterator</type>
+        <definition>path_list_t::iterator DirectoryScanner::m_currentFilePathIterator</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="74" column="27" bodyfile="common/util/include/DirectoryScanner.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</referencedby>
+        <referencedby refid="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" compoundref="DirectoryScanner_8cpp" startline="98" endline="108">GetNextFilePath_NotThreadSafe</referencedby>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1af5458b7cfd019574320fe23b438eddb2" prot="private" static="no" mutable="no">
+        <type>const boost::filesystem::path</type>
+        <definition>const boost::filesystem::path DirectoryScanner::m_rootFileOrFolderPath</definition>
+        <argsstring></argsstring>
+        <name>m_rootFileOrFolderPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="75" column="35" bodyfile="common/util/include/DirectoryScanner.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path DirectoryScanner::m_relativeToPath</definition>
+        <argsstring></argsstring>
+        <name>m_relativeToPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="76" column="29" bodyfile="common/util/include/DirectoryScanner.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1afc089dea821c3930b69c88ba8199de5e" compoundref="DirectoryScanner_8cpp" startline="61" endline="69">GetListOfFilesRelativeCopy</referencedby>
+        <referencedby refid="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" compoundref="DirectoryScanner_8cpp" startline="98" endline="108">GetNextFilePath_NotThreadSafe</referencedby>
+        <referencedby refid="classDirectoryScanner_1a5176bda0f2f3e8638bbbb59339a7f613" compoundref="DirectoryScanner_8cpp" startline="75" endline="83">GetSetOfMonitoredDirectoriesRelativeCopy</referencedby>
+        <referencedby refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a418fd0f6a5afdf233fcb40cd3a990010" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool DirectoryScanner::m_includeExistingFiles</definition>
+        <argsstring></argsstring>
+        <name>m_includeExistingFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="77" column="16" bodyfile="common/util/include/DirectoryScanner.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a784036ff0f8d3ea5f7d4df5c25094938" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool DirectoryScanner::m_includeNewFiles</definition>
+        <argsstring></argsstring>
+        <name>m_includeNewFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="78" column="16" bodyfile="common/util/include/DirectoryScanner.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a1ee874c010f5ad32ff8c5145776b2c33" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int DirectoryScanner::m_recurseDirectoriesDepth</definition>
+        <argsstring></argsstring>
+        <name>m_recurseDirectoriesDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="79" column="24" bodyfile="common/util/include/DirectoryScanner.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1abec29808af5c64f11a9aabaf09421cc9" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceboost_1_1asio_1a7ecf085e40ef61f93cf1d3f3a9663ac8" kindref="member">boost::asio::dir_monitor</ref></type>
+        <definition>boost::asio::dir_monitor DirectoryScanner::m_dirMonitor</definition>
+        <argsstring></argsstring>
+        <name>m_dirMonitor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="80" column="30" bodyfile="common/util/include/DirectoryScanner.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</referencedby>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a6d0ab45913468b14280eeafaf0de797e" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer DirectoryScanner::m_timerNewFileComplete</definition>
+        <argsstring></argsstring>
+        <name>m_timerNewFileComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="81" column="33" bodyfile="common/util/include/DirectoryScanner.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</referencedby>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a955d90454e4103a0c3eec6560389fcad" prot="private" static="no" mutable="no">
+        <type>const boost::posix_time::time_duration</type>
+        <definition>const boost::posix_time::time_duration DirectoryScanner::m_timeDurationToRecheckFileSize</definition>
+        <argsstring></argsstring>
+        <name>m_timeDurationToRecheckFileSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="82" column="44" bodyfile="common/util/include/DirectoryScanner.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" prot="private" static="no" mutable="no">
+        <type><ref refid="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" kindref="member">path_set_t</ref></type>
+        <definition>path_set_t DirectoryScanner::m_currentlyMonitoredDirectoryPaths</definition>
+        <argsstring></argsstring>
+        <name>m_currentlyMonitoredDirectoryPaths</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="83" column="16" bodyfile="common/util/include/DirectoryScanner.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</referencedby>
+        <referencedby refid="classDirectoryScanner_1a313fa3244380b79e32aae020e6202666" compoundref="DirectoryScanner_8cpp" startline="53" endline="55">GetNumberOfCurrentlyMonitoredDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1ab97e65085fc36d843a943490b0962bfa" compoundref="DirectoryScanner_8cpp" startline="71" endline="73">GetSetOfMonitoredDirectoriesAbsolute</referencedby>
+        <referencedby refid="classDirectoryScanner_1a5176bda0f2f3e8638bbbb59339a7f613" compoundref="DirectoryScanner_8cpp" startline="75" endline="83">GetSetOfMonitoredDirectoriesRelativeCopy</referencedby>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1aafca6ef23cdd04a3eef9e528ed4f9fd6" prot="private" static="no" mutable="no">
+        <type><ref refid="classDirectoryScanner_1a80309755cd72290ac5ac4a9b244869fa" kindref="member">path_to_size_map_t</ref></type>
+        <definition>path_to_size_map_t DirectoryScanner::m_currentlyPendingFilesToAddMap</definition>
+        <argsstring></argsstring>
+        <name>m_currentlyPendingFilesToAddMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="84" column="24" bodyfile="common/util/include/DirectoryScanner.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a65c2880fd2a05dd90b877293f29df01f" prot="private" static="no" mutable="no">
+        <type><ref refid="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" kindref="member">path_set_t</ref></type>
+        <definition>path_set_t DirectoryScanner::m_newFilePathsAddedSet</definition>
+        <argsstring></argsstring>
+        <name>m_newFilePathsAddedSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="85" column="16" bodyfile="common/util/include/DirectoryScanner.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDirectoryScanner_1a7b7417bd30a1e91a4a77c17a68575005" prot="private" static="no" mutable="no">
+        <type><ref refid="classDirectoryScanner_1a1b13c0db0d0cbe16314240e37d9cd17c" kindref="member">timer_queue_t</ref></type>
+        <definition>timer_queue_t DirectoryScanner::m_currentlyPendingFilesToAddTimerQueue</definition>
+        <argsstring></argsstring>
+        <name>m_currentlyPendingFilesToAddTimerQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="86" column="19" bodyfile="common/util/include/DirectoryScanner.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</referencedby>
+        <referencedby refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDirectoryScanner_1af9b5c934763b51adf20cbfdaccb988ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DirectoryScanner::DirectoryScanner</definition>
+        <argsstring>()=delete</argsstring>
+        <name>DirectoryScanner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT bool</type>
+        <definition>bool DirectoryScanner::GetNextFilePath_NotThreadSafe</definition>
+        <argsstring>(boost::filesystem::path &amp;nextFilePathAbsolute, boost::filesystem::path &amp;nextFilePathRelative)</argsstring>
+        <name>GetNextFilePath_NotThreadSafe</name>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>nextFilePathAbsolute</declname>
+        </param>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>nextFilePathRelative</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="63" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="98" bodyend="108"/>
+        <references refid="classDirectoryScanner_1a8aa07e7721c036abe30ed74ec9a21fd7" compoundref="DirectoryScanner_8h" startline="74">m_currentFilePathIterator</references>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <references refid="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" compoundref="DirectoryScanner_8h" startline="76">m_relativeToPath</references>
+        <referencedby refid="classDirectoryScanner_1a90fe119d7bd47c7af00bb7681c032dac" compoundref="DirectoryScanner_8cpp" startline="110" endline="113">GetNextFilePath</referencedby>
+        <referencedby refid="classDirectoryScanner_1a35a139b8834da7f65ec0599a67e9cf8a" compoundref="DirectoryScanner_8cpp" startline="115" endline="123">GetNextFilePathTimeout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT void</type>
+        <definition>void DirectoryScanner::Reload</definition>
+        <argsstring>()</argsstring>
+        <name>Reload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="64" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="152" bodyend="190"/>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1a3ed342fef333d708e87a1b891e8534be" compoundref="basic__dir__monitor_8hpp" startline="83" endline="86">boost::asio::basic_dir_monitor&lt; Service &gt;::add_directory_as_path</references>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1aa89a992200b845e0471cd0df837cfc3c" compoundref="basic__dir__monitor_8hpp" startline="107" endline="110">boost::asio::basic_dir_monitor&lt; Service &gt;::async_monitor</references>
+        <references refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</references>
+        <references refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDirectoryScanner_1a8aa07e7721c036abe30ed74ec9a21fd7" compoundref="DirectoryScanner_8h" startline="74">m_currentFilePathIterator</references>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+        <references refid="classDirectoryScanner_1abec29808af5c64f11a9aabaf09421cc9" compoundref="DirectoryScanner_8h" startline="80">m_dirMonitor</references>
+        <references refid="classDirectoryScanner_1a418fd0f6a5afdf233fcb40cd3a990010" compoundref="DirectoryScanner_8h" startline="77">m_includeExistingFiles</references>
+        <references refid="classDirectoryScanner_1a784036ff0f8d3ea5f7d4df5c25094938" compoundref="DirectoryScanner_8h" startline="78">m_includeNewFiles</references>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <references refid="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" compoundref="DirectoryScanner_8h" startline="76">m_relativeToPath</references>
+        <references refid="classDirectoryScanner_1af5458b7cfd019574320fe23b438eddb2" compoundref="DirectoryScanner_8h" startline="75">m_rootFileOrFolderPath</references>
+        <references refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</references>
+        <references refid="DirectoryScanner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DirectoryScanner_8cpp" startline="27">subprocess</references>
+        <referencedby refid="classDirectoryScanner_1aa342ee8a8c06b18c6613d6bc85a7616b" compoundref="DirectoryScanner_8cpp" startline="29" endline="44">DirectoryScanner</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT void</type>
+        <definition>void DirectoryScanner::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="65" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="132" bodyend="149"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classDirectoryScanner_1a8aa07e7721c036abe30ed74ec9a21fd7" compoundref="DirectoryScanner_8h" startline="74">m_currentFilePathIterator</references>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+        <references refid="classDirectoryScanner_1abec29808af5c64f11a9aabaf09421cc9" compoundref="DirectoryScanner_8h" startline="80">m_dirMonitor</references>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <references refid="classDirectoryScanner_1a6d0ab45913468b14280eeafaf0de797e" compoundref="DirectoryScanner_8h" startline="81">m_timerNewFileComplete</references>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1a25fdaa999b6e7e6f0df80ae3b04a718c" compoundref="basic__dir__monitor_8hpp" startline="88" endline="91">boost::asio::basic_dir_monitor&lt; Service &gt;::remove_directory_as_path</references>
+        <references refid="DirectoryScanner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DirectoryScanner_8cpp" startline="27">subprocess</references>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae92d508d8866e78da2a1780d77ecfd8e" compoundref="DirectoryScanner_8cpp" startline="46" endline="48">~DirectoryScanner</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT void</type>
+        <definition>void DirectoryScanner::OnDirectoryChangeEvent</definition>
+        <argsstring>(const boost::system::error_code &amp;ec, const boost::asio::dir_monitor_event &amp;ev)</argsstring>
+        <name>OnDirectoryChangeEvent</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">boost::asio::dir_monitor_event</ref> &amp;</type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="66" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="240" bodyend="311"/>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1a3ed342fef333d708e87a1b891e8534be" compoundref="basic__dir__monitor_8hpp" startline="83" endline="86">boost::asio::basic_dir_monitor&lt; Service &gt;::add_directory_as_path</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caae9a8ad02c0c7c8463d743ffdf3249d16" compoundref="basic__dir__monitor_8hpp" startline="22">boost::asio::dir_monitor_event::added</references>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1aa89a992200b845e0471cd0df837cfc3c" compoundref="basic__dir__monitor_8hpp" startline="107" endline="110">boost::asio::basic_dir_monitor&lt; Service &gt;::async_monitor</references>
+        <references refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+        <references refid="classDirectoryScanner_1abec29808af5c64f11a9aabaf09421cc9" compoundref="DirectoryScanner_8h" startline="80">m_dirMonitor</references>
+        <references refid="classDirectoryScanner_1a1ee874c010f5ad32ff8c5145776b2c33" compoundref="DirectoryScanner_8h" startline="79">m_recurseDirectoriesDepth</references>
+        <references refid="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" compoundref="DirectoryScanner_8h" startline="76">m_relativeToPath</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caadfbb04dbed0897e2aac05a96cf7e1392" compoundref="basic__dir__monitor_8hpp" startline="24">boost::asio::dir_monitor_event::modified</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a4aacb4fd769b1bd6db73010cb6db3e0d" compoundref="basic__dir__monitor_8hpp" startline="52">boost::asio::dir_monitor_event::path</references>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1a25fdaa999b6e7e6f0df80ae3b04a718c" compoundref="basic__dir__monitor_8hpp" startline="88" endline="91">boost::asio::basic_dir_monitor&lt; Service &gt;::remove_directory_as_path</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa1f3230361dbbe664592982bcca34ef5" compoundref="basic__dir__monitor_8hpp" startline="23">boost::asio::dir_monitor_event::removed</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caa327c08c6651880b182876010f3b8e61f" compoundref="basic__dir__monitor_8hpp" startline="26">boost::asio::dir_monitor_event::renamed_new_name</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa299c4ec0ad83ba2feb965cccee64319" compoundref="basic__dir__monitor_8hpp" startline="25">boost::asio::dir_monitor_event::renamed_old_name</references>
+        <references refid="DirectoryScanner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DirectoryScanner_8cpp" startline="27">subprocess</references>
+        <references refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</references>
+        <references refid="structboost_1_1asio_1_1dir__monitor__event_1a78aa533f63985e8675040dae56429c2d" compoundref="basic__dir__monitor_8hpp" startline="53">boost::asio::dir_monitor_event::type</references>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT void</type>
+        <definition>void DirectoryScanner::OnRecheckFileSize_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnRecheckFileSize_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="67" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="331" bodyend="385"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDirectoryScanner_1a8aa07e7721c036abe30ed74ec9a21fd7" compoundref="DirectoryScanner_8h" startline="74">m_currentFilePathIterator</references>
+        <references refid="classDirectoryScanner_1aafca6ef23cdd04a3eef9e528ed4f9fd6" compoundref="DirectoryScanner_8h" startline="84">m_currentlyPendingFilesToAddMap</references>
+        <references refid="classDirectoryScanner_1a7b7417bd30a1e91a4a77c17a68575005" compoundref="DirectoryScanner_8h" startline="86">m_currentlyPendingFilesToAddTimerQueue</references>
+        <references refid="classDirectoryScanner_1a65c2880fd2a05dd90b877293f29df01f" compoundref="DirectoryScanner_8h" startline="85">m_newFilePathsAddedSet</references>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <references refid="classDirectoryScanner_1a654b76f06724e6d60d426200183344f0" compoundref="DirectoryScanner_8h" startline="72">m_pathsOfFilesListCv</references>
+        <references refid="classDirectoryScanner_1ab96647f721735a10b2c2f3f8ac5e599f" compoundref="DirectoryScanner_8h" startline="71">m_pathsOfFilesListMutex</references>
+        <references refid="classDirectoryScanner_1a955d90454e4103a0c3eec6560389fcad" compoundref="DirectoryScanner_8h" startline="82">m_timeDurationToRecheckFileSize</references>
+        <references refid="classDirectoryScanner_1a6d0ab45913468b14280eeafaf0de797e" compoundref="DirectoryScanner_8h" startline="81">m_timerNewFileComplete</references>
+        <references refid="DirectoryScanner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DirectoryScanner_8cpp" startline="27">subprocess</references>
+        <referencedby refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT void</type>
+        <definition>void DirectoryScanner::TryAddNewFile</definition>
+        <argsstring>(const boost::filesystem::path &amp;p)</argsstring>
+        <name>TryAddNewFile</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="68" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="313" bodyend="329"/>
+        <references refid="classDirectoryScanner_1aafca6ef23cdd04a3eef9e528ed4f9fd6" compoundref="DirectoryScanner_8h" startline="84">m_currentlyPendingFilesToAddMap</references>
+        <references refid="classDirectoryScanner_1a7b7417bd30a1e91a4a77c17a68575005" compoundref="DirectoryScanner_8h" startline="86">m_currentlyPendingFilesToAddTimerQueue</references>
+        <references refid="classDirectoryScanner_1a65c2880fd2a05dd90b877293f29df01f" compoundref="DirectoryScanner_8h" startline="85">m_newFilePathsAddedSet</references>
+        <references refid="classDirectoryScanner_1a955d90454e4103a0c3eec6560389fcad" compoundref="DirectoryScanner_8h" startline="82">m_timeDurationToRecheckFileSize</references>
+        <references refid="classDirectoryScanner_1a6d0ab45913468b14280eeafaf0de797e" compoundref="DirectoryScanner_8h" startline="81">m_timerNewFileComplete</references>
+        <references refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" compoundref="DirectoryScanner_8cpp" startline="331" endline="385">OnRecheckFileSize_TimerExpired</references>
+        <referencedby refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" compoundref="DirectoryScanner_8cpp" startline="192" endline="238">IterateDirectories</referencedby>
+        <referencedby refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_NO_EXPORT void</type>
+        <definition>void DirectoryScanner::IterateDirectories</definition>
+        <argsstring>(const boost::filesystem::path &amp;rootDirectory, const unsigned int startingRecursiveDepthIndex, const bool addFiles)</argsstring>
+        <name>IterateDirectories</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>rootDirectory</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>startingRecursiveDepthIndex</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>addFiles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="69" column="30" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="192" bodyend="238"/>
+        <references refid="classboost_1_1asio_1_1basic__dir__monitor_1a3ed342fef333d708e87a1b891e8534be" compoundref="basic__dir__monitor_8hpp" startline="83" endline="86">boost::asio::basic_dir_monitor&lt; Service &gt;::add_directory_as_path</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+        <references refid="classDirectoryScanner_1abec29808af5c64f11a9aabaf09421cc9" compoundref="DirectoryScanner_8h" startline="80">m_dirMonitor</references>
+        <references refid="classDirectoryScanner_1a784036ff0f8d3ea5f7d4df5c25094938" compoundref="DirectoryScanner_8h" startline="78">m_includeNewFiles</references>
+        <references refid="classDirectoryScanner_1a65c2880fd2a05dd90b877293f29df01f" compoundref="DirectoryScanner_8h" startline="85">m_newFilePathsAddedSet</references>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <references refid="classDirectoryScanner_1a1ee874c010f5ad32ff8c5145776b2c33" compoundref="DirectoryScanner_8h" startline="79">m_recurseDirectoriesDepth</references>
+        <references refid="DirectoryScanner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DirectoryScanner_8cpp" startline="27">subprocess</references>
+        <references refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" compoundref="DirectoryScanner_8cpp" startline="313" endline="329">TryAddNewFile</references>
+        <referencedby refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" compoundref="DirectoryScanner_8cpp" startline="240" endline="311">OnDirectoryChangeEvent</referencedby>
+        <referencedby refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDirectoryScanner_1aa342ee8a8c06b18c6613d6bc85a7616b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>DirectoryScanner::DirectoryScanner</definition>
+        <argsstring>(const boost::filesystem::path &amp;rootFileOrFolderPath, bool includeExistingFiles, bool includeNewFiles, unsigned int recurseDirectoriesDepth, boost::asio::io_service &amp;ioServiceRef, const uint64_t recheckFileSizeDurationMilliseconds)</argsstring>
+        <name>DirectoryScanner</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>rootFileOrFolderPath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>includeExistingFiles</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>includeNewFiles</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>recurseDirectoriesDepth</declname>
+        </param>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioServiceRef</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>recheckFileSizeDurationMilliseconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="46" column="22" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="29" bodyend="44"/>
+        <references refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" compoundref="DirectoryScanner_8cpp" startline="152" endline="190">Reload</references>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1ae92d508d8866e78da2a1780d77ecfd8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>DirectoryScanner::~DirectoryScanner</definition>
+        <argsstring>()</argsstring>
+        <name>~DirectoryScanner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="49" column="22" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="46" bodyend="48"/>
+        <references refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" compoundref="DirectoryScanner_8cpp" startline="132" endline="149">Clear</references>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a246be923e7fb6c4488818715f1d93abe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t DirectoryScanner::GetNumberOfFilesToSend</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumberOfFilesToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="50" column="34" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="50" bodyend="52"/>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a313fa3244380b79e32aae020e6202666" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t DirectoryScanner::GetNumberOfCurrentlyMonitoredDirectories</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumberOfCurrentlyMonitoredDirectories</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="51" column="34" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="53" bodyend="55"/>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a90fe119d7bd47c7af00bb7681c032dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool DirectoryScanner::GetNextFilePath</definition>
+        <argsstring>(boost::filesystem::path &amp;nextFilePathAbsolute, boost::filesystem::path &amp;nextFilePathRelative)</argsstring>
+        <name>GetNextFilePath</name>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>nextFilePathAbsolute</declname>
+        </param>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>nextFilePathRelative</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="52" column="27" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="110" bodyend="113"/>
+        <references refid="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" compoundref="DirectoryScanner_8cpp" startline="98" endline="108">GetNextFilePath_NotThreadSafe</references>
+        <references refid="classDirectoryScanner_1ab96647f721735a10b2c2f3f8ac5e599f" compoundref="DirectoryScanner_8h" startline="71">m_pathsOfFilesListMutex</references>
+        <referencedby refid="TestDirectoryScanner_8cpp_1a5da76b03d8179e8e150cb21fc97e072d" compoundref="TestDirectoryScanner_8cpp" startline="22" endline="221">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a35a139b8834da7f65ec0599a67e9cf8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool DirectoryScanner::GetNextFilePathTimeout</definition>
+        <argsstring>(boost::filesystem::path &amp;nextFilePathAbsolute, boost::filesystem::path &amp;nextFilePathRelative, const boost::posix_time::time_duration &amp;timeout)</argsstring>
+        <name>GetNextFilePathTimeout</name>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>nextFilePathAbsolute</declname>
+        </param>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>nextFilePathRelative</declname>
+        </param>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="53" column="27" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="115" bodyend="123"/>
+        <references refid="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" compoundref="DirectoryScanner_8cpp" startline="98" endline="108">GetNextFilePath_NotThreadSafe</references>
+        <references refid="classDirectoryScanner_1a654b76f06724e6d60d426200183344f0" compoundref="DirectoryScanner_8h" startline="72">m_pathsOfFilesListCv</references>
+        <references refid="classDirectoryScanner_1ab96647f721735a10b2c2f3f8ac5e599f" compoundref="DirectoryScanner_8h" startline="71">m_pathsOfFilesListMutex</references>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1aaa577b2f733cc2867cfd37be87507848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void DirectoryScanner::InterruptTimedWait</definition>
+        <argsstring>()</argsstring>
+        <name>InterruptTimedWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="55" column="27" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="125" bodyend="130"/>
+        <references refid="classDirectoryScanner_1a654b76f06724e6d60d426200183344f0" compoundref="DirectoryScanner_8h" startline="72">m_pathsOfFilesListCv</references>
+        <references refid="classDirectoryScanner_1ab96647f721735a10b2c2f3f8ac5e599f" compoundref="DirectoryScanner_8h" startline="71">m_pathsOfFilesListMutex</references>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a51111ec210fe7a0b6b81ea68d1a0666c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT const <ref refid="classDirectoryScanner_1a01c16bd33e5094aec5bb7f456512c4f8" kindref="member">path_list_t</ref> &amp;</type>
+        <definition>const DirectoryScanner::path_list_t &amp; DirectoryScanner::GetListOfFilesAbsolute</definition>
+        <argsstring>() const</argsstring>
+        <name>GetListOfFilesAbsolute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="58" column="41" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="57" bodyend="59"/>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <referencedby refid="TestDirectoryScanner_8cpp_1a5da76b03d8179e8e150cb21fc97e072d" compoundref="TestDirectoryScanner_8cpp" startline="22" endline="221">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1afc089dea821c3930b69c88ba8199de5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT <ref refid="classDirectoryScanner_1a01c16bd33e5094aec5bb7f456512c4f8" kindref="member">path_list_t</ref></type>
+        <definition>DirectoryScanner::path_list_t DirectoryScanner::GetListOfFilesRelativeCopy</definition>
+        <argsstring>() const</argsstring>
+        <name>GetListOfFilesRelativeCopy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="59" column="34" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="61" bodyend="69"/>
+        <references refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" compoundref="DirectoryScanner_8h" startline="73">m_pathsOfFilesList</references>
+        <references refid="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" compoundref="DirectoryScanner_8h" startline="76">m_relativeToPath</references>
+        <referencedby refid="TestDirectoryScanner_8cpp_1a5da76b03d8179e8e150cb21fc97e072d" compoundref="TestDirectoryScanner_8cpp" startline="22" endline="221">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1ab97e65085fc36d843a943490b0962bfa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT const <ref refid="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" kindref="member">path_set_t</ref> &amp;</type>
+        <definition>const DirectoryScanner::path_set_t &amp; DirectoryScanner::GetSetOfMonitoredDirectoriesAbsolute</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSetOfMonitoredDirectoriesAbsolute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="60" column="39" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="71" bodyend="73"/>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+        <referencedby refid="TestDirectoryScanner_8cpp_1a5da76b03d8179e8e150cb21fc97e072d" compoundref="TestDirectoryScanner_8cpp" startline="22" endline="221">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDirectoryScanner_1a5176bda0f2f3e8638bbbb59339a7f613" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT <ref refid="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" kindref="member">path_set_t</ref></type>
+        <definition>DirectoryScanner::path_set_t DirectoryScanner::GetSetOfMonitoredDirectoriesRelativeCopy</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSetOfMonitoredDirectoriesRelativeCopy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="61" column="33" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="75" bodyend="83"/>
+        <references refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" compoundref="DirectoryScanner_8h" startline="83">m_currentlyMonitoredDirectoryPaths</references>
+        <references refid="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" compoundref="DirectoryScanner_8h" startline="76">m_relativeToPath</references>
+        <referencedby refid="TestDirectoryScanner_8cpp_1a5da76b03d8179e8e150cb21fc97e072d" compoundref="TestDirectoryScanner_8cpp" startline="22" endline="221">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classDirectoryScanner_1a632bf0cf21d25103d0cad47592a5711b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT friend std::ostream &amp;</type>
+        <definition>HDTN_UTIL_EXPORT friend std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const path_list_t &amp;o)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDirectoryScanner_1a01c16bd33e5094aec5bb7f456512c4f8" kindref="member">path_list_t</ref> &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="56" column="29" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="friend" id="classDirectoryScanner_1a3c32d7ebb0a9eff5d805edb00a100cad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT friend std::ostream &amp;</type>
+        <definition>HDTN_UTIL_EXPORT friend std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const path_set_t &amp;o)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" kindref="member">path_set_t</ref> &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/DirectoryScanner.h" line="57" column="29" bodyfile="common/util/src/DirectoryScanner.cpp" bodystart="91" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/DirectoryScanner.h" line="36" column="1" bodyfile="common/util/include/DirectoryScanner.h" bodystart="36" bodyend="87"/>
+    <listofallmembers>
+      <member refid="classDirectoryScanner_1a491d58b44f5cde416675cf874238ebec" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>Clear</name></member>
+      <member refid="classDirectoryScanner_1af9b5c934763b51adf20cbfdaccb988ff" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>DirectoryScanner</name></member>
+      <member refid="classDirectoryScanner_1aa342ee8a8c06b18c6613d6bc85a7616b" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>DirectoryScanner</name></member>
+      <member refid="classDirectoryScanner_1aadf051421201a258c98985324ac298a6" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>filesize_queuecount_pair_t</name></member>
+      <member refid="classDirectoryScanner_1a51111ec210fe7a0b6b81ea68d1a0666c" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetListOfFilesAbsolute</name></member>
+      <member refid="classDirectoryScanner_1afc089dea821c3930b69c88ba8199de5e" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetListOfFilesRelativeCopy</name></member>
+      <member refid="classDirectoryScanner_1a90fe119d7bd47c7af00bb7681c032dac" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetNextFilePath</name></member>
+      <member refid="classDirectoryScanner_1a61f3c9e6799aaddfc3fb99254937bdec" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetNextFilePath_NotThreadSafe</name></member>
+      <member refid="classDirectoryScanner_1a35a139b8834da7f65ec0599a67e9cf8a" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetNextFilePathTimeout</name></member>
+      <member refid="classDirectoryScanner_1a313fa3244380b79e32aae020e6202666" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetNumberOfCurrentlyMonitoredDirectories</name></member>
+      <member refid="classDirectoryScanner_1a246be923e7fb6c4488818715f1d93abe" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetNumberOfFilesToSend</name></member>
+      <member refid="classDirectoryScanner_1ab97e65085fc36d843a943490b0962bfa" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetSetOfMonitoredDirectoriesAbsolute</name></member>
+      <member refid="classDirectoryScanner_1a5176bda0f2f3e8638bbbb59339a7f613" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>GetSetOfMonitoredDirectoriesRelativeCopy</name></member>
+      <member refid="classDirectoryScanner_1aaa577b2f733cc2867cfd37be87507848" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>InterruptTimedWait</name></member>
+      <member refid="classDirectoryScanner_1a2947a20b691962c7b7b463428064ccf3" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>IterateDirectories</name></member>
+      <member refid="classDirectoryScanner_1a8aa07e7721c036abe30ed74ec9a21fd7" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_currentFilePathIterator</name></member>
+      <member refid="classDirectoryScanner_1a2f385fc73e0fb262fd1e9723fb35b1ee" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_currentlyMonitoredDirectoryPaths</name></member>
+      <member refid="classDirectoryScanner_1aafca6ef23cdd04a3eef9e528ed4f9fd6" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_currentlyPendingFilesToAddMap</name></member>
+      <member refid="classDirectoryScanner_1a7b7417bd30a1e91a4a77c17a68575005" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_currentlyPendingFilesToAddTimerQueue</name></member>
+      <member refid="classDirectoryScanner_1abec29808af5c64f11a9aabaf09421cc9" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_dirMonitor</name></member>
+      <member refid="classDirectoryScanner_1a418fd0f6a5afdf233fcb40cd3a990010" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_includeExistingFiles</name></member>
+      <member refid="classDirectoryScanner_1a784036ff0f8d3ea5f7d4df5c25094938" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_includeNewFiles</name></member>
+      <member refid="classDirectoryScanner_1a65c2880fd2a05dd90b877293f29df01f" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_newFilePathsAddedSet</name></member>
+      <member refid="classDirectoryScanner_1af04b80bf9ed0d1fb37c1759350e9d51d" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_pathsOfFilesList</name></member>
+      <member refid="classDirectoryScanner_1a654b76f06724e6d60d426200183344f0" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_pathsOfFilesListCv</name></member>
+      <member refid="classDirectoryScanner_1ab96647f721735a10b2c2f3f8ac5e599f" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_pathsOfFilesListMutex</name></member>
+      <member refid="classDirectoryScanner_1a1ee874c010f5ad32ff8c5145776b2c33" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_recurseDirectoriesDepth</name></member>
+      <member refid="classDirectoryScanner_1ac7c8a2afac40ed904b1bab46e13c88ae" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_relativeToPath</name></member>
+      <member refid="classDirectoryScanner_1af5458b7cfd019574320fe23b438eddb2" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_rootFileOrFolderPath</name></member>
+      <member refid="classDirectoryScanner_1a955d90454e4103a0c3eec6560389fcad" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_timeDurationToRecheckFileSize</name></member>
+      <member refid="classDirectoryScanner_1a6d0ab45913468b14280eeafaf0de797e" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>m_timerNewFileComplete</name></member>
+      <member refid="classDirectoryScanner_1abdd8e14a54cc6998c91175e5ef133545" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>OnDirectoryChangeEvent</name></member>
+      <member refid="classDirectoryScanner_1aa281de7e0213463f7eada94d4e3db30d" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>OnRecheckFileSize_TimerExpired</name></member>
+      <member refid="classDirectoryScanner_1a632bf0cf21d25103d0cad47592a5711b" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classDirectoryScanner_1a3c32d7ebb0a9eff5d805edb00a100cad" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classDirectoryScanner_1a01c16bd33e5094aec5bb7f456512c4f8" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>path_list_t</name></member>
+      <member refid="classDirectoryScanner_1acfa20e7ec42b0ba266f8140246db0452" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>path_set_t</name></member>
+      <member refid="classDirectoryScanner_1a80309755cd72290ac5ac4a9b244869fa" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>path_to_size_map_t</name></member>
+      <member refid="classDirectoryScanner_1a38916c5e36b84621ed000626cf1a0082" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>ptime_plus_mapit_pair_t</name></member>
+      <member refid="classDirectoryScanner_1ae47cbc084d5b613735f539d8564d986f" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>Reload</name></member>
+      <member refid="classDirectoryScanner_1a1b13c0db0d0cbe16314240e37d9cd17c" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>timer_queue_t</name></member>
+      <member refid="classDirectoryScanner_1a62b1efcf4321519f35d3a8d5146ef62b" prot="private" virt="non-virtual"><scope>DirectoryScanner</scope><name>TryAddNewFile</name></member>
+      <member refid="classDirectoryScanner_1ae92d508d8866e78da2a1780d77ecfd8e" prot="public" virt="non-virtual"><scope>DirectoryScanner</scope><name>~DirectoryScanner</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

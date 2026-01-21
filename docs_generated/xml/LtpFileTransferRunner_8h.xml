@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="LtpFileTransferRunner_8h" kind="file" language="C++">
+    <compoundname>LtpFileTransferRunner.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="LtpFileTransferMain_8cpp" local="yes">common/ltp/apps/ltp_file_transfer/src/LtpFileTransferMain.cpp</includedby>
+    <includedby refid="LtpFileTransferRunner_8cpp" local="yes">common/ltp/apps/ltp_file_transfer/src/LtpFileTransferRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>atomic</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>common/ltp/apps/ltp_file_transfer/include/LtpFileTransferRunner.h</label>
+        <link refid="LtpFileTransferRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>common/ltp/apps/ltp_file_transfer/include/LtpFileTransferRunner.h</label>
+        <link refid="LtpFileTransferRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferRunner.cpp</label>
+        <link refid="LtpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferMain.cpp</label>
+        <link refid="LtpFileTransferMain_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classLtpFileTransferRunner" prot="public">LtpFileTransferRunner</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classLtpFileTransferRunner" kindref="compound">LtpFileTransferRunner</ref> class is used for launching an <ref refid="classLtp" kindref="compound">Ltp</ref> File Transfer test application into its own process. The <ref refid="classLtpFileTransferRunner" kindref="compound">LtpFileTransferRunner</ref> provides a blocking Run function which creates and initializes the test application by processing/using the various command line arguments. <ref refid="classLtpFileTransferRunner" kindref="compound">LtpFileTransferRunner</ref> also provides a signal handler listener to capture Ctrl+C (SIGINT) events for clean termination. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_BPGEN_ASYNC_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BPGEN_ASYNC_RUNNER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classLtpFileTransferRunner" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLtpFileTransferRunner" kindref="compound">LtpFileTransferRunner</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpFileTransferRunner_1ac8c87b00b89b7c9b0566fa5b2be597eb" kindref="member">LtpFileTransferRunner</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpFileTransferRunner_1a316ce7821b78c423d98fded4a92a0035" kindref="member">~LtpFileTransferRunner</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLtpFileTransferRunner_1aa57b7f8ec05958f79a239ae640203cd7" kindref="member">Run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[],<sp/>std::atomic&lt;bool&gt;&amp;<sp/>running,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useSignalHandler);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//FinalStats<sp/>m_FinalStats;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLtpFileTransferRunner_1a62c7d36db609df800654576f1f447443" kindref="member">MonitorExitKeypressThreadFunction</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classLtpFileTransferRunner_1abc3bed45188417761cd334ca6730d106" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classLtpFileTransferRunner_1abc3bed45188417761cd334ca6730d106" kindref="member">m_runningFromSigHandler</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_BPGEN_ASYNC_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/ltp/apps/ltp_file_transfer/include/LtpFileTransferRunner.h"/>
+  </compounddef>
+</doxygen>

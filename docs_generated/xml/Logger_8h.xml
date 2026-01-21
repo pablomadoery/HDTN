@@ -1,0 +1,1856 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Logger_8h" kind="file" language="C++">
+    <compoundname>Logger.h</compoundname>
+    <includes local="no">cstddef</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">ostream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">boost/core/null_deleter.hpp</includes>
+    <includes local="no">boost/date_time/posix_time/posix_time.hpp</includes>
+    <includes local="no">boost/log/attributes.hpp</includes>
+    <includes local="no">boost/log/attributes/scoped_attribute.hpp</includes>
+    <includes local="no">boost/log/core.hpp</includes>
+    <includes local="no">boost/log/expressions.hpp</includes>
+    <includes local="no">boost/log/sinks.hpp</includes>
+    <includes local="no">boost/log/sinks/sync_frontend.hpp</includes>
+    <includes local="no">boost/log/sinks/text_file_backend.hpp</includes>
+    <includes local="no">boost/log/sinks/text_ostream_backend.hpp</includes>
+    <includes local="no">boost/log/sources/basic_logger.hpp</includes>
+    <includes local="no">boost/log/sources/record_ostream.hpp</includes>
+    <includes local="no">boost/log/sources/severity_channel_logger.hpp</includes>
+    <includes local="no">boost/log/sources/severity_logger.hpp</includes>
+    <includes local="no">boost/log/support/date_time.hpp</includes>
+    <includes local="no">boost/log/trivial.hpp</includes>
+    <includes local="no">boost/log/utility/manipulators/add_value.hpp</includes>
+    <includes local="no">boost/log/utility/setup/common_attributes.hpp</includes>
+    <includes local="no">boost/log/utility/setup/file.hpp</includes>
+    <includes local="no">boost/log/utility/value_ref.hpp</includes>
+    <includes local="no">boost/smart_ptr/make_shared_object.hpp</includes>
+    <includes local="no">boost/smart_ptr/shared_ptr.hpp</includes>
+    <includes local="no">boost/config/detail/suffix.hpp</includes>
+    <includes local="yes">log_lib_export.h</includes>
+    <includedby refid="BpFileTransfer_8cpp" local="yes">common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp</includedby>
+    <includedby refid="BpFileTransferMain_8cpp" local="yes">common/bpcodec/apps/bpfiletransfer/src/BpFileTransferMain.cpp</includedby>
+    <includedby refid="BpFileTransferRunner_8cpp" local="yes">common/bpcodec/apps/bpfiletransfer/src/BpFileTransferRunner.cpp</includedby>
+    <includedby refid="BpGenAsyncMain_8cpp" local="yes">common/bpcodec/apps/bpgen/src/BpGenAsyncMain.cpp</includedby>
+    <includedby refid="BpGenAsyncRunner_8cpp" local="yes">common/bpcodec/apps/bpgen/src/BpGenAsyncRunner.cpp</includedby>
+    <includedby refid="BPing_8cpp" local="yes">common/bpcodec/apps/bping/src/BPing.cpp</includedby>
+    <includedby refid="BPingMain_8cpp" local="yes">common/bpcodec/apps/bping/src/BPingMain.cpp</includedby>
+    <includedby refid="BPingRunner_8cpp" local="yes">common/bpcodec/apps/bping/src/BPingRunner.cpp</includedby>
+    <includedby refid="BpReceiveFile_8cpp" local="yes">common/bpcodec/apps/bpreceivefile/src/BpReceiveFile.cpp</includedby>
+    <includedby refid="BpReceiveFileMain_8cpp" local="yes">common/bpcodec/apps/bpreceivefile/src/BpReceiveFileMain.cpp</includedby>
+    <includedby refid="BpReceiveFileRunner_8cpp" local="yes">common/bpcodec/apps/bpreceivefile/src/BpReceiveFileRunner.cpp</includedby>
+    <includedby refid="BpReceivePacket_8cpp" local="yes">common/bpcodec/apps/bpreceivepacket/src/BpReceivePacket.cpp</includedby>
+    <includedby refid="BpReceivePacketMain_8cpp" local="yes">common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketMain.cpp</includedby>
+    <includedby refid="BpReceivePacketRunner_8cpp" local="yes">common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketRunner.cpp</includedby>
+    <includedby refid="BpReceiveStream_8cpp" local="yes">common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp</includedby>
+    <includedby refid="BpReceiveStreamMain_8cpp" local="yes">common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</includedby>
+    <includedby refid="BpReceiveStreamRunner_8cpp" local="yes">common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamRunner.cpp</includedby>
+    <includedby refid="BpSendFile_8cpp" local="yes">common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp</includedby>
+    <includedby refid="BpSendFileMain_8cpp" local="yes">common/bpcodec/apps/bpsendfile/src/BpSendFileMain.cpp</includedby>
+    <includedby refid="BpSendFileRunner_8cpp" local="yes">common/bpcodec/apps/bpsendfile/src/BpSendFileRunner.cpp</includedby>
+    <includedby refid="BpSendPacketRunner_8cpp" local="yes">common/bpcodec/apps/bpsendpacket/src/BpSendPacketRunner.cpp</includedby>
+    <includedby refid="BpSendStream_8cpp" local="yes">common/bpcodec/apps/BpSendStream/src/BpSendStream.cpp</includedby>
+    <includedby refid="BpSendStreamMain_8cpp" local="yes">common/bpcodec/apps/BpSendStream/src/BpSendStreamMain.cpp</includedby>
+    <includedby refid="BpSendStreamRunner_8cpp" local="yes">common/bpcodec/apps/BpSendStream/src/BpSendStreamRunner.cpp</includedby>
+    <includedby refid="BpSinkAsyncMain_8cpp" local="yes">common/bpcodec/apps/bpsink/BpSinkAsyncMain.cpp</includedby>
+    <includedby refid="BpSinkAsyncRunner_8cpp" local="yes">common/bpcodec/apps/bpsink/BpSinkAsyncRunner.cpp</includedby>
+    <includedby refid="BpSinkPattern_8cpp" local="yes">common/bpcodec/src/app_patterns/BpSinkPattern.cpp</includedby>
+    <includedby refid="BpSourcePattern_8cpp" local="yes">common/bpcodec/src/app_patterns/BpSourcePattern.cpp</includedby>
+    <includedby refid="Bpv6CanonicalBlock_8cpp" local="yes">common/bpcodec/src/codec/Bpv6CanonicalBlock.cpp</includedby>
+    <includedby refid="Bpv6CbhePrimaryBlock_8cpp" local="yes">common/bpcodec/src/codec/Bpv6CbhePrimaryBlock.cpp</includedby>
+    <includedby refid="Bpv6Fragment_8cpp" local="yes">common/bpcodec/src/codec/Bpv6Fragment.cpp</includedby>
+    <includedby refid="Bpv6FragmentManager_8cpp" local="yes">common/bpcodec/src/codec/Bpv6FragmentManager.cpp</includedby>
+    <includedby refid="Bpv7CanonicalBlock_8cpp" local="yes">common/bpcodec/src/codec/Bpv7CanonicalBlock.cpp</includedby>
+    <includedby refid="Bpv7CbhePrimaryBlock_8cpp" local="yes">common/bpcodec/src/codec/Bpv7CbhePrimaryBlock.cpp</includedby>
+    <includedby refid="BundleViewV7_8cpp" local="yes">common/bpcodec/src/codec/BundleViewV7.cpp</includedby>
+    <includedby refid="BpSecBundleProcessor_8cpp" local="yes">common/bpsec/src/BpSecBundleProcessor.cpp</includedby>
+    <includedby refid="BpSecPolicyManager_8cpp" local="yes">common/bpsec/src/BpSecPolicyManager.cpp</includedby>
+    <includedby refid="TestBpSecPolicyManager_8cpp" local="yes">common/bpsec/test/TestBpSecPolicyManager.cpp</includedby>
+    <includedby refid="libcgr_8cpp" local="yes">common/cgr/src/libcgr.cpp</includedby>
+    <includedby refid="BpSecConfig_8h" local="yes">common/config/include/BpSecConfig.h</includedby>
+    <includedby refid="StorageConfig_8h" local="yes">common/config/include/StorageConfig.h</includedby>
+    <includedby refid="BpSecConfig_8cpp" local="yes">common/config/src/BpSecConfig.cpp</includedby>
+    <includedby refid="HdtnConfig_8cpp" local="yes">common/config/src/HdtnConfig.cpp</includedby>
+    <includedby refid="HdtnDistributedConfig_8cpp" local="yes">common/config/src/HdtnDistributedConfig.cpp</includedby>
+    <includedby refid="InductsConfig_8cpp" local="yes">common/config/src/InductsConfig.cpp</includedby>
+    <includedby refid="OutductsConfig_8cpp" local="yes">common/config/src/OutductsConfig.cpp</includedby>
+    <includedby refid="StorageConfig_8cpp" local="yes">common/config/src/StorageConfig.cpp</includedby>
+    <includedby refid="BpOverEncapLocalStreamInduct_8cpp" local="yes">common/induct_manager/src/BpOverEncapLocalStreamInduct.cpp</includedby>
+    <includedby refid="Induct_8cpp" local="yes">common/induct_manager/src/Induct.cpp</includedby>
+    <includedby refid="InductManager_8cpp" local="yes">common/induct_manager/src/InductManager.cpp</includedby>
+    <includedby refid="SlipOverUartInduct_8cpp" local="yes">common/induct_manager/src/SlipOverUartInduct.cpp</includedby>
+    <includedby refid="StcpInduct_8cpp" local="yes">common/induct_manager/src/StcpInduct.cpp</includedby>
+    <includedby refid="TcpclInduct_8cpp" local="yes">common/induct_manager/src/TcpclInduct.cpp</includedby>
+    <includedby refid="TcpclV4Induct_8cpp" local="yes">common/induct_manager/src/TcpclV4Induct.cpp</includedby>
+    <includedby refid="UdpInduct_8cpp" local="yes">common/induct_manager/src/UdpInduct.cpp</includedby>
+    <includedby refid="Logger_8cpp" local="yes">common/logger/src/Logger.cpp</includedby>
+    <includedby refid="LoggerTests_8cpp" local="yes">common/logger/unit_tests/LoggerTests.cpp</includedby>
+    <includedby refid="LtpFileTransferMain_8cpp" local="yes">common/ltp/apps/ltp_file_transfer/src/LtpFileTransferMain.cpp</includedby>
+    <includedby refid="LtpFileTransferRunner_8cpp" local="yes">common/ltp/apps/ltp_file_transfer/src/LtpFileTransferRunner.cpp</includedby>
+    <includedby refid="LtpBundleSink_8cpp" local="yes">common/ltp/src/LtpBundleSink.cpp</includedby>
+    <includedby refid="LtpBundleSource_8cpp" local="yes">common/ltp/src/LtpBundleSource.cpp</includedby>
+    <includedby refid="LtpEncapLocalStreamEngine_8cpp" local="yes">common/ltp/src/LtpEncapLocalStreamEngine.cpp</includedby>
+    <includedby refid="LtpEngine_8cpp" local="yes">common/ltp/src/LtpEngine.cpp</includedby>
+    <includedby refid="LtpIpcEngine_8cpp" local="yes">common/ltp/src/LtpIpcEngine.cpp</includedby>
+    <includedby refid="LtpOverEncapLocalStreamBundleSink_8cpp" local="yes">common/ltp/src/LtpOverEncapLocalStreamBundleSink.cpp</includedby>
+    <includedby refid="LtpOverEncapLocalStreamBundleSource_8cpp" local="yes">common/ltp/src/LtpOverEncapLocalStreamBundleSource.cpp</includedby>
+    <includedby refid="LtpOverIpcBundleSink_8cpp" local="yes">common/ltp/src/LtpOverIpcBundleSink.cpp</includedby>
+    <includedby refid="LtpOverIpcBundleSource_8cpp" local="yes">common/ltp/src/LtpOverIpcBundleSource.cpp</includedby>
+    <includedby refid="LtpOverUdpBundleSink_8cpp" local="yes">common/ltp/src/LtpOverUdpBundleSink.cpp</includedby>
+    <includedby refid="LtpOverUdpBundleSource_8cpp" local="yes">common/ltp/src/LtpOverUdpBundleSource.cpp</includedby>
+    <includedby refid="LtpRandomNumberGenerator_8cpp" local="yes">common/ltp/src/LtpRandomNumberGenerator.cpp</includedby>
+    <includedby refid="LtpSessionReceiver_8cpp" local="yes">common/ltp/src/LtpSessionReceiver.cpp</includedby>
+    <includedby refid="LtpSessionRecreationPreventer_8cpp" local="yes">common/ltp/src/LtpSessionRecreationPreventer.cpp</includedby>
+    <includedby refid="LtpSessionSender_8cpp" local="yes">common/ltp/src/LtpSessionSender.cpp</includedby>
+    <includedby refid="LtpUdpEngine_8cpp" local="yes">common/ltp/src/LtpUdpEngine.cpp</includedby>
+    <includedby refid="LtpUdpEngineManager_8cpp" local="yes">common/ltp/src/LtpUdpEngineManager.cpp</includedby>
+    <includedby refid="TestLtpUdpEngine_8cpp" local="yes">common/ltp/test/TestLtpUdpEngine.cpp</includedby>
+    <includedby refid="BpOverEncapLocalStreamOutduct_8cpp" local="yes">common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp</includedby>
+    <includedby refid="Outduct_8cpp" local="yes">common/outduct_manager/src/Outduct.cpp</includedby>
+    <includedby refid="OutductManager_8cpp" local="yes">common/outduct_manager/src/OutductManager.cpp</includedby>
+    <includedby refid="TcpclV4Outduct_8cpp" local="yes">common/outduct_manager/src/TcpclV4Outduct.cpp</includedby>
+    <includedby refid="UartInterface_8cpp" local="yes">common/slip_over_uart/src/UartInterface.cpp</includedby>
+    <includedby refid="StcpBundleSink_8cpp" local="yes">common/stcp/src/StcpBundleSink.cpp</includedby>
+    <includedby refid="StcpBundleSource_8cpp" local="yes">common/stcp/src/StcpBundleSource.cpp</includedby>
+    <includedby refid="GStreamerAppSinkInduct_8cpp" local="yes">common/streaming/BpInduct/src/GStreamerAppSinkInduct.cpp</includedby>
+    <includedby refid="GStreamerShmInduct_8cpp" local="yes">common/streaming/BpInduct/src/GStreamerShmInduct.cpp</includedby>
+    <includedby refid="GStreamerAppSrcOutduct_8cpp" local="yes">common/streaming/BpOutduct/src/GStreamerAppSrcOutduct.cpp</includedby>
+    <includedby refid="DtnFrameQueue_8cpp" local="yes">common/streaming/src/DtnFrameQueue.cpp</includedby>
+    <includedby refid="DtnRtp_8cpp" local="yes">common/streaming/src/DtnRtp.cpp</includedby>
+    <includedby refid="Tcpcl_8cpp" local="yes">common/tcpcl/src/Tcpcl.cpp</includedby>
+    <includedby refid="TcpclBundleSink_8cpp" local="yes">common/tcpcl/src/TcpclBundleSink.cpp</includedby>
+    <includedby refid="TcpclBundleSource_8cpp" local="yes">common/tcpcl/src/TcpclBundleSource.cpp</includedby>
+    <includedby refid="TcpclV3BidirectionalLink_8cpp" local="yes">common/tcpcl/src/TcpclV3BidirectionalLink.cpp</includedby>
+    <includedby refid="TcpclV4_8cpp" local="yes">common/tcpcl/src/TcpclV4.cpp</includedby>
+    <includedby refid="TcpclV4BidirectionalLink_8cpp" local="yes">common/tcpcl/src/TcpclV4BidirectionalLink.cpp</includedby>
+    <includedby refid="TcpclV4BundleSink_8cpp" local="yes">common/tcpcl/src/TcpclV4BundleSink.cpp</includedby>
+    <includedby refid="TcpclV4BundleSource_8cpp" local="yes">common/tcpcl/src/TcpclV4BundleSource.cpp</includedby>
+    <includedby refid="TelemetryDefinitions_8cpp" local="yes">common/telemetry_definitions/src/TelemetryDefinitions.cpp</includedby>
+    <includedby refid="TelemetryServer_8cpp" local="yes">common/telemetry_definitions/src/TelemetryServer.cpp</includedby>
+    <includedby refid="UdpBundleSink_8cpp" local="yes">common/udp/src/UdpBundleSink.cpp</includedby>
+    <includedby refid="UdpBundleSource_8cpp" local="yes">common/udp/src/UdpBundleSource.cpp</includedby>
+    <includedby refid="BinaryConversions_8cpp" local="yes">common/util/src/BinaryConversions.cpp</includedby>
+    <includedby refid="DeadlineTimer_8cpp" local="yes">common/util/src/DeadlineTimer.cpp</includedby>
+    <includedby refid="RateManagerAsync_8cpp" local="yes">common/util/src/deprecated/RateManagerAsync.cpp</includedby>
+    <includedby refid="DirectoryScanner_8cpp" local="yes">common/util/src/DirectoryScanner.cpp</includedby>
+    <includedby refid="FragmentSet_8cpp" local="yes">common/util/src/FragmentSet.cpp</includedby>
+    <includedby refid="JsonSerializable_8cpp" local="yes">common/util/src/JsonSerializable.cpp</includedby>
+    <includedby refid="MemoryInFiles_8cpp" local="yes">common/util/src/MemoryInFiles.cpp</includedby>
+    <includedby refid="SignalHandler_8cpp" local="yes">common/util/src/SignalHandler.cpp</includedby>
+    <includedby refid="TcpAsyncSender_8cpp" local="yes">common/util/src/TcpAsyncSender.cpp</includedby>
+    <includedby refid="UdpBatchSender_8cpp" local="yes">common/util/src/UdpBatchSender.cpp</includedby>
+    <includedby refid="Utf8Paths_8cpp" local="yes">common/util/src/Utf8Paths.cpp</includedby>
+    <includedby refid="TestForwardListQueue_8cpp" local="yes">common/util/test/TestForwardListQueue.cpp</includedby>
+    <includedby refid="TestMemoryInFiles_8cpp" local="yes">common/util/test/TestMemoryInFiles.cpp</includedby>
+    <includedby refid="HdtnCliRunner_8cpp" local="yes">module/cli/src/HdtnCliRunner.cpp</includedby>
+    <includedby refid="EgressAsyncRunner_8h" local="yes">module/egress/include/EgressAsyncRunner.h</includedby>
+    <includedby refid="egress_8cpp" local="yes">module/egress/src/egress.cpp</includedby>
+    <includedby refid="EgressAsync_8cpp" local="yes">module/egress/src/EgressAsync.cpp</includedby>
+    <includedby refid="EgressAsyncRunner_8cpp" local="yes">module/egress/src/EgressAsyncRunner.cpp</includedby>
+    <includedby refid="HdtnOneProcessMain_8cpp" local="yes">module/hdtn_one_process/src/HdtnOneProcessMain.cpp</includedby>
+    <includedby refid="HdtnOneProcessRunner_8cpp" local="yes">module/hdtn_one_process/src/HdtnOneProcessRunner.cpp</includedby>
+    <includedby refid="ingress_8cpp" local="yes">module/ingress/src/ingress.cpp</includedby>
+    <includedby refid="IngressAsyncRunner_8cpp" local="yes">module/ingress/src/IngressAsyncRunner.cpp</includedby>
+    <includedby refid="receive_8cpp" local="yes">module/ingress/src/receive.cpp</includedby>
+    <includedby refid="RouterRunner_8h" local="yes">module/router/include/RouterRunner.h</includedby>
+    <includedby refid="router_2src_2main_8cpp" local="yes">module/router/src/main.cpp</includedby>
+    <includedby refid="router_8cpp" local="yes">module/router/src/router.cpp</includedby>
+    <includedby refid="RouterRunner_8cpp" local="yes">module/router/src/RouterRunner.cpp</includedby>
+    <includedby refid="BundleStorageManagerBase_8h" local="yes">module/storage/include/BundleStorageManagerBase.h</includedby>
+    <includedby refid="StorageRunner_8h" local="yes">module/storage/include/StorageRunner.h</includedby>
+    <includedby refid="storage_2src_2main_8cpp" local="yes">module/storage/src/main.cpp</includedby>
+    <includedby refid="StartStorageRunner_8cpp" local="yes">module/storage/src/StartStorageRunner.cpp</includedby>
+    <includedby refid="StorageSpeedTestMain_8cpp" local="yes">module/storage/src/test/StorageSpeedTestMain.cpp</includedby>
+    <includedby refid="ZmqStorageInterface_8cpp" local="yes">module/storage/src/ZmqStorageInterface.cpp</includedby>
+    <includedby refid="MemoryManagerTreeArrayTests_8cpp" local="yes">module/storage/unit_tests/MemoryManagerTreeArrayTests.cpp</includedby>
+    <includedby refid="BeastWebsocketServer_8cpp" local="yes">module/telem_cmd_interface/src/BeastWebsocketServer.cpp</includedby>
+    <includedby refid="CivetwebWebsocketServer_8cpp" local="yes">module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp</includedby>
+    <includedby refid="telem__cmd__interface_2src_2main_8cpp" local="yes">module/telem_cmd_interface/src/main.cpp</includedby>
+    <includedby refid="Telemetry_8cpp" local="yes">module/telem_cmd_interface/src/Telemetry.cpp</includedby>
+    <includedby refid="TelemetryConnection_8cpp" local="yes">module/telem_cmd_interface/src/TelemetryConnection.cpp</includedby>
+    <includedby refid="TelemetryConnectionPoller_8cpp" local="yes">module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp</includedby>
+    <includedby refid="TelemetryRunner_8cpp" local="yes">module/telem_cmd_interface/src/TelemetryRunner.cpp</includedby>
+    <includedby refid="TelemetryRunnerProgramOptions_8cpp" local="yes">module/telem_cmd_interface/src/TelemetryRunnerProgramOptions.cpp</includedby>
+    <includedby refid="WebsocketServer_8cpp" local="yes">module/telem_cmd_interface/src/WebsocketServer.cpp</includedby>
+    <includedby refid="UdpDelaySim_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySim.cpp</includedby>
+    <includedby refid="UdpDelaySimMain_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySimMain.cpp</includedby>
+    <includedby refid="UdpDelaySimRunner_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySimRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="29">
+        <label>boost/smart_ptr/make_shared_object.hpp</label>
+      </node>
+      <node id="8">
+        <label>atomic</label>
+      </node>
+      <node id="28">
+        <label>boost/log/utility/value_ref.hpp</label>
+      </node>
+      <node id="21">
+        <label>boost/log/sources/severity_channel_logger.hpp</label>
+      </node>
+      <node id="4">
+        <label>iomanip</label>
+      </node>
+      <node id="15">
+        <label>boost/log/sinks.hpp</label>
+      </node>
+      <node id="32">
+        <label>log_lib_export.h</label>
+      </node>
+      <node id="19">
+        <label>boost/log/sources/basic_logger.hpp</label>
+      </node>
+      <node id="13">
+        <label>boost/log/core.hpp</label>
+      </node>
+      <node id="23">
+        <label>boost/log/support/date_time.hpp</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="22">
+        <label>boost/log/sources/severity_logger.hpp</label>
+      </node>
+      <node id="30">
+        <label>boost/smart_ptr/shared_ptr.hpp</label>
+      </node>
+      <node id="24">
+        <label>boost/log/trivial.hpp</label>
+      </node>
+      <node id="16">
+        <label>boost/log/sinks/sync_frontend.hpp</label>
+      </node>
+      <node id="3">
+        <label>fstream</label>
+      </node>
+      <node id="5">
+        <label>ostream</label>
+      </node>
+      <node id="14">
+        <label>boost/log/expressions.hpp</label>
+      </node>
+      <node id="10">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="31">
+        <label>boost/config/detail/suffix.hpp</label>
+      </node>
+      <node id="17">
+        <label>boost/log/sinks/text_file_backend.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/logger/include/Logger.h</label>
+        <link refid="Logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>boost/log/sinks/text_ostream_backend.hpp</label>
+      </node>
+      <node id="20">
+        <label>boost/log/sources/record_ostream.hpp</label>
+      </node>
+      <node id="25">
+        <label>boost/log/utility/manipulators/add_value.hpp</label>
+      </node>
+      <node id="2">
+        <label>cstddef</label>
+      </node>
+      <node id="11">
+        <label>boost/log/attributes.hpp</label>
+      </node>
+      <node id="27">
+        <label>boost/log/utility/setup/file.hpp</label>
+      </node>
+      <node id="26">
+        <label>boost/log/utility/setup/common_attributes.hpp</label>
+      </node>
+      <node id="9">
+        <label>boost/core/null_deleter.hpp</label>
+      </node>
+      <node id="12">
+        <label>boost/log/attributes/scoped_attribute.hpp</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="24">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamMain.cpp</label>
+        <link refid="BpSendStreamMain_8cpp"/>
+      </node>
+      <node id="106">
+        <label>common/ltp/src/LtpBundleSource.cpp</label>
+        <link refid="LtpBundleSource_8cpp"/>
+      </node>
+      <node id="14">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketMain.cpp</label>
+        <link refid="BpReceivePacketMain_8cpp"/>
+      </node>
+      <node id="156">
+        <label>common/util/src/UdpBatchSender.cpp</label>
+        <link refid="UdpBatchSender_8cpp"/>
+      </node>
+      <node id="53">
+        <label>common/masker/src/RedundantMasker.cpp</label>
+        <link refid="RedundantMasker_8cpp"/>
+      </node>
+      <node id="128">
+        <label>common/stcp/src/StcpBundleSink.cpp</label>
+        <link refid="StcpBundleSink_8cpp"/>
+      </node>
+      <node id="32">
+        <label>common/bpcodec/src/codec/Bpv6Fragment.cpp</label>
+        <link refid="Bpv6Fragment_8cpp"/>
+      </node>
+      <node id="122">
+        <label>common/ltp/test/TestLtpUdpEngine.cpp</label>
+        <link refid="TestLtpUdpEngine_8cpp"/>
+      </node>
+      <node id="108">
+        <label>common/ltp/src/LtpEngine.cpp</label>
+        <link refid="LtpEngine_8cpp"/>
+      </node>
+      <node id="25">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamRunner.cpp</label>
+        <link refid="BpSendStreamRunner_8cpp"/>
+      </node>
+      <node id="15">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketRunner.cpp</label>
+        <link refid="BpReceivePacketRunner_8cpp"/>
+      </node>
+      <node id="80">
+        <label>common/config/test/TestStorageConfig.cpp</label>
+        <link refid="TestStorageConfig_8cpp"/>
+      </node>
+      <node id="40">
+        <label>common/cgr/src/libcgr.cpp</label>
+        <link refid="libcgr_8cpp"/>
+      </node>
+      <node id="68">
+        <label>module/router/src/RouterRunner.cpp</label>
+        <link refid="RouterRunner_8cpp"/>
+      </node>
+      <node id="132">
+        <label>common/streaming/BpOutduct/src/GStreamerAppSrcOutduct.cpp</label>
+        <link refid="GStreamerAppSrcOutduct_8cpp"/>
+      </node>
+      <node id="125">
+        <label>common/outduct_manager/src/OutductManager.cpp</label>
+        <link refid="OutductManager_8cpp"/>
+      </node>
+      <node id="55">
+        <label>common/masker/src/ShiftingMasker.cpp</label>
+        <link refid="ShiftingMasker_8cpp"/>
+      </node>
+      <node id="65">
+        <label>module/ingress/src/IngressAsyncRunner.cpp</label>
+        <link refid="IngressAsyncRunner_8cpp"/>
+      </node>
+      <node id="9">
+        <label>common/bpcodec/apps/bping/src/BPingRunner.cpp</label>
+        <link refid="BPingRunner_8cpp"/>
+      </node>
+      <node id="155">
+        <label>common/util/src/TcpAsyncSender.cpp</label>
+        <link refid="TcpAsyncSender_8cpp"/>
+      </node>
+      <node id="117">
+        <label>common/ltp/src/LtpSessionReceiver.cpp</label>
+        <link refid="LtpSessionReceiver_8cpp"/>
+      </node>
+      <node id="16">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp</label>
+        <link refid="BpReceiveStream_8cpp"/>
+      </node>
+      <node id="101">
+        <label>common/logger/src/Logger.cpp</label>
+        <link refid="Logger_8cpp"/>
+      </node>
+      <node id="110">
+        <label>common/ltp/src/LtpOverEncapLocalStreamBundleSink.cpp</label>
+        <link refid="LtpOverEncapLocalStreamBundleSink_8cpp"/>
+      </node>
+      <node id="85">
+        <label>module/storage/unit_tests/BundleStorageManagerMtTests.cpp</label>
+        <link refid="BundleStorageManagerMtTests_8cpp"/>
+      </node>
+      <node id="22">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacketRunner.cpp</label>
+        <link refid="BpSendPacketRunner_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncMain.cpp</label>
+        <link refid="BpGenAsyncMain_8cpp"/>
+      </node>
+      <node id="91">
+        <label>common/config/src/InductsConfig.cpp</label>
+        <link refid="InductsConfig_8cpp"/>
+      </node>
+      <node id="140">
+        <label>common/tcpcl/src/TcpclV4BidirectionalLink.cpp</label>
+        <link refid="TcpclV4BidirectionalLink_8cpp"/>
+      </node>
+      <node id="133">
+        <label>common/streaming/src/DtnFrameQueue.cpp</label>
+        <link refid="DtnFrameQueue_8cpp"/>
+      </node>
+      <node id="50">
+        <label>common/masker/include/Masker.h</label>
+        <link refid="Masker_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>common/induct_manager/src/Induct.cpp</label>
+        <link refid="Induct_8cpp"/>
+      </node>
+      <node id="36">
+        <label>common/bpcodec/src/codec/BundleViewV7.cpp</label>
+        <link refid="BundleViewV7_8cpp"/>
+      </node>
+      <node id="160">
+        <label>module/egress/include/EgressAsyncRunner.h</label>
+        <link refid="EgressAsyncRunner_8h"/>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>module/telem_cmd_interface/src/Telemetry.cpp</label>
+        <link refid="Telemetry_8cpp"/>
+      </node>
+      <node id="100">
+        <label>common/induct_manager/src/UdpInduct.cpp</label>
+        <link refid="UdpInduct_8cpp"/>
+      </node>
+      <node id="18">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamRunner.cpp</label>
+        <link refid="BpReceiveStreamRunner_8cpp"/>
+      </node>
+      <node id="41">
+        <label>common/config/include/BpSecConfig.h</label>
+        <link refid="BpSecConfig_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>common/util/src/DeadlineTimer.cpp</label>
+        <link refid="DeadlineTimer_8cpp"/>
+      </node>
+      <node id="175">
+        <label>module/udp_delay_sim/src/UdpDelaySim.cpp</label>
+        <link refid="UdpDelaySim_8cpp"/>
+      </node>
+      <node id="139">
+        <label>common/tcpcl/src/TcpclV4.cpp</label>
+        <link refid="TcpclV4_8cpp"/>
+      </node>
+      <node id="157">
+        <label>common/util/src/Utf8Paths.cpp</label>
+        <link refid="Utf8Paths_8cpp"/>
+      </node>
+      <node id="114">
+        <label>common/ltp/src/LtpOverUdpBundleSink.cpp</label>
+        <link refid="LtpOverUdpBundleSink_8cpp"/>
+      </node>
+      <node id="134">
+        <label>common/streaming/src/DtnRtp.cpp</label>
+        <link refid="DtnRtp_8cpp"/>
+      </node>
+      <node id="105">
+        <label>common/ltp/src/LtpBundleSink.cpp</label>
+        <link refid="LtpBundleSink_8cpp"/>
+      </node>
+      <node id="93">
+        <label>common/induct_manager/src/BpOverEncapLocalStreamInduct.cpp</label>
+        <link refid="BpOverEncapLocalStreamInduct_8cpp"/>
+      </node>
+      <node id="48">
+        <label>common/config/src/HdtnConfig.cpp</label>
+        <link refid="HdtnConfig_8cpp"/>
+      </node>
+      <node id="51">
+        <label>common/masker/include/RedundantMasker.h</label>
+        <link refid="RedundantMasker_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>common/bpcodec/apps/bping/src/BPingMain.cpp</label>
+        <link refid="BPingMain_8cpp"/>
+      </node>
+      <node id="64">
+        <label>module/ingress/include/ingress.h</label>
+        <link refid="ingress_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp</label>
+        <link refid="TelemetryConnectionPoller_8cpp"/>
+      </node>
+      <node id="60">
+        <label>module/egress/include/EgressAsync.h</label>
+        <link refid="EgressAsync_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>module/storage/src/main.cpp</label>
+        <link refid="storage_2src_2main_8cpp"/>
+      </node>
+      <node id="57">
+        <label>module/cli/src/HdtnCliMain.cpp</label>
+        <link refid="HdtnCliMain_8cpp"/>
+      </node>
+      <node id="35">
+        <label>common/bpcodec/src/codec/Bpv7CbhePrimaryBlock.cpp</label>
+        <link refid="Bpv7CbhePrimaryBlock_8cpp"/>
+      </node>
+      <node id="109">
+        <label>common/ltp/src/LtpIpcEngine.cpp</label>
+        <link refid="LtpIpcEngine_8cpp"/>
+      </node>
+      <node id="149">
+        <label>common/util/src/deprecated/RateManagerAsync.cpp</label>
+        <link refid="RateManagerAsync_8cpp"/>
+      </node>
+      <node id="54">
+        <label>common/masker/include/ShiftingMasker.h</label>
+        <link refid="ShiftingMasker_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>module/telem_cmd_interface/src/TelemetryRunnerProgramOptions.cpp</label>
+        <link refid="TelemetryRunnerProgramOptions_8cpp"/>
+      </node>
+      <node id="104">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferRunner.cpp</label>
+        <link refid="LtpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="169">
+        <label>module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp</label>
+        <link refid="CivetwebWebsocketServer_8cpp"/>
+      </node>
+      <node id="77">
+        <label>module/telem_cmd_interface/src/TelemetryRunner.cpp</label>
+        <link refid="TelemetryRunner_8cpp"/>
+      </node>
+      <node id="170">
+        <label>module/telem_cmd_interface/src/main.cpp</label>
+        <link refid="telem__cmd__interface_2src_2main_8cpp"/>
+      </node>
+      <node id="28">
+        <label>common/bpcodec/src/app_patterns/BpSinkPattern.cpp</label>
+        <link refid="BpSinkPattern_8cpp"/>
+      </node>
+      <node id="17">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</label>
+        <link refid="BpReceiveStreamMain_8cpp"/>
+      </node>
+      <node id="147">
+        <label>common/util/src/BinaryConversions.cpp</label>
+        <link refid="BinaryConversions_8cpp"/>
+      </node>
+      <node id="158">
+        <label>common/util/test/TestForwardListQueue.cpp</label>
+        <link refid="TestForwardListQueue_8cpp"/>
+      </node>
+      <node id="127">
+        <label>common/slip_over_uart/src/UartInterface.cpp</label>
+        <link refid="UartInterface_8cpp"/>
+      </node>
+      <node id="73">
+        <label>module/storage/src/StorageRunner.cpp</label>
+        <link refid="StorageRunner_8cpp"/>
+      </node>
+      <node id="19">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp</label>
+        <link refid="BpSendFile_8cpp"/>
+      </node>
+      <node id="43">
+        <label>common/config/src/BpSecConfig.cpp</label>
+        <link refid="BpSecConfig_8cpp"/>
+      </node>
+      <node id="130">
+        <label>common/streaming/BpInduct/src/GStreamerAppSinkInduct.cpp</label>
+        <link refid="GStreamerAppSinkInduct_8cpp"/>
+      </node>
+      <node id="99">
+        <label>common/induct_manager/src/TcpclV4Induct.cpp</label>
+        <link refid="TcpclV4Induct_8cpp"/>
+      </node>
+      <node id="124">
+        <label>common/outduct_manager/src/Outduct.cpp</label>
+        <link refid="Outduct_8cpp"/>
+      </node>
+      <node id="112">
+        <label>common/ltp/src/LtpOverIpcBundleSink.cpp</label>
+        <link refid="LtpOverIpcBundleSink_8cpp"/>
+      </node>
+      <node id="12">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileRunner.cpp</label>
+        <link refid="BpReceiveFileRunner_8cpp"/>
+      </node>
+      <node id="90">
+        <label>common/config/src/HdtnDistributedConfig.cpp</label>
+        <link refid="HdtnDistributedConfig_8cpp"/>
+      </node>
+      <node id="89">
+        <label>module/storage/src/BundleStorageManagerBase.cpp</label>
+        <link refid="BundleStorageManagerBase_8cpp"/>
+      </node>
+      <node id="168">
+        <label>module/telem_cmd_interface/src/BeastWebsocketServer.cpp</label>
+        <link refid="BeastWebsocketServer_8cpp"/>
+      </node>
+      <node id="116">
+        <label>common/ltp/src/LtpRandomNumberGenerator.cpp</label>
+        <link refid="LtpRandomNumberGenerator_8cpp"/>
+      </node>
+      <node id="103">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferMain.cpp</label>
+        <link refid="LtpFileTransferMain_8cpp"/>
+      </node>
+      <node id="102">
+        <label>common/logger/unit_tests/LoggerTests.cpp</label>
+        <link refid="LoggerTests_8cpp"/>
+      </node>
+      <node id="47">
+        <label>common/config/include/HdtnConfig.h</label>
+        <link refid="HdtnConfig_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>common/outduct_manager/src/TcpclV4Outduct.cpp</label>
+        <link refid="TcpclV4Outduct_8cpp"/>
+      </node>
+      <node id="67">
+        <label>module/router/src/router.cpp</label>
+        <link refid="router_8cpp"/>
+      </node>
+      <node id="21">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileRunner.cpp</label>
+        <link refid="BpSendFileRunner_8cpp"/>
+      </node>
+      <node id="78">
+        <label>module/telem_cmd_interface/unit_tests/TelemetryRunnerTests.cpp</label>
+        <link refid="TelemetryRunnerTests_8cpp"/>
+      </node>
+      <node id="26">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncMain.cpp</label>
+        <link refid="BpSinkAsyncMain_8cpp"/>
+      </node>
+      <node id="150">
+        <label>common/util/src/DirectoryScanner.cpp</label>
+        <link refid="DirectoryScanner_8cpp"/>
+      </node>
+      <node id="27">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncRunner.cpp</label>
+        <link refid="BpSinkAsyncRunner_8cpp"/>
+      </node>
+      <node id="13">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacket.cpp</label>
+        <link refid="BpReceivePacket_8cpp"/>
+      </node>
+      <node id="29">
+        <label>common/bpcodec/src/app_patterns/BpSourcePattern.cpp</label>
+        <link refid="BpSourcePattern_8cpp"/>
+      </node>
+      <node id="177">
+        <label>module/udp_delay_sim/src/UdpDelaySimRunner.cpp</label>
+        <link refid="UdpDelaySimRunner_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp</label>
+        <link refid="BpFileTransfer_8cpp"/>
+      </node>
+      <node id="96">
+        <label>common/induct_manager/src/SlipOverUartInduct.cpp</label>
+        <link refid="SlipOverUartInduct_8cpp"/>
+      </node>
+      <node id="4">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferRunner.cpp</label>
+        <link refid="BpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="154">
+        <label>common/util/src/SignalHandler.cpp</label>
+        <link refid="SignalHandler_8cpp"/>
+      </node>
+      <node id="30">
+        <label>common/bpcodec/src/codec/Bpv6CanonicalBlock.cpp</label>
+        <link refid="Bpv6CanonicalBlock_8cpp"/>
+      </node>
+      <node id="161">
+        <label>module/egress/src/egress.cpp</label>
+        <link refid="egress_8cpp"/>
+      </node>
+      <node id="83">
+        <label>module/storage/src/BundleStorageManagerAsio.cpp</label>
+        <link refid="BundleStorageManagerAsio_8cpp"/>
+      </node>
+      <node id="31">
+        <label>common/bpcodec/src/codec/Bpv6CbhePrimaryBlock.cpp</label>
+        <link refid="Bpv6CbhePrimaryBlock_8cpp"/>
+      </node>
+      <node id="20">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileMain.cpp</label>
+        <link refid="BpSendFileMain_8cpp"/>
+      </node>
+      <node id="6">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncRunner.cpp</label>
+        <link refid="BpGenAsyncRunner_8cpp"/>
+      </node>
+      <node id="144">
+        <label>common/telemetry_definitions/src/TelemetryServer.cpp</label>
+        <link refid="TelemetryServer_8cpp"/>
+      </node>
+      <node id="75">
+        <label>module/telem_cmd_interface/include/TelemetryRunner.h</label>
+        <link refid="TelemetryRunner_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>common/ltp/src/LtpUdpEngineManager.cpp</label>
+        <link refid="LtpUdpEngineManager_8cpp"/>
+      </node>
+      <node id="167">
+        <label>module/storage/unit_tests/MemoryManagerTreeArrayTests.cpp</label>
+        <link refid="MemoryManagerTreeArrayTests_8cpp"/>
+      </node>
+      <node id="119">
+        <label>common/ltp/src/LtpSessionSender.cpp</label>
+        <link refid="LtpSessionSender_8cpp"/>
+      </node>
+      <node id="42">
+        <label>common/bpsec/include/BpSecPolicyManager.h</label>
+        <link refid="BpSecPolicyManager_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>common/config/test/TestBpSecConfig.cpp</label>
+        <link refid="TestBpSecConfig_8cpp"/>
+      </node>
+      <node id="46">
+        <label>common/config/include/StorageConfig.h</label>
+        <link refid="StorageConfig_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>module/telem_cmd_interface/src/TelemetryConnection.cpp</label>
+        <link refid="TelemetryConnection_8cpp"/>
+      </node>
+      <node id="131">
+        <label>common/streaming/BpInduct/src/GStreamerShmInduct.cpp</label>
+        <link refid="GStreamerShmInduct_8cpp"/>
+      </node>
+      <node id="33">
+        <label>common/bpcodec/src/codec/Bpv6FragmentManager.cpp</label>
+        <link refid="Bpv6FragmentManager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/logger/include/Logger.h</label>
+        <link refid="Logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>module/hdtn_one_process/src/HdtnOneProcessMain.cpp</label>
+        <link refid="HdtnOneProcessMain_8cpp"/>
+      </node>
+      <node id="145">
+        <label>common/udp/src/UdpBundleSink.cpp</label>
+        <link refid="UdpBundleSink_8cpp"/>
+      </node>
+      <node id="152">
+        <label>common/util/src/JsonSerializable.cpp</label>
+        <link refid="JsonSerializable_8cpp"/>
+      </node>
+      <node id="141">
+        <label>common/tcpcl/src/TcpclV4BundleSink.cpp</label>
+        <link refid="TcpclV4BundleSink_8cpp"/>
+      </node>
+      <node id="38">
+        <label>common/bpsec/src/BpSecPolicyManager.cpp</label>
+        <link refid="BpSecPolicyManager_8cpp"/>
+      </node>
+      <node id="87">
+        <label>module/storage/include/BundleStorageManagerMT.h</label>
+        <link refid="BundleStorageManagerMT_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>common/udp/src/UdpBundleSource.cpp</label>
+        <link refid="UdpBundleSource_8cpp"/>
+      </node>
+      <node id="165">
+        <label>module/router/src/main.cpp</label>
+        <link refid="router_2src_2main_8cpp"/>
+      </node>
+      <node id="97">
+        <label>common/induct_manager/src/StcpInduct.cpp</label>
+        <link refid="StcpInduct_8cpp"/>
+      </node>
+      <node id="79">
+        <label>common/config/src/StorageConfig.cpp</label>
+        <link refid="StorageConfig_8cpp"/>
+      </node>
+      <node id="52">
+        <label>common/masker/src/Masker.cpp</label>
+        <link refid="Masker_8cpp"/>
+      </node>
+      <node id="71">
+        <label>module/storage/include/StorageRunner.h</label>
+        <link refid="StorageRunner_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileMain.cpp</label>
+        <link refid="BpReceiveFileMain_8cpp"/>
+      </node>
+      <node id="70">
+        <label>module/storage/include/ZmqStorageInterface.h</label>
+        <link refid="ZmqStorageInterface_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>common/stcp/src/StcpBundleSource.cpp</label>
+        <link refid="StcpBundleSource_8cpp"/>
+      </node>
+      <node id="72">
+        <label>module/storage/src/StartStorageRunner.cpp</label>
+        <link refid="StartStorageRunner_8cpp"/>
+      </node>
+      <node id="98">
+        <label>common/induct_manager/src/TcpclInduct.cpp</label>
+        <link refid="TcpclInduct_8cpp"/>
+      </node>
+      <node id="49">
+        <label>common/config/test/TestHdtnConfig.cpp</label>
+        <link refid="TestHdtnConfig_8cpp"/>
+      </node>
+      <node id="56">
+        <label>module/cli/include/HdtnCliRunner.h</label>
+        <link refid="HdtnCliRunner_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferMain.cpp</label>
+        <link refid="BpFileTransferMain_8cpp"/>
+      </node>
+      <node id="84">
+        <label>module/storage/src/test/StorageSpeedTestMain.cpp</label>
+        <link refid="StorageSpeedTestMain_8cpp"/>
+      </node>
+      <node id="153">
+        <label>common/util/src/MemoryInFiles.cpp</label>
+        <link refid="MemoryInFiles_8cpp"/>
+      </node>
+      <node id="138">
+        <label>common/tcpcl/src/TcpclV3BidirectionalLink.cpp</label>
+        <link refid="TcpclV3BidirectionalLink_8cpp"/>
+      </node>
+      <node id="74">
+        <label>module/storage/src/ZmqStorageInterface.cpp</label>
+        <link refid="ZmqStorageInterface_8cpp"/>
+      </node>
+      <node id="143">
+        <label>common/telemetry_definitions/src/TelemetryDefinitions.cpp</label>
+        <link refid="TelemetryDefinitions_8cpp"/>
+      </node>
+      <node id="159">
+        <label>common/util/test/TestMemoryInFiles.cpp</label>
+        <link refid="TestMemoryInFiles_8cpp"/>
+      </node>
+      <node id="58">
+        <label>module/cli/src/HdtnCliRunner.cpp</label>
+        <link refid="HdtnCliRunner_8cpp"/>
+      </node>
+      <node id="164">
+        <label>module/router/include/RouterRunner.h</label>
+        <link refid="RouterRunner_8h"/>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp</label>
+        <link refid="BpOverEncapLocalStreamOutduct_8cpp"/>
+      </node>
+      <node id="136">
+        <label>common/tcpcl/src/TcpclBundleSink.cpp</label>
+        <link refid="TcpclBundleSink_8cpp"/>
+      </node>
+      <node id="135">
+        <label>common/tcpcl/src/Tcpcl.cpp</label>
+        <link refid="Tcpcl_8cpp"/>
+      </node>
+      <node id="39">
+        <label>common/bpsec/test/TestBpSecPolicyManager.cpp</label>
+        <link refid="TestBpSecPolicyManager_8cpp"/>
+      </node>
+      <node id="111">
+        <label>common/ltp/src/LtpOverEncapLocalStreamBundleSource.cpp</label>
+        <link refid="LtpOverEncapLocalStreamBundleSource_8cpp"/>
+      </node>
+      <node id="45">
+        <label>module/ingress/src/receive.cpp</label>
+        <link refid="receive_8cpp"/>
+      </node>
+      <node id="174">
+        <label>module/telem_cmd_interface/src/WebsocketServer.cpp</label>
+        <link refid="WebsocketServer_8cpp"/>
+      </node>
+      <node id="10">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFile.cpp</label>
+        <link refid="BpReceiveFile_8cpp"/>
+      </node>
+      <node id="61">
+        <label>module/egress/src/EgressAsync.cpp</label>
+        <link refid="EgressAsync_8cpp"/>
+      </node>
+      <node id="142">
+        <label>common/tcpcl/src/TcpclV4BundleSource.cpp</label>
+        <link refid="TcpclV4BundleSource_8cpp"/>
+      </node>
+      <node id="63">
+        <label>module/hdtn_one_process/src/HdtnOneProcessRunner.cpp</label>
+        <link refid="HdtnOneProcessRunner_8cpp"/>
+      </node>
+      <node id="107">
+        <label>common/ltp/src/LtpEncapLocalStreamEngine.cpp</label>
+        <link refid="LtpEncapLocalStreamEngine_8cpp"/>
+      </node>
+      <node id="66">
+        <label>module/router/include/router.h</label>
+        <link refid="router_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>module/router/unit_tests/RouterTests.cpp</label>
+        <link refid="RouterTests_8cpp"/>
+      </node>
+      <node id="137">
+        <label>common/tcpcl/src/TcpclBundleSource.cpp</label>
+        <link refid="TcpclBundleSource_8cpp"/>
+      </node>
+      <node id="82">
+        <label>module/storage/include/BundleStorageManagerAsio.h</label>
+        <link refid="BundleStorageManagerAsio_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>common/ltp/src/LtpUdpEngine.cpp</label>
+        <link refid="LtpUdpEngine_8cpp"/>
+      </node>
+      <node id="62">
+        <label>module/egress/src/EgressAsyncRunner.cpp</label>
+        <link refid="EgressAsyncRunner_8cpp"/>
+      </node>
+      <node id="81">
+        <label>module/storage/include/BundleStorageManagerBase.h</label>
+        <link refid="BundleStorageManagerBase_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>module/ingress/src/ingress.cpp</label>
+        <link refid="ingress_8cpp"/>
+      </node>
+      <node id="88">
+        <label>module/storage/src/BundleStorageManagerMT.cpp</label>
+        <link refid="BundleStorageManagerMT_8cpp"/>
+      </node>
+      <node id="113">
+        <label>common/ltp/src/LtpOverIpcBundleSource.cpp</label>
+        <link refid="LtpOverIpcBundleSource_8cpp"/>
+      </node>
+      <node id="23">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStream.cpp</label>
+        <link refid="BpSendStream_8cpp"/>
+      </node>
+      <node id="59">
+        <label>module/cli/test/TestHdtnCliRunner.cpp</label>
+        <link refid="TestHdtnCliRunner_8cpp"/>
+      </node>
+      <node id="37">
+        <label>common/bpsec/src/BpSecBundleProcessor.cpp</label>
+        <link refid="BpSecBundleProcessor_8cpp"/>
+      </node>
+      <node id="118">
+        <label>common/ltp/src/LtpSessionRecreationPreventer.cpp</label>
+        <link refid="LtpSessionRecreationPreventer_8cpp"/>
+      </node>
+      <node id="95">
+        <label>common/induct_manager/src/InductManager.cpp</label>
+        <link refid="InductManager_8cpp"/>
+      </node>
+      <node id="34">
+        <label>common/bpcodec/src/codec/Bpv7CanonicalBlock.cpp</label>
+        <link refid="Bpv7CanonicalBlock_8cpp"/>
+      </node>
+      <node id="115">
+        <label>common/ltp/src/LtpOverUdpBundleSource.cpp</label>
+        <link refid="LtpOverUdpBundleSource_8cpp"/>
+      </node>
+      <node id="151">
+        <label>common/util/src/FragmentSet.cpp</label>
+        <link refid="FragmentSet_8cpp"/>
+      </node>
+      <node id="7">
+        <label>common/bpcodec/apps/bping/src/BPing.cpp</label>
+        <link refid="BPing_8cpp"/>
+      </node>
+      <node id="86">
+        <label>module/storage/unit_tests/deprecated/BundleStorageManagerMtAsFifoTests.cpp</label>
+        <link refid="BundleStorageManagerMtAsFifoTests_8cpp"/>
+      </node>
+      <node id="92">
+        <label>common/config/src/OutductsConfig.cpp</label>
+        <link refid="OutductsConfig_8cpp"/>
+      </node>
+      <node id="176">
+        <label>module/udp_delay_sim/src/UdpDelaySimMain.cpp</label>
+        <link refid="UdpDelaySimMain_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classhdtn_1_1Logger" prot="public">hdtn::Logger</innerclass>
+    <innernamespace refid="namespacehdtn">hdtn</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="Logger_8h_1a15856724811f59e6f351153e89380f5d" prot="public" static="no">
+        <name>LOG_LEVEL_TRACE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log levels. These match the Boost trivial level definitions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="49" column="9" bodyfile="common/logger/include/Logger.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a130224df8c6bf22a688e3cb74a45689a" prot="public" static="no">
+        <name>LOG_LEVEL_DEBUG</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="50" column="9" bodyfile="common/logger/include/Logger.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a2e25fe130cf710da4ad800747fdd51f3" prot="public" static="no">
+        <name>LOG_LEVEL_INFO</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="51" column="9" bodyfile="common/logger/include/Logger.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1af539a66abed2a7a15e3443d70a3cf1e1" prot="public" static="no">
+        <name>LOG_LEVEL_WARNING</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="52" column="9" bodyfile="common/logger/include/Logger.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a742fc70e331d7e568bd893c514756a29" prot="public" static="no">
+        <name>LOG_LEVEL_ERROR</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="53" column="9" bodyfile="common/logger/include/Logger.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1ac6b8217f1800f3adc3cf1eee30915b78" prot="public" static="no">
+        <name>LOG_LEVEL_FATAL</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="54" column="9" bodyfile="common/logger/include/Logger.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1ad906cb39a4bbbcff23c10a04e82210f8" prot="public" static="no">
+        <name>_NO_OP_STREAM_LOGGER</name>
+        <initializer><ref refid="TestBpSecPolicyManager_8cpp_1ab2ca5837aa1596666f49819f304d7d2f" kindref="member">if</ref> (true) {} else std::cout</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>_NO_OP_STREAM_LOGGER is a macro to efficiently discard a streaming expression. Since the &quot;else&quot; branch is never taken, the compiler should optimize it out. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="60" column="9" bodyfile="common/logger/include/Logger.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a783f25d6055871fa928a49f00ff2fb1e" prot="public" static="no">
+        <name>LOG_TRACE</name>
+        <param><defname>subprocess</defname></param>
+        <initializer><ref refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" kindref="member">_LOG_INTERNAL</ref>(<ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, boost::log::trivial::severity_level::trace)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The following macros provide access for logging at various levels </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="68" column="14" bodyfile="common/logger/include/Logger.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" prot="public" static="no">
+        <name>LOG_DEBUG</name>
+        <param><defname>subprocess</defname></param>
+        <initializer><ref refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" kindref="member">_LOG_INTERNAL</ref>(<ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, boost::log::trivial::severity_level::debug)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="74" column="14" bodyfile="common/logger/include/Logger.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a8b402e6b916d713ccdb3633e143c4ecb" prot="public" static="no">
+        <name>LOG_INFO</name>
+        <param><defname>subprocess</defname></param>
+        <initializer><ref refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" kindref="member">_LOG_INTERNAL</ref>(<ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, boost::log::trivial::severity_level::info)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="80" column="14" bodyfile="common/logger/include/Logger.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" prot="public" static="no">
+        <name>LOG_WARNING</name>
+        <param><defname>subprocess</defname></param>
+        <initializer><ref refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" kindref="member">_LOG_INTERNAL</ref>(<ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, boost::log::trivial::severity_level::warning)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="86" column="14" bodyfile="common/logger/include/Logger.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" prot="public" static="no">
+        <name>LOG_ERROR</name>
+        <param><defname>subprocess</defname></param>
+        <initializer><ref refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" kindref="member">_LOG_INTERNAL</ref>(<ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, boost::log::trivial::severity_level::error)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="92" column="14" bodyfile="common/logger/include/Logger.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" prot="public" static="no">
+        <name>LOG_FATAL</name>
+        <param><defname>subprocess</defname></param>
+        <initializer><ref refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" kindref="member">_LOG_INTERNAL</ref>(<ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, boost::log::trivial::severity_level::fatal)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="98" column="14" bodyfile="common/logger/include/Logger.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" prot="public" static="no">
+        <name>_LOG_INTERNAL</name>
+        <param><defname>subprocess</defname></param>
+        <param><defname>lvl</defname></param>
+        <initializer>    <ref refid="classhdtn_1_1Logger_1a2cc9a97cb8efe9b985e1d190b24fe4c3" kindref="member">hdtn::Logger::ensureInitialized</ref>();\
+    BOOST_LOG_STREAM_CHANNEL_SEV(<ref refid="classhdtn_1_1Logger_1ac26e0465f03d31ed1f0e2895a8698bf1" kindref="member">hdtn::Logger::m_severityChannelLogger</ref>, <ref refid="UdpDelaySimRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>, lvl)\
+        &lt;&lt; boost::log::add_value(&quot;File&quot;, __FILE__)\
+        &lt;&lt; boost::log::add_value(&quot;Line&quot;, __LINE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/logger/include/Logger.h" line="101" column="9" bodyfile="common/logger/include/Logger.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>NASA<sp/>Glenn<sp/>Research<sp/>Center,<sp/>Cleveland,<sp/>OH</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Released<sp/>under<sp/>the<sp/>NASA<sp/>Open<sp/>Source<sp/>Agreement<sp/>(NOSA)</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>May<sp/><sp/>2021</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>***************************************************************************</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_HDTN_LOG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_HDTN_LOG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/core/null_deleter.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/date_time/posix_time/posix_time.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/attributes.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/attributes/scoped_attribute.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/expressions.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sinks.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sinks/sync_frontend.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sinks/text_file_backend.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sinks/text_ostream_backend.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sources/basic_logger.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sources/record_ostream.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sources/severity_channel_logger.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sources/severity_logger.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/support/date_time.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/manipulators/add_value.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/common_attributes.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/file.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/value_ref.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/smart_ptr/make_shared_object.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/smart_ptr/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/config/detail/suffix.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;log_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacehdtn" kindref="compound">hdtn</ref>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="Logger_8h_1a15856724811f59e6f351153e89380f5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_LEVEL_TRACE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="Logger_8h_1a130224df8c6bf22a688e3cb74a45689a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_LEVEL_DEBUG<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="Logger_8h_1a2e25fe130cf710da4ad800747fdd51f3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_LEVEL_INFO<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="Logger_8h_1af539a66abed2a7a15e3443d70a3cf1e1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_LEVEL_WARNING<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="Logger_8h_1a742fc70e331d7e568bd893c514756a29" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_LEVEL_ERROR<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="Logger_8h_1ac6b8217f1800f3adc3cf1eee30915b78" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_LEVEL_FATAL<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="Logger_8h_1ad906cb39a4bbbcff23c10a04e82210f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_NO_OP_STREAM_LOGGER<sp/>if<sp/>(true)<sp/>{}<sp/>else<sp/>std::cout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>LOG_LEVEL<sp/>&gt;<sp/>LOG_LEVEL_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_TRACE(subprocess)<sp/>_NO_OP_STREAM_LOGGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="Logger_8h_1a783f25d6055871fa928a49f00ff2fb1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_TRACE(subprocess)<sp/>_LOG_INTERNAL(subprocess,<sp/>boost::log::trivial::severity_level::trace)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>LOG_LEVEL<sp/>&gt;<sp/>LOG_LEVEL_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_DEBUG(subprocess)<sp/>_NO_OP_STREAM_LOGGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_DEBUG(subprocess)<sp/>_LOG_INTERNAL(subprocess,<sp/>boost::log::trivial::severity_level::debug)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>LOG_LEVEL<sp/>&gt;<sp/>LOG_LEVEL_INFO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_INFO(subprocess)<sp/>_NO_OP_STREAM_LOGGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="Logger_8h_1a8b402e6b916d713ccdb3633e143c4ecb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_INFO(subprocess)<sp/>_LOG_INTERNAL(subprocess,<sp/>boost::log::trivial::severity_level::info)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>LOG_LEVEL<sp/>&gt;<sp/>LOG_LEVEL_WARNING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_WARNING(subprocess)<sp/>_NO_OP_STREAM_LOGGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_WARNING(subprocess)<sp/>_LOG_INTERNAL(subprocess,<sp/>boost::log::trivial::severity_level::warning)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>LOG_LEVEL<sp/>&gt;<sp/>LOG_LEVEL_ERROR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_ERROR(subprocess)<sp/>_NO_OP_STREAM_LOGGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_ERROR(subprocess)<sp/>_LOG_INTERNAL(subprocess,<sp/>boost::log::trivial::severity_level::error)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>LOG_LEVEL<sp/>&gt;<sp/>LOG_LEVEL_FATAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_FATAL(subprocess)<sp/>_NO_OP_STREAM_LOGGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG_FATAL(subprocess)<sp/>_LOG_INTERNAL(subprocess,<sp/>boost::log::trivial::severity_level::fatal)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="Logger_8h_1a8767aada88c3efb52e634041f458b7d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_LOG_INTERNAL(subprocess,<sp/>lvl)\</highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>hdtn::Logger::ensureInitialized();\</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>BOOST_LOG_STREAM_CHANNEL_SEV(hdtn::Logger::m_severityChannelLogger,<sp/>subprocess,<sp/>lvl)\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>boost::log::add_value(&quot;File&quot;</highlight><highlight class="normal">,<sp/>__FILE__)\</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>boost::log::add_value(&quot;Line&quot;,<sp/>__LINE__)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="namespacehdtn_1accaed4abb89468420c71af9e6b87c850" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::log::sinks::synchronous_sink&lt;boost::log::sinks::text_file_backend&gt;<sp/><ref refid="namespacehdtn_1accaed4abb89468420c71af9e6b87c850" kindref="member">sink_t</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classhdtn_1_1Logger" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhdtn_1_1Logger" kindref="compound">Logger</ref></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classhdtn_1_1Logger_1afa0b8c7e58abd579ed5d87499440dfc2" kindref="member">GetHdtnVersionAsString</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a2cc9a97cb8efe9b985e1d190b24fe4c3" kindref="member">ensureInitialized</ref>()<sp/>noexcept;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277e" kindref="member">Process</ref><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eadf293e37d8e29228238de74b212c3684" kindref="member">bpgen</ref>,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea80646d92574c32c33864a53889f6b4cf" kindref="member">bping</ref>,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eaa0f72276c1756cad529ea96443c1c4a6" kindref="member">bpreceivefile</ref>,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ead2a9e864c9cc3ae842c965025f7f6e91" kindref="member">bpsendfile</ref>,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eab3933079522d1d5749947c5e5df9ac29" kindref="member">bpsink</ref>,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea452b47ff5f5e8cd4f133f55dc009aaf0" kindref="member">ltpfiletransfer</ref>,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea9928c88a1235388e8d82bcc09db13c7c" kindref="member">egress</ref>,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea548e8b5a2b4d92c965e150c54add2a40" kindref="member">telem</ref>,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eab69a67d232c85422c4c9963ecd109823" kindref="member">hdtnoneprocess</ref>,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea17f1d7a64442cda6863a4251c2eaf2ee" kindref="member">ingress</ref>,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eaf3395cd54cf857ddf8f2056768ff49ae" kindref="member">router</ref>,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eaddecebdea58b5f264d27f1f7909bab74" kindref="member">storage</ref>,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea4ba651bd2fac5d21aeffbba54b6cedc5" kindref="member">releasemessagesender</ref>,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea9f0f69e47543b72b543b238c255902b0" kindref="member">storagespeedtest</ref>,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea419d867fbd78dccfd71d1b77907cc7ef" kindref="member">udpdelaysim</ref>,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea16802231b09f155b7a42a5dcaba33a74" kindref="member">unittest</ref>,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea5d6d8bceea418ddbe730f5e269bc0e68" kindref="member">bpsendstream</ref>,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eacde0b305ea00be3d7b7f003d2904ed4f" kindref="member">bprecvstream</ref>,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277ea334c4a4c42fdb79d7ebc3e73b517e6f8" kindref="member">none</ref></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">SubProcess</ref><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a9928c88a1235388e8d82bcc09db13c7c" kindref="member">egress</ref>,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a17f1d7a64442cda6863a4251c2eaf2ee" kindref="member">ingress</ref>,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499af3395cd54cf857ddf8f2056768ff49ae" kindref="member">router</ref>,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499addecebdea58b5f264d27f1f7909bab74" kindref="member">storage</ref>,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a548e8b5a2b4d92c965e150c54add2a40" kindref="member">telem</ref>,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499ac00425797de3c98e7b32e814b54a6ec5" kindref="member">gui</ref>,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a16802231b09f155b7a42a5dcaba33a74" kindref="member">unittest</ref>,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a0898b22730d57afcd394d8e4889ece4a" kindref="member">cli</ref>,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a334c4a4c42fdb79d7ebc3e73b517e6f8" kindref="member">none</ref></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classhdtn_1_1Logger_1a88ed1d0ef81ba81f5fbb18a5de09a73a" kindref="member">toString</ref>(<ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277e" kindref="member">Logger::Process</ref><sp/>process);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classhdtn_1_1Logger_1a88ed1d0ef81ba81f5fbb18a5de09a73a" kindref="member">toString</ref>(<ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">Logger::SubProcess</ref><sp/>subProcess);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="classhdtn_1_1Logger_1a512cc8ddc8b4662e149e48d9553987c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::log::attributes::constant&lt;Logger::Process&gt;<sp/><ref refid="classhdtn_1_1Logger_1a512cc8ddc8b4662e149e48d9553987c7" kindref="member">process_attr_t</ref>;</highlight></codeline>
+<codeline lineno="189" refid="classhdtn_1_1Logger_1a264babce5eaa248447a6203913126eec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a512cc8ddc8b4662e149e48d9553987c7" kindref="member">Logger::process_attr_t</ref><sp/><ref refid="classhdtn_1_1Logger_1a264babce5eaa248447a6203913126eec" kindref="member">process_attr</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Initializes<sp/>the<sp/>logger<sp/>with<sp/>a<sp/>process<sp/>identifier<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>used<sp/>in<sp/>all<sp/>messages</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a2c064b72a4db6bc1f831b04e98b8cbe3" kindref="member">initializeWithProcess</ref>(<ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277e" kindref="member">Logger::Process</ref><sp/>process);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::log::sources::severity_channel_logger_mt&lt;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity_level,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">Logger::SubProcess</ref></highlight></codeline>
+<codeline lineno="203" refid="classhdtn_1_1Logger_1a618ab311d3892f9a4c182b29697a8983" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>&gt;<sp/><ref refid="classhdtn_1_1Logger_1a618ab311d3892f9a4c182b29697a8983" kindref="member">severity_channel_logger_t</ref>;<sp/></highlight><highlight class="comment">//mt<sp/>for<sp/>multithreaded</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="classhdtn_1_1Logger_1ac26e0465f03d31ed1f0e2895a8698bf1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a618ab311d3892f9a4c182b29697a8983" kindref="member">Logger::severity_channel_logger_t</ref><sp/><ref refid="classhdtn_1_1Logger_1ac26e0465f03d31ed1f0e2895a8698bf1" kindref="member">m_severityChannelLogger</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/><ref refid="classhdtn_1_1Logger_1a6547f1c6cb1d640a79c3c512b00722c3" kindref="member">~Logger</ref>();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/><ref refid="classhdtn_1_1Logger_1ab147b15cdcc0e6b161b6e82b70ddc5a1" kindref="member">Logger</ref>();</highlight></codeline>
+<codeline lineno="210" refid="classhdtn_1_1Logger_1a9b23c259d8c0b0739a7f57887a7a7329" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/><ref refid="classhdtn_1_1Logger_1a9b23c259d8c0b0739a7f57887a7a7329" kindref="member">Logger</ref>(<ref refid="classhdtn_1_1Logger" kindref="compound">Logger</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211" refid="classhdtn_1_1Logger_1ab669fe7d1d3e510f0a9dc8d293a829b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/><ref refid="classhdtn_1_1Logger" kindref="compound">Logger</ref>&amp;<sp/><ref refid="classhdtn_1_1Logger_1ab669fe7d1d3e510f0a9dc8d293a829b7" kindref="member">operator=</ref>(<ref refid="classhdtn_1_1Logger" kindref="compound">Logger</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a5290dc54abbe06edcf56e8287a2e876e" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a656b01f4c498c7f8c8bd8d89cffb1031" kindref="member">registerAttributes</ref>();</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a69c7c4f2465b25299c6926c24026d3f2" kindref="member">createFileSinkForProcess</ref>(<ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277e" kindref="member">Logger::Process</ref><sp/>process);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a934a5f8a6ce136596829e2809f4a9afa" kindref="member">createFileSinkForSubProcess</ref>(<ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">Logger::SubProcess</ref><sp/><ref refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" kindref="member">subprocess</ref>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1a61d5ee670165f353fd9c31bd0c5ae0a8" kindref="member">createFileSinkForLevel</ref>(boost::log::trivial::severity_level<sp/>level);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhdtn_1_1Logger_1adddfb9d8abec4379ae30c4e406670106" kindref="member">createStdoutSink</ref>();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/><ref refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277e" kindref="member">Logger::Process</ref><sp/><ref refid="classhdtn_1_1Logger_1ae34af386cd64dfad93fefa01e1e1fe71" kindref="member">getProcessAttributeVal</ref>();</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::log::formatter<sp/><ref refid="classhdtn_1_1Logger_1adbb5a77d2b8a79f8daa73ebbf400243f" kindref="member">consoleFormatter</ref>();</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::log::formatter<sp/><ref refid="classhdtn_1_1Logger_1aea29632a584a59facf04607791079e94" kindref="member">levelFileFormatter</ref>();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::log::formatter<sp/><ref refid="classhdtn_1_1Logger_1a06d2e9cf064481089a17ffcde50a58f5" kindref="member">processFileFormatter</ref>();</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267" refid="classhdtn_1_1Logger_1ad4f2c9e26d37ecfd5ab69f38d9832007" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;Logger&gt;<sp/><ref refid="classhdtn_1_1Logger_1ad4f2c9e26d37ecfd5ab69f38d9832007" kindref="member">logger_</ref>;<sp/></highlight><highlight class="comment">//singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268" refid="classhdtn_1_1Logger_1ab2b767fb6d3e9f1160f06965a0da95ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::mutex<sp/><ref refid="classhdtn_1_1Logger_1ab2b767fb6d3e9f1160f06965a0da95ba" kindref="member">mutexSingletonInstance_</ref>;</highlight></codeline>
+<codeline lineno="269" refid="classhdtn_1_1Logger_1a27541fd3b02d372bf0bce9eba8cfe25b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classhdtn_1_1Logger_1a27541fd3b02d372bf0bce9eba8cfe25b" kindref="member">loggerSingletonFullyInitialized_</ref>;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="common/logger/include/Logger.h"/>
+  </compounddef>
+</doxygen>

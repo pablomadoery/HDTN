@@ -1,0 +1,1051 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpFileTransfer_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>BpFileTransfer::Impl</compoundname>
+    <basecompoundref refid="classBpSourcePattern" prot="public" virt="non-virtual">BpSourcePattern</basecompoundref>
+    <innerclass refid="structBpFileTransfer_1_1Impl_1_1send__info__t" prot="public">BpFileTransfer::Impl::send_info_t</innerclass>
+    <innerclass refid="structBpFileTransfer_1_1Impl_1_1write__info__t" prot="public">BpFileTransfer::Impl::write_info_t</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classBpFileTransfer_1_1Impl_1a4d1e1e4e5c0ae84e5771142613877465" prot="public" static="no">
+        <type>std::map&lt; std::string, <ref refid="structBpFileTransfer_1_1Impl_1_1write__info__t" kindref="compound">write_info_t</ref> &gt;</type>
+        <definition>typedef std::map&lt;std::string, write_info_t&gt; BpFileTransfer::Impl::filename_to_writeinfo_map_t</definition>
+        <argsstring></argsstring>
+        <name>filename_to_writeinfo_map_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="149" column="22" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classBpFileTransfer_1_1Impl_1add4512007e069ba03688184b4c058fa8" prot="public" static="no">
+        <type>std::map&lt; std::string, <ref refid="structBpFileTransfer_1_1Impl_1_1send__info__t" kindref="compound">send_info_t</ref> &gt;</type>
+        <definition>typedef std::map&lt;std::string, send_info_t&gt; BpFileTransfer::Impl::filename_to_sendinfo_map_t</definition>
+        <argsstring></argsstring>
+        <name>filename_to_sendinfo_map_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="166" column="22" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a3a57e70f964a0ae544605f7413c3a524" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t BpFileTransfer::Impl::M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="185" column="20" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a5cdf95c76f777ed5b6a844ac6ee08e79" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t BpFileTransfer::Impl::M_MAX_RX_FILE_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_RX_FILE_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="186" column="20" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a0e92a898db1d795ffd5627964b188af4" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::filesystem::ifstream &gt;</type>
+        <definition>std::unique_ptr&lt;boost::filesystem::ifstream&gt; BpFileTransfer::Impl::m_currentIfstreamPtr</definition>
+        <argsstring></argsstring>
+        <name>m_currentIfstreamPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="189" column="21" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a2e20bf9bee3a99203d26018c2cabd085" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path BpFileTransfer::Impl::m_currentFilePathAbsolute</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathAbsolute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="190" column="29" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a20472a36f5ee7131099fb9aae118e2f9" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path BpFileTransfer::Impl::m_currentFilePathRelative</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathRelative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="191" column="29" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a94d4595cc0133503051dd08ffec711bf" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpFileTransfer::Impl::m_currentFilePathRelativeAsUtf8String</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathRelativeAsUtf8String</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="192" column="17" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1abdb068d0cbb3e796a3ae74495f4f38a2" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpFileTransfer::Impl::m_currentFilePathRelativeAsPrintableString</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathRelativeAsPrintableString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="193" column="17" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a11b446452e2564d9ef4af7b2ebbf0e03" prot="private" static="no" mutable="no">
+        <type><ref refid="structSendFileMetadata" kindref="compound">SendFileMetadata</ref></type>
+        <definition>SendFileMetadata BpFileTransfer::Impl::m_currentSendFileMetadata</definition>
+        <argsstring></argsstring>
+        <name>m_currentSendFileMetadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="194" column="22" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="194" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a4732ced2378f5476d9bc950d5fb89363" prot="private" static="no" mutable="no">
+        <type><ref refid="classCrc32c__InOrderChunks" kindref="compound">Crc32c_InOrderChunks</ref></type>
+        <definition>Crc32c_InOrderChunks BpFileTransfer::Impl::m_currentSendFileCrc32c</definition>
+        <argsstring></argsstring>
+        <name>m_currentSendFileCrc32c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="195" column="26" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a41e46cb0c38762d2600be15cb7b5a6e1" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service BpFileTransfer::Impl::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="196" column="29" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="196" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a5c1ef7f10e324b526de744e148e7c453" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer BpFileTransfer::Impl::m_needToSendWebsocketUpdatesTimer</definition>
+        <argsstring></argsstring>
+        <name>m_needToSendWebsocketUpdatesTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="197" column="33" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="197" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1af8ae290f7845c965a6288cb2802736de" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::ptime</type>
+        <definition>boost::posix_time::ptime BpFileTransfer::Impl::m_websocketTimerExpiry</definition>
+        <argsstring></argsstring>
+        <name>m_websocketTimerExpiry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="198" column="30" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="198" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a8d1d1ffde3687834e8b8783135133797" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpFileTransfer::Impl::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="199" column="21" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="199" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1af4fb583376a7c17c22091909e2dca502" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classDirectoryScanner" kindref="compound">DirectoryScanner</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DirectoryScanner&gt; BpFileTransfer::Impl::m_directoryScannerPtr</definition>
+        <argsstring></argsstring>
+        <name>m_directoryScannerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="200" column="21" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="200" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a2ca973df725f8ba5adb8a1714705814b" prot="private" static="no" mutable="no">
+        <type><ref refid="classBpFileTransfer_1_1Impl_1add4512007e069ba03688184b4c058fa8" kindref="member">filename_to_sendinfo_map_t</ref></type>
+        <definition>filename_to_sendinfo_map_t BpFileTransfer::Impl::m_filenameToSendInfoMap</definition>
+        <argsstring></argsstring>
+        <name>m_filenameToSendInfoMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="201" column="32" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a61f5c7b0f96ffb5da3b3621bd6963f75" prot="private" static="no" mutable="no">
+        <type>filename_to_sendinfo_map_t::iterator</type>
+        <definition>filename_to_sendinfo_map_t::iterator BpFileTransfer::Impl::m_currentFilenameToSendInfoMapIterator</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilenameToSendInfoMapIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="202" column="42" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a9d5126d13b844c1a5717cb3b4946681d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::m_filenameToSendInfoMapWasModified</definition>
+        <argsstring></argsstring>
+        <name>m_filenameToSendInfoMapWasModified</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="203" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1ae50342a7d0b33645b6b636f522b2b8a7" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpFileTransfer::Impl::m_filenameToSendInfoMapMutex</definition>
+        <argsstring></argsstring>
+        <name>m_filenameToSendInfoMapMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="204" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1adbe2a98b7a92f52e439cf79ec684557b" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path BpFileTransfer::Impl::m_saveDirectory</definition>
+        <argsstring></argsstring>
+        <name>m_saveDirectory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="207" column="29" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="207" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a03436ac5d3bca39a83dec0cee5f596a7" prot="private" static="no" mutable="no">
+        <type><ref refid="classBpFileTransfer_1_1Impl_1a4d1e1e4e5c0ae84e5771142613877465" kindref="member">filename_to_writeinfo_map_t</ref></type>
+        <definition>filename_to_writeinfo_map_t BpFileTransfer::Impl::m_filenameToWriteInfoMap</definition>
+        <argsstring></argsstring>
+        <name>m_filenameToWriteInfoMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="208" column="33" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a594ee679cc8c3b53d7fdfcc3045b1113" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::m_filenameToWriteInfoMapWasModified</definition>
+        <argsstring></argsstring>
+        <name>m_filenameToWriteInfoMapWasModified</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="209" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a72644b25ec022fee199ed2f21efd7c19" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpFileTransfer::Impl::m_filenameToWriteInfoMapMutex</definition>
+        <argsstring></argsstring>
+        <name>m_filenameToWriteInfoMapMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="210" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a9100dddc395a394d21c0b4a2a0903c2f" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::queue&lt;std::vector&lt;uint8_t&gt; &gt; BpFileTransfer::Impl::m_fileAcksToSendQueue</definition>
+        <argsstring></argsstring>
+        <name>m_fileAcksToSendQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="211" column="16" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1ae5cc3d8eb7302e9915a5f8e52f98f45f" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpFileTransfer::Impl::m_fileAcksToSendMutex</definition>
+        <argsstring></argsstring>
+        <name>m_fileAcksToSendMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="212" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a51ac4dec4b9b4df8c757d339ee52d946" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpFileTransfer::Impl::m_fileAcksToSendCv</definition>
+        <argsstring></argsstring>
+        <name>m_fileAcksToSendCv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="213" column="31" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a824265df8c78625b53d60f2c95b2e208" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; BpFileTransfer::Impl::m_currentFileAckVecToSend</definition>
+        <argsstring></argsstring>
+        <name>m_currentFileAckVecToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="214" column="17" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1aae818060979da42d04d0acceb79e78a6" prot="private" static="no" mutable="no">
+        <type><ref refid="classWebsocketServer" kindref="compound">WebsocketServer</ref></type>
+        <definition>WebsocketServer BpFileTransfer::Impl::m_websocketServer</definition>
+        <argsstring></argsstring>
+        <name>m_websocketServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="217" column="21" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="217" bodyend="-1"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1aa1ca3f66758c67c347398c49e7c660ce" compoundref="BpFileTransfer_8cpp" startline="265" endline="275">InitWebServer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1ac33fe5291667a6d5ea448d0962429cdf" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::queue&lt;std::vector&lt;uint8_t&gt; &gt; BpFileTransfer::Impl::m_commandsToSendQueue</definition>
+        <argsstring></argsstring>
+        <name>m_commandsToSendQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="219" column="16" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a38ca51f5cb7b14063acb5b3de7cff4aa" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpFileTransfer::Impl::m_commandsToSendMutex</definition>
+        <argsstring></argsstring>
+        <name>m_commandsToSendMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="220" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpFileTransfer_1_1Impl_1a404a55d45ab0179a737d1d87d4e81919" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpFileTransfer::Impl::m_commandsToSendCv</definition>
+        <argsstring></argsstring>
+        <name>m_commandsToSendCv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="221" column="31" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BpFileTransfer::Impl::Impl</definition>
+        <argsstring>(const boost::filesystem::path &amp;fileOrFolderPathToSend, const boost::filesystem::path &amp;saveDirectory, uint64_t maxBundleSizeBytes, bool uploadExistingFiles, bool uploadNewFiles, unsigned int recurseDirectoriesDepth, const uint64_t maxRxFileSizeBytes)</argsstring>
+        <name>Impl</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>fileOrFolderPathToSend</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>saveDirectory</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>uploadExistingFiles</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>uploadNewFiles</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>recurseDirectoriesDepth</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxRxFileSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="117" column="5" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="292" bodyend="343"/>
+        <references refid="BpFileTransfer_8cpp_1aa2614dc56b88f398a604b169fd2f1041" compoundref="BpFileTransfer_8cpp" startline="39" endline="57">CreateDirectoryRecursivelyVerboseIfNotExist</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classBpFileTransfer_1_1Impl_1a11b446452e2564d9ef4af7b2ebbf0e03" compoundref="BpFileTransfer_8cpp" startline="194">m_currentSendFileMetadata</references>
+        <references refid="classBpFileTransfer_1_1Impl_1af4fb583376a7c17c22091909e2dca502" compoundref="BpFileTransfer_8cpp" startline="200">m_directoryScannerPtr</references>
+        <references refid="classBpFileTransfer_1_1Impl_1a41e46cb0c38762d2600be15cb7b5a6e1" compoundref="BpFileTransfer_8cpp" startline="196">m_ioService</references>
+        <references refid="classBpFileTransfer_1_1Impl_1a8d1d1ffde3687834e8b8783135133797" compoundref="BpFileTransfer_8cpp" startline="199">m_ioServiceThreadPtr</references>
+        <references refid="classBpFileTransfer_1_1Impl_1a5c1ef7f10e324b526de744e148e7c453" compoundref="BpFileTransfer_8cpp" startline="197">m_needToSendWebsocketUpdatesTimer</references>
+        <references refid="classBpFileTransfer_1_1Impl_1adbe2a98b7a92f52e439cf79ec684557b" compoundref="BpFileTransfer_8cpp" startline="207">m_saveDirectory</references>
+        <references refid="classBpFileTransfer_1_1Impl_1af8ae290f7845c965a6288cb2802736de" compoundref="BpFileTransfer_8cpp" startline="198">m_websocketTimerExpiry</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="classBpFileTransfer_1_1Impl_1a5823be58e5943793f2d234dcb5c5ff0e" compoundref="BpFileTransfer_8cpp" startline="1013" endline="1045">OnNeedToSendWebsocketUpdates_TimerExpired</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="BpFileTransfer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpFileTransfer_8cpp" startline="37">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1ace0d41135195b51bd46cfa67e1a41012" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BpFileTransfer::Impl::~Impl</definition>
+        <argsstring>() override</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="124" column="13" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="345" bodyend="352"/>
+        <references refid="classBpFileTransfer_1_1Impl_1a076186e51663ff73118373a013ec6710" compoundref="BpFileTransfer_8cpp" startline="353" endline="356">Shutdown_NotThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1aa1ca3f66758c67c347398c49e7c660ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::InitWebServer</definition>
+        <argsstring>(const WebsocketServer::ProgramOptions &amp;websocketServerProgramOptions)</argsstring>
+        <name>InitWebServer</name>
+        <param>
+          <type>const <ref refid="structWebsocketServer_1_1ProgramOptions" kindref="compound">WebsocketServer::ProgramOptions</ref> &amp;</type>
+          <declname>websocketServerProgramOptions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="126" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="265" bodyend="275"/>
+        <references refid="classWebsocketServer_1a98449c285e803ffbfb9b9c7e9b10af7d" compoundref="WebsocketServer_8cpp" startline="244" endline="250">WebsocketServer::Init</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classBpFileTransfer_1_1Impl_1aae818060979da42d04d0acceb79e78a6" compoundref="BpFileTransfer_8cpp" startline="217">m_websocketServer</references>
+        <references refid="classBpFileTransfer_1_1Impl_1ad3bba420ac6d2acc0ac917f519c3cd43" compoundref="BpFileTransfer_8cpp" startline="985" endline="1005">OnNewWebsocketConnectionCallback</references>
+        <references refid="classBpFileTransfer_1_1Impl_1abbabe7185e28c3708e32914f1e86859c" compoundref="BpFileTransfer_8cpp" startline="1007" endline="1011">OnNewWebsocketTextDataReceivedCallback</references>
+        <references refid="BpFileTransfer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpFileTransfer_8cpp" startline="37">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1ae0c7a5d5297be7c3642cbcd76e878339" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t BpFileTransfer::Impl::GetNumberOfFilesToSend</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumberOfFilesToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="169" column="17" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="358" bodyend="360"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a225b4a6b00de5685840003a7a223377c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::CreateReceivedFilesJson</definition>
+        <argsstring>(std::string &amp;jsonStr, const filename_to_writeinfo_map_t &amp;m)</argsstring>
+        <name>CreateReceivedFilesJson</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>jsonStr</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classBpFileTransfer_1_1Impl_1a4d1e1e4e5c0ae84e5771142613877465" kindref="member">filename_to_writeinfo_map_t</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="150" column="17" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="433" bodyend="501"/>
+        <references refid="BpFileTransfer_8cpp_1a2537a88f5016ead45ed8393e7e13ac4f" compoundref="BpFileTransfer_8cpp" startline="363" endline="370">WriteUint64ToChars</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a7593248d9eb46efa923a8b3a4e8d3888" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::CreateSentFilesJson</definition>
+        <argsstring>(std::string &amp;jsonStr, const filename_to_sendinfo_map_t &amp;m)</argsstring>
+        <name>CreateSentFilesJson</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>jsonStr</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classBpFileTransfer_1_1Impl_1add4512007e069ba03688184b4c058fa8" kindref="member">filename_to_sendinfo_map_t</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="167" column="17" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="371" bodyend="431"/>
+        <references refid="BpFileTransfer_8cpp_1a2537a88f5016ead45ed8393e7e13ac4f" compoundref="BpFileTransfer_8cpp" startline="363" endline="370">WriteUint64ToChars</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a0c0d8a6bc904616fbfd74e7e06cf3cea" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t BpFileTransfer::Impl::GetNextPayloadLength_Step1</definition>
+        <argsstring>() override</argsstring>
+        <name>GetNextPayloadLength_Step1</name>
+        <reimplements refid="classBpSourcePattern_1a65736f8cce8b64a42be757a1b6f334e4">GetNextPayloadLength_Step1</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="172" column="22" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="503" bodyend="565"/>
+        <references refid="classUtf8Paths_1a991286103ad4c49e8e1ddc31a09c5b98" compoundref="Utf8Paths_8cpp" startline="73" endline="75">Utf8Paths::IsAscii</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUtf8Paths_1a9dafbe18f982218b164eb3f853a03b38" compoundref="Utf8Paths_8cpp" startline="66" endline="68">Utf8Paths::PathToUtf8String</references>
+        <references refid="structSendFileMetadata_1a62533d269319a0c338cbdc3aa74a6e68" compoundref="BpFileTransfer_8cpp" startline="73">SendFileMetadata::SendFileMetadataLength</references>
+        <references refid="BpFileTransfer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpFileTransfer_8cpp" startline="37">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a2d16de3795b35044800ec9a5c6e15a3f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::CopyPayload_Step2</definition>
+        <argsstring>(uint8_t *destinationBuffer) override</argsstring>
+        <name>CopyPayload_Step2</name>
+        <reimplements refid="classBpSourcePattern_1ab65db72649664027f585d3b2ce45e9f5">CopyPayload_Step2</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destinationBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="173" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="566" bodyend="610"/>
+        <references refid="structSendFileMetadata_1aad65cb3557adefe4ba579b570111ede8" compoundref="BpFileTransfer_8cpp" startline="71">SendFileMetadata::crc32c</references>
+        <references refid="BpFileTransfer_8cpp_1a96eac753a84dfc1c268f337a9ba00fbfa75ae3ce69d9860b533eceb6b28e7a5ed">FILE_DATA</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structSendFileMetadata_1a62533d269319a0c338cbdc3aa74a6e68" compoundref="BpFileTransfer_8cpp" startline="73">SendFileMetadata::SendFileMetadataLength</references>
+        <references refid="BpFileTransfer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpFileTransfer_8cpp" startline="37">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1acd1d09011dc0e54cd7774703a33a4acd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::TryWaitForDataAvailable</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;timeout) override</argsstring>
+        <name>TryWaitForDataAvailable</name>
+        <reimplements refid="classBpSourcePattern_1a4192a857f6af7cb64a60618c6ea44f50">TryWaitForDataAvailable</reimplements>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="174" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="612" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a0220f369b2f66b6cf2c3fc6d84fcb1ca" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::ProcessNonAdminRecordBundlePayload</definition>
+        <argsstring>(const uint8_t *data, const uint64_t size) override</argsstring>
+        <name>ProcessNonAdminRecordBundlePayload</name>
+        <reimplements refid="classBpSourcePattern_1af81631bb710c10b4e36da974ae176e6b">ProcessNonAdminRecordBundlePayload</reimplements>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="175" column="18" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="641" bodyend="953"/>
+        <references refid="classCrc32c__ReceiveOutOfOrderChunks_1a85cff09babf82ba4deb49608201efabd" compoundref="Bpv7Crc_8cpp" startline="266" endline="268">Crc32c_ReceiveOutOfOrderChunks::AddUnalignedBytes</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1a7330426449888222ffe750c93322330f" compoundref="BpFileTransfer_8cpp" startline="143">BpFileTransfer::Impl::write_info_t::bytesReceived</references>
+        <references refid="structSendFileMetadata_1aad65cb3557adefe4ba579b570111ede8" compoundref="BpFileTransfer_8cpp" startline="71">SendFileMetadata::crc32c</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1ac112a4ac6403b29cb392a191e6855db4" compoundref="BpFileTransfer_8cpp" startline="140">BpFileTransfer::Impl::write_info_t::crc32cRxOutOfOrderChunks</references>
+        <references refid="BpFileTransfer_8cpp_1aa2614dc56b88f398a604b169fd2f1041" compoundref="BpFileTransfer_8cpp" startline="39" endline="57">CreateDirectoryRecursivelyVerboseIfNotExist</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affa52313fcd091bd4b1d620d3100795534c">DUPLICATE_FILENAME</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1abb3cbf57d8c246b631b3112621918301" compoundref="BpFileTransfer_8cpp" startline="147">BpFileTransfer::Impl::write_info_t::errorOccurred</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1abe19057a7375f6a2c8dfdde408fd0584" compoundref="BpFileTransfer_8cpp" startline="141">BpFileTransfer::Impl::write_info_t::expectedCrc</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1a153814a89114ff5f5056f1d34791873a" compoundref="BpFileTransfer_8cpp" startline="142">BpFileTransfer::Impl::write_info_t::expectedFileSize</references>
+        <references refid="BpFileTransfer_8cpp_1a96eac753a84dfc1c268f337a9ba00fbfa9a686b89c0e55424d9c8759942801e1e">FILE_ACK</references>
+        <references refid="BpFileTransfer_8cpp_1a96eac753a84dfc1c268f337a9ba00fbfa75ae3ce69d9860b533eceb6b28e7a5ed">FILE_DATA</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affa41560ba52a49ab1186c6c9bbf5a48c58">FILE_FRAGMENT_MALFORMED_ERROR</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affafd89469666c53217d76f9eede8f79b30">FILE_RECEIVED_CRC_MATCH</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affaafa2df772bea4ec43c5cb616f09ce00a">FILE_RECEIVED_CRC_MISMATCH</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affab355d719d7fc73a729dde319c1f9f444">FILE_RECEIVED_ZERO_LENGTH</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affa38b16ecd563ffcacf37ac187dd84f091">FILE_TOO_LARGE_ERROR</references>
+        <references refid="structFileAckMetadata_1a374c161e23935886378bad0cd842955e" compoundref="BpFileTransfer_8cpp" startline="111">FileAckMetadata::FileAckMetadataLength</references>
+        <references refid="BpFileTransfer_8cpp_1a02a0450bb94a857c4e894c9e26cdd2fb" compoundref="BpFileTransfer_8cpp" startline="103" endline="105">FileAckResponseCodeIsSuccess</references>
+        <references refid="BpFileTransfer_8cpp_1a5088c9ea0950713f17bcb659042453ba" compoundref="BpFileTransfer_8cpp" startline="87" endline="102">FileAckResponseCodesToString</references>
+        <references refid="classCrc32c__ReceiveOutOfOrderChunks_1a91e8faedd022600c7a6691e581117e1b" compoundref="Bpv7Crc_8cpp" startline="271" endline="273">Crc32c_ReceiveOutOfOrderChunks::FinalizeAndGet</references>
+        <references refid="structSendFileMetadata_1af4a0c2a423e2bc24ccc8fe3c0c056520" compoundref="BpFileTransfer_8cpp" startline="70">SendFileMetadata::fragmentLength</references>
+        <references refid="structSendFileMetadata_1afeb263335dbb2d543b31b4e4d2685060" compoundref="BpFileTransfer_8cpp" startline="69">SendFileMetadata::fragmentOffset</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1aadb0eace507614ef109d83ab3d0a6bef" compoundref="BpFileTransfer_8cpp" startline="138">BpFileTransfer::Impl::write_info_t::fragmentSet</references>
+        <references refid="classTimestampUtil_1a079c808d86abf4909b62ffeb80eae7d9" compoundref="TimestampUtil_8cpp" startline="36" endline="38">TimestampUtil::GetMillisecondsSinceEpochUnix</references>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <references refid="classUtf8Paths_1a991286103ad4c49e8e1ddc31a09c5b98" compoundref="Utf8Paths_8cpp" startline="73" endline="75">Utf8Paths::IsAscii</references>
+        <references refid="BpFileTransfer_8cpp_1abc41fdfac35598e883b5f920bc8574c2" compoundref="BpFileTransfer_8cpp" startline="633" endline="639">IsFileFullyReceived</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1a977b4af2448b611010191b51170b461b" compoundref="BpFileTransfer_8cpp" startline="139">BpFileTransfer::Impl::write_info_t::ofstreamPtr</references>
+        <references refid="structSendFileMetadata_1ae83a9224420fcbc7b9c738fd6b5133f9" compoundref="BpFileTransfer_8cpp" startline="72">SendFileMetadata::pathLen</references>
+        <references refid="structFileAckMetadata_1a9db42752b6a26d5e0dda90f692b5433d" compoundref="BpFileTransfer_8cpp" startline="110">FileAckMetadata::pathLen</references>
+        <references refid="classUtf8Paths_1a9dafbe18f982218b164eb3f853a03b38" compoundref="Utf8Paths_8cpp" startline="66" endline="68">Utf8Paths::PathToUtf8String</references>
+        <references refid="classCrc32c__ReceiveOutOfOrderChunks_1a06c3ecddaf9d96cc752cb0a50a1c27c3" compoundref="Bpv7Crc_8cpp" startline="262" endline="264">Crc32c_ReceiveOutOfOrderChunks::Reset</references>
+        <references refid="structFileAckMetadata_1a5d434ac3030a8c0e8f8ce0beca0b2a93" compoundref="BpFileTransfer_8cpp" startline="109">FileAckMetadata::responseCode</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1ac9d1872c7854cc82f7f6cccc02c48b8d" compoundref="BpFileTransfer_8cpp" startline="144">BpFileTransfer::Impl::write_info_t::responseCode</references>
+        <references refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67affa84936eacae64da4dd45443ec74064555">SAVE_ERROR</references>
+        <references refid="structSendFileMetadata_1a62533d269319a0c338cbdc3aa74a6e68" compoundref="BpFileTransfer_8cpp" startline="73">SendFileMetadata::SendFileMetadataLength</references>
+        <references refid="BpFileTransfer_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpFileTransfer_8cpp" startline="37">subprocess</references>
+        <references refid="BpFileTransfer_8cpp_1ad9b1bdec5018ac03e8d6b9d4df4e4c5b" compoundref="BpFileTransfer_8cpp" startline="35">TEMPORARY_FILE_SUFFIX</references>
+        <references refid="structSendFileMetadata_1a489edf352b0d0abe173b906025b14d34" compoundref="BpFileTransfer_8cpp" startline="285" endline="290">SendFileMetadata::ToNativeEndianInplace</references>
+        <references refid="structSendFileMetadata_1ab04dd237711802439e016723ad0223fb" compoundref="BpFileTransfer_8cpp" startline="68">SendFileMetadata::totalFileSize</references>
+        <references refid="structBpFileTransfer_1_1Impl_1_1write__info__t_1adb2fca7c0a7a40d1eda9b140aa9378af" compoundref="BpFileTransfer_8cpp" startline="146">BpFileTransfer::Impl::write_info_t::transferCompleteTimestampUnixMs</references>
+        <references refid="classUtf8Paths_1a09f00e43f6d703de0278e08ecdf8acae" compoundref="Utf8Paths_8cpp" startline="69" endline="71">Utf8Paths::Utf8StringToPath</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a7208e9e1b535761099fcd22381ae5c8a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpFileTransfer::Impl::QueueFileAckToSend</definition>
+        <argsstring>(FileAckResponseCodes responseCode, const std::string &amp;encodedRelativePathNameAsUtf8String)</argsstring>
+        <name>QueueFileAckToSend</name>
+        <param>
+          <type><ref refid="BpFileTransfer_8cpp_1a23554cf7c4be9b8b2ffe5ff10bc67aff" kindref="member">FileAckResponseCodes</ref></type>
+          <declname>responseCode</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>encodedRelativePathNameAsUtf8String</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="177" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="955" bodyend="972"/>
+        <references refid="BpFileTransfer_8cpp_1a96eac753a84dfc1c268f337a9ba00fbfa9a686b89c0e55424d9c8759942801e1e">FILE_ACK</references>
+        <references refid="structFileAckMetadata_1a374c161e23935886378bad0cd842955e" compoundref="BpFileTransfer_8cpp" startline="111">FileAckMetadata::FileAckMetadataLength</references>
+        <references refid="structFileAckMetadata_1a9db42752b6a26d5e0dda90f692b5433d" compoundref="BpFileTransfer_8cpp" startline="110">FileAckMetadata::pathLen</references>
+        <references refid="structFileAckMetadata_1a5d434ac3030a8c0e8f8ce0beca0b2a93" compoundref="BpFileTransfer_8cpp" startline="109">FileAckMetadata::responseCode</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a54708b16c7cf1c9472ea20ca56118bd4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpFileTransfer::Impl::TryDequeueFileAckToSend</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;fileAckVecToSend)</argsstring>
+        <name>TryDequeueFileAckToSend</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>fileAckVecToSend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="179" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="974" bodyend="983"/>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a076186e51663ff73118373a013ec6710" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpFileTransfer::Impl::Shutdown_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="180" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="353" bodyend="356"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ace0d41135195b51bd46cfa67e1a41012" compoundref="BpFileTransfer_8cpp" startline="345" endline="352">~Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1ad3bba420ac6d2acc0ac917f519c3cd43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpFileTransfer::Impl::OnNewWebsocketConnectionCallback</definition>
+        <argsstring>(WebsocketServer::Connection &amp;conn)</argsstring>
+        <name>OnNewWebsocketConnectionCallback</name>
+        <param>
+          <type><ref refid="classWebsocketServer_1_1Connection" kindref="compound">WebsocketServer::Connection</ref> &amp;</type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="181" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="985" bodyend="1005"/>
+        <references refid="classWebsocketServer_1_1Connection_1a406a9751d9cbbd3eb67c76ef8e733a84" compoundref="WebsocketServer_8cpp" startline="147" endline="157">WebsocketServer::Connection::SendTextDataToThisConnection</references>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1aa1ca3f66758c67c347398c49e7c660ce" compoundref="BpFileTransfer_8cpp" startline="265" endline="275">InitWebServer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1abbabe7185e28c3708e32914f1e86859c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BpFileTransfer::Impl::OnNewWebsocketTextDataReceivedCallback</definition>
+        <argsstring>(WebsocketServer::Connection &amp;conn, std::string &amp;receivedString)</argsstring>
+        <name>OnNewWebsocketTextDataReceivedCallback</name>
+        <param>
+          <type><ref refid="classWebsocketServer_1_1Connection" kindref="compound">WebsocketServer::Connection</ref> &amp;</type>
+          <declname>conn</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>receivedString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="182" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="1007" bodyend="1011"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1aa1ca3f66758c67c347398c49e7c660ce" compoundref="BpFileTransfer_8cpp" startline="265" endline="275">InitWebServer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpFileTransfer_1_1Impl_1a5823be58e5943793f2d234dcb5c5ff0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpFileTransfer::Impl::OnNeedToSendWebsocketUpdates_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnNeedToSendWebsocketUpdates_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="183" column="10" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="1013" bodyend="1045"/>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" compoundref="BpFileTransfer_8cpp" startline="292" endline="343">Impl</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BpSourcePattern</label>
+        <link refid="classBpSourcePattern"/>
+      </node>
+      <node id="1">
+        <label>BpFileTransfer::Impl</label>
+        <link refid="classBpFileTransfer_1_1Impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BpSourcePattern</label>
+        <link refid="classBpSourcePattern"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_tcpclInductPtr</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_outductManager</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_outductFinalStats</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_inductManager</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_finalDestinationEid</edgelabel>
+          <edgelabel>m_lastPreviousNode</edgelabel>
+          <edgelabel>m_myCustodianEid</edgelabel>
+          <edgelabel>m_myEid</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="5">
+        <label>OutductManager</label>
+        <link refid="classOutductManager"/>
+      </node>
+      <node id="3">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>InductManager</label>
+        <link refid="classInductManager"/>
+      </node>
+      <node id="6">
+        <label>OutductFinalStats</label>
+        <link refid="structOutductFinalStats"/>
+      </node>
+      <node id="10">
+        <label>WebsocketServer</label>
+        <link refid="classWebsocketServer"/>
+        <childnode refid="11" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="8">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+      <node id="9">
+        <label>Crc32c_InOrderChunks</label>
+        <link refid="classCrc32c__InOrderChunks"/>
+      </node>
+      <node id="12">
+        <label>SendFileMetadata</label>
+        <link refid="structSendFileMetadata"/>
+      </node>
+      <node id="1">
+        <label>BpFileTransfer::Impl</label>
+        <link refid="classBpFileTransfer_1_1Impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_currentSendFileCrc32c</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_websocketServer</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_currentSendFileMetadata</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" line="114" column="1" bodyfile="common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp" bodystart="114" bodyend="222"/>
+    <listofallmembers>
+      <member refid="classBpSourcePattern_1a14e5f3f966e37f4d17ce12535b0795f1" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>BpSourcePattern</name></member>
+      <member refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>BpSourcePatternThreadFunc</name></member>
+      <member refid="classBpSourcePattern_1a92386efd86951105b652a7971acbd406" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>bundle_userdata_pair_t</name></member>
+      <member refid="classBpSourcePattern_1aca3993057d01fe31d0884590cefc09c2" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>bundleid_payloadsize_pair_t</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a2d16de3795b35044800ec9a5c6e15a3f" prot="protected" virt="virtual"><scope>BpFileTransfer::Impl</scope><name>CopyPayload_Step2</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a225b4a6b00de5685840003a7a223377c" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>CreateReceivedFilesJson</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a7593248d9eb46efa923a8b3a4e8d3888" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>CreateSentFilesJson</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1add4512007e069ba03688184b4c058fa8" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>filename_to_sendinfo_map_t</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a4d1e1e4e5c0ae84e5771142613877465" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>filename_to_writeinfo_map_t</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a0c0d8a6bc904616fbfd74e7e06cf3cea" prot="protected" virt="virtual"><scope>BpFileTransfer::Impl</scope><name>GetNextPayloadLength_Step1</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ae0c7a5d5297be7c3642cbcd76e878339" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>GetNumberOfFilesToSend</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ada36c71e3ae4563d9f589d1cffe41338" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>Impl</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1aa1ca3f66758c67c347398c49e7c660ce" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>InitWebServer</name></member>
+      <member refid="classBpSourcePattern_1ad24d6a1122cb3b0932ef31bed17d093a" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_allOutductsReady</name></member>
+      <member refid="classBpSourcePattern_1aa51049d6c9a06e1493ca9329a706874e" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_bpSourcePatternThreadPtr</name></member>
+      <member refid="classBpSourcePattern_1ae7d9ffa9cf7ba1621b5daa1991f7c16e" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_bundleCount</name></member>
+      <member refid="classBpSourcePattern_1a2582e0f0bccacb08dfb04450cc47fee4" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_bundleLifetimeMilliseconds</name></member>
+      <member refid="classBpSourcePattern_1a3db81e0968f5dc69568ca0f34ebb6e1b" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_bundlePriority</name></member>
+      <member refid="classBpSourcePattern_1abaac83e06d9284aaf421d9e9109f0a30" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_bundleSendTimeoutSeconds</name></member>
+      <member refid="classBpSourcePattern_1a22f49d342ca728f581c2008bdfacd54c" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_bundleSendTimeoutTimeDuration</name></member>
+      <member refid="classBpSourcePattern_1a75daac470cc003000f373f25d4080202" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_cbheBundleUuidSet</name></member>
+      <member refid="classBpSourcePattern_1a5ade20a00f01c19e86a54a77910c1fc3" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_claRate</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a404a55d45ab0179a737d1d87d4e81919" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_commandsToSendCv</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a38ca51f5cb7b14063acb5b3de7cff4aa" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_commandsToSendMutex</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ac33fe5291667a6d5ea448d0962429cdf" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_commandsToSendQueue</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a824265df8c78625b53d60f2c95b2e208" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentFileAckVecToSend</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a61f5c7b0f96ffb5da3b3621bd6963f75" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentFilenameToSendInfoMapIterator</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a2e20bf9bee3a99203d26018c2cabd085" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentFilePathAbsolute</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a20472a36f5ee7131099fb9aae118e2f9" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentFilePathRelative</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1abdb068d0cbb3e796a3ae74495f4f38a2" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentFilePathRelativeAsPrintableString</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a94d4595cc0133503051dd08ffec711bf" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentFilePathRelativeAsUtf8String</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a0e92a898db1d795ffd5627964b188af4" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentIfstreamPtr</name></member>
+      <member refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentlySendingBundleIdSet</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a4732ced2378f5476d9bc950d5fb89363" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentSendFileCrc32c</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a11b446452e2564d9ef4af7b2ebbf0e03" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_currentSendFileMetadata</name></member>
+      <member refid="classBpSourcePattern_1a33baeae43169c8915f2634c252ea197e" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_custodyTransferUseAcs</name></member>
+      <member refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_cvCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_detectedNextCustodianSupportsCteb</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1af4fb583376a7c17c22091909e2dca502" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_directoryScannerPtr</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a51ac4dec4b9b4df8c757d339ee52d946" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_fileAcksToSendCv</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ae5cc3d8eb7302e9915a5f8e52f98f45f" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_fileAcksToSendMutex</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a9100dddc395a394d21c0b4a2a0903c2f" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_fileAcksToSendQueue</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a2ca973df725f8ba5adb8a1714705814b" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_filenameToSendInfoMap</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ae50342a7d0b33645b6b636f522b2b8a7" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_filenameToSendInfoMapMutex</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a9d5126d13b844c1a5717cb3b4946681d" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_filenameToSendInfoMapWasModified</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a03436ac5d3bca39a83dec0cee5f596a7" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_filenameToWriteInfoMap</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a72644b25ec022fee199ed2f21efd7c19" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_filenameToWriteInfoMapMutex</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a594ee679cc8c3b53d7fdfcc3045b1113" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_filenameToWriteInfoMapWasModified</name></member>
+      <member refid="classBpSourcePattern_1acd6579e2620e404dc053b843aece9062" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_finalDestinationEid</name></member>
+      <member refid="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_hopCounts</name></member>
+      <member refid="classBpSourcePattern_1a573a77a84709ab74ba5883db184d93ab" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_inductManager</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a41e46cb0c38762d2600be15cb7b5a6e1" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_ioService</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a8d1d1ffde3687834e8b8783135133797" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classBpSourcePattern_1af58be2e56d0d0489795e9ae70a4285fb" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_isWaitingForRxBundleBeforeNextTx</name></member>
+      <member refid="classBpSourcePattern_1a2ca15662e2ae8679e078b109a98ccde3" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_lastPreviousNode</name></member>
+      <member refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_linkIsDown</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a3a57e70f964a0ae544605f7413c3a524" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a5cdf95c76f777ed5b6a844ac6ee08e79" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>M_MAX_RX_FILE_SIZE_BYTES</name></member>
+      <member refid="classBpSourcePattern_1ab1f2969d9b7c9c02ec3cac9e42614a0a" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_mutexBundleUuidSet</name></member>
+      <member refid="classBpSourcePattern_1a81376acbc1a02166ea7bded1553cae8a" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_mutexCtebSet</name></member>
+      <member refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_mutexCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1a5c0f5fd11d105e9886e40b28002ba02a" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_mutexQueueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSourcePattern_1a4eb9bc21e70d46117d2252d309f6b349" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_myCustodianEid</name></member>
+      <member refid="classBpSourcePattern_1abb54ce7d476cf54d3227188bed959b4e" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_myCustodianEidUriString</name></member>
+      <member refid="classBpSourcePattern_1aace92159af95fece0fb37f884030b4cc" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_myCustodianServiceId</name></member>
+      <member refid="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_myEid</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a5c1ef7f10e324b526de744e148e7c453" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_needToSendWebsocketUpdatesTimer</name></member>
+      <member refid="classBpSourcePattern_1ac4121e9d009bd85d4c490c97d3e26f3e" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_nextBundleId</name></member>
+      <member refid="classBpSourcePattern_1a4564d639f48710e23d17a004b6121aaa" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_numAcsCustodyTransfers</name></member>
+      <member refid="classBpSourcePattern_1a3cf30b0c7d20c8e9ce119153c4df80e8" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_numAcsPacketsReceived</name></member>
+      <member refid="classBpSourcePattern_1a63167706f8ccdaeb6c128fcd93b6c906" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_numRfc5050CustodyTransfers</name></member>
+      <member refid="classBpSourcePattern_1a5918ea451e24872e50305840bbf66940" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_outductFinalStats</name></member>
+      <member refid="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_outductManager</name></member>
+      <member refid="classBpSourcePattern_1a0d457760a6b91cf04cb7ef94f7919e64" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_outstandingCtebCustodyIdsFragmentSet</name></member>
+      <member refid="classBpSourcePattern_1a99640a0f4d34c9c76c799e197d14d2e7" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_queueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSourcePattern_1ae4571a51290212869654a81e8b64e6e3" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_requireRxBundleBeforeNextTx</name></member>
+      <member refid="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_running</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1adbe2a98b7a92f52e439cf79ec684557b" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_saveDirectory</name></member>
+      <member refid="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_tcpclInductPtr</name></member>
+      <member refid="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_tcpclOpportunisticRemoteNodeId</name></member>
+      <member refid="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_totalNonAdminRecordBpv6BundleBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_totalNonAdminRecordBpv6BundlesRx</name></member>
+      <member refid="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_totalNonAdminRecordBpv6PayloadBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_totalNonAdminRecordBpv7BundleBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a608331545467a4700c85395363e8172f" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_totalNonAdminRecordBpv7BundlesRx</name></member>
+      <member refid="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_totalNonAdminRecordBpv7PayloadBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a2fdf4f11bd65c5767e845ae61be7b363" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_useBpVersion7</name></member>
+      <member refid="classBpSourcePattern_1a1795cf65d6e60dcc5cd15f15ac9ddda0" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_useCustodyTransfer</name></member>
+      <member refid="classBpSourcePattern_1aa45d0d7bc2d9146cc090de104514756f" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_useInductForSendingBundles</name></member>
+      <member refid="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_waitingForRxBundleBeforeNextTxConditionVariable</name></member>
+      <member refid="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_waitingForRxBundleBeforeNextTxMutex</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1aae818060979da42d04d0acceb79e78a6" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_websocketServer</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1af8ae290f7845c965a6288cb2802736de" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>m_websocketTimerExpiry</name></member>
+      <member refid="classBpSourcePattern_1a31c8bc913bc3e191693f0b7bfc6115ba" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnFailedBundleVecSendCallback</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a5823be58e5943793f2d234dcb5c5ff0e" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnNeedToSendWebsocketUpdates_TimerExpired</name></member>
+      <member refid="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnNewOpportunisticLinkCallback</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ad3bba420ac6d2acc0ac917f519c3cd43" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnNewWebsocketConnectionCallback</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1abbabe7185e28c3708e32914f1e86859c" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnNewWebsocketTextDataReceivedCallback</name></member>
+      <member refid="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>OnSuccessfulBundleSendCallback</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a0220f369b2f66b6cf2c3fc6d84fcb1ca" prot="protected" virt="virtual"><scope>BpFileTransfer::Impl</scope><name>ProcessNonAdminRecordBundlePayload</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a7208e9e1b535761099fcd22381ae5c8a" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>QueueFileAckToSend</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a076186e51663ff73118373a013ec6710" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>Shutdown_NotThreadSafe</name></member>
+      <member refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>Start</name></member>
+      <member refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" prot="public" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>Stop</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1a54708b16c7cf1c9472ea20ca56118bd4" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>TryDequeueFileAckToSend</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1acd1d09011dc0e54cd7774703a33a4acd" prot="protected" virt="virtual"><scope>BpFileTransfer::Impl</scope><name>TryWaitForDataAvailable</name></member>
+      <member refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" prot="private" virt="non-virtual"><scope>BpFileTransfer::Impl</scope><name>WholeRxBundleReadyCallback</name></member>
+      <member refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" prot="public" virt="virtual"><scope>BpFileTransfer::Impl</scope><name>~BpSourcePattern</name></member>
+      <member refid="classBpFileTransfer_1_1Impl_1ace0d41135195b51bd46cfa67e1a41012" prot="public" virt="virtual"><scope>BpFileTransfer::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

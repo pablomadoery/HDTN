@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="InitializationVectors_8cpp" kind="file" language="C++">
+    <compoundname>InitializationVectors.cpp</compoundname>
+    <includes refid="InitializationVectors_8h" local="yes">InitializationVectors.h</includes>
+    <includes refid="TimestampUtil_8h" local="yes">TimestampUtil.h</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>TimestampUtil.h</label>
+        <link refid="TimestampUtil_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="5">
+        <label>bpsec_lib_export.h</label>
+      </node>
+      <node id="10">
+        <label>ostream</label>
+      </node>
+      <node id="2">
+        <label>InitializationVectors.h</label>
+        <link refid="InitializationVectors_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ctime</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+      <node id="11">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="9">
+        <label>boost/date_time.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/bpsec/src/InitializationVectors.cpp</label>
+        <link refid="InitializationVectors_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="InitializationVectors_8h" kindref="compound">InitializationVectors.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TimestampUtil_8h" kindref="compound">TimestampUtil.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//4.3.1.<sp/><sp/>Initialization<sp/>Vector<sp/>(IV)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//This<sp/>optional<sp/>parameter<sp/>identifies<sp/>the<sp/>initialization<sp/>vector<sp/>(IV)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//used<sp/>to<sp/>initialize<sp/>the<sp/>AES-GCM<sp/>cipher.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//The<sp/>length<sp/>of<sp/>the<sp/>initialization<sp/>vector,<sp/>prior<sp/>to<sp/>any<sp/>CBOR<sp/>encoding,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//MUST<sp/>be<sp/>between<sp/>8-16<sp/>bytes.<sp/><sp/>A<sp/>value<sp/>of<sp/>12<sp/>bytes<sp/>SHOULD<sp/>be<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//unless<sp/>local<sp/>security<sp/>policy<sp/>requires<sp/>a<sp/>different<sp/>length.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//This<sp/>value<sp/>MUST<sp/>be<sp/>encoded<sp/>as<sp/>a<sp/>CBOR<sp/>byte<sp/>string.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//The<sp/>initialization<sp/>vector<sp/>can<sp/>have<sp/>any<sp/>value,<sp/>with<sp/>the<sp/>caveat<sp/>that<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//value<sp/>MUST<sp/>NOT<sp/>be<sp/>reused<sp/>for<sp/>multiple<sp/>encryptions<sp/>using<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//encryption<sp/>key.<sp/><sp/>This<sp/>value<sp/>MAY<sp/>be<sp/>reused<sp/>when<sp/>encrypting<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//different<sp/>keys.<sp/><sp/>For<sp/>example,<sp/>if<sp/>each<sp/>encryption<sp/>operation<sp/>using<sp/>BCB-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//AES-GCM<sp/>uses<sp/>a<sp/>newly<sp/>generated<sp/>key,<sp/>then<sp/>the<sp/>same<sp/>IV<sp/>can<sp/>be<sp/>reused.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">constexpr<sp/>uint64_t<sp/><ref refid="structInitializationVectorsForOneThread_1ac1a8b0f3adedbf75dd44e98800f86015" kindref="member">InitializationVectorsForOneThread::MIN_DIFF_MICROSECONDS</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="structInitializationVector12Byte_1a00c04435ffc1ed690ca6dd286ec091e5" refkind="member"><highlight class="normal"><ref refid="structInitializationVector12Byte_1a00c04435ffc1ed690ca6dd286ec091e5" kindref="member">InitializationVector12Byte::InitializationVector12Byte</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVector12Byte" kindref="compound">InitializationVector12Byte</ref>(<ref refid="classTimestampUtil" kindref="compound">TimestampUtil</ref>::GetMicrosecondsSinceEpochRfc5050())<sp/>{}<sp/></highlight><highlight class="comment">//good<sp/>for<sp/>584,868<sp/>years</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structInitializationVector12Byte_1a864bc452a08a596f3685e3c6425cc3e2" refkind="member"><highlight class="normal"><ref refid="structInitializationVector12Byte_1a00c04435ffc1ed690ca6dd286ec091e5" kindref="member">InitializationVector12Byte::InitializationVector12Byte</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>timePart)<sp/>:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>m_timePart(timePart),</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>m_counterPart(0)<sp/>{}</highlight></codeline>
+<codeline lineno="43" refid="structInitializationVector12Byte_1a5885a4f33db01fbb535d72f68d225d04" refkind="member"><highlight class="normal"><ref refid="structInitializationVector12Byte_1a5885a4f33db01fbb535d72f68d225d04" kindref="member">InitializationVector12Byte::~InitializationVector12Byte</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="44" refid="structInitializationVector12Byte_1aa0ccb9e5f539880a4bb348bc86457215" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector12Byte_1aa0ccb9e5f539880a4bb348bc86457215" kindref="member">InitializationVector12Byte::Serialize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/>dataU8<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uint8_t*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(data);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(dataU8,<sp/>&amp;<ref refid="structInitializationVector12Byte_1aa4d10b4840d33377a73eff7f0899389a" kindref="member">m_timePart</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structInitializationVector12Byte_1aa4d10b4840d33377a73eff7f0899389a" kindref="member">m_timePart</ref>));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>dataU8<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structInitializationVector12Byte_1aa4d10b4840d33377a73eff7f0899389a" kindref="member">m_timePart</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(dataU8,<sp/>&amp;<ref refid="structInitializationVector12Byte_1af43ea72ed4473f9db56c5a4cd522d932" kindref="member">m_counterPart</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structInitializationVector12Byte_1af43ea72ed4473f9db56c5a4cd522d932" kindref="member">m_counterPart</ref>));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50" refid="structInitializationVector12Byte_1ada887716b140b53d443f32038e63a087" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector12Byte_1ada887716b140b53d443f32038e63a087" kindref="member">InitializationVector12Byte::Increment</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="structInitializationVector12Byte_1af43ea72ed4473f9db56c5a4cd522d932" kindref="member">m_counterPart</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVector12Byte_1aa4d10b4840d33377a73eff7f0899389a" kindref="member">m_timePart</ref><sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="structInitializationVector12Byte_1af43ea72ed4473f9db56c5a4cd522d932" kindref="member">m_counterPart</ref><sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structInitializationVector16Byte_1a57839a68ee822e0d3db5616055cba118" refkind="member"><highlight class="normal"><ref refid="structInitializationVector16Byte_1a57839a68ee822e0d3db5616055cba118" kindref="member">InitializationVector16Byte::InitializationVector16Byte</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVector16Byte" kindref="compound">InitializationVector16Byte</ref>(<ref refid="classTimestampUtil" kindref="compound">TimestampUtil</ref>::GetMicrosecondsSinceEpochRfc5050())<sp/>{}<sp/></highlight><highlight class="comment">//good<sp/>for<sp/>584,868<sp/>years</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structInitializationVector16Byte_1adffb6b9f7b3831c898c9cacb2c572ae8" refkind="member"><highlight class="normal"><ref refid="structInitializationVector16Byte_1a57839a68ee822e0d3db5616055cba118" kindref="member">InitializationVector16Byte::InitializationVector16Byte</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>timePart)<sp/>:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>m_timePart(timePart),</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>m_counterPart(0)<sp/>{}</highlight></codeline>
+<codeline lineno="61" refid="structInitializationVector16Byte_1ad338140a653309d069577de56929c5ab" refkind="member"><highlight class="normal"><ref refid="structInitializationVector16Byte_1ad338140a653309d069577de56929c5ab" kindref="member">InitializationVector16Byte::~InitializationVector16Byte</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="62" refid="structInitializationVector16Byte_1a48a3b1a5a64a62fc79c1c94c9d2ab513" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector16Byte_1a48a3b1a5a64a62fc79c1c94c9d2ab513" kindref="member">InitializationVector16Byte::Serialize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(data,<sp/>&amp;<ref refid="structInitializationVector16Byte_1a8613e0a05ad64b48944185f1ae21d5c3" kindref="member">m_timePart</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structInitializationVector16Byte_1a8613e0a05ad64b48944185f1ae21d5c3" kindref="member">m_timePart</ref>)<sp/>+<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structInitializationVector16Byte_1a072db95d4b0c468f9f5564895adc3d84" kindref="member">m_counterPart</ref>));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65" refid="structInitializationVector16Byte_1a08b037eeaec7120b63d4f0a5fea22663" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector16Byte_1a08b037eeaec7120b63d4f0a5fea22663" kindref="member">InitializationVector16Byte::Increment</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="structInitializationVector16Byte_1a072db95d4b0c468f9f5564895adc3d84" kindref="member">m_counterPart</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVector16Byte_1a8613e0a05ad64b48944185f1ae21d5c3" kindref="member">m_timePart</ref><sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="structInitializationVector16Byte_1a072db95d4b0c468f9f5564895adc3d84" kindref="member">m_counterPart</ref><sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="structInitializationVectorsForOneThread_1ac595570f9fa3cafc93baa1e8b91305dd" refkind="member"><highlight class="normal"><ref refid="structInitializationVectorsForOneThread_1ad0cca28290777491ca4760cf40dab337" kindref="member">InitializationVectorsForOneThread::InitializationVectorsForOneThread</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>timePart)<sp/>:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>m_iv12(timePart),</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>m_iv16(timePart),</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>m_initializationVector(16)<sp/>{}</highlight></codeline>
+<codeline lineno="75" refid="structInitializationVectorsForOneThread_1a830699f3552686e815ceec41bbe0f27e" refkind="member"><highlight class="normal"><ref refid="structInitializationVectorsForOneThread" kindref="compound">InitializationVectorsForOneThread</ref><sp/><ref refid="structInitializationVectorsForOneThread_1a830699f3552686e815ceec41bbe0f27e" kindref="member">InitializationVectorsForOneThread::Create</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::time_duration<sp/>maxWait<sp/>=<sp/>boost::posix_time::microseconds(<ref refid="structInitializationVectorsForOneThread_1ac1a8b0f3adedbf75dd44e98800f86015" kindref="member">MIN_DIFF_MICROSECONDS</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::mutex<sp/>staticMutex;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint64_t<sp/>staticLastTimeMicroseconds<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::mutex::scoped_lock<sp/>lock(staticMutex);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>currentTimeMicroseconds<sp/>=<sp/><ref refid="classTimestampUtil_1afbf432a5669a70c32b264ee8f368d6b8" kindref="member">TimestampUtil::GetMicrosecondsSinceEpochRfc5050</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(currentTimeMicroseconds<sp/>&gt;<sp/>staticLastTimeMicroseconds)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>diff<sp/>=<sp/>currentTimeMicroseconds<sp/>-<sp/>staticLastTimeMicroseconds;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(diff<sp/>&gt;=<sp/><ref refid="structInitializationVectorsForOneThread_1ac1a8b0f3adedbf75dd44e98800f86015" kindref="member">MIN_DIFF_MICROSECONDS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>staticLastTimeMicroseconds<sp/>=<sp/>currentTimeMicroseconds;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structInitializationVectorsForOneThread_1ad0cca28290777491ca4760cf40dab337" kindref="member">InitializationVectorsForOneThread</ref>(currentTimeMicroseconds);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//diff<sp/>&lt;<sp/>MIN_DIFF_MICROSECONDS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::this_thread::sleep(boost::posix_time::microseconds(<ref refid="structInitializationVectorsForOneThread_1ac1a8b0f3adedbf75dd44e98800f86015" kindref="member">MIN_DIFF_MICROSECONDS</ref><sp/>-<sp/>diff));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::this_thread::sleep(maxWait);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::lock_error&amp;)<sp/>{}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="structInitializationVectorsForOneThread_1a14c58cc41807705d2afda2a0fb9869dd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVectorsForOneThread_1a14c58cc41807705d2afda2a0fb9869dd" kindref="member">InitializationVectorsForOneThread::SerializeAndIncrement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use12ByteIv)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use12ByteIv)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" kindref="member">m_initializationVector</ref>.resize(12);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1a16576772922bf9d0ca8f3d768290c5d2" kindref="member">m_iv12</ref>.<ref refid="structInitializationVector12Byte_1aa0ccb9e5f539880a4bb348bc86457215" kindref="member">Serialize</ref>(<ref refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" kindref="member">m_initializationVector</ref>.data());</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1a16576772922bf9d0ca8f3d768290c5d2" kindref="member">m_iv12</ref>.<ref refid="structInitializationVector12Byte_1ada887716b140b53d443f32038e63a087" kindref="member">Increment</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" kindref="member">m_initializationVector</ref>.resize(16);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1aa9a5050da72d9aa45a382ab5d043a8c5" kindref="member">m_iv16</ref>.<ref refid="structInitializationVector16Byte_1a48a3b1a5a64a62fc79c1c94c9d2ab513" kindref="member">Serialize</ref>(<ref refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" kindref="member">m_initializationVector</ref>.data());</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1aa9a5050da72d9aa45a382ab5d043a8c5" kindref="member">m_iv16</ref>.<ref refid="structInitializationVector16Byte_1a08b037eeaec7120b63d4f0a5fea22663" kindref="member">Increment</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/bpsec/src/InitializationVectors.cpp"/>
+  </compounddef>
+</doxygen>

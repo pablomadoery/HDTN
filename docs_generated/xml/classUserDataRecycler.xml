@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUserDataRecycler" kind="class" language="C++" prot="public">
+    <compoundname>UserDataRecycler</compoundname>
+    <includes refid="UserDataRecycler_8h" local="no">UserDataRecycler.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename userDataType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classUserDataRecycler_1a05cf5e6ba3075a19920d0d10f0b4ad97" prot="private" static="no">
+        <type>std::forward_list&lt; userDataType, <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; userDataType &gt; &gt;</type>
+        <definition>typedef std::forward_list&lt;userDataType, FreeListAllocatorDynamic&lt;userDataType&gt; &gt; UserDataRecycler&lt; userDataType &gt;::flist_t</definition>
+        <argsstring></argsstring>
+        <name>flist_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="109" column="2" bodyfile="common/util/include/UserDataRecycler.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUserDataRecycler_1a83aec4ad694bde7de28c0b64209d87f8" prot="private" static="no" mutable="no">
+        <type><ref refid="classUserDataRecycler_1a05cf5e6ba3075a19920d0d10f0b4ad97" kindref="member">flist_t</ref></type>
+        <definition>flist_t UserDataRecycler&lt; userDataType &gt;::m_list</definition>
+        <argsstring></argsstring>
+        <name>m_list</name>
+        <briefdescription>
+<para>Recycle bin singly linked list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="111" column="13" bodyfile="common/util/include/UserDataRecycler.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" compoundref="UserDataRecycler_8h" startline="84" endline="90">UserDataRecycler&lt; userDataType &gt;::GetRecycledOrCreateNewUserData</referencedby>
+        <referencedby refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" compoundref="UserDataRecycler_8h" startline="59" endline="68">UserDataRecycler&lt; userDataType &gt;::ReturnUserData</referencedby>
+        <referencedby refid="classUserDataRecycler_1aa5afa83be2e4efb889af2d5c15994a99" compoundref="UserDataRecycler_8h" startline="46" endline="51">UserDataRecycler&lt; userDataType &gt;::UserDataRecycler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUserDataRecycler_1a73dfcf842c0596093dae0ae1e182af74" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UserDataRecycler&lt; userDataType &gt;::m_currentSize</definition>
+        <argsstring></argsstring>
+        <name>m_currentSize</name>
+        <briefdescription>
+<para>Current size of the list to keep track of list size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="113" column="14" bodyfile="common/util/include/UserDataRecycler.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classUserDataRecycler_1a82927606c6979e475e4696d26e53f2fb" compoundref="UserDataRecycler_8h" startline="96" endline="98">UserDataRecycler&lt; userDataType &gt;::GetListSize</referencedby>
+        <referencedby refid="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" compoundref="UserDataRecycler_8h" startline="84" endline="90">UserDataRecycler&lt; userDataType &gt;::GetRecycledOrCreateNewUserData</referencedby>
+        <referencedby refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" compoundref="UserDataRecycler_8h" startline="59" endline="68">UserDataRecycler&lt; userDataType &gt;::ReturnUserData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUserDataRecycler_1af77444b74aa3567139aac1f39405718c" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t UserDataRecycler&lt; userDataType &gt;::m_maxSize</definition>
+        <argsstring></argsstring>
+        <name>m_maxSize</name>
+        <briefdescription>
+<para>Max capacity of list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="115" column="20" bodyfile="common/util/include/UserDataRecycler.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classUserDataRecycler_1a5a1fb6a58462d579614aea3539731011" compoundref="UserDataRecycler_8h" startline="104" endline="106">UserDataRecycler&lt; userDataType &gt;::GetListCapacity</referencedby>
+        <referencedby refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" compoundref="UserDataRecycler_8h" startline="59" endline="68">UserDataRecycler&lt; userDataType &gt;::ReturnUserData</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUserDataRecycler_1a4684246728ae08ec89ef4c4acbb157d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UserDataRecycler&lt; userDataType &gt;::UserDataRecycler</definition>
+        <argsstring>()=delete</argsstring>
+        <name>UserDataRecycler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="40" column="5"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUserDataRecycler_1aa5afa83be2e4efb889af2d5c15994a99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>UserDataRecycler&lt; userDataType &gt;::UserDataRecycler</definition>
+        <argsstring>(const uint64_t maxSize)</argsstring>
+        <name>UserDataRecycler</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set max size of user data recycle bin. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max size of user data recycle bin. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="46" column="5" bodyfile="common/util/include/UserDataRecycler.h" bodystart="46" bodyend="51"/>
+        <references refid="classUserDataRecycler_1a83aec4ad694bde7de28c0b64209d87f8" compoundref="UserDataRecycler_8h" startline="111">UserDataRecycler&lt; userDataType &gt;::m_list</references>
+      </memberdef>
+      <memberdef kind="function" id="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool UserDataRecycler&lt; userDataType &gt;::ReturnUserData</definition>
+        <argsstring>(userDataType &amp;&amp;userData)</argsstring>
+        <name>ReturnUserData</name>
+        <param>
+          <type>userDataType &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Give user data back to recycler. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data to try to recylce (i.e. move). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the user data was moved (i.e. returned), or False if the recycle bin was full or False if the data had zero size() and zero capacity(). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="59" column="10" bodyfile="common/util/include/UserDataRecycler.h" bodystart="59" bodyend="68"/>
+        <references refid="classUserDataRecycler_1a1d372a857fb02d41580a288485e8ca0b" compoundref="UserDataRecycler_8h" startline="70" endline="72">UserDataRecycler&lt; userDataType &gt;::IsReturnable</references>
+        <references refid="classUserDataRecycler_1a73dfcf842c0596093dae0ae1e182af74" compoundref="UserDataRecycler_8h" startline="113">UserDataRecycler&lt; userDataType &gt;::m_currentSize</references>
+        <references refid="classUserDataRecycler_1a83aec4ad694bde7de28c0b64209d87f8" compoundref="UserDataRecycler_8h" startline="111">UserDataRecycler&lt; userDataType &gt;::m_list</references>
+        <references refid="classUserDataRecycler_1af77444b74aa3567139aac1f39405718c" compoundref="UserDataRecycler_8h" startline="115">UserDataRecycler&lt; userDataType &gt;::m_maxSize</references>
+        <referencedby refid="TestUserDataRecycler_8cpp_1a80cc36cf82dffeb75328a3dd320ad4eb" compoundref="TestUserDataRecycler_8cpp" startline="26" endline="133">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1af37d8503f0f53121ca47c814178ade36" compoundref="LtpEngine_8cpp" startline="1124" endline="1189">LtpEngine::CancelAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a767d5de028f51c9a66140b6ca29ca001" compoundref="LtpSessionReceiver_8cpp" startline="312" endline="361">LtpSessionReceiver::ReportAcknowledgementSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a21e6baee2709fdb2dfbbb4679d98081a" compoundref="LtpSessionReceiver_8cpp" startline="126" endline="172">LtpSessionReceiver::~LtpSessionReceiver</referencedby>
+        <referencedby refid="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" compoundref="LtpSessionSender_8cpp" startline="98" endline="128">LtpSessionSender::~LtpSessionSender</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUserDataRecycler_1a1d372a857fb02d41580a288485e8ca0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool UserDataRecycler&lt; userDataType &gt;::IsReturnable</definition>
+        <argsstring>(const userDataType &amp;u, std::true_type)</argsstring>
+        <name>IsReturnable</name>
+        <param>
+          <type>const userDataType &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>std::true_type</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="70" column="10" bodyfile="common/util/include/UserDataRecycler.h" bodystart="70" bodyend="72"/>
+        <referencedby refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" compoundref="UserDataRecycler_8h" startline="59" endline="68">UserDataRecycler&lt; userDataType &gt;::ReturnUserData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUserDataRecycler_1ac0ad4703a4c81a9932fb33ebca73dc29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool UserDataRecycler&lt; userDataType &gt;::IsReturnable</definition>
+        <argsstring>(const userDataType &amp;u, std::false_type)</argsstring>
+        <name>IsReturnable</name>
+        <param>
+          <type>const userDataType &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>std::false_type</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="74" column="10" bodyfile="common/util/include/UserDataRecycler.h" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserDataRecycler&lt; userDataType &gt;::GetRecycledOrCreateNewUserData</definition>
+        <argsstring>(userDataType &amp;userData)</argsstring>
+        <name>GetRecycledOrCreateNewUserData</name>
+        <param>
+          <type>userDataType &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get user data from the recycler. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data to try to reuse. The user data was from the recycle bin if and only if !userData.empty() </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the user data was moved (i.e. returned), or False if the recycle bin was full. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="84" column="10" bodyfile="common/util/include/UserDataRecycler.h" bodystart="84" bodyend="90"/>
+        <references refid="classUserDataRecycler_1a73dfcf842c0596093dae0ae1e182af74" compoundref="UserDataRecycler_8h" startline="113">UserDataRecycler&lt; userDataType &gt;::m_currentSize</references>
+        <references refid="classUserDataRecycler_1a83aec4ad694bde7de28c0b64209d87f8" compoundref="UserDataRecycler_8h" startline="111">UserDataRecycler&lt; userDataType &gt;::m_list</references>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a13ba463ed9a6b5a93c96b4dce61755d3" compoundref="LtpSessionReceiver_8cpp" startline="364" endline="755">LtpSessionReceiver::DataSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1ac85ce5836f8fc5186fc5eb9c8eab7b60" compoundref="LtpEngine_8cpp" startline="619" endline="790">LtpEngine::GetNextPacketToSend</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1a70ba5f080092e7d79a4f4c8c800f23d2" compoundref="LtpSessionReceiver_8cpp" startline="79" endline="124">LtpSessionReceiver::LtpSessionReceiver</referencedby>
+        <referencedby refid="classLtpSessionSender_1af9993b9765f62c79f020a3332172dadd" compoundref="LtpSessionSender_8cpp" startline="63" endline="96">LtpSessionSender::LtpSessionSender</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1ab6156df15ea95c2a8e8e5e10ba98fa3e" compoundref="LtpSessionReceiver_8cpp" startline="260" endline="309">LtpSessionReceiver::NextDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">LtpSessionSender::NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">LtpSessionSender::NextTimeCriticalDataToSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUserDataRecycler_1a82927606c6979e475e4696d26e53f2fb" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t UserDataRecycler&lt; userDataType &gt;::GetListSize</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetListSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get list size. <simplesect kind="return"><para>list size </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="96" column="14" bodyfile="common/util/include/UserDataRecycler.h" bodystart="96" bodyend="98"/>
+        <references refid="classUserDataRecycler_1a73dfcf842c0596093dae0ae1e182af74" compoundref="UserDataRecycler_8h" startline="113">UserDataRecycler&lt; userDataType &gt;::m_currentSize</references>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUserDataRecycler_1a5a1fb6a58462d579614aea3539731011" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t UserDataRecycler&lt; userDataType &gt;::GetListCapacity</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetListCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get list capacity. <simplesect kind="return"><para>list capacity </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UserDataRecycler.h" line="104" column="14" bodyfile="common/util/include/UserDataRecycler.h" bodystart="104" bodyend="106"/>
+        <references refid="classUserDataRecycler_1af77444b74aa3567139aac1f39405718c" compoundref="UserDataRecycler_8h" startline="115">UserDataRecycler&lt; userDataType &gt;::m_maxSize</references>
+        <referencedby refid="TestLtpTimerManager_8cpp_1a9b97850440e6cb603b96145296567b40" compoundref="TestLtpTimerManager_8cpp" startline="22" endline="371">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/UserDataRecycler.h" line="38" column="1" bodyfile="common/util/include/UserDataRecycler.h" bodystart="38" bodyend="116"/>
+    <listofallmembers>
+      <member refid="classUserDataRecycler_1a05cf5e6ba3075a19920d0d10f0b4ad97" prot="private" virt="non-virtual"><scope>UserDataRecycler</scope><name>flist_t</name></member>
+      <member refid="classUserDataRecycler_1a5a1fb6a58462d579614aea3539731011" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>GetListCapacity</name></member>
+      <member refid="classUserDataRecycler_1a82927606c6979e475e4696d26e53f2fb" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>GetListSize</name></member>
+      <member refid="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>GetRecycledOrCreateNewUserData</name></member>
+      <member refid="classUserDataRecycler_1a1d372a857fb02d41580a288485e8ca0b" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>IsReturnable</name></member>
+      <member refid="classUserDataRecycler_1ac0ad4703a4c81a9932fb33ebca73dc29" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>IsReturnable</name></member>
+      <member refid="classUserDataRecycler_1a73dfcf842c0596093dae0ae1e182af74" prot="private" virt="non-virtual"><scope>UserDataRecycler</scope><name>m_currentSize</name></member>
+      <member refid="classUserDataRecycler_1a83aec4ad694bde7de28c0b64209d87f8" prot="private" virt="non-virtual"><scope>UserDataRecycler</scope><name>m_list</name></member>
+      <member refid="classUserDataRecycler_1af77444b74aa3567139aac1f39405718c" prot="private" virt="non-virtual"><scope>UserDataRecycler</scope><name>m_maxSize</name></member>
+      <member refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>ReturnUserData</name></member>
+      <member refid="classUserDataRecycler_1a4684246728ae08ec89ef4c4acbb157d2" prot="private" virt="non-virtual"><scope>UserDataRecycler</scope><name>UserDataRecycler</name></member>
+      <member refid="classUserDataRecycler_1aa5afa83be2e4efb889af2d5c15994a99" prot="public" virt="non-virtual"><scope>UserDataRecycler</scope><name>UserDataRecycler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

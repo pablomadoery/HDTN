@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTokenRateLimiter" kind="class" language="C++" prot="public">
+    <compoundname>TokenRateLimiter</compoundname>
+    <includes refid="TokenRateLimiter_8h" local="no">TokenRateLimiter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTokenRateLimiter_1ab8a7801623d76c6286839b602e4b4875" prot="private" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t TokenRateLimiter::m_rateTokens</definition>
+        <argsstring></argsstring>
+        <name>m_rateTokens</name>
+        <briefdescription>
+<para>Number of tokens to accumulate over <ref refid="classTokenRateLimiter_1ac783702c5042ae65211533c7cbd7d497" kindref="member">m_rateInterval</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="92" column="13" bodyfile="common/util/include/TokenRateLimiter.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" compoundref="TokenRateLimiter_8cpp" startline="36" endline="45">AddTime</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" compoundref="TokenRateLimiter_8cpp" startline="25" endline="34">SetRate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTokenRateLimiter_1ac783702c5042ae65211533c7cbd7d497" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration TokenRateLimiter::m_rateInterval</definition>
+        <argsstring></argsstring>
+        <name>m_rateInterval</name>
+        <briefdescription>
+<para>Interval to scale <ref refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" kindref="member">m_remain</ref> to a token count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="94" column="38" bodyfile="common/util/include/TokenRateLimiter.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classTokenRateLimiter_1aac49f21eb5cc16bd38b2e1025269403b" compoundref="TokenRateLimiter_8cpp" startline="47" endline="49">GetRemainingTokens</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" compoundref="TokenRateLimiter_8cpp" startline="25" endline="34">SetRate</referencedby>
+        <referencedby refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" compoundref="TokenRateLimiter_8cpp" startline="55" endline="62">TakeTokens</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTokenRateLimiter_1a005052da6d1fda13b2b679924b98083c" prot="private" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t TokenRateLimiter::m_limit</definition>
+        <argsstring></argsstring>
+        <name>m_limit</name>
+        <briefdescription>
+<para>Maximum <ref refid="classTokenRateLimiter_1a005052da6d1fda13b2b679924b98083c" kindref="member">m_limit</ref> for burst situations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="96" column="13" bodyfile="common/util/include/TokenRateLimiter.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" compoundref="TokenRateLimiter_8cpp" startline="36" endline="45">AddTime</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a8ed33b0f3a44b37766b53787f7cee1e5" compoundref="TokenRateLimiter_8cpp" startline="51" endline="53">HasFullBucketOfTokens</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" compoundref="TokenRateLimiter_8cpp" startline="25" endline="34">SetRate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" prot="private" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t TokenRateLimiter::m_remain</definition>
+        <argsstring></argsstring>
+        <name>m_remain</name>
+        <briefdescription>
+<para>Denormalized count in units of (tokens*m_rateInterval) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="99" column="13" bodyfile="common/util/include/TokenRateLimiter.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" compoundref="TokenRateLimiter_8cpp" startline="36" endline="45">AddTime</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a7c7bfb3521035a4068e22bc4fa1f68d7" compoundref="TokenRateLimiter_8cpp" startline="64" endline="66">CanTakeTokens</referencedby>
+        <referencedby refid="classTokenRateLimiter_1aac49f21eb5cc16bd38b2e1025269403b" compoundref="TokenRateLimiter_8cpp" startline="47" endline="49">GetRemainingTokens</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a8ed33b0f3a44b37766b53787f7cee1e5" compoundref="TokenRateLimiter_8cpp" startline="51" endline="53">HasFullBucketOfTokens</referencedby>
+        <referencedby refid="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" compoundref="TokenRateLimiter_8cpp" startline="25" endline="34">SetRate</referencedby>
+        <referencedby refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" compoundref="TokenRateLimiter_8cpp" startline="55" endline="62">TakeTokens</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTokenRateLimiter_1a47b20a56edf76d58b3666c97a8eb121a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>TokenRateLimiter::TokenRateLimiter</definition>
+        <argsstring>()</argsstring>
+        <name>TokenRateLimiter</name>
+        <briefdescription>
+<para>Initialize rate and count to zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="40" column="22" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1a01770838c2b3ccc2989bef084b4a1d69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>TokenRateLimiter::~TokenRateLimiter</definition>
+        <argsstring>()</argsstring>
+        <name>~TokenRateLimiter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="42" column="22" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TokenRateLimiter::SetRate</definition>
+        <argsstring>(const int64_t tokens, const boost::posix_time::time_duration &amp;interval, const boost::posix_time::time_duration &amp;window)</argsstring>
+        <name>SetRate</name>
+        <param>
+          <type>const int64_t</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>interval</declname>
+        </param>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the token fill rate.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of tokens to add per interval. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interval of time to add <computeroutput>tokens</computeroutput> over. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window of time for averaging the rate over. Used to set the maximum fill of the bucket, which limits allowed burst rate (all tokens within the window can be exhausted at once). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The token count is initialized to what would be accumulated over the burst interval. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="54" column="27" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="25" bodyend="34"/>
+        <references refid="classTokenRateLimiter_1a005052da6d1fda13b2b679924b98083c" compoundref="TokenRateLimiter_8h" startline="96">m_limit</references>
+        <references refid="classTokenRateLimiter_1ac783702c5042ae65211533c7cbd7d497" compoundref="TokenRateLimiter_8h" startline="94">m_rateInterval</references>
+        <references refid="classTokenRateLimiter_1ab8a7801623d76c6286839b602e4b4875" compoundref="TokenRateLimiter_8h" startline="92">m_rateTokens</references>
+        <references refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" compoundref="TokenRateLimiter_8h" startline="99">m_remain</references>
+        <referencedby refid="TestTokenRateLimiter_8cpp_1a59992a8300ed51d190a58e213991efca" compoundref="TestTokenRateLimiter_8cpp" startline="20" endline="63">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1ac4ba9ce09bccb9141c1df926a8d50d9c" compoundref="LtpEngine_8cpp" startline="1519" endline="1529">LtpEngine::SetRate</referencedby>
+        <referencedby refid="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" compoundref="UdpBundleSource_8cpp" startline="129" endline="137">UdpBundleSource::UpdateRate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void TokenRateLimiter::AddTime</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;interval)</argsstring>
+        <name>AddTime</name>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>interval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tick the rate limiter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interval of time to add tokens for based on the limiter rate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="62" column="27" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="36" bodyend="45"/>
+        <references refid="classTokenRateLimiter_1a005052da6d1fda13b2b679924b98083c" compoundref="TokenRateLimiter_8h" startline="96">m_limit</references>
+        <references refid="classTokenRateLimiter_1ab8a7801623d76c6286839b602e4b4875" compoundref="TokenRateLimiter_8h" startline="92">m_rateTokens</references>
+        <references refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" compoundref="TokenRateLimiter_8h" startline="99">m_remain</references>
+        <referencedby refid="TestTokenRateLimiter_8cpp_1a59992a8300ed51d190a58e213991efca" compoundref="TestTokenRateLimiter_8cpp" startline="20" endline="63">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1ab241d1335c9216a6f3dbc4d58955b951" compoundref="LtpEngine_8cpp" startline="1580" endline="1597">LtpEngine::OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">UdpBundleSource::OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1aac49f21eb5cc16bd38b2e1025269403b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT int64_t</type>
+        <definition>int64_t TokenRateLimiter::GetRemainingTokens</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRemainingTokens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current number of tokens remaining.</para>
+<para><simplesect kind="return"><para>The current count available. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="68" column="30" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="47" bodyend="49"/>
+        <references refid="classTokenRateLimiter_1ac783702c5042ae65211533c7cbd7d497" compoundref="TokenRateLimiter_8h" startline="94">m_rateInterval</references>
+        <references refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" compoundref="TokenRateLimiter_8h" startline="99">m_remain</references>
+        <referencedby refid="TestTokenRateLimiter_8cpp_1a59992a8300ed51d190a58e213991efca" compoundref="TestTokenRateLimiter_8cpp" startline="20" endline="63">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource::UdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1a8ed33b0f3a44b37766b53787f7cee1e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool TokenRateLimiter::HasFullBucketOfTokens</definition>
+        <argsstring>() const</argsstring>
+        <name>HasFullBucketOfTokens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get whether or not the token bucket is at full capacity of tokens.</para>
+<para><simplesect kind="return"><para>True if the token bucket is at full capacity of tokens, or false if tokens can still be added. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="74" column="27" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="51" bodyend="53"/>
+        <references refid="classTokenRateLimiter_1a005052da6d1fda13b2b679924b98083c" compoundref="TokenRateLimiter_8h" startline="96">m_limit</references>
+        <references refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" compoundref="TokenRateLimiter_8h" startline="99">m_remain</references>
+        <referencedby refid="TestTokenRateLimiter_8cpp_1a59992a8300ed51d190a58e213991efca" compoundref="TestTokenRateLimiter_8cpp" startline="20" endline="63">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1ab241d1335c9216a6f3dbc4d58955b951" compoundref="LtpEngine_8cpp" startline="1580" endline="1597">LtpEngine::OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">UdpBundleSource::OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool TokenRateLimiter::TakeTokens</definition>
+        <argsstring>(const uint64_t tokens)</argsstring>
+        <name>TakeTokens</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>tokens</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement from the bucket.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of tokens to take away. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if there were enough remaining to satisfy the need. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="81" column="27" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="55" bodyend="62"/>
+        <references refid="classTokenRateLimiter_1ac783702c5042ae65211533c7cbd7d497" compoundref="TokenRateLimiter_8h" startline="94">m_rateInterval</references>
+        <references refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" compoundref="TokenRateLimiter_8h" startline="99">m_remain</references>
+        <referencedby refid="TestTokenRateLimiter_8cpp_1a59992a8300ed51d190a58e213991efca" compoundref="TestTokenRateLimiter_8cpp" startline="20" endline="63">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">UdpBundleSource::HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">UdpBundleSource::HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">UdpBundleSource::OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classLtpEngine_1ae1c081d8f5a1968d7506fb541db7a8ca" compoundref="LtpEngine_8cpp" startline="453" endline="578">LtpEngine::TrySendPacketIfAvailable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTokenRateLimiter_1a7c7bfb3521035a4068e22bc4fa1f68d7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool TokenRateLimiter::CanTakeTokens</definition>
+        <argsstring>() const</argsstring>
+        <name>CanTakeTokens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get whether or not the token bucket has tokens to take (contains a positive number of tokens).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tokens</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of tokens to take away. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if there are a positive number of tokens. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/TokenRateLimiter.h" line="88" column="27" bodyfile="common/util/src/TokenRateLimiter.cpp" bodystart="64" bodyend="66"/>
+        <references refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" compoundref="TokenRateLimiter_8h" startline="99">m_remain</references>
+        <referencedby refid="TestTokenRateLimiter_8cpp_1a59992a8300ed51d190a58e213991efca" compoundref="TestTokenRateLimiter_8cpp" startline="20" endline="63">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1ae1c081d8f5a1968d7506fb541db7a8ca" compoundref="LtpEngine_8cpp" startline="453" endline="578">LtpEngine::TrySendPacketIfAvailable</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implement a constant rate Token Bucket. It uses signed numbers and can go negative (if there is at least 1 token available to the borrower)</para>
+<para>The expected workflow is to:<orderedlist>
+<listitem><para>Define the limit with setRate()</para>
+</listitem><listitem><para>For each possible event: a. Call <ref refid="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" kindref="member">AddTime()</ref> based on the time since last use. b. Call <ref refid="classTokenRateLimiter_1aac49f21eb5cc16bd38b2e1025269403b" kindref="member">GetRemainingTokens()</ref> to see if the wanted use is possible. c. If possible, call <ref refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" kindref="member">TakeTokens()</ref> to reduce the bucket. </para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <location file="common/util/include/TokenRateLimiter.h" line="36" column="1" bodyfile="common/util/include/TokenRateLimiter.h" bodystart="36" bodyend="101"/>
+    <listofallmembers>
+      <member refid="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>AddTime</name></member>
+      <member refid="classTokenRateLimiter_1a7c7bfb3521035a4068e22bc4fa1f68d7" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>CanTakeTokens</name></member>
+      <member refid="classTokenRateLimiter_1aac49f21eb5cc16bd38b2e1025269403b" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>GetRemainingTokens</name></member>
+      <member refid="classTokenRateLimiter_1a8ed33b0f3a44b37766b53787f7cee1e5" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>HasFullBucketOfTokens</name></member>
+      <member refid="classTokenRateLimiter_1a005052da6d1fda13b2b679924b98083c" prot="private" virt="non-virtual"><scope>TokenRateLimiter</scope><name>m_limit</name></member>
+      <member refid="classTokenRateLimiter_1ac783702c5042ae65211533c7cbd7d497" prot="private" virt="non-virtual"><scope>TokenRateLimiter</scope><name>m_rateInterval</name></member>
+      <member refid="classTokenRateLimiter_1ab8a7801623d76c6286839b602e4b4875" prot="private" virt="non-virtual"><scope>TokenRateLimiter</scope><name>m_rateTokens</name></member>
+      <member refid="classTokenRateLimiter_1a047c071252f4359c7d2748463310550d" prot="private" virt="non-virtual"><scope>TokenRateLimiter</scope><name>m_remain</name></member>
+      <member refid="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>SetRate</name></member>
+      <member refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>TakeTokens</name></member>
+      <member refid="classTokenRateLimiter_1a47b20a56edf76d58b3666c97a8eb121a" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>TokenRateLimiter</name></member>
+      <member refid="classTokenRateLimiter_1a01770838c2b3ccc2989bef084b4a1d69" prot="public" virt="non-virtual"><scope>TokenRateLimiter</scope><name>~TokenRateLimiter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

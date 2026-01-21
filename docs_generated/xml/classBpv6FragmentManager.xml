@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpv6FragmentManager" kind="class" language="C++" prot="public">
+    <compoundname>Bpv6FragmentManager</compoundname>
+    <includes refid="Bpv6FragmentManager_8h" local="no">Bpv6FragmentManager.h</includes>
+    <innerclass refid="structBpv6FragmentManager_1_1Bpv6Id" prot="private">Bpv6FragmentManager::Bpv6Id</innerclass>
+    <innerclass refid="structBpv6FragmentManager_1_1FragmentInfo" prot="private">Bpv6FragmentManager::FragmentInfo</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpv6FragmentManager_1af89e3a2fb47306f611ca7e753b54e655" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="structBpv6FragmentManager_1_1Bpv6Id" kindref="compound">Bpv6Id</ref>, <ref refid="structBpv6FragmentManager_1_1FragmentInfo" kindref="compound">FragmentInfo</ref> &gt;</type>
+        <definition>std::map&lt;Bpv6Id, FragmentInfo&gt; Bpv6FragmentManager::m_idToFrags</definition>
+        <argsstring></argsstring>
+        <name>m_idToFrags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6FragmentManager.h" line="63" column="14" bodyfile="common/bpcodec/include/codec/Bpv6FragmentManager.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classBpv6FragmentManager_1a443f0d3bc141af673bcb8276f503d221" compoundref="Bpv6FragmentManager_8cpp" startline="40" endline="89">AddFragmentAndGetComplete</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpv6FragmentManager_1a70d017144445aef55331dc52a2e19cd5" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex Bpv6FragmentManager::m_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6FragmentManager.h" line="64" column="18" bodyfile="common/bpcodec/include/codec/Bpv6FragmentManager.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classBpv6FragmentManager_1ac69372afab66eea3cadb31aee9856dc0" compoundref="Bpv6FragmentManager_8cpp" startline="91" endline="94">AddFragmentAndGetComplete_ThreadSafe</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpv6FragmentManager_1a443f0d3bc141af673bcb8276f503d221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool Bpv6FragmentManager::AddFragmentAndGetComplete</definition>
+        <argsstring>(uint8_t *data, size_t len, bool &amp;isComplete, BundleViewV6 &amp;assembledBv)</argsstring>
+        <name>AddFragmentAndGetComplete</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>isComplete</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>assembledBv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add fragment to collection, if final fragment then return completed bundle</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The encoded fragment bundle data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length in bytes of the encoded fragment bundle data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isComplete[out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if bundle completed by fragment added, false otherwise </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>assembledBv[out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If complete, populated with the assembled bundle</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+If the fragment bundle is successfully added and it completes the bundle, the non-fragmented bundle will be assembled in assembledBv.</para>
+<para>Upon successfully assembling the non-fragmented bundle, the fragments are deleted from the manager.</para>
+<para><simplesect kind="return"><para>true on successfully adding the fragment, false on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6FragmentManager.h" line="46" column="25" bodyfile="common/bpcodec/src/codec/Bpv6FragmentManager.cpp" bodystart="40" bodyend="89"/>
+        <references refid="Bpv6FragmentManager_8cpp_1a6eb08f89b8fb161cd2ec3ea8fadbf71e" compoundref="Bpv6FragmentManager_8cpp" startline="22" endline="38">AddBundle</references>
+        <references refid="classBpv6Fragmenter_1a0d1c5071f95b10e847918597442b870d" compoundref="Bpv6Fragment_8cpp" startline="310" endline="362">Bpv6Fragmenter::Assemble</references>
+        <references refid="structBpv6FragmentManager_1_1FragmentInfo_1a8385d3076b95274eeddaa7d35e06392d" compoundref="Bpv6FragmentManager_8h" startline="59">Bpv6FragmentManager::FragmentInfo::bundles</references>
+        <references refid="classFragmentSet_1a4dd6e763629fc8c384a396b2084665b0" compoundref="FragmentSet_8cpp" startline="110" endline="118">FragmentSet::ContainsFragmentEntirely</references>
+        <references refid="structBpv6FragmentManager_1_1FragmentInfo_1a17cd35b9bb176bfed6fe465bb380ce34" compoundref="Bpv6FragmentManager_8h" startline="60">Bpv6FragmentManager::FragmentInfo::fragmentSet</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <references refid="classBundleViewV6_1ab6d45ef3d2e2ce6a23e6b7eab2d3071a" compoundref="BundleViewV6_8cpp" startline="271" endline="275">BundleViewV6::LoadBundle</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a130df13fb7751f88ad07ebaa13d21d0b" compoundref="bpv6_8h" startline="101">Bpv6CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a940a8292fc4f2e44119fde9911956b76" compoundref="bpv6_8h" startline="104">Bpv6CbhePrimaryBlock::m_fragmentOffset</references>
+        <references refid="classBpv6FragmentManager_1af89e3a2fb47306f611ca7e753b54e655" compoundref="Bpv6FragmentManager_8h" startline="63">m_idToFrags</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpv6CbhePrimaryBlock_1abf3c992cc58c24bba77baed2b4cdf9ec" compoundref="bpv6_8h" startline="105">Bpv6CbhePrimaryBlock::m_totalApplicationDataUnitLength</references>
+        <references refid="Bpv6FragmentManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="Bpv6FragmentManager_8cpp" startline="20">subprocess</references>
+        <referencedby refid="classBpv6FragmentManager_1ac69372afab66eea3cadb31aee9856dc0" compoundref="Bpv6FragmentManager_8cpp" startline="91" endline="94">AddFragmentAndGetComplete_ThreadSafe</referencedby>
+        <referencedby refid="TestBpv6Fragmentation_8cpp_1a9e2b16a8c935e930df2c7267415c02f9" compoundref="TestBpv6Fragmentation_8cpp" startline="743" endline="750">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpv6FragmentManager_1ac69372afab66eea3cadb31aee9856dc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool Bpv6FragmentManager::AddFragmentAndGetComplete_ThreadSafe</definition>
+        <argsstring>(uint8_t *data, size_t len, bool &amp;isComplete, BundleViewV6 &amp;assembledBv)</argsstring>
+        <name>AddFragmentAndGetComplete_ThreadSafe</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>isComplete</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>assembledBv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread safe version of AddFragmentAndGetComplete. Protected by mutex </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6FragmentManager.h" line="49" column="25" bodyfile="common/bpcodec/src/codec/Bpv6FragmentManager.cpp" bodystart="91" bodyend="94"/>
+        <references refid="classBpv6FragmentManager_1a443f0d3bc141af673bcb8276f503d221" compoundref="Bpv6FragmentManager_8cpp" startline="40" endline="89">AddFragmentAndGetComplete</references>
+        <references refid="classBpv6FragmentManager_1a70d017144445aef55331dc52a2e19cd5" compoundref="Bpv6FragmentManager_8h" startline="64">m_mutex</references>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">BpSinkPattern::Process</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Collect fragments and assemble when all are present </para>
+    </detaileddescription>
+    <location file="common/bpcodec/include/codec/Bpv6FragmentManager.h" line="28" column="1" bodyfile="common/bpcodec/include/codec/Bpv6FragmentManager.h" bodystart="28" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classBpv6FragmentManager_1a443f0d3bc141af673bcb8276f503d221" prot="public" virt="non-virtual"><scope>Bpv6FragmentManager</scope><name>AddFragmentAndGetComplete</name></member>
+      <member refid="classBpv6FragmentManager_1ac69372afab66eea3cadb31aee9856dc0" prot="public" virt="non-virtual"><scope>Bpv6FragmentManager</scope><name>AddFragmentAndGetComplete_ThreadSafe</name></member>
+      <member refid="classBpv6FragmentManager_1af89e3a2fb47306f611ca7e753b54e655" prot="private" virt="non-virtual"><scope>Bpv6FragmentManager</scope><name>m_idToFrags</name></member>
+      <member refid="classBpv6FragmentManager_1a70d017144445aef55331dc52a2e19cd5" prot="private" virt="non-virtual"><scope>Bpv6FragmentManager</scope><name>m_mutex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,941 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structMemoryInFiles_1_1Impl" kind="struct" language="C++" prot="public">
+    <compoundname>MemoryInFiles::Impl</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <innerclass refid="structMemoryInFiles_1_1Impl_1_1FileInfo" prot="private">MemoryInFiles::Impl::FileInfo</innerclass>
+    <innerclass refid="structMemoryInFiles_1_1Impl_1_1io__operation__t" prot="private">MemoryInFiles::Impl::io_operation_t</innerclass>
+    <innerclass refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockFragmentInfo" prot="private">MemoryInFiles::Impl::MemoryBlockFragmentInfo</innerclass>
+    <innerclass refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo" prot="private">MemoryInFiles::Impl::MemoryBlockInfo</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="structMemoryInFiles_1_1Impl_1a37c503ae4f7d6606b33c33f54638e451" prot="private" static="no">
+        <type>boost::asio::posix::stream_descriptor</type>
+        <definition>typedef boost::asio::posix::stream_descriptor MemoryInFiles::Impl::file_handle_t</definition>
+        <argsstring></argsstring>
+        <name>file_handle_t</name>
+        <briefdescription>
+<para>System file handle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="213" column="51" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structMemoryInFiles_1_1Impl_1ae5c352b4ec2e7b13541c6900dcb63370" prot="private" static="no">
+        <type>std::unordered_map&lt; uint64_t, <ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo" kindref="compound">MemoryBlockInfo</ref> &gt;</type>
+        <definition>typedef std::unordered_map&lt;uint64_t, MemoryBlockInfo&gt; MemoryInFiles::Impl::id_to_memoryblockinfo_map_t</definition>
+        <argsstring></argsstring>
+        <name>id_to_memoryblockinfo_map_t</name>
+        <briefdescription>
+<para>Type of map holding memory block metadata, mapped by memory block ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="432" column="32" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1ae84ffd670323a2c452c5df4d261d9fcb" prot="private" static="no" mutable="no">
+        <type><ref refid="structMemoryInFiles_1_1Impl_1ae5c352b4ec2e7b13541c6900dcb63370" kindref="member">id_to_memoryblockinfo_map_t</ref></type>
+        <definition>id_to_memoryblockinfo_map_t MemoryInFiles::Impl::m_mapIdToMemoryBlockInfo</definition>
+        <argsstring></argsstring>
+        <name>m_mapIdToMemoryBlockInfo</name>
+        <briefdescription>
+<para>Memory block metadata for currently allocated memory blocks, mapped by memory block ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="437" column="33" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="437" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1ab41e5ba3b806b6a5c05cf4bcfd2ebde0" compoundref="MemoryInFiles_8cpp" startline="697" endline="726">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1ae9f805e65c6ba31bfd556280a0d60187" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo" kindref="compound">FileInfo</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;FileInfo&gt; MemoryInFiles::Impl::m_currentWritingFileInfoPtr</definition>
+        <argsstring></argsstring>
+        <name>m_currentWritingFileInfoPtr</name>
+        <briefdescription>
+<para>Currently active write file pointer, the file that will be used during the current active write window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="439" column="21" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="439" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1ad47cdbab090068b0e095efe25b299392" compoundref="MemoryInFiles_8cpp" startline="654" endline="660">OnNewFileAggregation_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a2cd6c7ee75fdb2d9f9c23a4c6fdd04c4" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service&amp; MemoryInFiles::Impl::m_ioServiceRef</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceRef</name>
+        <briefdescription>
+<para>I/O execution context reference. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="442" column="29" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1ac9f5e5267556c01e9ceaab11e9d7df72" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer MemoryInFiles::Impl::m_newFileAggregationTimer</definition>
+        <argsstring></argsstring>
+        <name>m_newFileAggregationTimer</name>
+        <briefdescription>
+<para>Active write window timer, the time window for which write allocations will be redirected to the currently active write file, on expiry (and after the next write) a new file will be created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="444" column="33" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="444" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1a74e63758b4ee6f79a5c656ca7aadf574" compoundref="MemoryInFiles_8cpp" startline="646" endline="653">TryRestartNewFileAggregationTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a1336d5985d957baba8617de559897a71" prot="private" static="no" mutable="no">
+        <type>const boost::filesystem::path</type>
+        <definition>const boost::filesystem::path MemoryInFiles::Impl::m_rootStorageDirectory</definition>
+        <argsstring></argsstring>
+        <name>m_rootStorageDirectory</name>
+        <briefdescription>
+<para>Our working directory for file I/O. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="446" column="35" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="446" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1ab41e5ba3b806b6a5c05cf4bcfd2ebde0" compoundref="MemoryInFiles_8cpp" startline="697" endline="726">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a6393234e67687fb173d8a25c41e95f31" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t MemoryInFiles::Impl::m_newFileAggregationTimeMs</definition>
+        <argsstring></argsstring>
+        <name>m_newFileAggregationTimeMs</name>
+        <briefdescription>
+<para>Active write window interval in milliseconds, used by m_newFileAggregationTimeDuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="448" column="20" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1ac0f619858f11b77b1447b1140bfc2f38" prot="private" static="no" mutable="no">
+        <type>const boost::posix_time::time_duration</type>
+        <definition>const boost::posix_time::time_duration MemoryInFiles::Impl::m_newFileAggregationTimeDuration</definition>
+        <argsstring></argsstring>
+        <name>m_newFileAggregationTimeDuration</name>
+        <briefdescription>
+<para>Active write window duration, used by m_newFileAggregationTimer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="450" column="44" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="450" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1a74e63758b4ee6f79a5c656ca7aadf574" compoundref="MemoryInFiles_8cpp" startline="646" endline="653">TryRestartNewFileAggregationTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a64fc1411bebc8dbf92aec890686d22cd" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::m_newFileAggregationTimerIsRunning</definition>
+        <argsstring></argsstring>
+        <name>m_newFileAggregationTimerIsRunning</name>
+        <briefdescription>
+<para>Whether a write window is currently active, will be False on m_newFileAggregationTimer expiry until the next time we queue a write allocation for processing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="452" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="452" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1ad47cdbab090068b0e095efe25b299392" compoundref="MemoryInFiles_8cpp" startline="654" endline="660">OnNewFileAggregation_TimerExpired</referencedby>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1a74e63758b4ee6f79a5c656ca7aadf574" compoundref="MemoryInFiles_8cpp" startline="646" endline="653">TryRestartNewFileAggregationTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a519149cdf1a5e0a1b4bea68e57822d9d" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::m_nextMemoryBlockId</definition>
+        <argsstring></argsstring>
+        <name>m_nextMemoryBlockId</name>
+        <briefdescription>
+<para>Memory block ID to assign to the next memory block allocated, starts from 1 since memory block ID of 0 is reserved for error reporting. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="454" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="454" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a0e5083d23717f2b23ec4acf1c1037587" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::m_nextFileId</definition>
+        <argsstring></argsstring>
+        <name>m_nextFileId</name>
+        <briefdescription>
+<para>File ID to assign to the next file created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="456" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a86d6fa989795b73e4f8924beba1d94a0" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::m_nextOffsetOfCurrentFile</definition>
+        <argsstring></argsstring>
+        <name>m_nextOffsetOfCurrentFile</name>
+        <briefdescription>
+<para>File offset to begin the next write for the current active write file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="458" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1ae65ec404789e022d27ffb99b5d96cbf9" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::m_countTotalFilesCreated</definition>
+        <argsstring></argsstring>
+        <name>m_countTotalFilesCreated</name>
+        <briefdescription>
+<para>Total number of files created in the lifetime of the instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="461" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="461" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1a3a3e411c55b2bfcda597d95d65a18e2f" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::m_countTotalFilesActive</definition>
+        <argsstring></argsstring>
+        <name>m_countTotalFilesActive</name>
+        <briefdescription>
+<para>Number of currently active files, active files are ones storing data that still await further processing or are currently in use, when files become inactive they get deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="463" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="463" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a9acb819b942527598099d6fc8cf24f2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryInFiles::Impl::Impl</definition>
+        <argsstring>()=delete</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="60" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ab41e5ba3b806b6a5c05cf4bcfd2ebde0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryInFiles::Impl::Impl</definition>
+        <argsstring>(boost::asio::io_service &amp;ioServiceRef, const boost::filesystem::path &amp;workingDirectory, const uint64_t newFileAggregationTimeMs, const uint64_t estimatedMaxAllocatedBlocks)</argsstring>
+        <name>Impl</name>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioServiceRef</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>workingDirectory</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newFileAggregationTimeMs</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>estimatedMaxAllocatedBlocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set counters to 0. Start memory block IDs from 1 since 0 is reversed for error reporting. Reserve space for estimatedMaxAllocatedBlocks number of memory blocks. Create the working directory on disk if it does not exist. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ioServiceRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I/O execution context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>workingDirectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The working directory for file I/O. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newFileAggregationTimeMs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time window in milliseconds for which write allocations will be redirected to the currently active write file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>estimatedMaxAllocatedBlocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of memory blocks to reverse space for, this is a soft cap to lessen instances of reallocation, the actual space will be expanded if needed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="72" column="5" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="697" bodyend="726"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structMemoryInFiles_1_1Impl_1ae84ffd670323a2c452c5df4d261d9fcb" compoundref="MemoryInFiles_8cpp" startline="437">m_mapIdToMemoryBlockInfo</references>
+        <references refid="structMemoryInFiles_1_1Impl_1a1336d5985d957baba8617de559897a71" compoundref="MemoryInFiles_8cpp" startline="446">m_rootStorageDirectory</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a05e0a6b255a6f2973e5700898483059f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryInFiles::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop timers. Clear allocated memory blocks. Delete the working directory from disk. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="82" column="5" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="727" bodyend="742"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ae33d522075c2b62d59817cd35c9b7f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+<para>... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="85" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a94883500e5309d40860f1ab813446976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::AllocateNewWriteMemoryBlock</definition>
+        <argsstring>(uint64_t totalSize)</argsstring>
+        <name>AllocateNewWriteMemoryBlock</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>totalSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate new memory block of at least given size.</para>
+<para>Tries to insert memory block metadata for the memory block, if succeeds then calls <ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a6dac707e1b641957e0e449606e2484d7" kindref="member">MemoryBlockInfo::Resize()</ref> to perform the allocation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>totalSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum number of bytes to fit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The memory block ID to the newly created memory block on successful allocation, or 0 if the allocation failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="93" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="764" bodyend="784"/>
+        <references refid="classMemoryInFiles_1a6545ddded48a7034a695a6fab12cd9d9" compoundref="MemoryInFiles_8cpp" startline="960" endline="962">MemoryInFiles::Resize</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ac8f4cc293b96aa7a3d3c9a68de4549d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::Resize</definition>
+        <argsstring>(const uint64_t memoryBlockId, uint64_t newSize)</argsstring>
+        <name>Resize</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resize the given memory block.</para>
+<para>If the given memory block ID does not reference a valid memory block, returns immediately with a value of 0. Else, calls <ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a6dac707e1b641957e0e449606e2484d7" kindref="member">MemoryBlockInfo::Resize()</ref> to perform the resize. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum number of bytes to fit. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total size in bytes of the newly resized allocation on successful resize, or 0 if the resize failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="103" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="785" bodyend="792"/>
+        <references refid="classMemoryInFiles_1a6545ddded48a7034a695a6fab12cd9d9" compoundref="MemoryInFiles_8cpp" startline="960" endline="962">MemoryInFiles::Resize</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a96776e5a393ca6c60325bc0130539e5c" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::GetSizeOfMemoryBlock</definition>
+        <argsstring>(const uint64_t memoryBlockId) const noexcept</argsstring>
+        <name>GetSizeOfMemoryBlock</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the size of the given memory block.</para>
+<para>If the given memory block ID does not reference a valid memory block, returns immediately with a value of 0. Else, returns the allocation size in bytes of the memory block. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block ID. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The allocation size of the memory block on successful retrieval, or 0 if retrieval failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="112" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="802" bodyend="809"/>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a93e0531caa4cdb0635952ccca0a76f42" compoundref="MemoryInFiles_8cpp" startline="408">MemoryInFiles::Impl::MemoryBlockInfo::m_lengthAlignedToBlockSize</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a42103be7fc11d1ab58cb2d6b6769b2cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::ForceDeleteMemoryBlock</definition>
+        <argsstring>(const uint64_t memoryBlockId)</argsstring>
+        <name>ForceDeleteMemoryBlock</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle deferred deletion of the given memory block.</para>
+<para>Deletes the memory block. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block ID. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="119" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="810" bodyend="817"/>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b727e17c0cfa9a6de6ebb72cd8d92cb" compoundref="MemoryInFiles_8cpp" startline="635" endline="644">MemoryInFiles::Impl::FileInfo::FinishCompletionHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ab85500f175cd55be47d3ee12d54adbc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::DeleteMemoryBlock</definition>
+        <argsstring>(const uint64_t memoryBlockId)</argsstring>
+        <name>DeleteMemoryBlock</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete the given memory block.</para>
+<para>If the given memory block ID does not reference a valid memory block, returns immediately.</para>
+<para>if the memory block has pending I/O operations queued, then if not already marked, marks the block as due deletion (deferred for after the I/O operations have been completed, deferred deletion is eventually handled by <ref refid="structMemoryInFiles_1_1Impl_1a42103be7fc11d1ab58cb2d6b6769b2cc" kindref="member">Impl::ForceDeleteMemoryBlock()</ref>). Else, deletes the memory block. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block ID. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the memory block was JUST NOW marked as due deletion or was JUST NOW deleted, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="131" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="818" bodyend="834"/>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a68447f579832d0cea72c4247a519456b" compoundref="MemoryInFiles_8cpp" startline="412">MemoryInFiles::Impl::MemoryBlockInfo::m_markedForDeletion</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a7f91ebe815991d2fc4eeb8f6a2692801" compoundref="MemoryInFiles_8cpp" startline="410">MemoryInFiles::Impl::MemoryBlockInfo::m_queuedOperationsReferenceCount</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a65a3932792c795e7e69ba9b56e2bd09b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::AsyncDeleteMemoryBlock</definition>
+        <argsstring>(const uint64_t memoryBlockId)</argsstring>
+        <name>AsyncDeleteMemoryBlock</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a request to delete the given memory block.</para>
+<para>Initiates an asynchronous request to <ref refid="structMemoryInFiles_1_1Impl_1af40f761ba810027130cf0f106a4bb656" kindref="member">Impl::HandleAsyncDeleteMemoryBlock()</ref> to delete the memory block. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block ID. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="138" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="835" bodyend="837"/>
+        <references refid="structMemoryInFiles_1_1Impl_1af40f761ba810027130cf0f106a4bb656" compoundref="MemoryInFiles_8cpp" startline="838" endline="845">HandleAsyncDeleteMemoryBlock</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a94ae94d47fcd49dbf8421314671b7d45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::WriteMemoryAsync</definition>
+        <argsstring>(const deferred_write_t &amp;deferredWrite, std::shared_ptr&lt; write_memory_handler_t &gt; &amp;handlerPtr)</argsstring>
+        <name>WriteMemoryAsync</name>
+        <param>
+          <type>const <ref refid="structMemoryInFiles_1_1deferred__write__t" kindref="compound">deferred_write_t</ref> &amp;</type>
+          <declname>deferredWrite</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classMemoryInFiles_1ae3964edb385f55d6e912a550cd763e03" kindref="member">write_memory_handler_t</ref> &gt; &amp;</type>
+          <declname>handlerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate deferred single-write operation.</para>
+<para>If the given memory block ID does not reference a valid memory block, returns immediately. Else, calls <ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a0681ebaeac8aab90fc01f7f7cc58c3e2" kindref="member">MemoryBlockInfo::DoWriteOrRead()</ref> to initiate the deferred write operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deferredWrite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deferred write context data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handlerPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The completion handler pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the write operation was queued successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="148" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="912" bodyend="920"/>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a0681ebaeac8aab90fc01f7f7cc58c3e2" compoundref="MemoryInFiles_8cpp" startline="846" endline="911">MemoryInFiles::Impl::MemoryBlockInfo::DoWriteOrRead</references>
+        <references refid="structMemoryInFiles_1_1deferred__write__t_1a33b76d8e2c12e4d5b35a9ee60958a441" compoundref="MemoryInFiles_8h" startline="72">MemoryInFiles::deferred_write_t::length</references>
+        <references refid="structMemoryInFiles_1_1deferred__write__t_1a3ebbdb150c46cfcb87be1fe99a468b37" compoundref="MemoryInFiles_8h" startline="68">MemoryInFiles::deferred_write_t::memoryBlockId</references>
+        <references refid="structMemoryInFiles_1_1deferred__write__t_1ab53ba618945aa1b4692f6431a075fe0c" compoundref="MemoryInFiles_8h" startline="70">MemoryInFiles::deferred_write_t::offset</references>
+        <references refid="structMemoryInFiles_1_1deferred__write__t_1aa67463ec578fa07cdc606d05c695290c" compoundref="MemoryInFiles_8h" startline="74">MemoryInFiles::deferred_write_t::writeFromThisLocationPtr</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1afccf621134b4bf6e69c7be34f7f0a911" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::WriteMemoryAsync</definition>
+        <argsstring>(const std::vector&lt; deferred_write_t &gt; &amp;deferredWritesVec, std::shared_ptr&lt; write_memory_handler_t &gt; &amp;handlerPtr)</argsstring>
+        <name>WriteMemoryAsync</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="structMemoryInFiles_1_1deferred__write__t" kindref="compound">deferred_write_t</ref> &gt; &amp;</type>
+          <declname>deferredWritesVec</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classMemoryInFiles_1ae3964edb385f55d6e912a550cd763e03" kindref="member">write_memory_handler_t</ref> &gt; &amp;</type>
+          <declname>handlerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate deferred multi-write operation.</para>
+<para>Calls <ref refid="structMemoryInFiles_1_1Impl_1a94ae94d47fcd49dbf8421314671b7d45" kindref="member">Impl::WriteMemoryAsync()</ref> for every operation in the vector. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deferredWritesVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deferred write context data vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handlerPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The completion handler pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ALL the write operations in the vector could be queued successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="157" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="921" bodyend="928"/>
+        <references refid="classMemoryInFiles_1a3a6f9b9a00bab6fa88a9ec1b837dda15" compoundref="MemoryInFiles_8cpp" startline="970" endline="973">MemoryInFiles::WriteMemoryAsync</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a3efbcd215867e8cdfcf820c153707496" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::ReadMemoryAsync</definition>
+        <argsstring>(const deferred_read_t &amp;deferredRead, std::shared_ptr&lt; read_memory_handler_t &gt; &amp;handlerPtr)</argsstring>
+        <name>ReadMemoryAsync</name>
+        <param>
+          <type>const <ref refid="structMemoryInFiles_1_1deferred__read__t" kindref="compound">deferred_read_t</ref> &amp;</type>
+          <declname>deferredRead</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classMemoryInFiles_1a5e24dc250a10ba5ae849ed6ada35ba30" kindref="member">read_memory_handler_t</ref> &gt; &amp;</type>
+          <declname>handlerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate deferred single-read operation.</para>
+<para>If the given memory block ID does not reference a valid memory block, returns immediately. Else, calls <ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a0681ebaeac8aab90fc01f7f7cc58c3e2" kindref="member">MemoryBlockInfo::DoWriteOrRead()</ref> to initiate the deferred read operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deferredRead</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deferred read context data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handlerPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The completion handler pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the read operation was queued successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="167" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="929" bodyend="936"/>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a0681ebaeac8aab90fc01f7f7cc58c3e2" compoundref="MemoryInFiles_8cpp" startline="846" endline="911">MemoryInFiles::Impl::MemoryBlockInfo::DoWriteOrRead</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1a27e0c2850ab680d37bf24f38a0b03f05" compoundref="MemoryInFiles_8h" startline="60">MemoryInFiles::deferred_read_t::length</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1ae289dec541bff2353051085955e54efd" compoundref="MemoryInFiles_8h" startline="56">MemoryInFiles::deferred_read_t::memoryBlockId</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1aaabb1817ece07b04d2aad8a82589512e" compoundref="MemoryInFiles_8h" startline="58">MemoryInFiles::deferred_read_t::offset</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1a4b63ec4cf92aa329419e06d53b7c8534" compoundref="MemoryInFiles_8h" startline="62">MemoryInFiles::deferred_read_t::readToThisLocationPtr</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a098faa6cfa3ce6b828ba7782fbe79fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::ReadMemoryAsync</definition>
+        <argsstring>(const std::vector&lt; deferred_read_t &gt; &amp;deferredReadsVec, std::shared_ptr&lt; read_memory_handler_t &gt; &amp;handlerPtr)</argsstring>
+        <name>ReadMemoryAsync</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="structMemoryInFiles_1_1deferred__read__t" kindref="compound">deferred_read_t</ref> &gt; &amp;</type>
+          <declname>deferredReadsVec</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classMemoryInFiles_1a5e24dc250a10ba5ae849ed6ada35ba30" kindref="member">read_memory_handler_t</ref> &gt; &amp;</type>
+          <declname>handlerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate deferred multi-read operation.</para>
+<para>Calls <ref refid="structMemoryInFiles_1_1Impl_1a3efbcd215867e8cdfcf820c153707496" kindref="member">Impl::ReadMemoryAsync()</ref> for every operation in the vector. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deferredReadsVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deferred read context data vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handlerPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The completion handler pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ALL the read operations in the vector could be queued successfully, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="176" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="937" bodyend="944"/>
+        <references refid="classMemoryInFiles_1a7d8e71da58fd9c326cd66b0f4428f56f" compoundref="MemoryInFiles_8cpp" startline="987" endline="990">MemoryInFiles::ReadMemoryAsync</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1af40f761ba810027130cf0f106a4bb656" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::HandleAsyncDeleteMemoryBlock</definition>
+        <argsstring>(const uint64_t memoryBlockId)</argsstring>
+        <name>HandleAsyncDeleteMemoryBlock</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>handle deletion of the given memory block.</para>
+<para>Used for logging purposes. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block ID. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="184" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="838" bodyend="845"/>
+        <references refid="classMemoryInFiles_1ab69862b23cbfc0faa061f868ac2b3576" compoundref="MemoryInFiles_8cpp" startline="963" endline="965">MemoryInFiles::DeleteMemoryBlock</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1a65a3932792c795e7e69ba9b56e2bd09b" compoundref="MemoryInFiles_8cpp" startline="835" endline="837">AsyncDeleteMemoryBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ad81f33deed83704eda64660566abd620" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryInFiles::Impl::Resize</definition>
+        <argsstring>(MemoryBlockInfo &amp;mbi, uint64_t newSize)</argsstring>
+        <name>Resize</name>
+        <param>
+          <type><ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo" kindref="compound">MemoryBlockInfo</ref> &amp;</type>
+          <declname>mbi</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resize the given memory block.</para>
+<para>If the currently active write file is not operational, returns immediately. Else, calls <ref refid="classMemoryInFiles_1a6f2430ffa18efea9270d3eea2092ebbb" kindref="member">MemoryInFiles::CeilToNearestBlockMultiple()</ref> to get the new allocation length and then calls <ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a6dac707e1b641957e0e449606e2484d7" kindref="member">MemoryBlockInfo::Resize()</ref> to perform the resize. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mbi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The associated memory block metadata. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum number of bytes to fit. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The increase in size (NOT the total size of the new allocation) if resizing to a larger length, or 0 if the new length is smaller than the current length. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="197" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="793" bodyend="801"/>
+        <references refid="classMemoryInFiles_1a6f2430ffa18efea9270d3eea2092ebbb" compoundref="MemoryInFiles_8cpp" startline="48" endline="54">MemoryInFiles::CeilToNearestBlockMultiple</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a6dac707e1b641957e0e449606e2484d7" compoundref="MemoryInFiles_8cpp" startline="682" endline="695">MemoryInFiles::Impl::MemoryBlockInfo::Resize</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ae96eb69bf86c1e091637614660327362" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::SetupNextFileIfNeeded</definition>
+        <argsstring>()</argsstring>
+        <name>SetupNextFileIfNeeded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup next active file if none is currently active.</para>
+<para>If there is an active write file (we are inside an active write window), returns immediately. Else, creates a new write file on disk, then starts the active write window timer. <simplesect kind="return"><para>True if A write file (either existing or newly created) is now active and ready to be operated on, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the active write file is ready to be operated on. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="206" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="744" bodyend="762"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1a74e63758b4ee6f79a5c656ca7aadf574" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::TryRestartNewFileAggregationTimer</definition>
+        <argsstring>()</argsstring>
+        <name>TryRestartNewFileAggregationTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try restart the active write window timer.</para>
+<para>If the active write window timer is already running, returns immediately. Else, starts the active write window timer asynchronously with MemoryBlockInfo::OnNewFileAggregation_TimerExpired() as a completion handler. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="420" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="646" bodyend="653"/>
+        <references refid="structMemoryInFiles_1_1Impl_1ac0f619858f11b77b1447b1140bfc2f38" compoundref="MemoryInFiles_8cpp" startline="450">m_newFileAggregationTimeDuration</references>
+        <references refid="structMemoryInFiles_1_1Impl_1ac9f5e5267556c01e9ceaab11e9d7df72" compoundref="MemoryInFiles_8cpp" startline="444">m_newFileAggregationTimer</references>
+        <references refid="structMemoryInFiles_1_1Impl_1a64fc1411bebc8dbf92aec890686d22cd" compoundref="MemoryInFiles_8cpp" startline="452">m_newFileAggregationTimerIsRunning</references>
+        <references refid="structMemoryInFiles_1_1Impl_1ad47cdbab090068b0e095efe25b299392" compoundref="MemoryInFiles_8cpp" startline="654" endline="660">OnNewFileAggregation_TimerExpired</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1ad47cdbab090068b0e095efe25b299392" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::OnNewFileAggregation_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnNewFileAggregation_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle active write window timer expiry.</para>
+<para>If the expiry occurred due to the timer being manually cancelled, returns immediately. Else, resets the currently active write file pointer to prepare for the next write window, it does NOT start the next write window automatically to prevent periodic empty files from being created during periods where no writes are taking place. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="429" column="10" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="654" bodyend="660"/>
+        <references refid="structMemoryInFiles_1_1Impl_1ae9f805e65c6ba31bfd556280a0d60187" compoundref="MemoryInFiles_8cpp" startline="439">m_currentWritingFileInfoPtr</references>
+        <references refid="structMemoryInFiles_1_1Impl_1a64fc1411bebc8dbf92aec890686d22cd" compoundref="MemoryInFiles_8cpp" startline="452">m_newFileAggregationTimerIsRunning</references>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1a74e63758b4ee6f79a5c656ca7aadf574" compoundref="MemoryInFiles_8cpp" startline="646" endline="653">TryRestartNewFileAggregationTimer</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>MemoryInFiles::Impl</label>
+        <link refid="structMemoryInFiles_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>MemoryInFiles::Impl</label>
+        <link refid="structMemoryInFiles_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/util/src/MemoryInFiles.cpp" line="56" column="1" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="56" bodyend="464"/>
+    <listofallmembers>
+      <member refid="structMemoryInFiles_1_1Impl_1a94883500e5309d40860f1ab813446976" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>AllocateNewWriteMemoryBlock</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a65a3932792c795e7e69ba9b56e2bd09b" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>AsyncDeleteMemoryBlock</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ab85500f175cd55be47d3ee12d54adbc1" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>DeleteMemoryBlock</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a37c503ae4f7d6606b33c33f54638e451" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>file_handle_t</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a42103be7fc11d1ab58cb2d6b6769b2cc" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>ForceDeleteMemoryBlock</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a96776e5a393ca6c60325bc0130539e5c" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>GetSizeOfMemoryBlock</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1af40f761ba810027130cf0f106a4bb656" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>HandleAsyncDeleteMemoryBlock</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ae5c352b4ec2e7b13541c6900dcb63370" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>id_to_memoryblockinfo_map_t</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a9acb819b942527598099d6fc8cf24f2b" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>Impl</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ab41e5ba3b806b6a5c05cf4bcfd2ebde0" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>Impl</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a3a3e411c55b2bfcda597d95d65a18e2f" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_countTotalFilesActive</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ae65ec404789e022d27ffb99b5d96cbf9" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_countTotalFilesCreated</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ae9f805e65c6ba31bfd556280a0d60187" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_currentWritingFileInfoPtr</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a2cd6c7ee75fdb2d9f9c23a4c6fdd04c4" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_ioServiceRef</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ae84ffd670323a2c452c5df4d261d9fcb" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_mapIdToMemoryBlockInfo</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ac0f619858f11b77b1447b1140bfc2f38" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_newFileAggregationTimeDuration</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a6393234e67687fb173d8a25c41e95f31" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_newFileAggregationTimeMs</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ac9f5e5267556c01e9ceaab11e9d7df72" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_newFileAggregationTimer</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a64fc1411bebc8dbf92aec890686d22cd" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_newFileAggregationTimerIsRunning</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a0e5083d23717f2b23ec4acf1c1037587" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_nextFileId</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a519149cdf1a5e0a1b4bea68e57822d9d" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_nextMemoryBlockId</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a86d6fa989795b73e4f8924beba1d94a0" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_nextOffsetOfCurrentFile</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a1336d5985d957baba8617de559897a71" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>m_rootStorageDirectory</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ad47cdbab090068b0e095efe25b299392" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>OnNewFileAggregation_TimerExpired</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a3efbcd215867e8cdfcf820c153707496" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>ReadMemoryAsync</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a098faa6cfa3ce6b828ba7782fbe79fb0" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>ReadMemoryAsync</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ac8f4cc293b96aa7a3d3c9a68de4549d9" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>Resize</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ad81f33deed83704eda64660566abd620" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>Resize</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ae96eb69bf86c1e091637614660327362" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>SetupNextFileIfNeeded</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1ae33d522075c2b62d59817cd35c9b7f94" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>Stop</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a74e63758b4ee6f79a5c656ca7aadf574" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>TryRestartNewFileAggregationTimer</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a94ae94d47fcd49dbf8421314671b7d45" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>WriteMemoryAsync</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1afccf621134b4bf6e69c7be34f7f0a911" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>WriteMemoryAsync</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1a05e0a6b255a6f2973e5700898483059f" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

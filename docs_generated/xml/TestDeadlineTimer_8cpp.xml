@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="TestDeadlineTimer_8cpp" kind="file" language="C++">
+    <compoundname>TestDeadlineTimer.cpp</compoundname>
+    <includes local="no">boost/test/unit_test.hpp</includes>
+    <includes local="no">boost/timer/timer.hpp</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes refid="DeadlineTimer_8h" local="yes">DeadlineTimer.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>atomic</label>
+      </node>
+      <node id="2">
+        <label>boost/test/unit_test.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/util/test/TestDeadlineTimer.cpp</label>
+        <link refid="TestDeadlineTimer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/timer/timer.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="8">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="5">
+        <label>DeadlineTimer.h</label>
+        <link refid="DeadlineTimer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="TestDeadlineTimer_8cpp_1a11ef71ebf5867faa18597d6a8f3f7ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BOOST_AUTO_TEST_CASE</definition>
+        <argsstring>(DeadlineTimerTestCase)</argsstring>
+        <name>BOOST_AUTO_TEST_CASE</name>
+        <param>
+          <type>DeadlineTimerTestCase</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/test/TestDeadlineTimer.cpp" line="7" column="1" bodyfile="common/util/test/TestDeadlineTimer.cpp" bodystart="7" bodyend="25"/>
+        <references refid="TestBpSecPolicyManager_8cpp_1a45547073daa6e532eed825366cee7eed">BOOST_REQUIRE_EQUAL</references>
+        <references refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" compoundref="DeadlineTimer_8cpp" startline="16" endline="28">DeadlineTimer::SleepUntilNextInterval</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;boost/test/unit_test.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/timer/timer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="DeadlineTimer_8h" kindref="compound">DeadlineTimer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="TestDeadlineTimer_8cpp_1a11ef71ebf5867faa18597d6a8f3f7ac5" refkind="member"><highlight class="normal"><ref refid="TestDeadlineTimer_8cpp_1a11ef71ebf5867faa18597d6a8f3f7ac5" kindref="member">BOOST_AUTO_TEST_CASE</ref>(DeadlineTimerTestCase)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>deadline<sp/>timer<sp/>should<sp/>sleep<sp/>for<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>specified<sp/>amount<sp/>of<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::timer::cpu_timer<sp/>cpuTimer;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDeadlineTimer" kindref="compound">DeadlineTimer</ref><sp/>deadlineTimer(100);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/>=<sp/>deadlineTimer.<ref refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" kindref="member">SleepUntilNextInterval</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>cpuTimer.stop();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestBpSecPolicyManager_8cpp_1a45547073daa6e532eed825366cee7eed" kindref="member">BOOST_REQUIRE_EQUAL</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>success);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_REQUIRE_GE(cpuTimer.elapsed().wall,<sp/>100000000<sp/></highlight><highlight class="comment">/*100<sp/>ms*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>deadline<sp/>timer<sp/>should<sp/>not<sp/>block<sp/>if<sp/>the<sp/>sleep</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>duration<sp/>has<sp/>already<sp/>passed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::this_thread::sleep(boost::posix_time::milliseconds(100));</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>cpuTimer.start();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>deadlineTimer.<ref refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" kindref="member">SleepUntilNextInterval</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>cpuTimer.stop();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_REQUIRE_LE(cpuTimer.elapsed().wall,<sp/>10000000<sp/></highlight><highlight class="comment">/*10<sp/>ms*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/util/test/TestDeadlineTimer.cpp"/>
+  </compounddef>
+</doxygen>

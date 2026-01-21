@@ -1,0 +1,752 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUdpBundleSink" kind="class" language="C++" prot="public">
+    <compoundname>UdpBundleSink</compoundname>
+    <includes refid="UdpBundleSink_8h" local="no">UdpBundleSink.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classUdpBundleSink_1a19121334c1965afd9fa62284a4c9e02f" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;wholeBundleVec)&gt;</type>
+        <definition>typedef boost::function&lt;void(padded_vector_uint8_t &amp; wholeBundleVec)&gt; UdpBundleSink::WholeBundleReadyCallbackUdp_t</definition>
+        <argsstring></argsstring>
+        <name>WholeBundleReadyCallbackUdp_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="41" column="29" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classUdpBundleSink_1aa98ca50f8c2816ddb1943e63eb41a12e" prot="public" static="no">
+        <type>boost::function&lt; void()&gt;</type>
+        <definition>typedef boost::function&lt;void()&gt; UdpBundleSink::NotifyReadyToDeleteCallback_t</definition>
+        <argsstring></argsstring>
+        <name>NotifyReadyToDeleteCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="42" column="29" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUdpBundleSink_1a5c697934eb04df8d9c7104491e9abeb9" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classUdpBundleSink_1a19121334c1965afd9fa62284a4c9e02f" kindref="member">WholeBundleReadyCallbackUdp_t</ref></type>
+        <definition>const WholeBundleReadyCallbackUdp_t UdpBundleSink::m_wholeBundleReadyCallback</definition>
+        <argsstring></argsstring>
+        <name>m_wholeBundleReadyCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="64" column="41" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1ae02a197d6c893226fd1678c976a321f4" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classUdpBundleSink_1aa98ca50f8c2816ddb1943e63eb41a12e" kindref="member">NotifyReadyToDeleteCallback_t</ref></type>
+        <definition>const NotifyReadyToDeleteCallback_t UdpBundleSink::m_notifyReadyToDeleteCallback</definition>
+        <argsstring></argsstring>
+        <name>m_notifyReadyToDeleteCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="65" column="41" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a53448e65613850a8c213abd8d06f694a" compoundref="UdpBundleSink_8cpp" startline="210" endline="225">HandleSocketShutdown</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a5cc50726b73581c35b481c5a128a365e" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::socket</type>
+        <definition>boost::asio::ip::udp::socket UdpBundleSink::m_udpSocket</definition>
+        <argsstring></argsstring>
+        <name>m_udpSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="67" column="34" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a53448e65613850a8c213abd8d06f694a" compoundref="UdpBundleSink_8cpp" startline="210" endline="225">HandleSocketShutdown</referencedby>
+        <referencedby refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" compoundref="UdpBundleSink_8cpp" startline="120" endline="127">StartUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a1801cd58d5ad4ac40ada68ea3e3ec9d3" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service&amp; UdpBundleSink::m_ioServiceRef</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="68" column="30" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a7590cd99d9e0dd466224757ec8b4b6e8" compoundref="UdpBundleSink_8cpp" startline="206" endline="208">DoUdpShutdown</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a355394751a736ad5eded6f5b35af4f51" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int UdpBundleSink::M_NUM_CIRCULAR_BUFFER_VECTORS</definition>
+        <argsstring></argsstring>
+        <name>M_NUM_CIRCULAR_BUFFER_VECTORS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="70" column="24" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1ac22879fcd0e8df6779d51f70d9a5fe62" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int UdpBundleSink::M_MAX_UDP_PACKET_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_UDP_PACKET_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="71" column="24" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a4616976d3bbc8f79274f8dfa53ba8172" prot="private" static="no" mutable="no">
+        <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref></type>
+        <definition>padded_vector_uint8_t UdpBundleSink::m_udpReceiveBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="72" column="27" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" compoundref="UdpBundleSink_8cpp" startline="120" endline="127">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a09deb0c3ffbe096432e898b98d84d920" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint UdpBundleSink::m_remoteEndpoint</definition>
+        <argsstring></argsstring>
+        <name>m_remoteEndpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="73" column="36" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" compoundref="UdpBundleSink_8cpp" startline="120" endline="127">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a2df790477dd383849c51f5b0628f0a9d" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint UdpBundleSink::m_lastRemoteEndpoint</definition>
+        <argsstring></argsstring>
+        <name>m_lastRemoteEndpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="74" column="36" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1abaac024e93c5da01b26ec8bd8cf20e8b" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable UdpBundleSink::m_circularIndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_circularIndexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="75" column="65" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1aadbcd513503236ad06c5c84dd70a21ff" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt;</type>
+        <definition>std::vector&lt;padded_vector_uint8_t &gt; UdpBundleSink::m_udpReceiveBuffersCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBuffersCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="76" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a8993cb8ad58124e4465ebbd6df2862f5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; boost::asio::ip::udp::endpoint &gt;</type>
+        <definition>std::vector&lt;boost::asio::ip::udp::endpoint&gt; UdpBundleSink::m_remoteEndpointsCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_remoteEndpointsCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="77" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1aa6a9191427df31860467b468395496b3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::size_t &gt;</type>
+        <definition>std::vector&lt;std::size_t&gt; UdpBundleSink::m_udpReceiveBytesTransferredCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBytesTransferredCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="78" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1abe6a30b808c5c9c53029ee47f19ded37" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable UdpBundleSink::m_conditionVariableCb</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariableCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="79" column="31" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a8b21d1028bfe0dbfe017b2516c2ff6f6" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex UdpBundleSink::m_mutexCb</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="80" column="18" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1ae4041c3e119e2a6885e39795338c5bb4" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; UdpBundleSink::m_threadCbReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadCbReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="81" column="21" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a9df9ec90abd8a7d4a45aa3658972681a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UdpBundleSink::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="82" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a763bc8b2a3480f89d3b8ceebde597a8f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UdpBundleSink::m_safeToDelete</definition>
+        <argsstring></argsstring>
+        <name>m_safeToDelete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="83" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a53448e65613850a8c213abd8d06f694a" compoundref="UdpBundleSink_8cpp" startline="210" endline="225">HandleSocketShutdown</referencedby>
+        <referencedby refid="classUdpBundleSink_1ab1700aff1e57458f9ecf72903db6be9c" compoundref="UdpBundleSink_8cpp" startline="227" endline="229">ReadyToBeDeleted</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a4506f94abff14bbfd8aaa8300a38ab61" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UdpBundleSink::m_incomingBundleSize</definition>
+        <argsstring></argsstring>
+        <name>m_incomingBundleSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="84" column="14" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a655df11bc3a9d094cc5de42844721091" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UdpBundleSink::m_printedCbTooSmallNotice</definition>
+        <argsstring></argsstring>
+        <name>m_printedCbTooSmallNotice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="85" column="10" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1aba9514a7800d71ee466159bcaccd0513" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string UdpBundleSink::m_connectionName</definition>
+        <argsstring></argsstring>
+        <name>m_connectionName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="88" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1acf243f8e86dab577810aa049b8008096" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; const char * &gt;</type>
+        <definition>std::atomic&lt;const char*&gt; UdpBundleSink::m_connectionNamePtr</definition>
+        <argsstring></argsstring>
+        <name>m_connectionNamePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="89" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" compoundref="UdpBundleSink_8cpp" startline="231" endline="237">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a42fee068e1680e3b4746e9899a3d3b62" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string UdpBundleSink::M_INPUT_NAME</definition>
+        <argsstring></argsstring>
+        <name>M_INPUT_NAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="90" column="23" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" compoundref="UdpBundleSink_8cpp" startline="231" endline="237">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a9c369fb3ac80edfccc439729cb245a68" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSink::m_countCircularBufferOverruns</definition>
+        <argsstring></argsstring>
+        <name>m_countCircularBufferOverruns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="91" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" compoundref="UdpBundleSink_8cpp" startline="231" endline="237">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1ab3ad9b976e3371b2d8d612100521cd1a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSink::m_totalBundleBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="92" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" compoundref="UdpBundleSink_8cpp" startline="231" endline="237">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSink_1a590397246dafdde38da8e131c8806a07" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSink::m_totalBundlesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="93" column="17" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" compoundref="UdpBundleSink_8cpp" startline="231" endline="237">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUdpBundleSink_1adc1216feb8fa01d37b73673ca9472b65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UdpBundleSink::UdpBundleSink</definition>
+        <argsstring>()</argsstring>
+        <name>UdpBundleSink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="39" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSink::StartUdpReceive</definition>
+        <argsstring>()</argsstring>
+        <name>StartUdpReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="55" column="28" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="120" bodyend="127"/>
+        <references refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</references>
+        <references refid="classUdpBundleSink_1a09deb0c3ffbe096432e898b98d84d920" compoundref="UdpBundleSink_8h" startline="73">m_remoteEndpoint</references>
+        <references refid="classUdpBundleSink_1a4616976d3bbc8f79274f8dfa53ba8172" compoundref="UdpBundleSink_8h" startline="72">m_udpReceiveBuffer</references>
+        <references refid="classUdpBundleSink_1a5cc50726b73581c35b481c5a128a365e" compoundref="UdpBundleSink_8h" startline="67">m_udpSocket</references>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSink::HandleUdpReceive</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>HandleUdpReceive</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="56" column="28" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="129" bodyend="166"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classUdpBundleSink_1a7590cd99d9e0dd466224757ec8b4b6e8" compoundref="UdpBundleSink_8cpp" startline="206" endline="208">DoUdpShutdown</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSink_1abaac024e93c5da01b26ec8bd8cf20e8b" compoundref="UdpBundleSink_8h" startline="75">m_circularIndexBuffer</references>
+        <references refid="classUdpBundleSink_1abe6a30b808c5c9c53029ee47f19ded37" compoundref="UdpBundleSink_8h" startline="79">m_conditionVariableCb</references>
+        <references refid="classUdpBundleSink_1aba9514a7800d71ee466159bcaccd0513" compoundref="UdpBundleSink_8h" startline="88">m_connectionName</references>
+        <references refid="classUdpBundleSink_1acf243f8e86dab577810aa049b8008096" compoundref="UdpBundleSink_8h" startline="89">m_connectionNamePtr</references>
+        <references refid="classUdpBundleSink_1a9c369fb3ac80edfccc439729cb245a68" compoundref="UdpBundleSink_8h" startline="91">m_countCircularBufferOverruns</references>
+        <references refid="classUdpBundleSink_1a2df790477dd383849c51f5b0628f0a9d" compoundref="UdpBundleSink_8h" startline="74">m_lastRemoteEndpoint</references>
+        <references refid="classUdpBundleSink_1a8b21d1028bfe0dbfe017b2516c2ff6f6" compoundref="UdpBundleSink_8h" startline="80">m_mutexCb</references>
+        <references refid="classUdpBundleSink_1a655df11bc3a9d094cc5de42844721091" compoundref="UdpBundleSink_8h" startline="85">m_printedCbTooSmallNotice</references>
+        <references refid="classUdpBundleSink_1a09deb0c3ffbe096432e898b98d84d920" compoundref="UdpBundleSink_8h" startline="73">m_remoteEndpoint</references>
+        <references refid="classUdpBundleSink_1a8993cb8ad58124e4465ebbd6df2862f5" compoundref="UdpBundleSink_8h" startline="77">m_remoteEndpointsCbVec</references>
+        <references refid="classUdpBundleSink_1a4616976d3bbc8f79274f8dfa53ba8172" compoundref="UdpBundleSink_8h" startline="72">m_udpReceiveBuffer</references>
+        <references refid="classUdpBundleSink_1aadbcd513503236ad06c5c84dd70a21ff" compoundref="UdpBundleSink_8h" startline="76">m_udpReceiveBuffersCbVec</references>
+        <references refid="classUdpBundleSink_1aa6a9191427df31860467b468395496b3" compoundref="UdpBundleSink_8h" startline="78">m_udpReceiveBytesTransferredCbVec</references>
+        <references refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" compoundref="UdpBundleSink_8cpp" startline="120" endline="127">StartUdpReceive</references>
+        <references refid="UdpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSink_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" compoundref="UdpBundleSink_8cpp" startline="120" endline="127">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSink::PopCbThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>PopCbThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="57" column="28" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="171" bodyend="204"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSink_1abaac024e93c5da01b26ec8bd8cf20e8b" compoundref="UdpBundleSink_8h" startline="75">m_circularIndexBuffer</references>
+        <references refid="classUdpBundleSink_1abe6a30b808c5c9c53029ee47f19ded37" compoundref="UdpBundleSink_8h" startline="79">m_conditionVariableCb</references>
+        <references refid="classUdpBundleSink_1ac22879fcd0e8df6779d51f70d9a5fe62" compoundref="UdpBundleSink_8h" startline="71">M_MAX_UDP_PACKET_SIZE_BYTES</references>
+        <references refid="classUdpBundleSink_1a8b21d1028bfe0dbfe017b2516c2ff6f6" compoundref="UdpBundleSink_8h" startline="80">m_mutexCb</references>
+        <references refid="classUdpBundleSink_1a9df9ec90abd8a7d4a45aa3658972681a" compoundref="UdpBundleSink_8h" startline="82">m_running</references>
+        <references refid="classUdpBundleSink_1ab3ad9b976e3371b2d8d612100521cd1a" compoundref="UdpBundleSink_8h" startline="92">m_totalBundleBytesReceived</references>
+        <references refid="classUdpBundleSink_1a590397246dafdde38da8e131c8806a07" compoundref="UdpBundleSink_8h" startline="93">m_totalBundlesReceived</references>
+        <references refid="classUdpBundleSink_1aadbcd513503236ad06c5c84dd70a21ff" compoundref="UdpBundleSink_8h" startline="76">m_udpReceiveBuffersCbVec</references>
+        <references refid="classUdpBundleSink_1aa6a9191427df31860467b468395496b3" compoundref="UdpBundleSink_8h" startline="78">m_udpReceiveBytesTransferredCbVec</references>
+        <references refid="classUdpBundleSink_1a5c697934eb04df8d9c7104491e9abeb9" compoundref="UdpBundleSink_8h" startline="64">m_wholeBundleReadyCallback</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="UdpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSink_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" compoundref="UdpBundleSink_8cpp" startline="25" endline="79">UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1a7590cd99d9e0dd466224757ec8b4b6e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSink::DoUdpShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>DoUdpShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="58" column="28" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="206" bodyend="208"/>
+        <references refid="classUdpBundleSink_1a53448e65613850a8c213abd8d06f694a" compoundref="UdpBundleSink_8cpp" startline="210" endline="225">HandleSocketShutdown</references>
+        <references refid="classUdpBundleSink_1a1801cd58d5ad4ac40ada68ea3e3ec9d3" compoundref="UdpBundleSink_8h" startline="68">m_ioServiceRef</references>
+        <referencedby refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" compoundref="UdpBundleSink_8cpp" startline="129" endline="166">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" compoundref="UdpBundleSink_8cpp" startline="81" endline="118">~UdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1a53448e65613850a8c213abd8d06f694a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSink::HandleSocketShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>HandleSocketShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="59" column="28" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="210" bodyend="225"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSink_1ae02a197d6c893226fd1678c976a321f4" compoundref="UdpBundleSink_8h" startline="65">m_notifyReadyToDeleteCallback</references>
+        <references refid="classUdpBundleSink_1a763bc8b2a3480f89d3b8ceebde597a8f" compoundref="UdpBundleSink_8h" startline="83">m_safeToDelete</references>
+        <references refid="classUdpBundleSink_1a5cc50726b73581c35b481c5a128a365e" compoundref="UdpBundleSink_8h" startline="67">m_udpSocket</references>
+        <references refid="UdpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSink_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classUdpBundleSink_1a7590cd99d9e0dd466224757ec8b4b6e8" compoundref="UdpBundleSink_8cpp" startline="206" endline="208">DoUdpShutdown</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT</type>
+        <definition>UdpBundleSink::UdpBundleSink</definition>
+        <argsstring>(boost::asio::io_service &amp;ioService, uint16_t udpPort, const WholeBundleReadyCallbackUdp_t &amp;wholeBundleReadyCallback, const unsigned int numCircularBufferVectors, const unsigned int maxUdpPacketSizeBytes, const NotifyReadyToDeleteCallback_t &amp;notifyReadyToDeleteCallback=NotifyReadyToDeleteCallback_t())</argsstring>
+        <name>UdpBundleSink</name>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioService</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>udpPort</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classUdpBundleSink_1a19121334c1965afd9fa62284a4c9e02f" kindref="member">WholeBundleReadyCallbackUdp_t</ref> &amp;</type>
+          <declname>wholeBundleReadyCallback</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numCircularBufferVectors</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>maxUdpPacketSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classUdpBundleSink_1aa98ca50f8c2816ddb1943e63eb41a12e" kindref="member">NotifyReadyToDeleteCallback_t</ref> &amp;</type>
+          <declname>notifyReadyToDeleteCallback</declname>
+          <defval><ref refid="classUdpBundleSink_1aa98ca50f8c2816ddb1943e63eb41a12e" kindref="member">NotifyReadyToDeleteCallback_t</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="44" column="20" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="25" bodyend="79"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSink_1abe6a30b808c5c9c53029ee47f19ded37" compoundref="UdpBundleSink_8h" startline="79">m_conditionVariableCb</references>
+        <references refid="classUdpBundleSink_1ac22879fcd0e8df6779d51f70d9a5fe62" compoundref="UdpBundleSink_8h" startline="71">M_MAX_UDP_PACKET_SIZE_BYTES</references>
+        <references refid="classUdpBundleSink_1a8b21d1028bfe0dbfe017b2516c2ff6f6" compoundref="UdpBundleSink_8h" startline="80">m_mutexCb</references>
+        <references refid="classUdpBundleSink_1a355394751a736ad5eded6f5b35af4f51" compoundref="UdpBundleSink_8h" startline="70">M_NUM_CIRCULAR_BUFFER_VECTORS</references>
+        <references refid="classUdpBundleSink_1a9df9ec90abd8a7d4a45aa3658972681a" compoundref="UdpBundleSink_8h" startline="82">m_running</references>
+        <references refid="classUdpBundleSink_1ae4041c3e119e2a6885e39795338c5bb4" compoundref="UdpBundleSink_8h" startline="81">m_threadCbReaderPtr</references>
+        <references refid="classUdpBundleSink_1aadbcd513503236ad06c5c84dd70a21ff" compoundref="UdpBundleSink_8h" startline="76">m_udpReceiveBuffersCbVec</references>
+        <references refid="classUdpBundleSink_1a5cc50726b73581c35b481c5a128a365e" compoundref="UdpBundleSink_8h" startline="67">m_udpSocket</references>
+        <references refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" compoundref="UdpBundleSink_8cpp" startline="171" endline="204">PopCbThreadFunc</references>
+        <references refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" compoundref="UdpBundleSink_8cpp" startline="120" endline="127">StartUdpReceive</references>
+        <references refid="UdpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSink_8cpp" startline="23">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT</type>
+        <definition>UdpBundleSink::~UdpBundleSink</definition>
+        <argsstring>()</argsstring>
+        <name>~UdpBundleSink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="50" column="20" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="81" bodyend="118"/>
+        <references refid="classUdpBundleSink_1a7590cd99d9e0dd466224757ec8b4b6e8" compoundref="UdpBundleSink_8cpp" startline="206" endline="208">DoUdpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSink_1abe6a30b808c5c9c53029ee47f19ded37" compoundref="UdpBundleSink_8h" startline="79">m_conditionVariableCb</references>
+        <references refid="classUdpBundleSink_1acf243f8e86dab577810aa049b8008096" compoundref="UdpBundleSink_8h" startline="89">m_connectionNamePtr</references>
+        <references refid="classUdpBundleSink_1a9c369fb3ac80edfccc439729cb245a68" compoundref="UdpBundleSink_8h" startline="91">m_countCircularBufferOverruns</references>
+        <references refid="classUdpBundleSink_1a42fee068e1680e3b4746e9899a3d3b62" compoundref="UdpBundleSink_8h" startline="90">M_INPUT_NAME</references>
+        <references refid="classUdpBundleSink_1a8b21d1028bfe0dbfe017b2516c2ff6f6" compoundref="UdpBundleSink_8h" startline="80">m_mutexCb</references>
+        <references refid="classUdpBundleSink_1a9df9ec90abd8a7d4a45aa3658972681a" compoundref="UdpBundleSink_8h" startline="82">m_running</references>
+        <references refid="classUdpBundleSink_1a763bc8b2a3480f89d3b8ceebde597a8f" compoundref="UdpBundleSink_8h" startline="83">m_safeToDelete</references>
+        <references refid="classUdpBundleSink_1ae4041c3e119e2a6885e39795338c5bb4" compoundref="UdpBundleSink_8h" startline="81">m_threadCbReaderPtr</references>
+        <references refid="classUdpBundleSink_1ab3ad9b976e3371b2d8d612100521cd1a" compoundref="UdpBundleSink_8h" startline="92">m_totalBundleBytesReceived</references>
+        <references refid="classUdpBundleSink_1a590397246dafdde38da8e131c8806a07" compoundref="UdpBundleSink_8h" startline="93">m_totalBundlesReceived</references>
+        <references refid="UdpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSink_8cpp" startline="23">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1ab1700aff1e57458f9ecf72903db6be9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT bool</type>
+        <definition>bool UdpBundleSink::ReadyToBeDeleted</definition>
+        <argsstring>()</argsstring>
+        <name>ReadyToBeDeleted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="51" column="25" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="227" bodyend="229"/>
+        <references refid="classUdpBundleSink_1a763bc8b2a3480f89d3b8ceebde597a8f" compoundref="UdpBundleSink_8h" startline="83">m_safeToDelete</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSink::GetTelemetry</definition>
+        <argsstring>(UdpInductConnectionTelemetry_t &amp;telem) const</argsstring>
+        <name>GetTelemetry</name>
+        <param>
+          <type><ref refid="structUdpInductConnectionTelemetry__t" kindref="compound">UdpInductConnectionTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSink.h" line="52" column="25" bodyfile="common/udp/src/UdpBundleSink.cpp" bodystart="231" bodyend="237"/>
+        <references refid="structInductConnectionTelemetry__t_1a918c4d384808ca15c0b500ea9e8c4f18" compoundref="TelemetryDefinitions_8h" startline="144">InductConnectionTelemetry_t::m_connectionName</references>
+        <references refid="classUdpBundleSink_1acf243f8e86dab577810aa049b8008096" compoundref="UdpBundleSink_8h" startline="89">m_connectionNamePtr</references>
+        <references refid="structUdpInductConnectionTelemetry__t_1a5566ba0d8cff6c20d58538e9f9710503" compoundref="TelemetryDefinitions_8h" startline="171">UdpInductConnectionTelemetry_t::m_countCircularBufferOverruns</references>
+        <references refid="classUdpBundleSink_1a9c369fb3ac80edfccc439729cb245a68" compoundref="UdpBundleSink_8h" startline="91">m_countCircularBufferOverruns</references>
+        <references refid="classUdpBundleSink_1a42fee068e1680e3b4746e9899a3d3b62" compoundref="UdpBundleSink_8h" startline="90">M_INPUT_NAME</references>
+        <references refid="structInductConnectionTelemetry__t_1abada9608295c2708ce7eff85d37a6b44" compoundref="TelemetryDefinitions_8h" startline="145">InductConnectionTelemetry_t::m_inputName</references>
+        <references refid="structInductConnectionTelemetry__t_1ad4c6971bc09c9c2f9fa0bd2a623ff1f6" compoundref="TelemetryDefinitions_8h" startline="147">InductConnectionTelemetry_t::m_totalBundleBytesReceived</references>
+        <references refid="classUdpBundleSink_1ab3ad9b976e3371b2d8d612100521cd1a" compoundref="UdpBundleSink_8h" startline="92">m_totalBundleBytesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1a3eca817c07ea8e451ecc5a599e1886d2" compoundref="TelemetryDefinitions_8h" startline="146">InductConnectionTelemetry_t::m_totalBundlesReceived</references>
+        <references refid="classUdpBundleSink_1a590397246dafdde38da8e131c8806a07" compoundref="UdpBundleSink_8h" startline="93">m_totalBundlesReceived</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>UdpBundleSink</label>
+        <link refid="classUdpBundleSink"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/udp/include/UdpBundleSink.h" line="37" column="1" bodyfile="common/udp/include/UdpBundleSink.h" bodystart="37" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classUdpBundleSink_1a7590cd99d9e0dd466224757ec8b4b6e8" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>DoUdpShutdown</name></member>
+      <member refid="classUdpBundleSink_1a70ea3d57c9b6e5976f1bfde0448d50a2" prot="public" virt="non-virtual"><scope>UdpBundleSink</scope><name>GetTelemetry</name></member>
+      <member refid="classUdpBundleSink_1a53448e65613850a8c213abd8d06f694a" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>HandleSocketShutdown</name></member>
+      <member refid="classUdpBundleSink_1a94b99cbc3868e865ecad2f81e8eba8f1" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>HandleUdpReceive</name></member>
+      <member refid="classUdpBundleSink_1abaac024e93c5da01b26ec8bd8cf20e8b" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_circularIndexBuffer</name></member>
+      <member refid="classUdpBundleSink_1abe6a30b808c5c9c53029ee47f19ded37" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_conditionVariableCb</name></member>
+      <member refid="classUdpBundleSink_1aba9514a7800d71ee466159bcaccd0513" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_connectionName</name></member>
+      <member refid="classUdpBundleSink_1acf243f8e86dab577810aa049b8008096" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_connectionNamePtr</name></member>
+      <member refid="classUdpBundleSink_1a9c369fb3ac80edfccc439729cb245a68" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_countCircularBufferOverruns</name></member>
+      <member refid="classUdpBundleSink_1a4506f94abff14bbfd8aaa8300a38ab61" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_incomingBundleSize</name></member>
+      <member refid="classUdpBundleSink_1a42fee068e1680e3b4746e9899a3d3b62" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>M_INPUT_NAME</name></member>
+      <member refid="classUdpBundleSink_1a1801cd58d5ad4ac40ada68ea3e3ec9d3" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_ioServiceRef</name></member>
+      <member refid="classUdpBundleSink_1a2df790477dd383849c51f5b0628f0a9d" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_lastRemoteEndpoint</name></member>
+      <member refid="classUdpBundleSink_1ac22879fcd0e8df6779d51f70d9a5fe62" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>M_MAX_UDP_PACKET_SIZE_BYTES</name></member>
+      <member refid="classUdpBundleSink_1a8b21d1028bfe0dbfe017b2516c2ff6f6" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_mutexCb</name></member>
+      <member refid="classUdpBundleSink_1ae02a197d6c893226fd1678c976a321f4" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_notifyReadyToDeleteCallback</name></member>
+      <member refid="classUdpBundleSink_1a355394751a736ad5eded6f5b35af4f51" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>M_NUM_CIRCULAR_BUFFER_VECTORS</name></member>
+      <member refid="classUdpBundleSink_1a655df11bc3a9d094cc5de42844721091" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_printedCbTooSmallNotice</name></member>
+      <member refid="classUdpBundleSink_1a09deb0c3ffbe096432e898b98d84d920" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_remoteEndpoint</name></member>
+      <member refid="classUdpBundleSink_1a8993cb8ad58124e4465ebbd6df2862f5" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_remoteEndpointsCbVec</name></member>
+      <member refid="classUdpBundleSink_1a9df9ec90abd8a7d4a45aa3658972681a" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_running</name></member>
+      <member refid="classUdpBundleSink_1a763bc8b2a3480f89d3b8ceebde597a8f" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_safeToDelete</name></member>
+      <member refid="classUdpBundleSink_1ae4041c3e119e2a6885e39795338c5bb4" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_threadCbReaderPtr</name></member>
+      <member refid="classUdpBundleSink_1ab3ad9b976e3371b2d8d612100521cd1a" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_totalBundleBytesReceived</name></member>
+      <member refid="classUdpBundleSink_1a590397246dafdde38da8e131c8806a07" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_totalBundlesReceived</name></member>
+      <member refid="classUdpBundleSink_1a4616976d3bbc8f79274f8dfa53ba8172" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_udpReceiveBuffer</name></member>
+      <member refid="classUdpBundleSink_1aadbcd513503236ad06c5c84dd70a21ff" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_udpReceiveBuffersCbVec</name></member>
+      <member refid="classUdpBundleSink_1aa6a9191427df31860467b468395496b3" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_udpReceiveBytesTransferredCbVec</name></member>
+      <member refid="classUdpBundleSink_1a5cc50726b73581c35b481c5a128a365e" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_udpSocket</name></member>
+      <member refid="classUdpBundleSink_1a5c697934eb04df8d9c7104491e9abeb9" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>m_wholeBundleReadyCallback</name></member>
+      <member refid="classUdpBundleSink_1aa98ca50f8c2816ddb1943e63eb41a12e" prot="public" virt="non-virtual"><scope>UdpBundleSink</scope><name>NotifyReadyToDeleteCallback_t</name></member>
+      <member refid="classUdpBundleSink_1afde94505abe0445acd576a6974a6bbfc" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>PopCbThreadFunc</name></member>
+      <member refid="classUdpBundleSink_1ab1700aff1e57458f9ecf72903db6be9c" prot="public" virt="non-virtual"><scope>UdpBundleSink</scope><name>ReadyToBeDeleted</name></member>
+      <member refid="classUdpBundleSink_1a9b5b27f2c12ff914f44879f007eedae3" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>StartUdpReceive</name></member>
+      <member refid="classUdpBundleSink_1adc1216feb8fa01d37b73673ca9472b65" prot="private" virt="non-virtual"><scope>UdpBundleSink</scope><name>UdpBundleSink</name></member>
+      <member refid="classUdpBundleSink_1a3af2a005e0f89579e60cb62476c85a08" prot="public" virt="non-virtual"><scope>UdpBundleSink</scope><name>UdpBundleSink</name></member>
+      <member refid="classUdpBundleSink_1a19121334c1965afd9fa62284a4c9e02f" prot="public" virt="non-virtual"><scope>UdpBundleSink</scope><name>WholeBundleReadyCallbackUdp_t</name></member>
+      <member refid="classUdpBundleSink_1a88013d0cf4643a47e7d7c576d72616c4" prot="public" virt="non-virtual"><scope>UdpBundleSink</scope><name>~UdpBundleSink</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Telemetry_8h" kind="file" language="C++">
+    <compoundname>Telemetry.h</compoundname>
+    <includes local="yes">telem_lib_export.h</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="telem__cmd__interface_2src_2main_8cpp" local="yes">module/telem_cmd_interface/src/main.cpp</includedby>
+    <includedby refid="Telemetry_8cpp" local="yes">module/telem_cmd_interface/src/Telemetry.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>atomic</label>
+      </node>
+      <node id="2">
+        <label>telem_lib_export.h</label>
+      </node>
+      <node id="1">
+        <label>module/telem_cmd_interface/include/Telemetry.h</label>
+        <link refid="Telemetry_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>module/telem_cmd_interface/src/Telemetry.cpp</label>
+        <link refid="Telemetry_8cpp"/>
+      </node>
+      <node id="1">
+        <label>module/telem_cmd_interface/include/Telemetry.h</label>
+        <link refid="Telemetry_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>module/telem_cmd_interface/src/main.cpp</label>
+        <link refid="telem__cmd__interface_2src_2main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classTelemetry" prot="public">Telemetry</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2023 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classTelemetry" kindref="compound">Telemetry</ref> class is used for launching the telemetry runner in its own process. The common use-case for this functionality is when running HDTN in distributed mode. <ref refid="classTelemetry" kindref="compound">Telemetry</ref> provides a blocking Run method, which creates and initializes a <ref refid="classTelemetryRunner" kindref="compound">TelemetryRunner</ref> object with any passed-in command line arguments. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TELEMETRY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TELEMETRY_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;telem_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classTelemetry" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTelemetry" kindref="compound">Telemetry</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TELEM_LIB_EXPORT<sp/><ref refid="classTelemetry_1a52f9548ef855738d450f241df5b04b96" kindref="member">Telemetry</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TELEM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classTelemetry_1a790efd4576a552d29a5ea331e6440e33" kindref="member">Run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[],<sp/>std::atomic&lt;bool&gt;&amp;<sp/>running);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTelemetry_1a7dfc0b886157e6c089a26f8a576e66ca" kindref="member">MonitorExitKeypressThreadFunc</ref>();</highlight></codeline>
+<codeline lineno="38" refid="classTelemetry_1a4e04a6eb636b24a1ed54aaba91b2e887" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classTelemetry_1a4e04a6eb636b24a1ed54aaba91b2e887" kindref="member">m_runningFromSigHandler</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//TELEMETRY_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="module/telem_cmd_interface/include/Telemetry.h"/>
+  </compounddef>
+</doxygen>

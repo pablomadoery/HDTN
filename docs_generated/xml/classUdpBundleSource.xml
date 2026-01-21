@@ -1,0 +1,1408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUdpBundleSource" kind="class" language="C++" prot="public">
+    <compoundname>UdpBundleSource</compoundname>
+    <includes refid="UdpBundleSource_8h" local="no">UdpBundleSource.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service UdpBundleSource::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="86" column="29" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" compoundref="UdpBundleSource_8cpp" startline="350" endline="352">DoUdpShutdown</referencedby>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1aa53c2ad69b9ab9456d240459ef7365da" prot="private" static="no" mutable="no">
+        <type>boost::asio::io_service::work</type>
+        <definition>boost::asio::io_service::work UdpBundleSource::m_work</definition>
+        <argsstring></argsstring>
+        <name>m_work</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="87" column="35" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1ac670a434657f1730c3e4353f47b2df5f" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::resolver</type>
+        <definition>boost::asio::ip::udp::resolver UdpBundleSource::m_resolver</definition>
+        <argsstring></argsstring>
+        <name>m_resolver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="88" column="36" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a0c83a8d67da09f323031c6fcc8810b95" compoundref="UdpBundleSource_8cpp" startline="223" endline="231">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" prot="private" static="no" mutable="no">
+        <type><ref refid="classTokenRateLimiter" kindref="compound">TokenRateLimiter</ref></type>
+        <definition>TokenRateLimiter UdpBundleSource::m_tokenRateLimiter</definition>
+        <argsstring></argsstring>
+        <name>m_tokenRateLimiter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="89" column="22" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource</referencedby>
+        <referencedby refid="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" compoundref="UdpBundleSource_8cpp" startline="129" endline="137">UpdateRate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a6576b07bb7749c5580eb417e19ff7365" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer UdpBundleSource::m_tokenRefreshTimer</definition>
+        <argsstring></argsstring>
+        <name>m_tokenRefreshTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="90" column="33" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a0364956f712099ee363cf07b55f66a1d" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::ptime</type>
+        <definition>boost::posix_time::ptime UdpBundleSource::m_lastTimeTokensWereRefreshed</definition>
+        <argsstring></argsstring>
+        <name>m_lastTimeTokensWereRefreshed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="91" column="30" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a8ce85d2372f1d1db9beb7f6117baa005" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::shared_ptr&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt; &gt;</type>
+        <definition>std::queue&lt;std::shared_ptr&lt;padded_vector_uint8_t&gt; &gt; UdpBundleSource::m_queueVecDataToSendPtrs</definition>
+        <argsstring></argsstring>
+        <name>m_queueVecDataToSendPtrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="92" column="16" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1afa8c864ea89cdbc85c5afbe2ab9623d2" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::shared_ptr&lt; <ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &gt; &gt;</type>
+        <definition>std::queue&lt;std::shared_ptr&lt;zmq::message_t&gt; &gt; UdpBundleSource::m_queueZmqDataToSendPtrs</definition>
+        <argsstring></argsstring>
+        <name>m_queueZmqDataToSendPtrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="93" column="16" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::socket</type>
+        <definition>boost::asio::ip::udp::socket UdpBundleSource::m_udpSocket</definition>
+        <argsstring></argsstring>
+        <name>m_udpSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="94" column="34" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a6df8670e7d8250442e129092d54ca3df" compoundref="UdpBundleSource_8cpp" startline="354" endline="374">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" compoundref="UdpBundleSource_8cpp" startline="233" endline="255">OnResolve</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1aeac2a647881d501697f5fed93a84a5f2" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint UdpBundleSource::m_udpDestinationEndpoint</definition>
+        <argsstring></argsstring>
+        <name>m_udpDestinationEndpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="95" column="36" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" compoundref="UdpBundleSource_8cpp" startline="233" endline="255">OnResolve</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1aa7696fdf07f7c58162b8afc6e3848daa" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; UdpBundleSource::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="96" column="21" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a26520870f77886b72c2e30bdf7e276c8" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable UdpBundleSource::m_localConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_localConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="97" column="31" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1ad31af2339e06f64998fcc895b21dd394" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t UdpBundleSource::m_maxPacketsBeingSent</definition>
+        <argsstring></argsstring>
+        <name>m_maxPacketsBeingSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="98" column="20" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1ac594fb93f8676f58791ba374bc1c95c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable UdpBundleSource::m_bytesToAckBySentCallbackCb</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckBySentCallbackCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="99" column="65" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1afcfeced58d3a1024762b95efe428c5ba" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::size_t &gt;</type>
+        <definition>std::vector&lt;std::size_t&gt; UdpBundleSource::m_bytesToAckBySentCallbackCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckBySentCallbackCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="100" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a98581b495ce2b2b3905de22cc0aaa586" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;uint8_t&gt; &gt; UdpBundleSource::m_userDataCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_userDataCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="101" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a63533d6f1dee91a5a3ba360ad9d6560f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UdpBundleSource::m_readyToForward</definition>
+        <argsstring></argsstring>
+        <name>m_readyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="103" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a6df8670e7d8250442e129092d54ca3df" compoundref="UdpBundleSource_8cpp" startline="354" endline="374">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" compoundref="UdpBundleSource_8cpp" startline="233" endline="255">OnResolve</referencedby>
+        <referencedby refid="classUdpBundleSource_1a930f0553dab8f75c1578fd60816d0561" compoundref="UdpBundleSource_8cpp" startline="376" endline="378">ReadyToForward</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a652577cf81c8d145cfcde72253857558" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UdpBundleSource::m_useLocalConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_useLocalConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="104" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a787682201ebc0c53ce9c115897e8d386" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UdpBundleSource::m_tokenRefreshTimerIsRunning</definition>
+        <argsstring></argsstring>
+        <name>m_tokenRefreshTimerIsRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="105" column="10" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a4ce7a48e8e0e5d1ed43501533d9f4d21" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref></type>
+        <definition>OnFailedBundleVecSendCallback_t UdpBundleSource::m_onFailedBundleVecSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleVecSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="107" column="37" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1ab0a67c48c4a708aa6d7cc2f75de827b1" compoundref="UdpBundleSource_8cpp" startline="455" endline="457">SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a0fbf02de62aa5943c8c0f46abd3c4bcf" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref></type>
+        <definition>OnFailedBundleZmqSendCallback_t UdpBundleSource::m_onFailedBundleZmqSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleZmqSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="108" column="37" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a949c7d81d9e560cd20df04cafc813df0" compoundref="UdpBundleSource_8cpp" startline="458" endline="460">SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1aba80d708d3080dfd748f3fb3b05f33f5" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref></type>
+        <definition>OnSuccessfulBundleSendCallback_t UdpBundleSource::m_onSuccessfulBundleSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onSuccessfulBundleSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="109" column="38" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+        <referencedby refid="classUdpBundleSource_1ab120686c671707bd2121c003ecdde870" compoundref="UdpBundleSource_8cpp" startline="461" endline="463">SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a0dd83930d86560dcb099d18f0776dc5c" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref></type>
+        <definition>OnOutductLinkStatusChangedCallback_t UdpBundleSource::m_onOutductLinkStatusChangedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onOutductLinkStatusChangedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="110" column="42" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a3dfe748c2b1b78b6c130fe3c4e824e05" compoundref="UdpBundleSource_8cpp" startline="464" endline="466">SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a0c1a170aef9d381a50fd1579917f8289" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpBundleSource::m_userAssignedUuid</definition>
+        <argsstring></argsstring>
+        <name>m_userAssignedUuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="111" column="14" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+        <referencedby refid="classUdpBundleSource_1a774ca09120956eebbbd7134ae279ae71" compoundref="UdpBundleSource_8cpp" startline="467" endline="469">SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a7533c2ec8e331cac7ae82150d485fee7" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpBundleSource::m_rateBpsOrZeroToDisable</definition>
+        <argsstring></argsstring>
+        <name>m_rateBpsOrZeroToDisable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="113" column="14" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" compoundref="UdpBundleSource_8cpp" startline="129" endline="137">UpdateRate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1afb8cc8aeca0ea44ae07cbc3a79795e4a" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration UdpBundleSource::m_rateLimitPrecisionInterval</definition>
+        <argsstring></argsstring>
+        <name>m_rateLimitPrecisionInterval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="115" column="38" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource</referencedby>
+        <referencedby refid="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" compoundref="UdpBundleSource_8cpp" startline="129" endline="137">UpdateRate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a9391735bec9f6f204fa1188ff57cbfa6" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration UdpBundleSource::m_tokenRefreshInterval</definition>
+        <argsstring></argsstring>
+        <name>m_tokenRefreshInterval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="117" column="38" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</referencedby>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a5024b5ca9b0f3dd448fa23fb785063ab" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSource::m_totalPacketsSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketsSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="120" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1af66676a3991420cd574e824fc5f54c82" compoundref="UdpBundleSource_8cpp" startline="198" endline="200">GetTotalUdpPacketsAcked</referencedby>
+        <referencedby refid="classUdpBundleSource_1af5740d3c8c07ec6c150d06e99b30eb14" compoundref="UdpBundleSource_8cpp" startline="206" endline="208">GetTotalUdpPacketsUnacked</referencedby>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1addba4531238006fca202b0f811072aa0" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSource::m_totalPacketBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="121" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a39b4f4394bddd9afbffe906aee860421" compoundref="UdpBundleSource_8cpp" startline="210" endline="212">GetTotalBundleBytesAcked</referencedby>
+        <referencedby refid="classUdpBundleSource_1a893f326b0f66536fac47527201687abd" compoundref="UdpBundleSource_8cpp" startline="218" endline="220">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSource::m_totalPacketsDequeuedForSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketsDequeuedForSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="122" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="122" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a983dd97883c42608fd3e32c555f76afa" compoundref="UdpBundleSource_8cpp" startline="202" endline="204">GetTotalUdpPacketsSent</referencedby>
+        <referencedby refid="classUdpBundleSource_1af5740d3c8c07ec6c150d06e99b30eb14" compoundref="UdpBundleSource_8cpp" startline="206" endline="208">GetTotalUdpPacketsUnacked</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSource::m_totalPacketBytesDequeuedForSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketBytesDequeuedForSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="123" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a7ccf33715f3930f6171dd4b489b1915e" compoundref="UdpBundleSource_8cpp" startline="214" endline="216">GetTotalBundleBytesSent</referencedby>
+        <referencedby refid="classUdpBundleSource_1a893f326b0f66536fac47527201687abd" compoundref="UdpBundleSource_8cpp" startline="218" endline="220">GetTotalBundleBytesUnacked</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UdpBundleSource::m_totalPacketsLimitedByRate</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketsLimitedByRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="124" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpBundleSource_1ada82b04e0af91457da4b1e9727e7ef55" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UdpBundleSource::m_linkIsUpPhysically</definition>
+        <argsstring></argsstring>
+        <name>m_linkIsUpPhysically</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="125" column="17" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classUdpBundleSource_1a6df8670e7d8250442e129092d54ca3df" compoundref="UdpBundleSource_8cpp" startline="354" endline="374">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" compoundref="UdpBundleSource_8cpp" startline="233" endline="255">OnResolve</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUdpBundleSource_1a7ec629b24601abb95c91603ea75d1889" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UdpBundleSource::UdpBundleSource</definition>
+        <argsstring>()</argsstring>
+        <name>UdpBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="41" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::OnResolve</definition>
+        <argsstring>(const boost::system::error_code &amp;ec, boost::asio::ip::udp::resolver::results_type results)</argsstring>
+        <name>OnResolve</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>boost::asio::ip::udp::resolver::results_type</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="67" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="233" bodyend="255"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSource_1ada82b04e0af91457da4b1e9727e7ef55" compoundref="UdpBundleSource_8h" startline="125">m_linkIsUpPhysically</references>
+        <references refid="classUdpBundleSource_1a63533d6f1dee91a5a3ba360ad9d6560f" compoundref="UdpBundleSource_8h" startline="103">m_readyToForward</references>
+        <references refid="classUdpBundleSource_1aeac2a647881d501697f5fed93a84a5f2" compoundref="UdpBundleSource_8h" startline="95">m_udpDestinationEndpoint</references>
+        <references refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" compoundref="UdpBundleSource_8h" startline="94">m_udpSocket</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpBundleSource_1a0c83a8d67da09f323031c6fcc8810b95" compoundref="UdpBundleSource_8cpp" startline="223" endline="231">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a5e1b249d7f0f315b0729387153f5d663" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>UDP_LIB_NO_EXPORT void UdpBundleSource::OnConnect</definition>
+        <argsstring>(const boost::system::error_code &amp;ec)</argsstring>
+        <name>OnConnect</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="68" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::HandlePostForUdpSendVecMessage</definition>
+        <argsstring>(std::shared_ptr&lt; padded_vector_uint8_t &gt; &amp;vecDataToSendPtr)</argsstring>
+        <name>HandlePostForUdpSendVecMessage</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt; &amp;</type>
+          <declname>vecDataToSendPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="69" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="257" bodyend="276"/>
+        <references refid="classUdpBundleSource_1a38df0de47eabf42cef5962efc659bc62" compoundref="UdpBundleSource_8cpp" startline="300" endline="309">HandleUdpSendVecMessage</references>
+        <references refid="classUdpBundleSource_1a8ce85d2372f1d1db9beb7f6117baa005" compoundref="UdpBundleSource_8h" startline="92">m_queueVecDataToSendPtrs</references>
+        <references refid="classUdpBundleSource_1a7533c2ec8e331cac7ae82150d485fee7" compoundref="UdpBundleSource_8h" startline="113">m_rateBpsOrZeroToDisable</references>
+        <references refid="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" compoundref="UdpBundleSource_8h" startline="89">m_tokenRateLimiter</references>
+        <references refid="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" compoundref="UdpBundleSource_8h" startline="124">m_totalPacketsLimitedByRate</references>
+        <references refid="classUdpBundleSource_1aeac2a647881d501697f5fed93a84a5f2" compoundref="UdpBundleSource_8h" startline="95">m_udpDestinationEndpoint</references>
+        <references refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" compoundref="UdpBundleSource_8h" startline="94">m_udpSocket</references>
+        <references refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" compoundref="TokenRateLimiter_8cpp" startline="55" endline="62">TokenRateLimiter::TakeTokens</references>
+        <references refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</references>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::HandlePostForUdpSendZmqMessage</definition>
+        <argsstring>(std::shared_ptr&lt; zmq::message_t &gt; &amp;zmqDataToSendPtr)</argsstring>
+        <name>HandlePostForUdpSendZmqMessage</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &gt; &amp;</type>
+          <declname>zmqDataToSendPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="70" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="278" bodyend="297"/>
+        <references refid="classUdpBundleSource_1a5ea78df1721c2ef4f5ba30e0a05e2515" compoundref="UdpBundleSource_8cpp" startline="311" endline="320">HandleUdpSendZmqMessage</references>
+        <references refid="classUdpBundleSource_1afa8c864ea89cdbc85c5afbe2ab9623d2" compoundref="UdpBundleSource_8h" startline="93">m_queueZmqDataToSendPtrs</references>
+        <references refid="classUdpBundleSource_1a7533c2ec8e331cac7ae82150d485fee7" compoundref="UdpBundleSource_8h" startline="113">m_rateBpsOrZeroToDisable</references>
+        <references refid="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" compoundref="UdpBundleSource_8h" startline="89">m_tokenRateLimiter</references>
+        <references refid="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" compoundref="UdpBundleSource_8h" startline="124">m_totalPacketsLimitedByRate</references>
+        <references refid="classUdpBundleSource_1aeac2a647881d501697f5fed93a84a5f2" compoundref="UdpBundleSource_8h" startline="95">m_udpDestinationEndpoint</references>
+        <references refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" compoundref="UdpBundleSource_8h" startline="94">m_udpSocket</references>
+        <references refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" compoundref="TokenRateLimiter_8cpp" startline="55" endline="62">TokenRateLimiter::TakeTokens</references>
+        <references refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</references>
+        <referencedby refid="classUdpBundleSource_1ada4df4c74274a470314456870a729a76" compoundref="UdpBundleSource_8cpp" startline="166" endline="190">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a38df0de47eabf42cef5962efc659bc62" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::HandleUdpSendVecMessage</definition>
+        <argsstring>(std::shared_ptr&lt; padded_vector_uint8_t &gt; &amp;dataSentPtr, const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleUdpSendVecMessage</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt; &amp;</type>
+          <declname>dataSentPtr</declname>
+        </param>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="71" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="300" bodyend="309"/>
+        <references refid="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" compoundref="UdpBundleSource_8cpp" startline="350" endline="352">DoUdpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a5ea78df1721c2ef4f5ba30e0a05e2515" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::HandleUdpSendZmqMessage</definition>
+        <argsstring>(std::shared_ptr&lt; zmq::message_t &gt; &amp;dataZmqSentPtr, const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleUdpSendZmqMessage</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &gt; &amp;</type>
+          <declname>dataZmqSentPtr</declname>
+        </param>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="72" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="311" bodyend="320"/>
+        <references refid="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" compoundref="UdpBundleSource_8cpp" startline="350" endline="352">DoUdpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" compoundref="UdpBundleSource_8cpp" startline="322" endline="347">ProcessPacketSent</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT bool</type>
+        <definition>bool UdpBundleSource::ProcessPacketSent</definition>
+        <argsstring>(std::size_t bytes_transferred)</argsstring>
+        <name>ProcessPacketSent</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="73" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="322" bodyend="347"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpBundleSource_1ac594fb93f8676f58791ba374bc1c95c6" compoundref="UdpBundleSource_8h" startline="99">m_bytesToAckBySentCallbackCb</references>
+        <references refid="classUdpBundleSource_1afcfeced58d3a1024762b95efe428c5ba" compoundref="UdpBundleSource_8h" startline="100">m_bytesToAckBySentCallbackCbVec</references>
+        <references refid="classUdpBundleSource_1a26520870f77886b72c2e30bdf7e276c8" compoundref="UdpBundleSource_8h" startline="97">m_localConditionVariableAckReceived</references>
+        <references refid="classUdpBundleSource_1aba80d708d3080dfd748f3fb3b05f33f5" compoundref="UdpBundleSource_8h" startline="109">m_onSuccessfulBundleSendCallback</references>
+        <references refid="classUdpBundleSource_1addba4531238006fca202b0f811072aa0" compoundref="UdpBundleSource_8h" startline="121">m_totalPacketBytesSent</references>
+        <references refid="classUdpBundleSource_1a5024b5ca9b0f3dd448fa23fb785063ab" compoundref="UdpBundleSource_8h" startline="120">m_totalPacketsSent</references>
+        <references refid="classUdpBundleSource_1a652577cf81c8d145cfcde72253857558" compoundref="UdpBundleSource_8h" startline="104">m_useLocalConditionVariableAckReceived</references>
+        <references refid="classUdpBundleSource_1a0c1a170aef9d381a50fd1579917f8289" compoundref="UdpBundleSource_8h" startline="111">m_userAssignedUuid</references>
+        <references refid="classUdpBundleSource_1a98581b495ce2b2b3905de22cc0aaa586" compoundref="UdpBundleSource_8h" startline="101">m_userDataCbVec</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpBundleSource_1a38df0de47eabf42cef5962efc659bc62" compoundref="UdpBundleSource_8cpp" startline="300" endline="309">HandleUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a5ea78df1721c2ef4f5ba30e0a05e2515" compoundref="UdpBundleSource_8cpp" startline="311" endline="320">HandleUdpSendZmqMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::TryRestartTokenRefreshTimer</definition>
+        <argsstring>()</argsstring>
+        <name>TryRestartTokenRefreshTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="75" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="382" bodyend="392"/>
+        <references refid="classUdpBundleSource_1a0364956f712099ee363cf07b55f66a1d" compoundref="UdpBundleSource_8h" startline="91">m_lastTimeTokensWereRefreshed</references>
+        <references refid="classUdpBundleSource_1a9391735bec9f6f204fa1188ff57cbfa6" compoundref="UdpBundleSource_8h" startline="117">m_tokenRefreshInterval</references>
+        <references refid="classUdpBundleSource_1a6576b07bb7749c5580eb417e19ff7365" compoundref="UdpBundleSource_8h" startline="90">m_tokenRefreshTimer</references>
+        <references refid="classUdpBundleSource_1a787682201ebc0c53ce9c115897e8d386" compoundref="UdpBundleSource_8h" startline="105">m_tokenRefreshTimerIsRunning</references>
+        <references refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</references>
+        <referencedby refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a99c749712cc5eefb618a82502093ef38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::TryRestartTokenRefreshTimer</definition>
+        <argsstring>(const boost::posix_time::ptime &amp;nowPtime)</argsstring>
+        <name>TryRestartTokenRefreshTimer</name>
+        <param>
+          <type>const boost::posix_time::ptime &amp;</type>
+          <declname>nowPtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="76" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="394" bodyend="403"/>
+        <references refid="classUdpBundleSource_1a0364956f712099ee363cf07b55f66a1d" compoundref="UdpBundleSource_8h" startline="91">m_lastTimeTokensWereRefreshed</references>
+        <references refid="classUdpBundleSource_1a9391735bec9f6f204fa1188ff57cbfa6" compoundref="UdpBundleSource_8h" startline="117">m_tokenRefreshInterval</references>
+        <references refid="classUdpBundleSource_1a6576b07bb7749c5580eb417e19ff7365" compoundref="UdpBundleSource_8h" startline="90">m_tokenRefreshTimer</references>
+        <references refid="classUdpBundleSource_1a787682201ebc0c53ce9c115897e8d386" compoundref="UdpBundleSource_8h" startline="105">m_tokenRefreshTimerIsRunning</references>
+        <references refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" compoundref="UdpBundleSource_8cpp" startline="405" endline="453">OnTokenRefresh_TimerExpired</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::OnTokenRefresh_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnTokenRefresh_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="77" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="405" bodyend="453"/>
+        <references refid="classTokenRateLimiter_1ad7b2ab794fc2bdf66aa5d43db25fcf1f" compoundref="TokenRateLimiter_8cpp" startline="36" endline="45">TokenRateLimiter::AddTime</references>
+        <references refid="classUdpBundleSource_1a38df0de47eabf42cef5962efc659bc62" compoundref="UdpBundleSource_8cpp" startline="300" endline="309">HandleUdpSendVecMessage</references>
+        <references refid="classUdpBundleSource_1a5ea78df1721c2ef4f5ba30e0a05e2515" compoundref="UdpBundleSource_8cpp" startline="311" endline="320">HandleUdpSendZmqMessage</references>
+        <references refid="classTokenRateLimiter_1a8ed33b0f3a44b37766b53787f7cee1e5" compoundref="TokenRateLimiter_8cpp" startline="51" endline="53">TokenRateLimiter::HasFullBucketOfTokens</references>
+        <references refid="classUdpBundleSource_1a0364956f712099ee363cf07b55f66a1d" compoundref="UdpBundleSource_8h" startline="91">m_lastTimeTokensWereRefreshed</references>
+        <references refid="classUdpBundleSource_1a8ce85d2372f1d1db9beb7f6117baa005" compoundref="UdpBundleSource_8h" startline="92">m_queueVecDataToSendPtrs</references>
+        <references refid="classUdpBundleSource_1afa8c864ea89cdbc85c5afbe2ab9623d2" compoundref="UdpBundleSource_8h" startline="93">m_queueZmqDataToSendPtrs</references>
+        <references refid="classUdpBundleSource_1a7533c2ec8e331cac7ae82150d485fee7" compoundref="UdpBundleSource_8h" startline="113">m_rateBpsOrZeroToDisable</references>
+        <references refid="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" compoundref="UdpBundleSource_8h" startline="89">m_tokenRateLimiter</references>
+        <references refid="classUdpBundleSource_1a787682201ebc0c53ce9c115897e8d386" compoundref="UdpBundleSource_8h" startline="105">m_tokenRefreshTimerIsRunning</references>
+        <references refid="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" compoundref="UdpBundleSource_8h" startline="124">m_totalPacketsLimitedByRate</references>
+        <references refid="classUdpBundleSource_1aeac2a647881d501697f5fed93a84a5f2" compoundref="UdpBundleSource_8h" startline="95">m_udpDestinationEndpoint</references>
+        <references refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" compoundref="UdpBundleSource_8h" startline="94">m_udpSocket</references>
+        <references refid="classTokenRateLimiter_1aa00dc2f8062840585865e62395bc8570" compoundref="TokenRateLimiter_8cpp" startline="55" endline="62">TokenRateLimiter::TakeTokens</references>
+        <references refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</references>
+        <referencedby refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" compoundref="UdpBundleSource_8cpp" startline="382" endline="392">TryRestartTokenRefreshTimer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::DoUdpShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>DoUdpShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="79" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="350" bodyend="352"/>
+        <references refid="classUdpBundleSource_1a6df8670e7d8250442e129092d54ca3df" compoundref="UdpBundleSource_8cpp" startline="354" endline="374">DoHandleSocketShutdown</references>
+        <references refid="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" compoundref="UdpBundleSource_8h" startline="86">m_ioService</references>
+        <referencedby refid="classUdpBundleSource_1a38df0de47eabf42cef5962efc659bc62" compoundref="UdpBundleSource_8cpp" startline="300" endline="309">HandleUdpSendVecMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a5ea78df1721c2ef4f5ba30e0a05e2515" compoundref="UdpBundleSource_8cpp" startline="311" endline="320">HandleUdpSendZmqMessage</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a6df8670e7d8250442e129092d54ca3df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_NO_EXPORT void</type>
+        <definition>void UdpBundleSource::DoHandleSocketShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>DoHandleSocketShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="80" column="28" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="354" bodyend="374"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSource_1ada82b04e0af91457da4b1e9727e7ef55" compoundref="UdpBundleSource_8h" startline="125">m_linkIsUpPhysically</references>
+        <references refid="classUdpBundleSource_1a63533d6f1dee91a5a3ba360ad9d6560f" compoundref="UdpBundleSource_8h" startline="103">m_readyToForward</references>
+        <references refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" compoundref="UdpBundleSource_8h" startline="94">m_udpSocket</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" compoundref="UdpBundleSource_8cpp" startline="350" endline="352">DoUdpShutdown</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT</type>
+        <definition>UdpBundleSource::UdpBundleSource</definition>
+        <argsstring>(const unsigned int maxUnacked, const uint64_t rateLimitPrecisionMicroSec)</argsstring>
+        <name>UdpBundleSource</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>maxUnacked</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>rateLimitPrecisionMicroSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="43" column="20" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="30" bodyend="64"/>
+        <references refid="classTokenRateLimiter_1aac49f21eb5cc16bd38b2e1025269403b" compoundref="TokenRateLimiter_8cpp" startline="47" endline="49">TokenRateLimiter::GetRemainingTokens</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" compoundref="UdpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classUdpBundleSource_1aa7696fdf07f7c58162b8afc6e3848daa" compoundref="UdpBundleSource_8h" startline="96">m_ioServiceThreadPtr</references>
+        <references refid="classUdpBundleSource_1afb8cc8aeca0ea44ae07cbc3a79795e4a" compoundref="UdpBundleSource_8h" startline="115">m_rateLimitPrecisionInterval</references>
+        <references refid="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" compoundref="UdpBundleSource_8h" startline="89">m_tokenRateLimiter</references>
+        <references refid="classUdpBundleSource_1a9391735bec9f6f204fa1188ff57cbfa6" compoundref="UdpBundleSource_8h" startline="117">m_tokenRefreshInterval</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <references refid="UdpBundleSource_8cpp_1affa27b9a0acf6f3250bcbd300c334fbf" compoundref="UdpBundleSource_8cpp" startline="28">TOKEN_REFRESH_INTERVAL_DIVISOR</references>
+        <references refid="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" compoundref="UdpBundleSource_8cpp" startline="129" endline="137">UpdateRate</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a0933256f40fff2405f138c64f91b2b2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT</type>
+        <definition>UdpBundleSource::~UdpBundleSource</definition>
+        <argsstring>()</argsstring>
+        <name>~UdpBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="45" column="20" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="66" bodyend="68"/>
+        <references refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="46" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="70" bodyend="127"/>
+        <references refid="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" compoundref="UdpBundleSource_8cpp" startline="350" endline="352">DoUdpShutdown</references>
+        <references refid="classUdpBundleSource_1a39b4f4394bddd9afbffe906aee860421" compoundref="UdpBundleSource_8cpp" startline="210" endline="212">GetTotalBundleBytesAcked</references>
+        <references refid="classUdpBundleSource_1a7ccf33715f3930f6171dd4b489b1915e" compoundref="UdpBundleSource_8cpp" startline="214" endline="216">GetTotalBundleBytesSent</references>
+        <references refid="classUdpBundleSource_1af66676a3991420cd574e824fc5f54c82" compoundref="UdpBundleSource_8cpp" startline="198" endline="200">GetTotalUdpPacketsAcked</references>
+        <references refid="classUdpBundleSource_1a983dd97883c42608fd3e32c555f76afa" compoundref="UdpBundleSource_8cpp" startline="202" endline="204">GetTotalUdpPacketsSent</references>
+        <references refid="classUdpBundleSource_1af5740d3c8c07ec6c150d06e99b30eb14" compoundref="UdpBundleSource_8cpp" startline="206" endline="208">GetTotalUdpPacketsUnacked</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" compoundref="UdpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classUdpBundleSource_1aa7696fdf07f7c58162b8afc6e3848daa" compoundref="UdpBundleSource_8h" startline="96">m_ioServiceThreadPtr</references>
+        <references refid="classUdpBundleSource_1a26520870f77886b72c2e30bdf7e276c8" compoundref="UdpBundleSource_8h" startline="97">m_localConditionVariableAckReceived</references>
+        <references refid="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" compoundref="UdpBundleSource_8h" startline="124">m_totalPacketsLimitedByRate</references>
+        <references refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" compoundref="UdpBundleSource_8h" startline="94">m_udpSocket</references>
+        <references refid="classUdpBundleSource_1a652577cf81c8d145cfcde72253857558" compoundref="UdpBundleSource_8h" startline="104">m_useLocalConditionVariableAckReceived</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpOutduct_1a9c87385610609a16961aef478e8cf9bb" compoundref="UdpOutduct_8cpp" startline="65" endline="67">UdpOutduct::Stop</referencedby>
+        <referencedby refid="classUdpBundleSource_1a0933256f40fff2405f138c64f91b2b2f" compoundref="UdpBundleSource_8cpp" startline="66" endline="68">~UdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1abcbae47c9b5717c1b178a3e12f479fd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT bool</type>
+        <definition>bool UdpBundleSource::Forward</definition>
+        <argsstring>(const uint8_t *bundleData, const std::size_t size, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="47" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="192" bodyend="195"/>
+        <referencedby refid="classUdpOutduct_1a3ed6e4ba9c45d3b3fc984b0056115c58" compoundref="UdpOutduct_8cpp" startline="30" endline="32">UdpOutduct::Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1ada4df4c74274a470314456870a729a76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT bool</type>
+        <definition>bool UdpBundleSource::Forward</definition>
+        <argsstring>(zmq::message_t &amp;dataZmq, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>dataZmq</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="48" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="166" bodyend="190"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" compoundref="UdpBundleSource_8cpp" startline="278" endline="297">HandlePostForUdpSendZmqMessage</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpBundleSource_1ac594fb93f8676f58791ba374bc1c95c6" compoundref="UdpBundleSource_8h" startline="99">m_bytesToAckBySentCallbackCb</references>
+        <references refid="classUdpBundleSource_1afcfeced58d3a1024762b95efe428c5ba" compoundref="UdpBundleSource_8h" startline="100">m_bytesToAckBySentCallbackCbVec</references>
+        <references refid="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" compoundref="UdpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" compoundref="UdpBundleSource_8h" startline="123">m_totalPacketBytesDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" compoundref="UdpBundleSource_8h" startline="122">m_totalPacketsDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1a98581b495ce2b2b3905de22cc0aaa586" compoundref="UdpBundleSource_8h" startline="101">m_userDataCbVec</references>
+        <references refid="classUdpBundleSource_1a930f0553dab8f75c1578fd60816d0561" compoundref="UdpBundleSource_8cpp" startline="376" endline="378">ReadyToForward</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT bool</type>
+        <definition>bool UdpBundleSource::Forward</definition>
+        <argsstring>(padded_vector_uint8_t &amp;dataVec, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>dataVec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="49" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="139" bodyend="164"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" compoundref="UdpBundleSource_8cpp" startline="257" endline="276">HandlePostForUdpSendVecMessage</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpBundleSource_1ac594fb93f8676f58791ba374bc1c95c6" compoundref="UdpBundleSource_8h" startline="99">m_bytesToAckBySentCallbackCb</references>
+        <references refid="classUdpBundleSource_1afcfeced58d3a1024762b95efe428c5ba" compoundref="UdpBundleSource_8h" startline="100">m_bytesToAckBySentCallbackCbVec</references>
+        <references refid="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" compoundref="UdpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" compoundref="UdpBundleSource_8h" startline="123">m_totalPacketBytesDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" compoundref="UdpBundleSource_8h" startline="122">m_totalPacketsDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1a98581b495ce2b2b3905de22cc0aaa586" compoundref="UdpBundleSource_8h" startline="101">m_userDataCbVec</references>
+        <references refid="classUdpBundleSource_1a930f0553dab8f75c1578fd60816d0561" compoundref="UdpBundleSource_8cpp" startline="376" endline="378">ReadyToForward</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1af66676a3991420cd574e824fc5f54c82" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>UDP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UdpBundleSource::GetTotalUdpPacketsAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalUdpPacketsAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="50" column="32" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="198" bodyend="200"/>
+        <references refid="classUdpBundleSource_1a5024b5ca9b0f3dd448fa23fb785063ab" compoundref="UdpBundleSource_8h" startline="120">m_totalPacketsSent</references>
+        <referencedby refid="classUdpOutduct_1a8190421b84f1eb6fa7cae0b7b3494f15" compoundref="UdpOutduct_8cpp" startline="68" endline="72">UdpOutduct::GetOutductFinalStats</referencedby>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a983dd97883c42608fd3e32c555f76afa" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>UDP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UdpBundleSource::GetTotalUdpPacketsSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalUdpPacketsSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="51" column="32" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="202" bodyend="204"/>
+        <references refid="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" compoundref="UdpBundleSource_8h" startline="122">m_totalPacketsDequeuedForSend</references>
+        <referencedby refid="classUdpOutduct_1a8190421b84f1eb6fa7cae0b7b3494f15" compoundref="UdpOutduct_8cpp" startline="68" endline="72">UdpOutduct::GetOutductFinalStats</referencedby>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1af5740d3c8c07ec6c150d06e99b30eb14" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>UDP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UdpBundleSource::GetTotalUdpPacketsUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalUdpPacketsUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="52" column="32" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="206" bodyend="208"/>
+        <references refid="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" compoundref="UdpBundleSource_8h" startline="122">m_totalPacketsDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1a5024b5ca9b0f3dd448fa23fb785063ab" compoundref="UdpBundleSource_8h" startline="120">m_totalPacketsSent</references>
+        <referencedby refid="classUdpOutduct_1abbfcd208bbd6b096ef8f476ac94236ee" compoundref="UdpOutduct_8cpp" startline="27" endline="29">UdpOutduct::GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a39b4f4394bddd9afbffe906aee860421" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>UDP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UdpBundleSource::GetTotalBundleBytesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="53" column="32" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="210" bodyend="212"/>
+        <references refid="classUdpBundleSource_1addba4531238006fca202b0f811072aa0" compoundref="UdpBundleSource_8h" startline="121">m_totalPacketBytesSent</references>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a7ccf33715f3930f6171dd4b489b1915e" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>UDP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UdpBundleSource::GetTotalBundleBytesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="54" column="32" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="214" bodyend="216"/>
+        <references refid="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" compoundref="UdpBundleSource_8h" startline="123">m_totalPacketBytesDequeuedForSend</references>
+        <referencedby refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" compoundref="UdpBundleSource_8cpp" startline="471" endline="482">GetTelemetry</referencedby>
+        <referencedby refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" compoundref="UdpBundleSource_8cpp" startline="70" endline="127">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a893f326b0f66536fac47527201687abd" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>UDP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UdpBundleSource::GetTotalBundleBytesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="55" column="32" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="218" bodyend="220"/>
+        <references refid="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" compoundref="UdpBundleSource_8h" startline="123">m_totalPacketBytesDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1addba4531238006fca202b0f811072aa0" compoundref="UdpBundleSource_8h" startline="121">m_totalPacketBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::UpdateRate</definition>
+        <argsstring>(uint64_t rateBitsPerSec)</argsstring>
+        <name>UpdateRate</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>rateBitsPerSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="56" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="129" bodyend="137"/>
+        <references refid="classUdpBundleSource_1a7533c2ec8e331cac7ae82150d485fee7" compoundref="UdpBundleSource_8h" startline="113">m_rateBpsOrZeroToDisable</references>
+        <references refid="classUdpBundleSource_1afb8cc8aeca0ea44ae07cbc3a79795e4a" compoundref="UdpBundleSource_8h" startline="115">m_rateLimitPrecisionInterval</references>
+        <references refid="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" compoundref="UdpBundleSource_8h" startline="89">m_tokenRateLimiter</references>
+        <references refid="classTokenRateLimiter_1a41232db505435d52613bea5e55f66f18" compoundref="TokenRateLimiter_8cpp" startline="25" endline="34">TokenRateLimiter::SetRate</references>
+        <referencedby refid="classUdpOutduct_1a64be9e9f94c1132df914a0e844a882a9" compoundref="UdpOutduct_8cpp" startline="55" endline="57">UdpOutduct::SetRate</referencedby>
+        <referencedby refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" compoundref="UdpBundleSource_8cpp" startline="30" endline="64">UdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a0c83a8d67da09f323031c6fcc8810b95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::Connect</definition>
+        <argsstring>(const std::string &amp;hostname, const std::string &amp;port)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="57" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="223" bodyend="231"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpBundleSource_1ac670a434657f1730c3e4353f47b2df5f" compoundref="UdpBundleSource_8h" startline="88">m_resolver</references>
+        <references refid="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" compoundref="UdpBundleSource_8cpp" startline="233" endline="255">OnResolve</references>
+        <references refid="UdpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classUdpOutduct_1a9892439cc8d05392f9194ba04f69bc40" compoundref="UdpOutduct_8cpp" startline="59" endline="61">UdpOutduct::Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a930f0553dab8f75c1578fd60816d0561" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT bool</type>
+        <definition>bool UdpBundleSource::ReadyToForward</definition>
+        <argsstring>() const</argsstring>
+        <name>ReadyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="58" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="376" bodyend="378"/>
+        <references refid="classUdpBundleSource_1a63533d6f1dee91a5a3ba360ad9d6560f" compoundref="UdpBundleSource_8h" startline="103">m_readyToForward</references>
+        <referencedby refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" compoundref="UdpBundleSource_8cpp" startline="139" endline="164">Forward</referencedby>
+        <referencedby refid="classUdpOutduct_1a9d7f9da11d5bc7f0d3cf1675b39f5c63" compoundref="UdpOutduct_8cpp" startline="62" endline="64">UdpOutduct::ReadyToForward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1ab0a67c48c4a708aa6d7cc2f75de827b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::SetOnFailedBundleVecSendCallback</definition>
+        <argsstring>(const OnFailedBundleVecSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleVecSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="60" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="455" bodyend="457"/>
+        <references refid="classUdpBundleSource_1a4ce7a48e8e0e5d1ed43501533d9f4d21" compoundref="UdpBundleSource_8h" startline="107">m_onFailedBundleVecSendCallback</references>
+        <referencedby refid="classUdpOutduct_1a386f0ffa49e4b948943260a31513d559" compoundref="UdpOutduct_8cpp" startline="40" endline="42">UdpOutduct::SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a949c7d81d9e560cd20df04cafc813df0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::SetOnFailedBundleZmqSendCallback</definition>
+        <argsstring>(const OnFailedBundleZmqSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleZmqSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="61" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="458" bodyend="460"/>
+        <references refid="classUdpBundleSource_1a0fbf02de62aa5943c8c0f46abd3c4bcf" compoundref="UdpBundleSource_8h" startline="108">m_onFailedBundleZmqSendCallback</references>
+        <referencedby refid="classUdpOutduct_1a94dbeee7eea9fc50418f1764985bfcde" compoundref="UdpOutduct_8cpp" startline="43" endline="45">UdpOutduct::SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1ab120686c671707bd2121c003ecdde870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::SetOnSuccessfulBundleSendCallback</definition>
+        <argsstring>(const OnSuccessfulBundleSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="62" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="461" bodyend="463"/>
+        <references refid="classUdpBundleSource_1aba80d708d3080dfd748f3fb3b05f33f5" compoundref="UdpBundleSource_8h" startline="109">m_onSuccessfulBundleSendCallback</references>
+        <referencedby refid="classUdpOutduct_1a3043e129dbbafcf760187489666194bb" compoundref="UdpOutduct_8cpp" startline="46" endline="48">UdpOutduct::SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a3dfe748c2b1b78b6c130fe3c4e824e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::SetOnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(const OnOutductLinkStatusChangedCallback_t &amp;callback)</argsstring>
+        <name>SetOnOutductLinkStatusChangedCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="63" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="464" bodyend="466"/>
+        <references refid="classUdpBundleSource_1a0dd83930d86560dcb099d18f0776dc5c" compoundref="UdpBundleSource_8h" startline="110">m_onOutductLinkStatusChangedCallback</references>
+        <referencedby refid="classUdpOutduct_1a506130b1bf849b7523235ea91a742c67" compoundref="UdpOutduct_8cpp" startline="49" endline="51">UdpOutduct::SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a774ca09120956eebbbd7134ae279ae71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::SetUserAssignedUuid</definition>
+        <argsstring>(uint64_t userAssignedUuid)</argsstring>
+        <name>SetUserAssignedUuid</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>userAssignedUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="64" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="467" bodyend="469"/>
+        <references refid="classUdpBundleSource_1a0c1a170aef9d381a50fd1579917f8289" compoundref="UdpBundleSource_8h" startline="111">m_userAssignedUuid</references>
+        <referencedby refid="classUdpOutduct_1a826eb0a3817e90283645c23daa761559" compoundref="UdpOutduct_8cpp" startline="52" endline="54">UdpOutduct::SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_LIB_EXPORT void</type>
+        <definition>void UdpBundleSource::GetTelemetry</definition>
+        <argsstring>(UdpOutductTelemetry_t &amp;telem) const</argsstring>
+        <name>GetTelemetry</name>
+        <param>
+          <type><ref refid="structUdpOutductTelemetry__t" kindref="compound">UdpOutductTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/udp/include/UdpBundleSource.h" line="65" column="25" bodyfile="common/udp/src/UdpBundleSource.cpp" bodystart="471" bodyend="482"/>
+        <references refid="classUdpBundleSource_1a39b4f4394bddd9afbffe906aee860421" compoundref="UdpBundleSource_8cpp" startline="210" endline="212">GetTotalBundleBytesAcked</references>
+        <references refid="classUdpBundleSource_1a7ccf33715f3930f6171dd4b489b1915e" compoundref="UdpBundleSource_8cpp" startline="214" endline="216">GetTotalBundleBytesSent</references>
+        <references refid="classUdpBundleSource_1af66676a3991420cd574e824fc5f54c82" compoundref="UdpBundleSource_8cpp" startline="198" endline="200">GetTotalUdpPacketsAcked</references>
+        <references refid="classUdpBundleSource_1a983dd97883c42608fd3e32c555f76afa" compoundref="UdpBundleSource_8cpp" startline="202" endline="204">GetTotalUdpPacketsSent</references>
+        <references refid="structOutductTelemetry__t_1a9ac823445009088acf7df4ba9d55e773" compoundref="TelemetryDefinitions_8h" startline="336">OutductTelemetry_t::m_linkIsUpPhysically</references>
+        <references refid="classUdpBundleSource_1ada82b04e0af91457da4b1e9727e7ef55" compoundref="UdpBundleSource_8h" startline="125">m_linkIsUpPhysically</references>
+        <references refid="structOutductTelemetry__t_1aa1a904b6804b71b413bdea60126e38c1" compoundref="TelemetryDefinitions_8h" startline="332">OutductTelemetry_t::m_totalBundleBytesAcked</references>
+        <references refid="structOutductTelemetry__t_1a9e32d16d9c482eed5b0e828b067104df" compoundref="TelemetryDefinitions_8h" startline="334">OutductTelemetry_t::m_totalBundleBytesSent</references>
+        <references refid="structOutductTelemetry__t_1a45241d2505fe58e6532781c6a040b198" compoundref="TelemetryDefinitions_8h" startline="331">OutductTelemetry_t::m_totalBundlesAcked</references>
+        <references refid="structOutductTelemetry__t_1a5195f83a37144955b554a692d2207ec5" compoundref="TelemetryDefinitions_8h" startline="333">OutductTelemetry_t::m_totalBundlesSent</references>
+        <references refid="structUdpOutductTelemetry__t_1aa0116f99c0cc3123232b362ec73cfe56" compoundref="TelemetryDefinitions_8h" startline="470">UdpOutductTelemetry_t::m_totalPacketBytesDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" compoundref="UdpBundleSource_8h" startline="123">m_totalPacketBytesDequeuedForSend</references>
+        <references refid="structUdpOutductTelemetry__t_1afb05f001f1608cc0700fc738304ab501" compoundref="TelemetryDefinitions_8h" startline="468">UdpOutductTelemetry_t::m_totalPacketBytesSent</references>
+        <references refid="classUdpBundleSource_1addba4531238006fca202b0f811072aa0" compoundref="UdpBundleSource_8h" startline="121">m_totalPacketBytesSent</references>
+        <references refid="structUdpOutductTelemetry__t_1a0c34e579ce2c714b1f733066ad27af19" compoundref="TelemetryDefinitions_8h" startline="469">UdpOutductTelemetry_t::m_totalPacketsDequeuedForSend</references>
+        <references refid="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" compoundref="UdpBundleSource_8h" startline="122">m_totalPacketsDequeuedForSend</references>
+        <references refid="structUdpOutductTelemetry__t_1ac4a78230cbbfbc7d767fc9ead5f6eee0" compoundref="TelemetryDefinitions_8h" startline="471">UdpOutductTelemetry_t::m_totalPacketsLimitedByRate</references>
+        <references refid="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" compoundref="UdpBundleSource_8h" startline="124">m_totalPacketsLimitedByRate</references>
+        <references refid="structUdpOutductTelemetry__t_1aefa69cc63b59371c50e900a5b385df3e" compoundref="TelemetryDefinitions_8h" startline="467">UdpOutductTelemetry_t::m_totalPacketsSent</references>
+        <references refid="classUdpBundleSource_1a5024b5ca9b0f3dd448fa23fb785063ab" compoundref="UdpBundleSource_8h" startline="120">m_totalPacketsSent</references>
+        <referencedby refid="classUdpOutduct_1a44bebc5eb7c30fe524741726a875626d" compoundref="UdpOutduct_8cpp" startline="73" endline="78">UdpOutduct::PopulateOutductTelemetry</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>UdpBundleSource</label>
+        <link refid="classUdpBundleSource"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_bytesToAckBySentCallbackCb</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_tokenRateLimiter</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>TokenRateLimiter</label>
+        <link refid="classTokenRateLimiter"/>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/udp/include/UdpBundleSource.h" line="39" column="1" bodyfile="common/udp/include/UdpBundleSource.h" bodystart="39" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classUdpBundleSource_1a0c83a8d67da09f323031c6fcc8810b95" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>Connect</name></member>
+      <member refid="classUdpBundleSource_1a6df8670e7d8250442e129092d54ca3df" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>DoHandleSocketShutdown</name></member>
+      <member refid="classUdpBundleSource_1a9a9c55ae47c9179acc870a3e44ca09dd" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>DoUdpShutdown</name></member>
+      <member refid="classUdpBundleSource_1abcbae47c9b5717c1b178a3e12f479fd2" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>Forward</name></member>
+      <member refid="classUdpBundleSource_1ada4df4c74274a470314456870a729a76" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>Forward</name></member>
+      <member refid="classUdpBundleSource_1a386b810b64b124187247beb869b6dbd4" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>Forward</name></member>
+      <member refid="classUdpBundleSource_1a3a176b3a922cd4622d7636bd57dad3b2" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTelemetry</name></member>
+      <member refid="classUdpBundleSource_1a39b4f4394bddd9afbffe906aee860421" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTotalBundleBytesAcked</name></member>
+      <member refid="classUdpBundleSource_1a7ccf33715f3930f6171dd4b489b1915e" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTotalBundleBytesSent</name></member>
+      <member refid="classUdpBundleSource_1a893f326b0f66536fac47527201687abd" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTotalBundleBytesUnacked</name></member>
+      <member refid="classUdpBundleSource_1af66676a3991420cd574e824fc5f54c82" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTotalUdpPacketsAcked</name></member>
+      <member refid="classUdpBundleSource_1a983dd97883c42608fd3e32c555f76afa" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTotalUdpPacketsSent</name></member>
+      <member refid="classUdpBundleSource_1af5740d3c8c07ec6c150d06e99b30eb14" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>GetTotalUdpPacketsUnacked</name></member>
+      <member refid="classUdpBundleSource_1a9ae440548076a6a6163c6663adf36f8d" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>HandlePostForUdpSendVecMessage</name></member>
+      <member refid="classUdpBundleSource_1a71d763aadd6657fcc27df93211c9674d" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>HandlePostForUdpSendZmqMessage</name></member>
+      <member refid="classUdpBundleSource_1a38df0de47eabf42cef5962efc659bc62" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>HandleUdpSendVecMessage</name></member>
+      <member refid="classUdpBundleSource_1a5ea78df1721c2ef4f5ba30e0a05e2515" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>HandleUdpSendZmqMessage</name></member>
+      <member refid="classUdpBundleSource_1ac594fb93f8676f58791ba374bc1c95c6" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_bytesToAckBySentCallbackCb</name></member>
+      <member refid="classUdpBundleSource_1afcfeced58d3a1024762b95efe428c5ba" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_bytesToAckBySentCallbackCbVec</name></member>
+      <member refid="classUdpBundleSource_1a9ba55c9c8ca13e693351ca9913189f86" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_ioService</name></member>
+      <member refid="classUdpBundleSource_1aa7696fdf07f7c58162b8afc6e3848daa" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classUdpBundleSource_1a0364956f712099ee363cf07b55f66a1d" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_lastTimeTokensWereRefreshed</name></member>
+      <member refid="classUdpBundleSource_1ada82b04e0af91457da4b1e9727e7ef55" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_linkIsUpPhysically</name></member>
+      <member refid="classUdpBundleSource_1a26520870f77886b72c2e30bdf7e276c8" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_localConditionVariableAckReceived</name></member>
+      <member refid="classUdpBundleSource_1ad31af2339e06f64998fcc895b21dd394" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_maxPacketsBeingSent</name></member>
+      <member refid="classUdpBundleSource_1a4ce7a48e8e0e5d1ed43501533d9f4d21" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_onFailedBundleVecSendCallback</name></member>
+      <member refid="classUdpBundleSource_1a0fbf02de62aa5943c8c0f46abd3c4bcf" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classUdpBundleSource_1a0dd83930d86560dcb099d18f0776dc5c" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_onOutductLinkStatusChangedCallback</name></member>
+      <member refid="classUdpBundleSource_1aba80d708d3080dfd748f3fb3b05f33f5" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_onSuccessfulBundleSendCallback</name></member>
+      <member refid="classUdpBundleSource_1a8ce85d2372f1d1db9beb7f6117baa005" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_queueVecDataToSendPtrs</name></member>
+      <member refid="classUdpBundleSource_1afa8c864ea89cdbc85c5afbe2ab9623d2" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_queueZmqDataToSendPtrs</name></member>
+      <member refid="classUdpBundleSource_1a7533c2ec8e331cac7ae82150d485fee7" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_rateBpsOrZeroToDisable</name></member>
+      <member refid="classUdpBundleSource_1afb8cc8aeca0ea44ae07cbc3a79795e4a" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_rateLimitPrecisionInterval</name></member>
+      <member refid="classUdpBundleSource_1a63533d6f1dee91a5a3ba360ad9d6560f" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_readyToForward</name></member>
+      <member refid="classUdpBundleSource_1ac670a434657f1730c3e4353f47b2df5f" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_resolver</name></member>
+      <member refid="classUdpBundleSource_1afa16fd63ff87d845ff6efd7ecfd8202b" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_tokenRateLimiter</name></member>
+      <member refid="classUdpBundleSource_1a9391735bec9f6f204fa1188ff57cbfa6" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_tokenRefreshInterval</name></member>
+      <member refid="classUdpBundleSource_1a6576b07bb7749c5580eb417e19ff7365" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_tokenRefreshTimer</name></member>
+      <member refid="classUdpBundleSource_1a787682201ebc0c53ce9c115897e8d386" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_tokenRefreshTimerIsRunning</name></member>
+      <member refid="classUdpBundleSource_1af2ff35d05263cb40fe09efff778efc47" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_totalPacketBytesDequeuedForSend</name></member>
+      <member refid="classUdpBundleSource_1addba4531238006fca202b0f811072aa0" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_totalPacketBytesSent</name></member>
+      <member refid="classUdpBundleSource_1a5b31a7ceb10a8b13f6597bce6d249d67" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_totalPacketsDequeuedForSend</name></member>
+      <member refid="classUdpBundleSource_1a4aecda6ab0202799da47519fee0883d2" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_totalPacketsLimitedByRate</name></member>
+      <member refid="classUdpBundleSource_1a5024b5ca9b0f3dd448fa23fb785063ab" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_totalPacketsSent</name></member>
+      <member refid="classUdpBundleSource_1aeac2a647881d501697f5fed93a84a5f2" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_udpDestinationEndpoint</name></member>
+      <member refid="classUdpBundleSource_1a85f138d214262a97873c8dddb6aead2e" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_udpSocket</name></member>
+      <member refid="classUdpBundleSource_1a652577cf81c8d145cfcde72253857558" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_useLocalConditionVariableAckReceived</name></member>
+      <member refid="classUdpBundleSource_1a0c1a170aef9d381a50fd1579917f8289" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_userAssignedUuid</name></member>
+      <member refid="classUdpBundleSource_1a98581b495ce2b2b3905de22cc0aaa586" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_userDataCbVec</name></member>
+      <member refid="classUdpBundleSource_1aa53c2ad69b9ab9456d240459ef7365da" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>m_work</name></member>
+      <member refid="classUdpBundleSource_1a5e1b249d7f0f315b0729387153f5d663" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>OnConnect</name></member>
+      <member refid="classUdpBundleSource_1aea2a173fc815f29c67f999a96e79b66e" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>OnResolve</name></member>
+      <member refid="classUdpBundleSource_1a2841f1adc33390f8e5053293f3771f49" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>OnTokenRefresh_TimerExpired</name></member>
+      <member refid="classUdpBundleSource_1a0457d3aa97e02d86d937d1dc9f55ba44" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>ProcessPacketSent</name></member>
+      <member refid="classUdpBundleSource_1a930f0553dab8f75c1578fd60816d0561" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>ReadyToForward</name></member>
+      <member refid="classUdpBundleSource_1ab0a67c48c4a708aa6d7cc2f75de827b1" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classUdpBundleSource_1a949c7d81d9e560cd20df04cafc813df0" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classUdpBundleSource_1a3dfe748c2b1b78b6c130fe3c4e824e05" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classUdpBundleSource_1ab120686c671707bd2121c003ecdde870" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classUdpBundleSource_1a774ca09120956eebbbd7134ae279ae71" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classUdpBundleSource_1a01a5229ae8172c351bbdd9b9604c64d4" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>Stop</name></member>
+      <member refid="classUdpBundleSource_1ad606ba04fefd916ac088191ad365051c" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>TryRestartTokenRefreshTimer</name></member>
+      <member refid="classUdpBundleSource_1a99c749712cc5eefb618a82502093ef38" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>TryRestartTokenRefreshTimer</name></member>
+      <member refid="classUdpBundleSource_1a7ec629b24601abb95c91603ea75d1889" prot="private" virt="non-virtual"><scope>UdpBundleSource</scope><name>UdpBundleSource</name></member>
+      <member refid="classUdpBundleSource_1a81083c67efad339a01a797796dc11f61" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>UdpBundleSource</name></member>
+      <member refid="classUdpBundleSource_1ab5d06dbf82e9c76072741e877c5db74f" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>UpdateRate</name></member>
+      <member refid="classUdpBundleSource_1a0933256f40fff2405f138c64f91b2b2f" prot="public" virt="non-virtual"><scope>UdpBundleSource</scope><name>~UdpBundleSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

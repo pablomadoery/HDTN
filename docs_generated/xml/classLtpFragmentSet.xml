@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpFragmentSet" kind="class" language="C++" prot="public">
+    <compoundname>LtpFragmentSet</compoundname>
+    <basecompoundref refid="classFragmentSet" prot="public" virt="non-virtual">FragmentSet</basecompoundref>
+    <includes refid="LtpFragmentSet_8h" local="no">LtpFragmentSet.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classLtpFragmentSet_1ac49217b8e2ca2a4b5229d77746803ac0" prot="public" static="no">
+        <type>std::pair&lt; uint64_t, <ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">data_fragment_set_t</ref> &gt;</type>
+        <definition>typedef std::pair&lt;uint64_t, data_fragment_set_t&gt; LtpFragmentSet::rsn_plus_bounds_minus_fragments_set_pair_t</definition>
+        <argsstring></argsstring>
+        <name>rsn_plus_bounds_minus_fragments_set_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="87" column="23" bodyfile="common/ltp/include/LtpFragmentSet.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtpFragmentSet_1a9e79da5e8714277f6b777ea05758a14b" prot="public" static="no">
+        <type>std::list&lt; <ref refid="classLtpFragmentSet_1ac49217b8e2ca2a4b5229d77746803ac0" kindref="member">rsn_plus_bounds_minus_fragments_set_pair_t</ref>, <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; <ref refid="classLtpFragmentSet_1ac49217b8e2ca2a4b5229d77746803ac0" kindref="member">rsn_plus_bounds_minus_fragments_set_pair_t</ref> &gt; &gt;</type>
+        <definition>typedef std::list&lt;rsn_plus_bounds_minus_fragments_set_pair_t, FreeListAllocator&lt;rsn_plus_bounds_minus_fragments_set_pair_t&gt; &gt; LtpFragmentSet::list_fragment_set_needing_resent_for_each_report_t</definition>
+        <argsstring></argsstring>
+        <name>list_fragment_set_needing_resent_for_each_report_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="89" column="2" bodyfile="common/ltp/include/LtpFragmentSet.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLtpFragmentSet_1a770190b5c5088be85d1a40ad43920a02" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LtpFragmentSet::PopulateReportSegment</definition>
+        <argsstring>(const data_fragment_set_t &amp;fragmentSet, Ltp::report_segment_t &amp;reportSegment, uint64_t lowerBound=UINT64_MAX, uint64_t upperBound=UINT64_MAX)</argsstring>
+        <name>PopulateReportSegment</name>
+        <param>
+          <type>const <ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">data_fragment_set_t</ref> &amp;</type>
+          <declname>fragmentSet</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1report__segment__t" kindref="compound">Ltp::report_segment_t</ref> &amp;</type>
+          <declname>reportSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>lowerBound</declname>
+          <defval>UINT64_MAX</defval>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>upperBound</declname>
+          <defval>UINT64_MAX</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse report segment from fragment set.</para>
+<para>If the fragment set is malformed, returns immediately and the report segment is left unmodified. Else, the bounds and reception claims of the resulting report segment are parsed from the fragment set. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fragmentSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fragment set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reportSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lower bound, default value covers the entire range on the left. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The upper bound, default value covers the entire range on the right. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the report segment could be populated successfully (and thus the report segment was modified), or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the argument to reportSegment is modified accordingly (see above for details). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="46" column="17" bodyfile="common/ltp/src/LtpFragmentSet.cpp" bodystart="19" bodyend="79"/>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="structLtp_1_1report__segment__t_1a27853ce21a38874c3411c50e990875ec" compoundref="Ltp_8h" startline="179">Ltp::report_segment_t::receptionClaims</references>
+        <references refid="structLtp_1_1report__segment__t_1af504db1308322137aa123529c1643586" compoundref="Ltp_8h" startline="176">Ltp::report_segment_t::upperBound</references>
+        <referencedby refid="TestLtpFragmentSet_8cpp_1ab2820e903836d940682d40270556f76b" compoundref="TestLtpFragmentSet_8cpp" startline="19" endline="859">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1afd9539116ca0de99d254cbebfc95ed2a" compoundref="LtpSessionReceiver_8cpp" startline="757" endline="824">LtpSessionReceiver::HandleGenerateAndSendReportSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpFragmentSet_1a8ab69ed89f8f0839bb8221c2fb23b942" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LtpFragmentSet::SplitReportSegment</definition>
+        <argsstring>(const Ltp::report_segment_t &amp;originalTooLargeReportSegment, std::vector&lt; Ltp::report_segment_t &gt; &amp;reportSegmentsVec, const uint64_t maxReceptionClaimsPerReportSegment)</argsstring>
+        <name>SplitReportSegment</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1report__segment__t" kindref="compound">Ltp::report_segment_t</ref> &amp;</type>
+          <declname>originalTooLargeReportSegment</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structLtp_1_1report__segment__t" kindref="compound">Ltp::report_segment_t</ref> &gt; &amp;</type>
+          <declname>reportSegmentsVec</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxReceptionClaimsPerReportSegment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Split report segment by reception claims.</para>
+<para>If the split factor is set to 0, returns immediately and the report segment vector is left unmodified. Else, the reception claims of the report segment to split are grouped every maxReceptionClaimsPerReportSegment claims and placed in their own report segment, the last report segment in the vector may be left with a number of claims LESS-THAN maxReceptionClaimsPerReportSegment on an odd split.</para>
+<para>This function is typically used to split an excessively large report segment (as per MTU constraints) into multiple smaller report segments. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>originalTooLargeReportSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment to split. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reportSegmentsVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment vector to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxReceptionClaimsPerReportSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of reception claims per resulting report segment, this split factor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the report segment could be split successfully (and thus the report segment vector was modified), or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the argument to reportSegmentsVec is modified accordingly (see above for details). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="61" column="17" bodyfile="common/ltp/src/LtpFragmentSet.cpp" bodystart="81" bodyend="119"/>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="structLtp_1_1report__segment__t_1a27853ce21a38874c3411c50e990875ec" compoundref="Ltp_8h" startline="179">Ltp::report_segment_t::receptionClaims</references>
+        <references refid="structLtp_1_1report__segment__t_1af504db1308322137aa123529c1643586" compoundref="Ltp_8h" startline="176">Ltp::report_segment_t::upperBound</references>
+        <referencedby refid="TestLtpFragmentSet_8cpp_1ab2820e903836d940682d40270556f76b" compoundref="TestLtpFragmentSet_8cpp" startline="19" endline="859">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1afd9539116ca0de99d254cbebfc95ed2a" compoundref="LtpSessionReceiver_8cpp" startline="757" endline="824">LtpSessionReceiver::HandleGenerateAndSendReportSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpFragmentSet_1a661a3f731e35df11c59c8e85cbd9c8bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LtpFragmentSet::AddReportSegmentToFragmentSet</definition>
+        <argsstring>(data_fragment_set_t &amp;fragmentSet, const Ltp::report_segment_t &amp;reportSegment)</argsstring>
+        <name>AddReportSegmentToFragmentSet</name>
+        <param>
+          <type><ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">data_fragment_set_t</ref> &amp;</type>
+          <declname>fragmentSet</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1report__segment__t" kindref="compound">Ltp::report_segment_t</ref> &amp;</type>
+          <declname>reportSegment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Insert already-received fragments to fragment set.</para>
+<para>Functionally equivalent to calling <ref refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" kindref="member">FragmentSet::InsertFragment()</ref> (see docs for details) on each fragment covered by the report segment reception claims. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fragmentSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fragment set to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reportSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the fragment set was modified, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the argument to fragmentSet is modified accordingly (see above for details). </para>
+</simplesect>
+<simplesect kind="post"><para>Calling both <ref refid="classLtpFragmentSet_1a661a3f731e35df11c59c8e85cbd9c8bf" kindref="member">LtpFragmentSet::AddReportSegmentToFragmentSet()</ref> and <ref refid="classLtpFragmentSet_1ada2811b07ce34a1502a2233d04d19364" kindref="member">LtpFragmentSet::AddReportSegmentToFragmentSetNeedingResent()</ref> in any order on the same report segment and fragment set, will result in the fragment set containing a single fragment spanning the entire scope of the report segment. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="73" column="17" bodyfile="common/ltp/src/LtpFragmentSet.cpp" bodystart="121" bodyend="129"/>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="structLtp_1_1report__segment__t_1a27853ce21a38874c3411c50e990875ec" compoundref="Ltp_8h" startline="179">Ltp::report_segment_t::receptionClaims</references>
+        <referencedby refid="TestLtpFragmentSet_8cpp_1ab2820e903836d940682d40270556f76b" compoundref="TestLtpFragmentSet_8cpp" startline="19" endline="859">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpFragmentSet_1ada2811b07ce34a1502a2233d04d19364" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LtpFragmentSet::AddReportSegmentToFragmentSetNeedingResent</definition>
+        <argsstring>(data_fragment_set_t &amp;fragmentSetNeedingResent, const Ltp::report_segment_t &amp;reportSegment)</argsstring>
+        <name>AddReportSegmentToFragmentSetNeedingResent</name>
+        <param>
+          <type><ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">data_fragment_set_t</ref> &amp;</type>
+          <declname>fragmentSetNeedingResent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1report__segment__t" kindref="compound">Ltp::report_segment_t</ref> &amp;</type>
+          <declname>reportSegment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Insert needing-retransmitted fragments to fragment set.</para>
+<para>Functionally equivalent to calling <ref refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" kindref="member">FragmentSet::InsertFragment()</ref> (see docs for details) on each fragment NOT covered by the report segment reception claims. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fragmentSetNeedingResent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fragment set to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reportSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the fragment set was modified, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the argument to fragmentSetNeedingResent is modified accordingly (see above for details). </para>
+</simplesect>
+<simplesect kind="post"><para>Calling both <ref refid="classLtpFragmentSet_1a661a3f731e35df11c59c8e85cbd9c8bf" kindref="member">LtpFragmentSet::AddReportSegmentToFragmentSet()</ref> and <ref refid="classLtpFragmentSet_1ada2811b07ce34a1502a2233d04d19364" kindref="member">LtpFragmentSet::AddReportSegmentToFragmentSetNeedingResent()</ref> in any order on the same report segment and fragment set, will result in the fragment set containing a single fragment spanning the entire scope of the report segment. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="85" column="17" bodyfile="common/ltp/src/LtpFragmentSet.cpp" bodystart="131" bodyend="158"/>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <references refid="structLtp_1_1reception__claim__t_1a7a124642ab963c34c367ae74fabf397c" compoundref="Ltp_8h" startline="159">Ltp::reception_claim_t::length</references>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="structLtp_1_1reception__claim__t_1acfd64b65117e14d064254c6839b5ea1c" compoundref="Ltp_8h" startline="158">Ltp::reception_claim_t::offset</references>
+        <references refid="structLtp_1_1report__segment__t_1a27853ce21a38874c3411c50e990875ec" compoundref="Ltp_8h" startline="179">Ltp::report_segment_t::receptionClaims</references>
+        <references refid="structLtp_1_1report__segment__t_1af504db1308322137aa123529c1643586" compoundref="Ltp_8h" startline="176">Ltp::report_segment_t::upperBound</references>
+        <referencedby refid="TestLtpFragmentSet_8cpp_1ab2820e903836d940682d40270556f76b" compoundref="TestLtpFragmentSet_8cpp" startline="19" endline="859">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpFragmentSet_1a816c55dfe548114c7e0531068456432c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LtpFragmentSet::ReduceReportSegments</definition>
+        <argsstring>(const ds_pending_map_t &amp;rsBoundsToRsnMap, const data_fragment_set_t &amp;allReceivedFragmentsSet, list_fragment_set_needing_resent_for_each_report_t &amp;listFragmentSetNeedingResentForEachReport)</argsstring>
+        <name>ReduceReportSegments</name>
+        <param>
+          <type>const <ref refid="classFragmentSet_1a3a276be94fc303fed44b8f48072e30e6" kindref="member">ds_pending_map_t</ref> &amp;</type>
+          <declname>rsBoundsToRsnMap</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">data_fragment_set_t</ref> &amp;</type>
+          <declname>allReceivedFragmentsSet</declname>
+        </param>
+        <param>
+          <type><ref refid="classLtpFragmentSet_1a9e79da5e8714277f6b777ea05758a14b" kindref="member">list_fragment_set_needing_resent_for_each_report_t</ref> &amp;</type>
+          <declname>listFragmentSetNeedingResentForEachReport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recalculate the currently reported state from any given number of report segments.</para>
+<para>Given a map of report segment bounds and the already-received fragments, recalculates the effective scope of each report segment still needing further processing and for each resulting report populates a fragment set of fragments needing retransmission. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rsBoundsToRsnMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment bounds, mapped by report serial number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allReceivedFragmentsSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The already-received fragment set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>listFragmentSetNeedingResentForEachReport</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of needing-retransmitted fragment set per report segment, to modify. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The argument to listFragmentSetNeedingResentForEachReport is modified accordingly (see above for details). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpFragmentSet.h" line="99" column="17" bodyfile="common/ltp/src/LtpFragmentSet.cpp" bodystart="160" bodyend="178"/>
+        <references refid="classFragmentSet_1af37dd3f38fb2d8ce7ec5de9c2ecd3622" compoundref="FragmentSet_8cpp" startline="246" endline="252">FragmentSet::GetBoundsMinusFragments</references>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <referencedby refid="TestLtpFragmentSet_8cpp_1ab2820e903836d940682d40270556f76b" compoundref="TestLtpFragmentSet_8cpp" startline="19" endline="859">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" compoundref="LtpSessionSender_8cpp" startline="195" endline="215">LtpSessionSender::LtpDelaySendDataSegmentsTimerExpiredCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>FragmentSet</label>
+        <link refid="classFragmentSet"/>
+      </node>
+      <node id="1">
+        <label>LtpFragmentSet</label>
+        <link refid="classLtpFragmentSet"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>FragmentSet</label>
+        <link refid="classFragmentSet"/>
+      </node>
+      <node id="1">
+        <label>LtpFragmentSet</label>
+        <link refid="classLtpFragmentSet"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpFragmentSet.h" line="32" column="1" bodyfile="common/ltp/include/LtpFragmentSet.h" bodystart="32" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classLtpFragmentSet_1a661a3f731e35df11c59c8e85cbd9c8bf" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>AddReportSegmentToFragmentSet</name></member>
+      <member refid="classLtpFragmentSet_1ada2811b07ce34a1502a2233d04d19364" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>AddReportSegmentToFragmentSetNeedingResent</name></member>
+      <member refid="classFragmentSet_1a4dd6e763629fc8c384a396b2084665b0" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>ContainsFragmentEntirely</name></member>
+      <member refid="classFragmentSet_1a30970d5a499b129e8673574ec53b7516" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>data_fragment_no_overlap_allow_abut_set_t</name></member>
+      <member refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>data_fragment_set_t</name></member>
+      <member refid="classFragmentSet_1ad176dcddb2410637882da3e5f39c8054" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>DoesNotContainFragmentEntirely</name></member>
+      <member refid="classFragmentSet_1a3a276be94fc303fed44b8f48072e30e6" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>ds_pending_map_t</name></member>
+      <member refid="classFragmentSet_1a9bb9d651a1d53e878d40b65074970711" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>FragmentSetsHaveOverlap</name></member>
+      <member refid="classFragmentSet_1af37dd3f38fb2d8ce7ec5de9c2ecd3622" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>GetBoundsMinusFragments</name></member>
+      <member refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>InsertFragment</name></member>
+      <member refid="classLtpFragmentSet_1a9e79da5e8714277f6b777ea05758a14b" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>list_fragment_set_needing_resent_for_each_report_t</name></member>
+      <member refid="classLtpFragmentSet_1a770190b5c5088be85d1a40ad43920a02" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>PopulateReportSegment</name></member>
+      <member refid="classFragmentSet_1aa98f622287b3bbfeca1fbce19c9cd6ec" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>PrintFragmentSet</name></member>
+      <member refid="classLtpFragmentSet_1a816c55dfe548114c7e0531068456432c" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>ReduceReportSegments</name></member>
+      <member refid="classFragmentSet_1a3ea00cef7b2335316b0f5f8c5295b310" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>RemoveFragment</name></member>
+      <member refid="classLtpFragmentSet_1ac49217b8e2ca2a4b5229d77746803ac0" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>rsn_plus_bounds_minus_fragments_set_pair_t</name></member>
+      <member refid="classLtpFragmentSet_1a8ab69ed89f8f0839bb8221c2fb23b942" prot="public" virt="non-virtual"><scope>LtpFragmentSet</scope><name>SplitReportSegment</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

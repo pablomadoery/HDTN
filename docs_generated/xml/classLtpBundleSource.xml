@@ -1,0 +1,1222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpBundleSource" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>LtpBundleSource</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <derivedcompoundref refid="classLtpOverEncapLocalStreamBundleSource" prot="public" virt="non-virtual">LtpOverEncapLocalStreamBundleSource</derivedcompoundref>
+    <derivedcompoundref refid="classLtpOverIpcBundleSource" prot="public" virt="non-virtual">LtpOverIpcBundleSource</derivedcompoundref>
+    <derivedcompoundref refid="classLtpOverUdpBundleSource" prot="public" virt="non-virtual">LtpOverUdpBundleSource</derivedcompoundref>
+    <includes refid="LtpBundleSource_8h" local="no">LtpBundleSource.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classLtpBundleSource_1a956beafa48a419027c433f481c7139aa" prot="private" static="no">
+        <type>std::unordered_set&lt; uint64_t, std::hash&lt; uint64_t &gt;, std::equal_to&lt; uint64_t &gt;, <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; uint64_t &gt; &gt;</type>
+        <definition>typedef std::unordered_set&lt;uint64_t, std::hash&lt;uint64_t&gt;, std::equal_to&lt;uint64_t&gt;, FreeListAllocatorDynamic&lt;uint64_t&gt; &gt; LtpBundleSource::active_session_number_set_t</definition>
+        <argsstring></argsstring>
+        <name>active_session_number_set_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="97" column="2" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpBundleSource_1a38e61a8e247030326bdc45411478dfaf" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; LtpBundleSource::m_useLocalConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_useLocalConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="82" column="17" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+        <referencedby refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" compoundref="LtpBundleSource_8cpp" startline="230" endline="245">TransmissionSessionCancelledCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" compoundref="LtpBundleSource_8cpp" startline="212" endline="226">TransmissionSessionCompletedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a71f7c23480be23282e234e7066f30855" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable LtpBundleSource::m_localConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_localConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="83" column="31" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+        <referencedby refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" compoundref="LtpBundleSource_8cpp" startline="230" endline="245">TransmissionSessionCancelledCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" compoundref="LtpBundleSource_8cpp" startline="212" endline="226">TransmissionSessionCompletedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" prot="private" static="no" mutable="no">
+        <type><ref refid="classLtpBundleSource_1a956beafa48a419027c433f481c7139aa" kindref="member">active_session_number_set_t</ref></type>
+        <definition>active_session_number_set_t LtpBundleSource::m_activeSessionNumbersSet</definition>
+        <argsstring></argsstring>
+        <name>m_activeSessionNumbersSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="98" column="33" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+        <referencedby refid="classLtpBundleSource_1a20d2bf43985ebdb03de3dd6c1d889517" compoundref="LtpBundleSource_8cpp" startline="202" endline="211">SessionStartCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" compoundref="LtpBundleSource_8cpp" startline="230" endline="245">TransmissionSessionCancelledCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" compoundref="LtpBundleSource_8cpp" startline="212" endline="226">TransmissionSessionCompletedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a64aef0d3c13b69ded3a55d1750adce90" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; unsigned int &gt;</type>
+        <definition>std::atomic&lt;unsigned int&gt; LtpBundleSource::m_startingCount</definition>
+        <argsstring></argsstring>
+        <name>m_startingCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="99" column="17" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpBundleSource_1a20d2bf43985ebdb03de3dd6c1d889517" compoundref="LtpBundleSource_8cpp" startline="202" endline="211">SessionStartCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a48bc1a063c22b41d046341109f4cab4f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpBundleSource::m_totalBundlesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="102" column="17" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" compoundref="LtpBundleSource_8cpp" startline="288" endline="315">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSource_1a603b54f3cb62935857bb674b8137e64c" compoundref="LtpBundleSource_8cpp" startline="114" endline="116">GetTotalBundlesSent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a17e01426e125b12ee8e7b33b11c51449" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpBundleSource::m_totalBundlesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="103" column="17" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" compoundref="LtpBundleSource_8cpp" startline="288" endline="315">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSource_1a69e73387d225d07585cb1f6bdd4b5bba" compoundref="LtpBundleSource_8cpp" startline="111" endline="113">GetTotalBundlesAcked</referencedby>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+        <referencedby refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" compoundref="LtpBundleSource_8cpp" startline="212" endline="226">TransmissionSessionCompletedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a371c927399a35bef2d32ea9f1535d039" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpBundleSource::m_totalBundlesFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="104" column="17" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" compoundref="LtpBundleSource_8cpp" startline="288" endline="315">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSource_1a69e73387d225d07585cb1f6bdd4b5bba" compoundref="LtpBundleSource_8cpp" startline="111" endline="113">GetTotalBundlesAcked</referencedby>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+        <referencedby refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" compoundref="LtpBundleSource_8cpp" startline="230" endline="245">TransmissionSessionCancelledCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1add4c4e5120d74c30d87d61c9b73b04d7" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpBundleSource::m_totalBundleBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="105" column="17" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" compoundref="LtpBundleSource_8cpp" startline="288" endline="315">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSource_1a17f34540127096ea7be33c643ee17f31" compoundref="LtpBundleSource_8cpp" startline="124" endline="126">GetTotalBundleBytesSent</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classLtpBundleSource_1a17a3bc7a12f8349fedb20c49449c0137" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref></type>
+        <definition>const LtpEngineConfig LtpBundleSource::m_ltpTxCfg</definition>
+        <argsstring></argsstring>
+        <name>m_ltpTxCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="87" column="27" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classLtpOverEncapLocalStreamBundleSource_1a36d483730ed1fa37973ce46a7f43c25e" compoundref="LtpOverEncapLocalStreamBundleSource_8cpp" startline="37" endline="55">LtpOverEncapLocalStreamBundleSource::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverIpcBundleSource_1a9b1ecf1333acce82d19a796c12b1314e" compoundref="LtpOverIpcBundleSource_8cpp" startline="37" endline="60">LtpOverIpcBundleSource::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1ac5aa13e6981a76c563f85bdc863f0a37" compoundref="LtpOverUdpBundleSource_8cpp" startline="47" endline="63">LtpOverUdpBundleSource::SetLtpEnginePtr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" prot="protected" static="no" mutable="no">
+        <type><ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> *</type>
+        <definition>LtpEngine* LtpBundleSource::m_ltpEnginePtr</definition>
+        <argsstring></argsstring>
+        <name>m_ltpEnginePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="88" column="16" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpBundleSource_1a812a220c1953624cf5572addaa5b9067" compoundref="LtpBundleSource_8cpp" startline="196" endline="198">GetOutductMaxNumberOfBundlesInPipeline</referencedby>
+        <referencedby refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" compoundref="LtpBundleSource_8cpp" startline="288" endline="315">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSource_1a9f68d9d5689d76a1554ddac2328a57b4" compoundref="LtpBundleSource_8cpp" startline="120" endline="123">GetTotalBundleBytesAcked</referencedby>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+        <referencedby refid="classLtpOverEncapLocalStreamBundleSource_1a36d483730ed1fa37973ce46a7f43c25e" compoundref="LtpOverEncapLocalStreamBundleSource_8cpp" startline="37" endline="55">LtpOverEncapLocalStreamBundleSource::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverIpcBundleSource_1a9b1ecf1333acce82d19a796c12b1314e" compoundref="LtpOverIpcBundleSource_8cpp" startline="37" endline="60">LtpOverIpcBundleSource::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1ac5aa13e6981a76c563f85bdc863f0a37" compoundref="LtpOverUdpBundleSource_8cpp" startline="47" endline="63">LtpOverUdpBundleSource::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpBundleSource_1a7f97a2623ab83d2b4dda4ac329387329" compoundref="LtpBundleSource_8cpp" startline="247" endline="251">SetOnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1a5e8eb2ca5878d1e662ed5ac2cb3d915b" compoundref="LtpBundleSource_8cpp" startline="252" endline="256">SetOnFailedBundleZmqSendCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1ac3f3dc9db9ba8de81708b3005edc0e75" compoundref="LtpBundleSource_8cpp" startline="262" endline="266">SetOnOutductLinkStatusChangedCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1a6544618b1912da0335bcec1ee0abeee8" compoundref="LtpBundleSource_8cpp" startline="257" endline="261">SetOnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1a23544b3e5b3ed5639ba1351412023ad5" compoundref="LtpBundleSource_8cpp" startline="277" endline="281">SetPing</referencedby>
+        <referencedby refid="classLtpBundleSource_1a559d80ec1e57f432ab04c45ceb69d33e" compoundref="LtpBundleSource_8cpp" startline="282" endline="286">SetPingToDefaultConfig</referencedby>
+        <referencedby refid="classLtpBundleSource_1a70005459f7e2a68ed468b2a1893bfd21" compoundref="LtpBundleSource_8cpp" startline="272" endline="276">SetRate</referencedby>
+        <referencedby refid="classLtpBundleSource_1af0a4c9132aeabed1df6fb0cf0429c5bf" compoundref="LtpBundleSource_8cpp" startline="267" endline="271">SetUserAssignedUuid</referencedby>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1a4ba7103768ad8fecbc3a26667b976e51" compoundref="LtpOverUdpBundleSource_8cpp" startline="30" endline="45">LtpOverUdpBundleSource::~LtpOverUdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1aeb0959ce4a121857dc987d7dd6347b37" prot="protected" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpBundleSource::M_CLIENT_SERVICE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_CLIENT_SERVICE_ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="89" column="20" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1abdd9f59e0c1938abd9c84a874cd460a4" prot="protected" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpBundleSource::M_THIS_ENGINE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_THIS_ENGINE_ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="90" column="20" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a20d2bf43985ebdb03de3dd6c1d889517" compoundref="LtpBundleSource_8cpp" startline="202" endline="211">SessionStartCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" compoundref="LtpBundleSource_8cpp" startline="230" endline="245">TransmissionSessionCancelledCallback</referencedby>
+        <referencedby refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" compoundref="LtpBundleSource_8cpp" startline="212" endline="226">TransmissionSessionCompletedCallback</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1a4ba7103768ad8fecbc3a26667b976e51" compoundref="LtpOverUdpBundleSource_8cpp" startline="30" endline="45">LtpOverUdpBundleSource::~LtpOverUdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1af8d5b7d9ef297b69ffc688ee99fc542e" prot="protected" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpBundleSource::M_REMOTE_LTP_ENGINE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_REMOTE_LTP_ENGINE_ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="91" column="20" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1a4ba7103768ad8fecbc3a26667b976e51" compoundref="LtpOverUdpBundleSource_8cpp" startline="30" endline="45">LtpOverUdpBundleSource::~LtpOverUdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSource_1a74655791dd5821c9b79e56553c616873" prot="protected" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpBundleSource::M_BUNDLE_PIPELINE_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>M_BUNDLE_PIPELINE_LIMIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="92" column="20" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpBundleSource_1a6a3d67ea5b5504209d399d93573be8a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpBundleSource::LtpBundleSource</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="42" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a20d2bf43985ebdb03de3dd6c1d889517" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpBundleSource::SessionStartCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;sessionId)</argsstring>
+        <name>SessionStartCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="77" column="28" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="202" bodyend="211"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" compoundref="LtpBundleSource_8h" startline="98">m_activeSessionNumbersSet</references>
+        <references refid="classLtpBundleSource_1a64aef0d3c13b69ded3a55d1750adce90" compoundref="LtpBundleSource_8h" startline="99">m_startingCount</references>
+        <references refid="classLtpBundleSource_1abdd9f59e0c1938abd9c84a874cd460a4" compoundref="LtpBundleSource_8h" startline="90">M_THIS_ENGINE_ID</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <references refid="LtpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSource_8cpp" startline="21">subprocess</references>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpBundleSource::TransmissionSessionCompletedCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;sessionId)</argsstring>
+        <name>TransmissionSessionCompletedCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="78" column="28" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="212" bodyend="226"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" compoundref="LtpBundleSource_8h" startline="98">m_activeSessionNumbersSet</references>
+        <references refid="classLtpBundleSource_1a71f7c23480be23282e234e7066f30855" compoundref="LtpBundleSource_8h" startline="83">m_localConditionVariableAckReceived</references>
+        <references refid="classLtpBundleSource_1abdd9f59e0c1938abd9c84a874cd460a4" compoundref="LtpBundleSource_8h" startline="90">M_THIS_ENGINE_ID</references>
+        <references refid="classLtpBundleSource_1a17e01426e125b12ee8e7b33b11c51449" compoundref="LtpBundleSource_8h" startline="103">m_totalBundlesAcked</references>
+        <references refid="classLtpBundleSource_1a38e61a8e247030326bdc45411478dfaf" compoundref="LtpBundleSource_8h" startline="82">m_useLocalConditionVariableAckReceived</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <references refid="LtpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSource_8cpp" startline="21">subprocess</references>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1ad40e49eb97f65349253a2c55b9329659" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpBundleSource::InitialTransmissionCompletedCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;sessionId)</argsstring>
+        <name>InitialTransmissionCompletedCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="79" column="28" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="227" bodyend="229"/>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpBundleSource::TransmissionSessionCancelledCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;sessionId, CANCEL_SEGMENT_REASON_CODES reasonCode)</argsstring>
+        <name>TransmissionSessionCancelledCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type><ref refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743c" kindref="member">CANCEL_SEGMENT_REASON_CODES</ref></type>
+          <declname>reasonCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="80" column="28" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="230" bodyend="245"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" compoundref="LtpBundleSource_8h" startline="98">m_activeSessionNumbersSet</references>
+        <references refid="classLtpBundleSource_1a71f7c23480be23282e234e7066f30855" compoundref="LtpBundleSource_8h" startline="83">m_localConditionVariableAckReceived</references>
+        <references refid="classLtpBundleSource_1abdd9f59e0c1938abd9c84a874cd460a4" compoundref="LtpBundleSource_8h" startline="90">M_THIS_ENGINE_ID</references>
+        <references refid="classLtpBundleSource_1a371c927399a35bef2d32ea9f1535d039" compoundref="LtpBundleSource_8h" startline="104">m_totalBundlesFailedToSend</references>
+        <references refid="classLtpBundleSource_1a38e61a8e247030326bdc45411478dfaf" compoundref="LtpBundleSource_8h" startline="82">m_useLocalConditionVariableAckReceived</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <references refid="LtpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSource_8cpp" startline="21">subprocess</references>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpBundleSource_1ab488c3781c52480be6fe6facb7e89061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpBundleSource::LtpBundleSource</definition>
+        <argsstring>(const LtpEngineConfig &amp;ltpTxCfg)</argsstring>
+        <name>LtpBundleSource</name>
+        <param>
+          <type>const <ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref> &amp;</type>
+          <declname>ltpTxCfg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="44" column="20" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="23" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1ade613934db1a8b211cc1b9f0f247259b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpBundleSource::~LtpBundleSource</definition>
+        <argsstring>()</argsstring>
+        <name>~LtpBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="46" column="28" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="43" bodyend="45"/>
+        <references refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpBundleSource::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="47" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="47" bodyend="59"/>
+        <references refid="classLtpBundleSource_1ad40e49eb97f65349253a2c55b9329659" compoundref="LtpBundleSource_8cpp" startline="227" endline="229">InitialTransmissionCompletedCallback</references>
+        <references refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" compoundref="LtpBundleSource_8h" startline="98">m_activeSessionNumbersSet</references>
+        <references refid="classLtpBundleSource_1a74655791dd5821c9b79e56553c616873" compoundref="LtpBundleSource_8h" startline="92">M_BUNDLE_PIPELINE_LIMIT</references>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpBundleSource_1a20d2bf43985ebdb03de3dd6c1d889517" compoundref="LtpBundleSource_8cpp" startline="202" endline="211">SessionStartCallback</references>
+        <references refid="classLtpEngine_1ad8b1d868d0906fb5994a40a9081a5473" compoundref="LtpEngine_8cpp" startline="1486" endline="1488">LtpEngine::SetInitialTransmissionCompletedCallback</references>
+        <references refid="classLtpBundleSource_1af29f837243f639b4e5acdc98882d8eec">SetLtpEnginePtr</references>
+        <references refid="classLtpEngine_1a5603105c2cfda6253b35c1506cb3bd8d" compoundref="LtpEngine_8cpp" startline="1471" endline="1473">LtpEngine::SetSessionStartCallback</references>
+        <references refid="classLtpEngine_1ada18dcd3df9b464a01d8194b1ebc49fe" compoundref="LtpEngine_8cpp" startline="1489" endline="1491">LtpEngine::SetTransmissionSessionCancelledCallback</references>
+        <references refid="classLtpEngine_1ae88cb57be73e00ba89646165f5f520ab" compoundref="LtpEngine_8cpp" startline="1483" endline="1485">LtpEngine::SetTransmissionSessionCompletedCallback</references>
+        <references refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" compoundref="LtpBundleSource_8cpp" startline="230" endline="245">TransmissionSessionCancelledCallback</references>
+        <references refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" compoundref="LtpBundleSource_8cpp" startline="212" endline="226">TransmissionSessionCompletedCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="48" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="63" bodyend="109"/>
+        <references refid="classLtpBundleSource_1a17f34540127096ea7be33c643ee17f31" compoundref="LtpBundleSource_8cpp" startline="124" endline="126">GetTotalBundleBytesSent</references>
+        <references refid="classLtpBundleSource_1a603b54f3cb62935857bb674b8137e64c" compoundref="LtpBundleSource_8cpp" startline="114" endline="116">GetTotalBundlesSent</references>
+        <references refid="classLtpBundleSource_1ad3062b2dcf56e93a500b0735a2f33520" compoundref="LtpBundleSource_8cpp" startline="117" endline="119">GetTotalBundlesUnacked</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classLtpBundleSource_1a71f7c23480be23282e234e7066f30855" compoundref="LtpBundleSource_8h" startline="83">m_localConditionVariableAckReceived</references>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpBundleSource_1a17e01426e125b12ee8e7b33b11c51449" compoundref="LtpBundleSource_8h" startline="103">m_totalBundlesAcked</references>
+        <references refid="classLtpBundleSource_1a371c927399a35bef2d32ea9f1535d039" compoundref="LtpBundleSource_8h" startline="104">m_totalBundlesFailedToSend</references>
+        <references refid="classLtpEngine_1ad2623f77cb51cc0fc6ec4e4a6c0ca5d0" compoundref="LtpEngine_8h" startline="1190">LtpEngine::m_totalRedDataBytesFailedToSend</references>
+        <references refid="classLtpEngine_1a636aab451f26fe2953648351dde9f8c6" compoundref="LtpEngine_8h" startline="1188">LtpEngine::m_totalRedDataBytesSuccessfullySent</references>
+        <references refid="classLtpBundleSource_1a38e61a8e247030326bdc45411478dfaf" compoundref="LtpBundleSource_8h" startline="82">m_useLocalConditionVariableAckReceived</references>
+        <references refid="LtpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSource_8cpp" startline="21">subprocess</references>
+        <referencedby refid="classLtpOutduct_1a51ae30f116c85e425c7352d253296203" compoundref="LtpOutduct_8cpp" startline="115" endline="117">LtpOutduct::Stop</referencedby>
+        <referencedby refid="classLtpBundleSource_1ade613934db1a8b211cc1b9f0f247259b" compoundref="LtpBundleSource_8cpp" startline="43" endline="45">~LtpBundleSource</referencedby>
+        <referencedby refid="classLtpOverEncapLocalStreamBundleSource_1ae44ae2432b03ea3875a185980fdc7fc6" compoundref="LtpOverEncapLocalStreamBundleSource_8cpp" startline="29" endline="35">LtpOverEncapLocalStreamBundleSource::~LtpOverEncapLocalStreamBundleSource</referencedby>
+        <referencedby refid="classLtpOverIpcBundleSource_1abf0be1389599d2345e9e1f0af46ef58f" compoundref="LtpOverIpcBundleSource_8cpp" startline="29" endline="35">LtpOverIpcBundleSource::~LtpOverIpcBundleSource</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1a4ba7103768ad8fecbc3a26667b976e51" compoundref="LtpOverUdpBundleSource_8cpp" startline="30" endline="45">LtpOverUdpBundleSource::~LtpOverUdpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1aab88ae3438f99d9ee33bfcf6f03ed76f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpBundleSource::Forward</definition>
+        <argsstring>(const uint8_t *bundleData, const std::size_t size, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="49" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="191" bodyend="194"/>
+        <referencedby refid="classLtpOutduct_1a9a654fee5ed9ca4ee3f3138b928bbacf" compoundref="LtpOutduct_8cpp" startline="71" endline="73">LtpOutduct::Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1aa96b088f0e1e81ffdd75ccba940c9206" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpBundleSource::Forward</definition>
+        <argsstring>(zmq::message_t &amp;dataZmq, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>dataZmq</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="50" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="162" bodyend="189"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" compoundref="LtpBundleSource_8h" startline="98">m_activeSessionNumbersSet</references>
+        <references refid="classLtpBundleSource_1a74655791dd5821c9b79e56553c616873" compoundref="LtpBundleSource_8h" startline="92">M_BUNDLE_PIPELINE_LIMIT</references>
+        <references refid="classLtpBundleSource_1aeb0959ce4a121857dc987d7dd6347b37" compoundref="LtpBundleSource_8h" startline="89">M_CLIENT_SERVICE_ID</references>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpBundleSource_1af8d5b7d9ef297b69ffc688ee99fc542e" compoundref="LtpBundleSource_8h" startline="91">M_REMOTE_LTP_ENGINE_ID</references>
+        <references refid="classLtpBundleSource_1a64aef0d3c13b69ded3a55d1750adce90" compoundref="LtpBundleSource_8h" startline="99">m_startingCount</references>
+        <references refid="classLtpBundleSource_1add4c4e5120d74c30d87d61c9b73b04d7" compoundref="LtpBundleSource_8h" startline="105">m_totalBundleBytesSent</references>
+        <references refid="classLtpBundleSource_1a48bc1a063c22b41d046341109f4cab4f" compoundref="LtpBundleSource_8h" startline="102">m_totalBundlesSent</references>
+        <references refid="classLtpBundleSource_1a82d71cad9d3a7ff30a6b1fac80399557">ReadyToForward</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="LtpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSource_8cpp" startline="21">subprocess</references>
+        <references refid="classLtpEngine_1a95e0dd55d54d86bea09c180b5f8d4888" compoundref="LtpEngine_8cpp" startline="936" endline="939">LtpEngine::TransmissionRequest_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpBundleSource::Forward</definition>
+        <argsstring>(padded_vector_uint8_t &amp;dataVec, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>dataVec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="51" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="131" bodyend="160"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" compoundref="LtpBundleSource_8h" startline="98">m_activeSessionNumbersSet</references>
+        <references refid="classLtpBundleSource_1a74655791dd5821c9b79e56553c616873" compoundref="LtpBundleSource_8h" startline="92">M_BUNDLE_PIPELINE_LIMIT</references>
+        <references refid="classLtpBundleSource_1aeb0959ce4a121857dc987d7dd6347b37" compoundref="LtpBundleSource_8h" startline="89">M_CLIENT_SERVICE_ID</references>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpBundleSource_1af8d5b7d9ef297b69ffc688ee99fc542e" compoundref="LtpBundleSource_8h" startline="91">M_REMOTE_LTP_ENGINE_ID</references>
+        <references refid="classLtpBundleSource_1a64aef0d3c13b69ded3a55d1750adce90" compoundref="LtpBundleSource_8h" startline="99">m_startingCount</references>
+        <references refid="classLtpBundleSource_1add4c4e5120d74c30d87d61c9b73b04d7" compoundref="LtpBundleSource_8h" startline="105">m_totalBundleBytesSent</references>
+        <references refid="classLtpBundleSource_1a48bc1a063c22b41d046341109f4cab4f" compoundref="LtpBundleSource_8h" startline="102">m_totalBundlesSent</references>
+        <references refid="classLtpBundleSource_1a82d71cad9d3a7ff30a6b1fac80399557">ReadyToForward</references>
+        <references refid="LtpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSource_8cpp" startline="21">subprocess</references>
+        <references refid="classLtpEngine_1a95e0dd55d54d86bea09c180b5f8d4888" compoundref="LtpEngine_8cpp" startline="936" endline="939">LtpEngine::TransmissionRequest_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a69e73387d225d07585cb1f6bdd4b5bba" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t LtpBundleSource::GetTotalBundlesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="52" column="32" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="111" bodyend="113"/>
+        <references refid="classLtpBundleSource_1a17e01426e125b12ee8e7b33b11c51449" compoundref="LtpBundleSource_8h" startline="103">m_totalBundlesAcked</references>
+        <references refid="classLtpBundleSource_1a371c927399a35bef2d32ea9f1535d039" compoundref="LtpBundleSource_8h" startline="104">m_totalBundlesFailedToSend</references>
+        <referencedby refid="classLtpOutduct_1adce77e5d9243bfc5317925af8742f9f6" compoundref="LtpOutduct_8cpp" startline="118" endline="122">LtpOutduct::GetOutductFinalStats</referencedby>
+        <referencedby refid="classLtpBundleSource_1ad3062b2dcf56e93a500b0735a2f33520" compoundref="LtpBundleSource_8cpp" startline="117" endline="119">GetTotalBundlesUnacked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a603b54f3cb62935857bb674b8137e64c" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t LtpBundleSource::GetTotalBundlesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="53" column="32" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="114" bodyend="116"/>
+        <references refid="classLtpBundleSource_1a48bc1a063c22b41d046341109f4cab4f" compoundref="LtpBundleSource_8h" startline="102">m_totalBundlesSent</references>
+        <referencedby refid="classLtpOutduct_1adce77e5d9243bfc5317925af8742f9f6" compoundref="LtpOutduct_8cpp" startline="118" endline="122">LtpOutduct::GetOutductFinalStats</referencedby>
+        <referencedby refid="classLtpBundleSource_1ad3062b2dcf56e93a500b0735a2f33520" compoundref="LtpBundleSource_8cpp" startline="117" endline="119">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1ad3062b2dcf56e93a500b0735a2f33520" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t LtpBundleSource::GetTotalBundlesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="54" column="32" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="117" bodyend="119"/>
+        <references refid="classLtpBundleSource_1a69e73387d225d07585cb1f6bdd4b5bba" compoundref="LtpBundleSource_8cpp" startline="111" endline="113">GetTotalBundlesAcked</references>
+        <references refid="classLtpBundleSource_1a603b54f3cb62935857bb674b8137e64c" compoundref="LtpBundleSource_8cpp" startline="114" endline="116">GetTotalBundlesSent</references>
+        <referencedby refid="classLtpOutduct_1a4d7cf76784a643eda9ebd8a0fe986191" compoundref="LtpOutduct_8cpp" startline="68" endline="70">LtpOutduct::GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a9f68d9d5689d76a1554ddac2328a57b4" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t LtpBundleSource::GetTotalBundleBytesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="55" column="32" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="120" bodyend="123"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1ad2623f77cb51cc0fc6ec4e4a6c0ca5d0" compoundref="LtpEngine_8h" startline="1190">LtpEngine::m_totalRedDataBytesFailedToSend</references>
+        <references refid="classLtpEngine_1a636aab451f26fe2953648351dde9f8c6" compoundref="LtpEngine_8h" startline="1188">LtpEngine::m_totalRedDataBytesSuccessfullySent</references>
+        <referencedby refid="classLtpBundleSource_1a2124b510a8d7646e77c11ea96b6e2b32" compoundref="LtpBundleSource_8cpp" startline="127" endline="129">GetTotalBundleBytesUnacked</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a17f34540127096ea7be33c643ee17f31" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t LtpBundleSource::GetTotalBundleBytesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="56" column="32" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="124" bodyend="126"/>
+        <references refid="classLtpBundleSource_1add4c4e5120d74c30d87d61c9b73b04d7" compoundref="LtpBundleSource_8h" startline="105">m_totalBundleBytesSent</references>
+        <referencedby refid="classLtpBundleSource_1a2124b510a8d7646e77c11ea96b6e2b32" compoundref="LtpBundleSource_8cpp" startline="127" endline="129">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" compoundref="LtpBundleSource_8cpp" startline="63" endline="109">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a2124b510a8d7646e77c11ea96b6e2b32" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t LtpBundleSource::GetTotalBundleBytesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="57" column="32" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="127" bodyend="129"/>
+        <references refid="classLtpBundleSource_1a9f68d9d5689d76a1554ddac2328a57b4" compoundref="LtpBundleSource_8cpp" startline="120" endline="123">GetTotalBundleBytesAcked</references>
+        <references refid="classLtpBundleSource_1a17f34540127096ea7be33c643ee17f31" compoundref="LtpBundleSource_8cpp" startline="124" endline="126">GetTotalBundleBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a7f97a2623ab83d2b4dda4ac329387329" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetOnFailedBundleVecSendCallback</definition>
+        <argsstring>(const OnFailedBundleVecSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleVecSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="58" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="247" bodyend="251"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1a821b8b38c306d58fbb95d0502805ab7a" compoundref="LtpEngine_8cpp" startline="1493" endline="1495">LtpEngine::SetOnFailedBundleVecSendCallback</references>
+        <referencedby refid="classLtpOutduct_1a354c10ce80ee24ff27701922926a3b00" compoundref="LtpOutduct_8cpp" startline="81" endline="83">LtpOutduct::SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a5e8eb2ca5878d1e662ed5ac2cb3d915b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetOnFailedBundleZmqSendCallback</definition>
+        <argsstring>(const OnFailedBundleZmqSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleZmqSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="59" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="252" bodyend="256"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1a59076af529936255e27971570f105400" compoundref="LtpEngine_8cpp" startline="1496" endline="1498">LtpEngine::SetOnFailedBundleZmqSendCallback</references>
+        <referencedby refid="classLtpOutduct_1a632663d0a50a01d7a3d679d76e30eaeb" compoundref="LtpOutduct_8cpp" startline="84" endline="86">LtpOutduct::SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a6544618b1912da0335bcec1ee0abeee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetOnSuccessfulBundleSendCallback</definition>
+        <argsstring>(const OnSuccessfulBundleSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="60" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="257" bodyend="261"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1a6e5d18cc85f6d3922e7e6886c9e1286a" compoundref="LtpEngine_8cpp" startline="1499" endline="1501">LtpEngine::SetOnSuccessfulBundleSendCallback</references>
+        <referencedby refid="classLtpOutduct_1acdcadfc8cb8f3c83e65459d1b22048dc" compoundref="LtpOutduct_8cpp" startline="87" endline="89">LtpOutduct::SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1ac3f3dc9db9ba8de81708b3005edc0e75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetOnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(const OnOutductLinkStatusChangedCallback_t &amp;callback)</argsstring>
+        <name>SetOnOutductLinkStatusChangedCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="61" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="262" bodyend="266"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1affa6969c0c3a53ea679816f3ae78ead6" compoundref="LtpEngine_8cpp" startline="1502" endline="1504">LtpEngine::SetOnOutductLinkStatusChangedCallback</references>
+        <referencedby refid="classLtpOutduct_1a3626135598ecc7ba7cdfec036db3b948" compoundref="LtpOutduct_8cpp" startline="90" endline="92">LtpOutduct::SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1af0a4c9132aeabed1df6fb0cf0429c5bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetUserAssignedUuid</definition>
+        <argsstring>(uint64_t userAssignedUuid)</argsstring>
+        <name>SetUserAssignedUuid</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>userAssignedUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="62" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="267" bodyend="271"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1a8ad4bbecb6c499f4f5c17a39956a2060" compoundref="LtpEngine_8cpp" startline="1505" endline="1507">LtpEngine::SetUserAssignedUuid</references>
+        <referencedby refid="classLtpOutduct_1aeb715cc55e0805751471f3f40c96752d" compoundref="LtpOutduct_8cpp" startline="93" endline="95">LtpOutduct::SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a70005459f7e2a68ed468b2a1893bfd21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetRate</definition>
+        <argsstring>(uint64_t maxSendRateBitsPerSecOrZeroToDisable)</argsstring>
+        <name>SetRate</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>maxSendRateBitsPerSecOrZeroToDisable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="63" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="272" bodyend="276"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="TestLtpEngine_8cpp_1aeb3c4d05b49f09549993e84ad2a1ea0a" compoundref="TestLtpEngine_8cpp" startline="503">maxSendRateBitsPerSecOrZeroToDisable</references>
+        <references refid="classLtpEngine_1aeef2662c62f7d21d6fec951aa6984d53" compoundref="LtpEngine_8cpp" startline="1531" endline="1533">LtpEngine::SetRate_ThreadSafe</references>
+        <referencedby refid="classLtpOutduct_1a87754765fe696315fbf59e3ecca1b86a" compoundref="LtpOutduct_8cpp" startline="96" endline="98">LtpOutduct::SetRate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a23544b3e5b3ed5639ba1351412023ad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetPing</definition>
+        <argsstring>(uint64_t senderPingSecondsOrZeroToDisable)</argsstring>
+        <name>SetPing</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>senderPingSecondsOrZeroToDisable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="64" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="277" bodyend="281"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="TestLtpEngine_8cpp_1a603c9bc71967d28d3f3e36fb33f70bf4" compoundref="TestLtpEngine_8cpp" startline="507">senderPingSecondsOrZeroToDisable</references>
+        <references refid="classLtpEngine_1a1359f7d61a41b77bed11301de8f3abcc" compoundref="LtpEngine_8cpp" startline="1544" endline="1546">LtpEngine::SetPing_ThreadSafe</references>
+        <referencedby refid="classLtpOutduct_1afd293e7f4da75e4118fc343bcda7cbb2" compoundref="LtpOutduct_8cpp" startline="99" endline="101">LtpOutduct::SetPing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a559d80ec1e57f432ab04c45ceb69d33e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::SetPingToDefaultConfig</definition>
+        <argsstring>()</argsstring>
+        <name>SetPingToDefaultConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="65" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="282" bodyend="286"/>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="classLtpEngine_1ad6d546634c7f6b4161d384c623c0aec4" compoundref="LtpEngine_8cpp" startline="1552" endline="1554">LtpEngine::SetPingToDefaultConfig_ThreadSafe</references>
+        <referencedby refid="classLtpOutduct_1a5da2609ca141c3b7fc25a4c1bef6919f" compoundref="LtpOutduct_8cpp" startline="102" endline="104">LtpOutduct::SetPingToDefaultConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSource::GetTelemetry</definition>
+        <argsstring>(LtpOutductTelemetry_t &amp;telem) const</argsstring>
+        <name>GetTelemetry</name>
+        <param>
+          <type><ref refid="structLtpOutductTelemetry__t" kindref="compound">LtpOutductTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="66" column="25" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="288" bodyend="315"/>
+        <references refid="classLtpBundleSource_1a577839618369416da9f7faad1d3ea157">GetTransportLayerSpecificTelem</references>
+        <references refid="classLtpEngine_1afaec1d6368c078f8ab48b70a866163be" compoundref="LtpEngine_8h" startline="1180">LtpEngine::m_countAsyncSendsLimitedByRate</references>
+        <references refid="structLtpOutductTelemetry__t_1a14f4e88eac1fd7816f021af1e5543351" compoundref="TelemetryDefinitions_8h" startline="383">LtpOutductTelemetry_t::m_countTxUdpPacketsLimitedByRate</references>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <references refid="structLtpOutductTelemetry__t_1ada8657d1ec65ce85c8d2bc254896550a" compoundref="TelemetryDefinitions_8h" startline="366">LtpOutductTelemetry_t::m_numCheckpointsExpired</references>
+        <references refid="classLtpEngine_1a1763e65d50a7c8bf398f26f583802343" compoundref="LtpEngine_8h" startline="1219">LtpEngine::m_numCheckpointTimerExpiredCallbacksRef</references>
+        <references refid="structLtpOutductTelemetry__t_1af6052837f78b3769564c65c8ef0e432e" compoundref="TelemetryDefinitions_8h" startline="368">LtpOutductTelemetry_t::m_numDeletedFullyClaimedPendingReports</references>
+        <references refid="classLtpEngine_1aef60d5b1702f7056ec0792dd5b4b861f" compoundref="LtpEngine_8h" startline="1223">LtpEngine::m_numDeletedFullyClaimedPendingReportsRef</references>
+        <references refid="structLtpOutductTelemetry__t_1a0b758f193ff2076c042d38c23b27f689" compoundref="TelemetryDefinitions_8h" startline="367">LtpOutductTelemetry_t::m_numDiscretionaryCheckpointsNotResent</references>
+        <references refid="classLtpEngine_1a76849a49ef076249f14230a85434ec76" compoundref="LtpEngine_8h" startline="1221">LtpEngine::m_numDiscretionaryCheckpointsNotResentRef</references>
+        <references refid="classLtpEngine_1a5fdcaa43c182aa129db5ff43a7a0cf1b" compoundref="LtpEngine_8h" startline="1210">LtpEngine::m_numTxSessionsCancelledByReceiver</references>
+        <references refid="structLtpOutductTelemetry__t_1a4cb94eb656669a86c8bc8ccdcb827ea8" compoundref="TelemetryDefinitions_8h" startline="378">LtpOutductTelemetry_t::m_numTxSessionsCancelledByReceiver</references>
+        <references refid="classLtpEngine_1aaacad4876ebaf2a0ca609bdb2486b8b9" compoundref="LtpEngine_8h" startline="1208">LtpEngine::m_numTxSessionsReturnedToStorage</references>
+        <references refid="structLtpOutductTelemetry__t_1ae0a880e3af79eefa5ef035951c5a17d5" compoundref="TelemetryDefinitions_8h" startline="377">LtpOutductTelemetry_t::m_numTxSessionsReturnedToStorage</references>
+        <references refid="structOutductTelemetry__t_1aa1a904b6804b71b413bdea60126e38c1" compoundref="TelemetryDefinitions_8h" startline="332">OutductTelemetry_t::m_totalBundleBytesAcked</references>
+        <references refid="classLtpBundleSource_1add4c4e5120d74c30d87d61c9b73b04d7" compoundref="LtpBundleSource_8h" startline="105">m_totalBundleBytesSent</references>
+        <references refid="structOutductTelemetry__t_1a9e32d16d9c482eed5b0e828b067104df" compoundref="TelemetryDefinitions_8h" startline="334">OutductTelemetry_t::m_totalBundleBytesSent</references>
+        <references refid="classLtpBundleSource_1a17e01426e125b12ee8e7b33b11c51449" compoundref="LtpBundleSource_8h" startline="103">m_totalBundlesAcked</references>
+        <references refid="structOutductTelemetry__t_1a45241d2505fe58e6532781c6a040b198" compoundref="TelemetryDefinitions_8h" startline="331">OutductTelemetry_t::m_totalBundlesAcked</references>
+        <references refid="classLtpBundleSource_1a371c927399a35bef2d32ea9f1535d039" compoundref="LtpBundleSource_8h" startline="104">m_totalBundlesFailedToSend</references>
+        <references refid="structOutductTelemetry__t_1a20f16bdb75ed0860f053feaa37ae63f8" compoundref="TelemetryDefinitions_8h" startline="335">OutductTelemetry_t::m_totalBundlesFailedToSend</references>
+        <references refid="classLtpBundleSource_1a48bc1a063c22b41d046341109f4cab4f" compoundref="LtpBundleSource_8h" startline="102">m_totalBundlesSent</references>
+        <references refid="structOutductTelemetry__t_1a5195f83a37144955b554a692d2207ec5" compoundref="TelemetryDefinitions_8h" startline="333">OutductTelemetry_t::m_totalBundlesSent</references>
+        <references refid="classLtpEngine_1acfaed5ddbfb81f4a8231ea549ee576f0" compoundref="LtpEngine_8h" startline="1198">LtpEngine::m_totalCancelSegmentsAcknowledged</references>
+        <references refid="structLtpOutductTelemetry__t_1a8ad20a60ac188bfa8f7111a078a3d6b3" compoundref="TelemetryDefinitions_8h" startline="372">LtpOutductTelemetry_t::m_totalCancelSegmentsAcknowledged</references>
+        <references refid="classLtpEngine_1ae079576b5fbc92cf4305560456ecd7eb" compoundref="LtpEngine_8h" startline="1194">LtpEngine::m_totalCancelSegmentSendRetries</references>
+        <references refid="structLtpOutductTelemetry__t_1a3f2b413977f89dc31a35f0f29ff320dd" compoundref="TelemetryDefinitions_8h" startline="370">LtpOutductTelemetry_t::m_totalCancelSegmentSendRetries</references>
+        <references refid="classLtpEngine_1acfd032abbb14553c1286a52db854e29e" compoundref="LtpEngine_8h" startline="1196">LtpEngine::m_totalCancelSegmentsFailedToSend</references>
+        <references refid="structLtpOutductTelemetry__t_1adc28d0ebfa4d299a1b03aeeb62a7c403" compoundref="TelemetryDefinitions_8h" startline="371">LtpOutductTelemetry_t::m_totalCancelSegmentsFailedToSend</references>
+        <references refid="classLtpEngine_1acc439a7edd94073c12bfe384ad10d32e" compoundref="LtpEngine_8h" startline="1192">LtpEngine::m_totalCancelSegmentsStarted</references>
+        <references refid="structLtpOutductTelemetry__t_1a8b736786b656024e4f0dda10e7117633" compoundref="TelemetryDefinitions_8h" startline="369">LtpOutductTelemetry_t::m_totalCancelSegmentsStarted</references>
+        <references refid="classLtpEngine_1a69d7c7df39e9c3a70c05018380b64dcd" compoundref="LtpEngine_8h" startline="1202">LtpEngine::m_totalPingRetries</references>
+        <references refid="structLtpOutductTelemetry__t_1a1c7187dca5932e0060362b813cff9151" compoundref="TelemetryDefinitions_8h" startline="374">LtpOutductTelemetry_t::m_totalPingRetries</references>
+        <references refid="classLtpEngine_1aaccc32aa5044fcccdfebfce9138978d8" compoundref="LtpEngine_8h" startline="1206">LtpEngine::m_totalPingsAcknowledged</references>
+        <references refid="structLtpOutductTelemetry__t_1a2e2d00243d019d708748b0f169b43934" compoundref="TelemetryDefinitions_8h" startline="376">LtpOutductTelemetry_t::m_totalPingsAcknowledged</references>
+        <references refid="classLtpEngine_1aba7405ff7bcce1fb92b81723bef37a42" compoundref="LtpEngine_8h" startline="1204">LtpEngine::m_totalPingsFailedToSend</references>
+        <references refid="structLtpOutductTelemetry__t_1a599ce2f06ea38587d2a2f55e0cc8f1e2" compoundref="TelemetryDefinitions_8h" startline="375">LtpOutductTelemetry_t::m_totalPingsFailedToSend</references>
+        <references refid="classLtpEngine_1a9f796012072e7a5cf5eb6ed9c7827932" compoundref="LtpEngine_8h" startline="1200">LtpEngine::m_totalPingsStarted</references>
+        <references refid="structLtpOutductTelemetry__t_1ae65b0d328381106c852cc69f709b2d55" compoundref="TelemetryDefinitions_8h" startline="373">LtpOutductTelemetry_t::m_totalPingsStarted</references>
+        <references refid="classLtpEngine_1a636aab451f26fe2953648351dde9f8c6" compoundref="LtpEngine_8h" startline="1188">LtpEngine::m_totalRedDataBytesSuccessfullySent</references>
+        <referencedby refid="classLtpOutduct_1ae7648fda25c02531e20eddf83394c31b" compoundref="LtpOutduct_8cpp" startline="123" endline="130">LtpOutduct::PopulateOutductTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a812a220c1953624cf5572addaa5b9067" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpBundleSource::GetOutductMaxNumberOfBundlesInPipeline</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOutductMaxNumberOfBundlesInPipeline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="67" column="29" bodyfile="common/ltp/src/LtpBundleSource.cpp" bodystart="196" bodyend="198"/>
+        <references refid="classLtpEngine_1a4d92e87ddbec73364195aa96ff26943d" compoundref="LtpEngine_8cpp" startline="1515" endline="1517">LtpEngine::GetMaxNumberOfSessionsInPipeline</references>
+        <references refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" compoundref="LtpBundleSource_8h" startline="88">m_ltpEnginePtr</references>
+        <referencedby refid="classLtpOutduct_1add88d5b84420f11cd80d96d7023e7213" compoundref="LtpOutduct_8cpp" startline="105" endline="107">LtpOutduct::GetOutductMaxNumberOfBundlesInPipeline</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classLtpBundleSource_1a82d71cad9d3a7ff30a6b1fac80399557" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>virtual LTP_LIB_EXPORT bool LtpBundleSource::ReadyToForward</definition>
+        <argsstring>()=0</argsstring>
+        <name>ReadyToForward</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamBundleSource_1a4d243dd39c64b4c608eacac4a38b80d6">ReadyToForward</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcBundleSource_1a492bdf603bbce2c717f41b8c7a02025a">ReadyToForward</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpBundleSource_1aa18012cffbfe8b6647167dc0b9342f5c">ReadyToForward</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="70" column="33"/>
+        <referencedby refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" compoundref="LtpBundleSource_8cpp" startline="131" endline="160">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1af29f837243f639b4e5acdc98882d8eec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>virtual LTP_LIB_EXPORT bool LtpBundleSource::SetLtpEnginePtr</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetLtpEnginePtr</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamBundleSource_1a36d483730ed1fa37973ce46a7f43c25e">SetLtpEnginePtr</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcBundleSource_1a9b1ecf1333acce82d19a796c12b1314e">SetLtpEnginePtr</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpBundleSource_1ac5aa13e6981a76c563f85bdc863f0a37">SetLtpEnginePtr</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="71" column="33"/>
+        <referencedby refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" compoundref="LtpBundleSource_8cpp" startline="47" endline="59">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSource_1a577839618369416da9f7faad1d3ea157" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>virtual LTP_LIB_EXPORT void LtpBundleSource::GetTransportLayerSpecificTelem</definition>
+        <argsstring>(LtpOutductTelemetry_t &amp;telem) const =0</argsstring>
+        <name>GetTransportLayerSpecificTelem</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamBundleSource_1a2b8c2302cc34258d6213803493c7512a">GetTransportLayerSpecificTelem</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcBundleSource_1ad4cb94be2d6a68e8eee729814562f932">GetTransportLayerSpecificTelem</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpBundleSource_1a7d96a3b4954344016621cf27f5f7b0d8">GetTransportLayerSpecificTelem</reimplementedby>
+        <param>
+          <type><ref refid="structLtpOutductTelemetry__t" kindref="compound">LtpOutductTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSource.h" line="72" column="33"/>
+        <referencedby refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" compoundref="LtpBundleSource_8cpp" startline="288" endline="315">GetTelemetry</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>LtpOverEncapLocalStreamBundleSource</label>
+        <link refid="classLtpOverEncapLocalStreamBundleSource"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="4">
+        <label>LtpOverIpcBundleSource</label>
+        <link refid="classLtpOverIpcBundleSource"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LtpOverUdpBundleSource</label>
+        <link refid="classLtpOverUdpBundleSource"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LtpBundleSource</label>
+        <link refid="classLtpBundleSource"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>LtpSessionReceiver::LtpSessionReceiverCommonData</label>
+        <link refid="structLtpSessionReceiver_1_1LtpSessionReceiverCommonData"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecyclerRef</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbersRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReportsRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>LtpTimerManager&lt; Ltp::session_id_t, Ltp::hash_session_id_t &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_activeSerialNumberBeingTimed</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Ltp::ltp_extensions_t</label>
+        <link refid="structLtp_1_1ltp__extensions__t"/>
+      </node>
+      <node id="14">
+        <label>UserDataRecycler&lt; LtpSessionReceiverRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="19">
+        <label>UserDataRecycler&lt; LtpSessionSenderRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="7">
+        <label>Ltp</label>
+        <link refid="classLtp"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_dataSegment_clientServiceRawDataWrapper</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_dataSegmentMetadata</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_sessionId</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_headerExtensions</edgelabel>
+          <edgelabel>m_trailerExtensions</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_reportSegment</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>LtpSessionSender::LtpSessionSenderCommonData</label>
+        <link refid="structLtpSessionSender_1_1LtpSessionSenderCommonData"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_csnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbersRef</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegmentsRef</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecyclerRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>LtpRandomNumberGenerator::Rng</label>
+        <link refid="classLtpRandomNumberGenerator_1_1Rng"/>
+      </node>
+      <node id="8">
+        <label>Ltp::client_service_raw_data_t</label>
+        <link refid="structLtp_1_1client__service__raw__data__t"/>
+      </node>
+      <node id="18">
+        <label>LtpTimerManager&lt; uint64_t, std::hash&lt; uint64_t &gt; &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LtpEngineConfig</label>
+        <link refid="structLtpEngineConfig"/>
+      </node>
+      <node id="4">
+        <label>LtpEngine</label>
+        <link refid="classLtpEngine"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_ltpRxStateMachine</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_ltpSessionReceiverCommonData</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecycler</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_cancelSegmentTimerExpiredCallback</edgelabel>
+          <edgelabel>m_csnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallback</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfCancelSegments</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReports</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_ltpSessionSenderCommonData</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegments</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecycler</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>m_tokenRateLimiter</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LtpRandomNumberGenerator</label>
+        <link refid="classLtpRandomNumberGenerator"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Ltp::data_segment_metadata_t</label>
+        <link refid="structLtp_1_1data__segment__metadata__t"/>
+      </node>
+      <node id="12">
+        <label>Ltp::report_segment_t</label>
+        <link refid="structLtp_1_1report__segment__t"/>
+      </node>
+      <node id="10">
+        <label>Ltp::session_id_t</label>
+        <link refid="structLtp_1_1session__id__t"/>
+      </node>
+      <node id="20">
+        <label>TokenRateLimiter</label>
+        <link refid="classTokenRateLimiter"/>
+      </node>
+      <node id="16">
+        <label>UserDataRecycler&lt; std::vector&lt; uint8_t &gt; &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="1">
+        <label>LtpBundleSource</label>
+        <link refid="classLtpBundleSource"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_ltpTxCfg</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_ltpEnginePtr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpBundleSource.h" line="40" column="1" bodyfile="common/ltp/include/LtpBundleSource.h" bodystart="40" bodyend="106"/>
+    <listofallmembers>
+      <member refid="classLtpBundleSource_1a956beafa48a419027c433f481c7139aa" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>active_session_number_set_t</name></member>
+      <member refid="classLtpBundleSource_1aab88ae3438f99d9ee33bfcf6f03ed76f" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>Forward</name></member>
+      <member refid="classLtpBundleSource_1aa96b088f0e1e81ffdd75ccba940c9206" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>Forward</name></member>
+      <member refid="classLtpBundleSource_1a05ff05576587ad5fc44e9eaa97806490" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>Forward</name></member>
+      <member refid="classLtpBundleSource_1a812a220c1953624cf5572addaa5b9067" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetOutductMaxNumberOfBundlesInPipeline</name></member>
+      <member refid="classLtpBundleSource_1ad34f1d2d3f8d4e29c9c2c65a0ea4c371" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTelemetry</name></member>
+      <member refid="classLtpBundleSource_1a9f68d9d5689d76a1554ddac2328a57b4" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTotalBundleBytesAcked</name></member>
+      <member refid="classLtpBundleSource_1a17f34540127096ea7be33c643ee17f31" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTotalBundleBytesSent</name></member>
+      <member refid="classLtpBundleSource_1a2124b510a8d7646e77c11ea96b6e2b32" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTotalBundleBytesUnacked</name></member>
+      <member refid="classLtpBundleSource_1a69e73387d225d07585cb1f6bdd4b5bba" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTotalBundlesAcked</name></member>
+      <member refid="classLtpBundleSource_1a603b54f3cb62935857bb674b8137e64c" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTotalBundlesSent</name></member>
+      <member refid="classLtpBundleSource_1ad3062b2dcf56e93a500b0735a2f33520" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>GetTotalBundlesUnacked</name></member>
+      <member refid="classLtpBundleSource_1a577839618369416da9f7faad1d3ea157" prot="protected" virt="pure-virtual"><scope>LtpBundleSource</scope><name>GetTransportLayerSpecificTelem</name></member>
+      <member refid="classLtpBundleSource_1a892619f28b6722789c3456a2065c2764" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>Init</name></member>
+      <member refid="classLtpBundleSource_1ad40e49eb97f65349253a2c55b9329659" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>InitialTransmissionCompletedCallback</name></member>
+      <member refid="classLtpBundleSource_1a6a3d67ea5b5504209d399d93573be8a8" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>LtpBundleSource</name></member>
+      <member refid="classLtpBundleSource_1ab488c3781c52480be6fe6facb7e89061" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>LtpBundleSource</name></member>
+      <member refid="classLtpBundleSource_1a866415a860e950c7839bcdca283d5fa1" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_activeSessionNumbersSet</name></member>
+      <member refid="classLtpBundleSource_1a74655791dd5821c9b79e56553c616873" prot="protected" virt="non-virtual"><scope>LtpBundleSource</scope><name>M_BUNDLE_PIPELINE_LIMIT</name></member>
+      <member refid="classLtpBundleSource_1aeb0959ce4a121857dc987d7dd6347b37" prot="protected" virt="non-virtual"><scope>LtpBundleSource</scope><name>M_CLIENT_SERVICE_ID</name></member>
+      <member refid="classLtpBundleSource_1a71f7c23480be23282e234e7066f30855" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_localConditionVariableAckReceived</name></member>
+      <member refid="classLtpBundleSource_1a2548afadead27f2604c7dabb0110e540" prot="protected" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_ltpEnginePtr</name></member>
+      <member refid="classLtpBundleSource_1a17a3bc7a12f8349fedb20c49449c0137" prot="protected" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_ltpTxCfg</name></member>
+      <member refid="classLtpBundleSource_1af8d5b7d9ef297b69ffc688ee99fc542e" prot="protected" virt="non-virtual"><scope>LtpBundleSource</scope><name>M_REMOTE_LTP_ENGINE_ID</name></member>
+      <member refid="classLtpBundleSource_1a64aef0d3c13b69ded3a55d1750adce90" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_startingCount</name></member>
+      <member refid="classLtpBundleSource_1abdd9f59e0c1938abd9c84a874cd460a4" prot="protected" virt="non-virtual"><scope>LtpBundleSource</scope><name>M_THIS_ENGINE_ID</name></member>
+      <member refid="classLtpBundleSource_1add4c4e5120d74c30d87d61c9b73b04d7" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_totalBundleBytesSent</name></member>
+      <member refid="classLtpBundleSource_1a17e01426e125b12ee8e7b33b11c51449" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_totalBundlesAcked</name></member>
+      <member refid="classLtpBundleSource_1a371c927399a35bef2d32ea9f1535d039" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_totalBundlesFailedToSend</name></member>
+      <member refid="classLtpBundleSource_1a48bc1a063c22b41d046341109f4cab4f" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_totalBundlesSent</name></member>
+      <member refid="classLtpBundleSource_1a38e61a8e247030326bdc45411478dfaf" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>m_useLocalConditionVariableAckReceived</name></member>
+      <member refid="classLtpBundleSource_1a82d71cad9d3a7ff30a6b1fac80399557" prot="protected" virt="pure-virtual"><scope>LtpBundleSource</scope><name>ReadyToForward</name></member>
+      <member refid="classLtpBundleSource_1a20d2bf43985ebdb03de3dd6c1d889517" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>SessionStartCallback</name></member>
+      <member refid="classLtpBundleSource_1af29f837243f639b4e5acdc98882d8eec" prot="protected" virt="pure-virtual"><scope>LtpBundleSource</scope><name>SetLtpEnginePtr</name></member>
+      <member refid="classLtpBundleSource_1a7f97a2623ab83d2b4dda4ac329387329" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classLtpBundleSource_1a5e8eb2ca5878d1e662ed5ac2cb3d915b" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classLtpBundleSource_1ac3f3dc9db9ba8de81708b3005edc0e75" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classLtpBundleSource_1a6544618b1912da0335bcec1ee0abeee8" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classLtpBundleSource_1a23544b3e5b3ed5639ba1351412023ad5" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetPing</name></member>
+      <member refid="classLtpBundleSource_1a559d80ec1e57f432ab04c45ceb69d33e" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetPingToDefaultConfig</name></member>
+      <member refid="classLtpBundleSource_1a70005459f7e2a68ed468b2a1893bfd21" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetRate</name></member>
+      <member refid="classLtpBundleSource_1af0a4c9132aeabed1df6fb0cf0429c5bf" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classLtpBundleSource_1a3917d281d6af0f8ddfd79ef2f2b605c6" prot="public" virt="non-virtual"><scope>LtpBundleSource</scope><name>Stop</name></member>
+      <member refid="classLtpBundleSource_1a9c49fd8e5cfbfe4a40b041765185a2cf" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>TransmissionSessionCancelledCallback</name></member>
+      <member refid="classLtpBundleSource_1adf9147fa1947f63c9219ccc54e5b15d5" prot="private" virt="non-virtual"><scope>LtpBundleSource</scope><name>TransmissionSessionCompletedCallback</name></member>
+      <member refid="classLtpBundleSource_1ade613934db1a8b211cc1b9f0f247259b" prot="public" virt="virtual"><scope>LtpBundleSource</scope><name>~LtpBundleSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

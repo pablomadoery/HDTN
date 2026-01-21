@@ -1,0 +1,536 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTcpclV4Induct" kind="class" language="C++" prot="public">
+    <compoundname>TcpclV4Induct</compoundname>
+    <basecompoundref refid="classInduct" prot="public" virt="non-virtual">Induct</basecompoundref>
+    <includes refid="TcpclV4Induct_8h" local="no">TcpclV4Induct.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service TcpclV4Induct::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="58" column="29" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1a6c78b67d4234c69db8e81c003472e56c" compoundref="TcpclV4Induct_8cpp" startline="187" endline="189">ConnectionReadyToBeDeletedNotificationReceived</referencedby>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" compoundref="TcpclV4Induct_8cpp" startline="107" endline="122">StartTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a030358d0b4419871cc37c687b2dfa291" compoundref="TcpclV4Induct_8cpp" startline="24" endline="74">TcpclV4Induct</referencedby>
+        <referencedby refid="classTcpclV4Induct_1af526bab978511b30d77a2bec66d3e24d" compoundref="TcpclV4Induct_8cpp" startline="214" endline="216">Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1a06a079e3a3021cd4fb9935843ab647fb" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::tcp::acceptor</type>
+        <definition>boost::asio::ip::tcp::acceptor TcpclV4Induct::m_tcpAcceptor</definition>
+        <argsstring></argsstring>
+        <name>m_tcpAcceptor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="59" column="36" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1ae2b399d45c52ada940af4385c2a03e08" compoundref="TcpclV4Induct_8cpp" startline="218" endline="235">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" compoundref="TcpclV4Induct_8cpp" startline="107" endline="122">StartTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1a387fb140d21726b7e8f4d665e730876a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::asio::io_service::work &gt;</type>
+        <definition>std::unique_ptr&lt;boost::asio::io_service::work&gt; TcpclV4Induct::m_workPtr</definition>
+        <argsstring></argsstring>
+        <name>m_workPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="60" column="21" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1adca899af06cb680736f2b8a055f8f222" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; TcpclV4Induct::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="61" column="21" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1a030358d0b4419871cc37c687b2dfa291" compoundref="TcpclV4Induct_8cpp" startline="24" endline="74">TcpclV4Induct</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" prot="private" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="classTcpclV4BundleSink" kindref="compound">TcpclV4BundleSink</ref> &gt;</type>
+        <definition>std::list&lt;TcpclV4BundleSink&gt; TcpclV4Induct::m_listTcpclV4BundleSinks</definition>
+        <argsstring></argsstring>
+        <name>m_listTcpclV4BundleSinks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="62" column="15" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1ab843fd5e4b43d91591d97e9d3e312064" compoundref="TcpclV4Induct_8cpp" startline="206" endline="212">NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classTcpclV4Induct_1ae2b399d45c52ada940af4385c2a03e08" compoundref="TcpclV4Induct_8cpp" startline="218" endline="235">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a08d198f169f2fbc2b2c924030be6828e" compoundref="TcpclV4Induct_8cpp" startline="165" endline="181">RemoveInactiveTcpConnections</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1a7fccc70888066e971e6548519c5c6081" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex TcpclV4Induct::m_listTcpclV4BundleSinksMutex</definition>
+        <argsstring></argsstring>
+        <name>m_listTcpclV4BundleSinksMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="63" column="18" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1ae2b399d45c52ada940af4385c2a03e08" compoundref="TcpclV4Induct_8cpp" startline="218" endline="235">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a08d198f169f2fbc2b2c924030be6828e" compoundref="TcpclV4Induct_8cpp" startline="165" endline="181">RemoveInactiveTcpConnections</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1ac53fcda38c1131e67dc39433210cec36" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t TcpclV4Induct::M_MY_NODE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_MY_NODE_ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="64" column="20" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1a9918a938881c5d1c18ec919b340c76d1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; TcpclV4Induct::m_allowRemoveInactiveTcpConnections</definition>
+        <argsstring></argsstring>
+        <name>m_allowRemoveInactiveTcpConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="65" column="17" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1a3f9db8f2c9c630d20233b6aaf3ce8e3f" compoundref="TcpclV4Induct_8cpp" startline="183" endline="185">DisableRemoveInactiveTcpConnections</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a08d198f169f2fbc2b2c924030be6828e" compoundref="TcpclV4Induct_8cpp" startline="165" endline="181">RemoveInactiveTcpConnections</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1a77ae2305008782c0deb26e6f9b0c7de5" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t TcpclV4Induct::M_MAX_BUNDLE_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_BUNDLE_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="66" column="20" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4Induct_1acfaeb74c3303a57b45dd1e8dfe96d090" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TcpclV4Induct::m_tlsSuccessfullyConfigured</definition>
+        <argsstring></argsstring>
+        <name>m_tlsSuccessfullyConfigured</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="67" column="10" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a030358d0b4419871cc37c687b2dfa291" compoundref="TcpclV4Induct_8cpp" startline="24" endline="74">TcpclV4Induct</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTcpclV4Induct_1a030358d0b4419871cc37c687b2dfa291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>TcpclV4Induct::TcpclV4Induct</definition>
+        <argsstring>(const InductProcessBundleCallback_t &amp;inductProcessBundleCallback, const induct_element_config_t &amp;inductConfig, const uint64_t myNodeId, const uint64_t maxBundleSizeBytes, const OnNewOpportunisticLinkCallback_t &amp;onNewOpportunisticLinkCallback, const OnDeletedOpportunisticLinkCallback_t &amp;onDeletedOpportunisticLinkCallback)</argsstring>
+        <name>TcpclV4Induct</name>
+        <param>
+          <type>const <ref refid="Induct_8h_1a86c4fd64e7b8ba210fcb5e112a9877e2" kindref="member">InductProcessBundleCallback_t</ref> &amp;</type>
+          <declname>inductProcessBundleCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structinduct__element__config__t" kindref="compound">induct_element_config_t</ref> &amp;</type>
+          <declname>inductConfig</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>myNodeId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="Induct_8h_1a213e9f0c8b6ba856fed5c53e099be1cd" kindref="member">OnNewOpportunisticLinkCallback_t</ref> &amp;</type>
+          <declname>onNewOpportunisticLinkCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="Induct_8h_1ac4801775e6b9d5a59054e15790927b4c" kindref="member">OnDeletedOpportunisticLinkCallback_t</ref> &amp;</type>
+          <declname>onDeletedOpportunisticLinkCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="33" column="31" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="24" bodyend="74"/>
+        <references refid="structinduct__element__config__t_1a429165b4a18b3288af870710f811b52c" compoundref="InductsConfig_8h" startline="84">induct_element_config_t::certificatePemFile</references>
+        <references refid="structinduct__element__config__t_1aff680c769f2d2c77e4a8bbc092d905ad" compoundref="InductsConfig_8h" startline="86">induct_element_config_t::diffieHellmanParametersPemFile</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" compoundref="TcpclV4Induct_8h" startline="58">m_ioService</references>
+        <references refid="classTcpclV4Induct_1adca899af06cb680736f2b8a055f8f222" compoundref="TcpclV4Induct_8h" startline="61">m_ioServiceThreadPtr</references>
+        <references refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" compoundref="Induct_8h" startline="95">Induct::m_onDeletedOpportunisticLinkCallback</references>
+        <references refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" compoundref="Induct_8h" startline="94">Induct::m_onNewOpportunisticLinkCallback</references>
+        <references refid="classTcpclV4Induct_1acfaeb74c3303a57b45dd1e8dfe96d090" compoundref="TcpclV4Induct_8h" startline="67">m_tlsSuccessfullyConfigured</references>
+        <references refid="structinduct__element__config__t_1a5e3c0ca3effd68fae6267afdbf4ba6fe" compoundref="InductsConfig_8h" startline="85">induct_element_config_t::privateKeyPemFile</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" compoundref="TcpclV4Induct_8cpp" startline="107" endline="122">StartTcpAccept</references>
+        <references refid="TcpclV4Induct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclV4Induct_8cpp" startline="21">subprocess</references>
+        <references refid="structinduct__element__config__t_1ae86a0858b017b0f58b9801deb95cf781" compoundref="InductsConfig_8h" startline="83">induct_element_config_t::tlsIsRequired</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>TcpclV4Induct::~TcpclV4Induct</definition>
+        <argsstring>() override</argsstring>
+        <name>~TcpclV4Induct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="36" column="39" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="75" bodyend="105"/>
+        <references refid="classTcpclV4Induct_1a3f9db8f2c9c630d20233b6aaf3ce8e3f" compoundref="TcpclV4Induct_8cpp" startline="183" endline="185">DisableRemoveInactiveTcpConnections</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classTcpclV4Induct_1a9918a938881c5d1c18ec919b340c76d1" compoundref="TcpclV4Induct_8h" startline="65">m_allowRemoveInactiveTcpConnections</references>
+        <references refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" compoundref="TcpclV4Induct_8h" startline="58">m_ioService</references>
+        <references refid="classTcpclV4Induct_1adca899af06cb680736f2b8a055f8f222" compoundref="TcpclV4Induct_8h" startline="61">m_ioServiceThreadPtr</references>
+        <references refid="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" compoundref="TcpclV4Induct_8h" startline="62">m_listTcpclV4BundleSinks</references>
+        <references refid="classTcpclV4Induct_1a06a079e3a3021cd4fb9935843ab647fb" compoundref="TcpclV4Induct_8h" startline="59">m_tcpAcceptor</references>
+        <references refid="classTcpclV4Induct_1a387fb140d21726b7e8f4d665e730876a" compoundref="TcpclV4Induct_8h" startline="60">m_workPtr</references>
+        <references refid="TcpclV4Induct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclV4Induct_8cpp" startline="21">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1ae2b399d45c52ada940af4385c2a03e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::PopulateInductTelemetry</definition>
+        <argsstring>(InductTelemetry_t &amp;inductTelem) override</argsstring>
+        <name>PopulateInductTelemetry</name>
+        <reimplements refid="classInduct_1a4b0dc7469558559ec0d99748a61ffde9">PopulateInductTelemetry</reimplements>
+        <param>
+          <type><ref refid="structInductTelemetry__t" kindref="compound">InductTelemetry_t</ref> &amp;</type>
+          <declname>inductTelem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="37" column="44" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="218" bodyend="235"/>
+        <references refid="structInductTelemetry__t_1a29369bf8ac458f4275a8a08a3580a929" compoundref="TelemetryDefinitions_8h" startline="297">InductTelemetry_t::m_convergenceLayer</references>
+        <references refid="structInductTelemetry__t_1aa5e33785eab14435ec678b0bf14d7671" compoundref="TelemetryDefinitions_8h" startline="298">InductTelemetry_t::m_listInductConnections</references>
+        <references refid="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" compoundref="TcpclV4Induct_8h" startline="62">m_listTcpclV4BundleSinks</references>
+        <references refid="classTcpclV4Induct_1a7fccc70888066e971e6548519c5c6081" compoundref="TcpclV4Induct_8h" startline="63">m_listTcpclV4BundleSinksMutex</references>
+        <references refid="classTcpclV4Induct_1a06a079e3a3021cd4fb9935843ab647fb" compoundref="TcpclV4Induct_8h" startline="59">m_tcpAcceptor</references>
+        <references refid="TestLtpEngine_8cpp_1a0c7c287c52ef81bc2b96ac534486db6b" compoundref="TestCborUint_8cpp" startline="477">t</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classTcpclV4Induct_1a340dd7fb3cc9ff304452b42662ce639e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TcpclV4Induct::TcpclV4Induct</definition>
+        <argsstring>()</argsstring>
+        <name>TcpclV4Induct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="42" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::StartTcpAccept</definition>
+        <argsstring>()</argsstring>
+        <name>StartTcpAccept</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="43" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="107" bodyend="122"/>
+        <references refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" compoundref="TcpclV4Induct_8h" startline="58">m_ioService</references>
+        <references refid="classTcpclV4Induct_1a06a079e3a3021cd4fb9935843ab647fb" compoundref="TcpclV4Induct_8h" startline="59">m_tcpAcceptor</references>
+        <references refid="TcpclV4Induct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclV4Induct_8cpp" startline="21">subprocess</references>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+        <referencedby refid="classTcpclV4Induct_1a030358d0b4419871cc37c687b2dfa291" compoundref="TcpclV4Induct_8cpp" startline="24" endline="74">TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::HandleTcpAccept</definition>
+        <argsstring>(std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt; &amp;newTcpSocketPtr, const boost::system::error_code &amp;error)</argsstring>
+        <name>HandleTcpAccept</name>
+        <param>
+          <type>std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt; &amp;</type>
+          <declname>newTcpSocketPtr</declname>
+        </param>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="48" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="133" bodyend="162"/>
+        <references refid="classTcpclV4Induct_1a6c78b67d4234c69db8e81c003472e56c" compoundref="TcpclV4Induct_8cpp" startline="187" endline="189">ConnectionReadyToBeDeletedNotificationReceived</references>
+        <references refid="structinduct__element__config__t_1a847ea093856289b91221f78275c8587d" compoundref="InductsConfig_8h" startline="76">induct_element_config_t::keepAliveIntervalSeconds</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classInduct_1a557e332763667d6232acbcebcf4b788b" compoundref="Induct_8h" startline="89">Induct::m_inductConfig</references>
+        <references refid="classInduct_1a88863aafd33849d348fbd6d97ffc1092" compoundref="Induct_8h" startline="88">Induct::m_inductProcessBundleCallback</references>
+        <references refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" compoundref="TcpclV4Induct_8h" startline="58">m_ioService</references>
+        <references refid="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" compoundref="TcpclV4Induct_8h" startline="62">m_listTcpclV4BundleSinks</references>
+        <references refid="classTcpclV4Induct_1a7fccc70888066e971e6548519c5c6081" compoundref="TcpclV4Induct_8h" startline="63">m_listTcpclV4BundleSinksMutex</references>
+        <references refid="classTcpclV4Induct_1a77ae2305008782c0deb26e6f9b0c7de5" compoundref="TcpclV4Induct_8h" startline="66">M_MAX_BUNDLE_SIZE_BYTES</references>
+        <references refid="classTcpclV4Induct_1ac53fcda38c1131e67dc39433210cec36" compoundref="TcpclV4Induct_8h" startline="64">M_MY_NODE_ID</references>
+        <references refid="classTcpclV4Induct_1acfaeb74c3303a57b45dd1e8dfe96d090" compoundref="TcpclV4Induct_8h" startline="67">m_tlsSuccessfullyConfigured</references>
+        <references refid="structinduct__element__config__t_1ad07163ef5ab04b8291da29ccbac316b5" compoundref="InductsConfig_8h" startline="41">induct_element_config_t::numRxCircularBufferBytesPerElement</references>
+        <references refid="structinduct__element__config__t_1acd6c7ca4a51e95fdfe80e7c8bf6ae1db" compoundref="InductsConfig_8h" startline="40">induct_element_config_t::numRxCircularBufferElements</references>
+        <references refid="classTcpclV4Induct_1a3676c7b099e1a90a2352a3cb00db1056" compoundref="TcpclV4Induct_8cpp" startline="191" endline="204">OnContactHeaderCallback_FromIoServiceThread</references>
+        <references refid="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" compoundref="TcpclV4Induct_8cpp" startline="107" endline="122">StartTcpAccept</references>
+        <references refid="TcpclV4Induct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclV4Induct_8cpp" startline="21">subprocess</references>
+        <references refid="structinduct__element__config__t_1a48891c45498c707f413b246601274cfc" compoundref="InductsConfig_8h" startline="82">induct_element_config_t::tcpclV4MyMaxRxSegmentSizeBytes</references>
+        <references refid="structinduct__element__config__t_1ae86a0858b017b0f58b9801deb95cf781" compoundref="InductsConfig_8h" startline="83">induct_element_config_t::tlsIsRequired</references>
+        <referencedby refid="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" compoundref="TcpclV4Induct_8cpp" startline="107" endline="122">StartTcpAccept</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1a6c78b67d4234c69db8e81c003472e56c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::ConnectionReadyToBeDeletedNotificationReceived</definition>
+        <argsstring>()</argsstring>
+        <name>ConnectionReadyToBeDeletedNotificationReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="50" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="187" bodyend="189"/>
+        <references refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" compoundref="TcpclV4Induct_8h" startline="58">m_ioService</references>
+        <references refid="classTcpclV4Induct_1a08d198f169f2fbc2b2c924030be6828e" compoundref="TcpclV4Induct_8cpp" startline="165" endline="181">RemoveInactiveTcpConnections</references>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1a08d198f169f2fbc2b2c924030be6828e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::RemoveInactiveTcpConnections</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveInactiveTcpConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="51" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="165" bodyend="181"/>
+        <references refid="classTcpclV4Induct_1a9918a938881c5d1c18ec919b340c76d1" compoundref="TcpclV4Induct_8h" startline="65">m_allowRemoveInactiveTcpConnections</references>
+        <references refid="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" compoundref="TcpclV4Induct_8h" startline="62">m_listTcpclV4BundleSinks</references>
+        <references refid="classTcpclV4Induct_1a7fccc70888066e971e6548519c5c6081" compoundref="TcpclV4Induct_8h" startline="63">m_listTcpclV4BundleSinksMutex</references>
+        <references refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" compoundref="Induct_8h" startline="95">Induct::m_onDeletedOpportunisticLinkCallback</references>
+        <references refid="classTcpclV4BundleSink_1a31df50332c54e7bd55f60f7527a29abd" compoundref="TcpclV4BundleSink_8cpp" startline="361" endline="363">TcpclV4BundleSink::ReadyToBeDeleted</references>
+        <referencedby refid="classTcpclV4Induct_1a6c78b67d4234c69db8e81c003472e56c" compoundref="TcpclV4Induct_8cpp" startline="187" endline="189">ConnectionReadyToBeDeletedNotificationReceived</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1a3f9db8f2c9c630d20233b6aaf3ce8e3f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::DisableRemoveInactiveTcpConnections</definition>
+        <argsstring>()</argsstring>
+        <name>DisableRemoveInactiveTcpConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="52" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="183" bodyend="185"/>
+        <references refid="classTcpclV4Induct_1a9918a938881c5d1c18ec919b340c76d1" compoundref="TcpclV4Induct_8h" startline="65">m_allowRemoveInactiveTcpConnections</references>
+        <referencedby refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" compoundref="TcpclV4Induct_8cpp" startline="75" endline="105">~TcpclV4Induct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1a3676c7b099e1a90a2352a3cb00db1056" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::OnContactHeaderCallback_FromIoServiceThread</definition>
+        <argsstring>(TcpclV4BundleSink *thisTcpclBundleSinkPtr)</argsstring>
+        <name>OnContactHeaderCallback_FromIoServiceThread</name>
+        <param>
+          <type><ref refid="classTcpclV4BundleSink" kindref="compound">TcpclV4BundleSink</ref> *</type>
+          <declname>thisTcpclBundleSinkPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="53" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="191" bodyend="204"/>
+        <references refid="classInduct_1ad74c9b440a843473696defb025590a9f" compoundref="Induct_8cpp" startline="135" endline="138">Induct::BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</references>
+        <references refid="classInduct_1ae03c890c8d5a0ac0b5e3d71e928329fa" compoundref="Induct_8cpp" startline="132" endline="134">Induct::BundleSinkTryGetData_FromIoServiceThread</references>
+        <references refid="classTcpclV4BundleSink_1afe0125e7b971868a1ca9142f7ce5a47c" compoundref="TcpclV4BundleSink_8cpp" startline="366" endline="368">TcpclV4BundleSink::GetRemoteNodeId</references>
+        <references refid="classInduct_1a1e17749fc05146922183f4f4ef32ee86" compoundref="Induct_8h" startline="92">Induct::m_mapNodeIdToOpportunisticBundleQueue</references>
+        <references refid="classInduct_1a5ac721528b8eaa20a6c9dcaf5adee326" compoundref="Induct_8h" startline="93">Induct::m_mapNodeIdToOpportunisticBundleQueueMutex</references>
+        <references refid="structInduct_1_1OpportunisticBundleQueue_1a7b125d5f38bb6a7a078cb5e7a767c75b" compoundref="Induct_8h" startline="80">Induct::OpportunisticBundleQueue::m_maxTxBundlesInPipeline</references>
+        <references refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" compoundref="Induct_8h" startline="94">Induct::m_onNewOpportunisticLinkCallback</references>
+        <references refid="structInduct_1_1OpportunisticBundleQueue_1a1a2881ea751961f0569cb6f6e90f9559" compoundref="Induct_8h" startline="79">Induct::OpportunisticBundleQueue::m_remoteNodeId</references>
+        <references refid="classTcpclV4BundleSink_1acf339e75a4fddf5d60f3c41c335f54b2" compoundref="TcpclV4BundleSink_8cpp" startline="385" endline="387">TcpclV4BundleSink::SetNotifyOpportunisticDataAckedCallback</references>
+        <references refid="classTcpclV4BundleSink_1a3099e945d0bfc5054409addeaf433ecb" compoundref="TcpclV4BundleSink_8cpp" startline="382" endline="384">TcpclV4BundleSink::SetTryGetOpportunisticDataFunction</references>
+        <references refid="classTcpclV4BidirectionalLink_1a48ad8fe9419c58126ba9f5dd105d9712" compoundref="TcpclV4BidirectionalLink_8cpp" startline="171" endline="173">TcpclV4BidirectionalLink::Virtual_GetMaxTxBundlesInPipeline</references>
+        <referencedby refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" compoundref="TcpclV4Induct_8cpp" startline="133" endline="162">HandleTcpAccept</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1ab843fd5e4b43d91591d97e9d3e312064" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::NotifyBundleReadyToSend_FromIoServiceThread</definition>
+        <argsstring>(const uint64_t remoteNodeId)</argsstring>
+        <name>NotifyBundleReadyToSend_FromIoServiceThread</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="54" column="36" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="206" bodyend="212"/>
+        <references refid="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" compoundref="TcpclV4Induct_8h" startline="62">m_listTcpclV4BundleSinks</references>
+        <referencedby refid="classTcpclV4Induct_1af526bab978511b30d77a2bec66d3e24d" compoundref="TcpclV4Induct_8cpp" startline="214" endline="216">Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4Induct_1af526bab978511b30d77a2bec66d3e24d" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void TcpclV4Induct::Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</definition>
+        <argsstring>(const uint64_t remoteNodeId) override</argsstring>
+        <name>Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</name>
+        <reimplements refid="classInduct_1aad47fefdf9d04f67cef3eb3d5f5ea6db">Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</reimplements>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/TcpclV4Induct.h" line="55" column="44" bodyfile="common/induct_manager/src/TcpclV4Induct.cpp" bodystart="214" bodyend="216"/>
+        <references refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" compoundref="TcpclV4Induct_8h" startline="58">m_ioService</references>
+        <references refid="classTcpclV4Induct_1ab843fd5e4b43d91591d97e9d3e312064" compoundref="TcpclV4Induct_8cpp" startline="206" endline="212">NotifyBundleReadyToSend_FromIoServiceThread</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TcpclV4Induct</label>
+        <link refid="classTcpclV4Induct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>TcpclV4Induct</label>
+        <link refid="classTcpclV4Induct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/induct_manager/include/TcpclV4Induct.h" line="31" column="1" bodyfile="common/induct_manager/include/TcpclV4Induct.h" bodystart="31" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classInduct_1ad74c9b440a843473696defb025590a9f" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</name></member>
+      <member refid="classInduct_1ae03c890c8d5a0ac0b5e3d71e928329fa" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>BundleSinkTryGetData_FromIoServiceThread</name></member>
+      <member refid="classTcpclV4Induct_1a6c78b67d4234c69db8e81c003472e56c" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>ConnectionReadyToBeDeletedNotificationReceived</name></member>
+      <member refid="classTcpclV4Induct_1a3f9db8f2c9c630d20233b6aaf3ce8e3f" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>DisableRemoveInactiveTcpConnections</name></member>
+      <member refid="classInduct_1a0cbe038ec6320e7b05110dbc63e847a3" prot="public" virt="non-virtual"><scope>TcpclV4Induct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a17724854b4a473b9a57526cd0dc4f071" prot="public" virt="non-virtual"><scope>TcpclV4Induct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a74322837f4037aec13e5bb937ca5badf" prot="public" virt="non-virtual"><scope>TcpclV4Induct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a761599f28ca13bb6845eb2f7c69b7dff" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classTcpclV4Induct_1ab32e0fe14949dc540bcbc340b2378219" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>HandleTcpAccept</name></member>
+      <member refid="classInduct_1ae7cbc5d5364a77fc3246b4b346bb658d" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>Induct</name></member>
+      <member refid="classInduct_1a647593fe6c02215c386ebaa63a0d0824" prot="public" virt="non-virtual"><scope>TcpclV4Induct</scope><name>Induct</name></member>
+      <member refid="classInduct_1aaf85eacba6c3124f59a725aab11ebcb6" prot="public" virt="virtual"><scope>TcpclV4Induct</scope><name>Init</name></member>
+      <member refid="classTcpclV4Induct_1a9918a938881c5d1c18ec919b340c76d1" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_allowRemoveInactiveTcpConnections</name></member>
+      <member refid="classInduct_1a557e332763667d6232acbcebcf4b788b" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_inductConfig</name></member>
+      <member refid="classInduct_1a88863aafd33849d348fbd6d97ffc1092" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_inductProcessBundleCallback</name></member>
+      <member refid="classTcpclV4Induct_1a17faae4fb74096d7348881d002a301ce" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_ioService</name></member>
+      <member refid="classTcpclV4Induct_1adca899af06cb680736f2b8a055f8f222" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classTcpclV4Induct_1ab008a4f0b7292c1262e6dde380f9a491" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_listTcpclV4BundleSinks</name></member>
+      <member refid="classTcpclV4Induct_1a7fccc70888066e971e6548519c5c6081" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_listTcpclV4BundleSinksMutex</name></member>
+      <member refid="classInduct_1a1e17749fc05146922183f4f4ef32ee86" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_mapNodeIdToOpportunisticBundleQueue</name></member>
+      <member refid="classInduct_1a5ac721528b8eaa20a6c9dcaf5adee326" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_mapNodeIdToOpportunisticBundleQueueMutex</name></member>
+      <member refid="classTcpclV4Induct_1a77ae2305008782c0deb26e6f9b0c7de5" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>M_MAX_BUNDLE_SIZE_BYTES</name></member>
+      <member refid="classTcpclV4Induct_1ac53fcda38c1131e67dc39433210cec36" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>M_MY_NODE_ID</name></member>
+      <member refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_onDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" prot="protected" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_onNewOpportunisticLinkCallback</name></member>
+      <member refid="classTcpclV4Induct_1a06a079e3a3021cd4fb9935843ab647fb" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_tcpAcceptor</name></member>
+      <member refid="classTcpclV4Induct_1acfaeb74c3303a57b45dd1e8dfe96d090" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_tlsSuccessfullyConfigured</name></member>
+      <member refid="classTcpclV4Induct_1a387fb140d21726b7e8f4d665e730876a" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>m_workPtr</name></member>
+      <member refid="classTcpclV4Induct_1ab843fd5e4b43d91591d97e9d3e312064" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>NotifyBundleReadyToSend_FromIoServiceThread</name></member>
+      <member refid="classTcpclV4Induct_1a3676c7b099e1a90a2352a3cb00db1056" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>OnContactHeaderCallback_FromIoServiceThread</name></member>
+      <member refid="classTcpclV4Induct_1ae2b399d45c52ada940af4385c2a03e08" prot="public" virt="virtual"><scope>TcpclV4Induct</scope><name>PopulateInductTelemetry</name></member>
+      <member refid="classTcpclV4Induct_1a08d198f169f2fbc2b2c924030be6828e" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>RemoveInactiveTcpConnections</name></member>
+      <member refid="classTcpclV4Induct_1a48a670986b2d257819758e71ed4634b6" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>StartTcpAccept</name></member>
+      <member refid="classTcpclV4Induct_1a030358d0b4419871cc37c687b2dfa291" prot="public" virt="non-virtual"><scope>TcpclV4Induct</scope><name>TcpclV4Induct</name></member>
+      <member refid="classTcpclV4Induct_1a340dd7fb3cc9ff304452b42662ce639e" prot="private" virt="non-virtual"><scope>TcpclV4Induct</scope><name>TcpclV4Induct</name></member>
+      <member refid="classTcpclV4Induct_1af526bab978511b30d77a2bec66d3e24d" prot="private" virt="virtual"><scope>TcpclV4Induct</scope><name>Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</name></member>
+      <member refid="classInduct_1a178422af7be2fddc07d57292bc4e033c" prot="public" virt="virtual"><scope>TcpclV4Induct</scope><name>~Induct</name></member>
+      <member refid="classTcpclV4Induct_1a24d02fdea28fc8dc8c38fa59ff012c29" prot="public" virt="virtual"><scope>TcpclV4Induct</scope><name>~TcpclV4Induct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

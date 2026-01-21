@@ -1,0 +1,866 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classEncapAsyncDuplexLocalStream" kind="class" language="C++" prot="public">
+    <compoundname>EncapAsyncDuplexLocalStream</compoundname>
+    <includes refid="EncapAsyncDuplexLocalStream_8h" local="no">EncapAsyncDuplexLocalStream.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classEncapAsyncDuplexLocalStream_1aed7ff76cdac875686f77db10ae0b514d" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;receivedFullEncapPacket, uint32_t decodedEncapPayloadSize, uint8_t decodedEncapHeaderSize)&gt;</type>
+        <definition>typedef boost::function&lt;void(padded_vector_uint8_t&amp; receivedFullEncapPacket, uint32_t decodedEncapPayloadSize, uint8_t decodedEncapHeaderSize)&gt; EncapAsyncDuplexLocalStream::OnFullEncapPacketReceivedCallback_t</definition>
+        <argsstring></argsstring>
+        <name>OnFullEncapPacketReceivedCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="47" column="2" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classEncapAsyncDuplexLocalStream_1ac37bdbbd0aacc5d5cd173f1efb8d7f68" prot="public" static="no">
+        <type>boost::function&lt; void(bool isOnConnectionEvent)&gt;</type>
+        <definition>typedef boost::function&lt;void(bool isOnConnectionEvent)&gt; EncapAsyncDuplexLocalStream::OnLocalStreamConnectionStatusChangedCallback_t</definition>
+        <argsstring></argsstring>
+        <name>OnLocalStreamConnectionStatusChangedCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="48" column="29" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classEncapAsyncDuplexLocalStream_1a0d5843c35d961c0b9c7945866989ce6d" prot="private" static="no">
+        <type>boost::asio::local::stream_protocol::socket</type>
+        <definition>typedef boost::asio::local::stream_protocol::socket EncapAsyncDuplexLocalStream::stream_handle_t</definition>
+        <argsstring></argsstring>
+        <name>stream_handle_t</name>
+        <briefdescription>
+<para>UDP socket to connect to destination endpoint. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="554" column="57" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="554" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1ab7391a864c533fd2610dbe925cf3e948" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t EncapAsyncDuplexLocalStream::M_MAX_ENCAP_RX_PACKET_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_ENCAP_RX_PACKET_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="541" column="20" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="541" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acae17bbc475de2b9226177f2c9c9493a" compoundref="EncapAsyncDuplexLocalStream_8h" startline="50" endline="77">EncapAsyncDuplexLocalStream</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1aaab42607ae8280344bcf7e28131e4b29" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service&amp; EncapAsyncDuplexLocalStream::m_ioServiceRef</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceRef</name>
+        <briefdescription>
+<para>I/O execution context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="543" column="29" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="543" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1ab84abab00f3bd9fd6b2029ab62f6e9ab" compoundref="EncapAsyncDuplexLocalStream_8h" startline="392" endline="394">StartReadFirstEncapHeaderByte_ThreadSafe</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a934f05d46b11588b2048cf83f91dc2ac" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classEncapAsyncDuplexLocalStream_1aed7ff76cdac875686f77db10ae0b514d" kindref="member">OnFullEncapPacketReceivedCallback_t</ref></type>
+        <definition>const OnFullEncapPacketReceivedCallback_t EncapAsyncDuplexLocalStream::m_onFullEncapPacketReceivedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFullEncapPacketReceivedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="544" column="47" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="544" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" compoundref="EncapAsyncDuplexLocalStream_8h" startline="472" endline="496">HandleEncapPayloadReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a16f8367ea5596bb915d8bd0c8e08bf01" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classEncapAsyncDuplexLocalStream_1ac37bdbbd0aacc5d5cd173f1efb8d7f68" kindref="member">OnLocalStreamConnectionStatusChangedCallback_t</ref></type>
+        <definition>const OnLocalStreamConnectionStatusChangedCallback_t EncapAsyncDuplexLocalStream::m_onLocalStreamConnectionStatusChangedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onLocalStreamConnectionStatusChangedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="545" column="58" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="545" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" compoundref="EncapAsyncDuplexLocalStream_8h" startline="374" endline="380">OnConnectionCompleted_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string EncapAsyncDuplexLocalStream::m_socketOrPipePath</definition>
+        <argsstring></argsstring>
+        <name>m_socketOrPipePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="546" column="17" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="546" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1ac719f114d15df2819e786f7cbaa0b11b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="139" endline="154">CloseWaitForConnectionAsync</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" compoundref="EncapAsyncDuplexLocalStream_8h" startline="129" endline="137">Init</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" compoundref="EncapAsyncDuplexLocalStream_8h" startline="358" endline="373">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1aee678d591ef0103a8d3aed5b03df4ce1" compoundref="EncapAsyncDuplexLocalStream_8h" startline="332" endline="342">OnSocketAccept</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="343" endline="356">OnSocketConnect</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" compoundref="EncapAsyncDuplexLocalStream_8h" startline="155" endline="164">StopAllAsyncs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" prot="private" static="no" mutable="no">
+        <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref></type>
+        <definition>padded_vector_uint8_t EncapAsyncDuplexLocalStream::m_receivedFullEncapPacket_swappable</definition>
+        <argsstring></argsstring>
+        <name>m_receivedFullEncapPacket_swappable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="547" column="27" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="547" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acae17bbc475de2b9226177f2c9c9493a" compoundref="EncapAsyncDuplexLocalStream_8h" startline="50" endline="77">EncapAsyncDuplexLocalStream</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" compoundref="EncapAsyncDuplexLocalStream_8h" startline="472" endline="496">HandleEncapPayloadReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" compoundref="EncapAsyncDuplexLocalStream_8h" startline="432" endline="470">HandleRemainingEncapHeaderReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a36da8d39f78a7c2b5a6a87985bc56866" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::asio::local::stream_protocol::acceptor &gt;</type>
+        <definition>std::unique_ptr&lt;boost::asio::local::stream_protocol::acceptor&gt; EncapAsyncDuplexLocalStream::m_streamAcceptorPtr</definition>
+        <argsstring></argsstring>
+        <name>m_streamAcceptorPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="555" column="21" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="555" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1ac719f114d15df2819e786f7cbaa0b11b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="139" endline="154">CloseWaitForConnectionAsync</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a5e1a9f1c06c253f00231b6e84890d84b" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer EncapAsyncDuplexLocalStream::m_reconnectAfterOnConnectErrorTimer</definition>
+        <argsstring></argsstring>
+        <name>m_reconnectAfterOnConnectErrorTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="557" column="33" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="557" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="343" endline="356">OnSocketConnect</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" compoundref="EncapAsyncDuplexLocalStream_8h" startline="155" endline="164">StopAllAsyncs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" prot="private" static="no" mutable="no">
+        <type><ref refid="classEncapAsyncDuplexLocalStream_1a0d5843c35d961c0b9c7945866989ce6d" kindref="member">stream_handle_t</ref></type>
+        <definition>stream_handle_t EncapAsyncDuplexLocalStream::m_streamHandle</definition>
+        <argsstring></argsstring>
+        <name>m_streamHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="559" column="21" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="559" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a4787d1f36d73ec58a3b1b5318db5503e" compoundref="EncapAsyncDuplexLocalStream_8h" startline="570" endline="572">GetStreamHandleRef</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" compoundref="EncapAsyncDuplexLocalStream_8h" startline="432" endline="470">HandleRemainingEncapHeaderReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" compoundref="EncapAsyncDuplexLocalStream_8h" startline="358" endline="373">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1ae9c77bc91baa0dba49b644b0542e3658" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t EncapAsyncDuplexLocalStream::m_numReconnectAttempts</definition>
+        <argsstring></argsstring>
+        <name>m_numReconnectAttempts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="560" column="14" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="560" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" compoundref="EncapAsyncDuplexLocalStream_8h" startline="358" endline="373">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1ab345b0b773efc3f39c807fd78840a8e6" prot="private" static="no" mutable="no">
+        <type>const <ref refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5" kindref="member">ENCAP_PACKET_TYPE</ref></type>
+        <definition>const ENCAP_PACKET_TYPE EncapAsyncDuplexLocalStream::M_ENCAP_PACKET_TYPE</definition>
+        <argsstring></argsstring>
+        <name>M_ENCAP_PACKET_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="561" column="29" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="561" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a56a52c3c70d7c7ba00ad1ac6f29576a2" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool EncapAsyncDuplexLocalStream::M_RX_CALLBACK_DONT_DISCARD_ENCAP_HEADER</definition>
+        <argsstring></argsstring>
+        <name>M_RX_CALLBACK_DONT_DISCARD_ENCAP_HEADER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="562" column="16" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="562" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" compoundref="EncapAsyncDuplexLocalStream_8h" startline="432" endline="470">HandleRemainingEncapHeaderReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1adee33b83b9c89fb932e68da80d120567" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; EncapAsyncDuplexLocalStream::m_isStreamCreator</definition>
+        <argsstring></argsstring>
+        <name>m_isStreamCreator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="563" column="17" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="563" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" compoundref="EncapAsyncDuplexLocalStream_8h" startline="129" endline="137">Init</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a84fa58aeb99e51d35ffb67a3b452d538" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; EncapAsyncDuplexLocalStream::m_readyToSend</definition>
+        <argsstring></argsstring>
+        <name>m_readyToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="564" column="17" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="564" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" compoundref="EncapAsyncDuplexLocalStream_8h" startline="374" endline="380">OnConnectionCompleted_NotThreadSafe</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1ac3dcfc572920001494ac1c731b2bbedf" compoundref="EncapAsyncDuplexLocalStream_8h" startline="573" endline="575">ReadyToSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1ac9409c35384a703428fe48a876b0d502" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; EncapAsyncDuplexLocalStream::m_readStarted</definition>
+        <argsstring></argsstring>
+        <name>m_readStarted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="565" column="17" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="565" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" compoundref="EncapAsyncDuplexLocalStream_8h" startline="472" endline="496">HandleEncapPayloadReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; EncapAsyncDuplexLocalStream::m_shutdownComplete</definition>
+        <argsstring></argsstring>
+        <name>m_shutdownComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="566" column="17" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="566" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" compoundref="EncapAsyncDuplexLocalStream_8h" startline="129" endline="137">Init</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">Stop</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a584fb7bdd4ef7c715728a520adb6602b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="115" endline="121">Stop_CalledFromWithinIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classEncapAsyncDuplexLocalStream_1a09124d92d1c3f874414d2fe7410c8aa6" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; EncapAsyncDuplexLocalStream::m_doAutoReconnectAfterShutdown</definition>
+        <argsstring></argsstring>
+        <name>m_doAutoReconnectAfterShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="567" column="17" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="567" bodyend="-1"/>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" compoundref="EncapAsyncDuplexLocalStream_8h" startline="129" endline="137">Init</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">Stop</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a584fb7bdd4ef7c715728a520adb6602b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="115" endline="121">Stop_CalledFromWithinIoServiceThread</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1acae17bbc475de2b9226177f2c9c9493a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EncapAsyncDuplexLocalStream::EncapAsyncDuplexLocalStream</definition>
+        <argsstring>(boost::asio::io_service &amp;ioService, const ENCAP_PACKET_TYPE encapPacketType, const uint64_t maxEncapRxPacketSizeBytes, const OnFullEncapPacketReceivedCallback_t &amp;onFullEncapPacketReceivedCallback, const OnLocalStreamConnectionStatusChangedCallback_t &amp;onLocalStreamConnectionStatusChangedCallback, const bool rxCallbackDontDiscardEncapHeader=true)</argsstring>
+        <name>EncapAsyncDuplexLocalStream</name>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioService</declname>
+        </param>
+        <param>
+          <type>const <ref refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5" kindref="member">ENCAP_PACKET_TYPE</ref></type>
+          <declname>encapPacketType</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxEncapRxPacketSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classEncapAsyncDuplexLocalStream_1aed7ff76cdac875686f77db10ae0b514d" kindref="member">OnFullEncapPacketReceivedCallback_t</ref> &amp;</type>
+          <declname>onFullEncapPacketReceivedCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classEncapAsyncDuplexLocalStream_1ac37bdbbd0aacc5d5cd173f1efb8d7f68" kindref="member">OnLocalStreamConnectionStatusChangedCallback_t</ref> &amp;</type>
+          <declname>onLocalStreamConnectionStatusChangedCallback</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>rxCallbackDontDiscardEncapHeader</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="50" column="5" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="50" bodyend="77"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1ab7391a864c533fd2610dbe925cf3e948" compoundref="EncapAsyncDuplexLocalStream_8h" startline="541">M_MAX_ENCAP_RX_PACKET_SIZE_BYTES</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" compoundref="EncapAsyncDuplexLocalStream_8h" startline="547">m_receivedFullEncapPacket_swappable</references>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a15ac1c33da7a8a896296ea7487cc4b30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EncapAsyncDuplexLocalStream::~EncapAsyncDuplexLocalStream</definition>
+        <argsstring>()</argsstring>
+        <name>~EncapAsyncDuplexLocalStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="80" column="5" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="80" bodyend="82"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform graceful shutdown, called by an external thread not running the io_service. Warning, if <ref refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" kindref="member">Stop()</ref> is called from within the thread running the io_service, the function will hang.</para>
+<para>If no previous successful call to <ref refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" kindref="member">Init()</ref>, returns immediately. Else, tries to perform graceful shutdown on the socket, then releases all underlying I/O resources. <simplesect kind="post"><para>The object is ready to be reused after the next successful call to <ref refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" kindref="member">Init()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="91" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="91" bodyend="106"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a09124d92d1c3f874414d2fe7410c8aa6" compoundref="EncapAsyncDuplexLocalStream_8h" startline="567">m_doAutoReconnectAfterShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1aaab42607ae8280344bcf7e28131e4b29" compoundref="EncapAsyncDuplexLocalStream_8h" startline="543">m_ioServiceRef</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="566">m_shutdownComplete</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" compoundref="EncapAsyncDuplexLocalStream_8h" startline="155" endline="164">StopAllAsyncs</references>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1ac65fc05069ef2cfb3f302ba0fef427ea" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="110" endline="112">LtpEncapLocalStreamEngine::Stop</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">BpOverEncapLocalStreamOutduct::Stop</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamInduct_1aee2dc5d7ab0d7efe3ec03a1e8cfc3b1d" compoundref="BpOverEncapLocalStreamInduct_8cpp" startline="83" endline="111">BpOverEncapLocalStreamInduct::~BpOverEncapLocalStreamInduct</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a15ac1c33da7a8a896296ea7487cc4b30" compoundref="EncapAsyncDuplexLocalStream_8h" startline="80" endline="82">~EncapAsyncDuplexLocalStream</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a584fb7bdd4ef7c715728a520adb6602b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::Stop_CalledFromWithinIoServiceThread</definition>
+        <argsstring>()</argsstring>
+        <name>Stop_CalledFromWithinIoServiceThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform a graceful shutdown from within the io_service thread, perhaps called by a signal handler that uses the io_service..</para>
+<para>If no previous successful call to <ref refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" kindref="member">Init()</ref>, returns immediately. Else, tries to perform graceful shutdown on the socket, then releases all underlying I/O resources. <simplesect kind="post"><para>The object is ready to be reused after the next successful call to <ref refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" kindref="member">Init()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="115" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="115" bodyend="121"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a09124d92d1c3f874414d2fe7410c8aa6" compoundref="EncapAsyncDuplexLocalStream_8h" startline="567">m_doAutoReconnectAfterShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="566">m_shutdownComplete</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" compoundref="EncapAsyncDuplexLocalStream_8h" startline="155" endline="164">StopAllAsyncs</references>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EncapAsyncDuplexLocalStream::Init</definition>
+        <argsstring>(const std::string &amp;socketOrPipePath, bool isStreamCreator)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>socketOrPipePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isStreamCreator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize the underlying I/O and connect to given host at given port.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteHostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote host to connect to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remotePort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote port to connect to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the connection could be established, or False if connection failed or the object has already been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="129" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="129" bodyend="137"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a09124d92d1c3f874414d2fe7410c8aa6" compoundref="EncapAsyncDuplexLocalStream_8h" startline="567">m_doAutoReconnectAfterShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1adee33b83b9c89fb932e68da80d120567" compoundref="EncapAsyncDuplexLocalStream_8h" startline="563">m_isStreamCreator</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="566">m_shutdownComplete</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <referencedby refid="classBpOverEncapLocalStreamInduct_1a27325b85f6622e8b9d4616f417a22adc" compoundref="BpOverEncapLocalStreamInduct_8cpp" startline="25" endline="82">BpOverEncapLocalStreamInduct::BpOverEncapLocalStreamInduct</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ae036893c4130b1a88d340e17f464e125" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="104" endline="109">BpOverEncapLocalStreamOutduct::Connect</referencedby>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1a5b6af4f53499a665979c41bf5612eaba" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="114" endline="116">LtpEncapLocalStreamEngine::Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::StartReadFirstEncapHeaderByte_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>StartReadFirstEncapHeaderByte_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="382" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="382" bodyend="391"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ac9409c35384a703428fe48a876b0d502" compoundref="EncapAsyncDuplexLocalStream_8h" startline="565">m_readStarted</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" compoundref="EncapAsyncDuplexLocalStream_8h" startline="547">m_receivedFullEncapPacket_swappable</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" compoundref="EncapAsyncDuplexLocalStream_8h" startline="374" endline="380">OnConnectionCompleted_NotThreadSafe</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamInduct_1aef8926f540996c1dc76a6fd804adb2b0" compoundref="BpOverEncapLocalStreamInduct_8cpp" startline="222" endline="246">BpOverEncapLocalStreamInduct::OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1adec68d61897755a41e84b7be24a900d2" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="143" endline="153">LtpEncapLocalStreamEngine::OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="424" endline="440">BpOverEncapLocalStreamOutduct::OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1ab84abab00f3bd9fd6b2029ab62f6e9ab" compoundref="EncapAsyncDuplexLocalStream_8h" startline="392" endline="394">StartReadFirstEncapHeaderByte_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1ab84abab00f3bd9fd6b2029ab62f6e9ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::StartReadFirstEncapHeaderByte_ThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>StartReadFirstEncapHeaderByte_ThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="392" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="392" bodyend="394"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1aaab42607ae8280344bcf7e28131e4b29" compoundref="EncapAsyncDuplexLocalStream_8h" startline="543">m_ioServiceRef</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a4787d1f36d73ec58a3b1b5318db5503e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classEncapAsyncDuplexLocalStream_1a0d5843c35d961c0b9c7945866989ce6d" kindref="member">stream_handle_t</ref> &amp;</type>
+        <definition>stream_handle_t&amp; EncapAsyncDuplexLocalStream::GetStreamHandleRef</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>GetStreamHandleRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="570" column="21" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="570" bodyend="572"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <referencedby refid="classBpOverEncapLocalStreamInduct_1a4aa8c6326b2019a25ca6a6620d8d24af" compoundref="BpOverEncapLocalStreamInduct_8cpp" startline="128" endline="173">BpOverEncapLocalStreamInduct::TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">BpOverEncapLocalStreamOutduct::TrySendDataIfAvailable_NotThreadSafe</referencedby>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1ac4c1d1940a18ed148d9b8d6c5faccc95" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="171" endline="191">LtpEncapLocalStreamEngine::TrySendOperationIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1ac3dcfc572920001494ac1c731b2bbedf" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EncapAsyncDuplexLocalStream::ReadyToSend</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ReadyToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="573" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="573" bodyend="575"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a84fa58aeb99e51d35ffb67a3b452d538" compoundref="EncapAsyncDuplexLocalStream_8h" startline="564">m_readyToSend</references>
+        <referencedby refid="classBpOverEncapLocalStreamInduct_1a6842ad58ce68d2c512bc6286158634e2" compoundref="BpOverEncapLocalStreamInduct_8cpp" startline="203" endline="214">BpOverEncapLocalStreamInduct::NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">BpOverEncapLocalStreamOutduct::PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a002fbc79a405b9325515a4cf65e8dc32" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="110" endline="112">BpOverEncapLocalStreamOutduct::ReadyToForward</referencedby>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1a4b6ef298decc8163beae978b1f32bf48" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="394" endline="396">LtpEncapLocalStreamEngine::ReadyToSend</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1ac719f114d15df2819e786f7cbaa0b11b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::CloseWaitForConnectionAsync</definition>
+        <argsstring>()</argsstring>
+        <name>CloseWaitForConnectionAsync</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="139" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="139" bodyend="154"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a36da8d39f78a7c2b5a6a87985bc56866" compoundref="EncapAsyncDuplexLocalStream_8h" startline="555">m_streamAcceptorPtr</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" compoundref="EncapAsyncDuplexLocalStream_8h" startline="155" endline="164">StopAllAsyncs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::StopAllAsyncs</definition>
+        <argsstring>()</argsstring>
+        <name>StopAllAsyncs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="155" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="155" bodyend="164"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1ac719f114d15df2819e786f7cbaa0b11b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="139" endline="154">CloseWaitForConnectionAsync</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a5e1a9f1c06c253f00231b6e84890d84b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="557">m_reconnectAfterOnConnectErrorTimer</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">Stop</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a584fb7bdd4ef7c715728a520adb6602b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="115" endline="121">Stop_CalledFromWithinIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EncapAsyncDuplexLocalStream::InitStreams</definition>
+        <argsstring>()</argsstring>
+        <name>InitStreams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="165" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="165" bodyend="220"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1aaab42607ae8280344bcf7e28131e4b29" compoundref="EncapAsyncDuplexLocalStream_8h" startline="543">m_ioServiceRef</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1adee33b83b9c89fb932e68da80d120567" compoundref="EncapAsyncDuplexLocalStream_8h" startline="563">m_isStreamCreator</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ae9c77bc91baa0dba49b644b0542e3658" compoundref="EncapAsyncDuplexLocalStream_8h" startline="560">m_numReconnectAttempts</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="566">m_shutdownComplete</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a36da8d39f78a7c2b5a6a87985bc56866" compoundref="EncapAsyncDuplexLocalStream_8h" startline="555">m_streamAcceptorPtr</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1aee678d591ef0103a8d3aed5b03df4ce1" compoundref="EncapAsyncDuplexLocalStream_8h" startline="332" endline="342">OnSocketAccept</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="343" endline="356">OnSocketConnect</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" compoundref="EncapAsyncDuplexLocalStream_8h" startline="129" endline="137">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1aee678d591ef0103a8d3aed5b03df4ce1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::OnSocketAccept</definition>
+        <argsstring>(const boost::system::error_code &amp;error)</argsstring>
+        <name>OnSocketAccept</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="332" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="332" bodyend="342"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" compoundref="EncapAsyncDuplexLocalStream_8h" startline="374" endline="380">OnConnectionCompleted_NotThreadSafe</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::OnSocketConnect</definition>
+        <argsstring>(const boost::system::error_code &amp;error)</argsstring>
+        <name>OnSocketConnect</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="343" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="343" bodyend="356"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a5e1a9f1c06c253f00231b6e84890d84b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="557">m_reconnectAfterOnConnectErrorTimer</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" compoundref="EncapAsyncDuplexLocalStream_8h" startline="374" endline="380">OnConnectionCompleted_NotThreadSafe</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" compoundref="EncapAsyncDuplexLocalStream_8h" startline="358" endline="373">OnReconnectAfterOnConnectError_TimerExpired</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" compoundref="EncapAsyncDuplexLocalStream_8h" startline="358" endline="373">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::OnReconnectAfterOnConnectError_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnReconnectAfterOnConnectError_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="358" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="358" bodyend="373"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1ae9c77bc91baa0dba49b644b0542e3658" compoundref="EncapAsyncDuplexLocalStream_8h" startline="560">m_numReconnectAttempts</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="343" endline="356">OnSocketConnect</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="343" endline="356">OnSocketConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::OnConnectionCompleted_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>OnConnectionCompleted_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="374" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="374" bodyend="380"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a16f8367ea5596bb915d8bd0c8e08bf01" compoundref="EncapAsyncDuplexLocalStream_8h" startline="545">m_onLocalStreamConnectionStatusChangedCallback</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a84fa58aeb99e51d35ffb67a3b452d538" compoundref="EncapAsyncDuplexLocalStream_8h" startline="564">m_readyToSend</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1aee678d591ef0103a8d3aed5b03df4ce1" compoundref="EncapAsyncDuplexLocalStream_8h" startline="332" endline="342">OnSocketAccept</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="343" endline="356">OnSocketConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::HandleFirstEncapByteReadCompleted</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleFirstEncapByteReadCompleted</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="396" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="396" bodyend="430"/>
+        <references refid="CcsdsEncapDecode_8h_1a8723099529f398b3aecc0d8241c01cc4" compoundref="CcsdsEncapDecode_8h" startline="35" endline="44">DecodeCcsdsEncapHeaderSizeFromFirstByte</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" compoundref="EncapAsyncDuplexLocalStream_8h" startline="432" endline="470">HandleRemainingEncapHeaderReadCompleted</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ab345b0b773efc3f39c807fd78840a8e6" compoundref="EncapAsyncDuplexLocalStream_8h" startline="561">M_ENCAP_PACKET_TYPE</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" compoundref="EncapAsyncDuplexLocalStream_8h" startline="547">m_receivedFullEncapPacket_swappable</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">StartReadFirstEncapHeaderByte_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::HandleRemainingEncapHeaderReadCompleted</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, uint8_t decodedEncapHeaderSize)</argsstring>
+        <name>HandleRemainingEncapHeaderReadCompleted</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>decodedEncapHeaderSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="432" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="432" bodyend="470"/>
+        <references refid="CcsdsEncapDecode_8h_1aaca4484299e531df8c4a5501214f1aed" compoundref="CcsdsEncapDecode_8h" startline="58" endline="103">DecodeCcsdsEncapPayloadSizeFromSecondToRemainingBytes</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" compoundref="EncapAsyncDuplexLocalStream_8h" startline="472" endline="496">HandleEncapPayloadReadCompleted</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" compoundref="EncapAsyncDuplexLocalStream_8h" startline="547">m_receivedFullEncapPacket_swappable</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a56a52c3c70d7c7ba00ad1ac6f29576a2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="562">M_RX_CALLBACK_DONT_DISCARD_ENCAP_HEADER</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::HandleEncapPayloadReadCompleted</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, uint32_t decodedEncapPayloadSize, uint8_t decodedEncapHeaderSize)</argsstring>
+        <name>HandleEncapPayloadReadCompleted</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>decodedEncapPayloadSize</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>decodedEncapHeaderSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="472" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="472" bodyend="496"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" compoundref="EncapAsyncDuplexLocalStream_8h" startline="498" endline="537">HandleShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a934f05d46b11588b2048cf83f91dc2ac" compoundref="EncapAsyncDuplexLocalStream_8h" startline="544">m_onFullEncapPacketReceivedCallback</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ac9409c35384a703428fe48a876b0d502" compoundref="EncapAsyncDuplexLocalStream_8h" startline="565">m_readStarted</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" compoundref="EncapAsyncDuplexLocalStream_8h" startline="547">m_receivedFullEncapPacket_swappable</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" compoundref="EncapAsyncDuplexLocalStream_8h" startline="432" endline="470">HandleRemainingEncapHeaderReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncapAsyncDuplexLocalStream::HandleShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>HandleShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="498" column="10" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="498" bodyend="537"/>
+        <references refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="165" endline="220">InitStreams</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a09124d92d1c3f874414d2fe7410c8aa6" compoundref="EncapAsyncDuplexLocalStream_8h" startline="567">m_doAutoReconnectAfterShutdown</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1adee33b83b9c89fb932e68da80d120567" compoundref="EncapAsyncDuplexLocalStream_8h" startline="563">m_isStreamCreator</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a16f8367ea5596bb915d8bd0c8e08bf01" compoundref="EncapAsyncDuplexLocalStream_8h" startline="545">m_onLocalStreamConnectionStatusChangedCallback</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ac9409c35384a703428fe48a876b0d502" compoundref="EncapAsyncDuplexLocalStream_8h" startline="565">m_readStarted</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a84fa58aeb99e51d35ffb67a3b452d538" compoundref="EncapAsyncDuplexLocalStream_8h" startline="564">m_readyToSend</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" compoundref="EncapAsyncDuplexLocalStream_8h" startline="566">m_shutdownComplete</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" compoundref="EncapAsyncDuplexLocalStream_8h" startline="546">m_socketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" compoundref="EncapAsyncDuplexLocalStream_8h" startline="559">m_streamHandle</references>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" compoundref="EncapAsyncDuplexLocalStream_8h" startline="472" endline="496">HandleEncapPayloadReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" compoundref="EncapAsyncDuplexLocalStream_8h" startline="396" endline="430">HandleFirstEncapByteReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" compoundref="EncapAsyncDuplexLocalStream_8h" startline="432" endline="470">HandleRemainingEncapHeaderReadCompleted</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">Stop</referencedby>
+        <referencedby refid="classEncapAsyncDuplexLocalStream_1a584fb7bdd4ef7c715728a520adb6602b" compoundref="EncapAsyncDuplexLocalStream_8h" startline="115" endline="121">Stop_CalledFromWithinIoServiceThread</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/EncapAsyncDuplexLocalStream.h" line="44" column="1" bodyfile="common/util/include/EncapAsyncDuplexLocalStream.h" bodystart="44" bodyend="576"/>
+    <listofallmembers>
+      <member refid="classEncapAsyncDuplexLocalStream_1ac719f114d15df2819e786f7cbaa0b11b" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>CloseWaitForConnectionAsync</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1acae17bbc475de2b9226177f2c9c9493a" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>EncapAsyncDuplexLocalStream</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a4787d1f36d73ec58a3b1b5318db5503e" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>GetStreamHandleRef</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a478bb5e2f83ddf57162edbb737fec0ff" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>HandleEncapPayloadReadCompleted</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1acfdb603d6014ca05a648f691748e22e2" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>HandleFirstEncapByteReadCompleted</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a4ff3e0c92f67d3a167b4afbdc96fb188" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>HandleRemainingEncapHeaderReadCompleted</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a77d99e9bf8c147db99c4d97987b5490d" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>HandleShutdown</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>Init</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a86b32a02649f7588a7699f9ebdaa52c5" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>InitStreams</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a09124d92d1c3f874414d2fe7410c8aa6" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_doAutoReconnectAfterShutdown</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ab345b0b773efc3f39c807fd78840a8e6" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>M_ENCAP_PACKET_TYPE</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1aaab42607ae8280344bcf7e28131e4b29" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_ioServiceRef</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1adee33b83b9c89fb932e68da80d120567" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_isStreamCreator</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ab7391a864c533fd2610dbe925cf3e948" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>M_MAX_ENCAP_RX_PACKET_SIZE_BYTES</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ae9c77bc91baa0dba49b644b0542e3658" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_numReconnectAttempts</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a934f05d46b11588b2048cf83f91dc2ac" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_onFullEncapPacketReceivedCallback</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a16f8367ea5596bb915d8bd0c8e08bf01" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_onLocalStreamConnectionStatusChangedCallback</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ac9409c35384a703428fe48a876b0d502" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_readStarted</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a84fa58aeb99e51d35ffb67a3b452d538" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_readyToSend</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a20b7caea289106e79c7a29c25ec24320" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_receivedFullEncapPacket_swappable</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a5e1a9f1c06c253f00231b6e84890d84b" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_reconnectAfterOnConnectErrorTimer</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a56a52c3c70d7c7ba00ad1ac6f29576a2" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>M_RX_CALLBACK_DONT_DISCARD_ENCAP_HEADER</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1abe0beb0caf417a6f4a63efff52a811a5" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_shutdownComplete</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a854b1caf7913f0cacc09139df869c669" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_socketOrPipePath</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a36da8d39f78a7c2b5a6a87985bc56866" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_streamAcceptorPtr</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a4cf04ceb4a80c3b7104d54ff434c2dc8" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>m_streamHandle</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a5f0d121ebb491ebc6b91bf3e72596018" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>OnConnectionCompleted_NotThreadSafe</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1aed7ff76cdac875686f77db10ae0b514d" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>OnFullEncapPacketReceivedCallback_t</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ac37bdbbd0aacc5d5cd173f1efb8d7f68" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>OnLocalStreamConnectionStatusChangedCallback_t</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a3ab5bd5d4fa8de08a428dd2d53d5ea95" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>OnReconnectAfterOnConnectError_TimerExpired</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1aee678d591ef0103a8d3aed5b03df4ce1" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>OnSocketAccept</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1af5f1cb0c2d293ce4335d54625c94a76d" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>OnSocketConnect</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ac3dcfc572920001494ac1c731b2bbedf" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>ReadyToSend</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>StartReadFirstEncapHeaderByte_NotThreadSafe</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1ab84abab00f3bd9fd6b2029ab62f6e9ab" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>StartReadFirstEncapHeaderByte_ThreadSafe</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>Stop</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a584fb7bdd4ef7c715728a520adb6602b" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>Stop_CalledFromWithinIoServiceThread</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1abea2b83e90c11084ea4ae2fa890f56e9" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>StopAllAsyncs</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a0d5843c35d961c0b9c7945866989ce6d" prot="private" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>stream_handle_t</name></member>
+      <member refid="classEncapAsyncDuplexLocalStream_1a15ac1c33da7a8a896296ea7487cc4b30" prot="public" virt="non-virtual"><scope>EncapAsyncDuplexLocalStream</scope><name>~EncapAsyncDuplexLocalStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

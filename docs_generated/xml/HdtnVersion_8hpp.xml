@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="HdtnVersion_8hpp" kind="file" language="C++">
+    <compoundname>HdtnVersion.hpp</compoundname>
+    <includedby refid="Logger_8cpp" local="yes">common/logger/src/Logger.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>common/logger/src/Logger.cpp</label>
+        <link refid="Logger_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/include/HdtnVersion.hpp</label>
+        <link refid="HdtnVersion_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="HdtnVersion_8hpp_1a82bf790a69c735788c9e611992e55701" prot="public" static="no">
+        <name>HDTN_VERSION</name>
+        <initializer>200000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/HdtnVersion.hpp" line="32" column="9" bodyfile="common/include/HdtnVersion.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="HdtnVersion_8hpp_1a95098908fd9e7122409190e0f852c42a" prot="public" static="no">
+        <name>HDTN_VERSION_PATCH</name>
+        <initializer>(<ref refid="HdtnVersion_8hpp_1a82bf790a69c735788c9e611992e55701" kindref="member">HDTN_VERSION</ref> % 100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/HdtnVersion.hpp" line="34" column="9" bodyfile="common/include/HdtnVersion.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="HdtnVersion_8hpp_1a8a3f089de594087bc25f7dff92101ae1" prot="public" static="no">
+        <name>HDTN_VERSION_MINOR</name>
+        <initializer>((<ref refid="HdtnVersion_8hpp_1a82bf790a69c735788c9e611992e55701" kindref="member">HDTN_VERSION</ref> / 100) % 1000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/HdtnVersion.hpp" line="35" column="9" bodyfile="common/include/HdtnVersion.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="HdtnVersion_8hpp_1a27c112e73a78d3f5e596c4a845648853" prot="public" static="no">
+        <name>HDTN_VERSION_MAJOR</name>
+        <initializer>(<ref refid="HdtnVersion_8hpp_1a82bf790a69c735788c9e611992e55701" kindref="member">HDTN_VERSION</ref> / 100000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/HdtnVersion.hpp" line="36" column="9" bodyfile="common/include/HdtnVersion.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>Defines the current HDTN version (which also gets populated to the GUIs). It is based off of boost/version.hpp </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HDTN_VERSION_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HDTN_VERSION_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/><sp/>This<sp/>is<sp/>the<sp/>only<sp/>HDTN<sp/>header<sp/>that<sp/>is<sp/>guaranteed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/><sp/>to<sp/>change<sp/>with<sp/>every<sp/>HDTN<sp/>release.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/><sp/>HDTN_VERSION<sp/>%<sp/>100<sp/>is<sp/>the<sp/>patch<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/><sp/>HDTN_VERSION<sp/>/<sp/>100<sp/>%<sp/>1000<sp/>is<sp/>the<sp/>minor<sp/>version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/><sp/>HDTN_VERSION<sp/>/<sp/>100000<sp/>is<sp/>the<sp/>major<sp/>version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/><sp/>00.000.00<sp/>where<sp/>MAJOR_MINOR_PATCH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="HdtnVersion_8hpp_1a82bf790a69c735788c9e611992e55701" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HDTN_VERSION<sp/>200000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="HdtnVersion_8hpp_1a95098908fd9e7122409190e0f852c42a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HDTN_VERSION_PATCH<sp/>(HDTN_VERSION<sp/>%<sp/>100)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="HdtnVersion_8hpp_1a8a3f089de594087bc25f7dff92101ae1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HDTN_VERSION_MINOR<sp/>((HDTN_VERSION<sp/>/<sp/>100)<sp/>%<sp/>1000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="HdtnVersion_8hpp_1a27c112e73a78d3f5e596c4a845648853" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HDTN_VERSION_MAJOR<sp/>(HDTN_VERSION<sp/>/<sp/>100000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="common/include/HdtnVersion.hpp"/>
+  </compounddef>
+</doxygen>

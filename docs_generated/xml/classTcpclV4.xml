@@ -1,0 +1,1901 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTcpclV4" kind="class" language="C++" prot="public">
+    <compoundname>TcpclV4</compoundname>
+    <includes refid="TcpclV4_8h" local="no">TcpclV4.h</includes>
+    <innerclass refid="structTcpclV4_1_1tcpclv4__ack__t" prot="public">TcpclV4::tcpclv4_ack_t</innerclass>
+    <innerclass refid="structTcpclV4_1_1tcpclv4__extension__t" prot="public">TcpclV4::tcpclv4_extension_t</innerclass>
+    <innerclass refid="structTcpclV4_1_1tcpclv4__extensions__t" prot="public">TcpclV4::tcpclv4_extensions_t</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classTcpclV4_1a0ff74dc873d93f733084d5e24ed2f95b" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;dataSegmentDataVec, bool isStartFlag, bool isEndFlag, uint64_t transferId, const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;transferExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;void(padded_vector_uint8_t &amp; dataSegmentDataVec, bool isStartFlag, bool isEndFlag, uint64_t transferId, const tcpclv4_extensions_t &amp; transferExtensions)&gt; TcpclV4::DataSegmentContentsReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>DataSegmentContentsReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="216" column="2" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1aae2fb0bb38d56e469ce38a1d83cb4dc0" prot="public" static="no">
+        <type>boost::function&lt; void(bool remoteHasEnabledTlsSecurity)&gt;</type>
+        <definition>typedef boost::function&lt;void(bool remoteHasEnabledTlsSecurity)&gt; TcpclV4::ContactHeaderReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>ContactHeaderReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="217" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1a7b354f0c5e604d045395b6370f424fd3" prot="public" static="no">
+        <type>boost::function&lt; void(uint16_t keepAliveIntervalSeconds, uint64_t segmentMru, uint64_t transferMru, const std::string &amp;remoteNodeEidUri, const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;sessionExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;void(uint16_t keepAliveIntervalSeconds, uint64_t segmentMru, uint64_t transferMru, const std::string &amp; remoteNodeEidUri, const tcpclv4_extensions_t &amp; sessionExtensions)&gt; TcpclV4::SessionInitCallback_t</definition>
+        <argsstring></argsstring>
+        <name>SessionInitCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="219" column="2" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1a24a1aa74f9085cceb4b457c4638c4b70" prot="public" static="no">
+        <type>boost::function&lt; void(const <ref refid="structTcpclV4_1_1tcpclv4__ack__t" kindref="compound">tcpclv4_ack_t</ref> &amp;ack)&gt;</type>
+        <definition>typedef boost::function&lt;void(const tcpclv4_ack_t &amp; ack)&gt; TcpclV4::AckSegmentReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>AckSegmentReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="220" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1a686820028875d7378a0b4de8d03e9831" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="TcpclV4_8h_1adb62e9f614d782e382ca039f7f369dab" kindref="member">TCPCLV4_MESSAGE_REJECT_REASON_CODES</ref> refusalCode, uint8_t rejectedMessageHeader)&gt;</type>
+        <definition>typedef boost::function&lt;void(TCPCLV4_MESSAGE_REJECT_REASON_CODES refusalCode, uint8_t rejectedMessageHeader)&gt; TcpclV4::MessageRejectCallback_t</definition>
+        <argsstring></argsstring>
+        <name>MessageRejectCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="221" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1a726cabf477e9e160a3e4b57da0eb2e77" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="TcpclV4_8h_1a08d611f032028c9069829b36bd08de3a" kindref="member">TCPCLV4_TRANSFER_REFUSE_REASON_CODES</ref> refusalCode, uint64_t transferId)&gt;</type>
+        <definition>typedef boost::function&lt;void(TCPCLV4_TRANSFER_REFUSE_REASON_CODES refusalCode, uint64_t transferId)&gt; TcpclV4::BundleRefusalCallback_t</definition>
+        <argsstring></argsstring>
+        <name>BundleRefusalCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="222" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1aef3aa3e12c5d0c4606566c1fd7a88f08" prot="public" static="no">
+        <type>boost::function&lt; void()&gt;</type>
+        <definition>typedef boost::function&lt;void()&gt; TcpclV4::KeepAliveCallback_t</definition>
+        <argsstring></argsstring>
+        <name>KeepAliveCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="223" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTcpclV4_1a6570489b0997ade9679287df9f25f198" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="TcpclV4_8h_1a4f4e4fedfb3193650387379d9782c0d7" kindref="member">TCPCLV4_SESSION_TERMINATION_REASON_CODES</ref> terminationReasonCode, bool isAckOfAnEarlierSessionTerminationMessage)&gt;</type>
+        <definition>typedef boost::function&lt;void(TCPCLV4_SESSION_TERMINATION_REASON_CODES terminationReasonCode, bool isAckOfAnEarlierSessionTerminationMessage)&gt; TcpclV4::SessionTerminationMessageCallback_t</definition>
+        <argsstring></argsstring>
+        <name>SessionTerminationMessageCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="224" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classTcpclV4_1aa5cc266586150f9de639a703d251a4a9" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::M_MAX_RX_BUNDLE_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_RX_BUNDLE_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="277" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="277" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a6f4b9e4c4c17f25e8342ca60c281bdff" compoundref="TcpclV4_8cpp" startline="349" endline="351">SetMaxReceiveBundleSizeBytes</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1af2f9ad04c74a97da9b09ed4a87216831" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8" kindref="member">TCPCLV4_MAIN_RX_STATE</ref></type>
+        <definition>TCPCLV4_MAIN_RX_STATE TcpclV4::m_mainRxState</definition>
+        <argsstring></argsstring>
+        <name>m_mainRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="278" column="27" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="278" bodyend="-1"/>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a2af92c81eb5a6eba899cecd9fd404f37" compoundref="TcpclV4_8cpp" startline="353" endline="356">InitRx</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1abff243fc22e339fc9f9ef98c37bf071b" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6" kindref="member">TCPCLV4_CONTACT_HEADER_RX_STATE</ref></type>
+        <definition>TCPCLV4_CONTACT_HEADER_RX_STATE TcpclV4::m_contactHeaderRxState</definition>
+        <argsstring></argsstring>
+        <name>m_contactHeaderRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="279" column="37" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="279" bodyend="-1"/>
+        <referencedby refid="TestTcpclV4_8cpp_1a381ace2a1dcd95c0b6a137f5638086c4" compoundref="TestTcpclV4_8cpp" startline="621" endline="732">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a2af92c81eb5a6eba899cecd9fd404f37" compoundref="TcpclV4_8cpp" startline="353" endline="356">InitRx</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a9aaa89e26ee262b3b34bbcf91af3d829" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80" kindref="member">TCPCLV4_DATA_SEGMENT_RX_STATE</ref></type>
+        <definition>TCPCLV4_DATA_SEGMENT_RX_STATE TcpclV4::m_dataSegmentRxState</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="280" column="35" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="280" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a45b4519fbda6f8e65bbb659986c25ada" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1a4b89a663c0cc8dbbdf22b679e59a3f3c" kindref="member">TCPCLV4_DATA_ACK_RX_STATE</ref></type>
+        <definition>TCPCLV4_DATA_ACK_RX_STATE TcpclV4::m_dataAckRxState</definition>
+        <argsstring></argsstring>
+        <name>m_dataAckRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="281" column="31" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="281" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1ae370ce01b69edb8e2db30030dceaccda" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1a24c3642017a7d40784e5c67ec5333f5e" kindref="member">TCPCLV4_MESSAGE_REJECT_RX_STATE</ref></type>
+        <definition>TCPCLV4_MESSAGE_REJECT_RX_STATE TcpclV4::m_messageRejectRxState</definition>
+        <argsstring></argsstring>
+        <name>m_messageRejectRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="282" column="37" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="282" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a8192d3081c545bedfdac47dcf29c8c50" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1a5a3c66722be383c4e0956448609c90ac" kindref="member">TCPCLV4_TRANSFER_REFUSAL_RX_STATE</ref></type>
+        <definition>TCPCLV4_TRANSFER_REFUSAL_RX_STATE TcpclV4::m_transferRefusalRxState</definition>
+        <argsstring></argsstring>
+        <name>m_transferRefusalRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="283" column="39" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="283" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1af0aa459d8c2074b2acb9b02867f4f95a" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1a868206a26f33aa086625dc7ed12ae9ac" kindref="member">TCPCLV4_SESSION_TERMINATION_RX_STATE</ref></type>
+        <definition>TCPCLV4_SESSION_TERMINATION_RX_STATE TcpclV4::m_sessionTerminationRxState</definition>
+        <argsstring></argsstring>
+        <name>m_sessionTerminationRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="284" column="42" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="284" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a50d6c9d3749ebd797dee9045a7a06fbe" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666" kindref="member">TCPCLV4_SESSION_INIT_RX_STATE</ref></type>
+        <definition>TCPCLV4_SESSION_INIT_RX_STATE TcpclV4::m_sessionInitRxState</definition>
+        <argsstring></argsstring>
+        <name>m_sessionInitRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="285" column="35" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="285" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a9180b76588340618d69e297e1d63f5bd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TcpclV4::m_remoteHasEnabledTlsSecurity</definition>
+        <argsstring></argsstring>
+        <name>m_remoteHasEnabledTlsSecurity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="288" column="10" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="288" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a6d80f35d776b03ce985595764a5c9841" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8" kindref="member">TCPCLV4_MESSAGE_TYPE_BYTE_CODES</ref></type>
+        <definition>TCPCLV4_MESSAGE_TYPE_BYTE_CODES TcpclV4::m_messageTypeByte</definition>
+        <argsstring></argsstring>
+        <name>m_messageTypeByte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="291" column="37" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="291" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a4a4d7869bfb944b78631af77a32c104f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TcpclV4::m_keepAliveInterval</definition>
+        <argsstring></argsstring>
+        <name>m_keepAliveInterval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="294" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="294" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1aa217ccab77effad3272414d08e532bfc" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::m_segmentMru</definition>
+        <argsstring></argsstring>
+        <name>m_segmentMru</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="295" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="295" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a80543ad51d6a2d230f7ad8cd876bde3d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::m_transferMru</definition>
+        <argsstring></argsstring>
+        <name>m_transferMru</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="296" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="296" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a4a6ff8bb061858feb4668ab801b69ce4" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TcpclV4::m_remoteNodeUriLength</definition>
+        <argsstring></argsstring>
+        <name>m_remoteNodeUriLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="297" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="297" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a1f7baf566142edc28d4e0752237a568c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string TcpclV4::m_remoteNodeUriStr</definition>
+        <argsstring></argsstring>
+        <name>m_remoteNodeUriStr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="298" column="17" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="298" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a949531148716050ec085ddbafc946050" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TcpclV4::m_sessionExtensionItemsLengthBytes</definition>
+        <argsstring></argsstring>
+        <name>m_sessionExtensionItemsLengthBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="299" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="299" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a67dcfe6ef25b16ad06647247b4c9a83e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TcpclV4::m_currentCountOfSessionExtensionEncodedBytes</definition>
+        <argsstring></argsstring>
+        <name>m_currentCountOfSessionExtensionEncodedBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="300" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="300" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a78ca87b484d88e87c07201b44856f95c" prot="public" static="no" mutable="no">
+        <type><ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref></type>
+        <definition>tcpclv4_extensions_t TcpclV4::m_sessionExtensions</definition>
+        <argsstring></argsstring>
+        <name>m_sessionExtensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="301" column="26" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="301" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1aafbb4e89db3ea7d50bc494783414c357" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TcpclV4::m_currentSessionExtensionLength</definition>
+        <argsstring></argsstring>
+        <name>m_currentSessionExtensionLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="302" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="302" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1aa49a19529965d6afbc114e5d22a3db80" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_readValueByteIndex</definition>
+        <argsstring></argsstring>
+        <name>m_readValueByteIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="305" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="305" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a74752afd64e0f798527a31c00b7444b6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_messageFlags</definition>
+        <argsstring></argsstring>
+        <name>m_messageFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="309" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="309" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a4f13d8a04b26acc8a1dd1de43956ccce" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TcpclV4::m_dataSegmentStartFlag</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentStartFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="310" column="10" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="310" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a3b176fde5a0696634b7ea9adb49a396e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TcpclV4::m_dataSegmentEndFlag</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentEndFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="311" column="10" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="311" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a86a4fea1d9e191d6bf3bbdf6282a418f" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::m_transferId</definition>
+        <argsstring></argsstring>
+        <name>m_transferId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="312" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="312" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a1b065e00c9cfddb11830db389801b757" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TcpclV4::m_transferExtensionItemsLengthBytes</definition>
+        <argsstring></argsstring>
+        <name>m_transferExtensionItemsLengthBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="313" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="313" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1ad54ca5f859fadc5f795f0a98f5f050c3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TcpclV4::m_currentCountOfTransferExtensionEncodedBytes</definition>
+        <argsstring></argsstring>
+        <name>m_currentCountOfTransferExtensionEncodedBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="314" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="314" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a1b524af25ba9f0fe9692906f0d8c714d" prot="public" static="no" mutable="no">
+        <type><ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref></type>
+        <definition>tcpclv4_extensions_t TcpclV4::m_transferExtensions</definition>
+        <argsstring></argsstring>
+        <name>m_transferExtensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="315" column="26" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="315" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a5d570b71c72056556558888cc48bdb85" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TcpclV4::m_currentTransferExtensionLength</definition>
+        <argsstring></argsstring>
+        <name>m_currentTransferExtensionLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="316" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="316" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a83d8dba8646833675c85da6fa051242d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::m_dataSegmentLength</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="317" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="317" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a645e41c20dd5e5dde8b117a8f6141b83" prot="public" static="no" mutable="no">
+        <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref></type>
+        <definition>padded_vector_uint8_t TcpclV4::m_dataSegmentDataVec</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentDataVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="318" column="27" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="318" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a973219e7dff05f61859edf0ca8116a27" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_ackFlags</definition>
+        <argsstring></argsstring>
+        <name>m_ackFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="321" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="321" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a63784be1d336966d602f7ca98020af52" prot="public" static="no" mutable="no">
+        <type><ref refid="structTcpclV4_1_1tcpclv4__ack__t" kindref="compound">tcpclv4_ack_t</ref></type>
+        <definition>tcpclv4_ack_t TcpclV4::m_ack</definition>
+        <argsstring></argsstring>
+        <name>m_ack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="322" column="19" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="322" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a745df0c622d9c9dc19006c681da4b6b8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_messageRejectionReasonCode</definition>
+        <argsstring></argsstring>
+        <name>m_messageRejectionReasonCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="325" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="325" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1abbad7763ab04e1e61f5fd4c30060c586" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_rejectedMessageHeader</definition>
+        <argsstring></argsstring>
+        <name>m_rejectedMessageHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="326" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="326" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a2044c1ae0e46743a339b5a885eb2530e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_bundleTranferRefusalReasonCode</definition>
+        <argsstring></argsstring>
+        <name>m_bundleTranferRefusalReasonCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="329" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="329" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1ab8c98a6bcce809660e1bcf5c2393ee70" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::m_bundleTranferRefusalTransferId</definition>
+        <argsstring></argsstring>
+        <name>m_bundleTranferRefusalTransferId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="330" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="330" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a338668c1daba0ad2ec02363bfc03b0ee" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TcpclV4::m_nextBundleLength</definition>
+        <argsstring></argsstring>
+        <name>m_nextBundleLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="333" column="14" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a0b8662991a928c0010d1c03e35fd4ad2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TcpclV4::m_sessionTerminationFlags</definition>
+        <argsstring></argsstring>
+        <name>m_sessionTerminationFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="336" column="13" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="336" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1ab2f0bfab8674bbaacba4d025c1653181" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TcpclV4::m_isSessionTerminationAck</definition>
+        <argsstring></argsstring>
+        <name>m_isSessionTerminationAck</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="337" column="10" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="337" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1aa70b19ad81f496cc1b2b804e43f602d6" prot="public" static="no" mutable="no">
+        <type><ref refid="TcpclV4_8h_1a4f4e4fedfb3193650387379d9782c0d7" kindref="member">TCPCLV4_SESSION_TERMINATION_REASON_CODES</ref></type>
+        <definition>TCPCLV4_SESSION_TERMINATION_REASON_CODES TcpclV4::m_sessionTerminationReasonCode</definition>
+        <argsstring></argsstring>
+        <name>m_sessionTerminationReasonCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="339" column="46" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="339" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a594b451330403659f9df490aced1fdf1" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1aae2fb0bb38d56e469ce38a1d83cb4dc0" kindref="member">ContactHeaderReadCallback_t</ref></type>
+        <definition>ContactHeaderReadCallback_t TcpclV4::m_contactHeaderReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_contactHeaderReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="342" column="33" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="342" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a29f98823e3e3c48d5679f66d83a20d39" compoundref="TcpclV4_8cpp" startline="328" endline="330">SetContactHeaderReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1aab851175fb1c05170d1be1855d23b26e" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1a7b354f0c5e604d045395b6370f424fd3" kindref="member">SessionInitCallback_t</ref></type>
+        <definition>SessionInitCallback_t TcpclV4::m_sessionInitCallback</definition>
+        <argsstring></argsstring>
+        <name>m_sessionInitCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="343" column="27" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="343" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a82e68f0fb3944e04b86c353e4ce1fed4" compoundref="TcpclV4_8cpp" startline="331" endline="333">SetSessionInitReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a445c36349f98e4f4e07412e77f33278f" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1a0ff74dc873d93f733084d5e24ed2f95b" kindref="member">DataSegmentContentsReadCallback_t</ref></type>
+        <definition>DataSegmentContentsReadCallback_t TcpclV4::m_dataSegmentContentsReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentContentsReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="344" column="39" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="344" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1aa61c53b9fbdfa034b40ff3a8d85fed29" compoundref="TcpclV4_8cpp" startline="325" endline="327">SetDataSegmentContentsReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1ac526af537eb46282a9dbb52a40fc5919" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1a24a1aa74f9085cceb4b457c4638c4b70" kindref="member">AckSegmentReadCallback_t</ref></type>
+        <definition>AckSegmentReadCallback_t TcpclV4::m_ackSegmentReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_ackSegmentReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="345" column="30" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="345" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a8a81ae077173768a59b8498269f9e1c9" compoundref="TcpclV4_8cpp" startline="334" endline="336">SetAckSegmentReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a833cb5622bfdcf406e654f2e9a7a7813" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1a686820028875d7378a0b4de8d03e9831" kindref="member">MessageRejectCallback_t</ref></type>
+        <definition>MessageRejectCallback_t TcpclV4::m_messageRejectCallback</definition>
+        <argsstring></argsstring>
+        <name>m_messageRejectCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="346" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="346" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a05f545d96c6b24ff548d11115ed99113" compoundref="TcpclV4_8cpp" startline="340" endline="342">SetMessageRejectCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a3298f69dec70e549fb830edc03d8fc0e" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1a726cabf477e9e160a3e4b57da0eb2e77" kindref="member">BundleRefusalCallback_t</ref></type>
+        <definition>BundleRefusalCallback_t TcpclV4::m_bundleRefusalCallback</definition>
+        <argsstring></argsstring>
+        <name>m_bundleRefusalCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="347" column="29" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="347" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1acf03fde6e2bcb246079acb230d3db3b2" compoundref="TcpclV4_8cpp" startline="337" endline="339">SetBundleRefusalCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1a110bf65f695b1a0d07e7c82b91850c0d" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1aef3aa3e12c5d0c4606566c1fd7a88f08" kindref="member">KeepAliveCallback_t</ref></type>
+        <definition>KeepAliveCallback_t TcpclV4::m_keepAliveCallback</definition>
+        <argsstring></argsstring>
+        <name>m_keepAliveCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="348" column="25" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="348" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1afc55c6077f7c3aa1d77f86e2b8597c25" compoundref="TcpclV4_8cpp" startline="343" endline="345">SetKeepAliveCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclV4_1ae110744180ef6c4bc4c9fc148cd2ff1c" prot="public" static="no" mutable="no">
+        <type><ref refid="classTcpclV4_1a6570489b0997ade9679287df9f25f198" kindref="member">SessionTerminationMessageCallback_t</ref></type>
+        <definition>SessionTerminationMessageCallback_t TcpclV4::m_sessionTerminationMessageCallback</definition>
+        <argsstring></argsstring>
+        <name>m_sessionTerminationMessageCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="349" column="41" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="349" bodyend="-1"/>
+        <referencedby refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</referencedby>
+        <referencedby refid="classTcpclV4_1a3f49564edb57b37749c0dfdaf66e3d03" compoundref="TcpclV4_8cpp" startline="346" endline="348">SetSessionTerminationMessageCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTcpclV4_1a404fc59a9f350423085a0470ae3c7c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT</type>
+        <definition>TcpclV4::TcpclV4</definition>
+        <argsstring>()</argsstring>
+        <name>TcpclV4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="226" column="22" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="280" bodyend="321"/>
+        <references refid="classTcpclV4_1a2af92c81eb5a6eba899cecd9fd404f37" compoundref="TcpclV4_8cpp" startline="353" endline="356">InitRx</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a9ec126148135993f33e236b36d33e64b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT</type>
+        <definition>TcpclV4::~TcpclV4</definition>
+        <argsstring>()</argsstring>
+        <name>~TcpclV4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="227" column="22" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="322" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1aa61c53b9fbdfa034b40ff3a8d85fed29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetDataSegmentContentsReadCallback</definition>
+        <argsstring>(const DataSegmentContentsReadCallback_t &amp;callback)</argsstring>
+        <name>SetDataSegmentContentsReadCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1a0ff74dc873d93f733084d5e24ed2f95b" kindref="member">DataSegmentContentsReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="228" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="325" bodyend="327"/>
+        <references refid="classTcpclV4_1a445c36349f98e4f4e07412e77f33278f" compoundref="TcpclV4_8h" startline="344">m_dataSegmentContentsReadCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a29f98823e3e3c48d5679f66d83a20d39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetContactHeaderReadCallback</definition>
+        <argsstring>(const ContactHeaderReadCallback_t &amp;callback)</argsstring>
+        <name>SetContactHeaderReadCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1aae2fb0bb38d56e469ce38a1d83cb4dc0" kindref="member">ContactHeaderReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="229" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="328" bodyend="330"/>
+        <references refid="classTcpclV4_1a594b451330403659f9df490aced1fdf1" compoundref="TcpclV4_8h" startline="342">m_contactHeaderReadCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a82e68f0fb3944e04b86c353e4ce1fed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetSessionInitReadCallback</definition>
+        <argsstring>(const SessionInitCallback_t &amp;callback)</argsstring>
+        <name>SetSessionInitReadCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1a7b354f0c5e604d045395b6370f424fd3" kindref="member">SessionInitCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="230" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="331" bodyend="333"/>
+        <references refid="classTcpclV4_1aab851175fb1c05170d1be1855d23b26e" compoundref="TcpclV4_8h" startline="343">m_sessionInitCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a8a81ae077173768a59b8498269f9e1c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetAckSegmentReadCallback</definition>
+        <argsstring>(const AckSegmentReadCallback_t &amp;callback)</argsstring>
+        <name>SetAckSegmentReadCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1a24a1aa74f9085cceb4b457c4638c4b70" kindref="member">AckSegmentReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="231" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="334" bodyend="336"/>
+        <references refid="classTcpclV4_1ac526af537eb46282a9dbb52a40fc5919" compoundref="TcpclV4_8h" startline="345">m_ackSegmentReadCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1acf03fde6e2bcb246079acb230d3db3b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetBundleRefusalCallback</definition>
+        <argsstring>(const BundleRefusalCallback_t &amp;callback)</argsstring>
+        <name>SetBundleRefusalCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1a726cabf477e9e160a3e4b57da0eb2e77" kindref="member">BundleRefusalCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="232" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="337" bodyend="339"/>
+        <references refid="classTcpclV4_1a3298f69dec70e549fb830edc03d8fc0e" compoundref="TcpclV4_8h" startline="347">m_bundleRefusalCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a05f545d96c6b24ff548d11115ed99113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetMessageRejectCallback</definition>
+        <argsstring>(const MessageRejectCallback_t &amp;callback)</argsstring>
+        <name>SetMessageRejectCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1a686820028875d7378a0b4de8d03e9831" kindref="member">MessageRejectCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="233" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="340" bodyend="342"/>
+        <references refid="classTcpclV4_1a833cb5622bfdcf406e654f2e9a7a7813" compoundref="TcpclV4_8h" startline="346">m_messageRejectCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1afc55c6077f7c3aa1d77f86e2b8597c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetKeepAliveCallback</definition>
+        <argsstring>(const KeepAliveCallback_t &amp;callback)</argsstring>
+        <name>SetKeepAliveCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1aef3aa3e12c5d0c4606566c1fd7a88f08" kindref="member">KeepAliveCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="234" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="343" bodyend="345"/>
+        <references refid="classTcpclV4_1a110bf65f695b1a0d07e7c82b91850c0d" compoundref="TcpclV4_8h" startline="348">m_keepAliveCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a3f49564edb57b37749c0dfdaf66e3d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetSessionTerminationMessageCallback</definition>
+        <argsstring>(const SessionTerminationMessageCallback_t &amp;callback)</argsstring>
+        <name>SetSessionTerminationMessageCallback</name>
+        <param>
+          <type>const <ref refid="classTcpclV4_1a6570489b0997ade9679287df9f25f198" kindref="member">SessionTerminationMessageCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="235" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="346" bodyend="348"/>
+        <references refid="classTcpclV4_1ae110744180ef6c4bc4c9fc148cd2ff1c" compoundref="TcpclV4_8h" startline="349">m_sessionTerminationMessageCallback</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a6f4b9e4c4c17f25e8342ca60c281bdff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::SetMaxReceiveBundleSizeBytes</definition>
+        <argsstring>(const uint64_t maxRxBundleSizeBytes)</argsstring>
+        <name>SetMaxReceiveBundleSizeBytes</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxRxBundleSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="236" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="349" bodyend="351"/>
+        <references refid="classTcpclV4_1aa5cc266586150f9de639a703d251a4a9" compoundref="TcpclV4_8h" startline="277">M_MAX_RX_BUNDLE_SIZE_BYTES</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1af25c76da77e97fe77ad2f0bfeabf9f81" compoundref="TcpclV4BidirectionalLink_8cpp" startline="26" endline="125">TcpclV4BidirectionalLink::TcpclV4BidirectionalLink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a2af92c81eb5a6eba899cecd9fd404f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::InitRx</definition>
+        <argsstring>()</argsstring>
+        <name>InitRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="238" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="353" bodyend="356"/>
+        <references refid="classTcpclV4_1abff243fc22e339fc9f9ef98c37bf071b" compoundref="TcpclV4_8h" startline="279">m_contactHeaderRxState</references>
+        <references refid="classTcpclV4_1af2f9ad04c74a97da9b09ed4a87216831" compoundref="TcpclV4_8h" startline="278">m_mainRxState</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a5d1e5a9cb477ccc0c4d6f3a9f865f008">READ_CONTACT_HEADER</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6a2eb8aef85de58385936f83d617694d78">READ_SYNC_1</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a71862c198a4e87ff7388320ed7a55b4a" compoundref="TcpclV4BidirectionalLink_8cpp" startline="562" endline="629">TcpclV4BidirectionalLink::BaseClass_CloseAndDeleteSockets</referencedby>
+        <referencedby refid="TestTcpclV4_8cpp_1a381ace2a1dcd95c0b6a137f5638086c4" compoundref="TestTcpclV4_8cpp" startline="621" endline="732">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4_1a404fc59a9f350423085a0470ae3c7c11" compoundref="TcpclV4_8cpp" startline="280" endline="321">TcpclV4</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::HandleReceivedChars</definition>
+        <argsstring>(const uint8_t *rxVals, std::size_t numChars)</argsstring>
+        <name>HandleReceivedChars</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>rxVals</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>numChars</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="239" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="362" bodyend="894"/>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1a8611fc88d5ab63342fe3afd4567c1bfc" compoundref="TcpclV4_8h" startline="182">TcpclV4::tcpclv4_extensions_t::extensionsVec</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extension__t_1a7f498cef84815a87ea85479f86087c0e" compoundref="TcpclV4_8h" startline="158">TcpclV4::tcpclv4_extension_t::flags</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1af0c8ed1ad80945f2972c2a7a0cd12082" compoundref="TcpclV4_8h" startline="198">TcpclV4::tcpclv4_ack_t::isEndSegment</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1a9dd248cd29d2e264fdd70ce96614927a" compoundref="TcpclV4_8h" startline="197">TcpclV4::tcpclv4_ack_t::isStartSegment</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a6e7e6927e43cb6e84c9f48120c8a5c69">KEEPALIVE</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classTcpclV4_1a63784be1d336966d602f7ca98020af52" compoundref="TcpclV4_8h" startline="322">m_ack</references>
+        <references refid="classTcpclV4_1a973219e7dff05f61859edf0ca8116a27" compoundref="TcpclV4_8h" startline="321">m_ackFlags</references>
+        <references refid="classTcpclV4_1ac526af537eb46282a9dbb52a40fc5919" compoundref="TcpclV4_8h" startline="345">m_ackSegmentReadCallback</references>
+        <references refid="classTcpclV4_1a3298f69dec70e549fb830edc03d8fc0e" compoundref="TcpclV4_8h" startline="347">m_bundleRefusalCallback</references>
+        <references refid="classTcpclV4_1a2044c1ae0e46743a339b5a885eb2530e" compoundref="TcpclV4_8h" startline="329">m_bundleTranferRefusalReasonCode</references>
+        <references refid="classTcpclV4_1ab8c98a6bcce809660e1bcf5c2393ee70" compoundref="TcpclV4_8h" startline="330">m_bundleTranferRefusalTransferId</references>
+        <references refid="classTcpclV4_1a594b451330403659f9df490aced1fdf1" compoundref="TcpclV4_8h" startline="342">m_contactHeaderReadCallback</references>
+        <references refid="classTcpclV4_1abff243fc22e339fc9f9ef98c37bf071b" compoundref="TcpclV4_8h" startline="279">m_contactHeaderRxState</references>
+        <references refid="classTcpclV4_1a67dcfe6ef25b16ad06647247b4c9a83e" compoundref="TcpclV4_8h" startline="300">m_currentCountOfSessionExtensionEncodedBytes</references>
+        <references refid="classTcpclV4_1ad54ca5f859fadc5f795f0a98f5f050c3" compoundref="TcpclV4_8h" startline="314">m_currentCountOfTransferExtensionEncodedBytes</references>
+        <references refid="classTcpclV4_1aafbb4e89db3ea7d50bc494783414c357" compoundref="TcpclV4_8h" startline="302">m_currentSessionExtensionLength</references>
+        <references refid="classTcpclV4_1a5d570b71c72056556558888cc48bdb85" compoundref="TcpclV4_8h" startline="316">m_currentTransferExtensionLength</references>
+        <references refid="classTcpclV4_1a45b4519fbda6f8e65bbb659986c25ada" compoundref="TcpclV4_8h" startline="281">m_dataAckRxState</references>
+        <references refid="classTcpclV4_1a445c36349f98e4f4e07412e77f33278f" compoundref="TcpclV4_8h" startline="344">m_dataSegmentContentsReadCallback</references>
+        <references refid="classTcpclV4_1a645e41c20dd5e5dde8b117a8f6141b83" compoundref="TcpclV4_8h" startline="318">m_dataSegmentDataVec</references>
+        <references refid="classTcpclV4_1a3b176fde5a0696634b7ea9adb49a396e" compoundref="TcpclV4_8h" startline="311">m_dataSegmentEndFlag</references>
+        <references refid="classTcpclV4_1a83d8dba8646833675c85da6fa051242d" compoundref="TcpclV4_8h" startline="317">m_dataSegmentLength</references>
+        <references refid="classTcpclV4_1a9aaa89e26ee262b3b34bbcf91af3d829" compoundref="TcpclV4_8h" startline="280">m_dataSegmentRxState</references>
+        <references refid="classTcpclV4_1a4f13d8a04b26acc8a1dd1de43956ccce" compoundref="TcpclV4_8h" startline="310">m_dataSegmentStartFlag</references>
+        <references refid="classTcpclV4_1ab2f0bfab8674bbaacba4d025c1653181" compoundref="TcpclV4_8h" startline="337">m_isSessionTerminationAck</references>
+        <references refid="classTcpclV4_1a110bf65f695b1a0d07e7c82b91850c0d" compoundref="TcpclV4_8h" startline="348">m_keepAliveCallback</references>
+        <references refid="classTcpclV4_1a4a4d7869bfb944b78631af77a32c104f" compoundref="TcpclV4_8h" startline="294">m_keepAliveInterval</references>
+        <references refid="classTcpclV4_1af2f9ad04c74a97da9b09ed4a87216831" compoundref="TcpclV4_8h" startline="278">m_mainRxState</references>
+        <references refid="classTcpclV4_1aa5cc266586150f9de639a703d251a4a9" compoundref="TcpclV4_8h" startline="277">M_MAX_RX_BUNDLE_SIZE_BYTES</references>
+        <references refid="classTcpclV4_1a74752afd64e0f798527a31c00b7444b6" compoundref="TcpclV4_8h" startline="309">m_messageFlags</references>
+        <references refid="classTcpclV4_1a833cb5622bfdcf406e654f2e9a7a7813" compoundref="TcpclV4_8h" startline="346">m_messageRejectCallback</references>
+        <references refid="classTcpclV4_1a745df0c622d9c9dc19006c681da4b6b8" compoundref="TcpclV4_8h" startline="325">m_messageRejectionReasonCode</references>
+        <references refid="classTcpclV4_1ae370ce01b69edb8e2db30030dceaccda" compoundref="TcpclV4_8h" startline="282">m_messageRejectRxState</references>
+        <references refid="classTcpclV4_1a6d80f35d776b03ce985595764a5c9841" compoundref="TcpclV4_8h" startline="291">m_messageTypeByte</references>
+        <references refid="classTcpclV4_1aa49a19529965d6afbc114e5d22a3db80" compoundref="TcpclV4_8h" startline="305">m_readValueByteIndex</references>
+        <references refid="classTcpclV4_1abbad7763ab04e1e61f5fd4c30060c586" compoundref="TcpclV4_8h" startline="326">m_rejectedMessageHeader</references>
+        <references refid="classTcpclV4_1a9180b76588340618d69e297e1d63f5bd" compoundref="TcpclV4_8h" startline="288">m_remoteHasEnabledTlsSecurity</references>
+        <references refid="classTcpclV4_1a4a6ff8bb061858feb4668ab801b69ce4" compoundref="TcpclV4_8h" startline="297">m_remoteNodeUriLength</references>
+        <references refid="classTcpclV4_1a1f7baf566142edc28d4e0752237a568c" compoundref="TcpclV4_8h" startline="298">m_remoteNodeUriStr</references>
+        <references refid="classTcpclV4_1aa217ccab77effad3272414d08e532bfc" compoundref="TcpclV4_8h" startline="295">m_segmentMru</references>
+        <references refid="classTcpclV4_1a949531148716050ec085ddbafc946050" compoundref="TcpclV4_8h" startline="299">m_sessionExtensionItemsLengthBytes</references>
+        <references refid="classTcpclV4_1a78ca87b484d88e87c07201b44856f95c" compoundref="TcpclV4_8h" startline="301">m_sessionExtensions</references>
+        <references refid="classTcpclV4_1aab851175fb1c05170d1be1855d23b26e" compoundref="TcpclV4_8h" startline="343">m_sessionInitCallback</references>
+        <references refid="classTcpclV4_1a50d6c9d3749ebd797dee9045a7a06fbe" compoundref="TcpclV4_8h" startline="285">m_sessionInitRxState</references>
+        <references refid="classTcpclV4_1a0b8662991a928c0010d1c03e35fd4ad2" compoundref="TcpclV4_8h" startline="336">m_sessionTerminationFlags</references>
+        <references refid="classTcpclV4_1ae110744180ef6c4bc4c9fc148cd2ff1c" compoundref="TcpclV4_8h" startline="349">m_sessionTerminationMessageCallback</references>
+        <references refid="classTcpclV4_1aa70b19ad81f496cc1b2b804e43f602d6" compoundref="TcpclV4_8h" startline="339">m_sessionTerminationReasonCode</references>
+        <references refid="classTcpclV4_1af0aa459d8c2074b2acb9b02867f4f95a" compoundref="TcpclV4_8h" startline="284">m_sessionTerminationRxState</references>
+        <references refid="classTcpclV4_1a1b065e00c9cfddb11830db389801b757" compoundref="TcpclV4_8h" startline="313">m_transferExtensionItemsLengthBytes</references>
+        <references refid="classTcpclV4_1a1b524af25ba9f0fe9692906f0d8c714d" compoundref="TcpclV4_8h" startline="315">m_transferExtensions</references>
+        <references refid="classTcpclV4_1a86a4fea1d9e191d6bf3bbdf6282a418f" compoundref="TcpclV4_8h" startline="312">m_transferId</references>
+        <references refid="classTcpclV4_1a80543ad51d6a2d230f7ad8cd876bde3d" compoundref="TcpclV4_8h" startline="296">m_transferMru</references>
+        <references refid="classTcpclV4_1a8192d3081c545bedfdac47dcf29c8c50" compoundref="TcpclV4_8h" startline="283">m_transferRefusalRxState</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a6f97c688ecbe8ac180bff7dc33d2312d">MSG_REJECT</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a665ab280cbdb8a7cf5db2474501e66f0">READ_ACK_SEGMENT</references>
+        <references refid="TcpclV4_8h_1a4b89a663c0cc8dbbdf22b679e59a3f3ca6fcfd4e6d050aa42b581c52c2f4d988f">READ_ACKNOWLEDGED_LENGTH_U64</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a5d1e5a9cb477ccc0c4d6f3a9f865f008">READ_CONTACT_HEADER</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80aa11731ca1066177e10dafae1886ae112">READ_DATA_CONTENTS</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80a9e5d99bbda6cc1561607aac590a7a8c8">READ_DATA_LENGTH_U64</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a077dd1f12697b20b1239a94ce778c969">READ_DATA_SEGMENT</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6ad6a4824ac438cb27061c24f47ac7ffb0">READ_FLAGS</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666aa33c795cae11dd2faecdaa96d2cb862d">READ_KEEPALIVE_INTERVAL_U16</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80afde46051b58ff26ebf35726b09f4ae9b">READ_MESSAGE_FLAGS_BYTE</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8ac7df14778a180b07ef6eb80d0ac01cc7">READ_MESSAGE_REJECTION</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a225e0668f0a8c46fe7555083c0c67ca1">READ_MESSAGE_TYPE_BYTE</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666a173630d1cf0f2c6d56f43bc7d25fe7f0">READ_NODE_ID</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666a253eb37cc0b3932fe5c32795f2910d49">READ_NODE_ID_LENGTH_U16</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666a073b74111cd4dcb402a0e409ac7d1035">READ_ONE_SESSION_EXTENSION_ITEM_FLAG</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666aa365cdb40865d1e179a1a7daec1719bf">READ_ONE_SESSION_EXTENSION_ITEM_LENGTH</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666a5791f67d950a30b2ce0b2fb7d9cbd634">READ_ONE_SESSION_EXTENSION_ITEM_TYPE</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666ad6967130b974b59b0a5826ae6389171b">READ_ONE_SESSION_EXTENSION_ITEM_VALUE</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80a226dd5f553b94375fe26ecdf1ca7cd94">READ_ONE_START_SEGMENT_TRANSFER_EXTENSION_ITEM_FLAG</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80a89012ad5e9b9017e03b227627a98320a">READ_ONE_START_SEGMENT_TRANSFER_EXTENSION_ITEM_LENGTH</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80a8697296e77eab8e02d2c80dd96b76925">READ_ONE_START_SEGMENT_TRANSFER_EXTENSION_ITEM_TYPE</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80a57eb91bdf1ac1ee5c2ded551da64b238">READ_ONE_START_SEGMENT_TRANSFER_EXTENSION_ITEM_VALUE</references>
+        <references refid="TcpclV4_8h_1a24c3642017a7d40784e5c67ec5333f5eac017cda72772b65ca4a29639f312e503">READ_REASON_CODE_BYTE</references>
+        <references refid="TcpclV4_8h_1a24c3642017a7d40784e5c67ec5333f5eaf40719edf49261bc4396be2721d7a00d">READ_REJECTED_MESSAGE_HEADER</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666a2b1ef5140a9871009e8646b1ef66b156">READ_SEGMENT_MRU_U64</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666a61a51493c8f7436d1064aac99760aa8f">READ_SESSION_EXTENSION_ITEMS_LENGTH_U32</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a68b8b9897d696f2c614f9f40479c8d58">READ_SESSION_INIT</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a1f5a1876f9c2fe29d10a39be7dc83125">READ_SESSION_TERMINATION</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80a08c53ccdf9bb7a6ecadb9515411fff95">READ_START_SEGMENT_TRANSFER_EXTENSION_ITEMS_LENGTH_U32</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6a2eb8aef85de58385936f83d617694d78">READ_SYNC_1</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6a0cd4f7ade2648c6b3c93cd2a4cebabbd">READ_SYNC_2</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6af89beb4723fb4f7cf53271bda12ccf2e">READ_SYNC_3</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6ab6c70400439ffaadbeae5042554b7b13">READ_SYNC_4</references>
+        <references refid="TcpclV4_8h_1a5a3c66722be383c4e0956448609c90aca792df890290fb9401610d2cd3f26b1f4">READ_TRANSFER_ID</references>
+        <references refid="TcpclV4_8h_1aa934196f60d04e1a7d628097994f8e80adf9cd0cc8abe4a4249ba7110f937157b">READ_TRANSFER_ID_U64</references>
+        <references refid="TcpclV4_8h_1a6169a0e1b2efef744291138727514666ad5ba19f27031f0851bfbcfed2d613426">READ_TRANSFER_MRU_U64</references>
+        <references refid="TcpclV4_8h_1ad11d2630a9af8445d767f545e44864c8a257b63b2796082c1b1dae4dbd00f7810">READ_TRANSFER_REFUSAL</references>
+        <references refid="TcpclV4_8h_1ab60e63e7ae1c3b089b95c2d949261aa6a67b469cdfbe5fbb90e85dfcb67b7f3cd">READ_VERSION</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a469bb9ff8b9f37bb0c89efab8096ddd4">SESS_INIT</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8aa5868fc218743d8d87fa06b08110de38">SESS_TERM</references>
+        <references refid="TcpclV4_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclV4_8cpp" startline="35">subprocess</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1a52564f4540f93d3d18d9e92e01ce4fc2" compoundref="TcpclV4_8h" startline="200">TcpclV4::tcpclv4_ack_t::totalBytesAcknowledged</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1ae3c156a81ae2d8294a5261780a2dcf6a" compoundref="TcpclV4_8h" startline="199">TcpclV4::tcpclv4_ack_t::transferId</references>
+        <references refid="TcpclV4_8cpp_1afe8332ea98f88bbd186bcf243ae76f73" compoundref="TcpclV4_8cpp" startline="76" endline="92">UnalignedBigEndianToNativeU32</references>
+        <references refid="TcpclV4_8cpp_1aabb150174f95cad3bf4ac7b8971ca082" compoundref="TcpclV4_8cpp" startline="37" endline="57">UnalignedBigEndianToNativeU64</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a19f0e1dee59fba7c972b923559832cc1">XFER_ACK</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a97b931a418af7c171241f84a628a4b84">XFER_REFUSE</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4_1a4e3582a9df5d811973c0984704d3fdc0" compoundref="TcpclV4_8cpp" startline="358" endline="360">HandleReceivedChar</referencedby>
+        <referencedby refid="classTcpclV4BundleSource_1a67861721768bacbde532e93e6fda29db" compoundref="TcpclV4BundleSource_8cpp" startline="223" endline="252">TcpclV4BundleSource::HandleTcpReceiveSomeUnsecure</referencedby>
+        <referencedby refid="classTcpclV4BundleSink_1a6255c76004051c38e8d900c398fee2ce" compoundref="TcpclV4BundleSink_8cpp" startline="288" endline="324">TcpclV4BundleSink::PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a4e3582a9df5d811973c0984704d3fdc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::HandleReceivedChar</definition>
+        <argsstring>(const uint8_t rxVal)</argsstring>
+        <name>HandleReceivedChar</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>rxVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="240" column="27" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="358" bodyend="360"/>
+        <references refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" compoundref="TcpclV4_8cpp" startline="362" endline="894">HandleReceivedChars</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classTcpclV4_1a489a3bc679351724cdf2034ec3fcc062" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::GenerateContactHeader</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;hdr, bool remoteHasEnabledTlsSecurity)</argsstring>
+        <name>GenerateContactHeader</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>hdr</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>remoteHasEnabledTlsSecurity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="241" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="896" bodyend="904"/>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a5a46353a0373ae303ee1a1173fc1a0a1" compoundref="TcpclV4BidirectionalLink_8cpp" startline="940" endline="957">TcpclV4BidirectionalLink::BaseClass_SendContactHeader</referencedby>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a592b76667094c32a6f08724e0605bd0b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateSessionInitMessage</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;msg, uint16_t keepAliveIntervalSeconds, uint64_t segmentMru, uint64_t transferMru, const std::string &amp;myNodeEidUri, const tcpclv4_extensions_t &amp;sessionExtensions)</argsstring>
+        <name>GenerateSessionInitMessage</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>keepAliveIntervalSeconds</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>segmentMru</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferMru</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>myNodeEidUri</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;</type>
+          <declname>sessionExtensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="242" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="906" bodyend="931"/>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1a34af1ab0a03a9e0187e043bb825375b5" compoundref="TcpclV4_8cpp" startline="237" endline="243">TcpclV4::tcpclv4_extensions_t::GetTotalDataRequiredForSerialization</references>
+        <references refid="TcpclV4_8cpp_1ab7f97313ef55ecb7ab6d05f2252af904" compoundref="TcpclV4_8cpp" startline="128" endline="131">NativeU16ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1ae5857e1d65e4379b354252cf2b60da18" compoundref="TcpclV4_8cpp" startline="230" endline="236">TcpclV4::tcpclv4_extensions_t::Serialize</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a469bb9ff8b9f37bb0c89efab8096ddd4">SESS_INIT</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a9b2be9257ecaab9dbc2747c6a7547826" compoundref="TcpclV4BidirectionalLink_8cpp" startline="914" endline="938">TcpclV4BidirectionalLink::BaseClass_SendSessionInit</referencedby>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a439ddcae5a67f1e97ba3835f25bea313" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateNonFragmentedDataSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegment, uint64_t transferId, const uint8_t *contents, uint64_t sizeContents)</argsstring>
+        <name>GenerateNonFragmentedDataSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="246" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="934" bodyend="958"/>
+        <references refid="TcpclV4_8cpp_1a8ccb94d08daac4e78ebc419b91f1ff16" compoundref="TcpclV4_8cpp" startline="107" endline="116">ClearFourBytes</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1af14f0595440c019679baedeae1d9a5cb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateNonFragmentedDataSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegment, uint64_t transferId, const uint8_t *contents, uint64_t sizeContents, const tcpclv4_extensions_t &amp;transferExtensions)</argsstring>
+        <name>GenerateNonFragmentedDataSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;</type>
+          <declname>transferExtensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="248" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="983" bodyend="1011"/>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1a34af1ab0a03a9e0187e043bb825375b5" compoundref="TcpclV4_8cpp" startline="237" endline="243">TcpclV4::tcpclv4_extensions_t::GetTotalDataRequiredForSerialization</references>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1ae5857e1d65e4379b354252cf2b60da18" compoundref="TcpclV4_8cpp" startline="230" endline="236">TcpclV4::tcpclv4_extensions_t::Serialize</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1aa311a1a1e53524da115e7d4280286190" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateStartDataSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegment, bool isEndSegment, uint64_t transferId, const uint8_t *contents, uint64_t sizeContents, const tcpclv4_extensions_t &amp;transferExtensions)</argsstring>
+        <name>GenerateStartDataSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegment</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEndSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;</type>
+          <declname>transferExtensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="250" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1041" bodyend="1069"/>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1a34af1ab0a03a9e0187e043bb825375b5" compoundref="TcpclV4_8cpp" startline="237" endline="243">TcpclV4::tcpclv4_extensions_t::GetTotalDataRequiredForSerialization</references>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1ae5857e1d65e4379b354252cf2b60da18" compoundref="TcpclV4_8cpp" startline="230" endline="236">TcpclV4::tcpclv4_extensions_t::Serialize</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a9ff56755228de5fccab79f6150862577" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateFragmentedStartDataSegmentWithLengthExtension</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegment, uint64_t transferId, const uint8_t *contents, uint64_t sizeContents, uint64_t totalBundleLengthToBeSent)</argsstring>
+        <name>GenerateFragmentedStartDataSegmentWithLengthExtension</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>totalBundleLengthToBeSent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="252" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1099" bodyend="1132"/>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extension__t_1aa20cc2211a5a461626b28a657f8578fc" compoundref="TcpclV4_8cpp" startline="184" endline="205">TcpclV4::tcpclv4_extension_t::SerializeTransferLengthExtension</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extension__t_1a2359ac8c5d0e3f783946445295279b43" compoundref="TcpclV4_8h" startline="179">TcpclV4::tcpclv4_extension_t::SIZE_OF_SERIALIZED_TRANSFER_LENGTH_EXTENSION</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1af5b124d9c90dd77f0700c695f231af8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateNonStartDataSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegment, bool isEndSegment, uint64_t transferId, const uint8_t *contents, uint64_t sizeContents)</argsstring>
+        <name>GenerateNonStartDataSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegment</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEndSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="254" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1167" bodyend="1189"/>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a82efcc6c7c90ab0ec0b2cd4549094bee" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateNonFragmentedDataSegmentHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegmentHeaderDataVec, uint64_t transferId, uint64_t sizeContents)</argsstring>
+        <name>GenerateNonFragmentedDataSegmentHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegmentHeaderDataVec</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="258" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="959" bodyend="980"/>
+        <references refid="TcpclV4_8cpp_1a8ccb94d08daac4e78ebc419b91f1ff16" compoundref="TcpclV4_8cpp" startline="107" endline="116">ClearFourBytes</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a358b68c4f0a4fcee372619671784c879" compoundref="TcpclV4BidirectionalLink_8cpp" startline="651" endline="831">TcpclV4BidirectionalLink::BaseClass_Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a76f52d4f24723af0525b72369d9dc05b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateNonFragmentedDataSegmentHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegmentHeaderDataVec, uint64_t transferId, uint64_t sizeContents, const tcpclv4_extensions_t &amp;transferExtensions)</argsstring>
+        <name>GenerateNonFragmentedDataSegmentHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegmentHeaderDataVec</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;</type>
+          <declname>transferExtensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="260" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1012" bodyend="1038"/>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1a34af1ab0a03a9e0187e043bb825375b5" compoundref="TcpclV4_8cpp" startline="237" endline="243">TcpclV4::tcpclv4_extensions_t::GetTotalDataRequiredForSerialization</references>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1ae5857e1d65e4379b354252cf2b60da18" compoundref="TcpclV4_8cpp" startline="230" endline="236">TcpclV4::tcpclv4_extensions_t::Serialize</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a0d774b30813408ace95af33c27d7089a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateStartDataSegmentHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegmentHeaderDataVec, bool isEndSegment, uint64_t transferId, uint64_t sizeContents, const tcpclv4_extensions_t &amp;transferExtensions)</argsstring>
+        <name>GenerateStartDataSegmentHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegmentHeaderDataVec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEndSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structTcpclV4_1_1tcpclv4__extensions__t" kindref="compound">tcpclv4_extensions_t</ref> &amp;</type>
+          <declname>transferExtensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="262" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1070" bodyend="1096"/>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1a34af1ab0a03a9e0187e043bb825375b5" compoundref="TcpclV4_8cpp" startline="237" endline="243">TcpclV4::tcpclv4_extensions_t::GetTotalDataRequiredForSerialization</references>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extensions__t_1ae5857e1d65e4379b354252cf2b60da18" compoundref="TcpclV4_8cpp" startline="230" endline="236">TcpclV4::tcpclv4_extensions_t::Serialize</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a32b998fb30646a15267850c7773d1d10" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateFragmentedStartDataSegmentWithLengthExtensionHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegmentHeaderDataVec, uint64_t transferId, uint64_t sizeContents, uint64_t totalBundleLengthToBeSent)</argsstring>
+        <name>GenerateFragmentedStartDataSegmentWithLengthExtensionHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegmentHeaderDataVec</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>totalBundleLengthToBeSent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="264" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1133" bodyend="1164"/>
+        <references refid="TcpclV4_8cpp_1a66a1beab288b8a3e1867e7931619bde8" compoundref="TcpclV4_8cpp" startline="94" endline="105">NativeU32ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extension__t_1aa20cc2211a5a461626b28a657f8578fc" compoundref="TcpclV4_8cpp" startline="184" endline="205">TcpclV4::tcpclv4_extension_t::SerializeTransferLengthExtension</references>
+        <references refid="structTcpclV4_1_1tcpclv4__extension__t_1a2359ac8c5d0e3f783946445295279b43" compoundref="TcpclV4_8h" startline="179">TcpclV4::tcpclv4_extension_t::SIZE_OF_SERIALIZED_TRANSFER_LENGTH_EXTENSION</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a358b68c4f0a4fcee372619671784c879" compoundref="TcpclV4BidirectionalLink_8cpp" startline="651" endline="831">TcpclV4BidirectionalLink::BaseClass_Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a4e45ee87f150ffaf9069af70a4ff7846" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateNonStartDataSegmentHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataSegmentHeaderDataVec, bool isEndSegment, uint64_t transferId, uint64_t sizeContents)</argsstring>
+        <name>GenerateNonStartDataSegmentHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataSegmentHeaderDataVec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEndSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="266" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1190" bodyend="1208"/>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a444a2dc0b2b9cb1dfa944e2cb913ee04">XFER_SEGMENT</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a358b68c4f0a4fcee372619671784c879" compoundref="TcpclV4BidirectionalLink_8cpp" startline="651" endline="831">TcpclV4BidirectionalLink::BaseClass_Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a2ee0861ad93ee1fcd64ed7cdff051d6a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateAckSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ackSegment, const tcpclv4_ack_t &amp;ack)</argsstring>
+        <name>GenerateAckSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ackSegment</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structTcpclV4_1_1tcpclv4__ack__t" kindref="compound">tcpclv4_ack_t</ref> &amp;</type>
+          <declname>ack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="269" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1210" bodyend="1224"/>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1af0c8ed1ad80945f2972c2a7a0cd12082" compoundref="TcpclV4_8h" startline="198">TcpclV4::tcpclv4_ack_t::isEndSegment</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1a9dd248cd29d2e264fdd70ce96614927a" compoundref="TcpclV4_8h" startline="197">TcpclV4::tcpclv4_ack_t::isStartSegment</references>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1a52564f4540f93d3d18d9e92e01ce4fc2" compoundref="TcpclV4_8h" startline="200">TcpclV4::tcpclv4_ack_t::totalBytesAcknowledged</references>
+        <references refid="structTcpclV4_1_1tcpclv4__ack__t_1ae3c156a81ae2d8294a5261780a2dcf6a" compoundref="TcpclV4_8h" startline="199">TcpclV4::tcpclv4_ack_t::transferId</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a19f0e1dee59fba7c972b923559832cc1">XFER_ACK</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a2e0468a9b3aa00b9f15a02b109660de6" compoundref="TcpclV4BidirectionalLink_8cpp" startline="213" endline="314">TcpclV4BidirectionalLink::BaseClass_DataSegmentCallback</referencedby>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTcpclV4_1af45f95e306781cc173d80d34b6c4a6d0" compoundref="TcpclV4_8cpp" startline="1226" endline="1228">GenerateAckSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1af45f95e306781cc173d80d34b6c4a6d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclV4::GenerateAckSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ackSegment, bool isStartSegment, bool isEndSegment, uint64_t transferId, uint64_t totalBytesAcknowledged)</argsstring>
+        <name>GenerateAckSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ackSegment</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isStartSegment</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEndSegment</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>totalBytesAcknowledged</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="270" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1226" bodyend="1228"/>
+        <references refid="classTcpclV4_1a2ee0861ad93ee1fcd64ed7cdff051d6a" compoundref="TcpclV4_8cpp" startline="1210" endline="1224">GenerateAckSegment</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a30f7180ed88509dfad47ce097646b031" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::GenerateBundleRefusal</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;refusalMessage, TCPCLV4_TRANSFER_REFUSE_REASON_CODES refusalCode, uint64_t transferId)</argsstring>
+        <name>GenerateBundleRefusal</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>refusalMessage</declname>
+        </param>
+        <param>
+          <type><ref refid="TcpclV4_8h_1a08d611f032028c9069829b36bd08de3a" kindref="member">TCPCLV4_TRANSFER_REFUSE_REASON_CODES</ref></type>
+          <declname>refusalCode</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>transferId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="271" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1230" bodyend="1236"/>
+        <references refid="TcpclV4_8cpp_1a98eb63272a19479a826b11e8703d5991" compoundref="TcpclV4_8cpp" startline="59" endline="74">NativeU64ToUnalignedBigEndian</references>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a97b931a418af7c171241f84a628a4b84">XFER_REFUSE</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1a8c6364d0aca8d798d94b30177d40161a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::GenerateMessageRejection</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;rejectionMessage, TCPCLV4_MESSAGE_REJECT_REASON_CODES rejectionCode, uint8_t rejectedMessageHeader)</argsstring>
+        <name>GenerateMessageRejection</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>rejectionMessage</declname>
+        </param>
+        <param>
+          <type><ref refid="TcpclV4_8h_1adb62e9f614d782e382ca039f7f369dab" kindref="member">TCPCLV4_MESSAGE_REJECT_REASON_CODES</ref></type>
+          <declname>rejectionCode</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>rejectedMessageHeader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="272" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1238" bodyend="1244"/>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a6f97c688ecbe8ac180bff7dc33d2312d">MSG_REJECT</references>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1aa23b606c1ff52b7d30b4d7685046fcf0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::GenerateKeepAliveMessage</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;keepAliveMessage)</argsstring>
+        <name>GenerateKeepAliveMessage</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>keepAliveMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="273" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1247" bodyend="1250"/>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8a6e7e6927e43cb6e84c9f48120c8a5c69">KEEPALIVE</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1a4281baf486e5306740e6a58a61a7ef0a" compoundref="TcpclV4BidirectionalLink_8cpp" startline="392" endline="422">TcpclV4BidirectionalLink::BaseClass_OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclV4_1ac56cd016e86931003f7a1c222473c873" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclV4::GenerateSessionTerminationMessage</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;sessionTerminationMessage, TCPCLV4_SESSION_TERMINATION_REASON_CODES sessionTerminationReasonCode, bool isAckOfAnEarlierSessionTerminationMessage)</argsstring>
+        <name>GenerateSessionTerminationMessage</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>sessionTerminationMessage</declname>
+        </param>
+        <param>
+          <type><ref refid="TcpclV4_8h_1a4f4e4fedfb3193650387379d9782c0d7" kindref="member">TCPCLV4_SESSION_TERMINATION_REASON_CODES</ref></type>
+          <declname>sessionTerminationReasonCode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isAckOfAnEarlierSessionTerminationMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclV4.h" line="274" column="34" bodyfile="common/tcpcl/src/TcpclV4.cpp" bodystart="1252" bodyend="1259"/>
+        <references refid="TcpclV4_8h_1aca26078d92dc3ea98abb17d6ae6a82e8aa5868fc218743d8d87fa06b08110de38">SESS_TERM</references>
+        <referencedby refid="classTcpclV4BidirectionalLink_1ab6aa98ced49b83be06eb80b8e7f93571" compoundref="TcpclV4BidirectionalLink_8cpp" startline="451" endline="516">TcpclV4BidirectionalLink::BaseClass_DoHandleSocketShutdown</referencedby>
+        <referencedby refid="TestTcpclV4_8cpp_1a4f09b6a2638fb0b6a4c438b36f0d2d8f" compoundref="TestTcpclV4_8cpp" startline="21" endline="617">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>TcpclV4::tcpclv4_ack_t</label>
+        <link refid="structTcpclV4_1_1tcpclv4__ack__t"/>
+      </node>
+      <node id="2">
+        <label>TcpclV4::tcpclv4_extensions_t</label>
+        <link refid="structTcpclV4_1_1tcpclv4__extensions__t"/>
+      </node>
+      <node id="1">
+        <label>TcpclV4</label>
+        <link refid="classTcpclV4"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_sessionExtensions</edgelabel>
+          <edgelabel>m_transferExtensions</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_ack</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/tcpcl/include/TcpclV4.h" line="155" column="1" bodyfile="common/tcpcl/include/TcpclV4.h" bodystart="155" bodyend="350"/>
+    <listofallmembers>
+      <member refid="classTcpclV4_1a24a1aa74f9085cceb4b457c4638c4b70" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>AckSegmentReadCallback_t</name></member>
+      <member refid="classTcpclV4_1a726cabf477e9e160a3e4b57da0eb2e77" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>BundleRefusalCallback_t</name></member>
+      <member refid="classTcpclV4_1aae2fb0bb38d56e469ce38a1d83cb4dc0" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>ContactHeaderReadCallback_t</name></member>
+      <member refid="classTcpclV4_1a0ff74dc873d93f733084d5e24ed2f95b" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>DataSegmentContentsReadCallback_t</name></member>
+      <member refid="classTcpclV4_1a2ee0861ad93ee1fcd64ed7cdff051d6a" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateAckSegment</name></member>
+      <member refid="classTcpclV4_1af45f95e306781cc173d80d34b6c4a6d0" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateAckSegment</name></member>
+      <member refid="classTcpclV4_1a30f7180ed88509dfad47ce097646b031" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateBundleRefusal</name></member>
+      <member refid="classTcpclV4_1a489a3bc679351724cdf2034ec3fcc062" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateContactHeader</name></member>
+      <member refid="classTcpclV4_1a9ff56755228de5fccab79f6150862577" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateFragmentedStartDataSegmentWithLengthExtension</name></member>
+      <member refid="classTcpclV4_1a32b998fb30646a15267850c7773d1d10" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateFragmentedStartDataSegmentWithLengthExtensionHeaderOnly</name></member>
+      <member refid="classTcpclV4_1aa23b606c1ff52b7d30b4d7685046fcf0" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateKeepAliveMessage</name></member>
+      <member refid="classTcpclV4_1a8c6364d0aca8d798d94b30177d40161a" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateMessageRejection</name></member>
+      <member refid="classTcpclV4_1a439ddcae5a67f1e97ba3835f25bea313" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateNonFragmentedDataSegment</name></member>
+      <member refid="classTcpclV4_1af14f0595440c019679baedeae1d9a5cb" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateNonFragmentedDataSegment</name></member>
+      <member refid="classTcpclV4_1a82efcc6c7c90ab0ec0b2cd4549094bee" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateNonFragmentedDataSegmentHeaderOnly</name></member>
+      <member refid="classTcpclV4_1a76f52d4f24723af0525b72369d9dc05b" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateNonFragmentedDataSegmentHeaderOnly</name></member>
+      <member refid="classTcpclV4_1af5b124d9c90dd77f0700c695f231af8e" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateNonStartDataSegment</name></member>
+      <member refid="classTcpclV4_1a4e45ee87f150ffaf9069af70a4ff7846" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateNonStartDataSegmentHeaderOnly</name></member>
+      <member refid="classTcpclV4_1a592b76667094c32a6f08724e0605bd0b" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateSessionInitMessage</name></member>
+      <member refid="classTcpclV4_1ac56cd016e86931003f7a1c222473c873" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateSessionTerminationMessage</name></member>
+      <member refid="classTcpclV4_1aa311a1a1e53524da115e7d4280286190" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateStartDataSegment</name></member>
+      <member refid="classTcpclV4_1a0d774b30813408ace95af33c27d7089a" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>GenerateStartDataSegmentHeaderOnly</name></member>
+      <member refid="classTcpclV4_1a4e3582a9df5d811973c0984704d3fdc0" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>HandleReceivedChar</name></member>
+      <member refid="classTcpclV4_1affbd4c3250a51c4c77ed29837fe90a48" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>HandleReceivedChars</name></member>
+      <member refid="classTcpclV4_1a2af92c81eb5a6eba899cecd9fd404f37" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>InitRx</name></member>
+      <member refid="classTcpclV4_1aef3aa3e12c5d0c4606566c1fd7a88f08" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>KeepAliveCallback_t</name></member>
+      <member refid="classTcpclV4_1a63784be1d336966d602f7ca98020af52" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_ack</name></member>
+      <member refid="classTcpclV4_1a973219e7dff05f61859edf0ca8116a27" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_ackFlags</name></member>
+      <member refid="classTcpclV4_1ac526af537eb46282a9dbb52a40fc5919" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_ackSegmentReadCallback</name></member>
+      <member refid="classTcpclV4_1a3298f69dec70e549fb830edc03d8fc0e" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_bundleRefusalCallback</name></member>
+      <member refid="classTcpclV4_1a2044c1ae0e46743a339b5a885eb2530e" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_bundleTranferRefusalReasonCode</name></member>
+      <member refid="classTcpclV4_1ab8c98a6bcce809660e1bcf5c2393ee70" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_bundleTranferRefusalTransferId</name></member>
+      <member refid="classTcpclV4_1a594b451330403659f9df490aced1fdf1" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_contactHeaderReadCallback</name></member>
+      <member refid="classTcpclV4_1abff243fc22e339fc9f9ef98c37bf071b" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_contactHeaderRxState</name></member>
+      <member refid="classTcpclV4_1a67dcfe6ef25b16ad06647247b4c9a83e" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_currentCountOfSessionExtensionEncodedBytes</name></member>
+      <member refid="classTcpclV4_1ad54ca5f859fadc5f795f0a98f5f050c3" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_currentCountOfTransferExtensionEncodedBytes</name></member>
+      <member refid="classTcpclV4_1aafbb4e89db3ea7d50bc494783414c357" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_currentSessionExtensionLength</name></member>
+      <member refid="classTcpclV4_1a5d570b71c72056556558888cc48bdb85" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_currentTransferExtensionLength</name></member>
+      <member refid="classTcpclV4_1a45b4519fbda6f8e65bbb659986c25ada" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataAckRxState</name></member>
+      <member refid="classTcpclV4_1a445c36349f98e4f4e07412e77f33278f" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataSegmentContentsReadCallback</name></member>
+      <member refid="classTcpclV4_1a645e41c20dd5e5dde8b117a8f6141b83" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataSegmentDataVec</name></member>
+      <member refid="classTcpclV4_1a3b176fde5a0696634b7ea9adb49a396e" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataSegmentEndFlag</name></member>
+      <member refid="classTcpclV4_1a83d8dba8646833675c85da6fa051242d" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataSegmentLength</name></member>
+      <member refid="classTcpclV4_1a9aaa89e26ee262b3b34bbcf91af3d829" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataSegmentRxState</name></member>
+      <member refid="classTcpclV4_1a4f13d8a04b26acc8a1dd1de43956ccce" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_dataSegmentStartFlag</name></member>
+      <member refid="classTcpclV4_1ab2f0bfab8674bbaacba4d025c1653181" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_isSessionTerminationAck</name></member>
+      <member refid="classTcpclV4_1a110bf65f695b1a0d07e7c82b91850c0d" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_keepAliveCallback</name></member>
+      <member refid="classTcpclV4_1a4a4d7869bfb944b78631af77a32c104f" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_keepAliveInterval</name></member>
+      <member refid="classTcpclV4_1af2f9ad04c74a97da9b09ed4a87216831" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_mainRxState</name></member>
+      <member refid="classTcpclV4_1aa5cc266586150f9de639a703d251a4a9" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>M_MAX_RX_BUNDLE_SIZE_BYTES</name></member>
+      <member refid="classTcpclV4_1a74752afd64e0f798527a31c00b7444b6" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_messageFlags</name></member>
+      <member refid="classTcpclV4_1a833cb5622bfdcf406e654f2e9a7a7813" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_messageRejectCallback</name></member>
+      <member refid="classTcpclV4_1a745df0c622d9c9dc19006c681da4b6b8" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_messageRejectionReasonCode</name></member>
+      <member refid="classTcpclV4_1ae370ce01b69edb8e2db30030dceaccda" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_messageRejectRxState</name></member>
+      <member refid="classTcpclV4_1a6d80f35d776b03ce985595764a5c9841" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_messageTypeByte</name></member>
+      <member refid="classTcpclV4_1a338668c1daba0ad2ec02363bfc03b0ee" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_nextBundleLength</name></member>
+      <member refid="classTcpclV4_1aa49a19529965d6afbc114e5d22a3db80" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_readValueByteIndex</name></member>
+      <member refid="classTcpclV4_1abbad7763ab04e1e61f5fd4c30060c586" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_rejectedMessageHeader</name></member>
+      <member refid="classTcpclV4_1a9180b76588340618d69e297e1d63f5bd" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_remoteHasEnabledTlsSecurity</name></member>
+      <member refid="classTcpclV4_1a4a6ff8bb061858feb4668ab801b69ce4" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_remoteNodeUriLength</name></member>
+      <member refid="classTcpclV4_1a1f7baf566142edc28d4e0752237a568c" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_remoteNodeUriStr</name></member>
+      <member refid="classTcpclV4_1aa217ccab77effad3272414d08e532bfc" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_segmentMru</name></member>
+      <member refid="classTcpclV4_1a949531148716050ec085ddbafc946050" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionExtensionItemsLengthBytes</name></member>
+      <member refid="classTcpclV4_1a78ca87b484d88e87c07201b44856f95c" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionExtensions</name></member>
+      <member refid="classTcpclV4_1aab851175fb1c05170d1be1855d23b26e" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionInitCallback</name></member>
+      <member refid="classTcpclV4_1a50d6c9d3749ebd797dee9045a7a06fbe" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionInitRxState</name></member>
+      <member refid="classTcpclV4_1a0b8662991a928c0010d1c03e35fd4ad2" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionTerminationFlags</name></member>
+      <member refid="classTcpclV4_1ae110744180ef6c4bc4c9fc148cd2ff1c" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionTerminationMessageCallback</name></member>
+      <member refid="classTcpclV4_1aa70b19ad81f496cc1b2b804e43f602d6" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionTerminationReasonCode</name></member>
+      <member refid="classTcpclV4_1af0aa459d8c2074b2acb9b02867f4f95a" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_sessionTerminationRxState</name></member>
+      <member refid="classTcpclV4_1a1b065e00c9cfddb11830db389801b757" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_transferExtensionItemsLengthBytes</name></member>
+      <member refid="classTcpclV4_1a1b524af25ba9f0fe9692906f0d8c714d" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_transferExtensions</name></member>
+      <member refid="classTcpclV4_1a86a4fea1d9e191d6bf3bbdf6282a418f" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_transferId</name></member>
+      <member refid="classTcpclV4_1a80543ad51d6a2d230f7ad8cd876bde3d" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_transferMru</name></member>
+      <member refid="classTcpclV4_1a8192d3081c545bedfdac47dcf29c8c50" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>m_transferRefusalRxState</name></member>
+      <member refid="classTcpclV4_1a686820028875d7378a0b4de8d03e9831" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>MessageRejectCallback_t</name></member>
+      <member refid="classTcpclV4_1a7b354f0c5e604d045395b6370f424fd3" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SessionInitCallback_t</name></member>
+      <member refid="classTcpclV4_1a6570489b0997ade9679287df9f25f198" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SessionTerminationMessageCallback_t</name></member>
+      <member refid="classTcpclV4_1a8a81ae077173768a59b8498269f9e1c9" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetAckSegmentReadCallback</name></member>
+      <member refid="classTcpclV4_1acf03fde6e2bcb246079acb230d3db3b2" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetBundleRefusalCallback</name></member>
+      <member refid="classTcpclV4_1a29f98823e3e3c48d5679f66d83a20d39" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetContactHeaderReadCallback</name></member>
+      <member refid="classTcpclV4_1aa61c53b9fbdfa034b40ff3a8d85fed29" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetDataSegmentContentsReadCallback</name></member>
+      <member refid="classTcpclV4_1afc55c6077f7c3aa1d77f86e2b8597c25" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetKeepAliveCallback</name></member>
+      <member refid="classTcpclV4_1a6f4b9e4c4c17f25e8342ca60c281bdff" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetMaxReceiveBundleSizeBytes</name></member>
+      <member refid="classTcpclV4_1a05f545d96c6b24ff548d11115ed99113" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetMessageRejectCallback</name></member>
+      <member refid="classTcpclV4_1a82e68f0fb3944e04b86c353e4ce1fed4" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetSessionInitReadCallback</name></member>
+      <member refid="classTcpclV4_1a3f49564edb57b37749c0dfdaf66e3d03" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>SetSessionTerminationMessageCallback</name></member>
+      <member refid="classTcpclV4_1a404fc59a9f350423085a0470ae3c7c11" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>TcpclV4</name></member>
+      <member refid="classTcpclV4_1a9ec126148135993f33e236b36d33e64b" prot="public" virt="non-virtual"><scope>TcpclV4</scope><name>~TcpclV4</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

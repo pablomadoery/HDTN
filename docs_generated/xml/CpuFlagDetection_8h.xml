@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="CpuFlagDetection_8h" kind="file" language="C++">
+    <compoundname>CpuFlagDetection.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="yes">hdtn_util_export.h</includes>
+    <includedby refid="CpuFlagDetection_8cpp" local="yes">common/util/src/CpuFlagDetection.cpp</includedby>
+    <includedby refid="TestCpuFlagDetection_8cpp" local="yes">common/util/test/TestCpuFlagDetection.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/CpuFlagDetection.h</label>
+        <link refid="CpuFlagDetection_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>hdtn_util_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>common/util/test/TestCpuFlagDetection.cpp</label>
+        <link refid="TestCpuFlagDetection_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/util/include/CpuFlagDetection.h</label>
+        <link refid="CpuFlagDetection_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>common/util/src/CpuFlagDetection.cpp</label>
+        <link refid="CpuFlagDetection_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCpuFlagDetection" prot="public">CpuFlagDetection</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classCpuFlagDetection" kindref="compound">CpuFlagDetection</ref> class file is used for detecting the current processor&apos;s CPU flags to determine which CPU instructions are supported. It is cross platform. It is used by this project&apos;s CMake build system when compiling locally (not cross-compiling) to determine if any hardware accelerated functions should be compiled in. For more information, see the example from <ulink url="https://docs.microsoft.com/en-us/cpp/intrinsics/cpuid-cpuidex?view=msvc-170">https://docs.microsoft.com/en-us/cpp/intrinsics/cpuid-cpuidex?view=msvc-170</ulink> which this code is based on. Also see <ulink url="https://www.boost.org/doc/libs/master/boost/beast/core/detail/cpu_info.hpp">https://www.boost.org/doc/libs/master/boost/beast/core/detail/cpu_info.hpp</ulink> from which the cross platform code idea is based on. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_CPU_FLAG_DETECTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_CPU_FLAG_DETECTION_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hdtn_util_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classCpuFlagDetection" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">HDTN_UTIL_EXPORT<sp/><ref refid="classCpuFlagDetection" kindref="compound">CpuFlagDetection</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>GetCpuFlagsCommaSeparated();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>GetCpuVendor();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>GetCpuBrand();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>_CPU_FLAG_DETECTION_H<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/CpuFlagDetection.h"/>
+  </compounddef>
+</doxygen>

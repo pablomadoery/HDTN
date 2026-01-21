@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBundleStorageManagerMT" kind="class" language="C++" prot="public">
+    <compoundname>BundleStorageManagerMT</compoundname>
+    <basecompoundref refid="classBundleStorageManagerBase" prot="public" virt="non-virtual">BundleStorageManagerBase</basecompoundref>
+    <includes refid="BundleStorageManagerMT_8h" local="no">BundleStorageManagerMT.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBundleStorageManagerMT_1a9a82cd6b015beeb1325444312f6f8eaa" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; boost::condition_variable, boost::mutex &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;boost::condition_variable, boost::mutex&gt; &gt; BundleStorageManagerMT::m_conditionVariablesPlusMutexesVec</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariablesPlusMutexesVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="46" column="17" bodyfile="module/storage/include/BundleStorageManagerMT.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerMT_1a969ceaf2f1c80f458ad48811b1a3ed17" compoundref="BundleStorageManagerMT_8cpp" startline="177" endline="187">CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1ab70b2a7de3dd89e6a0b5ab55314c126b" compoundref="BundleStorageManagerMT_8cpp" startline="46" endline="54">StopAllDiskThreads</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" compoundref="BundleStorageManagerMT_8cpp" startline="82" endline="174">ThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerMT_1a999fb5c688d87e5eab0c1aae47685ebe" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; boost::thread &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;boost::thread&gt; &gt; BundleStorageManagerMT::m_threadPtrsVec</definition>
+        <argsstring></argsstring>
+        <name>m_threadPtrsVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="47" column="17" bodyfile="module/storage/include/BundleStorageManagerMT.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerMT_1ab82f7e2654ca327e936296e35fe3ca0a" compoundref="BundleStorageManagerMT_8cpp" startline="71" endline="80">Start</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1a533f005112d4df6353b716148c836012" compoundref="BundleStorageManagerMT_8cpp" startline="56" endline="69">~BundleStorageManagerMT</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerMT_1ab27a54c9794c0656c02c3e317007e780" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BundleStorageManagerMT::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="49" column="17" bodyfile="module/storage/include/BundleStorageManagerMT.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerMT_1ab82f7e2654ca327e936296e35fe3ca0a" compoundref="BundleStorageManagerMT_8cpp" startline="71" endline="80">Start</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1ab70b2a7de3dd89e6a0b5ab55314c126b" compoundref="BundleStorageManagerMT_8cpp" startline="46" endline="54">StopAllDiskThreads</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" compoundref="BundleStorageManagerMT_8cpp" startline="82" endline="174">ThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerMT_1afe134008d60e4ab98f8942bb8c608495" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BundleStorageManagerMT::m_noFatalErrorsOccurred</definition>
+        <argsstring></argsstring>
+        <name>m_noFatalErrorsOccurred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="50" column="17" bodyfile="module/storage/include/BundleStorageManagerMT.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerMT_1ab82f7e2654ca327e936296e35fe3ca0a" compoundref="BundleStorageManagerMT_8cpp" startline="71" endline="80">Start</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" compoundref="BundleStorageManagerMT_8cpp" startline="82" endline="174">ThreadFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBundleStorageManagerMT_1a26642c916c560771665bf278202e8a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerMT::BundleStorageManagerMT</definition>
+        <argsstring>()</argsstring>
+        <name>BundleStorageManagerMT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="30" column="24" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerMT_1ab9369eccb1c71293c75a1cf27141e816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerMT::BundleStorageManagerMT</definition>
+        <argsstring>(const boost::filesystem::path &amp;jsonConfigFilePath)</argsstring>
+        <name>BundleStorageManagerMT</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>jsonConfigFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="31" column="24" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="27" bodyend="33"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleStorageManagerBase_1a7dd666be3d4a48324df1a536ac2b6b34" compoundref="BundleStorageManagerBase_8h" startline="133">BundleStorageManagerBase::m_storageConfigPtr</references>
+        <references refid="BundleStorageManagerMT_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerMT_8cpp" startline="23">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerMT_1ab67249f95dddbcdfcd887a5013c98b07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerMT::BundleStorageManagerMT</definition>
+        <argsstring>(const StorageConfig_ptr &amp;storageConfigPtr)</argsstring>
+        <name>BundleStorageManagerMT</name>
+        <param>
+          <type>const <ref refid="StorageConfig_8h_1a7d50b7d32d991c354058b279b1617671" kindref="member">StorageConfig_ptr</ref> &amp;</type>
+          <declname>storageConfigPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="32" column="24" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="35" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerMT_1a533f005112d4df6353b716148c836012" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerMT::~BundleStorageManagerMT</definition>
+        <argsstring>() override</argsstring>
+        <name>~BundleStorageManagerMT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="33" column="32" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="56" bodyend="69"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="classBundleStorageManagerMT_1a999fb5c688d87e5eab0c1aae47685ebe" compoundref="BundleStorageManagerMT_8h" startline="47">m_threadPtrsVec</references>
+        <references refid="classBundleStorageManagerMT_1ab70b2a7de3dd89e6a0b5ab55314c126b" compoundref="BundleStorageManagerMT_8cpp" startline="46" endline="54">StopAllDiskThreads</references>
+        <references refid="BundleStorageManagerMT_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerMT_8cpp" startline="23">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerMT_1ab82f7e2654ca327e936296e35fe3ca0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>STORAGE_LIB_EXPORT void</type>
+        <definition>void BundleStorageManagerMT::Start</definition>
+        <argsstring>() override</argsstring>
+        <name>Start</name>
+        <reimplements refid="classBundleStorageManagerBase_1a1e6638a515e22ed258b6f6fea3cede6a">Start</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="34" column="37" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="71" bodyend="80"/>
+        <references refid="classBundleStorageManagerMT_1afe134008d60e4ab98f8942bb8c608495" compoundref="BundleStorageManagerMT_8h" startline="50">m_noFatalErrorsOccurred</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="classBundleStorageManagerMT_1ab27a54c9794c0656c02c3e317007e780" compoundref="BundleStorageManagerMT_8h" startline="49">m_running</references>
+        <references refid="classBundleStorageManagerBase_1a7dd666be3d4a48324df1a536ac2b6b34" compoundref="BundleStorageManagerBase_8h" startline="133">BundleStorageManagerBase::m_storageConfigPtr</references>
+        <references refid="classBundleStorageManagerMT_1a999fb5c688d87e5eab0c1aae47685ebe" compoundref="BundleStorageManagerMT_8h" startline="47">m_threadPtrsVec</references>
+        <references refid="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" compoundref="BundleStorageManagerMT_8cpp" startline="82" endline="174">ThreadFunc</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBundleStorageManagerMT_1ab70b2a7de3dd89e6a0b5ab55314c126b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageManagerMT::StopAllDiskThreads</definition>
+        <argsstring>()</argsstring>
+        <name>StopAllDiskThreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="38" column="32" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="46" bodyend="54"/>
+        <references refid="classBundleStorageManagerMT_1a9a82cd6b015beeb1325444312f6f8eaa" compoundref="BundleStorageManagerMT_8h" startline="46">m_conditionVariablesPlusMutexesVec</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="classBundleStorageManagerMT_1ab27a54c9794c0656c02c3e317007e780" compoundref="BundleStorageManagerMT_8h" startline="49">m_running</references>
+        <referencedby refid="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" compoundref="BundleStorageManagerMT_8cpp" startline="82" endline="174">ThreadFunc</referencedby>
+        <referencedby refid="classBundleStorageManagerMT_1a533f005112d4df6353b716148c836012" compoundref="BundleStorageManagerMT_8cpp" startline="56" endline="69">~BundleStorageManagerMT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageManagerMT::ThreadFunc</definition>
+        <argsstring>(unsigned int threadIndex)</argsstring>
+        <name>ThreadFunc</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>threadIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="39" column="32" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="82" bodyend="174"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="BundleStorageConfig_8h_1ad6863a6140335fc0519cec08a9173f0f" compoundref="BundleStorageConfig_8h" startline="98">CIRCULAR_INDEX_BUFFER_SIZE</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBundleStorageManagerBase_1a877adcb756a38252c907352a7dfcda01" compoundref="BundleStorageManagerBase_8h" startline="147">BundleStorageManagerBase::m_circularBufferBlockDataPtr</references>
+        <references refid="classBundleStorageManagerBase_1a96d693eb97c220e7d94bdc6eba97375e" compoundref="BundleStorageManagerBase_8h" startline="151">BundleStorageManagerBase::m_circularBufferIsReadCompletedPointers</references>
+        <references refid="classBundleStorageManagerBase_1a7db27eda4dcb19f0e8a282a81259087b" compoundref="BundleStorageManagerBase_8h" startline="152">BundleStorageManagerBase::m_circularBufferReadFromStoragePointers</references>
+        <references refid="classBundleStorageManagerBase_1a3db6ec18d0fe0b0e033d66e20dad6cfd" compoundref="BundleStorageManagerBase_8h" startline="148">BundleStorageManagerBase::m_circularBufferSegmentIdsPtr</references>
+        <references refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" compoundref="BundleStorageManagerBase_8h" startline="145">BundleStorageManagerBase::m_circularIndexBuffersVec</references>
+        <references refid="classBundleStorageManagerBase_1a9737d0f5058a3d7d62e374541d86331e" compoundref="BundleStorageManagerBase_8h" startline="142">BundleStorageManagerBase::m_conditionVariableMainThread</references>
+        <references refid="classBundleStorageManagerMT_1a9a82cd6b015beeb1325444312f6f8eaa" compoundref="BundleStorageManagerMT_8h" startline="46">m_conditionVariablesPlusMutexesVec</references>
+        <references refid="classBundleStorageManagerBase_1ab951521278ee6c5b3f9cf4b3c63e1f22" compoundref="BundleStorageManagerBase_8h" startline="143">BundleStorageManagerBase::m_filePathsVec</references>
+        <references refid="classBundleStorageManagerBase_1ae04e25f412a13e45b1760d712560b3cc" compoundref="BundleStorageManagerBase_8h" startline="141">BundleStorageManagerBase::m_mutexMainThread</references>
+        <references refid="classBundleStorageManagerMT_1afe134008d60e4ab98f8942bb8c608495" compoundref="BundleStorageManagerMT_8h" startline="50">m_noFatalErrorsOccurred</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="classBundleStorageManagerMT_1ab27a54c9794c0656c02c3e317007e780" compoundref="BundleStorageManagerMT_8h" startline="49">m_running</references>
+        <references refid="classBundleStorageManagerBase_1ad7b87288208af7ffdd35fceaff7356b9" compoundref="BundleStorageManagerBase_8h" startline="156">BundleStorageManagerBase::m_successfullyRestoredFromDisk</references>
+        <references refid="BundleStorageConfig_8h_1abca0195434792fe23a38329fd91312c6" compoundref="BundleStorageConfig_8h" startline="50">SEGMENT_ID_LAST</references>
+        <references refid="BundleStorageConfig_8h_1acbe07a3c3fe2056125230c357f85b870" compoundref="BundleStorageConfig_8h" startline="65">SEGMENT_SIZE</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="classBundleStorageManagerMT_1ab70b2a7de3dd89e6a0b5ab55314c126b" compoundref="BundleStorageManagerMT_8cpp" startline="46" endline="54">StopAllDiskThreads</references>
+        <references refid="BundleStorageManagerMT_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerMT_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classBundleStorageManagerMT_1ab82f7e2654ca327e936296e35fe3ca0a" compoundref="BundleStorageManagerMT_8cpp" startline="71" endline="80">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerMT_1a969ceaf2f1c80f458ad48811b1a3ed17" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageManagerMT::CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</definition>
+        <argsstring>(const unsigned int diskId) override</argsstring>
+        <name>CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</name>
+        <reimplements refid="classBundleStorageManagerBase_1aa3b0b5ebf3b7949c939014a981c87f6f">CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</reimplements>
+        <param>
+          <type>const unsigned int</type>
+          <declname>diskId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerMT.h" line="40" column="40" bodyfile="module/storage/src/BundleStorageManagerMT.cpp" bodystart="177" bodyend="187"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" compoundref="BundleStorageManagerBase_8h" startline="145">BundleStorageManagerBase::m_circularIndexBuffersVec</references>
+        <references refid="classBundleStorageManagerMT_1a9a82cd6b015beeb1325444312f6f8eaa" compoundref="BundleStorageManagerMT_8h" startline="46">m_conditionVariablesPlusMutexesVec</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BundleStorageManagerBase</label>
+        <link refid="classBundleStorageManagerBase"/>
+      </node>
+      <node id="1">
+        <label>BundleStorageManagerMT</label>
+        <link refid="classBundleStorageManagerMT"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>HashMap16BitFixedSize&lt; cbhe_bundle_uuid_t, uint64_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="4">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="2">
+        <label>BundleStorageManagerBase</label>
+        <link refid="classBundleStorageManagerBase"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_memoryManager</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_bundleStorageCatalog</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>HashMap16BitFixedSize&lt; uint64_t, catalog_entry_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="7">
+        <label>HashMap16BitFixedSize&lt; cbhe_bundle_uuid_nofragment_t, uint64_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="3">
+        <label>MemoryManagerTreeArray</label>
+        <link refid="classMemoryManagerTreeArray"/>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>BundleStorageCatalog</label>
+        <link refid="classBundleStorageCatalog"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_uuidToCustodyIdHashMap</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_uuidNoFragToCustodyIdHashMap</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_custodyIdToCatalogEntryHashmap</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BundleStorageManagerMT</label>
+        <link refid="classBundleStorageManagerMT"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/storage/include/BundleStorageManagerMT.h" line="28" column="1" bodyfile="module/storage/include/BundleStorageManagerMT.h" bodystart="28" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classBundleStorageManagerBase_1a6cb2297e2a134cba633d656c5bd24724" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerBase_1ac3bb2c3a398ceb4e278ac7953a67fef5" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerBase_1a4b6fc8d660c278c09471621c7acec71c" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerMT_1a26642c916c560771665bf278202e8a13" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>BundleStorageManagerMT</name></member>
+      <member refid="classBundleStorageManagerMT_1ab9369eccb1c71293c75a1cf27141e816" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>BundleStorageManagerMT</name></member>
+      <member refid="classBundleStorageManagerMT_1ab67249f95dddbcdfcd887a5013c98b07" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>BundleStorageManagerMT</name></member>
+      <member refid="classBundleStorageManagerMT_1a969ceaf2f1c80f458ad48811b1a3ed17" prot="private" virt="virtual"><scope>BundleStorageManagerMT</scope><name>CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</name></member>
+      <member refid="classBundleStorageManagerBase_1a902225846af2c3db5c7da76a8091ae4d" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetBundleStorageCatalogConstRef</name></member>
+      <member refid="classBundleStorageManagerBase_1affc84a95bc757fab6df68c5e714ae2f0" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetCatalogEntryPtrFromCustodyId</name></member>
+      <member refid="classBundleStorageManagerBase_1a9f944108dba37287497ddf702f70424c" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetCustodyIdFromUuid</name></member>
+      <member refid="classBundleStorageManagerBase_1a9169910b133bd178300c2e7f81575db8" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetCustodyIdFromUuid</name></member>
+      <member refid="classBundleStorageManagerBase_1a801e395c6503914a6fcf56c023b239e0" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetExpiredBundleIds</name></member>
+      <member refid="classBundleStorageManagerBase_1af19cc32f2e59431d3af82c93794c1480" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetFreeSpaceBytes</name></member>
+      <member refid="classBundleStorageManagerBase_1a456fbc5656764e522eed86bde7d2395d" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetMemoryManagerConstRef</name></member>
+      <member refid="classBundleStorageManagerBase_1aa5c172f74aa6744cae1da9ebbcb29a69" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetStorageExpiringBeforeThresholdTelemetry</name></member>
+      <member refid="classBundleStorageManagerBase_1aed56dc56432fc04ff87f022f4cbc5b64" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetTotalCapacityBytes</name></member>
+      <member refid="classBundleStorageManagerBase_1aff5eb6ef198551d6a3be1d316c4945fb" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>GetUsedSpaceBytes</name></member>
+      <member refid="classBundleStorageManagerBase_1aff7ce888d9f782a1997dad09b35cbae4" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_autoDeleteFilesOnExit</name></member>
+      <member refid="classBundleStorageManagerBase_1a4413c460174182d9d6841bddc241debc" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_bundleStorageCatalog</name></member>
+      <member refid="classBundleStorageManagerBase_1a877adcb756a38252c907352a7dfcda01" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_circularBufferBlockDataPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1a96d693eb97c220e7d94bdc6eba97375e" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_circularBufferIsReadCompletedPointers</name></member>
+      <member refid="classBundleStorageManagerBase_1a7db27eda4dcb19f0e8a282a81259087b" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_circularBufferReadFromStoragePointers</name></member>
+      <member refid="classBundleStorageManagerBase_1a3db6ec18d0fe0b0e033d66e20dad6cfd" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_circularBufferSegmentIdsPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_circularIndexBuffersVec</name></member>
+      <member refid="classBundleStorageManagerBase_1a9737d0f5058a3d7d62e374541d86331e" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_conditionVariableMainThread</name></member>
+      <member refid="classBundleStorageManagerMT_1a9a82cd6b015beeb1325444312f6f8eaa" prot="private" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_conditionVariablesPlusMutexesVec</name></member>
+      <member refid="classBundleStorageManagerBase_1ab951521278ee6c5b3f9cf4b3c63e1f22" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_filePathsVec</name></member>
+      <member refid="classBundleStorageManagerBase_1a26c0623bcdef133a117e2d1448bccc0a" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>M_MAX_SEGMENTS</name></member>
+      <member refid="classBundleStorageManagerBase_1ae7efdd8f9dfe8772b306779cf78b5a4f" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_memoryManager</name></member>
+      <member refid="classBundleStorageManagerBase_1ae04e25f412a13e45b1760d712560b3cc" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_mutexMainThread</name></member>
+      <member refid="classBundleStorageManagerMT_1afe134008d60e4ab98f8942bb8c608495" prot="private" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_noFatalErrorsOccurred</name></member>
+      <member refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>M_NUM_STORAGE_DISKS</name></member>
+      <member refid="classBundleStorageManagerMT_1ab27a54c9794c0656c02c3e317007e780" prot="private" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_running</name></member>
+      <member refid="classBundleStorageManagerBase_1a7dd666be3d4a48324df1a536ac2b6b34" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_storageConfigPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1ad7b87288208af7ffdd35fceaff7356b9" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_successfullyRestoredFromDisk</name></member>
+      <member refid="classBundleStorageManagerMT_1a999fb5c688d87e5eab0c1aae47685ebe" prot="private" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_threadPtrsVec</name></member>
+      <member refid="classBundleStorageManagerBase_1a3bb36fa1f66852bfc9470955744d69b5" prot="protected" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_tmpInitializerOfCircularIndexBuffersVec</name></member>
+      <member refid="classBundleStorageManagerBase_1a0712101eb3e684a3ca5bde48e132fc46" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>M_TOTAL_STORAGE_CAPACITY_BYTES</name></member>
+      <member refid="classBundleStorageManagerBase_1ab9348eb0b6490a59f5be3954924752ce" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_totalBundlesRestored</name></member>
+      <member refid="classBundleStorageManagerBase_1abf5d9ca22e22b8724892a6fa09ca3555" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_totalBytesRestored</name></member>
+      <member refid="classBundleStorageManagerBase_1a2164fc245b16ea3119acfafc6b783d60" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>m_totalSegmentsRestored</name></member>
+      <member refid="classBundleStorageManagerBase_1ad2b7303bfc7d64b294a6e5b14b0203a1" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>PopTop</name></member>
+      <member refid="classBundleStorageManagerBase_1acd36cf387f86038cc3b0af29eab8016b" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>PopTop</name></member>
+      <member refid="classBundleStorageManagerBase_1a40b3c75247211df11230b558630912e7" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>PopTop</name></member>
+      <member refid="classBundleStorageManagerBase_1a13bd2000287b95e8b646fb0b9b12e86f" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>Push</name></member>
+      <member refid="classBundleStorageManagerBase_1ac2df5fe10713cf31c7277343bf4b5f00" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>PushAllSegments</name></member>
+      <member refid="classBundleStorageManagerBase_1ac5bc1c40a5bdbfb4b1850c2c6eec8297" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>PushSegment</name></member>
+      <member refid="classBundleStorageManagerBase_1ae155bc1ef801cc07f836b17f39ccb887" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>ReadAllSegments</name></member>
+      <member refid="classBundleStorageManagerBase_1aca67b7998c5d0749ccac923649e290c9" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>ReadFirstSegment</name></member>
+      <member refid="classBundleStorageManagerBase_1af5dd339b13c413f020c142c15cbdd9ed" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>RemoveBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a130995ce392c8db5fac85a3eb853223a" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>RemoveBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a6d165d250105b927ee15b399cd910ea1" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>RemoveReadBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a1ac63f9373f6edd08328502350cca5fe" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>RemoveReadBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a5c41ac3e131be0bcd452bd39ddddcdd1" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>RemoveReadBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>RestoreFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a549e78c4f659b9967f9873e72ad6ac2b" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>ReturnCustodyIdToAwaitingSend</name></member>
+      <member refid="classBundleStorageManagerBase_1a655545cf4f5d264d67cf86970bd8950e" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>ReturnTop</name></member>
+      <member refid="classBundleStorageManagerMT_1ab82f7e2654ca327e936296e35fe3ca0a" prot="public" virt="virtual"><scope>BundleStorageManagerMT</scope><name>Start</name></member>
+      <member refid="classBundleStorageManagerMT_1ab70b2a7de3dd89e6a0b5ab55314c126b" prot="private" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>StopAllDiskThreads</name></member>
+      <member refid="classBundleStorageManagerMT_1a2e5ef8634041a35820f738c6b7a656b1" prot="private" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>ThreadFunc</name></member>
+      <member refid="classBundleStorageManagerBase_1ac81e7c8ef2d19215d5037c2b47df1c8b" prot="public" virt="non-virtual"><scope>BundleStorageManagerMT</scope><name>TopSegment</name></member>
+      <member refid="classBundleStorageManagerBase_1a61cac6b1db95f0ac7e929980cb58d777" prot="public" virt="virtual"><scope>BundleStorageManagerMT</scope><name>~BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerMT_1a533f005112d4df6353b716148c836012" prot="public" virt="virtual"><scope>BundleStorageManagerMT</scope><name>~BundleStorageManagerMT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

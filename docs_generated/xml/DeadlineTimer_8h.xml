@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="DeadlineTimer_8h" kind="file" language="C++">
+    <compoundname>DeadlineTimer.h</compoundname>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">atomic</includes>
+    <includes local="yes">hdtn_util_export.h</includes>
+    <includedby refid="DeadlineTimer_8cpp" local="yes">common/util/src/DeadlineTimer.cpp</includedby>
+    <includedby refid="TestDeadlineTimer_8cpp" local="yes">common/util/test/TestDeadlineTimer.cpp</includedby>
+    <includedby refid="TelemetryRunner_8cpp" local="yes">module/telem_cmd_interface/src/TelemetryRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>atomic</label>
+      </node>
+      <node id="2">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="4">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/DeadlineTimer.h</label>
+        <link refid="DeadlineTimer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>common/util/src/DeadlineTimer.cpp</label>
+        <link refid="DeadlineTimer_8cpp"/>
+      </node>
+      <node id="3">
+        <label>common/util/test/TestDeadlineTimer.cpp</label>
+        <link refid="TestDeadlineTimer_8cpp"/>
+      </node>
+      <node id="4">
+        <label>module/telem_cmd_interface/src/TelemetryRunner.cpp</label>
+        <link refid="TelemetryRunner_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/util/include/DeadlineTimer.h</label>
+        <link refid="DeadlineTimer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDeadlineTimer" prot="public">DeadlineTimer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classDeadlineTimer" kindref="compound">DeadlineTimer</ref> implements sleeping for an amount of time to maintain a precise run interval </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_DEADLINE_TIMER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_DEADLINE_TIMER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hdtn_util_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classDeadlineTimer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDeadlineTimer" kindref="compound">DeadlineTimer</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/><ref refid="classDeadlineTimer_1a1ab17050e0f81d7f0dbf86ce3de62a7c" kindref="member">DeadlineTimer</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intervalMs);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDeadlineTimer_1ae63b65eb33dd09704f42622163be2e07" kindref="member">SleepUntilNextInterval</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDeadlineTimer_1a655a10685e2f4c335e29c523890a6cab" kindref="member">Cancel</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDeadlineTimer_1a259ce40a448bce6b3f3155dbee14ecde" kindref="member">Disable</ref>()<sp/>noexcept;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="classDeadlineTimer_1a1ab17050e0f81d7f0dbf86ce3de62a7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDeadlineTimer_1a1ab17050e0f81d7f0dbf86ce3de62a7c" kindref="member">DeadlineTimer</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35" refid="classDeadlineTimer_1af3b3a9c8caeb9969ff07810b57de3886" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test__async_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref><sp/><ref refid="classDeadlineTimer_1af3b3a9c8caeb9969ff07810b57de3886" kindref="member">m_ioService</ref>;</highlight></codeline>
+<codeline lineno="36" refid="classDeadlineTimer_1a2cc038bbed1082e91e8df2c1ba8907cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::posix_time::time_duration<sp/><ref refid="classDeadlineTimer_1a2cc038bbed1082e91e8df2c1ba8907cf" kindref="member">m_sleepValTimeDuration</ref>;</highlight></codeline>
+<codeline lineno="37" refid="classDeadlineTimer_1ad70bffab132b82769e19c580c822fe34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::deadline_timer<sp/><ref refid="classDeadlineTimer_1ad70bffab132b82769e19c580c822fe34" kindref="member">m_deadlineTimer</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classDeadlineTimer_1a5736f6bade549795f8871ad0413fab78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classDeadlineTimer_1a5736f6bade549795f8871ad0413fab78" kindref="member">m_enabled</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>_DEADLINE_TIMER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/DeadlineTimer.h"/>
+  </compounddef>
+</doxygen>

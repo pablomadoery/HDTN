@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="StartStorageRunner_8h" kind="file" language="C++">
+    <compoundname>StartStorageRunner.h</compoundname>
+    <includes local="yes">storage_lib_export.h</includes>
+    <includedby refid="storage_2src_2main_8cpp" local="yes">module/storage/src/main.cpp</includedby>
+    <includedby refid="StartStorageRunner_8cpp" local="yes">module/storage/src/StartStorageRunner.cpp</includedby>
+    <includedby refid="TestStorageRunner_8cpp" local="yes">module/storage/unit_tests/TestStorageRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>storage_lib_export.h</label>
+      </node>
+      <node id="1">
+        <label>module/storage/include/StartStorageRunner.h</label>
+        <link refid="StartStorageRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>module/storage/src/main.cpp</label>
+        <link refid="storage_2src_2main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>module/storage/unit_tests/TestStorageRunner.cpp</label>
+        <link refid="TestStorageRunner_8cpp"/>
+      </node>
+      <node id="3">
+        <label>module/storage/src/StartStorageRunner.cpp</label>
+        <link refid="StartStorageRunner_8cpp"/>
+      </node>
+      <node id="1">
+        <label>module/storage/include/StartStorageRunner.h</label>
+        <link refid="StartStorageRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="StartStorageRunner_8h_1a6f7aae48d7451611a6e71f6a6fe296a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT int</type>
+        <definition>STORAGE_LIB_EXPORT int startStorageRunner</definition>
+        <argsstring>(int argc, const char *argv[])</argsstring>
+        <name>startStorageRunner</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/StartStorageRunner.h" line="27" column="24" bodyfile="module/storage/src/StartStorageRunner.cpp" bodystart="27" bodyend="43" declfile="module/storage/include/StartStorageRunner.h" declline="27" declcolumn="24"/>
+        <references refid="classhdtn_1_1Logger_1a2c064b72a4db6bc1f831b04e98b8cbe3" compoundref="Logger_8cpp" startline="136" endline="143">hdtn::Logger::initializeWithProcess</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classStorageRunner_1a3e8340b5cec42290efd80de2d3d238e3" compoundref="StorageRunner_8h" startline="38">StorageRunner::m_totalBundlesErasedFromStorage</references>
+        <references refid="classStorageRunner_1ad8c5d21f13a84c12ddb206ba41f98d94" compoundref="StorageRunner_8h" startline="39">StorageRunner::m_totalBundlesSentToEgressFromStorage</references>
+        <references refid="classStorageRunner_1acc767c35a7dd33fee10033bc9aae4395" compoundref="StorageRunner_8cpp" startline="45" endline="149">StorageRunner::Run</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="classhdtn_1_1Logger_1ad5bbdad8a1bc1582cba0762597f0277eaddecebdea58b5f264d27f1f7909bab74">hdtn::Logger::storage</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Tad Kollar <ulink url="mailto:tad.kollar@nasa.gov">tad.kollar@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2024 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This file provides the &quot;int main()&quot; function to wrap <ref refid="classStorageRunner" kindref="compound">StorageRunner</ref> and forward command line arguments to <ref refid="classStorageRunner" kindref="compound">StorageRunner</ref>. This file is only used when running HDTN in distributed mode in which there is a single process dedicated to the Storage module. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>START_STORAGE_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>START_STORAGE_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;storage_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">STORAGE_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="StartStorageRunner_8h_1a6f7aae48d7451611a6e71f6a6fe296a0" kindref="member">startStorageRunner</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[]);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="module/storage/include/StartStorageRunner.h"/>
+  </compounddef>
+</doxygen>

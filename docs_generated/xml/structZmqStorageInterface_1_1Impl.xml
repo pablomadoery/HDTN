@@ -1,0 +1,1732 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structZmqStorageInterface_1_1Impl" kind="struct" language="C++" prot="public">
+    <compoundname>ZmqStorageInterface::Impl</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <innerclass refid="structZmqStorageInterface_1_1Impl_1_1CutThroughMapAckData" prot="public">ZmqStorageInterface::Impl::CutThroughMapAckData</innerclass>
+    <innerclass refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData" prot="public">ZmqStorageInterface::Impl::CutThroughQueueData</innerclass>
+    <innerclass refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" prot="public">ZmqStorageInterface::Impl::OutductInfo_t</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="structZmqStorageInterface_1_1Impl_1a4c17344050a5c02ecc9762f36351cd04" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>DeletionPolicy</name>
+        <enumvalue id="structZmqStorageInterface_1_1Impl_1a4c17344050a5c02ecc9762f36351cd04ac7561db7a418dd39b2201dfe110ab4a4" prot="private">
+          <name>never</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structZmqStorageInterface_1_1Impl_1a4c17344050a5c02ecc9762f36351cd04a1a9471e11c31c75cf2e843495a2b1bf5" prot="private">
+          <name>onExpiration</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structZmqStorageInterface_1_1Impl_1a4c17344050a5c02ecc9762f36351cd04a598583764c90bc232dfb7261db62f2a5" prot="private">
+          <name>onStorageFull</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="221" column="3" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="221" bodyend="221"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structZmqStorageInterface_1_1Impl_1a89bcb4eaa32d8aa8aba6ac4a2e900c08" prot="public" static="no">
+        <type>std::queue&lt; <ref refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData" kindref="compound">CutThroughQueueData</ref> &gt;</type>
+        <definition>typedef std::queue&lt;CutThroughQueueData&gt; ZmqStorageInterface::Impl::cut_through_queue_t</definition>
+        <argsstring></argsstring>
+        <name>cut_through_queue_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="85" column="22" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structZmqStorageInterface_1_1Impl_1aca435baf5e31b120be941a7ac9eb7542" prot="public" static="no">
+        <type>std::unordered_map&lt; uint64_t, uint64_t &gt;</type>
+        <definition>typedef std::unordered_map&lt;uint64_t, uint64_t&gt; ZmqStorageInterface::Impl::custodyid_to_size_map_t</definition>
+        <argsstring></argsstring>
+        <name>custodyid_to_size_map_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="86" column="30" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structZmqStorageInterface_1_1Impl_1a270e0dfa05234cd5acaab5e97294334c" prot="public" static="no">
+        <type>std::unordered_map&lt; uint64_t, <ref refid="structZmqStorageInterface_1_1Impl_1_1CutThroughMapAckData" kindref="compound">CutThroughMapAckData</ref> &gt;</type>
+        <definition>typedef std::unordered_map&lt;uint64_t, CutThroughMapAckData&gt; ZmqStorageInterface::Impl::map_id_to_ackdata_t</definition>
+        <argsstring></argsstring>
+        <name>map_id_to_ackdata_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="88" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structZmqStorageInterface_1_1Impl_1a338f9bc404a6b065146f79aef62c9f56" prot="public" static="no">
+        <type>std::unique_ptr&lt; <ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &gt;</type>
+        <definition>typedef std::unique_ptr&lt;OutductInfo_t&gt; ZmqStorageInterface::Impl::OutductInfoPtr_t</definition>
+        <argsstring></argsstring>
+        <name>OutductInfoPtr_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="113" column="27" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a34318658febeb086d27ff805dd09febd" prot="public" static="no" mutable="no">
+        <type><ref refid="structStorageTelemetry__t" kindref="compound">StorageTelemetry_t</ref></type>
+        <definition>StorageTelemetry_t ZmqStorageInterface::Impl::m_telem</definition>
+        <argsstring></argsstring>
+        <name>m_telem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="170" column="22" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1abf5947cfd4f9c57e53732b5e81665b94" prot="public" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t ZmqStorageInterface::Impl::M_HDTN_EID_CUSTODY</definition>
+        <argsstring></argsstring>
+        <name>M_HDTN_EID_CUSTODY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="171" column="14" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a6627ba615051a97d621e78749864b467" prot="private" static="yes" mutable="no">
+        <type>const long</type>
+        <definition>const long ZmqStorageInterface::Impl::DEFAULT_BIG_TIMEOUT_POLL</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_BIG_TIMEOUT_POLL</name>
+        <initializer>= 250</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="174" column="21" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a77a4ac7bc94b47748789edc1f1ce6302" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::context_t&gt; ZmqStorageInterface::Impl::m_zmqContextPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqContextPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="176" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1aedb7d022a522a3faa9609c0b6c3cd4db" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqPullSock_boundIngressToConnectingStoragePtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_boundIngressToConnectingStoragePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="178" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a40876886352e00e1c6dafd4374c9af8a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqSubSock_boundReleaseToConnectingStoragePtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqSubSock_boundReleaseToConnectingStoragePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="180" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ad20828f71f3a7a2266347876122f1c08" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqPushSock_connectingStorageToBoundEgressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPushSock_connectingStorageToBoundEgressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="182" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a18a53b7222df2b47884d3200776400fd" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqPullSock_boundEgressToConnectingStoragePtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_boundEgressToConnectingStoragePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="184" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a7e9804ea073b16a2ae5228a23e724926" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqPushSock_connectingStorageToBoundIngressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPushSock_connectingStorageToBoundIngressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="186" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a94581c9ffd3f61b637d8bc0d99984d72" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqPushSock_connectingStorageToBoundRouterPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPushSock_connectingStorageToBoundRouterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="189" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a1fd823bf3cdb7476bc1b5fafce6e4b68" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; ZmqStorageInterface::Impl::m_zmqRepSock_connectingTelemToFromBoundStoragePtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqRepSock_connectingTelemToFromBoundStoragePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="191" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a18bac4a670b6d600019e4a34889baf94" prot="private" static="no" mutable="no">
+        <type><ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref></type>
+        <definition>HdtnConfig ZmqStorageInterface::Impl::m_hdtnConfig</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="193" column="14" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a26e0368f77e71b119a260391a7ae6698" prot="private" static="no" mutable="no">
+        <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+        <definition>zmq::context_t* ZmqStorageInterface::Impl::m_hdtnOneProcessZmqInprocContextPtr</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnOneProcessZmqInprocContextPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="195" column="18" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a283a541114a5b3305237108bab697cd9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; ZmqStorageInterface::Impl::m_threadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="196" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="196" bodyend="-1"/>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1ab17b6c97d9ff61ca6e5a79126f45b1f4" compoundref="ZmqStorageInterface_8cpp" startline="259" endline="269">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a489303d4082c6e8b8e376d82987a6cc0" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; ZmqStorageInterface::Impl::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="197" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="197" bodyend="-1"/>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1ab17b6c97d9ff61ca6e5a79126f45b1f4" compoundref="ZmqStorageInterface_8cpp" startline="259" endline="269">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a0126d0be70ba1419fe9be9041cd1d15e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::m_isOutOfStorageSpace</definition>
+        <argsstring></argsstring>
+        <name>m_isOutOfStorageSpace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="198" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ab279ae477867bae6571265af84ffadad" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classBundleStorageManagerBase" kindref="compound">BundleStorageManagerBase</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;BundleStorageManagerBase&gt; ZmqStorageInterface::Impl::m_bsmPtr</definition>
+        <argsstring></argsstring>
+        <name>m_bsmPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="201" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1aa08473f5e5c08484f12ff0ebb5aa59fd" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCustodyIdAllocator" kindref="compound">CustodyIdAllocator</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CustodyIdAllocator&gt; ZmqStorageInterface::Impl::m_custodyIdAllocatorPtr</definition>
+        <argsstring></argsstring>
+        <name>m_custodyIdAllocatorPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="202" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1aa761cc2c29ab084c4990c1ca9f57db9f" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCustodyTransferManager" kindref="compound">CustodyTransferManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CustodyTransferManager&gt; ZmqStorageInterface::Impl::m_ctmPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ctmPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="203" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a42347c32d4638aa59dc2aec37657c46b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCustodyTimers" kindref="compound">CustodyTimers</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CustodyTimers&gt; ZmqStorageInterface::Impl::m_custodyTimersPtr</definition>
+        <argsstring></argsstring>
+        <name>m_custodyTimersPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="204" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1afa297283e3ac8cdf0cb2a484a44ffd98" prot="private" static="no" mutable="no">
+        <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref></type>
+        <definition>BundleViewV6 ZmqStorageInterface::Impl::m_custodySignalRfc5050RenderedBundleView</definition>
+        <argsstring></argsstring>
+        <name>m_custodySignalRfc5050RenderedBundleView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="205" column="16" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1af60f22d174a88b2a62c594405b724189" prot="private" static="no" mutable="no">
+        <type><ref refid="structBundleStorageManagerSession__ReadFromDisk" kindref="compound">BundleStorageManagerSession_ReadFromDisk</ref></type>
+        <definition>BundleStorageManagerSession_ReadFromDisk ZmqStorageInterface::Impl::m_sessionRead</definition>
+        <argsstring></argsstring>
+        <name>m_sessionRead</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="207" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a5a7d33c5635c2c2d302934030e6ec0dd" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structZmqStorageInterface_1_1Impl_1a338f9bc404a6b065146f79aef62c9f56" kindref="member">OutductInfoPtr_t</ref> &gt;</type>
+        <definition>std::vector&lt;OutductInfoPtr_t&gt; ZmqStorageInterface::Impl::m_vectorOutductInfo</definition>
+        <argsstring></argsstring>
+        <name>m_vectorOutductInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="208" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1afc1f4de75c728ee39cec7815870375f8" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="structZmqStorageInterface_1_1Impl_1a338f9bc404a6b065146f79aef62c9f56" kindref="member">OutductInfoPtr_t</ref> &gt;</type>
+        <definition>std::map&lt;uint64_t, OutductInfoPtr_t&gt; ZmqStorageInterface::Impl::m_mapOpportunisticNextHopNodeIdToOutductInfo</definition>
+        <argsstring></argsstring>
+        <name>m_mapOpportunisticNextHopNodeIdToOutductInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="210" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ae1d3bbef5d50ea4e7ced88cd69f94eed" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> * &gt;</type>
+        <definition>std::vector&lt;OutductInfo_t *&gt; ZmqStorageInterface::Impl::m_vectorUpLinksOutductInfoPtrs</definition>
+        <argsstring></argsstring>
+        <name>m_vectorUpLinksOutductInfoPtrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="212" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a9616adb9fb6e594cc97ba908fee050df" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; ZmqStorageInterface::Impl::m_workerThreadStartupInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="215" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ab041c7a08437f15e36994ab32cb84b6f" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex ZmqStorageInterface::Impl::m_workerThreadStartupMutex</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="216" column="16" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ae0b5f6fdd18b5c213c323132511b9e5d" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable ZmqStorageInterface::Impl::m_workerThreadStartupConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="217" column="29" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a4bdab973f0a86d4782b9ed91d88ecda5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint64_t &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; ZmqStorageInterface::Impl::m_expiredIds</definition>
+        <argsstring></argsstring>
+        <name>m_expiredIds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="220" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ae1b01c5f84bc779c6e037b857a56119f" prot="private" static="no" mutable="no">
+        <type><ref refid="structZmqStorageInterface_1_1Impl_1a4c17344050a5c02ecc9762f36351cd04" kindref="member">DeletionPolicy</ref></type>
+        <definition>DeletionPolicy ZmqStorageInterface::Impl::m_deletionPolicy</definition>
+        <argsstring></argsstring>
+        <name>m_deletionPolicy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="222" column="18" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ae113cca8d5b5511f0b6873d20effee9c" prot="private" static="no" mutable="no">
+        <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref></type>
+        <definition>BundleViewV6 ZmqStorageInterface::Impl::m_bundleDeletionStatusReport</definition>
+        <argsstring></argsstring>
+        <name>m_bundleDeletionStatusReport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="223" column="16" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a4a5d060548b5c8ce88b68a6954391b74" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; uint64_t &gt;</type>
+        <definition>std::unordered_set&lt;uint64_t&gt; ZmqStorageInterface::Impl::m_custodyIdsWaitingTimerStart</definition>
+        <argsstring></argsstring>
+        <name>m_custodyIdsWaitingTimerStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="230" column="22" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1ada07dbb18cf0e576d4da1096c7b4fc51" prot="private" static="no" mutable="no">
+        <type><ref refid="classTelemetryServer" kindref="compound">TelemetryServer</ref></type>
+        <definition>TelemetryServer ZmqStorageInterface::Impl::m_telemServer</definition>
+        <argsstring></argsstring>
+        <name>m_telemServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="232" column="19" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1aa4ffbad4f73847d10a9e2cd4f0d5dc4b" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t ZmqStorageInterface::Impl::m_lastIndexToUpLinkVectorOutductInfoRoundRobin</definition>
+        <argsstring></argsstring>
+        <name>m_lastIndexToUpLinkVectorOutductInfoRoundRobin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="234" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a9bab56af6e7264541e78e9f44c7ea61e" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t ZmqStorageInterface::Impl::m_totalEventsNoDataInStorageForAvailableLinks</definition>
+        <argsstring></argsstring>
+        <name>m_totalEventsNoDataInStorageForAvailableLinks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="237" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structZmqStorageInterface_1_1Impl_1a3a29dfbc57d6b5dbe4690d486ca89ffd" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t ZmqStorageInterface::Impl::m_totalEventsDataInStorageForCloggedLinks</definition>
+        <argsstring></argsstring>
+        <name>m_totalEventsDataInStorageForCloggedLinks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="238" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ad28e658f9e8226df651a60d725f25f0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ZmqStorageInterface::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="115" column="3" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="241" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a3b0edeed7275a392dedeed2cd3fcf28f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ZmqStorageInterface::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="116" column="3" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="249" bodyend="249"/>
+        <references refid="classZmqStorageInterface_1a07e6eb8152fe3123bd22c649b1254731" compoundref="ZmqStorageInterface_8cpp" startline="258" endline="258">ZmqStorageInterface::Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ab17b6c97d9ff61ca6e5a79126f45b1f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="117" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="259" bodyend="269"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1a489303d4082c6e8b8e376d82987a6cc0" compoundref="ZmqStorageInterface_8cpp" startline="197">m_running</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1a283a541114a5b3305237108bab697cd9" compoundref="ZmqStorageInterface_8cpp" startline="196">m_threadPtr</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1aa0e2cde4656bd420cc13030f7f24d59c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::Init</definition>
+        <argsstring>(const HdtnConfig &amp;hdtnConfig, const HdtnDistributedConfig &amp;hdtnDistributedConfig, zmq::context_t *hdtnOneProcessZmqInprocContextPtr)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref> &amp;</type>
+          <declname>hdtnConfig</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classHdtnDistributedConfig" kindref="compound">HdtnDistributedConfig</ref> &amp;</type>
+          <declname>hdtnDistributedConfig</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+          <declname>hdtnOneProcessZmqInprocContextPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="118" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="278" bodyend="514"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classHdtnDistributedConfig_1accfec9d25c9ec44046fee5359a39eec4" compoundref="HdtnDistributedConfig_8h" startline="89">HdtnDistributedConfig::m_zmqBoundEgressToConnectingStoragePortPath</references>
+        <references refid="classHdtnDistributedConfig_1a5bf52b90c6f898a1de2f0feb84cc4a51" compoundref="HdtnDistributedConfig_8h" startline="84">HdtnDistributedConfig::m_zmqBoundIngressToConnectingStoragePortPath</references>
+        <references refid="classHdtnDistributedConfig_1a442a5be52a7194343fc215e8c6af111b" compoundref="HdtnDistributedConfig_8h" startline="88">HdtnDistributedConfig::m_zmqConnectingStorageToBoundEgressPortPath</references>
+        <references refid="classHdtnDistributedConfig_1afe80557ad6a4ccce2c9c124a3ffef329" compoundref="HdtnDistributedConfig_8h" startline="85">HdtnDistributedConfig::m_zmqConnectingStorageToBoundIngressPortPath</references>
+        <references refid="classHdtnDistributedConfig_1a088b682aeb04da436a6168939e6e931a" compoundref="HdtnDistributedConfig_8h" startline="92">HdtnDistributedConfig::m_zmqConnectingStorageToBoundRouterPortPath</references>
+        <references refid="classHdtnDistributedConfig_1ae1b96f84b476e2cb11b8d9d8737f9d42" compoundref="HdtnDistributedConfig_8h" startline="69">HdtnDistributedConfig::m_zmqEgressAddress</references>
+        <references refid="classHdtnDistributedConfig_1a4c32dd515c15b2175892b3e231b09f52" compoundref="HdtnDistributedConfig_8h" startline="68">HdtnDistributedConfig::m_zmqIngressAddress</references>
+        <references refid="classHdtnDistributedConfig_1af5ea2bb033e9a60de9592dbd01e23060" compoundref="HdtnDistributedConfig_8h" startline="71">HdtnDistributedConfig::m_zmqRouterAddress</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1a3a16bd3b85f9028d41a1e083897eaa7b" compoundref="ZmqStorageInterface_8cpp" startline="1433" endline="2193">ThreadFunc</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ace19f281747b2f86c40efdfa0c11635b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t ZmqStorageInterface::Impl::GetCurrentNumberOfBundlesDeletedFromStorage</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentNumberOfBundlesDeletedFromStorage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="121" column="15" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2500" bodyend="2503"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a65e464e0b8f452e6c118761ec6f9533f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::WriteAcsBundle</definition>
+        <argsstring>(BundleViewV6 &amp;bv)</argsstring>
+        <name>WriteAcsBundle</name>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="124" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="516" bodyend="547"/>
+        <references refid="classBundleViewV6_1ac6b9fe4d1c2d3f76b02b6feafce88683" compoundref="BundleViewV6_8cpp" startline="295" endline="309">BundleViewV6::GetPayloadSize</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV6_1ac1e7ddd66ff0ac29a6448414ad1a47a4" compoundref="BundleViewV6_8h" startline="132">BundleViewV6::m_frontBuffer</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a01182860bc96db8296ffb8f621c0538a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::Write</definition>
+        <argsstring>(zmq::message_t *message, cbhe_eid_t &amp;finalDestEidReturned, bool dontWriteIfCustodyFlagSet, bool isCertainThatThisBundleHasNoCustodyOrIsNotAdminRecord, cbhe_eid_t *bundleEidMaskPtr=NULL)</argsstring>
+        <name>Write</name>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEidReturned</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>dontWriteIfCustodyFlagSet</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isCertainThatThisBundleHasNoCustodyOrIsNotAdminRecord</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> *</type>
+          <declname>bundleEidMaskPtr</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="125" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="899" bodyend="1034"/>
+        <references refid="ZmqStorageInterface_8cpp_1a10b9473217644017bd30908bff364209aa8cec3f5e8ada26bdeffe2ce652a5168">BPV6</references>
+        <references refid="ZmqStorageInterface_8cpp_1a10b9473217644017bd30908bff364209ada909506ee5b1d727e186beb6b54ccd9">BPV7</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13dad18592631af9d972cc052408d5905441">CUSTODY_REQUESTED</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="classBpv6Fragmenter_1a02a5d2099869fb48bd913f6e3a2b8abb" compoundref="Bpv6Fragment_8cpp" startline="137" endline="212">Bpv6Fragmenter::Fragment</references>
+        <references refid="ZmqStorageInterface_8cpp_1a62cabfeb1750e31ea51a444346969edc" compoundref="ZmqStorageInterface_8cpp" startline="750" endline="760">GetBpVersion</references>
+        <references refid="classBundleViewV6_1ac6b9fe4d1c2d3f76b02b6feafce88683" compoundref="BundleViewV6_8cpp" startline="295" endline="309">BundleViewV6::GetPayloadSize</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a53676ca33bd6417d37f17e1e90156cd0" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="350" endline="352">Bpv6CbhePrimaryBlock::HasFlagSet</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1ab2ca5837aa1596666f49819f304d7d2f" compoundref="TestBpSecPolicyManager_8cpp" startline="725" endline="729">if</references>
+        <references refid="ZmqStorageInterface_8cpp_1a782fbe5703b9bdcf2189d5526ca77527" compoundref="ZmqStorageInterface_8cpp" startline="889" endline="897">IsAdminForThisNode</references>
+        <references refid="classBundleViewV6_1ab6d45ef3d2e2ce6a23e6b7eab2d3071a" compoundref="BundleViewV6_8cpp" startline="271" endline="275">BundleViewV6::LoadBundle</references>
+        <references refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">BundleViewV7::LoadBundle</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structBpv6CbhePrimaryBlock_1af1e392bfdbeaf03a8d9dbcda4fc154e1" compoundref="bpv6_8h" startline="95">Bpv6CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a0543a2b8132a58a3f60c0d9218fc7aaa" compoundref="bpv6_8h" startline="97">Bpv6CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13daecf2a6aabcb0538532ba2a7d0d281557">SINGLETON</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="namespacezmq_1af04cbb1885b768c4ce23615883367c20" compoundref="zmq_8hpp" startline="353" endline="356">zmq::version</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a3d02fc64c721f7bbae4883092a3a6728" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::ProcessBundleCustody</definition>
+        <argsstring>(BundleViewV6 &amp;bv, size_t size, cbhe_eid_t *bundleEidMaskPtr)</argsstring>
+        <name>ProcessBundleCustody</name>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> *</type>
+          <declname>bundleEidMaskPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="129" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="762" bodyend="887"/>
+        <references refid="CustodyTransferManager_8h_1ac9da551b1c03215c0fc6b8a9366a6c68aab168a824702aa90f418535b5c099da7">FAIL__BLOCK_UNINTELLIGIBLE</references>
+        <references refid="CustodyTransferManager_8h_1ac9da551b1c03215c0fc6b8a9366a6c68aefedb229f214ff56d7e0b12dbd37aebf">FAIL__DEPLETED_STORAGE</references>
+        <references refid="classBpv6Fragmenter_1a02a5d2099869fb48bd913f6e3a2b8abb" compoundref="Bpv6Fragment_8cpp" startline="137" endline="212">Bpv6Fragmenter::Fragment</references>
+        <references refid="classBundleViewV6_1ac6b9fe4d1c2d3f76b02b6feafce88683" compoundref="BundleViewV6_8cpp" startline="295" endline="309">BundleViewV6::GetPayloadSize</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a53676ca33bd6417d37f17e1e90156cd0" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="350" endline="352">Bpv6CbhePrimaryBlock::HasFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="classBundleViewV6_1a9de288b6fd509396de9109ea18f4c012" compoundref="BundleViewV6_8cpp" startline="106" endline="117">BundleViewV6::Render</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="CustodyTransferManager_8h_1ac9da551b1c03215c0fc6b8a9366a6c68a984d7273185196ef57827a830045e4f8">SUCCESS__NO_ADDITIONAL_INFORMATION</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a921ba4bb962e03fdada6361ed1f2c4a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::ReportDepletedStorage</definition>
+        <argsstring>(cbhe_eid_t &amp;eid)</argsstring>
+        <name>ReportDepletedStorage</name>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>eid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="131" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="549" bodyend="569"/>
+        <references refid="structhdtn_1_1DepletedStorageReportHdr_1a5a062756558e781022e0b0032b37e3bd" compoundref="message_8hpp" startline="217">hdtn::DepletedStorageReportHdr::base</references>
+        <references refid="structhdtn_1_1CommonHdr_1a25699a883f9c83724b338ad76571390b" compoundref="message_8hpp" startline="91">hdtn::CommonHdr::flags</references>
+        <references refid="message_8hpp_1a1f90a5f8ab011694af1a3be52b8c2439" compoundref="message_8hpp" startline="77">HDTN_MSGTYPE_DEPLETED_STORAGE_REPORT</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structhdtn_1_1DepletedStorageReportHdr_1a2053a69a56c06c767d88fc01cd5b8f4d" compoundref="message_8hpp" startline="218">hdtn::DepletedStorageReportHdr::nodeId</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1af4d7b5f77984290946917eaeddb83690" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::ProcessAdminRecord</definition>
+        <argsstring>(BundleViewV6 &amp;bv)</argsstring>
+        <name>ProcessAdminRecord</name>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="132" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="571" bodyend="746"/>
+        <references refid="bpv6_8h_1a91d5094c18c45a5c4118b95873227637a2a11f05f8eab05b732e0ddafff3db63d">AGGREGATE_CUSTODY_SIGNAL</references>
+        <references refid="structcbhe__bundle__uuid__t_1ac2543f44c179b770c455a3a76c030585" compoundref="Cbhe_8h" startline="76">cbhe_bundle_uuid_t::creationSeconds</references>
+        <references refid="structcbhe__bundle__uuid__nofragment__t_1a3b3520a5ac508800117dc48c41226bf2" compoundref="Cbhe_8h" startline="101">cbhe_bundle_uuid_nofragment_t::creationSeconds</references>
+        <references refid="bpv6_8h_1a91d5094c18c45a5c4118b95873227637a8c5d5263c36daf91348353a129adefdd">CUSTODY_SIGNAL</references>
+        <references refid="structcbhe__bundle__uuid__t_1acb17e52dc4b1b54887ef88d17eecc350" compoundref="Cbhe_8h" startline="81">cbhe_bundle_uuid_t::dataLength</references>
+        <references refid="bpv6_8h_1af6a055e77b0463e73ad86bc1afa0e910a5564bc11eb2e0690d5d7e6e57aa409f3">DEPLETED_STORAGE</references>
+        <references refid="structcatalog__entry__t_1afefa89c5cc21f34231f173bac1bdb315" compoundref="CatalogEntry_8h" startline="32">catalog_entry_t::destEid</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a9191ef0feb122758a29605600a830ffb" compoundref="Bpv6AdministrativeRecords_8cpp" startline="730" endline="735">Bpv6AdministrativeRecordContentCustodySignal::DidCustodyTransferSucceed</references>
+        <references refid="classBpv6AdministrativeRecordContentAggregateCustodySignal_1a141be11b6b0838f22fa04b56514a58bb" compoundref="Bpv6AdministrativeRecords_8cpp" startline="841" endline="843">Bpv6AdministrativeRecordContentAggregateCustodySignal::DidCustodyTransferSucceed</references>
+        <references refid="structcbhe__bundle__uuid__t_1a62de2c9845820a5109b8699a4a816aff" compoundref="Cbhe_8h" startline="80">cbhe_bundle_uuid_t::fragmentOffset</references>
+        <references refid="classBundleViewV6_1a86fd81cd00106f56c5f068e091b8fbe6" compoundref="BundleViewV6_8cpp" startline="243" endline="250">BundleViewV6::GetCanonicalBlocksByType</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a0456795e999eb8b6e457198cafd803ba" compoundref="Bpv6AdministrativeRecords_8cpp" startline="736" endline="738">Bpv6AdministrativeRecordContentCustodySignal::GetReasonCode</references>
+        <references refid="classBpv6AdministrativeRecordContentAggregateCustodySignal_1a43c461b66e2cd16347cd4a4ecd15e997" compoundref="Bpv6AdministrativeRecords_8cpp" startline="844" endline="846">Bpv6AdministrativeRecordContentAggregateCustodySignal::GetReasonCode</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structBpv6AdministrativeRecord_1a36b47bf1ca0329233f9607d582a79c4c" compoundref="bpv6_8h" startline="599">Bpv6AdministrativeRecord::m_adminRecordContentPtr</references>
+        <references refid="structBpv6AdministrativeRecord_1af92cbf537a385030cbdfbac1ed811b07" compoundref="bpv6_8h" startline="598">Bpv6AdministrativeRecord::m_adminRecordTypeCode</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a1e8fe3715d5a70aa839e92b0e54881e6" compoundref="bpv6_8h" startline="531">Bpv6AdministrativeRecordContentCustodySignal::m_bundleSourceEid</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1aae3519a1140f2c39d74e8754bea7a40d" compoundref="bpv6_8h" startline="529">Bpv6AdministrativeRecordContentCustodySignal::m_copyOfBundleCreationTimestamp</references>
+        <references refid="classBpv6AdministrativeRecordContentAggregateCustodySignal_1a888248f2693fb2baa1faa81d5905eea5" compoundref="bpv6_8h" startline="563">Bpv6AdministrativeRecordContentAggregateCustodySignal::m_custodyIdFills</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a65cc5f5579fcbdcd91e6e0bf3916c97d" compoundref="bpv6_8h" startline="524">Bpv6AdministrativeRecordContentCustodySignal::m_fragmentLengthIfPresent</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a996bc302e5c429801a6f37754c49a7c5" compoundref="bpv6_8h" startline="523">Bpv6AdministrativeRecordContentCustodySignal::m_fragmentOffsetIfPresent</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a31896cb916cf218f125b377fa951ab18" compoundref="bpv6_8h" startline="522">Bpv6AdministrativeRecordContentCustodySignal::m_isFragment</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="classUri_1ab610ab33584a298de7885f6d713db018" compoundref="Uri_8cpp" startline="50" endline="56">Uri::ParseIpnUriString</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="bpv6_8h_1af6a055e77b0463e73ad86bc1afa0e910ac90503f3219aa33722c70ae409b0c77c">REDUNDANT_RECEPTION</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1a8520a3a9830516384d794d752e4b4b58" compoundref="TimestampUtil_8h" startline="88">TimestampUtil::bpv6_creation_timestamp_t::secondsSinceStartOfYear2000</references>
+        <references refid="structcbhe__bundle__uuid__t_1ab54fbc98f42e92773dfa7576c83c2ffa" compoundref="Cbhe_8h" startline="77">cbhe_bundle_uuid_t::sequence</references>
+        <references refid="structcbhe__bundle__uuid__nofragment__t_1a2a08c8b2bae9653145398a4c9126490e" compoundref="Cbhe_8h" startline="102">cbhe_bundle_uuid_nofragment_t::sequence</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1afd6f8b0d3f287d5255b73aff56fca0de" compoundref="TimestampUtil_8h" startline="89">TimestampUtil::bpv6_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="structcbhe__bundle__uuid__t_1a6e2359c2f744337982a6241c2d8a6bfb" compoundref="Cbhe_8h" startline="78">cbhe_bundle_uuid_t::srcEid</references>
+        <references refid="structcbhe__bundle__uuid__nofragment__t_1a250422a98175ee1097e94a1c7e5ec85a" compoundref="Cbhe_8h" startline="103">cbhe_bundle_uuid_nofragment_t::srcEid</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1aeb758eafb0aabb97348cdfa38859d323" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::WriteBundle</definition>
+        <argsstring>(BundleViewV6 &amp;bv, const uint64_t newCustodyId, cbhe_eid_t *bundleEidMaskPtr=NULL)</argsstring>
+        <name>WriteBundle</name>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newCustodyId</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> *</type>
+          <declname>bundleEidMaskPtr</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="133" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1036" bodyend="1048"/>
+        <references refid="classBundleViewV6_1ac6b9fe4d1c2d3f76b02b6feafce88683" compoundref="BundleViewV6_8cpp" startline="295" endline="309">BundleViewV6::GetPayloadSize</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV6_1a150b26cc83d82384c8dfc52bd57d5171" compoundref="BundleViewV6_8h" startline="131">BundleViewV6::m_renderedBundle</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a02b489c081eeb81f3f78247f6f456549" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::WriteBundle</definition>
+        <argsstring>(BundleViewV7 &amp;bv, const uint64_t newCustodyId, cbhe_eid_t *bundleEidMaskPtr=NULL)</argsstring>
+        <name>WriteBundle</name>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newCustodyId</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> *</type>
+          <declname>bundleEidMaskPtr</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="135" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1050" bodyend="1059"/>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">BundleViewV7::m_renderedBundle</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ae67110c94c2ae462adc02f097c696d7c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::WriteBundle</definition>
+        <argsstring>(const PrimaryBlock &amp;bundlePrimaryBlock, const uint64_t newCustodyId, const uint8_t *allData, const std::size_t allDataSize, uint64_t payloadSizeBytes, cbhe_eid_t *bundleEidMaskPtr=NULL)</argsstring>
+        <name>WriteBundle</name>
+        <param>
+          <type>const <ref refid="structPrimaryBlock" kindref="compound">PrimaryBlock</ref> &amp;</type>
+          <declname>bundlePrimaryBlock</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newCustodyId</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>allData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>allDataSize</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>payloadSizeBytes</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> *</type>
+          <declname>bundleEidMaskPtr</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="137" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1061" bodyend="1090"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a52611c60557b8d0e4ae88946eb6bf551" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t ZmqStorageInterface::Impl::PeekOne</definition>
+        <argsstring>(const std::vector&lt; eid_plus_isanyserviceid_pair_t &gt; &amp;availableDestLinks)</argsstring>
+        <name>PeekOne</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="ZmqStorageInterface_8cpp_1ac6e0379949058895646fea5435d712a0" kindref="member">eid_plus_isanyserviceid_pair_t</ref> &gt; &amp;</type>
+          <declname>availableDestLinks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="141" column="12" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1109" bodyend="1113"/>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a4d3ecb4bf60559d1cf9273cce736013a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t ZmqStorageInterface::Impl::PeekOne</definition>
+        <argsstring>(const std::vector&lt; eid_plus_isanyserviceid_pair_t &gt; &amp;availableDestLinks, int &amp;priority)</argsstring>
+        <name>PeekOne</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="ZmqStorageInterface_8cpp_1ac6e0379949058895646fea5435d712a0" kindref="member">eid_plus_isanyserviceid_pair_t</ref> &gt; &amp;</type>
+          <declname>availableDestLinks</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="144" column="3" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1092" bodyend="1106"/>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ab199ea249166f8e30ef5a48ee7a9081f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::ReleaseOne_NoBlock</definition>
+        <argsstring>(const OutductInfo_t &amp;info, const uint64_t maxBundleSizeToRead, uint64_t &amp;returnedBundleSize)</argsstring>
+        <name>ReleaseOne_NoBlock</name>
+        <param>
+          <type>const <ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxBundleSizeToRead</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>returnedBundleSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="146" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1128" bodyend="1199"/>
+        <references refid="structhdtn_1_1ToEgressHdr_1ad589a60e9480e31de4b403425576247b" compoundref="message_8hpp" startline="100">hdtn::ToEgressHdr::base</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1ab8978c514204cb4254f6451e60a4c814" compoundref="message_8hpp" startline="107">hdtn::ToEgressHdr::custodyId</references>
+        <references refid="ZmqStorageInterface_8cpp_1a802d8b37030cb78afb58dfbb24edaa10" compoundref="ZmqStorageInterface_8cpp" startline="1123" endline="1126">CustomCleanupPaddedVecUint8</references>
+        <references refid="ZmqStorageInterface_8cpp_1a37560c3aacd1e3d12b3fc3a60fd638c0" compoundref="ZmqStorageInterface_8cpp" startline="1115" endline="1118">CustomCleanupToEgressHdr</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a76d14aa9e5894073774bf8167cbffb57" compoundref="ZmqStorageInterface_8cpp" startline="102">ZmqStorageInterface::Impl::OutductInfo_t::eidVec</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a9de8169b8bee2fc3a33ba7283611b059" compoundref="message_8hpp" startline="106">hdtn::ToEgressHdr::finalDestEid</references>
+        <references refid="structhdtn_1_1CommonHdr_1a25699a883f9c83724b338ad76571390b" compoundref="message_8hpp" startline="91">hdtn::CommonHdr::flags</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1af59334a44a57578573a92f4f173d1c13" compoundref="message_8hpp" startline="101">hdtn::ToEgressHdr::hasCustody</references>
+        <references refid="message_8hpp_1ae6874a400c01932ce536e0dc4af5acc5" compoundref="message_8hpp" startline="34">HDTN_MSGTYPE_EGRESS</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a4fa20e0cac2c0fae664cb8407d46089e" compoundref="message_8hpp" startline="102">hdtn::ToEgressHdr::isCutThroughFromStorage</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a8dc69443d36b46648ccac48270732335" compoundref="message_8hpp" startline="105">hdtn::ToEgressHdr::nextHopNodeId</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a7961ca6a50e7140c20c552b4edf51b1b" compoundref="ZmqStorageInterface_8cpp" startline="99">ZmqStorageInterface::Impl::OutductInfo_t::nextHopNodeId</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a01224a6340cec9ac7fe7d5e171807b2f" compoundref="message_8hpp" startline="108">hdtn::ToEgressHdr::outductIndex</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a8e12d22e053acd1f43c42d2cfbdd9178" compoundref="ZmqStorageInterface_8cpp" startline="98">ZmqStorageInterface::Impl::OutductInfo_t::outductIndex</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a8d86f26f5952ea0204df8e9f5034c6a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::RepopulateUpLinksVec</definition>
+        <argsstring>()</argsstring>
+        <name>RepopulateUpLinksVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="149" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1218" bodyend="1234"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a9197ebc4fa33b4387854d5d2ca1c4a66" compoundref="ZmqStorageInterface_8cpp" startline="100">ZmqStorageInterface::Impl::OutductInfo_t::linkIsUp</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ab540c34f2399186e22901d82c120aeee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::SetLinkDown</definition>
+        <argsstring>(OutductInfo_t &amp;info)</argsstring>
+        <name>SetLinkDown</name>
+        <param>
+          <type><ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="150" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1249" bodyend="1277"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1aae7ee29ac186394358af6bcf66bce310" compoundref="ZmqStorageInterface_8cpp" startline="71">ZmqStorageInterface::Impl::CutThroughQueueData::ackToIngress</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1a06ad5ec8b92324cc8472b8dbf787fb36" compoundref="ZmqStorageInterface_8cpp" startline="70">ZmqStorageInterface::Impl::CutThroughQueueData::bundleToEgress</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a5ef9445fa473ce3dd1ceec01c0bf8164" compoundref="ZmqStorageInterface_8cpp" startline="105">ZmqStorageInterface::Impl::OutductInfo_t::cutThroughQueue</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="structhdtn_1_1StorageAckHdr_1a25e7b29a0310965c877aec222d65cb59" compoundref="message_8hpp" startline="144">hdtn::StorageAckHdr::error</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a9197ebc4fa33b4387854d5d2ca1c4a66" compoundref="ZmqStorageInterface_8cpp" startline="100">ZmqStorageInterface::Impl::OutductInfo_t::linkIsUp</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a7961ca6a50e7140c20c552b4edf51b1b" compoundref="ZmqStorageInterface_8cpp" startline="99">ZmqStorageInterface::Impl::OutductInfo_t::nextHopNodeId</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a3a16bd3b85f9028d41a1e083897eaa7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::ThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>ThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="151" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1433" bodyend="2193"/>
+        <references refid="structhdtn_1_1EgressAckHdr_1ab8075c1078238e43e4fca7de01868af4" compoundref="message_8hpp" startline="116">hdtn::EgressAckHdr::base</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a01dea401deea1583b27f6e9606dd99ea" compoundref="message_8hpp" startline="132">hdtn::ToStorageHdr::base</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a3cbe00a9e7df9914002c5d64f83faacd" compoundref="ZmqStorageInterface_8cpp" startline="106">ZmqStorageInterface::Impl::OutductInfo_t::bytesInPipeline</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1aff22978591b153bcd45485f83d392813" compoundref="message_8hpp" startline="123">hdtn::EgressAckHdr::custodyId</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="structcatalog__entry__t_1afefa89c5cc21f34231f173bac1bdb315" compoundref="CatalogEntry_8h" startline="32">catalog_entry_t::destEid</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a76d14aa9e5894073774bf8167cbffb57" compoundref="ZmqStorageInterface_8cpp" startline="102">ZmqStorageInterface::Impl::OutductInfo_t::eidVec</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a8f87f1c76e765fb83b02d65b06e1c9b3" compoundref="message_8hpp" startline="117">hdtn::EgressAckHdr::error</references>
+        <references refid="structhdtn_1_1StorageAckHdr_1a25e7b29a0310965c877aec222d65cb59" compoundref="message_8hpp" startline="144">hdtn::StorageAckHdr::error</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a0d49c78c97ddb25cf75a564dde60b4aa" compoundref="message_8hpp" startline="122">hdtn::EgressAckHdr::finalDestEid</references>
+        <references refid="structOutductCapabilityTelemetry__t_1ac2b6a373c853af2d2c2e49f400f02d88" compoundref="TelemetryDefinitions_8h" startline="104">OutductCapabilityTelemetry_t::finalDestinationEidList</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a689c88d24b069c2a5d8f4be1e13d3f44" compoundref="TelemetryDefinitions_8h" startline="105">OutductCapabilityTelemetry_t::finalDestinationNodeIdList</references>
+        <references refid="classUri_1a25005e5cf294b1c369241e339c347c1e" compoundref="Uri_8cpp" startline="30" endline="35">Uri::GetIpnUriStringAnyServiceNumber</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a8ce84dc52d25be8fc704774ea0cfacff" compoundref="ZmqStorageInterface_8cpp" startline="96">ZmqStorageInterface::Impl::OutductInfo_t::halfOfMaxBundlesInPipeline_StorageToEgressPath</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a92c320c322ac0d83f0463530743ece7c" compoundref="ZmqStorageInterface_8cpp" startline="97">ZmqStorageInterface::Impl::OutductInfo_t::halfOfMaxBundleSizeBytesInPipeline_StorageToEgressPath</references>
+        <references refid="message_8hpp_1a1abe3d15fda4f4d2e56738eee4d291e1" compoundref="message_8hpp" startline="76">HDTN_MSGTYPE_ALL_OUTDUCT_CAPABILITIES_TELEMETRY</references>
+        <references refid="message_8hpp_1a7b2c8d88c63338fabd39429727d8f54a" compoundref="message_8hpp" startline="73">HDTN_MSGTYPE_EGRESS_ACK_TO_STORAGE</references>
+        <references refid="message_8hpp_1ab3b80c29e46b7acf04512c569065b905" compoundref="message_8hpp" startline="72">HDTN_MSGTYPE_EGRESS_FAILED_BUNDLE_TO_STORAGE</references>
+        <references refid="message_8hpp_1a2d123064241a5850b91f290f8176695a" compoundref="message_8hpp" startline="38">HDTN_MSGTYPE_STORAGE_ADD_OPPORTUNISTIC_LINK</references>
+        <references refid="message_8hpp_1a068fd05e5b96123104bfbc2a40d0d06e" compoundref="message_8hpp" startline="39">HDTN_MSGTYPE_STORAGE_REMOVE_OPPORTUNISTIC_LINK</references>
+        <references refid="message_8hpp_1a91bd3371a10c4464bd7dee77c0ebfbad" compoundref="message_8hpp" startline="35">HDTN_MSGTYPE_STORE</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a8b08b5ca3f18d231984d91a543033ce8" compoundref="message_8hpp" startline="137">hdtn::ToStorageHdr::ingressUniqueId</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1aea95f8462308e4a54cb45416a31d5e5c" compoundref="message_8hpp" startline="126" endline="128">hdtn::EgressAckHdr::IsOpportunisticLink</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a036d7ad80ca6af75ec2a0b6c251abd46" compoundref="message_8hpp" startline="119">hdtn::EgressAckHdr::isResponseToStorageCutThrough</references>
+        <references refid="namespacehdtn_1a815bcdf7b6e3326df2684e3e58dfad3da74e461dabd95b456bf8d60b41e485f24">hdtn::LINK_DOWN</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a9197ebc4fa33b4387854d5d2ca1c4a66" compoundref="ZmqStorageInterface_8cpp" startline="100">ZmqStorageInterface::Impl::OutductInfo_t::linkIsUp</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1aa0f7a5371354b94681db2562988ceb41" compoundref="ZmqStorageInterface_8cpp" startline="104">ZmqStorageInterface::Impl::OutductInfo_t::mapIngressUniqueIdToIngressAckData</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a65f4c305fbaa82a30bed3edaf29b957a" compoundref="ZmqStorageInterface_8cpp" startline="103">ZmqStorageInterface::Impl::OutductInfo_t::mapOpenCustodyIdToBundleSizeBytes</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a32a8ddb2f69a093b412edeaf4fd9ba74" compoundref="TelemetryDefinitions_8h" startline="100">OutductCapabilityTelemetry_t::maxBundlesInPipeline</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a452ef93342838797f8b574e46c49bb1d" compoundref="TelemetryDefinitions_8h" startline="101">OutductCapabilityTelemetry_t::maxBundleSizeBytesInPipeline</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a0504ebb626aaff42ad8cf4b93bfd584f" compoundref="message_8hpp" startline="121">hdtn::EgressAckHdr::nextHopNodeId</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a04672bcc8ebd6c638b95bef030ce65b9" compoundref="TelemetryDefinitions_8h" startline="102">OutductCapabilityTelemetry_t::nextHopNodeId</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a7961ca6a50e7140c20c552b4edf51b1b" compoundref="ZmqStorageInterface_8cpp" startline="99">ZmqStorageInterface::Impl::OutductInfo_t::nextHopNodeId</references>
+        <references refid="namespacehdtn_1a815bcdf7b6e3326df2684e3e58dfad3da29cc90b01ea70d9eb63ee34304d7d8f0">hdtn::NO_ERRORS</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a33cd295442b76ca142d75a8e000fb0aa" compoundref="TelemetryDefinitions_8h" startline="99">OutductCapabilityTelemetry_t::outductArrayIndex</references>
+        <references refid="structAllOutductCapabilitiesTelemetry__t_1af2bec1ba32e7338608ec6793360ae09a" compoundref="TelemetryDefinitions_8h" startline="121">AllOutductCapabilitiesTelemetry_t::outductCapabilityTelemetryList</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a8016614d29446639005a74b31cf7e303" compoundref="message_8hpp" startline="124">hdtn::EgressAckHdr::outductIndex</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a8e12d22e053acd1f43c42d2cfbdd9178" compoundref="ZmqStorageInterface_8cpp" startline="98">ZmqStorageInterface::Impl::OutductInfo_t::outductIndex</references>
+        <references refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" compoundref="zmq_8hpp" startline="289" endline="295">zmq::poll</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="classJsonSerializable_1a1adb23c7bad19b506530ddb773cc64be" compoundref="JsonSerializable_8cpp" startline="225" endline="231">JsonSerializable::SetValuesFromJsonCharArray</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1aa0e2cde4656bd420cc13030f7f24d59c" compoundref="ZmqStorageInterface_8cpp" startline="278" endline="514">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::SyncTelemetry</definition>
+        <argsstring>()</argsstring>
+        <name>SyncTelemetry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="152" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1279" bodyend="1297"/>
+        <references refid="classBundleStorageCatalog_1a27a2123ad057a8cdd549d3fbaa789844" compoundref="BundleStorageCatalog_8cpp" startline="393" endline="395">BundleStorageCatalog::GetNumBundleBytesInCatalog</references>
+        <references refid="classBundleStorageCatalog_1a6dbfc9353c2508ff82d7105399215f78" compoundref="BundleStorageCatalog_8cpp" startline="390" endline="392">BundleStorageCatalog::GetNumBundlesInCatalog</references>
+        <references refid="classBundleStorageCatalog_1a98516a46c62d94b64772c68e6d98b67a" compoundref="BundleStorageCatalog_8cpp" startline="405" endline="407">BundleStorageCatalog::GetTotalBundleByteEraseOperationsFromCatalog</references>
+        <references refid="classBundleStorageCatalog_1a7b2d0294db7de5c24130509507d5f2aa" compoundref="BundleStorageCatalog_8cpp" startline="399" endline="401">BundleStorageCatalog::GetTotalBundleByteWriteOperationsToCatalog</references>
+        <references refid="classBundleStorageCatalog_1a0aea9fb2657b73825867cb5bf0e7e848" compoundref="BundleStorageCatalog_8cpp" startline="402" endline="404">BundleStorageCatalog::GetTotalBundleEraseOperationsFromCatalog</references>
+        <references refid="classBundleStorageCatalog_1a630c5471944d466669bd2930a5ab0541" compoundref="BundleStorageCatalog_8cpp" startline="396" endline="398">BundleStorageCatalog::GetTotalBundleWriteOperationsToCatalog</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a2693ff2f034fe588474559d34100371c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::TelemEventsHandler</definition>
+        <argsstring>()</argsstring>
+        <name>TelemEventsHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="153" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2455" bodyend="2497"/>
+        <references refid="classTelemetryRequest_1ae1a036d26e21680efb742ce430913b5a" compoundref="TelemetryServer_8cpp" startline="112" endline="114">TelemetryRequest::Command</references>
+        <references refid="classTelemetryRequest_1adcd760e1058fa0f1bcb6a273f9ed0eda" compoundref="TelemetryServer_8cpp" startline="108" endline="110">TelemetryRequest::Error</references>
+        <references refid="classTimestampUtil_1a48adda43f5f32341582bbaa17462fdef" compoundref="TimestampUtil_8cpp" startline="43" endline="45">TimestampUtil::GetMillisecondsSinceEpochRfc5050</references>
+        <references refid="classTimestampUtil_1af69ead667a2d67b6e8bd7826b11ed85a" compoundref="TimestampUtil_8cpp" startline="62" endline="64">TimestampUtil::GetSecondsSinceEpochRfc5050</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classTelemetryRequest_1a49fe8aa3043876da68acb6af2261bca4" compoundref="TelemetryServer_8cpp" startline="104" endline="106">TelemetryRequest::More</references>
+        <references refid="structGetStorageApiCommand__t_1a9a9681d2e45a33049337f6c720911ac0" compoundref="TelemetryDefinitions_8h" startline="511">GetStorageApiCommand_t::name</references>
+        <references refid="structStorageExpiringBeforeThresholdTelemetry__t_1a119b2119fdc0a01931f3a2fb782b156d" compoundref="TelemetryDefinitions_8h" startline="89">StorageExpiringBeforeThresholdTelemetry_t::priority</references>
+        <references refid="classTelemetryRequest_1a7fe5173243a98949cd6e5f878e61b573" compoundref="TelemetryServer_8cpp" startline="45" endline="52">TelemetryRequest::SendResponse</references>
+        <references refid="classTelemetryRequest_1abe6c5bd66d2a5df3b91cdd725b246f1b" compoundref="TelemetryServer_8cpp" startline="96" endline="102">TelemetryRequest::SendResponseError</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="structStorageExpiringBeforeThresholdTelemetry__t_1af7876df8721d179b3961f7cd78d504f0" compoundref="TelemetryDefinitions_8h" startline="90">StorageExpiringBeforeThresholdTelemetry_t::thresholdSecondsSinceStartOfYear2000</references>
+        <references refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" compoundref="JsonSerializable_8cpp" startline="124" endline="126">JsonSerializable::ToJson</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a05e9e9fb52cd82ea9426220d228e8186" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::DeleteExpiredBundles</definition>
+        <argsstring>(const boost::posix_time::ptime &amp;nowPtime, float storageUsagePercentage)</argsstring>
+        <name>DeleteExpiredBundles</name>
+        <param>
+          <type>const boost::posix_time::ptime &amp;</type>
+          <declname>nowPtime</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>storageUsagePercentage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete expired bundles</para>
+<para>Deletes expired bundles from disk per storage deletion policy.</para>
+<para>If storage is less full than DELETE_ALL_EXPIRED_THRESHOLD, then at most MAX_DELETE_EXPIRED_PER_ITER bundles are deleted. Otherwise, all expired bundles are deleted. (Avoid blocking event loop unless full). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="155" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1405" bodyend="1431"/>
+        <references refid="ZmqStorageInterface_8cpp_1a110cca08d44063d1cbde8f64e2b3cda2" compoundref="ZmqStorageInterface_8cpp" startline="53">DELETE_ALL_EXPIRED_THRESHOLD</references>
+        <references refid="classTimestampUtil_1af69ead667a2d67b6e8bd7826b11ed85a" compoundref="TimestampUtil_8cpp" startline="62" endline="64">TimestampUtil::GetSecondsSinceEpochRfc5050</references>
+        <references refid="ZmqStorageInterface_8cpp_1ae9d2a58818e8eccadd949b3166ba4085" compoundref="ZmqStorageInterface_8cpp" startline="56">MAX_DELETE_EXPIRED_PER_ITER</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a7c354244f5690058522d47b0b947b19c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::DeleteBundleById</definition>
+        <argsstring>(const uint64_t custodyId)</argsstring>
+        <name>DeleteBundleById</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete bundle from disk</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>custodyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The custody ID of the bundle to delete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="157" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1366" bodyend="1394"/>
+        <references refid="structcatalog__entry__t_1afefa89c5cc21f34231f173bac1bdb315" compoundref="CatalogEntry_8h" startline="32">catalog_entry_t::destEid</references>
+        <references refid="structcatalog__entry__t_1a8d31d0b0e43c9f7725a4e5588e8f6994" compoundref="CatalogEntry_8cpp" startline="96" endline="98">catalog_entry_t::HasCustody</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a8e759cab50a54c93f976544b55d4a133" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZmqStorageInterface::Impl::SendDeletionStatusReport</definition>
+        <argsstring>(catalog_entry_t *entry)</argsstring>
+        <name>SendDeletionStatusReport</name>
+        <param>
+          <type><ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="158" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1299" bodyend="1360"/>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="classBundleViewV6_1ab6d45ef3d2e2ce6a23e6b7eab2d3071a" compoundref="BundleViewV6_8cpp" startline="271" endline="275">BundleViewV6::LoadBundle</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="structcatalog__entry__t_1a74184cd76181e676ae5baff94abc2314" compoundref="CatalogEntry_8h" startline="30">catalog_entry_t::payloadSizeBytes</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ae950b9e7c24f94a8a38e0b1f9fb3e2fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::DoSendBundles</definition>
+        <argsstring>(long &amp;timeoutPoll)</argsstring>
+        <name>DoSendBundles</name>
+        <param>
+          <type>long &amp;</type>
+          <declname>timeoutPoll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="159" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2195" bodyend="2253"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a3cbe00a9e7df9914002c5d64f83faacd" compoundref="ZmqStorageInterface_8cpp" startline="106">ZmqStorageInterface::Impl::OutductInfo_t::bytesInPipeline</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a76d14aa9e5894073774bf8167cbffb57" compoundref="ZmqStorageInterface_8cpp" startline="102">ZmqStorageInterface::Impl::OutductInfo_t::eidVec</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a8ce84dc52d25be8fc704774ea0cfacff" compoundref="ZmqStorageInterface_8cpp" startline="96">ZmqStorageInterface::Impl::OutductInfo_t::halfOfMaxBundlesInPipeline_StorageToEgressPath</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a92c320c322ac0d83f0463530743ece7c" compoundref="ZmqStorageInterface_8cpp" startline="97">ZmqStorageInterface::Impl::OutductInfo_t::halfOfMaxBundleSizeBytesInPipeline_StorageToEgressPath</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1aa0f7a5371354b94681db2562988ceb41" compoundref="ZmqStorageInterface_8cpp" startline="104">ZmqStorageInterface::Impl::OutductInfo_t::mapIngressUniqueIdToIngressAckData</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a65f4c305fbaa82a30bed3edaf29b957a" compoundref="ZmqStorageInterface_8cpp" startline="103">ZmqStorageInterface::Impl::OutductInfo_t::mapOpenCustodyIdToBundleSizeBytes</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a929aa5866966ffb93536cf2bf14232fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::SendFromCutThroughQueue</definition>
+        <argsstring>(OutductInfo_t &amp;info, long &amp;timeoutPoll)</argsstring>
+        <name>SendFromCutThroughQueue</name>
+        <param>
+          <type><ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>timeoutPoll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="160" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2400" bodyend="2453"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1aae7ee29ac186394358af6bcf66bce310" compoundref="ZmqStorageInterface_8cpp" startline="71">ZmqStorageInterface::Impl::CutThroughQueueData::ackToIngress</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1ad589a60e9480e31de4b403425576247b" compoundref="message_8hpp" startline="100">hdtn::ToEgressHdr::base</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1a06ad5ec8b92324cc8472b8dbf787fb36" compoundref="ZmqStorageInterface_8cpp" startline="70">ZmqStorageInterface::Impl::CutThroughQueueData::bundleToEgress</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a3cbe00a9e7df9914002c5d64f83faacd" compoundref="ZmqStorageInterface_8cpp" startline="106">ZmqStorageInterface::Impl::OutductInfo_t::bytesInPipeline</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1ab8978c514204cb4254f6451e60a4c814" compoundref="message_8hpp" startline="107">hdtn::ToEgressHdr::custodyId</references>
+        <references refid="ZmqStorageInterface_8cpp_1a37560c3aacd1e3d12b3fc3a60fd638c0" compoundref="ZmqStorageInterface_8cpp" startline="1115" endline="1118">CustomCleanupToEgressHdr</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a5ef9445fa473ce3dd1ceec01c0bf8164" compoundref="ZmqStorageInterface_8cpp" startline="105">ZmqStorageInterface::Impl::OutductInfo_t::cutThroughQueue</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a9de8169b8bee2fc3a33ba7283611b059" compoundref="message_8hpp" startline="106">hdtn::ToEgressHdr::finalDestEid</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1aa9f266bb19ea7e2836437d18a5539dc7" compoundref="ZmqStorageInterface_8cpp" startline="72">ZmqStorageInterface::Impl::CutThroughQueueData::finalDestEid</references>
+        <references refid="structhdtn_1_1CommonHdr_1a25699a883f9c83724b338ad76571390b" compoundref="message_8hpp" startline="91">hdtn::CommonHdr::flags</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1af59334a44a57578573a92f4f173d1c13" compoundref="message_8hpp" startline="101">hdtn::ToEgressHdr::hasCustody</references>
+        <references refid="message_8hpp_1ae6874a400c01932ce536e0dc4af5acc5" compoundref="message_8hpp" startline="34">HDTN_MSGTYPE_EGRESS</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1a682fc6b5175c5f7ac9fc782913ccb3b0" compoundref="ZmqStorageInterface_8cpp" startline="73">ZmqStorageInterface::Impl::CutThroughQueueData::ingressUniqueId</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a4fa20e0cac2c0fae664cb8407d46089e" compoundref="message_8hpp" startline="102">hdtn::ToEgressHdr::isCutThroughFromStorage</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1aa0f7a5371354b94681db2562988ceb41" compoundref="ZmqStorageInterface_8cpp" startline="104">ZmqStorageInterface::Impl::OutductInfo_t::mapIngressUniqueIdToIngressAckData</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a8dc69443d36b46648ccac48270732335" compoundref="message_8hpp" startline="105">hdtn::ToEgressHdr::nextHopNodeId</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a7961ca6a50e7140c20c552b4edf51b1b" compoundref="ZmqStorageInterface_8cpp" startline="99">ZmqStorageInterface::Impl::OutductInfo_t::nextHopNodeId</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a01224a6340cec9ac7fe7d5e171807b2f" compoundref="message_8hpp" startline="108">hdtn::ToEgressHdr::outductIndex</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a8e12d22e053acd1f43c42d2cfbdd9178" compoundref="ZmqStorageInterface_8cpp" startline="98">ZmqStorageInterface::Impl::OutductInfo_t::outductIndex</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1ae3ee99d2dde4c60d4b2aabd7e30fc1cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::SendFromStorage</definition>
+        <argsstring>(OutductInfo_t &amp;info, uint64_t maxBundleSizeToRead, long &amp;timeoutPoll)</argsstring>
+        <name>SendFromStorage</name>
+        <param>
+          <type><ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>maxBundleSizeToRead</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>timeoutPoll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="161" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2368" bodyend="2398"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a3cbe00a9e7df9914002c5d64f83faacd" compoundref="ZmqStorageInterface_8cpp" startline="106">ZmqStorageInterface::Impl::OutductInfo_t::bytesInPipeline</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a65f4c305fbaa82a30bed3edaf29b957a" compoundref="ZmqStorageInterface_8cpp" startline="103">ZmqStorageInterface::Impl::OutductInfo_t::mapOpenCustodyIdToBundleSizeBytes</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a44e1a5369859ca9e8781561e550c53b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::DefaultSend</definition>
+        <argsstring>(OutductInfo_t &amp;info, uint64_t maxBundleSizeToRead, long &amp;timeoutPoll)</argsstring>
+        <name>DefaultSend</name>
+        <param>
+          <type><ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>maxBundleSizeToRead</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>timeoutPoll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="163" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2351" bodyend="2366"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a5ef9445fa473ce3dd1ceec01c0bf8164" compoundref="ZmqStorageInterface_8cpp" startline="105">ZmqStorageInterface::Impl::OutductInfo_t::cutThroughQueue</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1ae3fac487711787b562ad23f501eba333" compoundref="ZmqStorageInterface_8cpp" startline="101">ZmqStorageInterface::Impl::OutductInfo_t::stateTryCutThrough</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a8ded2eb30c306c9a78ef2cdeb261ac9a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZmqStorageInterface::Impl::PrioritySend</definition>
+        <argsstring>(OutductInfo_t &amp;info, uint64_t maxBundleSizeToRead, long &amp;timeoutPoll)</argsstring>
+        <name>PrioritySend</name>
+        <param>
+          <type><ref refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t" kindref="compound">OutductInfo_t</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>maxBundleSizeToRead</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>timeoutPoll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="165" column="8" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2255" bodyend="2324"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1aae7ee29ac186394358af6bcf66bce310" compoundref="ZmqStorageInterface_8cpp" startline="71">ZmqStorageInterface::Impl::CutThroughQueueData::ackToIngress</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1a06ad5ec8b92324cc8472b8dbf787fb36" compoundref="ZmqStorageInterface_8cpp" startline="70">ZmqStorageInterface::Impl::CutThroughQueueData::bundleToEgress</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a5ef9445fa473ce3dd1ceec01c0bf8164" compoundref="ZmqStorageInterface_8cpp" startline="105">ZmqStorageInterface::Impl::OutductInfo_t::cutThroughQueue</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1a76d14aa9e5894073774bf8167cbffb57" compoundref="ZmqStorageInterface_8cpp" startline="102">ZmqStorageInterface::Impl::OutductInfo_t::eidVec</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1OutductInfo__t_1ae3fac487711787b562ad23f501eba333" compoundref="ZmqStorageInterface_8cpp" startline="101">ZmqStorageInterface::Impl::OutductInfo_t::stateTryCutThrough</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1aca993029b5ac15b1429a1d41a1935123" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ZmqStorageInterface::Impl::GetQueueBundlePriority</definition>
+        <argsstring>(CutThroughQueueData &amp;qd)</argsstring>
+        <name>GetQueueBundlePriority</name>
+        <param>
+          <type><ref refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData" kindref="compound">CutThroughQueueData</ref> &amp;</type>
+          <declname>qd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="167" column="7" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="2326" bodyend="2349"/>
+        <references refid="structZmqStorageInterface_1_1Impl_1_1CutThroughQueueData_1a06ad5ec8b92324cc8472b8dbf787fb36" compoundref="ZmqStorageInterface_8cpp" startline="70">ZmqStorageInterface::Impl::CutThroughQueueData::bundleToEgress</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ade5ff9ea63bc386887aae7dbd9091327" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="329" endline="331">Bpv6CbhePrimaryBlock::GetPriority</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a2351b8328df79f51f8ae9d80ccfcb002" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="526" endline="528">Bpv7CbhePrimaryBlock::GetPriority</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="classBundleViewV6_1ab6d45ef3d2e2ce6a23e6b7eab2d3071a" compoundref="BundleViewV6_8cpp" startline="271" endline="275">BundleViewV6::LoadBundle</references>
+        <references refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">BundleViewV7::LoadBundle</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="ZmqStorageInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="ZmqStorageInterface_8cpp" startline="45">subprocess</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="structZmqStorageInterface_1_1Impl_1a8795fce09c53033001010baaee45b1ff" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ZmqStorageInterface::Impl::SprintCustodyidToSizeMap</definition>
+        <argsstring>(const custodyid_to_size_map_t &amp;m)</argsstring>
+        <name>SprintCustodyidToSizeMap</name>
+        <param>
+          <type>const <ref refid="structZmqStorageInterface_1_1Impl_1aca435baf5e31b120be941a7ac9eb7542" kindref="member">custodyid_to_size_map_t</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/src/ZmqStorageInterface.cpp" line="154" column="22" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="1236" bodyend="1247"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>ZmqStorageInterface::Impl</label>
+        <link refid="structZmqStorageInterface_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="18">
+        <label>OutductsConfig</label>
+        <link refid="classOutductsConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="7">
+        <label>BundleViewV6::Bpv6PrimaryBlockView</label>
+        <link refid="structBundleViewV6_1_1Bpv6PrimaryBlockView"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>StorageTelemetry_t</label>
+        <link refid="structStorageTelemetry__t"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JsonSerializable</label>
+        <link refid="classJsonSerializable"/>
+      </node>
+      <node id="6">
+        <label>BundleViewV6</label>
+        <link refid="classBundleViewV6"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_primaryBlockView</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Bpv6CbhePrimaryBlock</label>
+        <link refid="structBpv6CbhePrimaryBlock"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_custodianEid</edgelabel>
+          <edgelabel>m_destinationEid</edgelabel>
+          <edgelabel>m_reportToEid</edgelabel>
+          <edgelabel>m_sourceNodeId</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_creationTimestamp</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>BundleStorageManagerSession_ReadFromDisk</label>
+        <link refid="structBundleStorageManagerSession__ReadFromDisk"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>catalogEntryPtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>zmq::context_t</label>
+        <link refid="classzmq_1_1context__t"/>
+      </node>
+      <node id="14">
+        <label>TelemetryServer</label>
+        <link refid="classTelemetryServer"/>
+      </node>
+      <node id="9">
+        <label>PrimaryBlock</label>
+        <link refid="structPrimaryBlock"/>
+      </node>
+      <node id="13">
+        <label>catalog_entry_t</label>
+        <link refid="structcatalog__entry__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>destEid</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>HdtnConfig</label>
+        <link refid="classHdtnConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_storageConfig</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_inductsConfig</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_outductsConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+      <node id="11">
+        <label>TimestampUtil::bpv6_creation_timestamp_t</label>
+        <link refid="structTimestampUtil_1_1bpv6__creation__timestamp__t"/>
+      </node>
+      <node id="16">
+        <label>StorageConfig</label>
+        <link refid="classStorageConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>InductsConfig</label>
+        <link refid="classInductsConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ZmqStorageInterface::Impl</label>
+        <link refid="structZmqStorageInterface_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_telem</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_hdtnOneProcessZmqInprocContextPtr</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_bundleDeletionStatusReport</edgelabel>
+          <edgelabel>m_custodySignalRfc5050RenderedBundleView</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_sessionRead</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_telemServer</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_hdtnConfig</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>M_HDTN_EID_CUSTODY</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/storage/src/ZmqStorageInterface.cpp" line="58" column="1" bodyfile="module/storage/src/ZmqStorageInterface.cpp" bodystart="58" bodyend="239"/>
+    <listofallmembers>
+      <member refid="structZmqStorageInterface_1_1Impl_1aca435baf5e31b120be941a7ac9eb7542" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>custodyid_to_size_map_t</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a89bcb4eaa32d8aa8aba6ac4a2e900c08" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>cut_through_queue_t</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a6627ba615051a97d621e78749864b467" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>DEFAULT_BIG_TIMEOUT_POLL</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a44e1a5369859ca9e8781561e550c53b0" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>DefaultSend</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a7c354244f5690058522d47b0b947b19c" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>DeleteBundleById</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a05e9e9fb52cd82ea9426220d228e8186" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>DeleteExpiredBundles</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a4c17344050a5c02ecc9762f36351cd04" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>DeletionPolicy</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae950b9e7c24f94a8a38e0b1f9fb3e2fe" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>DoSendBundles</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ace19f281747b2f86c40efdfa0c11635b" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>GetCurrentNumberOfBundlesDeletedFromStorage</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aca993029b5ac15b1429a1d41a1935123" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>GetQueueBundlePriority</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ad28e658f9e8226df651a60d725f25f0e" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>Impl</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aa0e2cde4656bd420cc13030f7f24d59c" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>Init</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ab279ae477867bae6571265af84ffadad" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_bsmPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae113cca8d5b5511f0b6873d20effee9c" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_bundleDeletionStatusReport</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aa761cc2c29ab084c4990c1ca9f57db9f" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_ctmPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aa08473f5e5c08484f12ff0ebb5aa59fd" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_custodyIdAllocatorPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a4a5d060548b5c8ce88b68a6954391b74" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_custodyIdsWaitingTimerStart</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1afa297283e3ac8cdf0cb2a484a44ffd98" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_custodySignalRfc5050RenderedBundleView</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a42347c32d4638aa59dc2aec37657c46b" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_custodyTimersPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae1b01c5f84bc779c6e037b857a56119f" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_deletionPolicy</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a4bdab973f0a86d4782b9ed91d88ecda5" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_expiredIds</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1abf5947cfd4f9c57e53732b5e81665b94" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>M_HDTN_EID_CUSTODY</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a18bac4a670b6d600019e4a34889baf94" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_hdtnConfig</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a26e0368f77e71b119a260391a7ae6698" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_hdtnOneProcessZmqInprocContextPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a0126d0be70ba1419fe9be9041cd1d15e" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_isOutOfStorageSpace</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aa4ffbad4f73847d10a9e2cd4f0d5dc4b" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_lastIndexToUpLinkVectorOutductInfoRoundRobin</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1afc1f4de75c728ee39cec7815870375f8" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_mapOpportunisticNextHopNodeIdToOutductInfo</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a489303d4082c6e8b8e376d82987a6cc0" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_running</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1af60f22d174a88b2a62c594405b724189" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_sessionRead</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a34318658febeb086d27ff805dd09febd" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_telem</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ada07dbb18cf0e576d4da1096c7b4fc51" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_telemServer</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a283a541114a5b3305237108bab697cd9" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_threadPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a3a29dfbc57d6b5dbe4690d486ca89ffd" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_totalEventsDataInStorageForCloggedLinks</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a9bab56af6e7264541e78e9f44c7ea61e" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_totalEventsNoDataInStorageForAvailableLinks</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a5a7d33c5635c2c2d302934030e6ec0dd" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_vectorOutductInfo</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae1d3bbef5d50ea4e7ced88cd69f94eed" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_vectorUpLinksOutductInfoPtrs</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae0b5f6fdd18b5c213c323132511b9e5d" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_workerThreadStartupConditionVariable</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a9616adb9fb6e594cc97ba908fee050df" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_workerThreadStartupInProgress</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ab041c7a08437f15e36994ab32cb84b6f" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_workerThreadStartupMutex</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a77a4ac7bc94b47748789edc1f1ce6302" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqContextPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a18a53b7222df2b47884d3200776400fd" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqPullSock_boundEgressToConnectingStoragePtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aedb7d022a522a3faa9609c0b6c3cd4db" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqPullSock_boundIngressToConnectingStoragePtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ad20828f71f3a7a2266347876122f1c08" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqPushSock_connectingStorageToBoundEgressPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a7e9804ea073b16a2ae5228a23e724926" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqPushSock_connectingStorageToBoundIngressPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a94581c9ffd3f61b637d8bc0d99984d72" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqPushSock_connectingStorageToBoundRouterPtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a1fd823bf3cdb7476bc1b5fafce6e4b68" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqRepSock_connectingTelemToFromBoundStoragePtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a40876886352e00e1c6dafd4374c9af8a" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>m_zmqSubSock_boundReleaseToConnectingStoragePtr</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a270e0dfa05234cd5acaab5e97294334c" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>map_id_to_ackdata_t</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a338f9bc404a6b065146f79aef62c9f56" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>OutductInfoPtr_t</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a52611c60557b8d0e4ae88946eb6bf551" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>PeekOne</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a4d3ecb4bf60559d1cf9273cce736013a" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>PeekOne</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a8ded2eb30c306c9a78ef2cdeb261ac9a" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>PrioritySend</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1af4d7b5f77984290946917eaeddb83690" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>ProcessAdminRecord</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a3d02fc64c721f7bbae4883092a3a6728" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>ProcessBundleCustody</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ab199ea249166f8e30ef5a48ee7a9081f" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>ReleaseOne_NoBlock</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a8d86f26f5952ea0204df8e9f5034c6a1" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>RepopulateUpLinksVec</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a921ba4bb962e03fdada6361ed1f2c4a8" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>ReportDepletedStorage</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a8e759cab50a54c93f976544b55d4a133" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>SendDeletionStatusReport</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a929aa5866966ffb93536cf2bf14232fc" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>SendFromCutThroughQueue</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae3ee99d2dde4c60d4b2aabd7e30fc1cc" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>SendFromStorage</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ab540c34f2399186e22901d82c120aeee" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>SetLinkDown</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a8795fce09c53033001010baaee45b1ff" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>SprintCustodyidToSizeMap</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ab17b6c97d9ff61ca6e5a79126f45b1f4" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>Stop</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>SyncTelemetry</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a2693ff2f034fe588474559d34100371c" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>TelemEventsHandler</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a3a16bd3b85f9028d41a1e083897eaa7b" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>ThreadFunc</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a01182860bc96db8296ffb8f621c0538a" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>Write</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a65e464e0b8f452e6c118761ec6f9533f" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>WriteAcsBundle</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1aeb758eafb0aabb97348cdfa38859d323" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>WriteBundle</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a02b489c081eeb81f3f78247f6f456549" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>WriteBundle</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1ae67110c94c2ae462adc02f097c696d7c" prot="private" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>WriteBundle</name></member>
+      <member refid="structZmqStorageInterface_1_1Impl_1a3b0edeed7275a392dedeed2cd3fcf28f" prot="public" virt="non-virtual"><scope>ZmqStorageInterface::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

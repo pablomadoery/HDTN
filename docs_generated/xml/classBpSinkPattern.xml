@@ -1,0 +1,1557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpSinkPattern" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>BpSinkPattern</compoundname>
+    <derivedcompoundref refid="classBpReceiveFile" prot="public" virt="non-virtual">BpReceiveFile</derivedcompoundref>
+    <derivedcompoundref refid="classBpReceivePacket" prot="public" virt="non-virtual">BpReceivePacket</derivedcompoundref>
+    <derivedcompoundref refid="classBpReceiveStream" prot="public" virt="non-virtual">BpReceiveStream</derivedcompoundref>
+    <derivedcompoundref refid="classBpSinkAsync" prot="public" virt="non-virtual">BpSinkAsync</derivedcompoundref>
+    <derivedcompoundref refid="classBpSinkPatternMockChild" prot="public" virt="non-virtual">BpSinkPatternMockChild</derivedcompoundref>
+    <includes refid="BpSinkPattern_8h" local="no">BpSinkPattern.h</includes>
+    <innerclass refid="structBpSinkPattern_1_1BpSecImpl" prot="public">BpSinkPattern::BpSecImpl</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classBpSinkPattern_1a6d027fe06ac18c2d95c9e6ab18fefd5f" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref>, <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt;</type>
+        <definition>typedef std::pair&lt;cbhe_eid_t, padded_vector_uint8_t&gt; BpSinkPattern::desteid_bundle_pair_t</definition>
+        <argsstring></argsstring>
+        <name>desteid_bundle_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="108" column="23" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classBpSinkPattern_1ae10d64a6f4e442290e7ac76d2cf8565c" prot="private" static="no">
+        <type>std::pair&lt; uint64_t, <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &gt;</type>
+        <definition>typedef std::pair&lt;uint64_t, cbhe_eid_t&gt; BpSinkPattern::bundleid_finaldesteid_pair_t</definition>
+        <argsstring></argsstring>
+        <name>bundleid_finaldesteid_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="114" column="23" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classBpSinkPattern_1a84883da86c0e643d8af644529065471a" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref>, <ref refid="classBpSinkPattern_1ae10d64a6f4e442290e7ac76d2cf8565c" kindref="member">bundleid_finaldesteid_pair_t</ref> &gt;</type>
+        <definition>typedef std::pair&lt;padded_vector_uint8_t, bundleid_finaldesteid_pair_t&gt; BpSinkPattern::bundle_userdata_pair_t</definition>
+        <argsstring></argsstring>
+        <name>bundle_userdata_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="115" column="23" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_totalPayloadBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalPayloadBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="76" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkAsync_1ad4def50a22b28073c9d963fec965b91f" compoundref="BpSinkAsync_8cpp" startline="32" endline="60">BpSinkAsync::ProcessPayload</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_totalBundleBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="77" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_totalBundlesVersion6Rx</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesVersion6Rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="78" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkAsync_1ad4def50a22b28073c9d963fec965b91f" compoundref="BpSinkAsync_8cpp" startline="32" endline="60">BpSinkAsync::ProcessPayload</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_totalBundlesVersion7Rx</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesVersion7Rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="79" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkAsync_1ad4def50a22b28073c9d963fec965b91f" compoundref="BpSinkAsync_8cpp" startline="32" endline="60">BpSinkAsync::ProcessPayload</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a57ad577a240a8cf6a8507429bf04287e" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_lastPayloadBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_lastPayloadBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="81" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1af60fe4231f60f8a56ef5f55433cf83ce" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_lastBundleBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_lastBundleBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="82" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a9c76ac8092dbe5bc79347adfedc04a19" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_lastBundlesRx</definition>
+        <argsstring></argsstring>
+        <name>m_lastBundlesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="83" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1acc2bea34685162d2eaf130767ef264fd" prot="public" static="no" mutable="no">
+        <type>boost::posix_time::ptime</type>
+        <definition>boost::posix_time::ptime BpSinkPattern::m_lastPtime</definition>
+        <argsstring></argsstring>
+        <name>m_lastPtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="84" column="30" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a5b750ec15058cdc74bf0d080c6703267" prot="public" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSinkPattern::m_lastPreviousNode</definition>
+        <argsstring></argsstring>
+        <name>m_lastPreviousNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="85" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1ad303a941a31e9f5256e1d7d35aa31f54" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint64_t &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; BpSinkPattern::m_hopCounts</definition>
+        <argsstring></argsstring>
+        <name>m_hopCounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="86" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a4294101733cc3a87fdac9a4500e0f37a" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_bpv7Priority</definition>
+        <argsstring></argsstring>
+        <name>m_bpv7Priority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="87" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a46859c04ef870a0bc4d6c4347858830f" compoundref="BpSinkPattern_8cpp" startline="513" endline="561">LogStats</referencedby>
+        <referencedby refid="classBpSinkPatternMockChild_1a4eeef872eee32ba963b70e22c45b5af7" compoundref="TestBpSinkPattern_8cpp" startline="66" endline="69">BpSinkPatternMockChild::LogStats</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpSinkPattern_1ac9a522b650c96f4604af1519c1db5b1f" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t BpSinkPattern::M_EXTRA_PROCESSING_TIME_MS</definition>
+        <argsstring></argsstring>
+        <name>M_EXTRA_PROCESSING_TIME_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="90" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a826c5e13c03e5152f5909c13d8ea27ee" prot="private" static="no" mutable="no">
+        <type><ref refid="classInductManager" kindref="compound">InductManager</ref></type>
+        <definition>InductManager BpSinkPattern::m_inductManager</definition>
+        <argsstring></argsstring>
+        <name>m_inductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="92" column="19" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a67c112efe38511f55809262dcf0dff8f" prot="private" static="no" mutable="no">
+        <type><ref refid="classOutductManager" kindref="compound">OutductManager</ref></type>
+        <definition>OutductManager BpSinkPattern::m_outductManager</definition>
+        <argsstring></argsstring>
+        <name>m_outductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="93" column="20" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a4ce2f934fa6448723c7029355afa9c6a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSinkPattern::m_hasSendCapability</definition>
+        <argsstring></argsstring>
+        <name>m_hasSendCapability</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="94" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1aa49978992196bfcb5708fc1a9c1872be" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSinkPattern::m_hasSendCapabilityOverTcpclBidirectionalInduct</definition>
+        <argsstring></argsstring>
+        <name>m_hasSendCapabilityOverTcpclBidirectionalInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="95" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1ad8edd963272397358f3d6505c869fb19" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSinkPattern::m_myEid</definition>
+        <argsstring></argsstring>
+        <name>m_myEid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="96" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a91e055f23c6bc105aa7df4cd8779ae4e" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSinkPattern::m_myEidEcho</definition>
+        <argsstring></argsstring>
+        <name>m_myEidEcho</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="97" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a0386fa4c77be6130afa8a734a6a35cb4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpSinkPattern::m_myEidUriString</definition>
+        <argsstring></argsstring>
+        <name>m_myEidUriString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="98" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a31e31fe208e1e64efcb1eef4ad26c757" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCustodyTransferManager" kindref="compound">CustodyTransferManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CustodyTransferManager&gt; BpSinkPattern::m_custodyTransferManagerPtr</definition>
+        <argsstring></argsstring>
+        <name>m_custodyTransferManagerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="99" column="21" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" compoundref="BpSinkPattern_8cpp" startline="616" endline="628">SendAcsFromTimerThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1ac63a938225932067e70f80aeb340937c" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_nextCtebCustodyId</definition>
+        <argsstring></argsstring>
+        <name>m_nextCtebCustodyId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="100" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a2845d1fba6408a94ae402251fd9fc9d9" prot="private" static="no" mutable="no">
+        <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref></type>
+        <definition>BundleViewV6 BpSinkPattern::m_custodySignalRfc5050RenderedBundleView</definition>
+        <argsstring></argsstring>
+        <name>m_custodySignalRfc5050RenderedBundleView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="101" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a20e7ce246811b56c82cf73fe566c4021" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service BpSinkPattern::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="102" column="29" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a6cbd46273045ba74d2cf3de308e0f48b" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer BpSinkPattern::m_timerAcs</definition>
+        <argsstring></argsstring>
+        <name>m_timerAcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="103" column="33" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1aac318733369a21b22eb174e138944fdf" compoundref="BpSinkPattern_8cpp" startline="569" endline="580">AcsNeedToSend_TimerExpired</referencedby>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1ac3c718222674450119f08fc9661847b7" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer BpSinkPattern::m_timerTransferRateStats</definition>
+        <argsstring></argsstring>
+        <name>m_timerTransferRateStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="104" column="33" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+        <referencedby refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a8995e45daf64f063db8b10cde2a8466f" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpSinkPattern::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="105" column="21" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a7cdade5c19452e5ff1e802de53a97f13" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpSinkPattern::m_threadSenderReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadSenderReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="106" column="21" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a8b0cca8e366764b0d56443543841d609" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpSinkPattern::m_conditionVariableSenderReader</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariableSenderReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="107" column="31" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" compoundref="BpSinkPattern_8cpp" startline="676" endline="685">Forward_ThreadSafe</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a2c75006cdda1cd90dee967789e81f1b1" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="classBpSinkPattern_1a6d027fe06ac18c2d95c9e6ab18fefd5f" kindref="member">desteid_bundle_pair_t</ref> &gt;</type>
+        <definition>std::queue&lt;desteid_bundle_pair_t&gt; BpSinkPattern::m_bundleToSendQueue</definition>
+        <argsstring></argsstring>
+        <name>m_bundleToSendQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="109" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" compoundref="BpSinkPattern_8cpp" startline="676" endline="685">Forward_ThreadSafe</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSinkPattern::m_mutexCurrentlySendingBundleIdSet</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCurrentlySendingBundleIdSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="110" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" compoundref="BpSinkPattern_8cpp" startline="842" endline="859">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; uint64_t &gt;</type>
+        <definition>std::unordered_set&lt;uint64_t&gt; BpSinkPattern::m_currentlySendingBundleIdSet</definition>
+        <argsstring></argsstring>
+        <name>m_currentlySendingBundleIdSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="111" column="24" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" compoundref="BpSinkPattern_8cpp" startline="842" endline="859">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpSinkPattern::m_cvCurrentlySendingBundleIdSet</definition>
+        <argsstring></argsstring>
+        <name>m_cvCurrentlySendingBundleIdSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="112" column="31" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1ae271d63d9de09b799ecc32482600f9dd" compoundref="BpSinkPattern_8cpp" startline="860" endline="870">OnOutductLinkStatusChangedCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" compoundref="BpSinkPattern_8cpp" startline="842" endline="859">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1ac24ae1ffcb7fc8d1e04ea07aef5ee897" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSinkPattern::m_mutexQueueBundlesThatFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_mutexQueueBundlesThatFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="113" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a8790ad20c49e94f346946de04c20a2fd" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="classBpSinkPattern_1a84883da86c0e643d8af644529065471a" kindref="member">bundle_userdata_pair_t</ref> &gt;</type>
+        <definition>std::queue&lt;bundle_userdata_pair_t&gt; BpSinkPattern::m_queueBundlesThatFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_queueBundlesThatFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="116" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpSinkPattern::m_linkIsDown</definition>
+        <argsstring></argsstring>
+        <name>m_linkIsDown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="117" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1ae271d63d9de09b799ecc32482600f9dd" compoundref="BpSinkPattern_8cpp" startline="860" endline="870">OnOutductLinkStatusChangedCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" compoundref="BpSinkPattern_8cpp" startline="842" endline="859">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a4c21270e6349bab68caf15a4bc30056a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpSinkPattern::m_runningSenderThread</definition>
+        <argsstring></argsstring>
+        <name>m_runningSenderThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="118" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1afa36d8b15cd131b5b19eb026a48c6166" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSinkPattern::m_mutexCtm</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCtm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="119" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" compoundref="BpSinkPattern_8cpp" startline="616" endline="628">SendAcsFromTimerThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1aec22cb7952f843fbf1de4b825b7bc9d1" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSinkPattern::m_mutexSendBundleQueue</definition>
+        <argsstring></argsstring>
+        <name>m_mutexSendBundleQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="120" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" compoundref="BpSinkPattern_8cpp" startline="676" endline="685">Forward_ThreadSafe</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+        <referencedby refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSinkPattern::m_tcpclOpportunisticRemoteNodeId</definition>
+        <argsstring></argsstring>
+        <name>m_tcpclOpportunisticRemoteNodeId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="121" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1aeb9447ca6ccbd4aec535b6659f806f4c" compoundref="BpSinkPattern_8cpp" startline="663" endline="674">OnDeletedOpportunisticLinkCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" compoundref="BpSinkPattern_8cpp" startline="630" endline="662">OnNewOpportunisticLinkCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1aaff166774c87bc8a626cccfea507b22b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpSinkPattern::m_opportunisticConvergenceLayerName</definition>
+        <argsstring></argsstring>
+        <name>m_opportunisticConvergenceLayerName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="122" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="122" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1aeb9447ca6ccbd4aec535b6659f806f4c" compoundref="BpSinkPattern_8cpp" startline="663" endline="674">OnDeletedOpportunisticLinkCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" compoundref="BpSinkPattern_8cpp" startline="630" endline="662">OnNewOpportunisticLinkCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1ac6b572e3c44009f7806ecb63c48c5811" prot="private" static="no" mutable="no">
+        <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+        <definition>Induct* BpSinkPattern::m_tcpclInductPtr</definition>
+        <argsstring></argsstring>
+        <name>m_tcpclInductPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="123" column="13" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" compoundref="BpSinkPattern_8cpp" startline="630" endline="662">OnNewOpportunisticLinkCallback</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a9c650d168fd7df7c18488f05a3959f9a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="structBpSinkPattern_1_1BpSecImpl" kindref="compound">BpSecImpl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;BpSecImpl&gt; BpSinkPattern::m_bpsecPimpl</definition>
+        <argsstring></argsstring>
+        <name>m_bpsecPimpl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="126" column="21" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSinkPattern_1a0ab30e7f6c5598aa44c4a2435eac4cfb" prot="private" static="no" mutable="no">
+        <type><ref refid="classBpv6FragmentManager" kindref="compound">Bpv6FragmentManager</ref></type>
+        <definition>Bpv6FragmentManager BpSinkPattern::m_fragmentManager</definition>
+        <argsstring></argsstring>
+        <name>m_fragmentManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="128" column="25" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="128" bodyend="-1"/>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpSinkPattern_1abbeb8dc7637274af0d054e8f8193b795" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT</type>
+        <definition>BpSinkPattern::BpSinkPattern</definition>
+        <argsstring>()</argsstring>
+        <name>BpSinkPattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="51" column="32" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="46" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT void</type>
+        <definition>void BpSinkPattern::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="52" column="37" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="56" bodyend="112"/>
+        <references refid="classInductManager_1a535edbcb77d9df37e7b09b2c13219c85" compoundref="InductManager_8cpp" startline="95" endline="97">InductManager::Clear</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classBpSinkPattern_1a8b0cca8e366764b0d56443543841d609" compoundref="BpSinkPattern_8h" startline="107">m_conditionVariableSenderReader</references>
+        <references refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" compoundref="BpSinkPattern_8h" startline="112">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1ad303a941a31e9f5256e1d7d35aa31f54" compoundref="BpSinkPattern_8h" startline="86">m_hopCounts</references>
+        <references refid="classBpSinkPattern_1a826c5e13c03e5152f5909c13d8ea27ee" compoundref="BpSinkPattern_8h" startline="92">m_inductManager</references>
+        <references refid="classBpSinkPattern_1a8995e45daf64f063db8b10cde2a8466f" compoundref="BpSinkPattern_8h" startline="105">m_ioServiceThreadPtr</references>
+        <references refid="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" compoundref="BpSinkPattern_8h" startline="110">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1aec22cb7952f843fbf1de4b825b7bc9d1" compoundref="BpSinkPattern_8h" startline="120">m_mutexSendBundleQueue</references>
+        <references refid="classBpSinkPattern_1a4c21270e6349bab68caf15a4bc30056a" compoundref="BpSinkPattern_8h" startline="118">m_runningSenderThread</references>
+        <references refid="classBpSinkPattern_1a7cdade5c19452e5ff1e802de53a97f13" compoundref="BpSinkPattern_8h" startline="106">m_threadSenderReaderPtr</references>
+        <references refid="classBpSinkPattern_1a6cbd46273045ba74d2cf3de308e0f48b" compoundref="BpSinkPattern_8h" startline="103">m_timerAcs</references>
+        <references refid="classBpSinkPattern_1ac3c718222674450119f08fc9661847b7" compoundref="BpSinkPattern_8h" startline="104">m_timerTransferRateStats</references>
+        <references refid="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" compoundref="BpSinkPattern_8h" startline="77">m_totalBundleBytesRx</references>
+        <references refid="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" compoundref="BpSinkPattern_8h" startline="78">m_totalBundlesVersion6Rx</references>
+        <references refid="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" compoundref="BpSinkPattern_8h" startline="79">m_totalBundlesVersion7Rx</references>
+        <references refid="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" compoundref="BpSinkPattern_8h" startline="76">m_totalPayloadBytesRx</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpReceiveFileRunner_1a34b60ac4f5e38a40cd9a84b234d921d0" compoundref="BpReceiveFileRunner_8cpp" startline="36" endline="160">BpReceiveFileRunner::Run</referencedby>
+        <referencedby refid="classBpReceivePacketRunner_1ace08c26f6087f3ff96e73b59460c9ae4" compoundref="BpReceivePacketRunner_8cpp" startline="35" endline="171">BpReceivePacketRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveStreamRunner_1a00f217ba4852ddc313cef3b8f6c35888" compoundref="BpReceiveStreamRunner_8cpp" startline="37" endline="204">BpReceiveStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSinkAsyncRunner_1a86b9be61c1fec7349358e6d68d1eec98" compoundref="BpSinkAsyncRunner_8cpp" startline="36" endline="164">BpSinkAsyncRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveStream_1a79207ea7decc4f4200ad68ca2ff45492" compoundref="BpReceiveStream_8cpp" startline="66" endline="80">BpReceiveStream::~BpReceiveStream</referencedby>
+        <referencedby refid="classBpSinkPattern_1a561bbf1180f3a2016e8577b5418eaa98" compoundref="BpSinkPattern_8cpp" startline="52" endline="54">~BpSinkPattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a561bbf1180f3a2016e8577b5418eaa98" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT</type>
+        <definition>BpSinkPattern::~BpSinkPattern</definition>
+        <argsstring>()</argsstring>
+        <name>~BpSinkPattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="53" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="52" bodyend="54"/>
+        <references refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" compoundref="BpSinkPattern_8cpp" startline="56" endline="112">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT bool</type>
+        <definition>bool BpSinkPattern::Init</definition>
+        <argsstring>(InductsConfig_ptr &amp;inductsConfigPtr, OutductsConfig_ptr &amp;outductsConfigPtr, const boost::filesystem::path &amp;bpSecConfigFilePath, bool isAcsAware, const cbhe_eid_t &amp;myEid, uint32_t processingLagMs, const uint64_t maxBundleSizeBytes, const uint64_t myBpEchoServiceId=2047)</argsstring>
+        <name>Init</name>
+        <param>
+          <type><ref refid="InductsConfig_8h_1a7dd86e14399b3ebcfb3d869002f90cbc" kindref="member">InductsConfig_ptr</ref> &amp;</type>
+          <declname>inductsConfigPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="OutductsConfig_8h_1ac426f54ad80e243d83162cd56ff9282c" kindref="member">OutductsConfig_ptr</ref> &amp;</type>
+          <declname>outductsConfigPtr</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>bpSecConfigFilePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isAcsAware</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>myEid</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>processingLagMs</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>myBpEchoServiceId</declname>
+          <defval>2047</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="54" column="37" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="114" bodyend="227"/>
+        <references refid="classBpSinkPattern_1aac318733369a21b22eb174e138944fdf" compoundref="BpSinkPattern_8cpp" startline="569" endline="580">AcsNeedToSend_TimerExpired</references>
+        <references refid="classOutductManager_1ad64ed646a077f9a435bad74308930a0c" compoundref="OutductManager_8cpp" startline="169" endline="177">OutductManager::AllReadyToForward</references>
+        <references refid="classBpSecConfig_1aa847ae166df48ec1eb3dd1550fb17dda" compoundref="BpSecConfig_8cpp" startline="808" endline="823">BpSecConfig::CreateFromJsonFilePath</references>
+        <references refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" compoundref="Uri_8cpp" startline="24" endline="29">Uri::GetIpnUriString</references>
+        <references refid="classInductManager_1aea87b128d7fac1fa2696c064e899d163" compoundref="InductManager_8cpp" startline="34" endline="93">InductManager::LoadInductsFromConfig</references>
+        <references refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" compoundref="OutductManager_8cpp" startline="44" endline="167">OutductManager::LoadOutductsFromConfig</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1a9c650d168fd7df7c18488f05a3959f9a" compoundref="BpSinkPattern_8h" startline="125">m_bpsecPimpl</references>
+        <references refid="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" compoundref="BpSinkPattern_8h" startline="111">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a31e31fe208e1e64efcb1eef4ad26c757" compoundref="BpSinkPattern_8h" startline="99">m_custodyTransferManagerPtr</references>
+        <references refid="classBpSinkPattern_1ac9a522b650c96f4604af1519c1db5b1f" compoundref="BpSinkPattern_8h" startline="90">M_EXTRA_PROCESSING_TIME_MS</references>
+        <references refid="classBpSinkPattern_1a4ce2f934fa6448723c7029355afa9c6a" compoundref="BpSinkPattern_8h" startline="94">m_hasSendCapability</references>
+        <references refid="classBpSinkPattern_1aa49978992196bfcb5708fc1a9c1872be" compoundref="BpSinkPattern_8h" startline="95">m_hasSendCapabilityOverTcpclBidirectionalInduct</references>
+        <references refid="classBpSinkPattern_1ad303a941a31e9f5256e1d7d35aa31f54" compoundref="BpSinkPattern_8h" startline="86">m_hopCounts</references>
+        <references refid="classBpSinkPattern_1a826c5e13c03e5152f5909c13d8ea27ee" compoundref="BpSinkPattern_8h" startline="92">m_inductManager</references>
+        <references refid="classBpSinkPattern_1a20e7ce246811b56c82cf73fe566c4021" compoundref="BpSinkPattern_8h" startline="102">m_ioService</references>
+        <references refid="classBpSinkPattern_1a8995e45daf64f063db8b10cde2a8466f" compoundref="BpSinkPattern_8h" startline="105">m_ioServiceThreadPtr</references>
+        <references refid="classBpSinkPattern_1af60fe4231f60f8a56ef5f55433cf83ce" compoundref="BpSinkPattern_8h" startline="82">m_lastBundleBytesRx</references>
+        <references refid="classBpSinkPattern_1a9c76ac8092dbe5bc79347adfedc04a19" compoundref="BpSinkPattern_8h" startline="83">m_lastBundlesRx</references>
+        <references refid="classBpSinkPattern_1a57ad577a240a8cf6a8507429bf04287e" compoundref="BpSinkPattern_8h" startline="81">m_lastPayloadBytesRx</references>
+        <references refid="classBpSinkPattern_1a5b750ec15058cdc74bf0d080c6703267" compoundref="BpSinkPattern_8h" startline="85">m_lastPreviousNode</references>
+        <references refid="classBpSinkPattern_1acc2bea34685162d2eaf130767ef264fd" compoundref="BpSinkPattern_8h" startline="84">m_lastPtime</references>
+        <references refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" compoundref="BpSinkPattern_8h" startline="117">m_linkIsDown</references>
+        <references refid="classBpSinkPattern_1ad8edd963272397358f3d6505c869fb19" compoundref="BpSinkPattern_8h" startline="96">m_myEid</references>
+        <references refid="classBpSinkPattern_1a91e055f23c6bc105aa7df4cd8779ae4e" compoundref="BpSinkPattern_8h" startline="97">m_myEidEcho</references>
+        <references refid="classBpSinkPattern_1a0386fa4c77be6130afa8a734a6a35cb4" compoundref="BpSinkPattern_8h" startline="98">m_myEidUriString</references>
+        <references refid="classBpSinkPattern_1ac63a938225932067e70f80aeb340937c" compoundref="BpSinkPattern_8h" startline="100">m_nextCtebCustodyId</references>
+        <references refid="classBpSinkPattern_1a67c112efe38511f55809262dcf0dff8f" compoundref="BpSinkPattern_8h" startline="93">m_outductManager</references>
+        <references refid="classBpSinkPattern_1a4c21270e6349bab68caf15a4bc30056a" compoundref="BpSinkPattern_8h" startline="118">m_runningSenderThread</references>
+        <references refid="classBpSinkPattern_1ac6b572e3c44009f7806ecb63c48c5811" compoundref="BpSinkPattern_8h" startline="123">m_tcpclInductPtr</references>
+        <references refid="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" compoundref="BpSinkPattern_8h" startline="121">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="classBpSinkPattern_1a7cdade5c19452e5ff1e802de53a97f13" compoundref="BpSinkPattern_8h" startline="106">m_threadSenderReaderPtr</references>
+        <references refid="classBpSinkPattern_1a6cbd46273045ba74d2cf3de308e0f48b" compoundref="BpSinkPattern_8h" startline="103">m_timerAcs</references>
+        <references refid="classBpSinkPattern_1ac3c718222674450119f08fc9661847b7" compoundref="BpSinkPattern_8h" startline="104">m_timerTransferRateStats</references>
+        <references refid="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" compoundref="BpSinkPattern_8h" startline="77">m_totalBundleBytesRx</references>
+        <references refid="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" compoundref="BpSinkPattern_8h" startline="78">m_totalBundlesVersion6Rx</references>
+        <references refid="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" compoundref="BpSinkPattern_8h" startline="79">m_totalBundlesVersion7Rx</references>
+        <references refid="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" compoundref="BpSinkPattern_8h" startline="76">m_totalPayloadBytesRx</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="classBpSinkPattern_1aeb9447ca6ccbd4aec535b6659f806f4c" compoundref="BpSinkPattern_8cpp" startline="663" endline="674">OnDeletedOpportunisticLinkCallback</references>
+        <references refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" compoundref="BpSinkPattern_8cpp" startline="819" endline="841">OnFailedBundleVecSendCallback</references>
+        <references refid="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" compoundref="BpSinkPattern_8cpp" startline="630" endline="662">OnNewOpportunisticLinkCallback</references>
+        <references refid="classBpSinkPattern_1ae271d63d9de09b799ecc32482600f9dd" compoundref="BpSinkPattern_8cpp" startline="860" endline="870">OnOutductLinkStatusChangedCallback</references>
+        <references refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" compoundref="BpSinkPattern_8cpp" startline="842" endline="859">OnSuccessfulBundleSendCallback</references>
+        <references refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">SenderReaderThreadFunc</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="structcbhe__eid__t_1a55b06071bd9a90713bdc90e42d5bc4b0" compoundref="Cbhe_8cpp" startline="55" endline="58">cbhe_eid_t::Set</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <references refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" compoundref="BpSinkPattern_8cpp" startline="582" endline="614">TransferRate_TimerExpired</references>
+        <references refid="classBpSinkPattern_1a2bdf40e14a56613c8e82a52c00a433e0" compoundref="BpSinkPattern_8cpp" startline="563" endline="567">WholeBundleReadyCallback</references>
+        <referencedby refid="classBpReceiveFileRunner_1a34b60ac4f5e38a40cd9a84b234d921d0" compoundref="BpReceiveFileRunner_8cpp" startline="36" endline="160">BpReceiveFileRunner::Run</referencedby>
+        <referencedby refid="classBpReceivePacketRunner_1ace08c26f6087f3ff96e73b59460c9ae4" compoundref="BpReceivePacketRunner_8cpp" startline="35" endline="171">BpReceivePacketRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveStreamRunner_1a00f217ba4852ddc313cef3b8f6c35888" compoundref="BpReceiveStreamRunner_8cpp" startline="37" endline="204">BpReceiveStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSinkAsyncRunner_1a86b9be61c1fec7349358e6d68d1eec98" compoundref="BpSinkAsyncRunner_8cpp" startline="36" endline="164">BpSinkAsyncRunner::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a46859c04ef870a0bc4d6c4347858830f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT void</type>
+        <definition>void BpSinkPattern::LogStats</definition>
+        <argsstring>(PrimaryBlock &amp;primaryBlock, bool isBpVersion6)</argsstring>
+        <name>LogStats</name>
+        <param>
+          <type><ref refid="structPrimaryBlock" kindref="compound">PrimaryBlock</ref> &amp;</type>
+          <declname>primaryBlock</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isBpVersion6</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="57" column="37" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="513" bodyend="561"/>
+        <references refid="structPrimaryBlock_1a11c5db4fc5ffffa136a2e7383aab9dd1">PrimaryBlock::GetExpirationMilliseconds</references>
+        <references refid="structPrimaryBlock_1a52fe2ec5709555b37422af7403908061">PrimaryBlock::GetFinalDestinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1ac13e5000b807ded89f918c8991c10bae" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="542" endline="545">Bpv7CbhePrimaryBlock::GetMillisecondsSinceCreate</references>
+        <references refid="structPrimaryBlock_1a93ab56e52804abb11f9185822567dd96">PrimaryBlock::GetPriority</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a53992fe56b44c19b3dc6925e90ef7567" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="345" endline="348">Bpv6CbhePrimaryBlock::GetSecondsSinceCreate</references>
+        <references refid="structPrimaryBlock_1ab991bc43d1066bd16f8c8a5f4fc474b2">PrimaryBlock::GetSourceEid</references>
+        <references refid="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" compoundref="StatsLogger_8cpp" startline="50" endline="68">hdtn::StatsLogger::Log</references>
+        <references refid="classBpSinkPattern_1a4294101733cc3a87fdac9a4500e0f37a" compoundref="BpSinkPattern_8h" startline="87">m_bpv7Priority</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a130df13fb7751f88ad07ebaa13d21d0b" compoundref="bpv6_8h" startline="101">Bpv6CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv7CbhePrimaryBlock_1ab902c583d6948751e2a66dd00c0b675e" compoundref="bpv7_8h" startline="329">Bpv7CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a51c35115cb162d7b723948c8457469ee" compoundref="bpv7_8h" startline="330">Bpv7CbhePrimaryBlock::m_lifetimeMilliseconds</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a34196d37ac4264398a0bd33d47d92d08" compoundref="bpv6_8h" startline="102">Bpv6CbhePrimaryBlock::m_lifetimeSeconds</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a8395a03fca28c59b45a44b1067a39ff7" compoundref="TimestampUtil_8h" startline="140">TimestampUtil::bpv7_creation_timestamp_t::millisecondsSinceStartOfYear2000</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1a8520a3a9830516384d794d752e4b4b58" compoundref="TimestampUtil_8h" startline="88">TimestampUtil::bpv6_creation_timestamp_t::secondsSinceStartOfYear2000</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <referencedby refid="classBpSinkPatternMockChild_1a4eeef872eee32ba963b70e22c45b5af7" compoundref="TestBpSinkPattern_8cpp" startline="66" endline="69">BpSinkPatternMockChild::LogStats</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classBpSinkPattern_1a832c385bf442c81c6c641577a059d1ad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool BpSinkPattern::ProcessPayload</definition>
+        <argsstring>(const uint8_t *data, const uint64_t size)=0</argsstring>
+        <name>ProcessPayload</name>
+        <reimplementedby refid="classBpReceiveFile_1ad33611339a6dc6c9d4d49233fd84a935">ProcessPayload</reimplementedby>
+        <reimplementedby refid="classBpReceivePacket_1a1a9fad68ea68beba234519da13b1b63c">ProcessPayload</reimplementedby>
+        <reimplementedby refid="classBpReceiveStream_1a57e58c7f702154d4bd76403fce00ef83">ProcessPayload</reimplementedby>
+        <reimplementedby refid="classBpSinkAsync_1ad4def50a22b28073c9d963fec965b91f">ProcessPayload</reimplementedby>
+        <reimplementedby refid="classBpSinkPatternMockChild_1acafda76c3fa434874e739e5735cdf405">ProcessPayload</reimplementedby>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="60" column="18"/>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpSinkPattern_1a2bdf40e14a56613c8e82a52c00a433e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::WholeBundleReadyCallback</definition>
+        <argsstring>(padded_vector_uint8_t &amp;wholeBundleVec)</argsstring>
+        <name>WholeBundleReadyCallback</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>wholeBundleVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="62" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="563" bodyend="567"/>
+        <references refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT bool</type>
+        <definition>bool BpSinkPattern::Process</definition>
+        <argsstring>(padded_vector_uint8_t &amp;rxBuf, const std::size_t messageSize)</argsstring>
+        <name>Process</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>rxBuf</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>messageSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="63" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="231" bodyend="511"/>
+        <references refid="classBpv6FragmentManager_1ac69372afab66eea3cadb31aee9856dc0" compoundref="Bpv6FragmentManager_8cpp" startline="91" endline="94">Bpv6FragmentManager::AddFragmentAndGetComplete_ThreadSafe</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13dad18592631af9d972cc052408d5905441">CUSTODY_REQUESTED</references>
+        <references refid="bpv7_8h_1a36b5bae2b155cc1dfbc47555ba309f55a88ec7d5086d2469ba843c7fcceade8a6" compoundref="bpv7_8h" startline="294">DEFAULT</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aeb4195b868fc952f1da6c3ec5ac63d7a" compoundref="TestBpSecPolicyManager_8cpp" startline="586">errorList</references>
+        <references refid="classBpSecBundleProcessor_1aee788ee986721abcc4d5571b45f5b75c" compoundref="BpSecBundleProcessor_8cpp" startline="1630" endline="1641">BpSecBundleProcessor::ErrorListToString</references>
+        <references refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" compoundref="BpSinkPattern_8cpp" startline="676" endline="685">Forward_ThreadSafe</references>
+        <references refid="classBundleViewV6_1a86fd81cd00106f56c5f068e091b8fbe6" compoundref="BundleViewV6_8cpp" startline="243" endline="250">BundleViewV6::GetCanonicalBlocksByType</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a1065014e4ee716e9e4bbd984070e668e">HOP_COUNT</references>
+        <references refid="bpv7_8h_1a36b5bae2b155cc1dfbc47555ba309f55aef2863a469df3ea6871d640e3669a2f2" compoundref="bpv7_8h" startline="295">INVALID</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classBpSinkPattern_1a46859c04ef870a0bc4d6c4347858830f" compoundref="BpSinkPattern_8cpp" startline="513" endline="561">LogStats</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv6CanonicalBlock_1ae30c6e82cb623bd6f77d97fa8cfcb171" compoundref="bpv6_8h" startline="187">Bpv6CanonicalBlock::m_blockTypeSpecificDataLength</references>
+        <references refid="structBpv6CanonicalBlock_1addd20445009c8e3c9a5f91516e3a93b3" compoundref="bpv6_8h" startline="188">Bpv6CanonicalBlock::m_blockTypeSpecificDataPtr</references>
+        <references refid="classBpSinkPattern_1a9c650d168fd7df7c18488f05a3959f9a" compoundref="BpSinkPattern_8h" startline="125">m_bpsecPimpl</references>
+        <references refid="classBpSinkPattern_1a4294101733cc3a87fdac9a4500e0f37a" compoundref="BpSinkPattern_8h" startline="87">m_bpv7Priority</references>
+        <references refid="structBpv6CbhePrimaryBlock_1af1e392bfdbeaf03a8d9dbcda4fc154e1" compoundref="bpv6_8h" startline="95">Bpv6CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="classBpSinkPattern_1a2845d1fba6408a94ae402251fd9fc9d9" compoundref="BpSinkPattern_8h" startline="101">m_custodySignalRfc5050RenderedBundleView</references>
+        <references refid="classBpSinkPattern_1a31e31fe208e1e64efcb1eef4ad26c757" compoundref="BpSinkPattern_8h" startline="99">m_custodyTransferManagerPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a0543a2b8132a58a3f60c0d9218fc7aaa" compoundref="bpv6_8h" startline="97">Bpv6CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBpSinkPattern_1ac9a522b650c96f4604af1519c1db5b1f" compoundref="BpSinkPattern_8h" startline="90">M_EXTRA_PROCESSING_TIME_MS</references>
+        <references refid="classBpSinkPattern_1a0ab30e7f6c5598aa44c4a2435eac4cfb" compoundref="BpSinkPattern_8h" startline="128">m_fragmentManager</references>
+        <references refid="classBundleViewV6_1ac1e7ddd66ff0ac29a6448414ad1a47a4" compoundref="BundleViewV6_8h" startline="132">BundleViewV6::m_frontBuffer</references>
+        <references refid="classBpSinkPattern_1a4ce2f934fa6448723c7029355afa9c6a" compoundref="BpSinkPattern_8h" startline="94">m_hasSendCapability</references>
+        <references refid="classBpSinkPattern_1ad303a941a31e9f5256e1d7d35aa31f54" compoundref="BpSinkPattern_8h" startline="86">m_hopCounts</references>
+        <references refid="classBpSinkPattern_1a20e7ce246811b56c82cf73fe566c4021" compoundref="BpSinkPattern_8h" startline="102">m_ioService</references>
+        <references refid="classBpSinkPattern_1a5b750ec15058cdc74bf0d080c6703267" compoundref="BpSinkPattern_8h" startline="85">m_lastPreviousNode</references>
+        <references refid="classBpSinkPattern_1afa36d8b15cd131b5b19eb026a48c6166" compoundref="BpSinkPattern_8h" startline="119">m_mutexCtm</references>
+        <references refid="classBpSinkPattern_1ad8edd963272397358f3d6505c869fb19" compoundref="BpSinkPattern_8h" startline="96">m_myEid</references>
+        <references refid="classBpSinkPattern_1a91e055f23c6bc105aa7df4cd8779ae4e" compoundref="BpSinkPattern_8h" startline="97">m_myEidEcho</references>
+        <references refid="classBpSinkPattern_1ac63a938225932067e70f80aeb340937c" compoundref="BpSinkPattern_8h" startline="100">m_nextCtebCustodyId</references>
+        <references refid="structBpv7PreviousNodeCanonicalBlock_1a0ed63a5d9a5c7f06ec1f6ba56ccd4141" compoundref="bpv7_8h" startline="438">Bpv7PreviousNodeCanonicalBlock::m_previousNode</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV6_1a150b26cc83d82384c8dfc52bd57d5171" compoundref="BundleViewV6_8h" startline="131">BundleViewV6::m_renderedBundle</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" compoundref="BpSinkPattern_8h" startline="77">m_totalBundleBytesRx</references>
+        <references refid="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" compoundref="BpSinkPattern_8h" startline="78">m_totalBundlesVersion6Rx</references>
+        <references refid="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" compoundref="BpSinkPattern_8h" startline="79">m_totalBundlesVersion7Rx</references>
+        <references refid="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" compoundref="BpSinkPattern_8h" startline="76">m_totalPayloadBytesRx</references>
+        <references refid="bpv7_8h_1a36b5bae2b155cc1dfbc47555ba309f55a6b8524b0a6b5872417d7d5e64a9ebf43" compoundref="bpv7_8h" startline="293">MAX_PRIORITY</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990ac8a2692003eb48983a08356f22ac783f">PREVIOUS_NODE</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990acaf55db72c49969e2ed270adbcd0a8f5">PRIORITY</references>
+        <references refid="classBpSinkPattern_1a832c385bf442c81c6c641577a059d1ad">ProcessPayload</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a97caa79f4d4b31be229f7ebf9c22b033">REMOVE_BLOCK_IF_IT_CANT_BE_PROCESSED</references>
+        <references refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" compoundref="BpSinkPattern_8cpp" startline="616" endline="628">SendAcsFromTimerThread</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13daecf2a6aabcb0538532ba2a7d0d281557">SINGLETON</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <references refid="CustodyTransferManager_8h_1ac9da551b1c03215c0fc6b8a9366a6c68a984d7273185196ef57827a830045e4f8">SUCCESS__NO_ADDITIONAL_INFORMATION</references>
+        <referencedby refid="classBpSinkPattern_1a2bdf40e14a56613c8e82a52c00a433e0" compoundref="BpSinkPattern_8cpp" startline="563" endline="567">WholeBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1aac318733369a21b22eb174e138944fdf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::AcsNeedToSend_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>AcsNeedToSend_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="64" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="569" bodyend="580"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1a6cbd46273045ba74d2cf3de308e0f48b" compoundref="BpSinkPattern_8h" startline="103">m_timerAcs</references>
+        <references refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" compoundref="BpSinkPattern_8cpp" startline="616" endline="628">SendAcsFromTimerThread</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::TransferRate_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>TransferRate_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="65" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="582" bodyend="614"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1af60fe4231f60f8a56ef5f55433cf83ce" compoundref="BpSinkPattern_8h" startline="82">m_lastBundleBytesRx</references>
+        <references refid="classBpSinkPattern_1a9c76ac8092dbe5bc79347adfedc04a19" compoundref="BpSinkPattern_8h" startline="83">m_lastBundlesRx</references>
+        <references refid="classBpSinkPattern_1a57ad577a240a8cf6a8507429bf04287e" compoundref="BpSinkPattern_8h" startline="81">m_lastPayloadBytesRx</references>
+        <references refid="classBpSinkPattern_1acc2bea34685162d2eaf130767ef264fd" compoundref="BpSinkPattern_8h" startline="84">m_lastPtime</references>
+        <references refid="classBpSinkPattern_1ac3c718222674450119f08fc9661847b7" compoundref="BpSinkPattern_8h" startline="104">m_timerTransferRateStats</references>
+        <references refid="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" compoundref="BpSinkPattern_8h" startline="77">m_totalBundleBytesRx</references>
+        <references refid="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" compoundref="BpSinkPattern_8h" startline="78">m_totalBundlesVersion6Rx</references>
+        <references refid="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" compoundref="BpSinkPattern_8h" startline="79">m_totalBundlesVersion7Rx</references>
+        <references refid="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" compoundref="BpSinkPattern_8h" startline="76">m_totalPayloadBytesRx</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::SendAcsFromTimerThread</definition>
+        <argsstring>()</argsstring>
+        <name>SendAcsFromTimerThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="66" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="616" bodyend="628"/>
+        <references refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" compoundref="BpSinkPattern_8cpp" startline="676" endline="685">Forward_ThreadSafe</references>
+        <references refid="classBpSinkPattern_1a31e31fe208e1e64efcb1eef4ad26c757" compoundref="BpSinkPattern_8h" startline="99">m_custodyTransferManagerPtr</references>
+        <references refid="classBpSinkPattern_1afa36d8b15cd131b5b19eb026a48c6166" compoundref="BpSinkPattern_8h" startline="119">m_mutexCtm</references>
+        <referencedby refid="classBpSinkPattern_1aac318733369a21b22eb174e138944fdf" compoundref="BpSinkPattern_8cpp" startline="569" endline="580">AcsNeedToSend_TimerExpired</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::OnNewOpportunisticLinkCallback</definition>
+        <argsstring>(const uint64_t remoteNodeId, Induct *thisInductPtr, void *sinkPtr)</argsstring>
+        <name>OnNewOpportunisticLinkCallback</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+          <declname>thisInductPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>sinkPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="67" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="630" bodyend="662"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1aaff166774c87bc8a626cccfea507b22b" compoundref="BpSinkPattern_8h" startline="122">m_opportunisticConvergenceLayerName</references>
+        <references refid="classBpSinkPattern_1ac6b572e3c44009f7806ecb63c48c5811" compoundref="BpSinkPattern_8h" startline="123">m_tcpclInductPtr</references>
+        <references refid="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" compoundref="BpSinkPattern_8h" startline="121">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1aeb9447ca6ccbd4aec535b6659f806f4c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::OnDeletedOpportunisticLinkCallback</definition>
+        <argsstring>(const uint64_t remoteNodeId, Induct *thisInductPtr, void *sinkPtrAboutToBeDeleted)</argsstring>
+        <name>OnDeletedOpportunisticLinkCallback</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+          <declname>thisInductPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>sinkPtrAboutToBeDeleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="68" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="663" bodyend="674"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1aaff166774c87bc8a626cccfea507b22b" compoundref="BpSinkPattern_8h" startline="122">m_opportunisticConvergenceLayerName</references>
+        <references refid="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" compoundref="BpSinkPattern_8h" startline="121">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT bool</type>
+        <definition>bool BpSinkPattern::Forward_ThreadSafe</definition>
+        <argsstring>(const cbhe_eid_t &amp;destEid, padded_vector_uint8_t &amp;bundleToMoveAndSend)</argsstring>
+        <name>Forward_ThreadSafe</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>destEid</declname>
+        </param>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>bundleToMoveAndSend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="69" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="676" bodyend="685"/>
+        <references refid="classBpSinkPattern_1a2c75006cdda1cd90dee967789e81f1b1" compoundref="BpSinkPattern_8h" startline="109">m_bundleToSendQueue</references>
+        <references refid="classBpSinkPattern_1a8b0cca8e366764b0d56443543841d609" compoundref="BpSinkPattern_8h" startline="107">m_conditionVariableSenderReader</references>
+        <references refid="classBpSinkPattern_1aec22cb7952f843fbf1de4b825b7bc9d1" compoundref="BpSinkPattern_8h" startline="120">m_mutexSendBundleQueue</references>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">Process</referencedby>
+        <referencedby refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" compoundref="BpSinkPattern_8cpp" startline="616" endline="628">SendAcsFromTimerThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::SenderReaderThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>SenderReaderThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="70" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="687" bodyend="817"/>
+        <references refid="classOutduct_1a0120999b87ce99c34c9caea80f4ee409">Outduct::Forward</references>
+        <references refid="classInduct_1a0cbe038ec6320e7b05110dbc63e847a3" compoundref="Induct_8cpp" startline="75" endline="77">Induct::ForwardOnOpportunisticLink</references>
+        <references refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" compoundref="OutductManager_8cpp" startline="299" endline="308">OutductManager::GetOutductByOutductUuid</references>
+        <references refid="classOutduct_1a7bc56120366e26a39d2b8649142dcf06" compoundref="Outduct_8cpp" startline="43" endline="45">Outduct::GetOutductMaxNumberOfBundlesInPipeline</references>
+        <references refid="classOutduct_1a8ef969d09fbe27dbb2e554e25d5a30b4" compoundref="Outduct_8cpp" startline="49" endline="51">Outduct::GetOutductNextHopNodeId</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classBpSinkPattern_1a2c75006cdda1cd90dee967789e81f1b1" compoundref="BpSinkPattern_8h" startline="109">m_bundleToSendQueue</references>
+        <references refid="classBpSinkPattern_1a8b0cca8e366764b0d56443543841d609" compoundref="BpSinkPattern_8h" startline="107">m_conditionVariableSenderReader</references>
+        <references refid="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" compoundref="BpSinkPattern_8h" startline="111">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" compoundref="BpSinkPattern_8h" startline="112">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1aa49978992196bfcb5708fc1a9c1872be" compoundref="BpSinkPattern_8h" startline="95">m_hasSendCapabilityOverTcpclBidirectionalInduct</references>
+        <references refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" compoundref="BpSinkPattern_8h" startline="117">m_linkIsDown</references>
+        <references refid="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" compoundref="BpSinkPattern_8h" startline="110">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1ac24ae1ffcb7fc8d1e04ea07aef5ee897" compoundref="BpSinkPattern_8h" startline="113">m_mutexQueueBundlesThatFailedToSend</references>
+        <references refid="classBpSinkPattern_1aec22cb7952f843fbf1de4b825b7bc9d1" compoundref="BpSinkPattern_8h" startline="120">m_mutexSendBundleQueue</references>
+        <references refid="classBpSinkPattern_1a67c112efe38511f55809262dcf0dff8f" compoundref="BpSinkPattern_8h" startline="93">m_outductManager</references>
+        <references refid="classBpSinkPattern_1a8790ad20c49e94f346946de04c20a2fd" compoundref="BpSinkPattern_8h" startline="116">m_queueBundlesThatFailedToSend</references>
+        <references refid="classBpSinkPattern_1a4c21270e6349bab68caf15a4bc30056a" compoundref="BpSinkPattern_8h" startline="118">m_runningSenderThread</references>
+        <references refid="classBpSinkPattern_1ac6b572e3c44009f7806ecb63c48c5811" compoundref="BpSinkPattern_8h" startline="123">m_tcpclInductPtr</references>
+        <references refid="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" compoundref="BpSinkPattern_8h" startline="121">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::OnFailedBundleVecSendCallback</definition>
+        <argsstring>(padded_vector_uint8_t &amp;movableBundle, std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid)</argsstring>
+        <name>OnFailedBundleVecSendCallback</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>movableBundle</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="71" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="819" bodyend="841"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" compoundref="BpSinkPattern_8h" startline="111">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" compoundref="BpSinkPattern_8h" startline="112">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" compoundref="BpSinkPattern_8h" startline="117">m_linkIsDown</references>
+        <references refid="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" compoundref="BpSinkPattern_8h" startline="110">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1ac24ae1ffcb7fc8d1e04ea07aef5ee897" compoundref="BpSinkPattern_8h" startline="113">m_mutexQueueBundlesThatFailedToSend</references>
+        <references refid="classBpSinkPattern_1a8790ad20c49e94f346946de04c20a2fd" compoundref="BpSinkPattern_8h" startline="116">m_queueBundlesThatFailedToSend</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::OnSuccessfulBundleSendCallback</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid)</argsstring>
+        <name>OnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="72" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="842" bodyend="859"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" compoundref="BpSinkPattern_8h" startline="111">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" compoundref="BpSinkPattern_8h" startline="112">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" compoundref="BpSinkPattern_8h" startline="117">m_linkIsDown</references>
+        <references refid="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" compoundref="BpSinkPattern_8h" startline="110">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSinkPattern_1ae271d63d9de09b799ecc32482600f9dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSinkPattern::OnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(bool isLinkDownEvent, uint64_t outductUuid)</argsstring>
+        <name>OnOutductLinkStatusChangedCallback</name>
+        <param>
+          <type>bool</type>
+          <declname>isLinkDownEvent</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="73" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSinkPattern.cpp" bodystart="860" bodyend="870"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" compoundref="BpSinkPattern_8h" startline="112">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" compoundref="BpSinkPattern_8h" startline="117">m_linkIsDown</references>
+        <references refid="BpSinkPattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSinkPattern_8cpp" startline="44">subprocess</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BpReceiveFile</label>
+        <link refid="classBpReceiveFile"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>BpReceivePacket</label>
+        <link refid="classBpReceivePacket"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>BpSinkAsync</label>
+        <link refid="classBpSinkAsync"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>BpSinkPatternMockChild</label>
+        <link refid="classBpSinkPatternMockChild"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BpSinkPattern</label>
+        <link refid="classBpSinkPattern"/>
+      </node>
+      <node id="4">
+        <label>BpReceiveStream</label>
+        <link refid="classBpReceiveStream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>BundleViewV6::Bpv6PrimaryBlockView</label>
+        <link refid="structBundleViewV6_1_1Bpv6PrimaryBlockView"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OutductManager</label>
+        <link refid="classOutductManager"/>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bpv6FragmentManager</label>
+        <link refid="classBpv6FragmentManager"/>
+      </node>
+      <node id="5">
+        <label>BundleViewV6</label>
+        <link refid="classBundleViewV6"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_primaryBlockView</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>InductManager</label>
+        <link refid="classInductManager"/>
+      </node>
+      <node id="7">
+        <label>Bpv6CbhePrimaryBlock</label>
+        <link refid="structBpv6CbhePrimaryBlock"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_custodianEid</edgelabel>
+          <edgelabel>m_destinationEid</edgelabel>
+          <edgelabel>m_reportToEid</edgelabel>
+          <edgelabel>m_sourceNodeId</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_creationTimestamp</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BpSinkPattern</label>
+        <link refid="classBpSinkPattern"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_tcpclInductPtr</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_outductManager</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_custodySignalRfc5050RenderedBundleView</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_fragmentManager</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_inductManager</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_lastPreviousNode</edgelabel>
+          <edgelabel>m_myEid</edgelabel>
+          <edgelabel>m_myEidEcho</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="8">
+        <label>PrimaryBlock</label>
+        <link refid="structPrimaryBlock"/>
+      </node>
+      <node id="9">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+      <node id="10">
+        <label>TimestampUtil::bpv6_creation_timestamp_t</label>
+        <link refid="structTimestampUtil_1_1bpv6__creation__timestamp__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpcodec/include/app_patterns/BpSinkPattern.h" line="49" column="1" bodyfile="common/bpcodec/include/app_patterns/BpSinkPattern.h" bodystart="49" bodyend="129"/>
+    <listofallmembers>
+      <member refid="classBpSinkPattern_1aac318733369a21b22eb174e138944fdf" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>AcsNeedToSend_TimerExpired</name></member>
+      <member refid="classBpSinkPattern_1abbeb8dc7637274af0d054e8f8193b795" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>BpSinkPattern</name></member>
+      <member refid="classBpSinkPattern_1a84883da86c0e643d8af644529065471a" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>bundle_userdata_pair_t</name></member>
+      <member refid="classBpSinkPattern_1ae10d64a6f4e442290e7ac76d2cf8565c" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>bundleid_finaldesteid_pair_t</name></member>
+      <member refid="classBpSinkPattern_1a6d027fe06ac18c2d95c9e6ab18fefd5f" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>desteid_bundle_pair_t</name></member>
+      <member refid="classBpSinkPattern_1a4f7d63aabda3307ce6c4b6456c313a2f" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>Forward_ThreadSafe</name></member>
+      <member refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>Init</name></member>
+      <member refid="classBpSinkPattern_1a46859c04ef870a0bc4d6c4347858830f" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>LogStats</name></member>
+      <member refid="classBpSinkPattern_1a9c650d168fd7df7c18488f05a3959f9a" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_bpsecPimpl</name></member>
+      <member refid="classBpSinkPattern_1a4294101733cc3a87fdac9a4500e0f37a" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_bpv7Priority</name></member>
+      <member refid="classBpSinkPattern_1a2c75006cdda1cd90dee967789e81f1b1" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_bundleToSendQueue</name></member>
+      <member refid="classBpSinkPattern_1a8b0cca8e366764b0d56443543841d609" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_conditionVariableSenderReader</name></member>
+      <member refid="classBpSinkPattern_1a3f39f2f9db38128c83b4270601a322a3" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_currentlySendingBundleIdSet</name></member>
+      <member refid="classBpSinkPattern_1a2845d1fba6408a94ae402251fd9fc9d9" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_custodySignalRfc5050RenderedBundleView</name></member>
+      <member refid="classBpSinkPattern_1a31e31fe208e1e64efcb1eef4ad26c757" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_custodyTransferManagerPtr</name></member>
+      <member refid="classBpSinkPattern_1a3bd83227b4d2d6ac689c96d0dc926fcf" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_cvCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSinkPattern_1ac9a522b650c96f4604af1519c1db5b1f" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>M_EXTRA_PROCESSING_TIME_MS</name></member>
+      <member refid="classBpSinkPattern_1a0ab30e7f6c5598aa44c4a2435eac4cfb" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_fragmentManager</name></member>
+      <member refid="classBpSinkPattern_1a4ce2f934fa6448723c7029355afa9c6a" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_hasSendCapability</name></member>
+      <member refid="classBpSinkPattern_1aa49978992196bfcb5708fc1a9c1872be" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_hasSendCapabilityOverTcpclBidirectionalInduct</name></member>
+      <member refid="classBpSinkPattern_1ad303a941a31e9f5256e1d7d35aa31f54" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_hopCounts</name></member>
+      <member refid="classBpSinkPattern_1a826c5e13c03e5152f5909c13d8ea27ee" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_inductManager</name></member>
+      <member refid="classBpSinkPattern_1a20e7ce246811b56c82cf73fe566c4021" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_ioService</name></member>
+      <member refid="classBpSinkPattern_1a8995e45daf64f063db8b10cde2a8466f" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classBpSinkPattern_1af60fe4231f60f8a56ef5f55433cf83ce" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_lastBundleBytesRx</name></member>
+      <member refid="classBpSinkPattern_1a9c76ac8092dbe5bc79347adfedc04a19" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_lastBundlesRx</name></member>
+      <member refid="classBpSinkPattern_1a57ad577a240a8cf6a8507429bf04287e" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_lastPayloadBytesRx</name></member>
+      <member refid="classBpSinkPattern_1a5b750ec15058cdc74bf0d080c6703267" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_lastPreviousNode</name></member>
+      <member refid="classBpSinkPattern_1acc2bea34685162d2eaf130767ef264fd" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_lastPtime</name></member>
+      <member refid="classBpSinkPattern_1a6c768fc976512c10287d4dca31057081" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_linkIsDown</name></member>
+      <member refid="classBpSinkPattern_1afa36d8b15cd131b5b19eb026a48c6166" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_mutexCtm</name></member>
+      <member refid="classBpSinkPattern_1a62d20d013912b648c7aa8e6a7a73f0a0" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_mutexCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSinkPattern_1ac24ae1ffcb7fc8d1e04ea07aef5ee897" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_mutexQueueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSinkPattern_1aec22cb7952f843fbf1de4b825b7bc9d1" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_mutexSendBundleQueue</name></member>
+      <member refid="classBpSinkPattern_1ad8edd963272397358f3d6505c869fb19" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_myEid</name></member>
+      <member refid="classBpSinkPattern_1a91e055f23c6bc105aa7df4cd8779ae4e" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_myEidEcho</name></member>
+      <member refid="classBpSinkPattern_1a0386fa4c77be6130afa8a734a6a35cb4" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_myEidUriString</name></member>
+      <member refid="classBpSinkPattern_1ac63a938225932067e70f80aeb340937c" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_nextCtebCustodyId</name></member>
+      <member refid="classBpSinkPattern_1aaff166774c87bc8a626cccfea507b22b" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_opportunisticConvergenceLayerName</name></member>
+      <member refid="classBpSinkPattern_1a67c112efe38511f55809262dcf0dff8f" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_outductManager</name></member>
+      <member refid="classBpSinkPattern_1a8790ad20c49e94f346946de04c20a2fd" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_queueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSinkPattern_1a4c21270e6349bab68caf15a4bc30056a" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_runningSenderThread</name></member>
+      <member refid="classBpSinkPattern_1ac6b572e3c44009f7806ecb63c48c5811" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_tcpclInductPtr</name></member>
+      <member refid="classBpSinkPattern_1a30adc20121c4151b12bb34ef59b7e923" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_tcpclOpportunisticRemoteNodeId</name></member>
+      <member refid="classBpSinkPattern_1a7cdade5c19452e5ff1e802de53a97f13" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_threadSenderReaderPtr</name></member>
+      <member refid="classBpSinkPattern_1a6cbd46273045ba74d2cf3de308e0f48b" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_timerAcs</name></member>
+      <member refid="classBpSinkPattern_1ac3c718222674450119f08fc9661847b7" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_timerTransferRateStats</name></member>
+      <member refid="classBpSinkPattern_1a09c5a70db0614746fbd9f803fef1244c" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_totalBundleBytesRx</name></member>
+      <member refid="classBpSinkPattern_1a4ef58d9f386a88e8b0acc84540fcd091" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_totalBundlesVersion6Rx</name></member>
+      <member refid="classBpSinkPattern_1aa4e4b2043a8af0ad9ae43166e023843d" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_totalBundlesVersion7Rx</name></member>
+      <member refid="classBpSinkPattern_1a9f94981c9ba87164825a8b925d8f4af3" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>m_totalPayloadBytesRx</name></member>
+      <member refid="classBpSinkPattern_1aeb9447ca6ccbd4aec535b6659f806f4c" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>OnDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classBpSinkPattern_1abf187d66d505fd745d8a6b9a97355887" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>OnFailedBundleVecSendCallback</name></member>
+      <member refid="classBpSinkPattern_1a5c87213129bb39e729ffe47b98106225" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>OnNewOpportunisticLinkCallback</name></member>
+      <member refid="classBpSinkPattern_1ae271d63d9de09b799ecc32482600f9dd" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>OnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpSinkPattern_1a04e70dba21573d83fbe918d1c6c5e3fa" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>OnSuccessfulBundleSendCallback</name></member>
+      <member refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>Process</name></member>
+      <member refid="classBpSinkPattern_1a832c385bf442c81c6c641577a059d1ad" prot="protected" virt="pure-virtual"><scope>BpSinkPattern</scope><name>ProcessPayload</name></member>
+      <member refid="classBpSinkPattern_1a00c79dbe0eb9f87648f34d313c1f63b7" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>SendAcsFromTimerThread</name></member>
+      <member refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>SenderReaderThreadFunc</name></member>
+      <member refid="classBpSinkPattern_1af6d3ceda432210bba622a281f1cc071d" prot="public" virt="non-virtual"><scope>BpSinkPattern</scope><name>Stop</name></member>
+      <member refid="classBpSinkPattern_1ab22da6050638fe88630aff3bf7cb13f7" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>TransferRate_TimerExpired</name></member>
+      <member refid="classBpSinkPattern_1a2bdf40e14a56613c8e82a52c00a433e0" prot="private" virt="non-virtual"><scope>BpSinkPattern</scope><name>WholeBundleReadyCallback</name></member>
+      <member refid="classBpSinkPattern_1a561bbf1180f3a2016e8577b5418eaa98" prot="public" virt="virtual"><scope>BpSinkPattern</scope><name>~BpSinkPattern</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

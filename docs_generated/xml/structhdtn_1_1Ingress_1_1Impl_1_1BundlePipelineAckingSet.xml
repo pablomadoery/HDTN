@@ -1,0 +1,401 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet" kind="struct" language="C++" prot="private">
+    <compoundname>hdtn::Ingress::Impl::BundlePipelineAckingSet</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ac16fe05aef588d9e7ed4a6a8e85d2b27" prot="private" static="no">
+        <type>std::unordered_map&lt; uint64_t, uint64_t, std::hash&lt; uint64_t &gt;, std::equal_to&lt; uint64_t &gt;, <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; std::pair&lt; const uint64_t, uint64_t &gt; &gt; &gt;</type>
+        <definition>typedef std::unordered_map&lt; uint64_t, uint64_t, std::hash&lt;uint64_t&gt;, std::equal_to&lt;uint64_t&gt;, FreeListAllocatorDynamic&lt;std::pair&lt;const uint64_t, uint64_t&gt; &gt; &gt; hdtn::Ingress::Impl::BundlePipelineAckingSet::umap_64_to_64_t</definition>
+        <argsstring></argsstring>
+        <name>umap_64_to_64_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="149" column="9" bodyfile="module/ingress/src/receive.cpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a8aeedbc656ca7dadaadecd1234e2480d" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::BundlePipelineAckingSet::m_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="144" column="18" bodyfile="module/ingress/src/receive.cpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a4f1229c1bbbf8ee2cd817c6781e4f1e4" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable hdtn::Ingress::Impl::BundlePipelineAckingSet::m_conditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="145" column="31" bodyfile="module/ingress/src/receive.cpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a02265a3277ee1a44f6c7db29196cd7b2" prot="private" static="no" mutable="no">
+        <type><ref refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ac16fe05aef588d9e7ed4a6a8e85d2b27" kindref="member">umap_64_to_64_t</ref></type>
+        <definition>umap_64_to_64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_mapEgressBundleUniqueIdToBundleSizeBytes</definition>
+        <argsstring></argsstring>
+        <name>m_mapEgressBundleUniqueIdToBundleSizeBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="150" column="21" bodyfile="module/ingress/src/receive.cpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1aa4cc654591f2b2cd3cb7ff41f39f73cc" prot="private" static="no" mutable="no">
+        <type><ref refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ac16fe05aef588d9e7ed4a6a8e85d2b27" kindref="member">umap_64_to_64_t</ref></type>
+        <definition>umap_64_to_64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_mapStorageBundleUniqueIdToBundleSizeBytes</definition>
+        <argsstring></argsstring>
+        <name>m_mapStorageBundleUniqueIdToBundleSizeBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="151" column="21" bodyfile="module/ingress/src/receive.cpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afcd2c22620d64e439d32d8c1ba32a43d" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_egressBytesInPipeline</definition>
+        <argsstring></argsstring>
+        <name>m_egressBytesInPipeline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="152" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af29f750f5dd20d33bef3f1c1a368ab51" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_storageBytesInPipeline</definition>
+        <argsstring></argsstring>
+        <name>m_storageBytesInPipeline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="153" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ac5d12b16433eb920a6563a79ab281ce4" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_maxBundlesInPipeline</definition>
+        <argsstring></argsstring>
+        <name>m_maxBundlesInPipeline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="155" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af9b2ebdc5347bdc4617dc23412cde87a" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_maxBundleSizeBytesInPipeline</definition>
+        <argsstring></argsstring>
+        <name>m_maxBundleSizeBytesInPipeline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="156" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a2ed9d560ca93b08af810adb98c7faa17" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::m_nextHopNodeId</definition>
+        <argsstring></argsstring>
+        <name>m_nextHopNodeId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="157" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a9aedae4edb73d8404869749c7a4fadca" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::BundlePipelineAckingSet::m_linkIsUp</definition>
+        <argsstring></argsstring>
+        <name>m_linkIsUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="160" column="10" bodyfile="module/ingress/src/receive.cpp" bodystart="160" bodyend="-1"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" compoundref="receive_8cpp" startline="1486" endline="2207">hdtn::Ingress::Impl::ProcessPaddedData</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">hdtn::Ingress::Impl::ReadZmqAcksThreadFunc</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1adefc07a24121c39690e0f57eea66ada8" compoundref="receive_8cpp" startline="1409" endline="1484">hdtn::Ingress::Impl::RouterEventHandler</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ad0e2383bf1fe826f565ccadde05064f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hdtn::Ingress::Impl::BundlePipelineAckingSet::BundlePipelineAckingSet</definition>
+        <argsstring>()=delete</argsstring>
+        <name>BundlePipelineAckingSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="119" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1aac663cf56490ef9e5b59695d8ef95033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hdtn::Ingress::Impl::BundlePipelineAckingSet::BundlePipelineAckingSet</definition>
+        <argsstring>(const uint64_t paramMaxBundlesInPipeline, const uint64_t paramMaxBundleSizeBytesInPipeline, const uint64_t paramNextHopNodeId, bool paramLinkIsUp)</argsstring>
+        <name>BundlePipelineAckingSet</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>paramMaxBundlesInPipeline</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>paramMaxBundleSizeBytesInPipeline</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>paramNextHopNodeId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>paramLinkIsUp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="121" column="5" bodyfile="module/ingress/src/receive.cpp" bodystart="258" bodyend="265"/>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a0ecbd0a7a220f495fd42146089b4ce82" compoundref="receive_8cpp" startline="266" endline="283">Update</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a0ecbd0a7a220f495fd42146089b4ce82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::BundlePipelineAckingSet::Update</definition>
+        <argsstring>(const uint64_t paramMaxBundlesInPipeline, const uint64_t paramMaxBundleSizeBytesInPipeline, const uint64_t paramNextHopNodeId, bool paramLinkIsUp)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>paramMaxBundlesInPipeline</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>paramMaxBundleSizeBytesInPipeline</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>paramNextHopNodeId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>paramLinkIsUp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="125" column="10" bodyfile="module/ingress/src/receive.cpp" bodystart="266" bodyend="283"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1aac663cf56490ef9e5b59695d8ef95033" compoundref="receive_8cpp" startline="258" endline="265">BundlePipelineAckingSet</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">hdtn::Ingress::Impl::ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a8e46d5a087ffb69f76ca061ec8c0eaf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::BundlePipelineAckingSet::CompareAndPop_ThreadSafe</definition>
+        <argsstring>(const uint64_t uniqueId, const bool isEgress)</argsstring>
+        <name>CompareAndPop_ThreadSafe</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>uniqueId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isEgress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="129" column="10" bodyfile="module/ingress/src/receive.cpp" bodystart="285" bodyend="304"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" compoundref="receive_8cpp" startline="1486" endline="2207">hdtn::Ingress::Impl::ProcessPaddedData</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">hdtn::Ingress::Impl::ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af1d6734fe0afbef380cedc647355f39f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::BundlePipelineAckingSet::WaitForPipelineAvailabilityAndReserve</definition>
+        <argsstring>(const bool checkEgressPipeline, const bool checkStoragePipeline, const boost::posix_time::time_duration &amp;timeoutDuration, const uint64_t uniqueId, const uint64_t bundleSizeBytes, bool &amp;reservedEgressPipelineAvailability, bool &amp;reservedStoragePipelineAvailability)</argsstring>
+        <name>WaitForPipelineAvailabilityAndReserve</name>
+        <param>
+          <type>const bool</type>
+          <declname>checkEgressPipeline</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>checkStoragePipeline</declname>
+        </param>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeoutDuration</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>uniqueId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>reservedEgressPipelineAvailability</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>reservedStoragePipelineAvailability</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="131" column="10" bodyfile="module/ingress/src/receive.cpp" bodystart="310" bodyend="365"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" compoundref="receive_8cpp" startline="1486" endline="2207">hdtn::Ingress::Impl::ProcessPaddedData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afc8ad729b056482d5580543b350547f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::BundlePipelineAckingSet::WaitForStoragePipelineAvailabilityAndReserve</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;timeoutDuration, const uint64_t uniqueId, const uint64_t bundleSizeBytes)</argsstring>
+        <name>WaitForStoragePipelineAvailabilityAndReserve</name>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeoutDuration</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>uniqueId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bundleSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="137" column="10" bodyfile="module/ingress/src/receive.cpp" bodystart="367" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afb6a99e8f82c7b82cd9994d583014df5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::BundlePipelineAckingSet::NotifyAll</definition>
+        <argsstring>()</argsstring>
+        <name>NotifyAll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="140" column="10" bodyfile="module/ingress/src/receive.cpp" bodystart="375" bodyend="377"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">hdtn::Ingress::Impl::ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a6af6f530643004f6c5f9d8e5e4009d83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::BundlePipelineAckingSet::GetNextHopNodeId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNextHopNodeId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="141" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="378" bodyend="380"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" compoundref="receive_8cpp" startline="1486" endline="2207">hdtn::Ingress::Impl::ProcessPaddedData</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>hdtn::Ingress::Impl::BundlePipelineAckingSet</label>
+        <link refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>hdtn::Ingress::Impl::BundlePipelineAckingSet</label>
+        <link refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/ingress/src/receive.cpp" line="118" column="3" bodyfile="module/ingress/src/receive.cpp" bodystart="118" bodyend="161"/>
+    <listofallmembers>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ad0e2383bf1fe826f565ccadde05064f7" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>BundlePipelineAckingSet</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1aac663cf56490ef9e5b59695d8ef95033" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>BundlePipelineAckingSet</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a8e46d5a087ffb69f76ca061ec8c0eaf0" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>CompareAndPop_ThreadSafe</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a6af6f530643004f6c5f9d8e5e4009d83" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>GetNextHopNodeId</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a4f1229c1bbbf8ee2cd817c6781e4f1e4" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_conditionVariable</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afcd2c22620d64e439d32d8c1ba32a43d" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_egressBytesInPipeline</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a9aedae4edb73d8404869749c7a4fadca" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_linkIsUp</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a02265a3277ee1a44f6c7db29196cd7b2" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_mapEgressBundleUniqueIdToBundleSizeBytes</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1aa4cc654591f2b2cd3cb7ff41f39f73cc" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_mapStorageBundleUniqueIdToBundleSizeBytes</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ac5d12b16433eb920a6563a79ab281ce4" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_maxBundlesInPipeline</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af9b2ebdc5347bdc4617dc23412cde87a" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_maxBundleSizeBytesInPipeline</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a8aeedbc656ca7dadaadecd1234e2480d" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_mutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a2ed9d560ca93b08af810adb98c7faa17" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_nextHopNodeId</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af29f750f5dd20d33bef3f1c1a368ab51" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>m_storageBytesInPipeline</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afb6a99e8f82c7b82cd9994d583014df5" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>NotifyAll</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1ac16fe05aef588d9e7ed4a6a8e85d2b27" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>umap_64_to_64_t</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a0ecbd0a7a220f495fd42146089b4ce82" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>Update</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af1d6734fe0afbef380cedc647355f39f" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>WaitForPipelineAvailabilityAndReserve</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afc8ad729b056482d5580543b350547f4" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl::BundlePipelineAckingSet</scope><name>WaitForStoragePipelineAvailabilityAndReserve</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

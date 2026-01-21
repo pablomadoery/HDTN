@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBundleStorageManagerAsio" kind="class" language="C++" prot="public">
+    <compoundname>BundleStorageManagerAsio</compoundname>
+    <basecompoundref refid="classBundleStorageManagerBase" prot="public" virt="non-virtual">BundleStorageManagerBase</basecompoundref>
+    <includes refid="BundleStorageManagerAsio_8h" local="no">BundleStorageManagerAsio.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBundleStorageManagerAsio_1a7bd85410656138ae6358d5314ec086fc" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service BundleStorageManagerAsio::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="47" column="29" bodyfile="module/storage/include/BundleStorageManagerAsio.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerAsio_1afc8db2bf7a9969a5b9b1900f21e5186a" compoundref="BundleStorageManagerAsio_8cpp" startline="191" endline="195">CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1a234a1c34dc1f34e84b8478483e33a1c4" compoundref="BundleStorageManagerAsio_8cpp" startline="78" endline="129">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerAsio_1a66dc79ba30ae106f3befc6196b01d34b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::asio::io_service::work &gt;</type>
+        <definition>std::unique_ptr&lt;boost::asio::io_service::work&gt; BundleStorageManagerAsio::m_workPtr</definition>
+        <argsstring></argsstring>
+        <name>m_workPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="48" column="21" bodyfile="module/storage/include/BundleStorageManagerAsio.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerAsio_1ad9d6edfe622513557c0d3cc52dafbdce" compoundref="BundleStorageManagerAsio_8cpp" startline="57" endline="76">~BundleStorageManagerAsio</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerAsio_1a81108e5d6ca738b80df57a1a3ab7c7ec" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BundleStorageManagerAsio::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="49" column="21" bodyfile="module/storage/include/BundleStorageManagerAsio.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerAsio_1a234a1c34dc1f34e84b8478483e33a1c4" compoundref="BundleStorageManagerAsio_8cpp" startline="78" endline="129">Start</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1ad9d6edfe622513557c0d3cc52dafbdce" compoundref="BundleStorageManagerAsio_8cpp" startline="57" endline="76">~BundleStorageManagerAsio</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerAsio_1aec0ae1f5cd92d7b96c8a2be13ffd6c88" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; boost::asio::posix::stream_descriptor &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;boost::asio::posix::stream_descriptor&gt; &gt; BundleStorageManagerAsio::m_asioHandlePtrsVec</definition>
+        <argsstring></argsstring>
+        <name>m_asioHandlePtrsVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="54" column="17" bodyfile="module/storage/include/BundleStorageManagerAsio.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerAsio_1a234a1c34dc1f34e84b8478483e33a1c4" compoundref="BundleStorageManagerAsio_8cpp" startline="78" endline="129">Start</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" compoundref="BundleStorageManagerAsio_8cpp" startline="131" endline="188">TryDiskOperation_Consume_NotThreadSafe</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1ad9d6edfe622513557c0d3cc52dafbdce" compoundref="BundleStorageManagerAsio_8cpp" startline="57" endline="76">~BundleStorageManagerAsio</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageManagerAsio_1ad4a96818ba070987ab9db6bc85d5e872" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; bool &gt;</type>
+        <definition>std::vector&lt;bool&gt; BundleStorageManagerAsio::m_diskOperationInProgressVec</definition>
+        <argsstring></argsstring>
+        <name>m_diskOperationInProgressVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="57" column="17" bodyfile="module/storage/include/BundleStorageManagerAsio.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classBundleStorageManagerAsio_1ad19e8d1f156cbf6db79a5ce24567e82d" compoundref="BundleStorageManagerAsio_8cpp" startline="198" endline="218">HandleDiskOperationCompleted</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1a234a1c34dc1f34e84b8478483e33a1c4" compoundref="BundleStorageManagerAsio_8cpp" startline="78" endline="129">Start</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" compoundref="BundleStorageManagerAsio_8cpp" startline="131" endline="188">TryDiskOperation_Consume_NotThreadSafe</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1af25d8332119d9a45d37b6bcc3321f187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerAsio::BundleStorageManagerAsio</definition>
+        <argsstring>()</argsstring>
+        <name>BundleStorageManagerAsio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="31" column="24" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1a39d26cd7971e7ef5662dcdaf536fee87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerAsio::BundleStorageManagerAsio</definition>
+        <argsstring>(const boost::filesystem::path &amp;jsonConfigFilePath)</argsstring>
+        <name>BundleStorageManagerAsio</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>jsonConfigFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="32" column="24" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="36" bodyend="43"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleStorageManagerBase_1a7dd666be3d4a48324df1a536ac2b6b34" compoundref="BundleStorageManagerBase_8h" startline="133">BundleStorageManagerBase::m_storageConfigPtr</references>
+        <references refid="BundleStorageManagerAsio_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerAsio_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1af5cc25c032e74d9c2728f1f4bac46876" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerAsio::BundleStorageManagerAsio</definition>
+        <argsstring>(const StorageConfig_ptr &amp;storageConfigPtr)</argsstring>
+        <name>BundleStorageManagerAsio</name>
+        <param>
+          <type>const <ref refid="StorageConfig_8h_1a7d50b7d32d991c354058b279b1617671" kindref="member">StorageConfig_ptr</ref> &amp;</type>
+          <declname>storageConfigPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="33" column="24" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="45" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1ad9d6edfe622513557c0d3cc52dafbdce" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageManagerAsio::~BundleStorageManagerAsio</definition>
+        <argsstring>() override</argsstring>
+        <name>~BundleStorageManagerAsio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="34" column="32" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="57" bodyend="76"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleStorageManagerAsio_1aec0ae1f5cd92d7b96c8a2be13ffd6c88" compoundref="BundleStorageManagerAsio_8h" startline="54">m_asioHandlePtrsVec</references>
+        <references refid="classBundleStorageManagerAsio_1a81108e5d6ca738b80df57a1a3ab7c7ec" compoundref="BundleStorageManagerAsio_8h" startline="49">m_ioServiceThreadPtr</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="classBundleStorageManagerAsio_1a66dc79ba30ae106f3befc6196b01d34b" compoundref="BundleStorageManagerAsio_8h" startline="48">m_workPtr</references>
+        <references refid="BundleStorageManagerAsio_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerAsio_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1a234a1c34dc1f34e84b8478483e33a1c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>STORAGE_LIB_EXPORT void</type>
+        <definition>void BundleStorageManagerAsio::Start</definition>
+        <argsstring>() override</argsstring>
+        <name>Start</name>
+        <reimplements refid="classBundleStorageManagerBase_1a1e6638a515e22ed258b6f6fea3cede6a">Start</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="35" column="37" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="78" bodyend="129"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBundleStorageManagerAsio_1aec0ae1f5cd92d7b96c8a2be13ffd6c88" compoundref="BundleStorageManagerAsio_8h" startline="54">m_asioHandlePtrsVec</references>
+        <references refid="classBundleStorageManagerAsio_1ad4a96818ba070987ab9db6bc85d5e872" compoundref="BundleStorageManagerAsio_8h" startline="57">m_diskOperationInProgressVec</references>
+        <references refid="classBundleStorageManagerBase_1ab951521278ee6c5b3f9cf4b3c63e1f22" compoundref="BundleStorageManagerBase_8h" startline="143">BundleStorageManagerBase::m_filePathsVec</references>
+        <references refid="classBundleStorageManagerAsio_1a7bd85410656138ae6358d5314ec086fc" compoundref="BundleStorageManagerAsio_8h" startline="47">m_ioService</references>
+        <references refid="classBundleStorageManagerAsio_1a81108e5d6ca738b80df57a1a3ab7c7ec" compoundref="BundleStorageManagerAsio_8h" startline="49">m_ioServiceThreadPtr</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="classBundleStorageManagerBase_1a7dd666be3d4a48324df1a536ac2b6b34" compoundref="BundleStorageManagerBase_8h" startline="133">BundleStorageManagerBase::m_storageConfigPtr</references>
+        <references refid="classBundleStorageManagerBase_1ad7b87288208af7ffdd35fceaff7356b9" compoundref="BundleStorageManagerBase_8h" startline="156">BundleStorageManagerBase::m_successfullyRestoredFromDisk</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="BundleStorageManagerAsio_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerAsio_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageManagerAsio::TryDiskOperation_Consume_NotThreadSafe</definition>
+        <argsstring>(const unsigned int diskId)</argsstring>
+        <name>TryDiskOperation_Consume_NotThreadSafe</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>diskId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="39" column="32" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="131" bodyend="188"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="BundleStorageConfig_8h_1ad6863a6140335fc0519cec08a9173f0f" compoundref="BundleStorageConfig_8h" startline="98">CIRCULAR_INDEX_BUFFER_SIZE</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="classBundleStorageManagerAsio_1ad19e8d1f156cbf6db79a5ce24567e82d" compoundref="BundleStorageManagerAsio_8cpp" startline="198" endline="218">HandleDiskOperationCompleted</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleStorageManagerAsio_1aec0ae1f5cd92d7b96c8a2be13ffd6c88" compoundref="BundleStorageManagerAsio_8h" startline="54">m_asioHandlePtrsVec</references>
+        <references refid="classBundleStorageManagerBase_1a877adcb756a38252c907352a7dfcda01" compoundref="BundleStorageManagerBase_8h" startline="147">BundleStorageManagerBase::m_circularBufferBlockDataPtr</references>
+        <references refid="classBundleStorageManagerBase_1a7db27eda4dcb19f0e8a282a81259087b" compoundref="BundleStorageManagerBase_8h" startline="152">BundleStorageManagerBase::m_circularBufferReadFromStoragePointers</references>
+        <references refid="classBundleStorageManagerBase_1a3db6ec18d0fe0b0e033d66e20dad6cfd" compoundref="BundleStorageManagerBase_8h" startline="148">BundleStorageManagerBase::m_circularBufferSegmentIdsPtr</references>
+        <references refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" compoundref="BundleStorageManagerBase_8h" startline="145">BundleStorageManagerBase::m_circularIndexBuffersVec</references>
+        <references refid="classBundleStorageManagerAsio_1ad4a96818ba070987ab9db6bc85d5e872" compoundref="BundleStorageManagerAsio_8h" startline="57">m_diskOperationInProgressVec</references>
+        <references refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" compoundref="BundleStorageManagerBase_8h" startline="135">BundleStorageManagerBase::M_NUM_STORAGE_DISKS</references>
+        <references refid="BundleStorageConfig_8h_1abca0195434792fe23a38329fd91312c6" compoundref="BundleStorageConfig_8h" startline="50">SEGMENT_ID_LAST</references>
+        <references refid="BundleStorageConfig_8h_1acbe07a3c3fe2056125230c357f85b870" compoundref="BundleStorageConfig_8h" startline="65">SEGMENT_SIZE</references>
+        <references refid="BundleStorageManagerAsio_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerAsio_8cpp" startline="32">subprocess</references>
+        <referencedby refid="classBundleStorageManagerAsio_1afc8db2bf7a9969a5b9b1900f21e5186a" compoundref="BundleStorageManagerAsio_8cpp" startline="191" endline="195">CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</referencedby>
+        <referencedby refid="classBundleStorageManagerAsio_1ad19e8d1f156cbf6db79a5ce24567e82d" compoundref="BundleStorageManagerAsio_8cpp" startline="198" endline="218">HandleDiskOperationCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1ad19e8d1f156cbf6db79a5ce24567e82d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageManagerAsio::HandleDiskOperationCompleted</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, const unsigned int diskId, const unsigned int consumeIndex, const bool wasReadOperation)</argsstring>
+        <name>HandleDiskOperationCompleted</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>diskId</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>consumeIndex</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>wasReadOperation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="40" column="32" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="198" bodyend="218"/>
+        <references refid="BundleStorageConfig_8h_1ad6863a6140335fc0519cec08a9173f0f" compoundref="BundleStorageConfig_8h" startline="98">CIRCULAR_INDEX_BUFFER_SIZE</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleStorageManagerBase_1a96d693eb97c220e7d94bdc6eba97375e" compoundref="BundleStorageManagerBase_8h" startline="151">BundleStorageManagerBase::m_circularBufferIsReadCompletedPointers</references>
+        <references refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" compoundref="BundleStorageManagerBase_8h" startline="145">BundleStorageManagerBase::m_circularIndexBuffersVec</references>
+        <references refid="classBundleStorageManagerBase_1a9737d0f5058a3d7d62e374541d86331e" compoundref="BundleStorageManagerBase_8h" startline="142">BundleStorageManagerBase::m_conditionVariableMainThread</references>
+        <references refid="classBundleStorageManagerAsio_1ad4a96818ba070987ab9db6bc85d5e872" compoundref="BundleStorageManagerAsio_8h" startline="57">m_diskOperationInProgressVec</references>
+        <references refid="classBundleStorageManagerBase_1ae04e25f412a13e45b1760d712560b3cc" compoundref="BundleStorageManagerBase_8h" startline="141">BundleStorageManagerBase::m_mutexMainThread</references>
+        <references refid="BundleStorageConfig_8h_1acbe07a3c3fe2056125230c357f85b870" compoundref="BundleStorageConfig_8h" startline="65">SEGMENT_SIZE</references>
+        <references refid="BundleStorageManagerAsio_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleStorageManagerAsio_8cpp" startline="32">subprocess</references>
+        <references refid="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" compoundref="BundleStorageManagerAsio_8cpp" startline="131" endline="188">TryDiskOperation_Consume_NotThreadSafe</references>
+        <referencedby refid="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" compoundref="BundleStorageManagerAsio_8cpp" startline="131" endline="188">TryDiskOperation_Consume_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageManagerAsio_1afc8db2bf7a9969a5b9b1900f21e5186a" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageManagerAsio::CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</definition>
+        <argsstring>(const unsigned int diskId) override</argsstring>
+        <name>CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</name>
+        <reimplements refid="classBundleStorageManagerBase_1aa3b0b5ebf3b7949c939014a981c87f6f">CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</reimplements>
+        <param>
+          <type>const unsigned int</type>
+          <declname>diskId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageManagerAsio.h" line="43" column="40" bodyfile="module/storage/src/BundleStorageManagerAsio.cpp" bodystart="191" bodyend="195"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" compoundref="BundleStorageManagerBase_8h" startline="145">BundleStorageManagerBase::m_circularIndexBuffersVec</references>
+        <references refid="classBundleStorageManagerAsio_1a7bd85410656138ae6358d5314ec086fc" compoundref="BundleStorageManagerAsio_8h" startline="47">m_ioService</references>
+        <references refid="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" compoundref="BundleStorageManagerAsio_8cpp" startline="131" endline="188">TryDiskOperation_Consume_NotThreadSafe</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BundleStorageManagerAsio</label>
+        <link refid="classBundleStorageManagerAsio"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BundleStorageManagerBase</label>
+        <link refid="classBundleStorageManagerBase"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BundleStorageManagerAsio</label>
+        <link refid="classBundleStorageManagerAsio"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>HashMap16BitFixedSize&lt; cbhe_bundle_uuid_t, uint64_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="4">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="2">
+        <label>BundleStorageManagerBase</label>
+        <link refid="classBundleStorageManagerBase"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_memoryManager</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_bundleStorageCatalog</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>HashMap16BitFixedSize&lt; uint64_t, catalog_entry_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="7">
+        <label>HashMap16BitFixedSize&lt; cbhe_bundle_uuid_nofragment_t, uint64_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="3">
+        <label>MemoryManagerTreeArray</label>
+        <link refid="classMemoryManagerTreeArray"/>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>BundleStorageCatalog</label>
+        <link refid="classBundleStorageCatalog"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_uuidToCustodyIdHashMap</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_uuidNoFragToCustodyIdHashMap</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_custodyIdToCatalogEntryHashmap</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/storage/include/BundleStorageManagerAsio.h" line="29" column="1" bodyfile="module/storage/include/BundleStorageManagerAsio.h" bodystart="29" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classBundleStorageManagerAsio_1af25d8332119d9a45d37b6bcc3321f187" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>BundleStorageManagerAsio</name></member>
+      <member refid="classBundleStorageManagerAsio_1a39d26cd7971e7ef5662dcdaf536fee87" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>BundleStorageManagerAsio</name></member>
+      <member refid="classBundleStorageManagerAsio_1af5cc25c032e74d9c2728f1f4bac46876" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>BundleStorageManagerAsio</name></member>
+      <member refid="classBundleStorageManagerBase_1a6cb2297e2a134cba633d656c5bd24724" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerBase_1ac3bb2c3a398ceb4e278ac7953a67fef5" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerBase_1a4b6fc8d660c278c09471621c7acec71c" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>BundleStorageManagerBase</name></member>
+      <member refid="classBundleStorageManagerAsio_1afc8db2bf7a9969a5b9b1900f21e5186a" prot="private" virt="virtual"><scope>BundleStorageManagerAsio</scope><name>CommitWriteAndNotifyDiskOfWorkToDo_ThreadSafe</name></member>
+      <member refid="classBundleStorageManagerBase_1a902225846af2c3db5c7da76a8091ae4d" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetBundleStorageCatalogConstRef</name></member>
+      <member refid="classBundleStorageManagerBase_1affc84a95bc757fab6df68c5e714ae2f0" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetCatalogEntryPtrFromCustodyId</name></member>
+      <member refid="classBundleStorageManagerBase_1a9f944108dba37287497ddf702f70424c" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetCustodyIdFromUuid</name></member>
+      <member refid="classBundleStorageManagerBase_1a9169910b133bd178300c2e7f81575db8" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetCustodyIdFromUuid</name></member>
+      <member refid="classBundleStorageManagerBase_1a801e395c6503914a6fcf56c023b239e0" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetExpiredBundleIds</name></member>
+      <member refid="classBundleStorageManagerBase_1af19cc32f2e59431d3af82c93794c1480" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetFreeSpaceBytes</name></member>
+      <member refid="classBundleStorageManagerBase_1a456fbc5656764e522eed86bde7d2395d" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetMemoryManagerConstRef</name></member>
+      <member refid="classBundleStorageManagerBase_1aa5c172f74aa6744cae1da9ebbcb29a69" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetStorageExpiringBeforeThresholdTelemetry</name></member>
+      <member refid="classBundleStorageManagerBase_1aed56dc56432fc04ff87f022f4cbc5b64" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetTotalCapacityBytes</name></member>
+      <member refid="classBundleStorageManagerBase_1aff5eb6ef198551d6a3be1d316c4945fb" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>GetUsedSpaceBytes</name></member>
+      <member refid="classBundleStorageManagerAsio_1ad19e8d1f156cbf6db79a5ce24567e82d" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>HandleDiskOperationCompleted</name></member>
+      <member refid="classBundleStorageManagerAsio_1aec0ae1f5cd92d7b96c8a2be13ffd6c88" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_asioHandlePtrsVec</name></member>
+      <member refid="classBundleStorageManagerBase_1aff7ce888d9f782a1997dad09b35cbae4" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_autoDeleteFilesOnExit</name></member>
+      <member refid="classBundleStorageManagerBase_1a4413c460174182d9d6841bddc241debc" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_bundleStorageCatalog</name></member>
+      <member refid="classBundleStorageManagerBase_1a877adcb756a38252c907352a7dfcda01" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_circularBufferBlockDataPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1a96d693eb97c220e7d94bdc6eba97375e" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_circularBufferIsReadCompletedPointers</name></member>
+      <member refid="classBundleStorageManagerBase_1a7db27eda4dcb19f0e8a282a81259087b" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_circularBufferReadFromStoragePointers</name></member>
+      <member refid="classBundleStorageManagerBase_1a3db6ec18d0fe0b0e033d66e20dad6cfd" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_circularBufferSegmentIdsPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1a28fb849659d461177f2b5c9145dc7d5c" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_circularIndexBuffersVec</name></member>
+      <member refid="classBundleStorageManagerBase_1a9737d0f5058a3d7d62e374541d86331e" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_conditionVariableMainThread</name></member>
+      <member refid="classBundleStorageManagerAsio_1ad4a96818ba070987ab9db6bc85d5e872" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_diskOperationInProgressVec</name></member>
+      <member refid="classBundleStorageManagerBase_1ab951521278ee6c5b3f9cf4b3c63e1f22" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_filePathsVec</name></member>
+      <member refid="classBundleStorageManagerAsio_1a7bd85410656138ae6358d5314ec086fc" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_ioService</name></member>
+      <member refid="classBundleStorageManagerAsio_1a81108e5d6ca738b80df57a1a3ab7c7ec" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1a26c0623bcdef133a117e2d1448bccc0a" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>M_MAX_SEGMENTS</name></member>
+      <member refid="classBundleStorageManagerBase_1ae7efdd8f9dfe8772b306779cf78b5a4f" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_memoryManager</name></member>
+      <member refid="classBundleStorageManagerBase_1ae04e25f412a13e45b1760d712560b3cc" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_mutexMainThread</name></member>
+      <member refid="classBundleStorageManagerBase_1aa21f9c5948f5f75de926be639987cdbb" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>M_NUM_STORAGE_DISKS</name></member>
+      <member refid="classBundleStorageManagerBase_1a7dd666be3d4a48324df1a536ac2b6b34" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_storageConfigPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1ad7b87288208af7ffdd35fceaff7356b9" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_successfullyRestoredFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a3bb36fa1f66852bfc9470955744d69b5" prot="protected" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_tmpInitializerOfCircularIndexBuffersVec</name></member>
+      <member refid="classBundleStorageManagerBase_1a0712101eb3e684a3ca5bde48e132fc46" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>M_TOTAL_STORAGE_CAPACITY_BYTES</name></member>
+      <member refid="classBundleStorageManagerBase_1ab9348eb0b6490a59f5be3954924752ce" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_totalBundlesRestored</name></member>
+      <member refid="classBundleStorageManagerBase_1abf5d9ca22e22b8724892a6fa09ca3555" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_totalBytesRestored</name></member>
+      <member refid="classBundleStorageManagerBase_1a2164fc245b16ea3119acfafc6b783d60" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_totalSegmentsRestored</name></member>
+      <member refid="classBundleStorageManagerAsio_1a66dc79ba30ae106f3befc6196b01d34b" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>m_workPtr</name></member>
+      <member refid="classBundleStorageManagerBase_1ad2b7303bfc7d64b294a6e5b14b0203a1" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>PopTop</name></member>
+      <member refid="classBundleStorageManagerBase_1acd36cf387f86038cc3b0af29eab8016b" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>PopTop</name></member>
+      <member refid="classBundleStorageManagerBase_1a40b3c75247211df11230b558630912e7" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>PopTop</name></member>
+      <member refid="classBundleStorageManagerBase_1a13bd2000287b95e8b646fb0b9b12e86f" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>Push</name></member>
+      <member refid="classBundleStorageManagerBase_1ac2df5fe10713cf31c7277343bf4b5f00" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>PushAllSegments</name></member>
+      <member refid="classBundleStorageManagerBase_1ac5bc1c40a5bdbfb4b1850c2c6eec8297" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>PushSegment</name></member>
+      <member refid="classBundleStorageManagerBase_1ae155bc1ef801cc07f836b17f39ccb887" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>ReadAllSegments</name></member>
+      <member refid="classBundleStorageManagerBase_1aca67b7998c5d0749ccac923649e290c9" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>ReadFirstSegment</name></member>
+      <member refid="classBundleStorageManagerBase_1af5dd339b13c413f020c142c15cbdd9ed" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>RemoveBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a130995ce392c8db5fac85a3eb853223a" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>RemoveBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a6d165d250105b927ee15b399cd910ea1" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>RemoveReadBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a1ac63f9373f6edd08328502350cca5fe" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>RemoveReadBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a5c41ac3e131be0bcd452bd39ddddcdd1" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>RemoveReadBundleFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>RestoreFromDisk</name></member>
+      <member refid="classBundleStorageManagerBase_1a549e78c4f659b9967f9873e72ad6ac2b" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>ReturnCustodyIdToAwaitingSend</name></member>
+      <member refid="classBundleStorageManagerBase_1a655545cf4f5d264d67cf86970bd8950e" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>ReturnTop</name></member>
+      <member refid="classBundleStorageManagerAsio_1a234a1c34dc1f34e84b8478483e33a1c4" prot="public" virt="virtual"><scope>BundleStorageManagerAsio</scope><name>Start</name></member>
+      <member refid="classBundleStorageManagerBase_1ac81e7c8ef2d19215d5037c2b47df1c8b" prot="public" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>TopSegment</name></member>
+      <member refid="classBundleStorageManagerAsio_1a88b38a0f891a536476d801c2af717d0b" prot="private" virt="non-virtual"><scope>BundleStorageManagerAsio</scope><name>TryDiskOperation_Consume_NotThreadSafe</name></member>
+      <member refid="classBundleStorageManagerAsio_1ad9d6edfe622513557c0d3cc52dafbdce" prot="public" virt="virtual"><scope>BundleStorageManagerAsio</scope><name>~BundleStorageManagerAsio</name></member>
+      <member refid="classBundleStorageManagerBase_1a61cac6b1db95f0ac7e929980cb58d777" prot="public" virt="virtual"><scope>BundleStorageManagerAsio</scope><name>~BundleStorageManagerBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="HdtnCliRunner_8cpp" kind="file" language="C++">
+    <compoundname>HdtnCliRunner.cpp</compoundname>
+    <includes local="no">boost/program_options.hpp</includes>
+    <includes local="no">boost/make_unique.hpp</includes>
+    <includes local="no">boost/filesystem/fstream.hpp</includes>
+    <includes refid="zmq_8hpp" local="no">zmq.hpp</includes>
+    <includes refid="HdtnCliRunner_8h" local="yes">HdtnCliRunner.h</includes>
+    <includes refid="Logger_8h" local="yes">Logger.h</includes>
+    <includes refid="TelemetryDefinitions_8h" local="yes">TelemetryDefinitions.h</includes>
+    <includes refid="HdtnConfig_8h" local="yes">HdtnConfig.h</includes>
+    <incdepgraph>
+      <node id="58">
+        <label>boost/smart_ptr/make_shared_object.hpp</label>
+      </node>
+      <node id="65">
+        <label>list</label>
+      </node>
+      <node id="37">
+        <label>atomic</label>
+      </node>
+      <node id="57">
+        <label>boost/log/utility/value_ref.hpp</label>
+      </node>
+      <node id="50">
+        <label>boost/log/sources/severity_channel_logger.hpp</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="31">
+        <label>OutductsConfig.h</label>
+        <link refid="OutductsConfig_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="6">
+        <label>zmq.h</label>
+      </node>
+      <node id="44">
+        <label>boost/log/sinks.hpp</label>
+      </node>
+      <node id="18">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="61">
+        <label>log_lib_export.h</label>
+      </node>
+      <node id="64">
+        <label>cstdint</label>
+      </node>
+      <node id="48">
+        <label>boost/log/sources/basic_logger.hpp</label>
+      </node>
+      <node id="42">
+        <label>boost/log/core.hpp</label>
+      </node>
+      <node id="66">
+        <label>telemetry_definitions_export.h</label>
+      </node>
+      <node id="4">
+        <label>boost/filesystem/fstream.hpp</label>
+      </node>
+      <node id="30">
+        <label>config_lib_export.h</label>
+      </node>
+      <node id="7">
+        <label>cassert</label>
+      </node>
+      <node id="68">
+        <label>bpcodec_export.h</label>
+      </node>
+      <node id="52">
+        <label>boost/log/support/date_time.hpp</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="29">
+        <label>map</label>
+      </node>
+      <node id="51">
+        <label>boost/log/sources/severity_logger.hpp</label>
+      </node>
+      <node id="59">
+        <label>boost/smart_ptr/shared_ptr.hpp</label>
+      </node>
+      <node id="53">
+        <label>boost/log/trivial.hpp</label>
+      </node>
+      <node id="45">
+        <label>boost/log/sinks/sync_frontend.hpp</label>
+      </node>
+      <node id="22">
+        <label>JsonSerializable.h</label>
+        <link refid="JsonSerializable_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>exception</label>
+      </node>
+      <node id="35">
+        <label>fstream</label>
+      </node>
+      <node id="2">
+        <label>boost/program_options.hpp</label>
+      </node>
+      <node id="36">
+        <label>ostream</label>
+      </node>
+      <node id="16">
+        <label>HdtnConfig.h</label>
+        <link refid="HdtnConfig_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>boost/log/expressions.hpp</label>
+      </node>
+      <node id="24">
+        <label>boost/property_tree/json_parser/error.hpp</label>
+      </node>
+      <node id="63">
+        <label>TelemetryDefinitions.h</label>
+        <link refid="TelemetryDefinitions_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="60">
+        <label>boost/config/detail/suffix.hpp</label>
+      </node>
+      <node id="21">
+        <label>tuple</label>
+      </node>
+      <node id="25">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="67">
+        <label>codec/Cbhe.h</label>
+        <link refid="Cbhe_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>boost/log/sinks/text_file_backend.hpp</label>
+      </node>
+      <node id="32">
+        <label>StorageConfig.h</label>
+        <link refid="StorageConfig_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>vector</label>
+      </node>
+      <node id="33">
+        <label>Logger.h</label>
+        <link refid="Logger_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>utility</label>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="47">
+        <label>boost/log/sinks/text_ostream_backend.hpp</label>
+      </node>
+      <node id="49">
+        <label>boost/log/sources/record_ostream.hpp</label>
+      </node>
+      <node id="15">
+        <label>HdtnCliRunner.h</label>
+        <link refid="HdtnCliRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>InductsConfig.h</label>
+        <link refid="InductsConfig_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="27">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="54">
+        <label>boost/log/utility/manipulators/add_value.hpp</label>
+      </node>
+      <node id="34">
+        <label>cstddef</label>
+      </node>
+      <node id="3">
+        <label>boost/make_unique.hpp</label>
+      </node>
+      <node id="1">
+        <label>module/cli/src/HdtnCliRunner.cpp</label>
+        <link refid="HdtnCliRunner_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>boost/log/attributes.hpp</label>
+      </node>
+      <node id="56">
+        <label>boost/log/utility/setup/file.hpp</label>
+      </node>
+      <node id="55">
+        <label>boost/log/utility/setup/common_attributes.hpp</label>
+      </node>
+      <node id="62">
+        <label>hdtn_cli_lib_export.h</label>
+      </node>
+      <node id="19">
+        <label>set</label>
+      </node>
+      <node id="38">
+        <label>boost/core/null_deleter.hpp</label>
+      </node>
+      <node id="9">
+        <label>algorithm</label>
+      </node>
+      <node id="8">
+        <label>cstring</label>
+      </node>
+      <node id="41">
+        <label>boost/log/attributes/scoped_attribute.hpp</label>
+      </node>
+      <node id="17">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>zmq.hpp</label>
+        <link refid="zmq_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">hdtn::Logger::SubProcess</ref></type>
+        <definition>constexpr hdtn::Logger::SubProcess subprocess</definition>
+        <argsstring></argsstring>
+        <name>subprocess</name>
+        <initializer>= <ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a0898b22730d57afcd394d8e4889ece4a" kindref="member">hdtn::Logger::SubProcess::cli</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/cli/src/HdtnCliRunner.cpp" line="25" column="43" bodyfile="module/cli/src/HdtnCliRunner.cpp" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classHdtnCliRunner_1a1759ae54b063a2b28a1783448247bd2d" compoundref="HdtnCliRunner_8cpp" startline="162" endline="175">HdtnCliRunner::ConnectToHdtn</referencedby>
+        <referencedby refid="classHdtnCliRunner_1adad5d339fd182892f857514a0480b131" compoundref="HdtnCliRunner_8cpp" startline="234" endline="296">HdtnCliRunner::ExecuteCliOptions</referencedby>
+        <referencedby refid="classHdtnCliRunner_1a5fa31aba61ef1411d8de47806cc4fc2e" compoundref="HdtnCliRunner_8cpp" startline="135" endline="160">HdtnCliRunner::GetHdtnConfig</referencedby>
+        <referencedby refid="classHdtnCliRunner_1a58e1b5d8ceef570fc2e7b8b609164d34" compoundref="HdtnCliRunner_8cpp" startline="177" endline="232">HdtnCliRunner::ParseCliOptions</referencedby>
+        <referencedby refid="classHdtnCliRunner_1a26a79120a0644d06ef4ae9587b73969a" compoundref="HdtnCliRunner_8cpp" startline="66" endline="106">HdtnCliRunner::ParseHostnameAndPort</referencedby>
+        <referencedby refid="classHdtnCliRunner_1a96f45933e33fff26496892352ff50fee" compoundref="HdtnCliRunner_8cpp" startline="108" endline="133">HdtnCliRunner::SendRequestToHdtn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="HdtnCliRunner_8cpp_1a1af4bfeac361a1b56bbcba7a01005231" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int ZMQ_RESPONSE_TIMEOUT_MS</definition>
+        <argsstring></argsstring>
+        <name>ZMQ_RESPONSE_TIMEOUT_MS</name>
+        <initializer>= 2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/cli/src/HdtnCliRunner.cpp" line="26" column="18" bodyfile="module/cli/src/HdtnCliRunner.cpp" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classHdtnCliRunner_1a96f45933e33fff26496892352ff50fee" compoundref="HdtnCliRunner_8cpp" startline="108" endline="133">HdtnCliRunner::SendRequestToHdtn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="HdtnCliRunner_8cpp_1a868249031866d341fdab8a251586e8a9" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int ZMQ_SOCKET_TIMEOUT_MS</definition>
+        <argsstring></argsstring>
+        <name>ZMQ_SOCKET_TIMEOUT_MS</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/cli/src/HdtnCliRunner.cpp" line="27" column="18" bodyfile="module/cli/src/HdtnCliRunner.cpp" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classHdtnCliRunner_1a1759ae54b063a2b28a1783448247bd2d" compoundref="HdtnCliRunner_8cpp" startline="162" endline="175">HdtnCliRunner::ConnectToHdtn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="HdtnCliRunner_8cpp_1abd3f229fe0ff379716ca7e23fb8d6d65" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string DEFAULT_HOSTNAME</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_HOSTNAME</name>
+        <initializer>= &quot;127.0.0.1&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/cli/src/HdtnCliRunner.cpp" line="28" column="26" bodyfile="module/cli/src/HdtnCliRunner.cpp" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classHdtnCliRunner_1a58e1b5d8ceef570fc2e7b8b609164d34" compoundref="HdtnCliRunner_8cpp" startline="177" endline="232">HdtnCliRunner::ParseCliOptions</referencedby>
+        <referencedby refid="classHdtnCliRunner_1a26a79120a0644d06ef4ae9587b73969a" compoundref="HdtnCliRunner_8cpp" startline="66" endline="106">HdtnCliRunner::ParseHostnameAndPort</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="HdtnCliRunner_8cpp_1a3c0c9a9f31883662ab650d16665e1140" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string DEFAULT_PORT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_PORT</name>
+        <initializer>= &quot;10305&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/cli/src/HdtnCliRunner.cpp" line="29" column="26" bodyfile="module/cli/src/HdtnCliRunner.cpp" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classHdtnCliRunner_1a58e1b5d8ceef570fc2e7b8b609164d34" compoundref="HdtnCliRunner_8cpp" startline="177" endline="232">HdtnCliRunner::ParseCliOptions</referencedby>
+        <referencedby refid="classHdtnCliRunner_1a26a79120a0644d06ef4ae9587b73969a" compoundref="HdtnCliRunner_8cpp" startline="66" endline="106">HdtnCliRunner::ParseHostnameAndPort</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ethan Schweinsberg <ulink url="mailto:ethan.e.schweinsberg@nasa.gov">ethan.e.schweinsberg@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/program_options.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/make_unique.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem/fstream.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="zmq_8hpp" kindref="compound">zmq.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="HdtnCliRunner_8h" kindref="compound">HdtnCliRunner.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Logger_8h" kindref="compound">Logger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TelemetryDefinitions_8h" kindref="compound">TelemetryDefinitions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="HdtnConfig_8h" kindref="compound">HdtnConfig.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">hdtn::Logger::SubProcess</ref><sp/><ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref><sp/>=<sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a0898b22730d57afcd394d8e4889ece4a" kindref="member">hdtn::Logger::SubProcess::cli</ref>;</highlight></codeline>
+<codeline lineno="26" refid="HdtnCliRunner_8cpp_1a1af4bfeac361a1b56bbcba7a01005231" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="HdtnCliRunner_8cpp_1a1af4bfeac361a1b56bbcba7a01005231" kindref="member">ZMQ_RESPONSE_TIMEOUT_MS</ref><sp/>=<sp/>2000;</highlight></codeline>
+<codeline lineno="27" refid="HdtnCliRunner_8cpp_1a868249031866d341fdab8a251586e8a9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="HdtnCliRunner_8cpp_1a868249031866d341fdab8a251586e8a9" kindref="member">ZMQ_SOCKET_TIMEOUT_MS</ref><sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="28" refid="HdtnCliRunner_8cpp_1abd3f229fe0ff379716ca7e23fb8d6d65" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="HdtnCliRunner_8cpp_1abd3f229fe0ff379716ca7e23fb8d6d65" kindref="member">DEFAULT_HOSTNAME</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;127.0.0.1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29" refid="HdtnCliRunner_8cpp_1a3c0c9a9f31883662ab650d16665e1140" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="HdtnCliRunner_8cpp_1a3c0c9a9f31883662ab650d16665e1140" kindref="member">DEFAULT_PORT</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;10305&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classHdtnCliRunner_1a55d57e120a7af8bc45101eb217f36faf" refkind="member"><highlight class="normal"><ref refid="classHdtnCliRunner_1a55d57e120a7af8bc45101eb217f36faf" kindref="member">HdtnCliRunner::HdtnCliRunner</ref>()<sp/>:<sp/>m_pollitems()<sp/>{}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classHdtnCliRunner_1a3b93503f7eda80e993fb65f4c72fc49f" refkind="member"><highlight class="normal"><ref refid="classHdtnCliRunner_1a3b93503f7eda80e993fb65f4c72fc49f" kindref="member">HdtnCliRunner::~HdtnCliRunner</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classHdtnCliRunner_1ac192147cf8a16e178baf8dd958828929" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classHdtnCliRunner_1ac192147cf8a16e178baf8dd958828929" kindref="member">HdtnCliRunner::Run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[])<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First,<sp/>parse<sp/>*only*<sp/>the<sp/>hostname<sp/>and<sp/>port<sp/>from<sp/>the<sp/>command<sp/>line.<sp/>These<sp/>are<sp/>needed<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>to<sp/>HDTN<sp/>and<sp/>retrieve<sp/>the<sp/>HDTN<sp/>config<sp/>file,<sp/>which<sp/>is<sp/>then<sp/>used<sp/>to<sp/>configure<sp/>the<sp/>rest</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>of<sp/>the<sp/>command<sp/>line<sp/>options.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>hostname;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>port;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classHdtnCliRunner_1a26a79120a0644d06ef4ae9587b73969a" kindref="member">ParseHostnameAndPort</ref>(argc,<sp/>argv,<sp/>hostname,<sp/>port))<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connect<sp/>to<sp/>HDTN<sp/>and<sp/>get<sp/>the<sp/>HDTN<sp/>config</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classHdtnCliRunner_1a1759ae54b063a2b28a1783448247bd2d" kindref="member">ConnectToHdtn</ref>(hostname,<sp/>port))<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="HdtnConfig_8h_1a45b732057afa298de1dac87e9c69d701" kindref="member">HdtnConfig_ptr</ref><sp/>config<sp/>=<sp/><ref refid="classHdtnCliRunner_1a5fa31aba61ef1411d8de47806cc4fc2e" kindref="member">GetHdtnConfig</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!config)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Parse<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>command<sp/>line<sp/>options<sp/>and<sp/>execute<sp/>them</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::program_options::variables_map<sp/>vm;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classHdtnCliRunner_1a58e1b5d8ceef570fc2e7b8b609164d34" kindref="member">ParseCliOptions</ref>(argc,<sp/>argv,<sp/>config,<sp/>vm))<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classHdtnCliRunner_1adad5d339fd182892f857514a0480b131" kindref="member">ExecuteCliOptions</ref>(vm))<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classHdtnCliRunner_1a26a79120a0644d06ef4ae9587b73969a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classHdtnCliRunner_1a26a79120a0644d06ef4ae9587b73969a" kindref="member">HdtnCliRunner::ParseHostnameAndPort</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[],<sp/>std::string&amp;<sp/>hostname,<sp/>std::string&amp;<sp/>port)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First,<sp/>parse<sp/>the<sp/>hostname<sp/>and<sp/>port<sp/>which<sp/>is<sp/>needed<sp/>to<sp/>get<sp/>the<sp/>HDTN<sp/>config<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::program_options::options_description<sp/>desc(</highlight><highlight class="stringliteral">&quot;Options&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.add_options()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;hostname&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;()-&gt;default_value(<ref refid="HdtnCliRunner_8cpp_1abd3f229fe0ff379716ca7e23fb8d6d65" kindref="member">DEFAULT_HOSTNAME</ref>),<sp/></highlight><highlight class="stringliteral">&quot;HDTN<sp/>hostname&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;port&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;()-&gt;default_value(<ref refid="HdtnCliRunner_8cpp_1a3c0c9a9f31883662ab650d16665e1140" kindref="member">DEFAULT_PORT</ref>),<sp/></highlight><highlight class="stringliteral">&quot;HDTN<sp/>port&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::variables_map<sp/>vm;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::parsed_options<sp/>options<sp/>=<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::command_line_parser(argc,<sp/>argv).options(desc).allow_unregistered().run();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::store(options,<sp/>vm);<sp/></highlight><highlight class="comment">//<sp/>can<sp/>throw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::notify(vm);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hostname<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;hostname&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;port&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::program_options::error&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>program<sp/>options:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::bad_any_cast<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>data<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::bad_lexical_cast<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>data<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(...)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Exception<sp/>of<sp/>unknown<sp/>type!&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classHdtnCliRunner_1a96f45933e33fff26496892352ff50fee" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classHdtnCliRunner_1a96f45933e33fff26496892352ff50fee" kindref="member">HdtnCliRunner::SendRequestToHdtn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref><sp/>request(msg);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref>-&gt;send(request,<sp/>zmq::send_flags::none);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wait<sp/>for<sp/>the<sp/>reply</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>response<sp/>=<sp/><ref refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" kindref="member">zmq::poll</ref>(<ref refid="classHdtnCliRunner_1ab2a3f7b6bc78b653e2e396ef1176eb0e" kindref="member">m_pollitems</ref>,<sp/>1,<sp/><ref refid="HdtnCliRunner_8cpp_1a1af4bfeac361a1b56bbcba7a01005231" kindref="member">ZMQ_RESPONSE_TIMEOUT_MS</ref>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(response<sp/>==<sp/>ZMQ_POLLIN<sp/>&amp;&amp;<sp/><ref refid="classHdtnCliRunner_1ab2a3f7b6bc78b653e2e396ef1176eb0e" kindref="member">m_pollitems</ref>[0].revents<sp/>&amp;<sp/>ZMQ_POLLIN)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref><sp/>reply;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zmq::recv_result_t<sp/>result<sp/>=<sp/><ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref>-&gt;recv(reply,<sp/>zmq::recv_flags::dontwait);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!result)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>receiving<sp/>reply<sp/>from<sp/>HDTN&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>reply.<ref refid="classzmq_1_1message__t_1ac92cae0e9b979bdb7ebe127d90887a3f" kindref="member">to_string</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Timeout<sp/>waiting<sp/>for<sp/>reply<sp/>from<sp/>HDTN&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classzmq_1_1error__t" kindref="compound">zmq::error_t</ref>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>receiving<sp/>reply<sp/>from<sp/>HDTN:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.<ref refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" kindref="member">what</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="classHdtnCliRunner_1a5fa31aba61ef1411d8de47806cc4fc2e" refkind="member"><highlight class="normal"><ref refid="HdtnConfig_8h_1a45b732057afa298de1dac87e9c69d701" kindref="member">HdtnConfig_ptr</ref><sp/><ref refid="classHdtnCliRunner_1a5fa31aba61ef1411d8de47806cc4fc2e" kindref="member">HdtnCliRunner::GetHdtnConfig</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>the<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structGetHdtnConfigApiCommand__t" kindref="compound">GetHdtnConfigApiCommand_t</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>msg;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>cmd.<ref refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" kindref="member">ToJson</ref>();</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::property_tree::json_parser::json_parser_error<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>json<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="HdtnConfig_8h_1a45b732057afa298de1dac87e9c69d701" kindref="member">HdtnConfig_ptr</ref>();<sp/></highlight><highlight class="comment">//null</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>reply<sp/>=<sp/><ref refid="classHdtnCliRunner_1a96f45933e33fff26496892352ff50fee" kindref="member">SendRequestToHdtn</ref>(msg);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(reply<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="HdtnConfig_8h_1a45b732057afa298de1dac87e9c69d701" kindref="member">HdtnConfig_ptr</ref>();<sp/></highlight><highlight class="comment">//null</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Parse<sp/>the<sp/>reply</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classHdtnConfig_1a581732873620f17751cfa67013ff531d" kindref="member">HdtnConfig::CreateFromJson</ref>(reply);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::property_tree::json_parser::json_parser_error<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>json<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="HdtnConfig_8h_1a45b732057afa298de1dac87e9c69d701" kindref="member">HdtnConfig_ptr</ref>();<sp/></highlight><highlight class="comment">//null</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="classHdtnCliRunner_1a1759ae54b063a2b28a1783448247bd2d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classHdtnCliRunner_1a1759ae54b063a2b28a1783448247bd2d" kindref="member">HdtnCliRunner::ConnectToHdtn</ref>(std::string&amp;<sp/>hostname,<sp/>std::string&amp;<sp/>port)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref><sp/>=<sp/>boost::make_unique&lt;zmq::socket_t&gt;(<ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref>(<ref refid="classHdtnCliRunner_1a3f8e981faf1fde1c070eb33d8055b16b" kindref="member">m_context</ref>,<sp/>zmq::socket_type::req));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref>-&gt;set(zmq::sockopt::connect_timeout,<sp/><ref refid="HdtnCliRunner_8cpp_1a868249031866d341fdab8a251586e8a9" kindref="member">ZMQ_SOCKET_TIMEOUT_MS</ref>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref>-&gt;set(zmq::sockopt::linger,<sp/>0);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHdtnCliRunner_1ab2a3f7b6bc78b653e2e396ef1176eb0e" kindref="member">m_pollitems</ref>[0]<sp/>=<sp/>{<sp/>*<ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref>,<sp/>0,<sp/>ZMQ_POLLIN,<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHdtnCliRunner_1ae1fe0d4347a410bbf401245ee96a6ce2" kindref="member">m_socket</ref>-&gt;connect(</highlight><highlight class="stringliteral">&quot;tcp://&quot;</highlight><highlight class="normal"><sp/>+<sp/>hostname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>+<sp/>port);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(<ref refid="classzmq_1_1error__t" kindref="compound">zmq::error_t</ref>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>connect<sp/>to<sp/>HDTN;<sp/>ensure<sp/>it<sp/>is<sp/>running<sp/>and<sp/>the<sp/>hostname<sp/>and<sp/>port<sp/>are<sp/>set<sp/>correctly&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="classHdtnCliRunner_1a58e1b5d8ceef570fc2e7b8b609164d34" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classHdtnCliRunner_1a58e1b5d8ceef570fc2e7b8b609164d34" kindref="member">HdtnCliRunner::ParseCliOptions</ref>(</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[],</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="HdtnConfig_8h_1a45b732057afa298de1dac87e9c69d701" kindref="member">HdtnConfig_ptr</ref><sp/>config,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::program_options::variables_map&amp;<sp/>vm</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::program_options::options_description<sp/>desc(</highlight><highlight class="stringliteral">&quot;Options&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.add_options()</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Produce<sp/>help<sp/>message&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;hostname&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;()-&gt;default_value(<ref refid="HdtnCliRunner_8cpp_1abd3f229fe0ff379716ca7e23fb8d6d65" kindref="member">DEFAULT_HOSTNAME</ref>),<sp/></highlight><highlight class="stringliteral">&quot;HDTN<sp/>hostname&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;port&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;()-&gt;default_value(<ref refid="HdtnCliRunner_8cpp_1a3c0c9a9f31883662ab650d16665e1140" kindref="member">DEFAULT_PORT</ref>),<sp/></highlight><highlight class="stringliteral">&quot;HDTN<sp/>port&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;contact-plan-file&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;Local<sp/>contact<sp/>plan<sp/>file&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;contact-plan-json&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;Contact<sp/>plan<sp/>json<sp/>string&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Depending<sp/>on<sp/>the<sp/>convergence<sp/>layer,<sp/>add<sp/>additional<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>config-&gt;m_outductsConfig.m_outductElementConfigVector.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config-&gt;m_outductsConfig.m_outductElementConfigVector[i].convergenceLayer<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;ltp_over_udp&quot;</highlight><highlight class="normal"><sp/>||</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>config-&gt;m_outductsConfig.m_outductElementConfigVector[i].convergenceLayer<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;udp&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.add_options()</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((</highlight><highlight class="stringliteral">&quot;outduct[&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(i)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;].rateBps&quot;</highlight><highlight class="normal">).c_str(),<sp/>boost::program_options::value&lt;uint64_t&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;Outduct<sp/>rate<sp/>limit<sp/>(bits<sp/>per<sp/>second)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::store(boost::program_options::parse_command_line(argc,<sp/>argv,<sp/>desc),<sp/>vm);<sp/></highlight><highlight class="comment">//<sp/>can<sp/>throw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::notify(vm);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::program_options::error&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>program<sp/>options:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::bad_any_cast<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>data<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::bad_lexical_cast<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>data<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(...)<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Exception<sp/>of<sp/>unknown<sp/>type!&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="classHdtnCliRunner_1adad5d339fd182892f857514a0480b131" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classHdtnCliRunner_1adad5d339fd182892f857514a0480b131" kindref="member">HdtnCliRunner::ExecuteCliOptions</ref>(boost::program_options::variables_map&amp;<sp/>vm)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Build<sp/>a<sp/>list<sp/>of<sp/>commands<sp/>to<sp/>send<sp/>to<sp/>HDTN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>cmds;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::program_options::variables_map::value_type&amp;<sp/>option<sp/>:<sp/>vm)<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(option.first<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;contact-plan-file&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>contact<sp/>plan<sp/>file<sp/>from<sp/>disk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::filesystem::path<sp/>filePath(vm[</highlight><highlight class="stringliteral">&quot;contact-plan-file&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;());</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::filesystem::ifstream<sp/>ifs(filePath);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>content((std::istreambuf_iterator&lt;char&gt;(ifs)),</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(std::istreambuf_iterator&lt;char&gt;()));</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifs.close();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structUploadContactPlanApiCommand__t" kindref="compound">UploadContactPlanApiCommand_t</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmd.<ref refid="structUploadContactPlanApiCommand__t_1a188f372fa66d03533c9961a855fe5951" kindref="member">m_contactPlanJson</ref><sp/>=<sp/>content;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmds.push_back(cmd.<ref refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" kindref="member">ToJson</ref>());</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(option.first<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;contact-plan-json&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structUploadContactPlanApiCommand__t" kindref="compound">UploadContactPlanApiCommand_t</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmd.<ref refid="structUploadContactPlanApiCommand__t_1a188f372fa66d03533c9961a855fe5951" kindref="member">m_contactPlanJson</ref><sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;contact-plan-json&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmds.push_back(cmd.<ref refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" kindref="member">ToJson</ref>());</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(option.first.find(</highlight><highlight class="stringliteral">&quot;outduct&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>option.first.find(</highlight><highlight class="stringliteral">&quot;rateBps&quot;</highlight><highlight class="normal">)<sp/>!=<sp/>std::string::npos)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Parse<sp/>the<sp/>outduct<sp/>number<sp/>and<sp/>covert<sp/>it<sp/>to<sp/>an<sp/>integer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>start<sp/>=<sp/>option.first.find(</highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>end<sp/>=<sp/>option.first.find(</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>indexStr<sp/>=<sp/>option.first.substr(start,<sp/>end<sp/>-<sp/>start);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::stoi(indexStr);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structSetMaxSendRateApiCommand__t" kindref="compound">SetMaxSendRateApiCommand_t</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmd.<ref refid="structSetMaxSendRateApiCommand__t_1a21d1a907d0ae39067660b26a3f39f155" kindref="member">m_outduct</ref><sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmd.<ref refid="structSetMaxSendRateApiCommand__t_1a47828dfc98b641e7ccfead691f1b92da" kindref="member">m_rateBitsPerSec</ref><sp/>=<sp/>vm[option.first].as&lt;uint64_t&gt;();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmds.push_back(cmd.<ref refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" kindref="member">ToJson</ref>());</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::bad_any_cast<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>data<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::property_tree::json_parser::json_parser_error<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>json<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>the<sp/>commands</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sent<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cmd<sp/>:<sp/>cmds)<sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>reply<sp/>=<sp/><ref refid="classHdtnCliRunner_1a96f45933e33fff26496892352ff50fee" kindref="member">SendRequestToHdtn</ref>(cmd);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(reply<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sent<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sent)<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b" kindref="member">LOG_INFO</ref>(<ref refid="HdtnCliRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Command(s)<sp/>successfully<sp/>sent<sp/>to<sp/>HDTN&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="module/cli/src/HdtnCliRunner.cpp"/>
+  </compounddef>
+</doxygen>

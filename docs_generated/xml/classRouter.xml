@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classRouter" kind="class" language="C++" prot="public">
+    <compoundname>Router</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="router_8h" local="no">router.h</includes>
+    <innerclass refid="classRouter_1_1Impl" prot="public">Router::Impl</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classRouter_1ad5099778c9b2fc32999e7b0b24ed601b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classRouter_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; Router::m_pimpl</definition>
+        <argsstring></argsstring>
+        <name>m_pimpl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="92" column="21" bodyfile="module/router/include/router.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classRouter_1a22097fceb6eeda3ea33f32bda90a6d09" compoundref="router_8cpp" startline="364" endline="371">Init</referencedby>
+        <referencedby refid="classRouter_1ab71353ee88608f83ec09290b84244ae5" compoundref="router_8cpp" startline="373" endline="375">Stop</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classRouter_1a555428efbf07e22776889b8d9b88027f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROUTER_LIB_EXPORT</type>
+        <definition>Router::Router</definition>
+        <argsstring>()</argsstring>
+        <name>Router</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classRouter" kindref="compound">Router</ref> instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="45" column="23" bodyfile="module/router/src/router.cpp" bodystart="358" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1a26d13a6259937e330488653e8e16f921" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROUTER_LIB_EXPORT</type>
+        <definition>Router::~Router</definition>
+        <argsstring>()</argsstring>
+        <name>~Router</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a <ref refid="classRouter" kindref="compound">Router</ref> instance. Stops the router if running </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="47" column="23" bodyfile="module/router/src/router.cpp" bodystart="360" bodyend="362"/>
+        <references refid="classRouter_1ab71353ee88608f83ec09290b84244ae5" compoundref="router_8cpp" startline="373" endline="375">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1ab71353ee88608f83ec09290b84244ae5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROUTER_LIB_EXPORT void</type>
+        <definition>void Router::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops a running router instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="49" column="28" bodyfile="module/router/src/router.cpp" bodystart="373" bodyend="375"/>
+        <references refid="classRouter_1ad5099778c9b2fc32999e7b0b24ed601b" compoundref="router_8h" startline="88">m_pimpl</references>
+        <referencedby refid="classRouterRunner_1ae2a587ce047a44e0b9220cf1398c53dc" compoundref="RouterRunner_8cpp" startline="38" endline="143">RouterRunner::Run</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1aa8c824781e4491284153a102163bf8c3" compoundref="router_8cpp" startline="354" endline="356">Router::Impl::~Impl</referencedby>
+        <referencedby refid="classRouter_1a26d13a6259937e330488653e8e16f921" compoundref="router_8cpp" startline="360" endline="362">~Router</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1a22097fceb6eeda3ea33f32bda90a6d09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROUTER_LIB_EXPORT bool</type>
+        <definition>bool Router::Init</definition>
+        <argsstring>(const HdtnConfig &amp;hdtnConfig, const HdtnDistributedConfig &amp;hdtnDistributedConfig, const boost::filesystem::path &amp;contactPlanFilePath, bool usingUnixTimestamp, bool useMgr, zmq::context_t *hdtnOneProcessZmqInprocContextPtr=NULL)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref> &amp;</type>
+          <declname>hdtnConfig</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classHdtnDistributedConfig" kindref="compound">HdtnDistributedConfig</ref> &amp;</type>
+          <declname>hdtnDistributedConfig</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>contactPlanFilePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>usingUnixTimestamp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+          <declname>hdtnOneProcessZmqInprocContextPtr</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts the router</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hdtnConfig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The HDTN Config </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hdtnDistributedConfig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>HDTN config for running in distributed mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>usingUnixTimestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, interpret times in contact file as unix time stamps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>useMgr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, use the MGR routing algorithm; otherwise use CGR </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hdtnOneProcessZmqInprocContextPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ZMQ context for one-process mode</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on successful start, false on error</para>
+</simplesect>
+Starts the router on a thread; returns once initial setup is complete </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="62" column="28" bodyfile="module/router/src/router.cpp" bodystart="364" bodyend="371"/>
+        <references refid="classRouter_1ad5099778c9b2fc32999e7b0b24ed601b" compoundref="router_8h" startline="88">m_pimpl</references>
+        <referencedby refid="classRouterRunner_1ae2a587ce047a44e0b9220cf1398c53dc" compoundref="RouterRunner_8cpp" startline="38" endline="143">RouterRunner::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classRouter_1a9b7e4642191452c7d64fd78b18df313c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROUTER_LIB_EXPORT boost::filesystem::path</type>
+        <definition>boost::filesystem::path Router::GetFullyQualifiedFilename</definition>
+        <argsstring>(const boost::filesystem::path &amp;filename)</argsstring>
+        <name>GetFullyQualifiedFilename</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get absolute path to contact plan from relative path</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file to find an absolute path for</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the absolute path to the file</para>
+</simplesect>
+This path is relative to the router/contact_plans directory </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="77" column="54" bodyfile="module/router/src/router.cpp" bodystart="317" bodyend="319"/>
+        <references refid="classEnvironment_1aeefd1fe5e23187dedd8409228af2087f" compoundref="Environment_8cpp" startline="44" endline="50">Environment::GetPathContactPlans</references>
+        <referencedby refid="classHdtnOneProcessRunner_1addbde9e260c141315189628fd568c59b" compoundref="HdtnOneProcessRunner_8cpp" startline="66" endline="272">HdtnOneProcessRunner::Run</referencedby>
+        <referencedby refid="classRouterRunner_1ae2a587ce047a44e0b9220cf1398c53dc" compoundref="RouterRunner_8cpp" startline="38" endline="143">RouterRunner::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1afa7d5ea074f3559daa708d52a9fabc28" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROUTER_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t Router::GetRateBpsFromPtree</definition>
+        <argsstring>(const boost::property_tree::ptree::value_type &amp;eventPtr)</argsstring>
+        <name>GetRateBpsFromPtree</name>
+        <param>
+          <type>const boost::property_tree::ptree::value_type &amp;</type>
+          <declname>eventPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the contact rate in bits per second from its property tree</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>eventPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The contact plan property tree to extract the bits per second from</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the bit rate on success, 0 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/include/router.h" line="85" column="39" bodyfile="module/router/src/router.cpp" bodystart="1164" bodyend="1184"/>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <referencedby refid="RouterTests_8cpp_1ad0d30a68355136df391c43071e66fe84" compoundref="RouterTests_8cpp" startline="22" endline="54">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1adf3d299d4b1f588e0117bebe78ded5d5" compoundref="router_8cpp" startline="1211" endline="1310">Router::Impl::ProcessContacts</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>HDTN <ref refid="classRouter" kindref="compound">Router</ref>.</para>
+<para>Notifies other modules of link up/down events and provides them with new routes on link change </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>Router</label>
+        <link refid="classRouter"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>Router</label>
+        <link refid="classRouter"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/router/include/router.h" line="42" column="1" bodyfile="module/router/include/router.h" bodystart="42" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classRouter_1a9b7e4642191452c7d64fd78b18df313c" prot="public" virt="non-virtual"><scope>Router</scope><name>GetFullyQualifiedFilename</name></member>
+      <member refid="classRouter_1afa7d5ea074f3559daa708d52a9fabc28" prot="public" virt="non-virtual"><scope>Router</scope><name>GetRateBpsFromPtree</name></member>
+      <member refid="classRouter_1a22097fceb6eeda3ea33f32bda90a6d09" prot="public" virt="non-virtual"><scope>Router</scope><name>Init</name></member>
+      <member refid="classRouter_1ad5099778c9b2fc32999e7b0b24ed601b" prot="private" virt="non-virtual"><scope>Router</scope><name>m_pimpl</name></member>
+      <member refid="classRouter_1a555428efbf07e22776889b8d9b88027f" prot="public" virt="non-virtual"><scope>Router</scope><name>Router</name></member>
+      <member refid="classRouter_1ab71353ee88608f83ec09290b84244ae5" prot="public" virt="non-virtual"><scope>Router</scope><name>Stop</name></member>
+      <member refid="classRouter_1a26d13a6259937e330488653e8e16f921" prot="public" virt="non-virtual"><scope>Router</scope><name>~Router</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classWebSocketHandler" kind="class" language="C++" prot="public">
+    <compoundname>WebSocketHandler</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">CivetWebSocketHandler</basecompoundref>
+    <includes refid="CivetwebWebsocketServer_8h" local="no">CivetwebWebsocketServer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex WebSocketHandler::m_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="66" column="18" bodyfile="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classWebSocketHandler_1a9c6c4f5d70b6686e1e2e42bdf1a7e4fc" compoundref="CivetwebWebsocketServer_8cpp" startline="127" endline="135">handleClose</referencedby>
+        <referencedby refid="classWebSocketHandler_1a03a558eda7dddb369e5376148d6a9360" compoundref="CivetwebWebsocketServer_8cpp" startline="64" endline="75">handleConnection</referencedby>
+        <referencedby refid="classWebSocketHandler_1a6a2c23dc76e0b86a29a5e18b557159e8" compoundref="CivetwebWebsocketServer_8cpp" startline="94" endline="125">handleData</referencedby>
+        <referencedby refid="classWebSocketHandler_1a8f3555314291cc1d924bb5ac0d2b817d" compoundref="CivetwebWebsocketServer_8cpp" startline="77" endline="92">handleReadyState</referencedby>
+        <referencedby refid="classWebSocketHandler_1a1bf26477737d586047ce3045bbb6bd08" compoundref="CivetwebWebsocketServer_8cpp" startline="57" endline="62">SendBinaryDataToActiveWebsockets</referencedby>
+        <referencedby refid="classWebSocketHandler_1aa3cc0f091036b907978056afd07bf958" compoundref="CivetwebWebsocketServer_8cpp" startline="50" endline="55">SendTextDataToActiveWebsockets</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" prot="private" static="no" mutable="no">
+        <type>std::set&lt; struct mg_connection * &gt;</type>
+        <definition>std::set&lt;struct mg_connection *&gt; WebSocketHandler::m_activeConnections</definition>
+        <argsstring></argsstring>
+        <name>m_activeConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="67" column="14" bodyfile="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classWebSocketHandler_1a9c6c4f5d70b6686e1e2e42bdf1a7e4fc" compoundref="CivetwebWebsocketServer_8cpp" startline="127" endline="135">handleClose</referencedby>
+        <referencedby refid="classWebSocketHandler_1a03a558eda7dddb369e5376148d6a9360" compoundref="CivetwebWebsocketServer_8cpp" startline="64" endline="75">handleConnection</referencedby>
+        <referencedby refid="classWebSocketHandler_1a6a2c23dc76e0b86a29a5e18b557159e8" compoundref="CivetwebWebsocketServer_8cpp" startline="94" endline="125">handleData</referencedby>
+        <referencedby refid="classWebSocketHandler_1a8f3555314291cc1d924bb5ac0d2b817d" compoundref="CivetwebWebsocketServer_8cpp" startline="77" endline="92">handleReadyState</referencedby>
+        <referencedby refid="classWebSocketHandler_1a1bf26477737d586047ce3045bbb6bd08" compoundref="CivetwebWebsocketServer_8cpp" startline="57" endline="62">SendBinaryDataToActiveWebsockets</referencedby>
+        <referencedby refid="classWebSocketHandler_1aa3cc0f091036b907978056afd07bf958" compoundref="CivetwebWebsocketServer_8cpp" startline="50" endline="55">SendTextDataToActiveWebsockets</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebSocketHandler_1a0f45a196419ea8336baea7f3d8010cac" prot="private" static="no" mutable="no">
+        <type><ref refid="CivetwebWebsocketServer_8h_1a9f76550a5e0323416d3c2921e7b9f0b0" kindref="member">OnNewWebsocketConnectionCallback_t</ref></type>
+        <definition>OnNewWebsocketConnectionCallback_t WebSocketHandler::m_onNewWebsocketConnectionCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onNewWebsocketConnectionCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="68" column="40" bodyfile="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classWebSocketHandler_1a8f3555314291cc1d924bb5ac0d2b817d" compoundref="CivetwebWebsocketServer_8cpp" startline="77" endline="92">handleReadyState</referencedby>
+        <referencedby refid="classWebSocketHandler_1af9a9fdbded4b3d0e32b43c6a1302d7be" compoundref="CivetwebWebsocketServer_8cpp" startline="136" endline="138">SetOnNewWebsocketConnectionCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebSocketHandler_1a7cc2457610b291231094f4a2dbc171f9" prot="private" static="no" mutable="no">
+        <type><ref refid="CivetwebWebsocketServer_8h_1a8823868bd355b325f8687196a4d2a7fe" kindref="member">OnNewWebsocketDataReceivedCallback_t</ref></type>
+        <definition>OnNewWebsocketDataReceivedCallback_t WebSocketHandler::m_onNewWebsocketDataReceivedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onNewWebsocketDataReceivedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="69" column="42" bodyfile="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classWebSocketHandler_1a6a2c23dc76e0b86a29a5e18b557159e8" compoundref="CivetwebWebsocketServer_8cpp" startline="94" endline="125">handleData</referencedby>
+        <referencedby refid="classWebSocketHandler_1aceb79f174202355da83daceae92e63a4" compoundref="CivetwebWebsocketServer_8cpp" startline="139" endline="141">SetOnNewWebsocketDataReceivedCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWebSocketHandler_1ac1bd21503ba157638f446444413d57d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT</type>
+        <definition>WebSocketHandler::WebSocketHandler</definition>
+        <argsstring>()</argsstring>
+        <name>WebSocketHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="54" column="22" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1a18479a69a03eeed897c4334543023724" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT</type>
+        <definition>WebSocketHandler::~WebSocketHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~WebSocketHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="55" column="22" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1aa3cc0f091036b907978056afd07bf958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebSocketHandler::SendTextDataToActiveWebsockets</definition>
+        <argsstring>(const char *data, std::size_t size)</argsstring>
+        <name>SendTextDataToActiveWebsockets</name>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="56" column="27" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="50" bodyend="55"/>
+        <references refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" compoundref="CivetwebWebsocketServer_8h" startline="67">m_activeConnections</references>
+        <references refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" compoundref="CivetwebWebsocketServer_8h" startline="66">m_mutex</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1a1bf26477737d586047ce3045bbb6bd08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebSocketHandler::SendBinaryDataToActiveWebsockets</definition>
+        <argsstring>(const char *data, std::size_t size)</argsstring>
+        <name>SendBinaryDataToActiveWebsockets</name>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="57" column="27" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="57" bodyend="62"/>
+        <references refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" compoundref="CivetwebWebsocketServer_8h" startline="67">m_activeConnections</references>
+        <references refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" compoundref="CivetwebWebsocketServer_8h" startline="66">m_mutex</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1af9a9fdbded4b3d0e32b43c6a1302d7be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebSocketHandler::SetOnNewWebsocketConnectionCallback</definition>
+        <argsstring>(const OnNewWebsocketConnectionCallback_t &amp;callback)</argsstring>
+        <name>SetOnNewWebsocketConnectionCallback</name>
+        <param>
+          <type>const <ref refid="CivetwebWebsocketServer_8h_1a9f76550a5e0323416d3c2921e7b9f0b0" kindref="member">OnNewWebsocketConnectionCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="58" column="27" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="136" bodyend="138"/>
+        <references refid="classWebSocketHandler_1a0f45a196419ea8336baea7f3d8010cac" compoundref="CivetwebWebsocketServer_8h" startline="68">m_onNewWebsocketConnectionCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1aceb79f174202355da83daceae92e63a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebSocketHandler::SetOnNewWebsocketDataReceivedCallback</definition>
+        <argsstring>(const OnNewWebsocketDataReceivedCallback_t &amp;callback)</argsstring>
+        <name>SetOnNewWebsocketDataReceivedCallback</name>
+        <param>
+          <type>const <ref refid="CivetwebWebsocketServer_8h_1a8823868bd355b325f8687196a4d2a7fe" kindref="member">OnNewWebsocketDataReceivedCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="59" column="27" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="139" bodyend="141"/>
+        <references refid="classWebSocketHandler_1a7cc2457610b291231094f4a2dbc171f9" compoundref="CivetwebWebsocketServer_8h" startline="69">m_onNewWebsocketDataReceivedCallback</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classWebSocketHandler_1a03a558eda7dddb369e5376148d6a9360" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TELEM_LIB_NO_EXPORT bool</type>
+        <definition>bool WebSocketHandler::handleConnection</definition>
+        <argsstring>(CivetServer *server, const struct mg_connection *conn)</argsstring>
+        <name>handleConnection</name>
+        <param>
+          <type>CivetServer *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>const struct mg_connection *</type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="61" column="38" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="64" bodyend="75"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" compoundref="CivetwebWebsocketServer_8h" startline="67">m_activeConnections</references>
+        <references refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" compoundref="CivetwebWebsocketServer_8h" startline="66">m_mutex</references>
+        <references refid="CivetwebWebsocketServer_8cpp_1a20c9ef1afea00bef32844713f443ad2c" compoundref="CivetwebWebsocketServer_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1a8f3555314291cc1d924bb5ac0d2b817d" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TELEM_LIB_NO_EXPORT void</type>
+        <definition>void WebSocketHandler::handleReadyState</definition>
+        <argsstring>(CivetServer *server, struct mg_connection *conn)</argsstring>
+        <name>handleReadyState</name>
+        <param>
+          <type>CivetServer *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>struct mg_connection *</type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="62" column="38" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="77" bodyend="92"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" compoundref="CivetwebWebsocketServer_8h" startline="67">m_activeConnections</references>
+        <references refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" compoundref="CivetwebWebsocketServer_8h" startline="66">m_mutex</references>
+        <references refid="classWebSocketHandler_1a0f45a196419ea8336baea7f3d8010cac" compoundref="CivetwebWebsocketServer_8h" startline="68">m_onNewWebsocketConnectionCallback</references>
+        <references refid="CivetwebWebsocketServer_8cpp_1a20c9ef1afea00bef32844713f443ad2c" compoundref="CivetwebWebsocketServer_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1a6a2c23dc76e0b86a29a5e18b557159e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TELEM_LIB_NO_EXPORT bool</type>
+        <definition>bool WebSocketHandler::handleData</definition>
+        <argsstring>(CivetServer *server, struct mg_connection *conn, int bits, char *data, size_t data_len)</argsstring>
+        <name>handleData</name>
+        <param>
+          <type>CivetServer *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>struct mg_connection *</type>
+          <declname>conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bits</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="63" column="38" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="94" bodyend="125"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" compoundref="CivetwebWebsocketServer_8h" startline="67">m_activeConnections</references>
+        <references refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" compoundref="CivetwebWebsocketServer_8h" startline="66">m_mutex</references>
+        <references refid="classWebSocketHandler_1a7cc2457610b291231094f4a2dbc171f9" compoundref="CivetwebWebsocketServer_8h" startline="69">m_onNewWebsocketDataReceivedCallback</references>
+        <references refid="CivetwebWebsocketServer_8cpp_1a20c9ef1afea00bef32844713f443ad2c" compoundref="CivetwebWebsocketServer_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebSocketHandler_1a9c6c4f5d70b6686e1e2e42bdf1a7e4fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TELEM_LIB_NO_EXPORT void</type>
+        <definition>void WebSocketHandler::handleClose</definition>
+        <argsstring>(CivetServer *server, const struct mg_connection *conn)</argsstring>
+        <name>handleClose</name>
+        <param>
+          <type>CivetServer *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>const struct mg_connection *</type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="64" column="38" bodyfile="module/telem_cmd_interface/src/CivetwebWebsocketServer.cpp" bodystart="127" bodyend="135"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" compoundref="CivetwebWebsocketServer_8h" startline="67">m_activeConnections</references>
+        <references refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" compoundref="CivetwebWebsocketServer_8h" startline="66">m_mutex</references>
+        <references refid="CivetwebWebsocketServer_8cpp_1a20c9ef1afea00bef32844713f443ad2c" compoundref="CivetwebWebsocketServer_8cpp" startline="32">subprocess</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>WebSocketHandler</label>
+        <link refid="classWebSocketHandler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CivetWebSocketHandler</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>WebSocketHandler</label>
+        <link refid="classWebSocketHandler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CivetWebSocketHandler</label>
+      </node>
+    </collaborationgraph>
+    <location file="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" line="52" column="1" bodyfile="module/telem_cmd_interface/include/CivetwebWebsocketServer.h" bodystart="52" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classWebSocketHandler_1a9c6c4f5d70b6686e1e2e42bdf1a7e4fc" prot="private" virt="virtual"><scope>WebSocketHandler</scope><name>handleClose</name></member>
+      <member refid="classWebSocketHandler_1a03a558eda7dddb369e5376148d6a9360" prot="private" virt="virtual"><scope>WebSocketHandler</scope><name>handleConnection</name></member>
+      <member refid="classWebSocketHandler_1a6a2c23dc76e0b86a29a5e18b557159e8" prot="private" virt="virtual"><scope>WebSocketHandler</scope><name>handleData</name></member>
+      <member refid="classWebSocketHandler_1a8f3555314291cc1d924bb5ac0d2b817d" prot="private" virt="virtual"><scope>WebSocketHandler</scope><name>handleReadyState</name></member>
+      <member refid="classWebSocketHandler_1a442c3ea3429686add1069c845e227e9b" prot="private" virt="non-virtual"><scope>WebSocketHandler</scope><name>m_activeConnections</name></member>
+      <member refid="classWebSocketHandler_1ad1f1d15d6ea57fad9c372aedd4c40df2" prot="private" virt="non-virtual"><scope>WebSocketHandler</scope><name>m_mutex</name></member>
+      <member refid="classWebSocketHandler_1a0f45a196419ea8336baea7f3d8010cac" prot="private" virt="non-virtual"><scope>WebSocketHandler</scope><name>m_onNewWebsocketConnectionCallback</name></member>
+      <member refid="classWebSocketHandler_1a7cc2457610b291231094f4a2dbc171f9" prot="private" virt="non-virtual"><scope>WebSocketHandler</scope><name>m_onNewWebsocketDataReceivedCallback</name></member>
+      <member refid="classWebSocketHandler_1a1bf26477737d586047ce3045bbb6bd08" prot="public" virt="non-virtual"><scope>WebSocketHandler</scope><name>SendBinaryDataToActiveWebsockets</name></member>
+      <member refid="classWebSocketHandler_1aa3cc0f091036b907978056afd07bf958" prot="public" virt="non-virtual"><scope>WebSocketHandler</scope><name>SendTextDataToActiveWebsockets</name></member>
+      <member refid="classWebSocketHandler_1af9a9fdbded4b3d0e32b43c6a1302d7be" prot="public" virt="non-virtual"><scope>WebSocketHandler</scope><name>SetOnNewWebsocketConnectionCallback</name></member>
+      <member refid="classWebSocketHandler_1aceb79f174202355da83daceae92e63a4" prot="public" virt="non-virtual"><scope>WebSocketHandler</scope><name>SetOnNewWebsocketDataReceivedCallback</name></member>
+      <member refid="classWebSocketHandler_1ac1bd21503ba157638f446444413d57d2" prot="public" virt="non-virtual"><scope>WebSocketHandler</scope><name>WebSocketHandler</name></member>
+      <member refid="classWebSocketHandler_1a18479a69a03eeed897c4334543023724" prot="public" virt="non-virtual"><scope>WebSocketHandler</scope><name>~WebSocketHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

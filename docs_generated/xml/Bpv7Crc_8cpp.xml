@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Bpv7Crc_8cpp" kind="file" language="C++">
+    <compoundname>Bpv7Crc.cpp</compoundname>
+    <includes refid="Bpv7Crc_8h" local="yes">codec/Bpv7Crc.h</includes>
+    <includes local="no">boost/crc.hpp</includes>
+    <includes local="no">boost/make_unique.hpp</includes>
+    <includes local="no">map</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="1">
+        <label>common/bpcodec/src/codec/Bpv7Crc.cpp</label>
+        <link refid="Bpv7Crc_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>bpcodec_export.h</label>
+      </node>
+      <node id="9">
+        <label>map</label>
+      </node>
+      <node id="2">
+        <label>codec/Bpv7Crc.h</label>
+        <link refid="Bpv7Crc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>boost/crc.hpp</label>
+      </node>
+      <node id="4">
+        <label>cstddef</label>
+      </node>
+      <node id="8">
+        <label>boost/make_unique.hpp</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classCrc32c__InOrderChunks_1_1Impl" prot="public">Crc32c_InOrderChunks::Impl</innerclass>
+    <innerclass refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl" prot="public">Crc32c_ReceiveOutOfOrderChunks::Impl</innerclass>
+    <innerclass refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength" prot="public">Crc32c_ReceiveOutOfOrderChunks::Impl::CrcAndLength</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="Bpv7Crc_8cpp_1a123ddb8e4354d54e9bd0439feb48ac55" prot="public" static="no">
+        <name>USE_ZLIB_CRC_COMBINE_ALGORITHM</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/src/codec/Bpv7Crc.cpp" line="31" column="9" bodyfile="common/bpcodec/src/codec/Bpv7Crc.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" prot="public" static="no">
+        <name>CRC32C_INIT</name>
+        <initializer>UINT32_MAX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/src/codec/Bpv7Crc.cpp" line="33" column="9" bodyfile="common/bpcodec/src/codec/Bpv7Crc.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" prot="public" static="no">
+        <type>boost::crc_optimal&lt; 32, 0x1EDC6F41, UINT32_MAX, UINT32_MAX, true, true &gt;</type>
+        <definition>typedef boost::crc_optimal&lt;32, 0x1EDC6F41, UINT32_MAX, UINT32_MAX, true, true&gt; boost_crc32c_t</definition>
+        <argsstring></argsstring>
+        <name>boost_crc32c_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/src/codec/Bpv7Crc.cpp" line="19" column="28" bodyfile="common/bpcodec/src/codec/Bpv7Crc.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Bpv7Crc_8cpp_1a5c76e9421a43cbaac4d69bc6ad847cd3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BOOST_FORCEINLINE uint32_t</type>
+        <definition>static BOOST_FORCEINLINE uint32_t Crc32C_Finalize</definition>
+        <argsstring>(uint32_t crc)</argsstring>
+        <name>Crc32C_Finalize</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>crc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/src/codec/Bpv7Crc.cpp" line="35" column="35" bodyfile="common/bpcodec/src/codec/Bpv7Crc.cpp" bodystart="35" bodyend="38"/>
+        <referencedby refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a2ce142b3790a61a15373cdd340b9d4a0" compoundref="Bpv7Crc_8cpp" startline="300" endline="337">Crc32c_ReceiveOutOfOrderChunks::Impl::FinalizeAndGet</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Bpv7Crc_8h" kindref="compound">codec/Bpv7Crc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/crc.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/make_unique.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::crc_optimal&lt;32,<sp/>0x1EDC6F41,<sp/>UINT32_MAX,<sp/>UINT32_MAX,<sp/>true,<sp/>true&gt;<sp/><ref refid="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" kindref="member">boost_crc32c_t</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CRC32C_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>HAVE_SSE2NEON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sse2neon.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nmmintrin.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/config/detail/suffix.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//use<sp/>the<sp/>algorithm<sp/>located<sp/>in<sp/>ZlibCrc32cCombine.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="Bpv7Crc_8cpp_1a123ddb8e4354d54e9bd0439feb48ac55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>USE_ZLIB_CRC_COMBINE_ALGORITHM<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CRC32C_INIT<sp/>UINT32_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="Bpv7Crc_8cpp_1a5c76e9421a43cbaac4d69bc6ad847cd3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>BOOST_FORCEINLINE<sp/>uint32_t<sp/><ref refid="Bpv7Crc_8cpp_1a5c76e9421a43cbaac4d69bc6ad847cd3" kindref="member">Crc32C_Finalize</ref>(uint32_t<sp/>crc)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>static_cast&lt;uint32_t&gt;(crc<sp/>^<sp/>UINT32_MAX);<sp/>//final<sp/>xor<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>~crc;<sp/></highlight><highlight class="comment">//final<sp/>xor<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CRC32C_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>Crc32C_Unaligned_Hardware_AddBytes(uint32_t<sp/>crc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length<sp/>&amp;&amp;<sp/>(((std::uintptr_t)dataUnaligned)<sp/>&amp;<sp/>7))<sp/>{<sp/></highlight><highlight class="comment">//while<sp/>not<sp/>aligned<sp/>on<sp/>8-byte<sp/>boundary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/>_mm_crc32_u8(crc,<sp/>*dataUnaligned++);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--length;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//data<sp/>now<sp/>aligned<sp/>on<sp/>8-byte<sp/>boundary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length<sp/>&gt;<sp/>7)<sp/>{<sp/></highlight><highlight class="comment">//while<sp/>length<sp/>&gt;=<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dataAligned64<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">uint64_t*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dataUnaligned);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(_mm_crc32_u64(crc,<sp/>*dataAligned64));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataUnaligned<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>-=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//finish<sp/>any<sp/>remaining<sp/>bytes<sp/>&lt;=<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/>_mm_crc32_u8(crc,<sp/>*dataUnaligned++);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--length;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>crc;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>USE_ZLIB_CRC_COMBINE_ALGORITHM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>Crc32C_Unaligned_Hardware_AddZeros(uint32_t<sp/>crc,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length<sp/>&gt;<sp/>7)<sp/>{<sp/></highlight><highlight class="comment">//while<sp/>length<sp/>&gt;=<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(_mm_crc32_u64(crc,<sp/>0));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>-=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//finish<sp/>any<sp/>remaining<sp/>bytes<sp/>&lt;=<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/>_mm_crc32_u8(crc,<sp/>0);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--length;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>crc;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//idea<sp/>from<sp/>https://github.com/komrad36/CRC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">uint32_t<sp/>Bpv7Crc::Crc32C_Unaligned_Hardware(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//https://datatracker.ietf.org/doc/html/rfc4960#appendix-B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*The<sp/>CRC<sp/>remainder<sp/>register<sp/>is<sp/>initialized<sp/>with<sp/>all<sp/>1s<sp/>and<sp/>the<sp/>CRC</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>computed<sp/>with<sp/>an<sp/>algorithm<sp/>that<sp/>simultaneously<sp/>multiplies<sp/>by</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>x^32<sp/>and<sp/>divides<sp/>by<sp/>the<sp/>CRC<sp/>polynomial.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>crc<sp/>=<sp/><ref refid="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" kindref="member">CRC32C_INIT</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>crc<sp/>=<sp/>Crc32C_Unaligned_Hardware_AddBytes(crc,<sp/>dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Bpv7Crc_8cpp_1a5c76e9421a43cbaac4d69bc6ad847cd3" kindref="member">Crc32C_Finalize</ref>(crc);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">uint32_t<sp/><ref refid="classBpv7Crc_1a84d8a66af81c2a92fdbb9d08f056c002" kindref="member">Bpv7Crc::Crc32C_Unaligned</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Bpv7Crc::Crc32C_Unaligned_Hardware(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classBpv7Crc_1a84d8a66af81c2a92fdbb9d08f056c002" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classBpv7Crc_1a84d8a66af81c2a92fdbb9d08f056c002" kindref="member">Bpv7Crc::Crc32C_Unaligned</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classBpv7Crc_1ac2b2ff89c7d03a852597ddcb2fc1ce06" kindref="member">Bpv7Crc::Crc32C_Unaligned_Software</ref>(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//https://stackoverflow.com/a/16623151</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classBpv7Crc_1ac2b2ff89c7d03a852597ddcb2fc1ce06" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classBpv7Crc_1ac2b2ff89c7d03a852597ddcb2fc1ce06" kindref="member">Bpv7Crc::Crc32C_Unaligned_Software</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" kindref="member">boost_crc32c_t</ref><sp/>crc;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>crc.process_bytes(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>crc();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classBpv7Crc_1ae5d7dd9c0d1167ead3e0656a26ac9437" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="classBpv7Crc_1ae5d7dd9c0d1167ead3e0656a26ac9437" kindref="member">Bpv7Crc::Crc16_X25_Unaligned</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::crc_optimal&lt;16,<sp/>0x1021,<sp/>UINT16_MAX,<sp/>UINT16_MAX,<sp/>true,<sp/>true&gt;<sp/>crc;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>crc.process_bytes(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>crc();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">//4.2.2.<sp/>CRC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">//CRC<sp/>SHALL<sp/>be<sp/>omitted<sp/>from<sp/>a<sp/>block<sp/>if<sp/>and<sp/>only<sp/>if<sp/>the<sp/>block&apos;s<sp/>CRC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">//type<sp/>code<sp/>is<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">//When<sp/>not<sp/>omitted,<sp/>the<sp/>CRC<sp/>SHALL<sp/>be<sp/>represented<sp/>as<sp/>a<sp/>CBOR<sp/>byte<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">//of<sp/>two<sp/>bytes<sp/>(that<sp/>is,<sp/>CBOR<sp/>additional<sp/>information<sp/>2,<sp/>if<sp/>CRC<sp/>type<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">//1)<sp/>or<sp/>of<sp/>four<sp/>bytes<sp/>(that<sp/>is,<sp/>CBOR<sp/>additional<sp/>information<sp/>4,<sp/>if<sp/>CRC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">//type<sp/>is<sp/>2);<sp/>in<sp/>each<sp/>case<sp/>the<sp/>sequence<sp/>of<sp/>bytes<sp/>SHALL<sp/>constitute<sp/>an</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">//unsigned<sp/>integer<sp/>value<sp/>(of<sp/>16<sp/>or<sp/>32<sp/>bits,<sp/>respectively)<sp/>in<sp/>network</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">//byte<sp/>order.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classBpv7Crc_1a74c35ff95c37cf02d58c945faaeed7da" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classBpv7Crc_1a74c35ff95c37cf02d58c945faaeed7da" kindref="member">Bpv7Crc::SerializeCrc16ForBpv7</ref>(uint8_t<sp/>*<sp/>serialization,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>crc16)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>(2U<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>2U;<sp/></highlight><highlight class="comment">//major<sp/>type<sp/>2,<sp/>additional<sp/>information<sp/>2<sp/>(byte<sp/>string<sp/>of<sp/>length<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint8_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crc16<sp/>&gt;&gt;<sp/>8);<sp/></highlight><highlight class="comment">//msb<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint8_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crc16);<sp/></highlight><highlight class="comment">//lsb<sp/>last</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>3;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127" refid="classBpv7Crc_1a46944dd97de7964f421c97e4d71d1b3d" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classBpv7Crc_1a46944dd97de7964f421c97e4d71d1b3d" kindref="member">Bpv7Crc::SerializeCrc32ForBpv7</ref>(uint8_t<sp/>*<sp/>serialization,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>crc32)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>(2U<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>4U;<sp/></highlight><highlight class="comment">//major<sp/>type<sp/>2,<sp/>additional<sp/>information<sp/>4<sp/>(byte<sp/>string<sp/>of<sp/>length<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint8_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crc32<sp/>&gt;&gt;<sp/>24);<sp/></highlight><highlight class="comment">//msb<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint8_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crc32<sp/>&gt;&gt;<sp/>16);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint8_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crc32<sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint8_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crc32);<sp/></highlight><highlight class="comment">//lsb<sp/>last</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>5;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135" refid="classBpv7Crc_1ab49f9c9d3f81a77529d78de4122fc5e3" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classBpv7Crc_1ab49f9c9d3f81a77529d78de4122fc5e3" kindref="member">Bpv7Crc::SerializeZeroedCrc16ForBpv7</ref>(uint8_t<sp/>*<sp/>serialization)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>(2U<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>2U;<sp/></highlight><highlight class="comment">//major<sp/>type<sp/>2,<sp/>additional<sp/>information<sp/>2<sp/>(byte<sp/>string<sp/>of<sp/>length<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>3;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141" refid="classBpv7Crc_1ae054320e7a83dc733fd0c3c32b652177" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classBpv7Crc_1ae054320e7a83dc733fd0c3c32b652177" kindref="member">Bpv7Crc::SerializeZeroedCrc32ForBpv7</ref>(uint8_t<sp/>*<sp/>serialization)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>(2U<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>4U;<sp/></highlight><highlight class="comment">//major<sp/>type<sp/>2,<sp/>additional<sp/>information<sp/>4<sp/>(byte<sp/>string<sp/>of<sp/>length<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization++<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>*serialization<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>5;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149" refid="classBpv7Crc_1a4e3c7ab086f9a21de3a7c9849b4f6272" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBpv7Crc_1a4e3c7ab086f9a21de3a7c9849b4f6272" kindref="member">Bpv7Crc::DeserializeCrc16ForBpv7</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/>serialization,<sp/>uint8_t<sp/>*<sp/>numBytesTakenToDecode,<sp/>uint16_t<sp/>&amp;<sp/>crc16)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>initialCborByte<sp/>=<sp/>*serialization++;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initialCborByte<sp/>!=<sp/>((2U<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>2U))<sp/>{<sp/></highlight><highlight class="comment">//major<sp/>type<sp/>2,<sp/>additional<sp/>information<sp/>2<sp/>(byte<sp/>string<sp/>of<sp/>length<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>crc16<sp/>=<sp/>*serialization++;<sp/></highlight><highlight class="comment">//msb<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>crc16<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>crc16<sp/>|=<sp/>*serialization;<sp/></highlight><highlight class="comment">//lsb<sp/>last</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>*numBytesTakenToDecode<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161" refid="classBpv7Crc_1a61f60999f7e359d6a91f41e426fe708d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBpv7Crc_1a61f60999f7e359d6a91f41e426fe708d" kindref="member">Bpv7Crc::DeserializeCrc32ForBpv7</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/>serialization,<sp/>uint8_t<sp/>*<sp/>numBytesTakenToDecode,<sp/>uint32_t<sp/>&amp;<sp/>crc32)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>initialCborByte<sp/>=<sp/>*serialization++;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initialCborByte<sp/>!=<sp/>((2U<sp/>&lt;&lt;<sp/>5)<sp/>|<sp/>4U))<sp/>{<sp/></highlight><highlight class="comment">//major<sp/>type<sp/>2,<sp/>additional<sp/>information<sp/>4<sp/>(byte<sp/>string<sp/>of<sp/>length<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>=<sp/>*serialization++;<sp/></highlight><highlight class="comment">//msb<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>|=<sp/>*serialization++;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>|=<sp/>*serialization++;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>crc32<sp/>|=<sp/>*serialization;<sp/></highlight><highlight class="comment">//lsb<sp/>last</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>*numBytesTakenToDecode<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CRC32C_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCrc32c__InOrderChunks_1_1Impl" kindref="compound">Crc32c_InOrderChunks::Impl</ref><sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1adb75c239105c8e18779eb6ee55c50951" kindref="member">Impl</ref>()<sp/>:<sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>(0)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a9784eb1e72153fc5cc25517c6d249ea5" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a38a52413a0540df0376e5cea8dab6d68" kindref="member">~Impl</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a9784eb1e72153fc5cc25517c6d249ea5" kindref="member">Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref><sp/>=<sp/><ref refid="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" kindref="member">CRC32C_INIT</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a8a6959aaf2235022555032b14d224512" kindref="member">AddUnalignedBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref><sp/>=<sp/>Crc32C_Unaligned_Hardware_AddBytes(<ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>,<sp/>dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1af5520a0e638922838f200089a1695b5f" kindref="member">FinalizeAndGet</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Bpv7Crc_8cpp_1a5c76e9421a43cbaac4d69bc6ad847cd3" kindref="member">Crc32C_Finalize</ref>(<ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="classCrc32c__InOrderChunks_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCrc32c__InOrderChunks_1_1Impl" kindref="compound">Crc32c_InOrderChunks::Impl</ref><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="201" refid="classCrc32c__InOrderChunks_1_1Impl_1adb75c239105c8e18779eb6ee55c50951" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1adb75c239105c8e18779eb6ee55c50951" kindref="member">Impl</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a9784eb1e72153fc5cc25517c6d249ea5" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204" refid="classCrc32c__InOrderChunks_1_1Impl_1a38a52413a0540df0376e5cea8dab6d68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a38a52413a0540df0376e5cea8dab6d68" kindref="member">~Impl</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="205" refid="classCrc32c__InOrderChunks_1_1Impl_1a9784eb1e72153fc5cc25517c6d249ea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a9784eb1e72153fc5cc25517c6d249ea5" kindref="member">Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>.reset();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208" refid="classCrc32c__InOrderChunks_1_1Impl_1a8a6959aaf2235022555032b14d224512" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a8a6959aaf2235022555032b14d224512" kindref="member">AddUnalignedBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>.process_bytes(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211" refid="classCrc32c__InOrderChunks_1_1Impl_1af5520a0e638922838f200089a1695b5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1af5520a0e638922838f200089a1695b5f" kindref="member">FinalizeAndGet</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="215" refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" kindref="member">boost_crc32c_t</ref><sp/><ref refid="classCrc32c__InOrderChunks_1_1Impl_1a2ef5399d5d40a62be73b6967688ff0b4" kindref="member">m_crc</ref>;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="classCrc32c__InOrderChunks_1a3db47fd3c0c495450a8e3e14a74a6914" refkind="member"><highlight class="normal"><ref refid="classCrc32c__InOrderChunks_1a3db47fd3c0c495450a8e3e14a74a6914" kindref="member">Crc32c_InOrderChunks::Crc32c_InOrderChunks</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pimpl(<ref refid="namespaceboost" kindref="compound">boost</ref>::make_unique&lt;<ref refid="classCrc32c__InOrderChunks" kindref="compound">Crc32c_InOrderChunks</ref>::<ref refid="classCrc32c__InOrderChunks_1_1Impl" kindref="compound">Impl</ref>&gt;())<sp/>{}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="classCrc32c__InOrderChunks_1a25157fdc6448a99d2c03d19cbb57c753" refkind="member"><highlight class="normal"><ref refid="classCrc32c__InOrderChunks_1a25157fdc6448a99d2c03d19cbb57c753" kindref="member">Crc32c_InOrderChunks::~Crc32c_InOrderChunks</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="classCrc32c__InOrderChunks_1a8d669338a91e7f8ccad1c4abd1e6b70a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1a8d669338a91e7f8ccad1c4abd1e6b70a" kindref="member">Crc32c_InOrderChunks::Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1a71d3d99c28fc360db440f3c32ef36746" kindref="member">m_pimpl</ref>-&gt;Reset();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="classCrc32c__InOrderChunks_1affd007bcfd48dcfa1c66023fa9c8c93a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1affd007bcfd48dcfa1c66023fa9c8c93a" kindref="member">Crc32c_InOrderChunks::AddUnalignedBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__InOrderChunks_1a71d3d99c28fc360db440f3c32ef36746" kindref="member">m_pimpl</ref>-&gt;AddUnalignedBytes(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="classCrc32c__InOrderChunks_1a462db77fa4e8f951d0125c7840386356" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classCrc32c__InOrderChunks_1a462db77fa4e8f951d0125c7840386356" kindref="member">Crc32c_InOrderChunks::FinalizeAndGet</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__InOrderChunks_1a71d3d99c28fc360db440f3c32ef36746" kindref="member">m_pimpl</ref>-&gt;FinalizeAndGet();</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl" kindref="compound">Crc32c_ReceiveOutOfOrderChunks::Impl</ref><sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="239" refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength" kindref="compound">CrcAndLength</ref><sp/>{</highlight></codeline>
+<codeline lineno="240" refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1adfd7a2462c47b15ee672f5aa3f277a01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1adfd7a2462c47b15ee672f5aa3f277a01" kindref="member">crc</ref>;</highlight></codeline>
+<codeline lineno="241" refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1a02791e9bb610fccf8372f9e881c5302c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1a02791e9bb610fccf8372f9e881c5302c" kindref="member">length</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="243" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1aa8ac7567d0bc369fa886e5dfe3b8a9de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1aa8ac7567d0bc369fa886e5dfe3b8a9de" kindref="member">Impl</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1ac854f71f7f0ca9ff3dd85573387b2043" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a1352c0949e08b645ddb2c0b8ab5e4a47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a1352c0949e08b645ddb2c0b8ab5e4a47" kindref="member">~Impl</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="247" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1ac854f71f7f0ca9ff3dd85573387b2043" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1ac854f71f7f0ca9ff3dd85573387b2043" kindref="member">Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a4c254049b714698c06594bac012220bd" kindref="member">m_mapOffsetToCrcAndLength</ref>.clear();</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a3e5114f6b5d5dab19e2fac53e7869835" kindref="member">AddUnalignedBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>offset,<sp/>std::size_t<sp/>length);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a2ce142b3790a61a15373cdd340b9d4a0" kindref="member">FinalizeAndGet</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="253" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a69496e8f489d0942b628fc3d16a242d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;std::size_t,<sp/>CrcAndLength&gt;<sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a69496e8f489d0942b628fc3d16a242d7" kindref="member">map_offset_to_crc_and_length_t</ref>;</highlight></codeline>
+<codeline lineno="254" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a4c254049b714698c06594bac012220bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a69496e8f489d0942b628fc3d16a242d7" kindref="member">map_offset_to_crc_and_length_t</ref><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a4c254049b714698c06594bac012220bd" kindref="member">m_mapOffsetToCrcAndLength</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="classCrc32c__ReceiveOutOfOrderChunks_1a9d6bfac038f06d808a546f970ffe9368" refkind="member"><highlight class="normal"><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a9d6bfac038f06d808a546f970ffe9368" kindref="member">Crc32c_ReceiveOutOfOrderChunks::Crc32c_ReceiveOutOfOrderChunks</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pimpl(<ref refid="namespaceboost" kindref="compound">boost</ref>::make_unique&lt;<ref refid="classCrc32c__ReceiveOutOfOrderChunks" kindref="compound">Crc32c_ReceiveOutOfOrderChunks</ref>::<ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl" kindref="compound">Impl</ref>&gt;())<sp/>{}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260" refid="classCrc32c__ReceiveOutOfOrderChunks_1ad907d95f482c40d83a9cdffc0b59f1f8" refkind="member"><highlight class="normal"><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1ad907d95f482c40d83a9cdffc0b59f1f8" kindref="member">Crc32c_ReceiveOutOfOrderChunks::~Crc32c_ReceiveOutOfOrderChunks</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="classCrc32c__ReceiveOutOfOrderChunks_1a06c3ecddaf9d96cc752cb0a50a1c27c3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a06c3ecddaf9d96cc752cb0a50a1c27c3" kindref="member">Crc32c_ReceiveOutOfOrderChunks::Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a12ef22a7ed9e11740e4bedd73ea8eb35" kindref="member">m_pimpl</ref>-&gt;Reset();</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="classCrc32c__ReceiveOutOfOrderChunks_1a85cff09babf82ba4deb49608201efabd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a85cff09babf82ba4deb49608201efabd" kindref="member">Crc32c_ReceiveOutOfOrderChunks::AddUnalignedBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>offset,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a12ef22a7ed9e11740e4bedd73ea8eb35" kindref="member">m_pimpl</ref>-&gt;AddUnalignedBytes(dataUnaligned,<sp/>offset,<sp/>length);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="classCrc32c__ReceiveOutOfOrderChunks_1a91e8faedd022600c7a6691e581117e1b" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a91e8faedd022600c7a6691e581117e1b" kindref="member">Crc32c_ReceiveOutOfOrderChunks::FinalizeAndGet</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1a12ef22a7ed9e11740e4bedd73ea8eb35" kindref="member">m_pimpl</ref>-&gt;FinalizeAndGet();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="comment">//https://stackoverflow.com/questions/23122312/crc-calculation-of-a-mostly-static-data-stream/23126768#23126768</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="279"><highlight class="comment">Trick<sp/>#1:<sp/>CRCs<sp/>are<sp/>linear.<sp/>So<sp/>if<sp/>you<sp/>have<sp/>stream<sp/>X<sp/>and<sp/>stream<sp/>Y<sp/>of<sp/>the<sp/>same<sp/>length</highlight></codeline>
+<codeline lineno="280"><highlight class="comment">and<sp/>exclusive-or<sp/>the<sp/>two<sp/>streams<sp/>bit-by-bit<sp/>to<sp/>get<sp/>Z,<sp/>i.e.<sp/>Z<sp/>=<sp/>X<sp/>^<sp/>Y<sp/>(using<sp/>the<sp/>C<sp/>notation<sp/>for<sp/>exclusive-or),</highlight></codeline>
+<codeline lineno="281"><highlight class="comment">then<sp/>CRC(Z)<sp/>=<sp/>CRC(X)<sp/>^<sp/>CRC(Y).</highlight></codeline>
+<codeline lineno="282"><highlight class="comment">For<sp/>the<sp/>problem<sp/>at<sp/>hand<sp/>we<sp/>have<sp/>two<sp/>streams<sp/>A<sp/>and<sp/>B<sp/>of<sp/>differing<sp/>length<sp/>that<sp/>we<sp/>want<sp/>to<sp/>concatenate<sp/>into<sp/>stream<sp/>Z.</highlight></codeline>
+<codeline lineno="283"><highlight class="comment">What<sp/>we<sp/>have<sp/>available<sp/>are<sp/>CRC(A)<sp/>and<sp/>CRC(B).<sp/>What<sp/>we<sp/>want<sp/>is<sp/>a<sp/>quick<sp/>way<sp/>to<sp/>compute<sp/>CRC(Z).</highlight></codeline>
+<codeline lineno="284"><highlight class="comment">The<sp/>trick<sp/>is<sp/>to<sp/>construct<sp/>X<sp/>=<sp/>A<sp/>concatenated<sp/>with<sp/>length(B)<sp/>zero<sp/>bits,<sp/>and<sp/>Y<sp/>=<sp/>length(A)<sp/>zero<sp/>bits<sp/>concatenated<sp/>with<sp/>B.</highlight></codeline>
+<codeline lineno="285"><highlight class="comment">So<sp/>if<sp/>we<sp/>represent<sp/>concatenation<sp/>simply<sp/>by<sp/>juxtaposition<sp/>of<sp/>the<sp/>symbols,</highlight></codeline>
+<codeline lineno="286"><highlight class="comment">X<sp/>=<sp/>A0,<sp/>Y<sp/>=<sp/>0B,<sp/>then<sp/>X^Y<sp/>=<sp/>Z<sp/>=<sp/>AB.<sp/>Then<sp/>we<sp/>have<sp/>CRC(Z)<sp/>=<sp/>CRC(A0)<sp/>^<sp/>CRC(0B).</highlight></codeline>
+<codeline lineno="287"><highlight class="comment"></highlight></codeline>
+<codeline lineno="288"><highlight class="comment">Now<sp/>we<sp/>need<sp/>to<sp/>know<sp/>CRC(A0)<sp/>and<sp/>CRC(0B).<sp/>CRC(0B)<sp/>is<sp/>easy.</highlight></codeline>
+<codeline lineno="289"><highlight class="comment">If<sp/>we<sp/>feed<sp/>a<sp/>bunch<sp/>of<sp/>zeros<sp/>to<sp/>the<sp/>CRC<sp/>machine<sp/>starting<sp/>with<sp/>zero,</highlight></codeline>
+<codeline lineno="290"><highlight class="comment">the<sp/>register<sp/>is<sp/>still<sp/>filled<sp/>with<sp/>zeros.<sp/>So<sp/>it&apos;s<sp/>as<sp/>if<sp/>we<sp/>did<sp/>nothing<sp/>at<sp/>all.</highlight></codeline>
+<codeline lineno="291"><highlight class="comment">Therefore<sp/>CRC(0B)<sp/>=<sp/>CRC(B).</highlight></codeline>
+<codeline lineno="292"><highlight class="comment"></highlight></codeline>
+<codeline lineno="293"><highlight class="comment">CRC(A0)<sp/>requires<sp/>more<sp/>work<sp/>however.</highlight></codeline>
+<codeline lineno="294"><highlight class="comment">Taking<sp/>a<sp/>non-zero<sp/>CRC<sp/>and<sp/>feeding<sp/>zeros<sp/>to<sp/>the<sp/>CRC<sp/>machine<sp/>doesn&apos;t<sp/>leave<sp/>it<sp/>alone.</highlight></codeline>
+<codeline lineno="295"><highlight class="comment">Every<sp/>zero<sp/>changes<sp/>the<sp/>register<sp/>contents.<sp/>So<sp/>to<sp/>get<sp/>CRC(A0),</highlight></codeline>
+<codeline lineno="296"><highlight class="comment">we<sp/>need<sp/>to<sp/>set<sp/>the<sp/>register<sp/>to<sp/>CRC(A),<sp/>and<sp/>then<sp/>run<sp/>length(B)<sp/>zeros<sp/>through<sp/>it.</highlight></codeline>
+<codeline lineno="297"><highlight class="comment">Then<sp/>we<sp/>can<sp/>exclusive-or<sp/>the<sp/>result<sp/>of<sp/>that<sp/>with<sp/>CRC(B)<sp/>=<sp/>CRC(0B),</highlight></codeline>
+<codeline lineno="298"><highlight class="comment">and<sp/>we<sp/>get<sp/>what<sp/>we<sp/>want,<sp/>which<sp/>is<sp/>CRC(Z)<sp/>=<sp/>CRC(AB).<sp/>Voila!</highlight></codeline>
+<codeline lineno="299"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a2ce142b3790a61a15373cdd340b9d4a0" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a2ce142b3790a61a15373cdd340b9d4a0" kindref="member">Crc32c_ReceiveOutOfOrderChunks::Impl::FinalizeAndGet</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a4c254049b714698c06594bac012220bd" kindref="member">m_mapOffsetToCrcAndLength</ref>.size()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" kindref="member">CRC32C_INIT</ref>;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>map_offset_to_crc_and_length_t::const_iterator<sp/>it<sp/>=<sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a4c254049b714698c06594bac012220bd" kindref="member">m_mapOffsetToCrcAndLength</ref>.cbegin();</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>crc<sp/>=<sp/>it-&gt;second.crc;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offsetA<sp/>=<sp/>it-&gt;first;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>lengthA<sp/>=<sp/>it-&gt;second.length;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>++it;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(;<sp/>it<sp/>!=<sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a4c254049b714698c06594bac012220bd" kindref="member">m_mapOffsetToCrcAndLength</ref>.cend();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offsetB<sp/>=<sp/>it-&gt;first;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((offsetB<sp/>-<sp/>offsetA)<sp/>!=<sp/>lengthA)<sp/>{</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight><highlight class="comment">//invalid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>crcA<sp/>=<sp/>crc;<sp/></highlight><highlight class="comment">//<sp/>i-1;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>crc0B<sp/>=<sp/>it-&gt;second.crc;<sp/></highlight><highlight class="comment">//<sp/>CRC(0B)<sp/>=<sp/>CRC(B).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>lengthB<sp/>=<sp/>it-&gt;second.length;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_ZLIB_CRC_COMBINE_ALGORITHM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="classBpv7Crc_1aacb925d8d8b38346137e82666ca93b17" kindref="member">Bpv7Crc::Crc32cCombine</ref>(crcA,<sp/>crc0B,<sp/>lengthB);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>USE_CRC32C_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>crcA0<sp/>=<sp/>Crc32C_Unaligned_Hardware_AddZeros(crcA,<sp/>lengthB);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" kindref="member">boost_crc32c_t</ref><sp/>crcSoft(boost::detail::reflect_unsigned&lt;uint32_t&gt;(crcA));</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>z<sp/>=<sp/>0;<sp/>z<sp/>&lt;<sp/>lengthB;<sp/>++z)<sp/>{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crcSoft.process_byte(0);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>crcA0<sp/>=<sp/>~crcSoft();</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/>crcA0<sp/>^<sp/>crc0B;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offsetA<sp/>=<sp/>it-&gt;first;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lengthA<sp/>=<sp/>it-&gt;second.length;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Bpv7Crc_8cpp_1a5c76e9421a43cbaac4d69bc6ad847cd3" kindref="member">Crc32C_Finalize</ref>(crc);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="338" refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a3e5114f6b5d5dab19e2fac53e7869835" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1a3e5114f6b5d5dab19e2fac53e7869835" kindref="member">Crc32c_ReceiveOutOfOrderChunks::Impl::AddUnalignedBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>dataUnaligned,<sp/>std::size_t<sp/>offset,<sp/>std::size_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength" kindref="compound">CrcAndLength</ref><sp/>crcAndLength;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CRC32C_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>crcAndLength.<ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1adfd7a2462c47b15ee672f5aa3f277a01" kindref="member">crc</ref><sp/>=<sp/>Crc32C_Unaligned_Hardware_AddBytes((offset<sp/>==<sp/>0)<sp/>?<sp/><ref refid="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" kindref="member">CRC32C_INIT</ref><sp/>:<sp/>0,<sp/>dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Bpv7Crc_8cpp_1a887725ec48cdaf5c4a022d1ab89ae2c8" kindref="member">boost_crc32c_t</ref><sp/>crcSoft((offset<sp/>==<sp/>0)<sp/>?<sp/><ref refid="Bpv7Crc_8cpp_1a223c66f874a9376cb3667c65fafb73de" kindref="member">CRC32C_INIT</ref><sp/>:<sp/>0);<sp/></highlight><highlight class="comment">//reflect<sp/>identical<sp/>to<sp/>constants<sp/>(not<sp/>needed)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>crcSoft.process_bytes(dataUnaligned,<sp/>length);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>crcAndLength.<ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1adfd7a2462c47b15ee672f5aa3f277a01" kindref="member">crc</ref><sp/>=<sp/>~crcSoft();</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>crcAndLength.<ref refid="structCrc32c__ReceiveOutOfOrderChunks_1_1Impl_1_1CrcAndLength_1a02791e9bb610fccf8372f9e881c5302c" kindref="member">length</ref><sp/>=<sp/>length;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_mapOffsetToCrcAndLength.emplace(offset,<sp/>crcAndLength).second;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/bpcodec/src/codec/Bpv7Crc.cpp"/>
+  </compounddef>
+</doxygen>

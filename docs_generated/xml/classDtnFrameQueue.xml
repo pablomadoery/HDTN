@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classDtnFrameQueue" kind="class" language="C++" prot="public">
+    <compoundname>DtnFrameQueue</compoundname>
+    <includes refid="DtnFrameQueue_8h" local="no">DtnFrameQueue.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> &gt;</type>
+        <definition>std::queue&lt;rtp_frame&gt; DtnFrameQueue::m_frameQueue</definition>
+        <argsstring></argsstring>
+        <name>m_frameQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="24" column="16" bodyfile="common/streaming/include/DtnFrameQueue.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classDtnFrameQueue_1a3d62326a4123932dd1ac765e5f755307" compoundref="DtnFrameQueue_8cpp" startline="98" endline="101">ClearQueue</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a36351ac8ee944b39995922a3bc45b534" compoundref="DtnFrameQueue_8cpp" startline="83" endline="86">GetCurrentQueueSize</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a5b07555452700e5b7717ba7a926b39bb" compoundref="DtnFrameQueue_8cpp" startline="29" endline="32">GetNextFrame</referencedby>
+        <referencedby refid="classDtnFrameQueue_1aafbadf9c06af216ee79047fe142586b6" compoundref="DtnFrameQueue_8cpp" startline="103" endline="109">GetNextQueueReady</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a12a1838140d2d485fa2a173dc8016414" compoundref="DtnFrameQueue_8cpp" startline="93" endline="96">GetQueue</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a17aa1cf1c567b08bd6c532137d3b4142" compoundref="DtnFrameQueue_8cpp" startline="35" endline="43">PopFrame</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a7b05e43d326bae1ab232aab00082ed08" compoundref="DtnFrameQueue_8cpp" startline="46" endline="61">PushFrame</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnFrameQueue_1a181e54fcf6789af9591c2f45e7327325" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t DtnFrameQueue::m_queueSize</definition>
+        <argsstring></argsstring>
+        <name>m_queueSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="25" column="12" bodyfile="common/streaming/include/DtnFrameQueue.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classDtnFrameQueue_1a16df82a1c332396b26c4f6b8dd9480f4" compoundref="DtnFrameQueue_8cpp" startline="19" endline="22">DtnFrameQueue</referencedby>
+        <referencedby refid="classDtnFrameQueue_1aafbadf9c06af216ee79047fe142586b6" compoundref="DtnFrameQueue_8cpp" startline="103" endline="109">GetNextQueueReady</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a7b05e43d326bae1ab232aab00082ed08" compoundref="DtnFrameQueue_8cpp" startline="46" endline="61">PushFrame</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnFrameQueue_1af00a5f604b38b02544207645e6ef3957" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t DtnFrameQueue::m_totalBytesInQueue</definition>
+        <argsstring></argsstring>
+        <name>m_totalBytesInQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="26" column="12" bodyfile="common/streaming/include/DtnFrameQueue.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classDtnFrameQueue_1a4130ac4e1b98c80b3da43754f0f835f2" compoundref="DtnFrameQueue_8cpp" startline="88" endline="91">GetCurrentQueueSizeBytes</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a17aa1cf1c567b08bd6c532137d3b4142" compoundref="DtnFrameQueue_8cpp" startline="35" endline="43">PopFrame</referencedby>
+        <referencedby refid="classDtnFrameQueue_1a7b05e43d326bae1ab232aab00082ed08" compoundref="DtnFrameQueue_8cpp" startline="46" endline="61">PushFrame</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnFrameQueue_1a38ccceb4a4953cf9a0b68154b7cc3652" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex DtnFrameQueue::m_queueMutex</definition>
+        <argsstring></argsstring>
+        <name>m_queueMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="28" column="18" bodyfile="common/streaming/include/DtnFrameQueue.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classDtnFrameQueue_1a548c845a2e58052b03251fedeab1f237" compoundref="DtnFrameQueue_8cpp" startline="111" endline="119">GetNextQueueTimeout</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnFrameQueue_1ae4c4b5a6346b3786e5bf95e2a607ba0e" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable DtnFrameQueue::m_queueCv</definition>
+        <argsstring></argsstring>
+        <name>m_queueCv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="29" column="31" bodyfile="common/streaming/include/DtnFrameQueue.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classDtnFrameQueue_1a548c845a2e58052b03251fedeab1f237" compoundref="DtnFrameQueue_8cpp" startline="111" endline="119">GetNextQueueTimeout</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDtnFrameQueue_1a927132819853430e6897c0c9ddb5442c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DtnFrameQueue::DtnFrameQueue</definition>
+        <argsstring>()=delete</argsstring>
+        <name>DtnFrameQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="31" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a16df82a1c332396b26c4f6b8dd9480f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT</type>
+        <definition>DtnFrameQueue::DtnFrameQueue</definition>
+        <argsstring>(size_t queueSize)</argsstring>
+        <name>DtnFrameQueue</name>
+        <param>
+          <type>size_t</type>
+          <declname>queueSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="32" column="26" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="19" bodyend="22"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDtnFrameQueue_1a181e54fcf6789af9591c2f45e7327325" compoundref="DtnFrameQueue_8h" startline="25">m_queueSize</references>
+        <references refid="DtnFrameQueue_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DtnFrameQueue_8cpp" startline="17">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a388bfa2478a06c223ab6b22d42225991" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT</type>
+        <definition>DtnFrameQueue::~DtnFrameQueue</definition>
+        <argsstring>()</argsstring>
+        <name>~DtnFrameQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="33" column="26" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a5b07555452700e5b7717ba7a926b39bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT <ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> &amp;</type>
+        <definition>rtp_frame &amp; DtnFrameQueue::GetNextFrame</definition>
+        <argsstring>()</argsstring>
+        <name>GetNextFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="35" column="36" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="29" bodyend="32"/>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a17aa1cf1c567b08bd6c532137d3b4142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnFrameQueue::PopFrame</definition>
+        <argsstring>()</argsstring>
+        <name>PopFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="36" column="31" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="35" bodyend="43"/>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+        <references refid="classDtnFrameQueue_1af00a5f604b38b02544207645e6ef3957" compoundref="DtnFrameQueue_8h" startline="26">m_totalBytesInQueue</references>
+        <referencedby refid="classDtnFrameQueue_1a7b05e43d326bae1ab232aab00082ed08" compoundref="DtnFrameQueue_8cpp" startline="46" endline="61">PushFrame</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a7b05e43d326bae1ab232aab00082ed08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnFrameQueue::PushFrame</definition>
+        <argsstring>(buffer *image_buffer, rtp_frame *frame)</argsstring>
+        <name>PushFrame</name>
+        <param>
+          <type><ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>image_buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="37" column="31" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="46" bodyend="61"/>
+        <references refid="structbuffer_1a4f467cc251f2f4504d484913c7da47bd" compoundref="DtnUtil_8h" startline="37">buffer::length</references>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+        <references refid="classDtnFrameQueue_1a181e54fcf6789af9591c2f45e7327325" compoundref="DtnFrameQueue_8h" startline="25">m_queueSize</references>
+        <references refid="classDtnFrameQueue_1af00a5f604b38b02544207645e6ef3957" compoundref="DtnFrameQueue_8h" startline="26">m_totalBytesInQueue</references>
+        <references refid="classDtnFrameQueue_1a17aa1cf1c567b08bd6c532137d3b4142" compoundref="DtnFrameQueue_8cpp" startline="35" endline="43">PopFrame</references>
+        <references refid="structbuffer_1a8be3721dc0863d9dd7460504bbaeb0d1" compoundref="DtnUtil_8h" startline="36">buffer::start</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a65d113d56aea01ed97dc30690de9a3ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnFrameQueue::PushFrame</definition>
+        <argsstring>(const rtp_frame &amp;frame)</argsstring>
+        <name>PushFrame</name>
+        <param>
+          <type>const <ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="38" column="31" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="64" bodyend="80"/>
+        <references refid="structbuffer_1a4f467cc251f2f4504d484913c7da47bd" compoundref="DtnUtil_8h" startline="37">buffer::length</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+        <references refid="classDtnFrameQueue_1a181e54fcf6789af9591c2f45e7327325" compoundref="DtnFrameQueue_8h" startline="25">m_queueSize</references>
+        <references refid="classDtnFrameQueue_1af00a5f604b38b02544207645e6ef3957" compoundref="DtnFrameQueue_8h" startline="26">m_totalBytesInQueue</references>
+        <references refid="structrtp__frame_1ad9e399c89ed1d4a7f91a4d6e8e5e5701" compoundref="DtnRtpFrame_8h" startline="98">rtp_frame::payload</references>
+        <references refid="classDtnFrameQueue_1a17aa1cf1c567b08bd6c532137d3b4142" compoundref="DtnFrameQueue_8cpp" startline="35" endline="43">PopFrame</references>
+        <references refid="structbuffer_1a8be3721dc0863d9dd7460504bbaeb0d1" compoundref="DtnUtil_8h" startline="36">buffer::start</references>
+        <references refid="DtnFrameQueue_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DtnFrameQueue_8cpp" startline="17">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a3d62326a4123932dd1ac765e5f755307" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnFrameQueue::ClearQueue</definition>
+        <argsstring>()</argsstring>
+        <name>ClearQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="39" column="31" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="98" bodyend="101"/>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a36351ac8ee944b39995922a3bc45b534" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT size_t</type>
+        <definition>size_t DtnFrameQueue::GetCurrentQueueSize</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentQueueSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="41" column="33" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="83" bodyend="86"/>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a4130ac4e1b98c80b3da43754f0f835f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT size_t</type>
+        <definition>size_t DtnFrameQueue::GetCurrentQueueSizeBytes</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentQueueSizeBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="42" column="33" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="88" bodyend="91"/>
+        <references refid="classDtnFrameQueue_1af00a5f604b38b02544207645e6ef3957" compoundref="DtnFrameQueue_8h" startline="26">m_totalBytesInQueue</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a12a1838140d2d485fa2a173dc8016414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT std::queue&lt; <ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> &gt; &amp;</type>
+        <definition>std::queue&lt; rtp_frame &gt; &amp; DtnFrameQueue::GetQueue</definition>
+        <argsstring>()</argsstring>
+        <name>GetQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="43" column="37" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="93" bodyend="96"/>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1aafbadf9c06af216ee79047fe142586b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT bool</type>
+        <definition>bool DtnFrameQueue::GetNextQueueReady</definition>
+        <argsstring>()</argsstring>
+        <name>GetNextQueueReady</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="46" column="31" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="103" bodyend="109"/>
+        <references refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" compoundref="DtnFrameQueue_8h" startline="24">m_frameQueue</references>
+        <references refid="classDtnFrameQueue_1a181e54fcf6789af9591c2f45e7327325" compoundref="DtnFrameQueue_8h" startline="25">m_queueSize</references>
+        <referencedby refid="classDtnFrameQueue_1a548c845a2e58052b03251fedeab1f237" compoundref="DtnFrameQueue_8cpp" startline="111" endline="119">GetNextQueueTimeout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDtnFrameQueue_1a548c845a2e58052b03251fedeab1f237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT bool</type>
+        <definition>bool DtnFrameQueue::GetNextQueueTimeout</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;timeout)</argsstring>
+        <name>GetNextQueueTimeout</name>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnFrameQueue.h" line="47" column="31" bodyfile="common/streaming/src/DtnFrameQueue.cpp" bodystart="111" bodyend="119"/>
+        <references refid="classDtnFrameQueue_1aafbadf9c06af216ee79047fe142586b6" compoundref="DtnFrameQueue_8cpp" startline="103" endline="109">GetNextQueueReady</references>
+        <references refid="classDtnFrameQueue_1ae4c4b5a6346b3786e5bf95e2a607ba0e" compoundref="DtnFrameQueue_8h" startline="29">m_queueCv</references>
+        <references refid="classDtnFrameQueue_1a38ccceb4a4953cf9a0b68154b7cc3652" compoundref="DtnFrameQueue_8h" startline="28">m_queueMutex</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/streaming/include/DtnFrameQueue.h" line="21" column="1" bodyfile="common/streaming/include/DtnFrameQueue.h" bodystart="22" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classDtnFrameQueue_1a3d62326a4123932dd1ac765e5f755307" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>ClearQueue</name></member>
+      <member refid="classDtnFrameQueue_1a927132819853430e6897c0c9ddb5442c" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>DtnFrameQueue</name></member>
+      <member refid="classDtnFrameQueue_1a16df82a1c332396b26c4f6b8dd9480f4" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>DtnFrameQueue</name></member>
+      <member refid="classDtnFrameQueue_1a36351ac8ee944b39995922a3bc45b534" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>GetCurrentQueueSize</name></member>
+      <member refid="classDtnFrameQueue_1a4130ac4e1b98c80b3da43754f0f835f2" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>GetCurrentQueueSizeBytes</name></member>
+      <member refid="classDtnFrameQueue_1a5b07555452700e5b7717ba7a926b39bb" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>GetNextFrame</name></member>
+      <member refid="classDtnFrameQueue_1aafbadf9c06af216ee79047fe142586b6" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>GetNextQueueReady</name></member>
+      <member refid="classDtnFrameQueue_1a548c845a2e58052b03251fedeab1f237" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>GetNextQueueTimeout</name></member>
+      <member refid="classDtnFrameQueue_1a12a1838140d2d485fa2a173dc8016414" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>GetQueue</name></member>
+      <member refid="classDtnFrameQueue_1a715d9e81705b599fad91d94ca867ea00" prot="private" virt="non-virtual"><scope>DtnFrameQueue</scope><name>m_frameQueue</name></member>
+      <member refid="classDtnFrameQueue_1ae4c4b5a6346b3786e5bf95e2a607ba0e" prot="private" virt="non-virtual"><scope>DtnFrameQueue</scope><name>m_queueCv</name></member>
+      <member refid="classDtnFrameQueue_1a38ccceb4a4953cf9a0b68154b7cc3652" prot="private" virt="non-virtual"><scope>DtnFrameQueue</scope><name>m_queueMutex</name></member>
+      <member refid="classDtnFrameQueue_1a181e54fcf6789af9591c2f45e7327325" prot="private" virt="non-virtual"><scope>DtnFrameQueue</scope><name>m_queueSize</name></member>
+      <member refid="classDtnFrameQueue_1af00a5f604b38b02544207645e6ef3957" prot="private" virt="non-virtual"><scope>DtnFrameQueue</scope><name>m_totalBytesInQueue</name></member>
+      <member refid="classDtnFrameQueue_1a17aa1cf1c567b08bd6c532137d3b4142" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>PopFrame</name></member>
+      <member refid="classDtnFrameQueue_1a7b05e43d326bae1ab232aab00082ed08" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>PushFrame</name></member>
+      <member refid="classDtnFrameQueue_1a65d113d56aea01ed97dc30690de9a3ed" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>PushFrame</name></member>
+      <member refid="classDtnFrameQueue_1a388bfa2478a06c223ab6b22d42225991" prot="public" virt="non-virtual"><scope>DtnFrameQueue</scope><name>~DtnFrameQueue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

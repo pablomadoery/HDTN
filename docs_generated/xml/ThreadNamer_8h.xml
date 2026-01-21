@@ -1,0 +1,501 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="ThreadNamer_8h" kind="file" language="C++">
+    <compoundname>ThreadNamer.h</compoundname>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">string</includes>
+    <includes local="yes">hdtn_util_export.h</includes>
+    <includedby refid="BpFileTransfer_8cpp" local="yes">common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp</includedby>
+    <includedby refid="BpFileTransferMain_8cpp" local="yes">common/bpcodec/apps/bpfiletransfer/src/BpFileTransferMain.cpp</includedby>
+    <includedby refid="BpGenAsyncMain_8cpp" local="yes">common/bpcodec/apps/bpgen/src/BpGenAsyncMain.cpp</includedby>
+    <includedby refid="BPingMain_8cpp" local="yes">common/bpcodec/apps/bping/src/BPingMain.cpp</includedby>
+    <includedby refid="BpReceiveFileMain_8cpp" local="yes">common/bpcodec/apps/bpreceivefile/src/BpReceiveFileMain.cpp</includedby>
+    <includedby refid="BpReceivePacketMain_8cpp" local="yes">common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketMain.cpp</includedby>
+    <includedby refid="BpReceiveStreamMain_8cpp" local="yes">common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</includedby>
+    <includedby refid="BpSendFile_8cpp" local="yes">common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp</includedby>
+    <includedby refid="BpSendFileMain_8cpp" local="yes">common/bpcodec/apps/bpsendfile/src/BpSendFileMain.cpp</includedby>
+    <includedby refid="BpSendPacketMain_8cpp" local="yes">common/bpcodec/apps/bpsendpacket/src/BpSendPacketMain.cpp</includedby>
+    <includedby refid="BpSendStream_8cpp" local="yes">common/bpcodec/apps/BpSendStream/src/BpSendStream.cpp</includedby>
+    <includedby refid="BpSendStreamMain_8cpp" local="yes">common/bpcodec/apps/BpSendStream/src/BpSendStreamMain.cpp</includedby>
+    <includedby refid="BpSinkAsyncMain_8cpp" local="yes">common/bpcodec/apps/bpsink/BpSinkAsyncMain.cpp</includedby>
+    <includedby refid="BpSinkPattern_8cpp" local="yes">common/bpcodec/src/app_patterns/BpSinkPattern.cpp</includedby>
+    <includedby refid="BpSourcePattern_8cpp" local="yes">common/bpcodec/src/app_patterns/BpSourcePattern.cpp</includedby>
+    <includedby refid="BpOverEncapLocalStreamInduct_8cpp" local="yes">common/induct_manager/src/BpOverEncapLocalStreamInduct.cpp</includedby>
+    <includedby refid="SlipOverUartInduct_8cpp" local="yes">common/induct_manager/src/SlipOverUartInduct.cpp</includedby>
+    <includedby refid="StcpInduct_8cpp" local="yes">common/induct_manager/src/StcpInduct.cpp</includedby>
+    <includedby refid="TcpclInduct_8cpp" local="yes">common/induct_manager/src/TcpclInduct.cpp</includedby>
+    <includedby refid="TcpclV4Induct_8cpp" local="yes">common/induct_manager/src/TcpclV4Induct.cpp</includedby>
+    <includedby refid="UdpInduct_8cpp" local="yes">common/induct_manager/src/UdpInduct.cpp</includedby>
+    <includedby refid="LtpFileTransferMain_8cpp" local="yes">common/ltp/apps/ltp_file_transfer/src/LtpFileTransferMain.cpp</includedby>
+    <includedby refid="LtpEncapLocalStreamEngine_8cpp" local="yes">common/ltp/src/LtpEncapLocalStreamEngine.cpp</includedby>
+    <includedby refid="LtpEngine_8cpp" local="yes">common/ltp/src/LtpEngine.cpp</includedby>
+    <includedby refid="LtpIpcEngine_8cpp" local="yes">common/ltp/src/LtpIpcEngine.cpp</includedby>
+    <includedby refid="LtpUdpEngineManager_8cpp" local="yes">common/ltp/src/LtpUdpEngineManager.cpp</includedby>
+    <includedby refid="BpOverEncapLocalStreamOutduct_8cpp" local="yes">common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp</includedby>
+    <includedby refid="UartInterface_8cpp" local="yes">common/slip_over_uart/src/UartInterface.cpp</includedby>
+    <includedby refid="StcpBundleSink_8cpp" local="yes">common/stcp/src/StcpBundleSink.cpp</includedby>
+    <includedby refid="StcpBundleSource_8cpp" local="yes">common/stcp/src/StcpBundleSource.cpp</includedby>
+    <includedby refid="GStreamerAppSinkInduct_8cpp" local="yes">common/streaming/BpInduct/src/GStreamerAppSinkInduct.cpp</includedby>
+    <includedby refid="GStreamerShmInduct_8cpp" local="yes">common/streaming/BpInduct/src/GStreamerShmInduct.cpp</includedby>
+    <includedby refid="GStreamerAppSrcOutduct_8cpp" local="yes">common/streaming/BpOutduct/src/GStreamerAppSrcOutduct.cpp</includedby>
+    <includedby refid="TcpclBundleSink_8cpp" local="yes">common/tcpcl/src/TcpclBundleSink.cpp</includedby>
+    <includedby refid="TcpclBundleSource_8cpp" local="yes">common/tcpcl/src/TcpclBundleSource.cpp</includedby>
+    <includedby refid="TcpclV4BundleSink_8cpp" local="yes">common/tcpcl/src/TcpclV4BundleSink.cpp</includedby>
+    <includedby refid="TcpclV4BundleSource_8cpp" local="yes">common/tcpcl/src/TcpclV4BundleSource.cpp</includedby>
+    <includedby refid="UdpBundleSink_8cpp" local="yes">common/udp/src/UdpBundleSink.cpp</includedby>
+    <includedby refid="UdpBundleSource_8cpp" local="yes">common/udp/src/UdpBundleSource.cpp</includedby>
+    <includedby refid="SignalHandler_8cpp" local="yes">common/util/src/SignalHandler.cpp</includedby>
+    <includedby refid="ThreadNamer_8cpp" local="yes">common/util/src/ThreadNamer.cpp</includedby>
+    <includedby refid="HdtnCliMain_8cpp" local="yes">module/cli/src/HdtnCliMain.cpp</includedby>
+    <includedby refid="egress_8cpp" local="yes">module/egress/src/egress.cpp</includedby>
+    <includedby refid="EgressAsync_8cpp" local="yes">module/egress/src/EgressAsync.cpp</includedby>
+    <includedby refid="HdtnOneProcessMain_8cpp" local="yes">module/hdtn_one_process/src/HdtnOneProcessMain.cpp</includedby>
+    <includedby refid="ingress_8cpp" local="yes">module/ingress/src/ingress.cpp</includedby>
+    <includedby refid="receive_8cpp" local="yes">module/ingress/src/receive.cpp</includedby>
+    <includedby refid="router_2src_2main_8cpp" local="yes">module/router/src/main.cpp</includedby>
+    <includedby refid="router_8cpp" local="yes">module/router/src/router.cpp</includedby>
+    <includedby refid="BundleStorageManagerAsio_8cpp" local="yes">module/storage/src/BundleStorageManagerAsio.cpp</includedby>
+    <includedby refid="BundleStorageManagerMT_8cpp" local="yes">module/storage/src/BundleStorageManagerMT.cpp</includedby>
+    <includedby refid="StartStorageRunner_8cpp" local="yes">module/storage/src/StartStorageRunner.cpp</includedby>
+    <includedby refid="ZmqStorageInterface_8cpp" local="yes">module/storage/src/ZmqStorageInterface.cpp</includedby>
+    <includedby refid="BeastWebsocketServer_8cpp" local="yes">module/telem_cmd_interface/src/BeastWebsocketServer.cpp</includedby>
+    <includedby refid="TelemetryRunner_8cpp" local="yes">module/telem_cmd_interface/src/TelemetryRunner.cpp</includedby>
+    <includedby refid="UdpDelaySim_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySim.cpp</includedby>
+    <includedby refid="UdpDelaySimMain_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySimMain.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="3">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/ThreadNamer.h</label>
+        <link refid="ThreadNamer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="4">
+        <label>thread</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="13">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamMain.cpp</label>
+        <link refid="BpSendStreamMain_8cpp"/>
+      </node>
+      <node id="7">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketMain.cpp</label>
+        <link refid="BpReceivePacketMain_8cpp"/>
+      </node>
+      <node id="30">
+        <label>common/stcp/src/StcpBundleSink.cpp</label>
+        <link refid="StcpBundleSink_8cpp"/>
+      </node>
+      <node id="25">
+        <label>common/ltp/src/LtpEngine.cpp</label>
+        <link refid="LtpEngine_8cpp"/>
+      </node>
+      <node id="34">
+        <label>common/streaming/BpOutduct/src/GStreamerAppSrcOutduct.cpp</label>
+        <link refid="GStreamerAppSrcOutduct_8cpp"/>
+      </node>
+      <node id="4">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncMain.cpp</label>
+        <link refid="BpGenAsyncMain_8cpp"/>
+      </node>
+      <node id="22">
+        <label>common/induct_manager/src/UdpInduct.cpp</label>
+        <link refid="UdpInduct_8cpp"/>
+      </node>
+      <node id="57">
+        <label>module/udp_delay_sim/src/UdpDelaySim.cpp</label>
+        <link refid="UdpDelaySim_8cpp"/>
+      </node>
+      <node id="17">
+        <label>common/induct_manager/src/BpOverEncapLocalStreamInduct.cpp</label>
+        <link refid="BpOverEncapLocalStreamInduct_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/bpcodec/apps/bping/src/BPingMain.cpp</label>
+        <link refid="BPingMain_8cpp"/>
+      </node>
+      <node id="43">
+        <label>module/cli/src/HdtnCliMain.cpp</label>
+        <link refid="HdtnCliMain_8cpp"/>
+      </node>
+      <node id="26">
+        <label>common/ltp/src/LtpIpcEngine.cpp</label>
+        <link refid="LtpIpcEngine_8cpp"/>
+      </node>
+      <node id="56">
+        <label>module/telem_cmd_interface/src/TelemetryRunner.cpp</label>
+        <link refid="TelemetryRunner_8cpp"/>
+      </node>
+      <node id="15">
+        <label>common/bpcodec/src/app_patterns/BpSinkPattern.cpp</label>
+        <link refid="BpSinkPattern_8cpp"/>
+      </node>
+      <node id="8">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</label>
+        <link refid="BpReceiveStreamMain_8cpp"/>
+      </node>
+      <node id="29">
+        <label>common/slip_over_uart/src/UartInterface.cpp</label>
+        <link refid="UartInterface_8cpp"/>
+      </node>
+      <node id="9">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp</label>
+        <link refid="BpSendFile_8cpp"/>
+      </node>
+      <node id="32">
+        <label>common/streaming/BpInduct/src/GStreamerAppSinkInduct.cpp</label>
+        <link refid="GStreamerAppSinkInduct_8cpp"/>
+      </node>
+      <node id="21">
+        <label>common/induct_manager/src/TcpclV4Induct.cpp</label>
+        <link refid="TcpclV4Induct_8cpp"/>
+      </node>
+      <node id="55">
+        <label>module/telem_cmd_interface/src/BeastWebsocketServer.cpp</label>
+        <link refid="BeastWebsocketServer_8cpp"/>
+      </node>
+      <node id="23">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferMain.cpp</label>
+        <link refid="LtpFileTransferMain_8cpp"/>
+      </node>
+      <node id="50">
+        <label>module/router/src/router.cpp</label>
+        <link refid="router_8cpp"/>
+      </node>
+      <node id="14">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncMain.cpp</label>
+        <link refid="BpSinkAsyncMain_8cpp"/>
+      </node>
+      <node id="16">
+        <label>common/bpcodec/src/app_patterns/BpSourcePattern.cpp</label>
+        <link refid="BpSourcePattern_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp</label>
+        <link refid="BpFileTransfer_8cpp"/>
+      </node>
+      <node id="18">
+        <label>common/induct_manager/src/SlipOverUartInduct.cpp</label>
+        <link refid="SlipOverUartInduct_8cpp"/>
+      </node>
+      <node id="41">
+        <label>common/util/src/SignalHandler.cpp</label>
+        <link refid="SignalHandler_8cpp"/>
+      </node>
+      <node id="44">
+        <label>module/egress/src/egress.cpp</label>
+        <link refid="egress_8cpp"/>
+      </node>
+      <node id="51">
+        <label>module/storage/src/BundleStorageManagerAsio.cpp</label>
+        <link refid="BundleStorageManagerAsio_8cpp"/>
+      </node>
+      <node id="10">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileMain.cpp</label>
+        <link refid="BpSendFileMain_8cpp"/>
+      </node>
+      <node id="27">
+        <label>common/ltp/src/LtpUdpEngineManager.cpp</label>
+        <link refid="LtpUdpEngineManager_8cpp"/>
+      </node>
+      <node id="33">
+        <label>common/streaming/BpInduct/src/GStreamerShmInduct.cpp</label>
+        <link refid="GStreamerShmInduct_8cpp"/>
+      </node>
+      <node id="46">
+        <label>module/hdtn_one_process/src/HdtnOneProcessMain.cpp</label>
+        <link refid="HdtnOneProcessMain_8cpp"/>
+      </node>
+      <node id="39">
+        <label>common/udp/src/UdpBundleSink.cpp</label>
+        <link refid="UdpBundleSink_8cpp"/>
+      </node>
+      <node id="37">
+        <label>common/tcpcl/src/TcpclV4BundleSink.cpp</label>
+        <link refid="TcpclV4BundleSink_8cpp"/>
+      </node>
+      <node id="40">
+        <label>common/udp/src/UdpBundleSource.cpp</label>
+        <link refid="UdpBundleSource_8cpp"/>
+      </node>
+      <node id="49">
+        <label>module/router/src/main.cpp</label>
+        <link refid="router_2src_2main_8cpp"/>
+      </node>
+      <node id="19">
+        <label>common/induct_manager/src/StcpInduct.cpp</label>
+        <link refid="StcpInduct_8cpp"/>
+      </node>
+      <node id="42">
+        <label>common/util/src/ThreadNamer.cpp</label>
+        <link refid="ThreadNamer_8cpp"/>
+      </node>
+      <node id="6">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileMain.cpp</label>
+        <link refid="BpReceiveFileMain_8cpp"/>
+      </node>
+      <node id="31">
+        <label>common/stcp/src/StcpBundleSource.cpp</label>
+        <link refid="StcpBundleSource_8cpp"/>
+      </node>
+      <node id="53">
+        <label>module/storage/src/StartStorageRunner.cpp</label>
+        <link refid="StartStorageRunner_8cpp"/>
+      </node>
+      <node id="20">
+        <label>common/induct_manager/src/TcpclInduct.cpp</label>
+        <link refid="TcpclInduct_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/util/include/ThreadNamer.h</label>
+        <link refid="ThreadNamer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacketMain.cpp</label>
+        <link refid="BpSendPacketMain_8cpp"/>
+      </node>
+      <node id="3">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferMain.cpp</label>
+        <link refid="BpFileTransferMain_8cpp"/>
+      </node>
+      <node id="54">
+        <label>module/storage/src/ZmqStorageInterface.cpp</label>
+        <link refid="ZmqStorageInterface_8cpp"/>
+      </node>
+      <node id="28">
+        <label>common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp</label>
+        <link refid="BpOverEncapLocalStreamOutduct_8cpp"/>
+      </node>
+      <node id="35">
+        <label>common/tcpcl/src/TcpclBundleSink.cpp</label>
+        <link refid="TcpclBundleSink_8cpp"/>
+      </node>
+      <node id="48">
+        <label>module/ingress/src/receive.cpp</label>
+        <link refid="receive_8cpp"/>
+      </node>
+      <node id="45">
+        <label>module/egress/src/EgressAsync.cpp</label>
+        <link refid="EgressAsync_8cpp"/>
+      </node>
+      <node id="38">
+        <label>common/tcpcl/src/TcpclV4BundleSource.cpp</label>
+        <link refid="TcpclV4BundleSource_8cpp"/>
+      </node>
+      <node id="24">
+        <label>common/ltp/src/LtpEncapLocalStreamEngine.cpp</label>
+        <link refid="LtpEncapLocalStreamEngine_8cpp"/>
+      </node>
+      <node id="36">
+        <label>common/tcpcl/src/TcpclBundleSource.cpp</label>
+        <link refid="TcpclBundleSource_8cpp"/>
+      </node>
+      <node id="47">
+        <label>module/ingress/src/ingress.cpp</label>
+        <link refid="ingress_8cpp"/>
+      </node>
+      <node id="52">
+        <label>module/storage/src/BundleStorageManagerMT.cpp</label>
+        <link refid="BundleStorageManagerMT_8cpp"/>
+      </node>
+      <node id="12">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStream.cpp</label>
+        <link refid="BpSendStream_8cpp"/>
+      </node>
+      <node id="58">
+        <label>module/udp_delay_sim/src/UdpDelaySimMain.cpp</label>
+        <link refid="UdpDelaySimMain_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classThreadNamer" prot="public">ThreadNamer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classThreadNamer" kindref="compound">ThreadNamer</ref> static class is used to set the names of running threads created with boost::thread or std::thread, or to set the name of the current/calling thread. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_THREAD_NAMER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_THREAD_NAMER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hdtn_util_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>THREAD_NAMER_ENABLE_DEPRECATED_FUNCTIONS<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classThreadNamer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classThreadNamer" kindref="compound">ThreadNamer</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="classThreadNamer_1ae72c09678b0386f4a16a4e5f0ca8f0a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classThreadNamer_1ae72c09678b0386f4a16a4e5f0ca8f0a3" kindref="member">ThreadNamer</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>THREAD_NAMER_ENABLE_DEPRECATED_FUNCTIONS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetThreadName(boost::thread&amp;<sp/>thread,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>threadName);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetThreadName(std::thread&amp;<sp/>thread,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>threadName);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" kindref="member">SetThisThreadName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>threadName);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" kindref="member">SetIoServiceThreadName</ref>(<ref refid="test__async_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref>&amp;<sp/>ioService,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>threadName);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_THREAD_NAMER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/ThreadNamer.h"/>
+  </compounddef>
+</doxygen>

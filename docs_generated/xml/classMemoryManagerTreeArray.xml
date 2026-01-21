@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classMemoryManagerTreeArray" kind="class" language="C++" prot="public">
+    <compoundname>MemoryManagerTreeArray</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="MemoryManagerTreeArray_8h" local="no">MemoryManagerTreeArray.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t MemoryManagerTreeArray::M_MAX_SEGMENTS</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_SEGMENTS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="142" column="20" bodyfile="module/storage/include/MemoryManagerTreeArray.h" bodystart="142" bodyend="-1"/>
+        <referencedby refid="classMemoryManagerTreeArray_1a6f28fc208e8aa40fce358093f771ca6f" compoundref="MemoryManagerTreeArray_8cpp" startline="184" endline="229">AllocateSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" compoundref="MemoryManagerTreeArray_8cpp" startline="120" endline="154">FreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a709cbbe32b106be30a313f895a6bc7c8" compoundref="MemoryManagerTreeArray_8cpp" startline="73" endline="95">GetAndSetFirstFreeSegmentId</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" compoundref="MemoryManagerTreeArray_8cpp" startline="97" endline="104">GetAndSetFirstFreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1af2fc922b92336ea17d4adcbe3d570f2a" compoundref="MemoryManagerTreeArray_8cpp" startline="273" endline="275">GetMaxSegments</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1ad30ec86217a17414ea4a096d4956e4c8" compoundref="MemoryManagerTreeArray_8cpp" startline="106" endline="118">IsSegmentFree</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a19393a79d4a93ae89ebfa86d6cb12194" compoundref="MemoryManagerTreeArray_8cpp" startline="37" endline="46">MemoryManagerTreeArray</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t MemoryManagerTreeArray::m_numSegmentsAllocated</definition>
+        <argsstring></argsstring>
+        <name>m_numSegmentsAllocated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="143" column="14" bodyfile="module/storage/include/MemoryManagerTreeArray.h" bodystart="143" bodyend="-1"/>
+        <referencedby refid="classMemoryManagerTreeArray_1ab71df0d1b46fb2d4d852bf5cac1f3c83" compoundref="MemoryManagerTreeArray_8cpp" startline="161" endline="170">AllocateRows</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a26d7d00e2dac0ee89f996bc81f481948" compoundref="MemoryManagerTreeArray_8cpp" startline="176" endline="182">AllocateRowsMaxMemory</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a6f28fc208e8aa40fce358093f771ca6f" compoundref="MemoryManagerTreeArray_8cpp" startline="184" endline="229">AllocateSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" compoundref="MemoryManagerTreeArray_8cpp" startline="120" endline="154">FreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" compoundref="MemoryManagerTreeArray_8cpp" startline="97" endline="104">GetAndSetFirstFreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a85421ecfa3c17906e49606075c7a2017" compoundref="MemoryManagerTreeArray_8cpp" startline="262" endline="264">GetNumAllocatedSegments_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1addec86d391e8e4ed229938f8454f2591" compoundref="MemoryManagerTreeArray_8cpp" startline="266" endline="271">GetNumAllocatedSegments_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; uint64_t &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;uint64_t&gt; &gt; MemoryManagerTreeArray::m_bitMasks</definition>
+        <argsstring></argsstring>
+        <name>m_bitMasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="144" column="17" bodyfile="module/storage/include/MemoryManagerTreeArray.h" bodystart="144" bodyend="-1"/>
+        <referencedby refid="classMemoryManagerTreeArray_1ab71df0d1b46fb2d4d852bf5cac1f3c83" compoundref="MemoryManagerTreeArray_8cpp" startline="161" endline="170">AllocateRows</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a26d7d00e2dac0ee89f996bc81f481948" compoundref="MemoryManagerTreeArray_8cpp" startline="176" endline="182">AllocateRowsMaxMemory</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a6f28fc208e8aa40fce358093f771ca6f" compoundref="MemoryManagerTreeArray_8cpp" startline="184" endline="229">AllocateSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a4076196cdbf3a371a58cb4f919e74fbc" compoundref="MemoryManagerTreeArray_8cpp" startline="50" endline="52">BackupDataToVector</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" compoundref="MemoryManagerTreeArray_8cpp" startline="120" endline="154">FreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a709cbbe32b106be30a313f895a6bc7c8" compoundref="MemoryManagerTreeArray_8cpp" startline="73" endline="95">GetAndSetFirstFreeSegmentId</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" compoundref="MemoryManagerTreeArray_8cpp" startline="97" endline="104">GetAndSetFirstFreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a4d6670e6ab6547a32eee0a9eb6f62cee" compoundref="MemoryManagerTreeArray_8cpp" startline="54" endline="56">GetVectorsConstRef</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a20efc84ba0eb5300bd6943dd62e5c88c" compoundref="MemoryManagerTreeArray_8cpp" startline="58" endline="60">IsBackupEqual</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1ad30ec86217a17414ea4a096d4956e4c8" compoundref="MemoryManagerTreeArray_8cpp" startline="106" endline="118">IsSegmentFree</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMemoryManagerTreeArray_1a6b56f3556f49a4a56d2910a3f95de110" prot="private" static="no" mutable="yes">
+        <type>boost::mutex</type>
+        <definition>boost::mutex MemoryManagerTreeArray::m_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="145" column="26" bodyfile="module/storage/include/MemoryManagerTreeArray.h" bodystart="145" bodyend="-1"/>
+        <referencedby refid="classMemoryManagerTreeArray_1a142e32e906555aebe67f1c231ecf4680" compoundref="MemoryManagerTreeArray_8cpp" startline="231" endline="248">AllocateSegments_ThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a39946e2ab459e03aef0309b79cc44f5d" compoundref="MemoryManagerTreeArray_8cpp" startline="250" endline="260">FreeSegments_ThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1addec86d391e8e4ed229938f8454f2591" compoundref="MemoryManagerTreeArray_8cpp" startline="266" endline="271">GetNumAllocatedSegments_ThreadSafe</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1aabe067e1397a22246d1a0b56e26dd777" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryManagerTreeArray::MemoryManagerTreeArray</definition>
+        <argsstring>()=delete</argsstring>
+        <name>MemoryManagerTreeArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a709cbbe32b106be30a313f895a6bc7c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::GetAndSetFirstFreeSegmentId</definition>
+        <argsstring>(const segment_id_t depthIndex, segment_id_t &amp;segmentId)</argsstring>
+        <name>GetAndSetFirstFreeSegmentId</name>
+        <param>
+          <type>const <ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref></type>
+          <declname>depthIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref> &amp;</type>
+          <declname>segmentId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private function to allocate and get the first available free segment number in numerical order. Requires 6 recursive calls (depth first). This function is used by the public function <ref refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" kindref="member">GetAndSetFirstFreeSegmentId_NotThreadSafe()</ref></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>depthIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current tree row/depth index (must be initialized to zero prior to the first call). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>segmentId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference to the segment Id (must be initialized to zero prior to the first call). It is calculated (assuming the tree is 6 rows deep) by the formula: Summation(r=0..5 of B * 64 ^ (5-r)) where &quot;B&quot; is the least significant 1 bit and &quot;r&quot; is the row/depth index. See storage.pptx in the repository for more detailed information. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the uint64_t is full (all zeros) denoting the uint64_t cannot represent any more segments, or false otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>The internal data structures are updated if and only if the <ref refid="classMemoryManagerTreeArray" kindref="compound">MemoryManagerTreeArray</ref> is not full. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="138" column="32" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="73" bodyend="95"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+        <references refid="BundleStorageConfig_8h_1afe6d57b31c4a12e564710f118f069a1e" compoundref="BundleStorageConfig_8h" startline="33">MAX_TREE_ARRAY_DEPTH</references>
+        <referencedby refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" compoundref="MemoryManagerTreeArray_8cpp" startline="97" endline="104">GetAndSetFirstFreeSegmentId_NotThreadSafe</referencedby>
+        <referencedby refid="BundleStorageManager_8cpp_1aedb4ea09edcfb418b8d01133528c6c0a" compoundref="BundleStorageManager_8cpp" startline="341" endline="367">Store</referencedby>
+        <referencedby refid="classBundleStorageManager_1af2d892b27eca1900beeab083eed6df83" compoundref="BundleStorageManager_8cpp" startline="199" endline="339">BundleStorageManager::UnitTest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1ab71df0d1b46fb2d4d852bf5cac1f3c83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void MemoryManagerTreeArray::AllocateRows</definition>
+        <argsstring>(const segment_id_t largestSegmentId)</argsstring>
+        <name>AllocateRows</name>
+        <param>
+          <type>const <ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref></type>
+          <declname>largestSegmentId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private function to allocate just enough memory to accomodate up to the given largestSegmentId.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>largestSegmentId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of segment Ids this data structure will support. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The internal data structures are resized with all bits set high. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="139" column="32" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="161" bodyend="170"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+        <references refid="BundleStorageConfig_8h_1afe6d57b31c4a12e564710f118f069a1e" compoundref="BundleStorageConfig_8h" startline="33">MAX_TREE_ARRAY_DEPTH</references>
+        <referencedby refid="classMemoryManagerTreeArray_1a19393a79d4a93ae89ebfa86d6cb12194" compoundref="MemoryManagerTreeArray_8cpp" startline="37" endline="46">MemoryManagerTreeArray</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a26d7d00e2dac0ee89f996bc81f481948" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void MemoryManagerTreeArray::AllocateRowsMaxMemory</definition>
+        <argsstring>()</argsstring>
+        <name>AllocateRowsMaxMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deprecated private function to allocate too much memory for any small capacity of segment Ids.</para>
+<para><simplesect kind="post"><para>The internal data structures are resized with all bits set high. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="140" column="32" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="176" bodyend="182"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+        <references refid="BundleStorageConfig_8h_1afe6d57b31c4a12e564710f118f069a1e" compoundref="BundleStorageConfig_8h" startline="33">MAX_TREE_ARRAY_DEPTH</references>
+        <referencedby refid="classMemoryManagerTreeArray_1a19393a79d4a93ae89ebfa86d6cb12194" compoundref="MemoryManagerTreeArray_8cpp" startline="37" endline="46">MemoryManagerTreeArray</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a19393a79d4a93ae89ebfa86d6cb12194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>MemoryManagerTreeArray::MemoryManagerTreeArray</definition>
+        <argsstring>(const uint64_t maxSegments)</argsstring>
+        <name>MemoryManagerTreeArray</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxSegments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor that sets the max number of segments that can be allocated and sets up internal data structures.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxSegments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max number of segments that can be allocated. Memory requirements for this class is approximately 1 bit per segment. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="47" column="24" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="37" bodyend="46"/>
+        <references refid="classMemoryManagerTreeArray_1ab71df0d1b46fb2d4d852bf5cac1f3c83" compoundref="MemoryManagerTreeArray_8cpp" startline="161" endline="170">AllocateRows</references>
+        <references refid="classMemoryManagerTreeArray_1a26d7d00e2dac0ee89f996bc81f481948" compoundref="MemoryManagerTreeArray_8cpp" startline="176" endline="182">AllocateRowsMaxMemory</references>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1ab90e2ce708f7c48c78301b80edb9ced8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>MemoryManagerTreeArray::~MemoryManagerTreeArray</definition>
+        <argsstring>()</argsstring>
+        <name>~MemoryManagerTreeArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="48" column="24" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a142e32e906555aebe67f1c231ecf4680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::AllocateSegments_ThreadSafe</definition>
+        <argsstring>(segment_id_chain_vec_t &amp;segmentVec)</argsstring>
+        <name>AllocateSegments_ThreadSafe</name>
+        <param>
+          <type><ref refid="MemoryManagerTreeArray_8h_1a4ea5636fa15665c60e1b222dc9bce13f" kindref="member">segment_id_chain_vec_t</ref> &amp;</type>
+          <declname>segmentVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread safe method to allocate a vector of the first available free segment numbers in numerical order. The desired number of segments must be set prior to the call by calling segmentVec.resize() (i.e. number of desired segments should be the vector size).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>segmentVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preallocated vector of segments to be filled. Will be resized to zero on failure. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the segmentVec was fully populated (the <ref refid="classMemoryManagerTreeArray" kindref="compound">MemoryManagerTreeArray</ref> was not full prior to the last segment being allocated), or False otherwise. The segmentVec is also resized to zero on a return of False. </para>
+</simplesect>
+<simplesect kind="post"><para>The internal data structures are updated if and only if the <ref refid="classMemoryManagerTreeArray" kindref="compound">MemoryManagerTreeArray</ref> was able to allocate the entire vector of segment IDs. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="58" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="231" bodyend="248"/>
+        <references refid="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" compoundref="MemoryManagerTreeArray_8cpp" startline="120" endline="154">FreeSegmentId_NotThreadSafe</references>
+        <references refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" compoundref="MemoryManagerTreeArray_8cpp" startline="97" endline="104">GetAndSetFirstFreeSegmentId_NotThreadSafe</references>
+        <references refid="TestCborUint_8cpp_1a784aef30a5f597ed892f45a0f048510d" compoundref="TestCborUint_8cpp" startline="450">j</references>
+        <references refid="classMemoryManagerTreeArray_1a6b56f3556f49a4a56d2910a3f95de110" compoundref="MemoryManagerTreeArray_8h" startline="145">m_mutex</references>
+        <referencedby refid="classBundleStorageManagerBase_1a13bd2000287b95e8b646fb0b9b12e86f" compoundref="BundleStorageManagerBase_8cpp" startline="162" endline="176">BundleStorageManagerBase::Push</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a39946e2ab459e03aef0309b79cc44f5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::FreeSegments_ThreadSafe</definition>
+        <argsstring>(const segment_id_chain_vec_t &amp;segmentVec)</argsstring>
+        <name>FreeSegments_ThreadSafe</name>
+        <param>
+          <type>const <ref refid="MemoryManagerTreeArray_8h_1a4ea5636fa15665c60e1b222dc9bce13f" kindref="member">segment_id_chain_vec_t</ref> &amp;</type>
+          <declname>segmentVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread safe method to free a vector of segment numbers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>segmentVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector of segments to mark as free in the internal data structure. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if all the segment numbers in the segmentVec were freed, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>The internal data structures are updated for only the segment IDs that were allocated (now they are marked free). Segments that were already free remain unchanged (with False returned). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="66" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="250" bodyend="260"/>
+        <references refid="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" compoundref="MemoryManagerTreeArray_8cpp" startline="120" endline="154">FreeSegmentId_NotThreadSafe</references>
+        <references refid="classMemoryManagerTreeArray_1a6b56f3556f49a4a56d2910a3f95de110" compoundref="MemoryManagerTreeArray_8h" startline="145">m_mutex</references>
+        <referencedby refid="classBundleStorageManagerBase_1a5c41ac3e131be0bcd452bd39ddddcdd1" compoundref="BundleStorageManagerBase_8cpp" startline="452" endline="489">BundleStorageManagerBase::RemoveReadBundleFromDisk</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1ad30ec86217a17414ea4a096d4956e4c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::IsSegmentFree</definition>
+        <argsstring>(const segment_id_t segmentId) const</argsstring>
+        <name>IsSegmentFree</name>
+        <param>
+          <type>const <ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref></type>
+          <declname>segmentId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structTest" kindref="compound">Test</ref> if the specified segment is free.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>segmentId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The segment to be tested. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if and only if the segmentId is available/free, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="73" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="106" bodyend="118"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+        <references refid="BundleStorageConfig_8h_1afe6d57b31c4a12e564710f118f069a1e" compoundref="BundleStorageConfig_8h" startline="33">MAX_TREE_ARRAY_DEPTH</references>
+        <referencedby refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" compoundref="BundleStorageManagerBase_8cpp" startline="506" endline="658">BundleStorageManagerBase::RestoreFromDisk</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a4076196cdbf3a371a58cb4f919e74fbc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT void</type>
+        <definition>void MemoryManagerTreeArray::BackupDataToVector</definition>
+        <argsstring>(memmanager_t &amp;backup) const</argsstring>
+        <name>BackupDataToVector</name>
+        <param>
+          <type><ref refid="MemoryManagerTreeArray_8h_1ae58acbc3d64c32dc0f554f930385f1a5" kindref="member">memmanager_t</ref> &amp;</type>
+          <declname>backup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Backup the internal data structure to the given reference parameter, useful for equality comparision in unit testing.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>backup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to copy the internal data structure to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="79" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="50" bodyend="52"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <referencedby refid="BundleStorageManagerMtTests_8cpp_1a4908f4721a4557ebe3d5762b5364f8de" compoundref="BundleStorageManagerMtTests_8cpp" startline="252" endline="477">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a4d6670e6ab6547a32eee0a9eb6f62cee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT const <ref refid="MemoryManagerTreeArray_8h_1ae58acbc3d64c32dc0f554f930385f1a5" kindref="member">memmanager_t</ref> &amp;</type>
+        <definition>const memmanager_t &amp; MemoryManagerTreeArray::GetVectorsConstRef</definition>
+        <argsstring>() const</argsstring>
+        <name>GetVectorsConstRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a const reference to the internal data structure, useful for equality comparision in unit testing.</para>
+<para><simplesect kind="return"><para>A const reference to the internal data structure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="85" column="44" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="54" bodyend="56"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a20efc84ba0eb5300bd6943dd62e5c88c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::IsBackupEqual</definition>
+        <argsstring>(const memmanager_t &amp;backup) const</argsstring>
+        <name>IsBackupEqual</name>
+        <param>
+          <type>const <ref refid="MemoryManagerTreeArray_8h_1ae58acbc3d64c32dc0f554f930385f1a5" kindref="member">memmanager_t</ref> &amp;</type>
+          <declname>backup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compare the internal data structure to the given const reference parameter, useful for equality comparision in unit testing.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>backup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to compare the internal data structure to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the data structures are equal, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="92" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="58" bodyend="60"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <referencedby refid="BundleStorageManagerMtTests_8cpp_1a4908f4721a4557ebe3d5762b5364f8de" compoundref="BundleStorageManagerMtTests_8cpp" startline="252" endline="477">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::FreeSegmentId_NotThreadSafe</definition>
+        <argsstring>(const segment_id_t segmentId)</argsstring>
+        <name>FreeSegmentId_NotThreadSafe</name>
+        <param>
+          <type>const <ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref></type>
+          <declname>segmentId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Free the given segment Id.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>segmentId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The segment to be freed from the internal data structure. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the given segment number was freed, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>The internal data structures are updated if and only if the given segment Id was allocated prior to the call. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="100" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="120" bodyend="154"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+        <references refid="BundleStorageConfig_8h_1afe6d57b31c4a12e564710f118f069a1e" compoundref="BundleStorageConfig_8h" startline="33">MAX_TREE_ARRAY_DEPTH</references>
+        <referencedby refid="classMemoryManagerTreeArray_1a142e32e906555aebe67f1c231ecf4680" compoundref="MemoryManagerTreeArray_8cpp" startline="231" endline="248">AllocateSegments_ThreadSafe</referencedby>
+        <referencedby refid="classMemoryManagerTreeArray_1a39946e2ab459e03aef0309b79cc44f5d" compoundref="MemoryManagerTreeArray_8cpp" startline="250" endline="260">FreeSegments_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT <ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref></type>
+        <definition>segment_id_t MemoryManagerTreeArray::GetAndSetFirstFreeSegmentId_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>GetAndSetFirstFreeSegmentId_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate and get the first available free segment number in numerical order. Requires 6 recursive calls.</para>
+<para><simplesect kind="return"><para>The first available free segment Id if the <ref refid="classMemoryManagerTreeArray" kindref="compound">MemoryManagerTreeArray</ref> is not full, or SEGMENT_ID_FULL otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>The internal data structures are updated if and only if the <ref refid="classMemoryManagerTreeArray" kindref="compound">MemoryManagerTreeArray</ref> is not full. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="107" column="37" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="97" bodyend="104"/>
+        <references refid="classMemoryManagerTreeArray_1a709cbbe32b106be30a313f895a6bc7c8" compoundref="MemoryManagerTreeArray_8cpp" startline="73" endline="95">GetAndSetFirstFreeSegmentId</references>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+        <referencedby refid="classMemoryManagerTreeArray_1a142e32e906555aebe67f1c231ecf4680" compoundref="MemoryManagerTreeArray_8cpp" startline="231" endline="248">AllocateSegments_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a6f28fc208e8aa40fce358093f771ca6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool MemoryManagerTreeArray::AllocateSegmentId_NotThreadSafe</definition>
+        <argsstring>(const segment_id_t segmentId)</argsstring>
+        <name>AllocateSegmentId_NotThreadSafe</name>
+        <param>
+          <type>const <ref refid="BundleStorageManager_8h_1a179805696a1f508d8622fecb65c6861f" kindref="member">segment_id_t</ref></type>
+          <declname>segmentId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Manually allocate the specified segment (if free), useful for restore from disk (rebuilding the <ref refid="classMemoryManagerTreeArray" kindref="compound">MemoryManagerTreeArray</ref> after power loss) operations.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>segmentId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The segment to be set as allocated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if and only if the segmentId is available and marked as allocated, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>The internal data structures are updated if and only if the segmentId is available. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="115" column="29" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="184" bodyend="229"/>
+        <references refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" compoundref="MemoryManagerTreeArray_8h" startline="144">m_bitMasks</references>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+        <references refid="BundleStorageConfig_8h_1afe6d57b31c4a12e564710f118f069a1e" compoundref="BundleStorageConfig_8h" startline="33">MAX_TREE_ARRAY_DEPTH</references>
+        <referencedby refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" compoundref="BundleStorageManagerBase_8cpp" startline="506" endline="658">BundleStorageManagerBase::RestoreFromDisk</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1a85421ecfa3c17906e49606075c7a2017" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t MemoryManagerTreeArray::GetNumAllocatedSegments_NotThreadSafe</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetNumAllocatedSegments_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the number of allocated segments.</para>
+<para><simplesect kind="return"><para>Number of allocated segments. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="121" column="33" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="262" bodyend="264"/>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+        <referencedby refid="classBundleStorageManagerBase_1af19cc32f2e59431d3af82c93794c1480" compoundref="BundleStorageManagerBase_8cpp" startline="151" endline="153">BundleStorageManagerBase::GetFreeSpaceBytes</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1aff5eb6ef198551d6a3be1d316c4945fb" compoundref="BundleStorageManagerBase_8cpp" startline="154" endline="156">BundleStorageManagerBase::GetUsedSpaceBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1addec86d391e8e4ed229938f8454f2591" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t MemoryManagerTreeArray::GetNumAllocatedSegments_ThreadSafe</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumAllocatedSegments_ThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread safe method to get the number of allocated segments.</para>
+<para><simplesect kind="return"><para>Number of allocated segments. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="127" column="33" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="266" bodyend="271"/>
+        <references refid="classMemoryManagerTreeArray_1a6b56f3556f49a4a56d2910a3f95de110" compoundref="MemoryManagerTreeArray_8h" startline="145">m_mutex</references>
+        <references refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" compoundref="MemoryManagerTreeArray_8h" startline="143">m_numSegmentsAllocated</references>
+      </memberdef>
+      <memberdef kind="function" id="classMemoryManagerTreeArray_1af2fc922b92336ea17d4adcbe3d570f2a" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t MemoryManagerTreeArray::GetMaxSegments</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetMaxSegments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the maximum number of segments (i.e. free + allocated).</para>
+<para><simplesect kind="return"><para>Maximum number of segments. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/MemoryManagerTreeArray.h" line="133" column="33" bodyfile="module/storage/src/MemoryManagerTreeArray.cpp" bodystart="273" bodyend="275"/>
+        <references refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" compoundref="MemoryManagerTreeArray_8h" startline="142">M_MAX_SEGMENTS</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>MemoryManagerTreeArray</label>
+        <link refid="classMemoryManagerTreeArray"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>MemoryManagerTreeArray</label>
+        <link refid="classMemoryManagerTreeArray"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/storage/include/MemoryManagerTreeArray.h" line="36" column="1" bodyfile="module/storage/include/MemoryManagerTreeArray.h" bodystart="36" bodyend="146"/>
+    <listofallmembers>
+      <member refid="classMemoryManagerTreeArray_1ab71df0d1b46fb2d4d852bf5cac1f3c83" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>AllocateRows</name></member>
+      <member refid="classMemoryManagerTreeArray_1a26d7d00e2dac0ee89f996bc81f481948" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>AllocateRowsMaxMemory</name></member>
+      <member refid="classMemoryManagerTreeArray_1a6f28fc208e8aa40fce358093f771ca6f" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>AllocateSegmentId_NotThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1a142e32e906555aebe67f1c231ecf4680" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>AllocateSegments_ThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1a4076196cdbf3a371a58cb4f919e74fbc" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>BackupDataToVector</name></member>
+      <member refid="classMemoryManagerTreeArray_1a27141ad52dd26d31bc6fe30a83e22c5e" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>FreeSegmentId_NotThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1a39946e2ab459e03aef0309b79cc44f5d" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>FreeSegments_ThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1a709cbbe32b106be30a313f895a6bc7c8" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>GetAndSetFirstFreeSegmentId</name></member>
+      <member refid="classMemoryManagerTreeArray_1aeea93460b519117ea4d3e39aec28a7af" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>GetAndSetFirstFreeSegmentId_NotThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1af2fc922b92336ea17d4adcbe3d570f2a" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>GetMaxSegments</name></member>
+      <member refid="classMemoryManagerTreeArray_1a85421ecfa3c17906e49606075c7a2017" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>GetNumAllocatedSegments_NotThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1addec86d391e8e4ed229938f8454f2591" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>GetNumAllocatedSegments_ThreadSafe</name></member>
+      <member refid="classMemoryManagerTreeArray_1a4d6670e6ab6547a32eee0a9eb6f62cee" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>GetVectorsConstRef</name></member>
+      <member refid="classMemoryManagerTreeArray_1a20efc84ba0eb5300bd6943dd62e5c88c" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>IsBackupEqual</name></member>
+      <member refid="classMemoryManagerTreeArray_1ad30ec86217a17414ea4a096d4956e4c8" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>IsSegmentFree</name></member>
+      <member refid="classMemoryManagerTreeArray_1a258d7d58b3b8884db9c3328c92df6b8b" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>m_bitMasks</name></member>
+      <member refid="classMemoryManagerTreeArray_1aec13b659fd4eb8ab2e7b19d61c5c737a" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>M_MAX_SEGMENTS</name></member>
+      <member refid="classMemoryManagerTreeArray_1a6b56f3556f49a4a56d2910a3f95de110" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>m_mutex</name></member>
+      <member refid="classMemoryManagerTreeArray_1a84b2a3d83dbc46e8d08107b7f798ba23" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>m_numSegmentsAllocated</name></member>
+      <member refid="classMemoryManagerTreeArray_1aabe067e1397a22246d1a0b56e26dd777" prot="private" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>MemoryManagerTreeArray</name></member>
+      <member refid="classMemoryManagerTreeArray_1a19393a79d4a93ae89ebfa86d6cb12194" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>MemoryManagerTreeArray</name></member>
+      <member refid="classMemoryManagerTreeArray_1ab90e2ce708f7c48c78301b80edb9ced8" prot="public" virt="non-virtual"><scope>MemoryManagerTreeArray</scope><name>~MemoryManagerTreeArray</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

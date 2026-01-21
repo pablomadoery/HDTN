@@ -1,0 +1,743 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="CborUint_8h" kind="file" language="C++">
+    <compoundname>CborUint.h</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="yes">hdtn_util_export.h</includes>
+    <includedby refid="Bpv7AdministrativeRecords_8cpp" local="yes">common/bpcodec/src/codec/Bpv7AdministrativeRecords.cpp</includedby>
+    <includedby refid="Bpv7BpSecExtensionBlocks_8cpp" local="yes">common/bpcodec/src/codec/Bpv7BpSecExtensionBlocks.cpp</includedby>
+    <includedby refid="Bpv7CanonicalBlock_8cpp" local="yes">common/bpcodec/src/codec/Bpv7CanonicalBlock.cpp</includedby>
+    <includedby refid="Bpv7CbhePrimaryBlock_8cpp" local="yes">common/bpcodec/src/codec/Bpv7CbhePrimaryBlock.cpp</includedby>
+    <includedby refid="Bpv7ExtensionBlocks_8cpp" local="yes">common/bpcodec/src/codec/Bpv7ExtensionBlocks.cpp</includedby>
+    <includedby refid="Cbhe_8cpp" local="yes">common/bpcodec/src/codec/Cbhe.cpp</includedby>
+    <includedby refid="BpSecBundleProcessor_8cpp" local="yes">common/bpsec/src/BpSecBundleProcessor.cpp</includedby>
+    <includedby refid="CborUint_8cpp" local="yes">common/util/src/CborUint.cpp</includedby>
+    <includedby refid="TimestampUtil_8cpp" local="yes">common/util/src/TimestampUtil.cpp</includedby>
+    <includedby refid="TestCborUint_8cpp" local="yes">common/util/test/TestCborUint.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/CborUint.h</label>
+        <link refid="CborUint_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>hdtn_util_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9">
+        <label>common/util/src/CborUint.cpp</label>
+        <link refid="CborUint_8cpp"/>
+      </node>
+      <node id="11">
+        <label>common/util/test/TestCborUint.cpp</label>
+        <link refid="TestCborUint_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/bpcodec/src/codec/Bpv7CbhePrimaryBlock.cpp</label>
+        <link refid="Bpv7CbhePrimaryBlock_8cpp"/>
+      </node>
+      <node id="10">
+        <label>common/util/src/TimestampUtil.cpp</label>
+        <link refid="TimestampUtil_8cpp"/>
+      </node>
+      <node id="7">
+        <label>common/bpcodec/src/codec/Cbhe.cpp</label>
+        <link refid="Cbhe_8cpp"/>
+      </node>
+      <node id="3">
+        <label>common/bpcodec/src/codec/Bpv7BpSecExtensionBlocks.cpp</label>
+        <link refid="Bpv7BpSecExtensionBlocks_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/util/include/CborUint.h</label>
+        <link refid="CborUint_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>common/bpcodec/src/codec/Bpv7AdministrativeRecords.cpp</label>
+        <link refid="Bpv7AdministrativeRecords_8cpp"/>
+      </node>
+      <node id="8">
+        <label>common/bpsec/src/BpSecBundleProcessor.cpp</label>
+        <link refid="BpSecBundleProcessor_8cpp"/>
+      </node>
+      <node id="4">
+        <label>common/bpcodec/src/codec/Bpv7CanonicalBlock.cpp</label>
+        <link refid="Bpv7CanonicalBlock_8cpp"/>
+      </node>
+      <node id="6">
+        <label>common/bpcodec/src/codec/Bpv7ExtensionBlocks.cpp</label>
+        <link refid="Bpv7ExtensionBlocks_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="CborUint_8h_1accf8814d1d561e4da1b594c49c415431" prot="public" static="no">
+        <name>CborGetEncodingSizeU64</name>
+        <initializer><ref refid="CborUint_8cpp_1a56cfbcb91cd94d47ce776e7fc6245889" kindref="member">CborGetNumBytesRequiredToEncode</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="70" column="9" bodyfile="common/util/include/CborUint.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="CborUint_8h_1a6fb39677d27a5c5084c97acde7e167b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT unsigned int</type>
+        <definition>HDTN_UTIL_EXPORT unsigned int CborEncodeU64</definition>
+        <argsstring>(uint8_t *const outputEncoded, const uint64_t valToEncodeU64, const uint64_t bufferSize)</argsstring>
+        <name>CborEncodeU64</name>
+        <param>
+          <type>uint8_t *const</type>
+          <declname>outputEncoded</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>valToEncodeU64</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="37" column="31" bodyfile="common/util/src/CborUint.cpp" bodystart="41" bodyend="52" declfile="common/util/include/CborUint.h" declline="37" declcolumn="31"/>
+        <references refid="CborUint_8cpp_1a2d53135667a9aba63293defa855dc805" compoundref="CborUint_8cpp" startline="89" endline="151">CborEncodeU64Classic</references>
+        <referencedby refid="CborUint_8h_1a312e03752813013730bb5d11d5d07c97" compoundref="CborUint_8cpp" startline="721" endline="736">CborArbitrarySizeUint64ArraySerialize</referencedby>
+        <referencedby refid="CborUint_8h_1aa6de43fb089cdb319f68dd79a636f656" compoundref="CborUint_8cpp" startline="636" endline="654">CborTwoUint64ArraySerialize</referencedby>
+        <referencedby refid="structBpv7BundleAgeCanonicalBlock_1a39fa4b4252257356e4e0c3c87c5366d4" compoundref="Bpv7ExtensionBlocks_8cpp" startline="128" endline="163">Bpv7BundleAgeCanonicalBlock::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1a042dfba170f0512cb3dc4f6bd62df048" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="109" endline="248">Bpv7AbstractSecurityBlock::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AdministrativeRecord_1ac90796c06e7070122a999fde0c4bfbe3" compoundref="Bpv7AdministrativeRecords_8cpp" startline="59" endline="113">Bpv7AdministrativeRecord::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7PriorityCanonicalBlock_1aedd0d62409c72a73b6c8c93a21a26eae" compoundref="Bpv7ExtensionBlocks_8cpp" startline="329" endline="349">Bpv7PriorityCanonicalBlock::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlockValueUint_1a65a00c2ffb8a30588b64b9badd31907a" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="831" endline="833">Bpv7AbstractSecurityBlockValueUint::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlockValueByteString_1a2e43b6f8954a045fa1071006dbd03136" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="853" endline="867">Bpv7AbstractSecurityBlockValueByteString::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AdministrativeRecordContentBundleStatusReport_1a20f4f14fc757c89bb1e63baec89bf9d4" compoundref="Bpv7AdministrativeRecords_8cpp" startline="210" endline="340">Bpv7AdministrativeRecordContentBundleStatusReport::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AdministrativeRecordContentBibePduMessage_1a33d4b853b6005ced92a45939b8acb15e" compoundref="Bpv7AdministrativeRecords_8cpp" startline="653" endline="725">Bpv7AdministrativeRecordContentBibePduMessage::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1afe5046024989626f9528b851e1953afd" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="328" endline="362">Bpv7AbstractSecurityBlock::SerializeIdValuePairsVecBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a9bea877c4933b86bc1e94df2aad393c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT unsigned int</type>
+        <definition>HDTN_UTIL_EXPORT unsigned int CborEncodeU64BufSize9</definition>
+        <argsstring>(uint8_t *const outputEncoded, const uint64_t valToEncodeU64)</argsstring>
+        <name>CborEncodeU64BufSize9</name>
+        <param>
+          <type>uint8_t *const</type>
+          <declname>outputEncoded</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>valToEncodeU64</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="40" column="31" bodyfile="common/util/src/CborUint.cpp" bodystart="55" bodyend="61" declfile="common/util/include/CborUint.h" declline="40" declcolumn="31"/>
+        <references refid="CborUint_8cpp_1a132c4f678d8f5d7441fb8e01af661ba2" compoundref="CborUint_8cpp" startline="154" endline="201">CborEncodeU64ClassicBufSize9</references>
+        <referencedby refid="CborUint_8h_1a3a68da9681b296707839bc969d3e8a44" compoundref="CborUint_8cpp" startline="709" endline="720">CborArbitrarySizeUint64ArraySerialize</referencedby>
+        <referencedby refid="CborUint_8h_1aed650fde49fc9acc1c0d4eb493830ce7" compoundref="CborUint_8cpp" startline="629" endline="635">CborTwoUint64ArraySerialize</referencedby>
+        <referencedby refid="structBpv7CanonicalBlock_1a1e342453d205ba05a5fa41bde0420d32" compoundref="Bpv7CanonicalBlock_8cpp" startline="248" endline="254">Bpv7CanonicalBlock::SerializeAadPart</referencedby>
+        <referencedby refid="structBpv7CbhePrimaryBlock_1ad4a3d3fe446e1e6189c8c3f1487ccccf" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="108" endline="247">Bpv7CbhePrimaryBlock::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7CanonicalBlock_1a559c4ba53970209c074cdc6c6e1ec8f8" compoundref="Bpv7CanonicalBlock_8cpp" startline="103" endline="219">Bpv7CanonicalBlock::SerializeBpv7</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" compoundref="BpSecBundleProcessor_8cpp" startline="1118" endline="1423">BpSecBundleProcessor::TryVerifyBundleIntegrityByIndividualBib</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a0eea16ba0fd3fec9be50a8bc46d12685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborDecodeU64</definition>
+        <argsstring>(const uint8_t *const inputEncoded, uint8_t *numBytes, const uint64_t bufferSize)</argsstring>
+        <name>CborDecodeU64</name>
+        <param>
+          <type>const uint8_t *const</type>
+          <declname>inputEncoded</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>numBytes</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="45" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="64" bodyend="75" declfile="common/util/include/CborUint.h" declline="45" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1a7cbd573732b8686f516b8aba514c83a8" compoundref="CborUint_8cpp" startline="227" endline="284">CborDecodeU64Classic</references>
+        <referencedby refid="CborUint_8h_1a0e104c0254a71353d45bb923b5fff8c7" compoundref="CborUint_8cpp" startline="744" endline="809">CborArbitrarySizeUint64ArrayDeserialize</referencedby>
+        <referencedby refid="CborUint_8h_1afb2b4b903eaa9839934ccc45996ea311" compoundref="CborUint_8cpp" startline="661" endline="706">CborTwoUint64ArrayDeserialize</referencedby>
+        <referencedby refid="structBpv7CanonicalBlock_1a2b0a572fb082540b24eb3a02d3162822" compoundref="Bpv7CanonicalBlock_8cpp" startline="278" endline="545">Bpv7CanonicalBlock::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7CbhePrimaryBlock_1a1957fc764dd6c24659d06576d99c4bec" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="267" endline="493">Bpv7CbhePrimaryBlock::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlockValueUint_1a82b4cb717b0c56c202bcf28a62714412" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="837" endline="842">Bpv7AbstractSecurityBlockValueUint::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlockValueByteString_1a29a334ff1e4adf01791f8bf70f17ed03" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="871" endline="898">Bpv7AbstractSecurityBlockValueByteString::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7AdministrativeRecordContentBundleStatusReport_1a2f5fda441038c404c80bc36e4574294e" compoundref="Bpv7AdministrativeRecords_8cpp" startline="360" endline="609">Bpv7AdministrativeRecordContentBundleStatusReport::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7AdministrativeRecordContentBibePduMessage_1a099e57685267e3e8071f731eb2feddc7" compoundref="Bpv7AdministrativeRecords_8cpp" startline="734" endline="844">Bpv7AdministrativeRecordContentBibePduMessage::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1afb1f3320c517d3c34a7c5020aa288b8f" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="463" endline="567">Bpv7AbstractSecurityBlock::DeserializeIdValuePairBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1a59c848f625fb7c2f0e4ae95c4a2bac1f" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="374" endline="461">Bpv7AbstractSecurityBlock::DeserializeIdValuePairsVecBpv7</referencedby>
+        <referencedby refid="structBpv7BundleAgeCanonicalBlock_1aeefa4341c3334879fb44eb44124cf1d2" compoundref="Bpv7ExtensionBlocks_8cpp" startline="168" endline="175">Bpv7BundleAgeCanonicalBlock::Virtual_DeserializeExtensionBlockDataBpv7</referencedby>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1adca07ea05a0640cbd42868f8a29e1063" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="261" endline="321">Bpv7AbstractSecurityBlock::Virtual_DeserializeExtensionBlockDataBpv7</referencedby>
+        <referencedby refid="structBpv7AdministrativeRecord_1a2b63c55baf16c8f86a679b11f25d52a3" compoundref="Bpv7AdministrativeRecords_8cpp" startline="123" endline="203">Bpv7AdministrativeRecord::Virtual_DeserializeExtensionBlockDataBpv7</referencedby>
+        <referencedby refid="structBpv7PriorityCanonicalBlock_1a1fcafe717e88b2ac2c87bed6d4e3c7c1" compoundref="Bpv7ExtensionBlocks_8cpp" startline="355" endline="364">Bpv7PriorityCanonicalBlock::Virtual_DeserializeExtensionBlockDataBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a66421e4167ef992b9291c9c9b5dc45e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborDecodeU64BufSize9</definition>
+        <argsstring>(const uint8_t *const inputEncoded, uint8_t *numBytes)</argsstring>
+        <name>CborDecodeU64BufSize9</name>
+        <param>
+          <type>const uint8_t *const</type>
+          <declname>inputEncoded</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>numBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="49" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="78" bodyend="84" declfile="common/util/include/CborUint.h" declline="49" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1af1f152a5fdc1bb79e9685a5c910a1b3d" compoundref="CborUint_8cpp" startline="288" endline="334">CborDecodeU64ClassicBufSize9</references>
+        <referencedby refid="structBpv7CbhePrimaryBlock_1a1957fc764dd6c24659d06576d99c4bec" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="267" endline="493">Bpv7CbhePrimaryBlock::DeserializeBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a76d8f602bc062f7d27b03359cabdc598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT unsigned int</type>
+        <definition>HDTN_UTIL_EXPORT unsigned int CborEncodeU64Classic</definition>
+        <argsstring>(uint8_t *const outputEncoded, const uint64_t valToEncodeU64, const uint64_t bufferSize)</argsstring>
+        <name>CborEncodeU64Classic</name>
+        <param>
+          <type>uint8_t *const</type>
+          <declname>outputEncoded</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>valToEncodeU64</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="53" column="31" bodyfile="common/util/src/CborUint.cpp" bodystart="89" bodyend="151" declfile="common/util/include/CborUint.h" declline="53" declcolumn="31"/>
+        <references refid="CborUint_8cpp_1a30540e09f5cad0e0609388444a9894d2" compoundref="CborUint_8cpp" startline="35">CBOR_UINT16_TYPE</references>
+        <references refid="CborUint_8cpp_1a5a3b4acc4b33c1b692c8c25f29f46f34" compoundref="CborUint_8cpp" startline="36">CBOR_UINT32_TYPE</references>
+        <references refid="CborUint_8cpp_1a3f4c414b0a2b450f01ea26d751748ffc" compoundref="CborUint_8cpp" startline="37">CBOR_UINT64_TYPE</references>
+        <references refid="CborUint_8cpp_1abbfae7628014c4f590777b65e59f848f" compoundref="CborUint_8cpp" startline="34">CBOR_UINT8_TYPE</references>
+        <referencedby refid="TestCborUint_8cpp_1a66f0cfc24e0f7968674cd16d04611a74" compoundref="TestCborUint_8cpp" startline="167" endline="237">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="CborUint_8h_1a6fb39677d27a5c5084c97acde7e167b8" compoundref="CborUint_8cpp" startline="41" endline="52">CborEncodeU64</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1ad2a8a4c685da76cc1c494ee63468577b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT unsigned int</type>
+        <definition>HDTN_UTIL_EXPORT unsigned int CborEncodeU64ClassicBufSize9</definition>
+        <argsstring>(uint8_t *const outputEncoded, const uint64_t valToEncodeU64)</argsstring>
+        <name>CborEncodeU64ClassicBufSize9</name>
+        <param>
+          <type>uint8_t *const</type>
+          <declname>outputEncoded</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>valToEncodeU64</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="56" column="31" bodyfile="common/util/src/CborUint.cpp" bodystart="154" bodyend="201" declfile="common/util/include/CborUint.h" declline="56" declcolumn="31"/>
+        <references refid="CborUint_8cpp_1a30540e09f5cad0e0609388444a9894d2" compoundref="CborUint_8cpp" startline="35">CBOR_UINT16_TYPE</references>
+        <references refid="CborUint_8cpp_1a5a3b4acc4b33c1b692c8c25f29f46f34" compoundref="CborUint_8cpp" startline="36">CBOR_UINT32_TYPE</references>
+        <references refid="CborUint_8cpp_1a3f4c414b0a2b450f01ea26d751748ffc" compoundref="CborUint_8cpp" startline="37">CBOR_UINT64_TYPE</references>
+        <references refid="CborUint_8cpp_1abbfae7628014c4f590777b65e59f848f" compoundref="CborUint_8cpp" startline="34">CBOR_UINT8_TYPE</references>
+        <referencedby refid="TestCborUint_8cpp_1a66f0cfc24e0f7968674cd16d04611a74" compoundref="TestCborUint_8cpp" startline="167" endline="237">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="CborUint_8h_1a9bea877c4933b86bc1e94df2aad393c7" compoundref="CborUint_8cpp" startline="55" endline="61">CborEncodeU64BufSize9</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1ac5873b42b8650f47138cc6e175a28f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT unsigned int</type>
+        <definition>HDTN_UTIL_EXPORT unsigned int CborGetEncodingSizeU64Classic</definition>
+        <argsstring>(const uint64_t valToEncodeU64)</argsstring>
+        <name>CborGetEncodingSizeU64Classic</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>valToEncodeU64</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="59" column="31" bodyfile="common/util/src/CborUint.cpp" bodystart="204" bodyend="223" declfile="common/util/include/CborUint.h" declline="59" declcolumn="31"/>
+        <references refid="CborUint_8cpp_1abbfae7628014c4f590777b65e59f848f" compoundref="CborUint_8cpp" startline="34">CBOR_UINT8_TYPE</references>
+        <referencedby refid="TestCborUint_8cpp_1a66f0cfc24e0f7968674cd16d04611a74" compoundref="TestCborUint_8cpp" startline="167" endline="237">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a5df0f139a3b0386f1ab8a18ac50863f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborDecodeU64Classic</definition>
+        <argsstring>(const uint8_t *const inputEncoded, uint8_t *numBytes, const uint64_t bufferSize)</argsstring>
+        <name>CborDecodeU64Classic</name>
+        <param>
+          <type>const uint8_t *const</type>
+          <declname>inputEncoded</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>numBytes</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="63" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="227" bodyend="284" declfile="common/util/include/CborUint.h" declline="63" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1a30540e09f5cad0e0609388444a9894d2" compoundref="CborUint_8cpp" startline="35">CBOR_UINT16_TYPE</references>
+        <references refid="CborUint_8cpp_1a5a3b4acc4b33c1b692c8c25f29f46f34" compoundref="CborUint_8cpp" startline="36">CBOR_UINT32_TYPE</references>
+        <references refid="CborUint_8cpp_1a3f4c414b0a2b450f01ea26d751748ffc" compoundref="CborUint_8cpp" startline="37">CBOR_UINT64_TYPE</references>
+        <references refid="CborUint_8cpp_1abbfae7628014c4f590777b65e59f848f" compoundref="CborUint_8cpp" startline="34">CBOR_UINT8_TYPE</references>
+        <referencedby refid="TestCborUint_8cpp_1a66f0cfc24e0f7968674cd16d04611a74" compoundref="TestCborUint_8cpp" startline="167" endline="237">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="CborUint_8h_1a0eea16ba0fd3fec9be50a8bc46d12685" compoundref="CborUint_8cpp" startline="64" endline="75">CborDecodeU64</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a09763f93e9d9d3df8150c45bde989deb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborDecodeU64ClassicBufSize9</definition>
+        <argsstring>(const uint8_t *const inputEncoded, uint8_t *numBytes)</argsstring>
+        <name>CborDecodeU64ClassicBufSize9</name>
+        <param>
+          <type>const uint8_t *const</type>
+          <declname>inputEncoded</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>numBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="67" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="288" bodyend="334" declfile="common/util/include/CborUint.h" declline="67" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1a30540e09f5cad0e0609388444a9894d2" compoundref="CborUint_8cpp" startline="35">CBOR_UINT16_TYPE</references>
+        <references refid="CborUint_8cpp_1a5a3b4acc4b33c1b692c8c25f29f46f34" compoundref="CborUint_8cpp" startline="36">CBOR_UINT32_TYPE</references>
+        <references refid="CborUint_8cpp_1a3f4c414b0a2b450f01ea26d751748ffc" compoundref="CborUint_8cpp" startline="37">CBOR_UINT64_TYPE</references>
+        <references refid="CborUint_8cpp_1abbfae7628014c4f590777b65e59f848f" compoundref="CborUint_8cpp" startline="34">CBOR_UINT8_TYPE</references>
+        <referencedby refid="TestCborUint_8cpp_1a66f0cfc24e0f7968674cd16d04611a74" compoundref="TestCborUint_8cpp" startline="167" endline="237">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="CborUint_8h_1a66421e4167ef992b9291c9c9b5dc45e3" compoundref="CborUint_8cpp" startline="78" endline="84">CborDecodeU64BufSize9</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a40823b59b2674e582575a2b1587dfd18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT unsigned int</type>
+        <definition>HDTN_UTIL_EXPORT unsigned int CborGetNumBytesRequiredToEncode</definition>
+        <argsstring>(const uint64_t valToEncodeU64)</argsstring>
+        <name>CborGetNumBytesRequiredToEncode</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>valToEncodeU64</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="72" column="31" bodyfile="common/util/src/CborUint.cpp" bodystart="619" bodyend="627" declfile="common/util/include/CborUint.h" declline="72" declcolumn="31"/>
+        <references refid="CborUint_8cpp_1abbfae7628014c4f590777b65e59f848f" compoundref="CborUint_8cpp" startline="34">CBOR_UINT8_TYPE</references>
+        <references refid="CborUint_8cpp_1a39f486658c08f508a3b729017d83e43c" compoundref="CborUint_8cpp" startline="336">msbToRequiredEncodingSize</references>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1aed650fde49fc9acc1c0d4eb493830ce7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborTwoUint64ArraySerialize</definition>
+        <argsstring>(uint8_t *serialization, const uint64_t element1, const uint64_t element2)</argsstring>
+        <name>CborTwoUint64ArraySerialize</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>element1</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>element2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="95" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="629" bodyend="635" declfile="common/util/include/CborUint.h" declline="95" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1adf11159612d4e3504c21d4affd8a55bd" compoundref="CborUint_8cpp" startline="55" endline="61">CborEncodeU64BufSize9</references>
+        <referencedby refid="structcbhe__eid__t_1a8744b92d632c9986891b02a8f9b5041e" compoundref="Cbhe_8cpp" startline="101" endline="114">cbhe_eid_t::SerializeBpv7</referencedby>
+        <referencedby refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1ab7285433e27dcc5e765697b180484fbb" compoundref="TimestampUtil_8cpp" startline="392" endline="394">TimestampUtil::bpv7_creation_timestamp_t::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7HopCountCanonicalBlock_1a2a8ed1614ec05eb4c35aa9be8ec0f28d" compoundref="Bpv7ExtensionBlocks_8cpp" startline="218" endline="263">Bpv7HopCountCanonicalBlock::SerializeBpv7</referencedby>
+        <referencedby refid="structBpv7HopCountCanonicalBlock_1a2be883784f3b078eb03156741988dcb1" compoundref="Bpv7ExtensionBlocks_8cpp" startline="268" endline="279">Bpv7HopCountCanonicalBlock::TryReserializeExtensionBlockDataWithoutResizeBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1aa6de43fb089cdb319f68dd79a636f656" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborTwoUint64ArraySerialize</definition>
+        <argsstring>(uint8_t *serialization, const uint64_t element1, const uint64_t element2, uint64_t bufferSize)</argsstring>
+        <name>CborTwoUint64ArraySerialize</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>element1</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>element2</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="96" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="636" bodyend="654" declfile="common/util/include/CborUint.h" declline="96" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1a276a0007d9c84abde66c2b138540340f" compoundref="CborUint_8cpp" startline="41" endline="52">CborEncodeU64</references>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a06f448c8fe6029026a30fa0a3fd62d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborTwoUint64ArraySerializationSize</definition>
+        <argsstring>(const uint64_t element1, const uint64_t element2)</argsstring>
+        <name>CborTwoUint64ArraySerializationSize</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>element1</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>element2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="97" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="655" bodyend="660" declfile="common/util/include/CborUint.h" declline="97" declcolumn="27"/>
+        <references refid="CborUint_8h_1accf8814d1d561e4da1b594c49c415431" compoundref="CborUint_8h" startline="70">CborGetEncodingSizeU64</references>
+        <referencedby refid="structBpv7HopCountCanonicalBlock_1a853b725d926fc0fae85d2f251635a519" compoundref="Bpv7ExtensionBlocks_8cpp" startline="264" endline="266">Bpv7HopCountCanonicalBlock::GetCanonicalBlockTypeSpecificDataSerializationSize</referencedby>
+        <referencedby refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a6f291bf551f028033863905a55b138d7" compoundref="TimestampUtil_8cpp" startline="398" endline="400">TimestampUtil::bpv7_creation_timestamp_t::GetSerializationSize</referencedby>
+        <referencedby refid="structcbhe__eid__t_1a2611b7fff7f54e1a370ff7cd8628bcc1" compoundref="Cbhe_8cpp" startline="133" endline="138">cbhe_eid_t::GetSerializationSizeBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1afb2b4b903eaa9839934ccc45996ea311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>HDTN_UTIL_EXPORT bool CborTwoUint64ArrayDeserialize</definition>
+        <argsstring>(const uint8_t *serialization, uint8_t *numBytesTakenToDecode, uint64_t bufferSize, uint64_t &amp;element1, uint64_t &amp;element2)</argsstring>
+        <name>CborTwoUint64ArrayDeserialize</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>numBytesTakenToDecode</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>element1</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>element2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="98" column="23" bodyfile="common/util/src/CborUint.cpp" bodystart="661" bodyend="706" declfile="common/util/include/CborUint.h" declline="98" declcolumn="23"/>
+        <references refid="CborUint_8cpp_1a787150c83da5cbcbdbaa9832ce4e99d5" compoundref="CborUint_8cpp" startline="64" endline="75">CborDecodeU64</references>
+        <referencedby refid="structcbhe__eid__t_1a75a5c46f99fff708de411e60f80fb59c" compoundref="Cbhe_8cpp" startline="139" endline="212">cbhe_eid_t::DeserializeBpv7</referencedby>
+        <referencedby refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a9e4525446ee41aa2df72295be0a2636c" compoundref="TimestampUtil_8cpp" startline="401" endline="403">TimestampUtil::bpv7_creation_timestamp_t::DeserializeBpv7</referencedby>
+        <referencedby refid="structBpv7HopCountCanonicalBlock_1a67142bac593073121536e7194cf92be6" compoundref="Bpv7ExtensionBlocks_8cpp" startline="281" endline="284">Bpv7HopCountCanonicalBlock::Virtual_DeserializeExtensionBlockDataBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a3a68da9681b296707839bc969d3e8a44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborArbitrarySizeUint64ArraySerialize</definition>
+        <argsstring>(uint8_t *serialization, const std::vector&lt; uint64_t &gt; &amp;elements)</argsstring>
+        <name>CborArbitrarySizeUint64ArraySerialize</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint64_t &gt; &amp;</type>
+          <declname>elements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="100" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="709" bodyend="720" declfile="common/util/include/CborUint.h" declline="100" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1adf11159612d4e3504c21d4affd8a55bd" compoundref="CborUint_8cpp" startline="55" endline="61">CborEncodeU64BufSize9</references>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1a042dfba170f0512cb3dc4f6bd62df048" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="109" endline="248">Bpv7AbstractSecurityBlock::SerializeBpv7</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a312e03752813013730bb5d11d5d07c97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborArbitrarySizeUint64ArraySerialize</definition>
+        <argsstring>(uint8_t *serialization, const std::vector&lt; uint64_t &gt; &amp;elements, uint64_t bufferSize)</argsstring>
+        <name>CborArbitrarySizeUint64ArraySerialize</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint64_t &gt; &amp;</type>
+          <declname>elements</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="101" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="721" bodyend="736" declfile="common/util/include/CborUint.h" declline="101" declcolumn="27"/>
+        <references refid="CborUint_8cpp_1a276a0007d9c84abde66c2b138540340f" compoundref="CborUint_8cpp" startline="41" endline="52">CborEncodeU64</references>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a4b8e60f033073c08e33884c2083adb3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT uint64_t</type>
+        <definition>HDTN_UTIL_EXPORT uint64_t CborArbitrarySizeUint64ArraySerializationSize</definition>
+        <argsstring>(const std::vector&lt; uint64_t &gt; &amp;elements)</argsstring>
+        <name>CborArbitrarySizeUint64ArraySerializationSize</name>
+        <param>
+          <type>const std::vector&lt; uint64_t &gt; &amp;</type>
+          <declname>elements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="102" column="27" bodyfile="common/util/src/CborUint.cpp" bodystart="737" bodyend="743" declfile="common/util/include/CborUint.h" declline="102" declcolumn="27"/>
+        <references refid="CborUint_8h_1accf8814d1d561e4da1b594c49c415431" compoundref="CborUint_8h" startline="70">CborGetEncodingSizeU64</references>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1ad6684d32b66925643314a3a9082f98a3" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="249" endline="259">Bpv7AbstractSecurityBlock::GetCanonicalBlockTypeSpecificDataSerializationSize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CborUint_8h_1a0e104c0254a71353d45bb923b5fff8c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>HDTN_UTIL_EXPORT bool CborArbitrarySizeUint64ArrayDeserialize</definition>
+        <argsstring>(uint8_t *serialization, uint64_t &amp;numBytesTakenToDecode, uint64_t bufferSize, std::vector&lt; uint64_t &gt; &amp;elements, const uint64_t maxElements)</argsstring>
+        <name>CborArbitrarySizeUint64ArrayDeserialize</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>numBytesTakenToDecode</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint64_t &gt; &amp;</type>
+          <declname>elements</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxElements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/CborUint.h" line="103" column="23" bodyfile="common/util/src/CborUint.cpp" bodystart="744" bodyend="809" declfile="common/util/include/CborUint.h" declline="103" declcolumn="23"/>
+        <references refid="CborUint_8cpp_1a787150c83da5cbcbdbaa9832ce4e99d5" compoundref="CborUint_8cpp" startline="64" endline="75">CborDecodeU64</references>
+        <referencedby refid="structBpv7AbstractSecurityBlock_1adca07ea05a0640cbd42868f8a29e1063" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="261" endline="321">Bpv7AbstractSecurityBlock::Virtual_DeserializeExtensionBlockDataBpv7</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink> (Hardware accelerated functions) </para>
+</simplesect>
+<simplesect kind="author"><para>Gilbert Clark (Classic functions)</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This is a partial implementation of <ulink url="https://datatracker.ietf.org/doc/html/rfc8949">https://datatracker.ietf.org/doc/html/rfc8949</ulink> for CBOR unsigned integers only </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_CBOR_UINT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_CBOR_UINT_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hdtn_util_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//unsigned<sp/>int<sp/>CborGetNumBytesRequiredToEncode(const<sp/>uint64_t<sp/>valToEncodeU64);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1a6fb39677d27a5c5084c97acde7e167b8" kindref="member">CborEncodeU64</ref>(uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>outputEncoded,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1a9bea877c4933b86bc1e94df2aad393c7" kindref="member">CborEncodeU64BufSize9</ref>(uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>outputEncoded,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>decoded<sp/>value<sp/>(return<sp/>invalid<sp/>number<sp/>that<sp/>must<sp/>be<sp/>ignored<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>also<sp/>sets<sp/>parameter<sp/>numBytes<sp/>taken<sp/>to<sp/>decode<sp/>(set<sp/>to<sp/>0<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a0eea16ba0fd3fec9be50a8bc46d12685" kindref="member">CborDecodeU64</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>inputEncoded,<sp/>uint8_t<sp/>*<sp/>numBytes,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>decoded<sp/>value<sp/>(return<sp/>invalid<sp/>number<sp/>that<sp/>must<sp/>be<sp/>ignored<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>also<sp/>sets<sp/>parameter<sp/>numBytes<sp/>taken<sp/>to<sp/>decode<sp/>(set<sp/>to<sp/>0<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a66421e4167ef992b9291c9c9b5dc45e3" kindref="member">CborDecodeU64BufSize9</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>inputEncoded,<sp/>uint8_t<sp/>*<sp/>numBytes);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1a76d8f602bc062f7d27b03359cabdc598" kindref="member">CborEncodeU64Classic</ref>(uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>outputEncoded,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1ad2a8a4c685da76cc1c494ee63468577b" kindref="member">CborEncodeU64ClassicBufSize9</ref>(uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>outputEncoded,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1ac5873b42b8650f47138cc6e175a28f13" kindref="member">CborGetEncodingSizeU64Classic</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>decoded<sp/>value<sp/>(return<sp/>invalid<sp/>number<sp/>that<sp/>must<sp/>be<sp/>ignored<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>also<sp/>sets<sp/>parameter<sp/>numBytes<sp/>taken<sp/>to<sp/>decode<sp/>(set<sp/>to<sp/>0<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a5df0f139a3b0386f1ab8a18ac50863f5" kindref="member">CborDecodeU64Classic</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>inputEncoded,<sp/>uint8_t<sp/>*<sp/>numBytes,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>decoded<sp/>value<sp/>(return<sp/>invalid<sp/>number<sp/>that<sp/>must<sp/>be<sp/>ignored<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>also<sp/>sets<sp/>parameter<sp/>numBytes<sp/>taken<sp/>to<sp/>decode<sp/>(set<sp/>to<sp/>0<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a09763f93e9d9d3df8150c45bde989deb" kindref="member">CborDecodeU64ClassicBufSize9</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>inputEncoded,<sp/>uint8_t<sp/>*<sp/>numBytes);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="CborUint_8h_1accf8814d1d561e4da1b594c49c415431" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CborGetEncodingSizeU64<sp/>CborGetNumBytesRequiredToEncode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//this<sp/>version<sp/>shall<sp/>be<sp/>used<sp/>regardless<sp/>of<sp/>USE_CBOR_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1a40823b59b2674e582575a2b1587dfd18" kindref="member">CborGetNumBytesRequiredToEncode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CBOR_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CborEncodeU64Fast(uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>outputEncoded,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CborEncodeU64FastBufSize9(uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>outputEncoded,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>valToEncodeU64);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>output<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CborGetEncodingSizeU64Fast<sp/>CborGetNumBytesRequiredToEncode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>decoded<sp/>value<sp/>(return<sp/>invalid<sp/>number<sp/>that<sp/>must<sp/>be<sp/>ignored<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>also<sp/>sets<sp/>parameter<sp/>numBytes<sp/>taken<sp/>to<sp/>decode<sp/>(set<sp/>to<sp/>0<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/>CborDecodeU64Fast(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>inputEncoded,<sp/>uint8_t<sp/>*<sp/>numBytes,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//return<sp/>decoded<sp/>value<sp/>(return<sp/>invalid<sp/>number<sp/>that<sp/>must<sp/>be<sp/>ignored<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>also<sp/>sets<sp/>parameter<sp/>numBytes<sp/>taken<sp/>to<sp/>decode<sp/>(set<sp/>to<sp/>0<sp/>on<sp/>failure)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/>CborDecodeU64FastBufSize9(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>inputEncoded,<sp/>uint8_t<sp/>*<sp/>numBytes);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//#ifdef<sp/>USE_CBOR_FAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">//array<sp/>ops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1aed650fde49fc9acc1c0d4eb493830ce7" kindref="member">CborTwoUint64ArraySerialize</ref>(uint8_t<sp/>*<sp/>serialization,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>element1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>element2);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1aed650fde49fc9acc1c0d4eb493830ce7" kindref="member">CborTwoUint64ArraySerialize</ref>(uint8_t<sp/>*<sp/>serialization,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>element1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>element2,<sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a06f448c8fe6029026a30fa0a3fd62d33" kindref="member">CborTwoUint64ArraySerializationSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>element1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>element2);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1afb2b4b903eaa9839934ccc45996ea311" kindref="member">CborTwoUint64ArrayDeserialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/>serialization,<sp/>uint8_t<sp/>*<sp/>numBytesTakenToDecode,<sp/>uint64_t<sp/>bufferSize,<sp/>uint64_t<sp/>&amp;<sp/>element1,<sp/>uint64_t<sp/>&amp;<sp/>element2);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a3a68da9681b296707839bc969d3e8a44" kindref="member">CborArbitrarySizeUint64ArraySerialize</ref>(uint8_t<sp/>*<sp/>serialization,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint64_t&gt;<sp/>&amp;<sp/>elements);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a3a68da9681b296707839bc969d3e8a44" kindref="member">CborArbitrarySizeUint64ArraySerialize</ref>(uint8_t<sp/>*<sp/>serialization,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint64_t&gt;<sp/>&amp;<sp/>elements,<sp/>uint64_t<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">HDTN_UTIL_EXPORT<sp/>uint64_t<sp/><ref refid="CborUint_8h_1a4b8e60f033073c08e33884c2083adb3b" kindref="member">CborArbitrarySizeUint64ArraySerializationSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint64_t&gt;<sp/>&amp;<sp/>elements);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">HDTN_UTIL_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="CborUint_8h_1a0e104c0254a71353d45bb923b5fff8c7" kindref="member">CborArbitrarySizeUint64ArrayDeserialize</ref>(uint8_t<sp/>*<sp/>serialization,<sp/>uint64_t<sp/>&amp;<sp/>numBytesTakenToDecode,<sp/>uint64_t<sp/>bufferSize,<sp/>std::vector&lt;uint64_t&gt;<sp/>&amp;<sp/>elements,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>maxElements);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>_CBOR_UINT_H<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/CborUint.h"/>
+  </compounddef>
+</doxygen>

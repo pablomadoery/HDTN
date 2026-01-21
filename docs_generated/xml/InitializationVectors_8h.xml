@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="InitializationVectors_8h" kind="file" language="C++">
+    <compoundname>InitializationVectors.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">vector</includes>
+    <includes local="yes">bpsec_lib_export.h</includes>
+    <includedby refid="BpSecPolicyManager_8h" local="yes">common/bpsec/include/BpSecPolicyManager.h</includedby>
+    <includedby refid="InitializationVectors_8cpp" local="yes">common/bpsec/src/InitializationVectors.cpp</includedby>
+    <includedby refid="TestInitializationVectors_8cpp" local="yes">common/bpsec/test/TestInitializationVectors.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>bpsec_lib_export.h</label>
+      </node>
+      <node id="1">
+        <label>common/bpsec/include/InitializationVectors.h</label>
+        <link refid="InitializationVectors_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>common/bpsec/test/TestInitializationVectors.cpp</label>
+        <link refid="TestInitializationVectors_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/bpsec/include/InitializationVectors.h</label>
+        <link refid="InitializationVectors_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>common/bpsec/include/BpSecPolicyManager.h</label>
+        <link refid="BpSecPolicyManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/bpsec/src/BpSecPolicyManager.cpp</label>
+        <link refid="BpSecPolicyManager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>common/bpsec/test/TestBpSecPolicyManager.cpp</label>
+        <link refid="TestBpSecPolicyManager_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/bpsec/src/InitializationVectors.cpp</label>
+        <link refid="InitializationVectors_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structInitializationVector12Byte" prot="public">InitializationVector12Byte</innerclass>
+    <innerclass refid="structInitializationVector16Byte" prot="public">InitializationVector16Byte</innerclass>
+    <innerclass refid="structInitializationVectorsForOneThread" prot="public">InitializationVectorsForOneThread</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>These classes enable generation of 12 or 16 byte initialization vectors for the AES-GCM cipher per RFC9173 section 4.3.1. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>INITIALIZATION_VECTORS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INITIALIZATION_VECTORS_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;bpsec_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structInitializationVector12Byte" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInitializationVector12Byte" kindref="compound">InitializationVector12Byte</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/><ref refid="structInitializationVector12Byte_1a00c04435ffc1ed690ca6dd286ec091e5" kindref="member">InitializationVector12Byte</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/><ref refid="structInitializationVector12Byte_1a00c04435ffc1ed690ca6dd286ec091e5" kindref="member">InitializationVector12Byte</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>timePart);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/><ref refid="structInitializationVector12Byte_1a5885a4f33db01fbb535d72f68d225d04" kindref="member">~InitializationVector12Byte</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector12Byte_1aa0ccb9e5f539880a4bb348bc86457215" kindref="member">Serialize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector12Byte_1ada887716b140b53d443f32038e63a087" kindref="member">Increment</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="structInitializationVector12Byte_1aa4d10b4840d33377a73eff7f0899389a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structInitializationVector12Byte_1aa4d10b4840d33377a73eff7f0899389a" kindref="member">m_timePart</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structInitializationVector12Byte_1af43ea72ed4473f9db56c5a4cd522d932" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structInitializationVector12Byte_1af43ea72ed4473f9db56c5a4cd522d932" kindref="member">m_counterPart</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structInitializationVector16Byte" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInitializationVector16Byte" kindref="compound">InitializationVector16Byte</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/><ref refid="structInitializationVector16Byte_1a57839a68ee822e0d3db5616055cba118" kindref="member">InitializationVector16Byte</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/><ref refid="structInitializationVector16Byte_1a57839a68ee822e0d3db5616055cba118" kindref="member">InitializationVector16Byte</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>timePart);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/><ref refid="structInitializationVector16Byte_1ad338140a653309d069577de56929c5ab" kindref="member">~InitializationVector16Byte</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector16Byte_1a48a3b1a5a64a62fc79c1c94c9d2ab513" kindref="member">Serialize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVector16Byte_1a08b037eeaec7120b63d4f0a5fea22663" kindref="member">Increment</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="structInitializationVector16Byte_1a8613e0a05ad64b48944185f1ae21d5c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structInitializationVector16Byte_1a8613e0a05ad64b48944185f1ae21d5c3" kindref="member">m_timePart</ref>;</highlight></codeline>
+<codeline lineno="48" refid="structInitializationVector16Byte_1a072db95d4b0c468f9f5564895adc3d84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structInitializationVector16Byte_1a072db95d4b0c468f9f5564895adc3d84" kindref="member">m_counterPart</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="structInitializationVectorsForOneThread" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInitializationVectorsForOneThread" kindref="compound">InitializationVectorsForOneThread</ref><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53" refid="structInitializationVectorsForOneThread_1ad0cca28290777491ca4760cf40dab337" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1ad0cca28290777491ca4760cf40dab337" kindref="member">InitializationVectorsForOneThread</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVectorsForOneThread_1ad0cca28290777491ca4760cf40dab337" kindref="member">InitializationVectorsForOneThread</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>timePart);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//12-bit<sp/>iv&apos;s<sp/>guaranteed<sp/>to<sp/>be<sp/>unique<sp/>from<sp/>other<sp/>iv&apos;s<sp/>within<sp/>hdtn<sp/>as<sp/>long<sp/>as</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//a<sp/>single<sp/>induct<sp/>thread<sp/>isn&apos;t<sp/>a<sp/>security<sp/>source<sp/>for<sp/>more<sp/>than<sp/>(100000<sp/>*<sp/>2^32)<sp/>bundles<sp/>before<sp/>restarting<sp/>HDTN.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//16-bit<sp/>iv&apos;s<sp/>always<sp/>guaranteed<sp/>unique<sp/>(100000<sp/>*<sp/>2^64)<sp/>bundles<sp/>before<sp/>restarting<sp/>HDTN..</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structInitializationVectorsForOneThread_1ac1a8b0f3adedbf75dd44e98800f86015" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>uint64_t<sp/><ref refid="structInitializationVectorsForOneThread_1ac1a8b0f3adedbf75dd44e98800f86015" kindref="member">MIN_DIFF_MICROSECONDS</ref><sp/>=<sp/>100000;</highlight><highlight class="comment">//100ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structInitializationVectorsForOneThread" kindref="compound">InitializationVectorsForOneThread</ref><sp/><ref refid="structInitializationVectorsForOneThread_1a830699f3552686e815ceec41bbe0f27e" kindref="member">Create</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>BPSEC_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structInitializationVectorsForOneThread_1a14c58cc41807705d2afda2a0fb9869dd" kindref="member">SerializeAndIncrement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use12ByteIv);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structInitializationVectorsForOneThread_1a16576772922bf9d0ca8f3d768290c5d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVector12Byte" kindref="compound">InitializationVector12Byte</ref><sp/><ref refid="structInitializationVectorsForOneThread_1a16576772922bf9d0ca8f3d768290c5d2" kindref="member">m_iv12</ref>;</highlight></codeline>
+<codeline lineno="66" refid="structInitializationVectorsForOneThread_1aa9a5050da72d9aa45a382ab5d043a8c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structInitializationVector16Byte" kindref="compound">InitializationVector16Byte</ref><sp/><ref refid="structInitializationVectorsForOneThread_1aa9a5050da72d9aa45a382ab5d043a8c5" kindref="member">m_iv16</ref>;</highlight></codeline>
+<codeline lineno="67" refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" kindref="member">m_initializationVector</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>INITIALIZATION_VECTORS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/bpsec/include/InitializationVectors.h"/>
+  </compounddef>
+</doxygen>

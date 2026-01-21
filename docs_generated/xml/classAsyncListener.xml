@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classAsyncListener" kind="class" language="C++" prot="public">
+    <compoundname>AsyncListener</compoundname>
+    <includes refid="AsyncListener_8h" local="no">AsyncListener.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classAsyncListener_1a5c19a74552ccb79d627913ad094d9db7" prot="public" static="no" mutable="no">
+        <type>T &amp;</type>
+        <definition>T&amp; AsyncListener&lt; T &gt;::m_queue</definition>
+        <argsstring></argsstring>
+        <name>m_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="37" column="7" bodyfile="common/streaming/include/AsyncListener.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classAsyncListener_1abd62a2cc49376846f0a36f63a8a9d833" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex AsyncListener&lt; T &gt;::m_mux</definition>
+        <argsstring></argsstring>
+        <name>m_mux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="40" column="18" bodyfile="common/streaming/include/AsyncListener.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAsyncListener_1a36c30a8ed974f5b8b25744bf1c3aa30d" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable AsyncListener&lt; T &gt;::m_cv</definition>
+        <argsstring></argsstring>
+        <name>m_cv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="41" column="31" bodyfile="common/streaming/include/AsyncListener.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAsyncListener_1ac228f1595b95946b137ab1348bd60607" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration AsyncListener&lt; T &gt;::m_timeout</definition>
+        <argsstring></argsstring>
+        <name>m_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="43" column="38" bodyfile="common/streaming/include/AsyncListener.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAsyncListener_1afb343d333420ce24313c1a03f0aa4a80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AsyncListener&lt; T &gt;::AsyncListener</definition>
+        <argsstring>(T &amp;queue, boost::posix_time::time_duration timeout)</argsstring>
+        <name>AsyncListener</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>queue</declname>
+        </param>
+        <param>
+          <type>boost::posix_time::time_duration</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="26" column="5" bodyfile="common/streaming/include/AsyncListener.h" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classAsyncListener_1acf356bed5186869eb4d8667a0950ebb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AsyncListener&lt; T &gt;::~AsyncListener</definition>
+        <argsstring>()</argsstring>
+        <name>~AsyncListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="27" column="5" bodyfile="common/streaming/include/AsyncListener.h" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classAsyncListener_1a550f75ef2b3b80b7cb445941601bc57b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool AsyncListener&lt; T &gt;::TryWaitForIncomingDataAvailable</definition>
+        <argsstring>()</argsstring>
+        <name>TryWaitForIncomingDataAvailable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If return true, we have data If return false, we do not have data </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="29" column="10" bodyfile="common/streaming/include/AsyncListener.h" bodystart="65" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classAsyncListener_1a8882d3ff965e15d7d18e944cdeb2996e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AsyncListener&lt; T &gt;::Lock</definition>
+        <argsstring>()</argsstring>
+        <name>Lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="31" column="17" bodyfile="common/streaming/include/AsyncListener.h" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classAsyncListener_1ae3d93eb48cc321c221a011f14cd42842" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AsyncListener&lt; T &gt;::Unlock</definition>
+        <argsstring>()</argsstring>
+        <name>Unlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="32" column="17" bodyfile="common/streaming/include/AsyncListener.h" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classAsyncListener_1a60f1058285a0dbb5ab1fa7331c6606fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AsyncListener&lt; T &gt;::Notify</definition>
+        <argsstring>()</argsstring>
+        <name>Notify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="33" column="17" bodyfile="common/streaming/include/AsyncListener.h" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classAsyncListener_1acb4782fe077b66ee7ef216c5e5bcf4c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AsyncListener&lt; T &gt;::PopFront</definition>
+        <argsstring>()</argsstring>
+        <name>PopFront</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/AsyncListener.h" line="35" column="10" bodyfile="common/streaming/include/AsyncListener.h" bodystart="76" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/streaming/include/AsyncListener.h" line="22" column="1" bodyfile="common/streaming/include/AsyncListener.h" bodystart="23" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classAsyncListener_1afb343d333420ce24313c1a03f0aa4a80" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>AsyncListener</name></member>
+      <member refid="classAsyncListener_1a8882d3ff965e15d7d18e944cdeb2996e" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>Lock</name></member>
+      <member refid="classAsyncListener_1a36c30a8ed974f5b8b25744bf1c3aa30d" prot="private" virt="non-virtual"><scope>AsyncListener</scope><name>m_cv</name></member>
+      <member refid="classAsyncListener_1abd62a2cc49376846f0a36f63a8a9d833" prot="private" virt="non-virtual"><scope>AsyncListener</scope><name>m_mux</name></member>
+      <member refid="classAsyncListener_1a5c19a74552ccb79d627913ad094d9db7" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>m_queue</name></member>
+      <member refid="classAsyncListener_1ac228f1595b95946b137ab1348bd60607" prot="private" virt="non-virtual"><scope>AsyncListener</scope><name>m_timeout</name></member>
+      <member refid="classAsyncListener_1a60f1058285a0dbb5ab1fa7331c6606fa" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>Notify</name></member>
+      <member refid="classAsyncListener_1acb4782fe077b66ee7ef216c5e5bcf4c0" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>PopFront</name></member>
+      <member refid="classAsyncListener_1a550f75ef2b3b80b7cb445941601bc57b" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>TryWaitForIncomingDataAvailable</name></member>
+      <member refid="classAsyncListener_1ae3d93eb48cc321c221a011f14cd42842" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>Unlock</name></member>
+      <member refid="classAsyncListener_1acf356bed5186869eb4d8667a0950ebb4" prot="public" virt="non-virtual"><scope>AsyncListener</scope><name>~AsyncListener</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

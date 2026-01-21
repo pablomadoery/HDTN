@@ -1,0 +1,1700 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpSourcePattern" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>BpSourcePattern</compoundname>
+    <derivedcompoundref refid="classBPing" prot="public" virt="non-virtual">BPing</derivedcompoundref>
+    <derivedcompoundref refid="classBpFileTransfer_1_1Impl" prot="public" virt="non-virtual">BpFileTransfer::Impl</derivedcompoundref>
+    <derivedcompoundref refid="classBpGenAsync" prot="public" virt="non-virtual">BpGenAsync</derivedcompoundref>
+    <derivedcompoundref refid="classBpSendFile" prot="public" virt="non-virtual">BpSendFile</derivedcompoundref>
+    <derivedcompoundref refid="classBpSendPacket" prot="public" virt="non-virtual">BpSendPacket</derivedcompoundref>
+    <derivedcompoundref refid="classBpSendStream" prot="public" virt="non-virtual">BpSendStream</derivedcompoundref>
+    <includes refid="BpSourcePattern_8h" local="no">BpSourcePattern.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classBpSourcePattern_1aca3993057d01fe31d0884590cefc09c2" prot="private" static="no">
+        <type>std::pair&lt; uint64_t, uint64_t &gt;</type>
+        <definition>typedef std::pair&lt;uint64_t, uint64_t&gt; BpSourcePattern::bundleid_payloadsize_pair_t</definition>
+        <argsstring></argsstring>
+        <name>bundleid_payloadsize_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="121" column="23" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classBpSourcePattern_1a92386efd86951105b652a7971acbd406" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref>, <ref refid="classBpSourcePattern_1aca3993057d01fe31d0884590cefc09c2" kindref="member">bundleid_payloadsize_pair_t</ref> &gt;</type>
+        <definition>typedef std::pair&lt;padded_vector_uint8_t, bundleid_payloadsize_pair_t&gt; BpSourcePattern::bundle_userdata_pair_t</definition>
+        <argsstring></argsstring>
+        <name>bundle_userdata_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="122" column="23" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classBpSourcePattern_1ae7d9ffa9cf7ba1621b5daa1991f7c16e" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_bundleCount</definition>
+        <argsstring></argsstring>
+        <name>m_bundleCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="65" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+        <referencedby refid="classBpSendPacketRunner_1adc6162ffe982199818075141d38954ec" compoundref="BpSendPacketRunner_8cpp" startline="19" endline="201">BpSendPacketRunner::Run</referencedby>
+        <referencedby refid="classBpSendStreamRunner_1a1e55c6a360885c530b24b5f806d11e23" compoundref="BpSendStreamRunner_8cpp" startline="37" endline="250">BpSendStreamRunner::Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a63167706f8ccdaeb6c128fcd93b6c906" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_numRfc5050CustodyTransfers</definition>
+        <argsstring></argsstring>
+        <name>m_numRfc5050CustodyTransfers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="66" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a4564d639f48710e23d17a004b6121aaa" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_numAcsCustodyTransfers</definition>
+        <argsstring></argsstring>
+        <name>m_numAcsCustodyTransfers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="67" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a3cf30b0c7d20c8e9ce119153c4df80e8" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_numAcsPacketsReceived</definition>
+        <argsstring></argsstring>
+        <name>m_numAcsPacketsReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="68" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_totalNonAdminRecordBpv6PayloadBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalNonAdminRecordBpv6PayloadBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="70" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_totalNonAdminRecordBpv6BundleBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalNonAdminRecordBpv6BundleBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="71" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_totalNonAdminRecordBpv6BundlesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalNonAdminRecordBpv6BundlesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="72" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_totalNonAdminRecordBpv7PayloadBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalNonAdminRecordBpv7PayloadBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="74" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_totalNonAdminRecordBpv7BundleBytesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalNonAdminRecordBpv7BundleBytesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="75" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a608331545467a4700c85395363e8172f" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_totalNonAdminRecordBpv7BundlesRx</definition>
+        <argsstring></argsstring>
+        <name>m_totalNonAdminRecordBpv7BundlesRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="76" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a5918ea451e24872e50305840bbf66940" prot="public" static="no" mutable="no">
+        <type><ref refid="structOutductFinalStats" kindref="compound">OutductFinalStats</ref></type>
+        <definition>OutductFinalStats BpSourcePattern::m_outductFinalStats</definition>
+        <argsstring></argsstring>
+        <name>m_outductFinalStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="78" column="23" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+        <referencedby refid="classBpSendPacketRunner_1adc6162ffe982199818075141d38954ec" compoundref="BpSendPacketRunner_8cpp" startline="19" endline="201">BpSendPacketRunner::Run</referencedby>
+        <referencedby refid="classBpSendStreamRunner_1a1e55c6a360885c530b24b5f806d11e23" compoundref="BpSendStreamRunner_8cpp" startline="37" endline="250">BpSendStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ad24d6a1122cb3b0932ef31bed17d093a" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpSourcePattern::m_allOutductsReady</definition>
+        <argsstring></argsstring>
+        <name>m_allOutductsReady</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="136" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBPingRunner_1a8be633ba1023406de9ff2b6ec8f4f435" compoundref="BPingRunner_8cpp" startline="47" endline="223">BPingRunner::Run</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" prot="private" static="no" mutable="no">
+        <type><ref refid="classOutductManager" kindref="compound">OutductManager</ref></type>
+        <definition>OutductManager BpSourcePattern::m_outductManager</definition>
+        <argsstring></argsstring>
+        <name>m_outductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="94" column="20" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a573a77a84709ab74ba5883db184d93ab" prot="private" static="no" mutable="no">
+        <type><ref refid="classInductManager" kindref="compound">InductManager</ref></type>
+        <definition>InductManager BpSourcePattern::m_inductManager</definition>
+        <argsstring></argsstring>
+        <name>m_inductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="95" column="19" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1aa51049d6c9a06e1493ca9329a706874e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpSourcePattern::m_bpSourcePatternThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_bpSourcePatternThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="96" column="21" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpSourcePattern::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="97" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a1795cf65d6e60dcc5cd15f15ac9ddda0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSourcePattern::m_useCustodyTransfer</definition>
+        <argsstring></argsstring>
+        <name>m_useCustodyTransfer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="98" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a33baeae43169c8915f2634c252ea197e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSourcePattern::m_custodyTransferUseAcs</definition>
+        <argsstring></argsstring>
+        <name>m_custodyTransferUseAcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="99" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1aa45d0d7bc2d9146cc090de104514756f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSourcePattern::m_useInductForSendingBundles</definition>
+        <argsstring></argsstring>
+        <name>m_useInductForSendingBundles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="100" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a2fdf4f11bd65c5767e845ae61be7b363" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSourcePattern::m_useBpVersion7</definition>
+        <argsstring></argsstring>
+        <name>m_useBpVersion7</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="101" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a5ade20a00f01c19e86a54a77910c1fc3" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_claRate</definition>
+        <argsstring></argsstring>
+        <name>m_claRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="102" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1abaac83e06d9284aaf421d9e9109f0a30" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int BpSourcePattern::m_bundleSendTimeoutSeconds</definition>
+        <argsstring></argsstring>
+        <name>m_bundleSendTimeoutSeconds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="103" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a22f49d342ca728f581c2008bdfacd54c" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration BpSourcePattern::m_bundleSendTimeoutTimeDuration</definition>
+        <argsstring></argsstring>
+        <name>m_bundleSendTimeoutTimeDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="104" column="38" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a2582e0f0bccacb08dfb04450cc47fee4" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_bundleLifetimeMilliseconds</definition>
+        <argsstring></argsstring>
+        <name>m_bundleLifetimeMilliseconds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="105" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a3db81e0968f5dc69568ca0f34ebb6e1b" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_bundlePriority</definition>
+        <argsstring></argsstring>
+        <name>m_bundlePriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="106" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1acd6579e2620e404dc053b843aece9062" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSourcePattern::m_finalDestinationEid</definition>
+        <argsstring></argsstring>
+        <name>m_finalDestinationEid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="107" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSourcePattern::m_myEid</definition>
+        <argsstring></argsstring>
+        <name>m_myEid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="108" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1aace92159af95fece0fb37f884030b4cc" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_myCustodianServiceId</definition>
+        <argsstring></argsstring>
+        <name>m_myCustodianServiceId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="109" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a4eb9bc21e70d46117d2252d309f6b349" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSourcePattern::m_myCustodianEid</definition>
+        <argsstring></argsstring>
+        <name>m_myCustodianEid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="110" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1abb54ce7d476cf54d3227188bed959b4e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpSourcePattern::m_myCustodianEidUriString</definition>
+        <argsstring></argsstring>
+        <name>m_myCustodianEidUriString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="111" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a81376acbc1a02166ea7bded1553cae8a" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSourcePattern::m_mutexCtebSet</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCtebSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="112" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ab1f2969d9b7c9c02ec3cac9e42614a0a" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSourcePattern::m_mutexBundleUuidSet</definition>
+        <argsstring></argsstring>
+        <name>m_mutexBundleUuidSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="113" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a0d457760a6b91cf04cb7ef94f7919e64" prot="private" static="no" mutable="no">
+        <type><ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">FragmentSet::data_fragment_set_t</ref></type>
+        <definition>FragmentSet::data_fragment_set_t BpSourcePattern::m_outstandingCtebCustodyIdsFragmentSet</definition>
+        <argsstring></argsstring>
+        <name>m_outstandingCtebCustodyIdsFragmentSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="114" column="38" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a75daac470cc003000f373f25d4080202" prot="private" static="no" mutable="no">
+        <type>std::set&lt; <ref refid="structcbhe__bundle__uuid__nofragment__t" kindref="compound">cbhe_bundle_uuid_nofragment_t</ref> &gt;</type>
+        <definition>std::set&lt;cbhe_bundle_uuid_nofragment_t&gt; BpSourcePattern::m_cbheBundleUuidSet</definition>
+        <argsstring></argsstring>
+        <name>m_cbheBundleUuidSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="115" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSourcePattern::m_detectedNextCustodianSupportsCteb</definition>
+        <argsstring></argsstring>
+        <name>m_detectedNextCustodianSupportsCteb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="116" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ae4571a51290212869654a81e8b64e6e3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BpSourcePattern::m_requireRxBundleBeforeNextTx</definition>
+        <argsstring></argsstring>
+        <name>m_requireRxBundleBeforeNextTx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="117" column="10" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1af58be2e56d0d0489795e9ae70a4285fb" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpSourcePattern::m_isWaitingForRxBundleBeforeNextTx</definition>
+        <argsstring></argsstring>
+        <name>m_isWaitingForRxBundleBeforeNextTx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="118" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpSourcePattern::m_linkIsDown</definition>
+        <argsstring></argsstring>
+        <name>m_linkIsDown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="119" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" compoundref="BpSourcePattern_8cpp" startline="1225" endline="1235">OnOutductLinkStatusChangedCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" compoundref="BpSourcePattern_8cpp" startline="1207" endline="1224">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a5c0f5fd11d105e9886e40b28002ba02a" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSourcePattern::m_mutexQueueBundlesThatFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_mutexQueueBundlesThatFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="120" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a99640a0f4d34c9c76c799e197d14d2e7" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="classBpSourcePattern_1a92386efd86951105b652a7971acbd406" kindref="member">bundle_userdata_pair_t</ref> &gt;</type>
+        <definition>std::queue&lt;bundle_userdata_pair_t&gt; BpSourcePattern::m_queueBundlesThatFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_queueBundlesThatFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="123" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ac4121e9d009bd85d4c490c97d3e26f3e" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_nextBundleId</definition>
+        <argsstring></argsstring>
+        <name>m_nextBundleId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="124" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSourcePattern::m_mutexCurrentlySendingBundleIdSet</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCurrentlySendingBundleIdSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="125" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" compoundref="BpSourcePattern_8cpp" startline="1207" endline="1224">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; uint64_t &gt;</type>
+        <definition>std::unordered_set&lt;uint64_t&gt; BpSourcePattern::m_currentlySendingBundleIdSet</definition>
+        <argsstring></argsstring>
+        <name>m_currentlySendingBundleIdSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="126" column="24" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="126" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" compoundref="BpSourcePattern_8cpp" startline="1207" endline="1224">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex BpSourcePattern::m_waitingForRxBundleBeforeNextTxMutex</definition>
+        <argsstring></argsstring>
+        <name>m_waitingForRxBundleBeforeNextTxMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="127" column="18" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="127" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpSourcePattern::m_waitingForRxBundleBeforeNextTxConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_waitingForRxBundleBeforeNextTxConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="128" column="31" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="128" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpSourcePattern::m_cvCurrentlySendingBundleIdSet</definition>
+        <argsstring></argsstring>
+        <name>m_cvCurrentlySendingBundleIdSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="129" column="31" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="129" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" compoundref="BpSourcePattern_8cpp" startline="1225" endline="1235">OnOutductLinkStatusChangedCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" compoundref="BpSourcePattern_8cpp" startline="1207" endline="1224">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSourcePattern::m_tcpclOpportunisticRemoteNodeId</definition>
+        <argsstring></argsstring>
+        <name>m_tcpclOpportunisticRemoteNodeId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="130" column="14" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a31c8bc913bc3e191693f0b7bfc6115ba" compoundref="BpSourcePattern_8cpp" startline="1169" endline="1178">OnDeletedOpportunisticLinkCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" compoundref="BpSourcePattern_8cpp" startline="1150" endline="1168">OnNewOpportunisticLinkCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" prot="private" static="no" mutable="no">
+        <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+        <definition>Induct* BpSourcePattern::m_tcpclInductPtr</definition>
+        <argsstring></argsstring>
+        <name>m_tcpclInductPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="131" column="13" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="131" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" compoundref="BpSourcePattern_8cpp" startline="1150" endline="1168">OnNewOpportunisticLinkCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a2ca15662e2ae8679e078b109a98ccde3" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t BpSourcePattern::m_lastPreviousNode</definition>
+        <argsstring></argsstring>
+        <name>m_lastPreviousNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="133" column="16" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="133" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint64_t &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; BpSourcePattern::m_hopCounts</definition>
+        <argsstring></argsstring>
+        <name>m_hopCounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="134" column="17" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="134" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpSourcePattern_1a14e5f3f966e37f4d17ce12535b0795f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT</type>
+        <definition>BpSourcePattern::BpSourcePattern</definition>
+        <argsstring>()</argsstring>
+        <name>BpSourcePattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="54" column="32" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="53" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT</type>
+        <definition>BpSourcePattern::~BpSourcePattern</definition>
+        <argsstring>()</argsstring>
+        <name>~BpSourcePattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="55" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="90" bodyend="104"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" compoundref="BpSourcePattern_8h" startline="134">m_hopCounts</references>
+        <references refid="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" compoundref="BpSourcePattern_8h" startline="71">m_totalNonAdminRecordBpv6BundleBytesRx</references>
+        <references refid="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" compoundref="BpSourcePattern_8h" startline="72">m_totalNonAdminRecordBpv6BundlesRx</references>
+        <references refid="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" compoundref="BpSourcePattern_8h" startline="70">m_totalNonAdminRecordBpv6PayloadBytesRx</references>
+        <references refid="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" compoundref="BpSourcePattern_8h" startline="75">m_totalNonAdminRecordBpv7BundleBytesRx</references>
+        <references refid="classBpSourcePattern_1a608331545467a4700c85395363e8172f" compoundref="BpSourcePattern_8h" startline="76">m_totalNonAdminRecordBpv7BundlesRx</references>
+        <references refid="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" compoundref="BpSourcePattern_8h" startline="74">m_totalNonAdminRecordBpv7PayloadBytesRx</references>
+        <references refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">Stop</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT void</type>
+        <definition>void BpSourcePattern::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="56" column="37" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="106" bodyend="135"/>
+        <references refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" compoundref="OutductManager_8cpp" startline="299" endline="308">OutductManager::GetOutductByOutductUuid</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBpSourcePattern_1aa51049d6c9a06e1493ca9329a706874e" compoundref="BpSourcePattern_8h" startline="96">m_bpSourcePatternThreadPtr</references>
+        <references refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" compoundref="BpSourcePattern_8h" startline="129">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" compoundref="BpSourcePattern_8h" startline="125">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a5918ea451e24872e50305840bbf66940" compoundref="BpSourcePattern_8h" startline="78">m_outductFinalStats</references>
+        <references refid="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" compoundref="BpSourcePattern_8h" startline="94">m_outductManager</references>
+        <references refid="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" compoundref="BpSourcePattern_8h" startline="97">m_running</references>
+        <references refid="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" compoundref="BpSourcePattern_8h" startline="128">m_waitingForRxBundleBeforeNextTxConditionVariable</references>
+        <references refid="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" compoundref="BpSourcePattern_8h" startline="127">m_waitingForRxBundleBeforeNextTxMutex</references>
+        <references refid="classOutductManager_1a44adbefe58cb9ea2d7f878f814dbd7f5" compoundref="OutductManager_8cpp" startline="179" endline="184">OutductManager::StopAllOutducts</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBPingRunner_1a8be633ba1023406de9ff2b6ec8f4f435" compoundref="BPingRunner_8cpp" startline="47" endline="223">BPingRunner::Run</referencedby>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+        <referencedby refid="classBpSendPacketRunner_1adc6162ffe982199818075141d38954ec" compoundref="BpSendPacketRunner_8cpp" startline="19" endline="201">BpSendPacketRunner::Run</referencedby>
+        <referencedby refid="classBpSendStreamRunner_1a1e55c6a360885c530b24b5f806d11e23" compoundref="BpSendStreamRunner_8cpp" startline="37" endline="250">BpSendStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSendStream_1a1f1c14160500ad2f4bf9495ddb6d7545" compoundref="BpSendStream_8cpp" startline="77" endline="105">BpSendStream::~BpSendStream</referencedby>
+        <referencedby refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" compoundref="BpSourcePattern_8cpp" startline="90" endline="104">~BpSourcePattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT void</type>
+        <definition>void BpSourcePattern::Start</definition>
+        <argsstring>(OutductsConfig_ptr &amp;outductsConfigPtr, InductsConfig_ptr &amp;inductsConfigPtr, const boost::filesystem::path &amp;bpSecConfigFilePath, bool custodyTransferUseAcs, const cbhe_eid_t &amp;myEid, double bundleRate, const cbhe_eid_t &amp;finalDestEid, const uint64_t myCustodianServiceId, const unsigned int bundleSendTimeoutSeconds, const uint64_t bundleLifetimeMilliseconds, const uint64_t bundlePriority, const bool requireRxBundleBeforeNextTx=false, const bool forceDisableCustody=false, const bool useBpVersion7=false, const uint64_t claRate=0)</argsstring>
+        <name>Start</name>
+        <param>
+          <type><ref refid="OutductsConfig_8h_1ac426f54ad80e243d83162cd56ff9282c" kindref="member">OutductsConfig_ptr</ref> &amp;</type>
+          <declname>outductsConfigPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="InductsConfig_8h_1a7dd86e14399b3ebcfb3d869002f90cbc" kindref="member">InductsConfig_ptr</ref> &amp;</type>
+          <declname>inductsConfigPtr</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>bpSecConfigFilePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>custodyTransferUseAcs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>myEid</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bundleRate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEid</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>myCustodianServiceId</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>bundleSendTimeoutSeconds</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bundleLifetimeMilliseconds</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bundlePriority</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>requireRxBundleBeforeNextTx</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>forceDisableCustody</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>useBpVersion7</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>claRate</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="57" column="37" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="137" bodyend="267"/>
+        <references refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</references>
+        <references refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" compoundref="Uri_8cpp" startline="24" endline="29">Uri::GetIpnUriString</references>
+        <references refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" compoundref="OutductManager_8cpp" startline="299" endline="308">OutductManager::GetOutductByOutductUuid</references>
+        <references refid="classInductManager_1aea87b128d7fac1fa2696c064e899d163" compoundref="InductManager_8cpp" startline="34" endline="93">InductManager::LoadInductsFromConfig</references>
+        <references refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" compoundref="OutductManager_8cpp" startline="44" endline="167">OutductManager::LoadOutductsFromConfig</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSourcePattern_1ad24d6a1122cb3b0932ef31bed17d093a" compoundref="BpSourcePattern_8h" startline="136">m_allOutductsReady</references>
+        <references refid="classBpSourcePattern_1aa51049d6c9a06e1493ca9329a706874e" compoundref="BpSourcePattern_8h" startline="96">m_bpSourcePatternThreadPtr</references>
+        <references refid="classBpSourcePattern_1a2582e0f0bccacb08dfb04450cc47fee4" compoundref="BpSourcePattern_8h" startline="105">m_bundleLifetimeMilliseconds</references>
+        <references refid="classBpSourcePattern_1a3db81e0968f5dc69568ca0f34ebb6e1b" compoundref="BpSourcePattern_8h" startline="106">m_bundlePriority</references>
+        <references refid="classBpSourcePattern_1abaac83e06d9284aaf421d9e9109f0a30" compoundref="BpSourcePattern_8h" startline="103">m_bundleSendTimeoutSeconds</references>
+        <references refid="classBpSourcePattern_1a22f49d342ca728f581c2008bdfacd54c" compoundref="BpSourcePattern_8h" startline="104">m_bundleSendTimeoutTimeDuration</references>
+        <references refid="classBpSourcePattern_1a5ade20a00f01c19e86a54a77910c1fc3" compoundref="BpSourcePattern_8h" startline="102">m_claRate</references>
+        <references refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" compoundref="BpSourcePattern_8h" startline="126">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a33baeae43169c8915f2634c252ea197e" compoundref="BpSourcePattern_8h" startline="99">m_custodyTransferUseAcs</references>
+        <references refid="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" compoundref="BpSourcePattern_8h" startline="116">m_detectedNextCustodianSupportsCteb</references>
+        <references refid="classBpSourcePattern_1acd6579e2620e404dc053b843aece9062" compoundref="BpSourcePattern_8h" startline="107">m_finalDestinationEid</references>
+        <references refid="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" compoundref="BpSourcePattern_8h" startline="134">m_hopCounts</references>
+        <references refid="classBpSourcePattern_1a573a77a84709ab74ba5883db184d93ab" compoundref="BpSourcePattern_8h" startline="95">m_inductManager</references>
+        <references refid="classBpSourcePattern_1a2ca15662e2ae8679e078b109a98ccde3" compoundref="BpSourcePattern_8h" startline="133">m_lastPreviousNode</references>
+        <references refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" compoundref="BpSourcePattern_8h" startline="119">m_linkIsDown</references>
+        <references refid="classBpSourcePattern_1a4eb9bc21e70d46117d2252d309f6b349" compoundref="BpSourcePattern_8h" startline="110">m_myCustodianEid</references>
+        <references refid="classBpSourcePattern_1abb54ce7d476cf54d3227188bed959b4e" compoundref="BpSourcePattern_8h" startline="111">m_myCustodianEidUriString</references>
+        <references refid="classBpSourcePattern_1aace92159af95fece0fb37f884030b4cc" compoundref="BpSourcePattern_8h" startline="109">m_myCustodianServiceId</references>
+        <references refid="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" compoundref="BpSourcePattern_8h" startline="108">m_myEid</references>
+        <references refid="classBpSourcePattern_1ac4121e9d009bd85d4c490c97d3e26f3e" compoundref="BpSourcePattern_8h" startline="124">m_nextBundleId</references>
+        <references refid="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" compoundref="BpSourcePattern_8h" startline="94">m_outductManager</references>
+        <references refid="classBpSourcePattern_1ae4571a51290212869654a81e8b64e6e3" compoundref="BpSourcePattern_8h" startline="117">m_requireRxBundleBeforeNextTx</references>
+        <references refid="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" compoundref="BpSourcePattern_8h" startline="97">m_running</references>
+        <references refid="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" compoundref="BpSourcePattern_8h" startline="131">m_tcpclInductPtr</references>
+        <references refid="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" compoundref="BpSourcePattern_8h" startline="71">m_totalNonAdminRecordBpv6BundleBytesRx</references>
+        <references refid="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" compoundref="BpSourcePattern_8h" startline="72">m_totalNonAdminRecordBpv6BundlesRx</references>
+        <references refid="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" compoundref="BpSourcePattern_8h" startline="70">m_totalNonAdminRecordBpv6PayloadBytesRx</references>
+        <references refid="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" compoundref="BpSourcePattern_8h" startline="75">m_totalNonAdminRecordBpv7BundleBytesRx</references>
+        <references refid="classBpSourcePattern_1a608331545467a4700c85395363e8172f" compoundref="BpSourcePattern_8h" startline="76">m_totalNonAdminRecordBpv7BundlesRx</references>
+        <references refid="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" compoundref="BpSourcePattern_8h" startline="74">m_totalNonAdminRecordBpv7PayloadBytesRx</references>
+        <references refid="classBpSourcePattern_1a2fdf4f11bd65c5767e845ae61be7b363" compoundref="BpSourcePattern_8h" startline="101">m_useBpVersion7</references>
+        <references refid="classBpSourcePattern_1a1795cf65d6e60dcc5cd15f15ac9ddda0" compoundref="BpSourcePattern_8h" startline="98">m_useCustodyTransfer</references>
+        <references refid="classBpSourcePattern_1aa45d0d7bc2d9146cc090de104514756f" compoundref="BpSourcePattern_8h" startline="100">m_useInductForSendingBundles</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="classBpSourcePattern_1a31c8bc913bc3e191693f0b7bfc6115ba" compoundref="BpSourcePattern_8cpp" startline="1169" endline="1178">OnDeletedOpportunisticLinkCallback</references>
+        <references refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" compoundref="BpSourcePattern_8cpp" startline="1180" endline="1206">OnFailedBundleVecSendCallback</references>
+        <references refid="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" compoundref="BpSourcePattern_8cpp" startline="1150" endline="1168">OnNewOpportunisticLinkCallback</references>
+        <references refid="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" compoundref="BpSourcePattern_8cpp" startline="1225" endline="1235">OnOutductLinkStatusChangedCallback</references>
+        <references refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" compoundref="BpSourcePattern_8cpp" startline="1207" endline="1224">OnSuccessfulBundleSendCallback</references>
+        <references refid="structcbhe__eid__t_1a55b06071bd9a90713bdc90e42d5bc4b0" compoundref="Cbhe_8cpp" startline="55" endline="58">cbhe_eid_t::Set</references>
+        <references refid="classOutduct_1a9b03ca25daf4e025e4b7c39986e7ef4a" compoundref="Outduct_8cpp" startline="59" endline="63">Outduct::SetRate</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <references refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</references>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBPingRunner_1a8be633ba1023406de9ff2b6ec8f4f435" compoundref="BPingRunner_8cpp" startline="47" endline="223">BPingRunner::Run</referencedby>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+        <referencedby refid="classBpSendPacketRunner_1adc6162ffe982199818075141d38954ec" compoundref="BpSendPacketRunner_8cpp" startline="19" endline="201">BpSendPacketRunner::Run</referencedby>
+        <referencedby refid="classBpSendStreamRunner_1a1e55c6a360885c530b24b5f806d11e23" compoundref="BpSendStreamRunner_8cpp" startline="37" endline="250">BpSendStreamRunner::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classBpSourcePattern_1a4192a857f6af7cb64a60618c6ea44f50" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT bool</type>
+        <definition>bool BpSourcePattern::TryWaitForDataAvailable</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;timeout)</argsstring>
+        <name>TryWaitForDataAvailable</name>
+        <reimplementedby refid="classBpFileTransfer_1_1Impl_1acd1d09011dc0e54cd7774703a33a4acd">TryWaitForDataAvailable</reimplementedby>
+        <reimplementedby refid="classBpSendFile_1a4d7666c6eb85380fc3a9db4d58bad5bb">TryWaitForDataAvailable</reimplementedby>
+        <reimplementedby refid="classBpSendPacket_1adb8da5e7e583a7c23cbc3ff204c214fe">TryWaitForDataAvailable</reimplementedby>
+        <reimplementedby refid="classBpSendStream_1ac134e5c3211338c200f9f7602b6e1a05">TryWaitForDataAvailable</reimplementedby>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="81" column="45" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1237" bodyend="1243"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a65736f8cce8b64a42be757a1b6f334e4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint64_t</type>
+        <definition>virtual uint64_t BpSourcePattern::GetNextPayloadLength_Step1</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetNextPayloadLength_Step1</name>
+        <reimplementedby refid="classBpFileTransfer_1_1Impl_1a0c0d8a6bc904616fbfd74e7e06cf3cea">GetNextPayloadLength_Step1</reimplementedby>
+        <reimplementedby refid="classBpGenAsync_1a8ed354ddf15ee6c7169c498865f0bd3a">GetNextPayloadLength_Step1</reimplementedby>
+        <reimplementedby refid="classBPing_1a6d7ef705802d41314890d0bdb0bdb7c5">GetNextPayloadLength_Step1</reimplementedby>
+        <reimplementedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7">GetNextPayloadLength_Step1</reimplementedby>
+        <reimplementedby refid="classBpSendPacket_1ae45014f75bc885959c6c90812e2a548b">GetNextPayloadLength_Step1</reimplementedby>
+        <reimplementedby refid="classBpSendStream_1ad386ff47b143b73c7c66a29e04040502">GetNextPayloadLength_Step1</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="82" column="22"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1ab65db72649664027f585d3b2ce45e9f5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool BpSourcePattern::CopyPayload_Step2</definition>
+        <argsstring>(uint8_t *destinationBuffer)=0</argsstring>
+        <name>CopyPayload_Step2</name>
+        <reimplementedby refid="classBpFileTransfer_1_1Impl_1a2d16de3795b35044800ec9a5c6e15a3f">CopyPayload_Step2</reimplementedby>
+        <reimplementedby refid="classBpGenAsync_1abfe17d4e096c5c154f6e5ab142caa1cc">CopyPayload_Step2</reimplementedby>
+        <reimplementedby refid="classBPing_1a5cd25ae2beb045a51e891ef76e58cca8">CopyPayload_Step2</reimplementedby>
+        <reimplementedby refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732">CopyPayload_Step2</reimplementedby>
+        <reimplementedby refid="classBpSendPacket_1ad3ead128d9753f425cfee3551d782388">CopyPayload_Step2</reimplementedby>
+        <reimplementedby refid="classBpSendStream_1a53c09e814ce33e3c81829cbd4fe046b8">CopyPayload_Step2</reimplementedby>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destinationBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="83" column="18"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePatternThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1af81631bb710c10b4e36da974ae176e6b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>BP_APP_PATTERNS_LIB_EXPORT bool</type>
+        <definition>bool BpSourcePattern::ProcessNonAdminRecordBundlePayload</definition>
+        <argsstring>(const uint8_t *data, const uint64_t size)</argsstring>
+        <name>ProcessNonAdminRecordBundlePayload</name>
+        <reimplementedby refid="classBpFileTransfer_1_1Impl_1a0220f369b2f66b6cf2c3fc6d84fcb1ca">ProcessNonAdminRecordBundlePayload</reimplementedby>
+        <reimplementedby refid="classBPing_1a97727710f509571f35453e30ddaad631">ProcessNonAdminRecordBundlePayload</reimplementedby>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="84" column="45" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1144" bodyend="1148"/>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::BpSourcePatternThreadFunc</definition>
+        <argsstring>(double bundleRate, const boost::filesystem::path &amp;bpSecConfigFilePath)</argsstring>
+        <name>BpSourcePatternThreadFunc</name>
+        <param>
+          <type>double</type>
+          <declname>bundleRate</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>bpSecConfigFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="86" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="270" bodyend="907"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="classOutductManager_1ad64ed646a077f9a435bad74308930a0c" compoundref="OutductManager_8cpp" startline="169" endline="177">OutductManager::AllReadyToForward</references>
+        <references refid="classBundleViewV6_1a70759f50d31f88990d7ca2ed4046825d" compoundref="BundleViewV6_8cpp" startline="219" endline="225">BundleViewV6::AppendMoveCanonicalBlock</references>
+        <references refid="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" compoundref="BundleViewV7_8cpp" startline="360" endline="367">BundleViewV7::AppendMoveCanonicalBlock</references>
+        <references refid="classBpSourcePattern_1ab65db72649664027f585d3b2ce45e9f5">CopyPayload_Step2</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="classBpSecConfig_1aa847ae166df48ec1eb3dd1550fb17dda" compoundref="BpSecConfig_8cpp" startline="808" endline="823">BpSecConfig::CreateFromJsonFilePath</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13dad18592631af9d972cc052408d5905441">CUSTODY_REQUESTED</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132a5dfc36dbc63b82b1fd55b8200d738b6a">CUSTODY_TRANSFER_ENHANCEMENT</references>
+        <references refid="BpSourcePattern_8cpp_1a802d8b37030cb78afb58dfbb24edaa10" compoundref="BpSourcePattern_8cpp" startline="41" endline="44">CustomCleanupPaddedVecUint8</references>
+        <references refid="classBpSecPolicyManager_1ada1315561d9918be04a5044ceb3709a1" compoundref="BpSecPolicyManager_8cpp" startline="196" endline="216">BpSecPolicyManager::FindPolicy</references>
+        <references refid="classOutduct_1a0120999b87ce99c34c9caea80f4ee409">Outduct::Forward</references>
+        <references refid="classInduct_1a0cbe038ec6320e7b05110dbc63e847a3" compoundref="Induct_8cpp" startline="75" endline="77">Induct::ForwardOnOpportunisticLink</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a7bb44c8a9bf404cfe1cb2a44f0020b24" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="315" endline="321">Bpv6CbhePrimaryBlock::GetCbheBundleUuidNoFragmentFromPrimary</references>
+        <references refid="classOutduct_1ab11d4cb1320f373b031f7321dc3de42d" compoundref="Outduct_8cpp" startline="52" endline="54">Outduct::GetConvergenceLayerName</references>
+        <references refid="classBpSourcePattern_1a65736f8cce8b64a42be757a1b6f334e4">GetNextPayloadLength_Step1</references>
+        <references refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" compoundref="OutductManager_8cpp" startline="299" endline="308">OutductManager::GetOutductByOutductUuid</references>
+        <references refid="classOutduct_1a7bc56120366e26a39d2b8649142dcf06" compoundref="Outduct_8cpp" startline="43" endline="45">Outduct::GetOutductMaxNumberOfBundlesInPipeline</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV6_1_1Bpv6CanonicalBlockView_1a308ce0f2c3b4b6b0ad14f6f6637661fe" compoundref="BundleViewV6_8h" startline="84">BundleViewV6::Bpv6CanonicalBlockView::headerPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a1065014e4ee716e9e4bbd984070e668e">HOP_COUNT</references>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <references refid="test__async_8cpp_1af0835c134db68beb99f0121111982625" compoundref="test__async_8cpp" startline="13">io_service</references>
+        <references refid="BpSourcePattern_8cpp_1a21fa76819443f14da9b91c7b52a680c7" compoundref="BpSourcePattern_8cpp" startline="46" endline="52">IsZero</references>
+        <references refid="classBpSecPolicyManager_1a859f290b5f7bd3684f36222e493a2523" compoundref="BpSecPolicyManager_8cpp" startline="981" endline="1221">BpSecPolicyManager::LoadFromConfig</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1a783f25d6055871fa928a49f00ff2fb1e" compoundref="Logger_8h" startline="68">LOG_TRACE</references>
+        <references refid="classBpSourcePattern_1ad24d6a1122cb3b0932ef31bed17d093a" compoundref="BpSourcePattern_8h" startline="136">m_allOutductsReady</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="classBundleViewV6_1a5960d234cbb7032519454d52d1f110dc" compoundref="BundleViewV6_8h" startline="128">BundleViewV6::m_blockNumberToRecycledCanonicalBlockArray</references>
+        <references refid="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" compoundref="BundleViewV7_8h" startline="144">BundleViewV7::m_blockNumberToRecycledCanonicalBlockArray</references>
+        <references refid="structBpv6CanonicalBlock_1a91780d7a09f42cad2dd93e392238d98b" compoundref="bpv6_8h" startline="186">Bpv6CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv6CanonicalBlock_1a25c3cd2fd60c1ac80bfc000d014c63a8" compoundref="bpv6_8h" startline="189">Bpv6CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv7CanonicalBlock_1ae440c38f8ace47da7b0b059c1b074fc4" compoundref="bpv7_8h" startline="392">Bpv7CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv6CanonicalBlock_1ae30c6e82cb623bd6f77d97fa8cfcb171" compoundref="bpv6_8h" startline="187">Bpv6CanonicalBlock::m_blockTypeSpecificDataLength</references>
+        <references refid="structBpv6CanonicalBlock_1addd20445009c8e3c9a5f91516e3a93b3" compoundref="bpv6_8h" startline="188">Bpv6CanonicalBlock::m_blockTypeSpecificDataPtr</references>
+        <references refid="classBpSourcePattern_1ae7d9ffa9cf7ba1621b5daa1991f7c16e" compoundref="BpSourcePattern_8h" startline="65">m_bundleCount</references>
+        <references refid="classBpSourcePattern_1a2582e0f0bccacb08dfb04450cc47fee4" compoundref="BpSourcePattern_8h" startline="105">m_bundleLifetimeMilliseconds</references>
+        <references refid="classBpSourcePattern_1a3db81e0968f5dc69568ca0f34ebb6e1b" compoundref="BpSourcePattern_8h" startline="106">m_bundlePriority</references>
+        <references refid="structBpv7PriorityCanonicalBlock_1ae827421d2d987042367f96394f42f78d" compoundref="bpv7_8h" startline="704">Bpv7PriorityCanonicalBlock::m_bundlePriority</references>
+        <references refid="structBpv6CbhePrimaryBlock_1af1e392bfdbeaf03a8d9dbcda4fc154e1" compoundref="bpv6_8h" startline="95">Bpv6CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="classBpSourcePattern_1abaac83e06d9284aaf421d9e9109f0a30" compoundref="BpSourcePattern_8h" startline="103">m_bundleSendTimeoutSeconds</references>
+        <references refid="classBpSourcePattern_1a22f49d342ca728f581c2008bdfacd54c" compoundref="BpSourcePattern_8h" startline="104">m_bundleSendTimeoutTimeDuration</references>
+        <references refid="classBpSourcePattern_1a75daac470cc003000f373f25d4080202" compoundref="BpSourcePattern_8h" startline="115">m_cbheBundleUuidSet</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a4c11e7204e22c9af2d42b8ba71579717" compoundref="bpv7_8h" startline="335">Bpv7CbhePrimaryBlock::m_crcType</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a130df13fb7751f88ad07ebaa13d21d0b" compoundref="bpv6_8h" startline="101">Bpv6CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv7CbhePrimaryBlock_1ab902c583d6948751e2a66dd00c0b675e" compoundref="bpv7_8h" startline="329">Bpv7CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv6CustodyTransferEnhancementBlock_1a0bb8ea3a528f027abfc9ab4d06163cb5" compoundref="bpv6_8h" startline="237">Bpv6CustodyTransferEnhancementBlock::m_ctebCreatorCustodianEidString</references>
+        <references refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" compoundref="BpSourcePattern_8h" startline="126">m_currentlySendingBundleIdSet</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aa75ad681af43fb0d6a05f9143fe4ee4c" compoundref="bpv6_8h" startline="100">Bpv6CbhePrimaryBlock::m_custodianEid</references>
+        <references refid="structBpv6CustodyTransferEnhancementBlock_1a51f45b4b4f8c7ff764fe2573ba89f0da" compoundref="bpv6_8h" startline="236">Bpv6CustodyTransferEnhancementBlock::m_custodyId</references>
+        <references refid="classBpSourcePattern_1a33baeae43169c8915f2634c252ea197e" compoundref="BpSourcePattern_8h" startline="99">m_custodyTransferUseAcs</references>
+        <references refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" compoundref="BpSourcePattern_8h" startline="129">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a0543a2b8132a58a3f60c0d9218fc7aaa" compoundref="bpv6_8h" startline="97">Bpv6CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" compoundref="BpSourcePattern_8h" startline="116">m_detectedNextCustodianSupportsCteb</references>
+        <references refid="classBpSourcePattern_1acd6579e2620e404dc053b843aece9062" compoundref="BpSourcePattern_8h" startline="107">m_finalDestinationEid</references>
+        <references refid="classBundleViewV6_1ac1e7ddd66ff0ac29a6448414ad1a47a4" compoundref="BundleViewV6_8h" startline="132">BundleViewV6::m_frontBuffer</references>
+        <references refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" compoundref="BundleViewV7_8h" startline="148">BundleViewV7::m_frontBuffer</references>
+        <references refid="structBpv7HopCountCanonicalBlock_1a9707388359322099414d8c58f98517e4" compoundref="bpv7_8h" startline="481">Bpv7HopCountCanonicalBlock::m_hopCount</references>
+        <references refid="structBpv7HopCountCanonicalBlock_1ac1b69a3d7c7e48fb52213e1bb7be8c89" compoundref="bpv7_8h" startline="480">Bpv7HopCountCanonicalBlock::m_hopLimit</references>
+        <references refid="classBpSourcePattern_1af58be2e56d0d0489795e9ae70a4285fb" compoundref="BpSourcePattern_8h" startline="118">m_isWaitingForRxBundleBeforeNextTx</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a51c35115cb162d7b723948c8457469ee" compoundref="bpv7_8h" startline="330">Bpv7CbhePrimaryBlock::m_lifetimeMilliseconds</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a34196d37ac4264398a0bd33d47d92d08" compoundref="bpv6_8h" startline="102">Bpv6CbhePrimaryBlock::m_lifetimeSeconds</references>
+        <references refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" compoundref="BpSourcePattern_8h" startline="119">m_linkIsDown</references>
+        <references refid="classBundleViewV6_1a58656352ce7cb4ac5ac9b14bcdfb94ca" compoundref="BundleViewV6_8h" startline="125">BundleViewV6::m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">BundleViewV7::m_listCanonicalBlockView</references>
+        <references refid="classBpSourcePattern_1ab1f2969d9b7c9c02ec3cac9e42614a0a" compoundref="BpSourcePattern_8h" startline="113">m_mutexBundleUuidSet</references>
+        <references refid="classBpSourcePattern_1a81376acbc1a02166ea7bded1553cae8a" compoundref="BpSourcePattern_8h" startline="112">m_mutexCtebSet</references>
+        <references refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" compoundref="BpSourcePattern_8h" startline="125">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a5c0f5fd11d105e9886e40b28002ba02a" compoundref="BpSourcePattern_8h" startline="120">m_mutexQueueBundlesThatFailedToSend</references>
+        <references refid="classBpSourcePattern_1abb54ce7d476cf54d3227188bed959b4e" compoundref="BpSourcePattern_8h" startline="111">m_myCustodianEidUriString</references>
+        <references refid="classBpSourcePattern_1aace92159af95fece0fb37f884030b4cc" compoundref="BpSourcePattern_8h" startline="109">m_myCustodianServiceId</references>
+        <references refid="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" compoundref="BpSourcePattern_8h" startline="108">m_myEid</references>
+        <references refid="classBpSourcePattern_1ac4121e9d009bd85d4c490c97d3e26f3e" compoundref="BpSourcePattern_8h" startline="124">m_nextBundleId</references>
+        <references refid="classBpSourcePattern_1a4564d639f48710e23d17a004b6121aaa" compoundref="BpSourcePattern_8h" startline="67">m_numAcsCustodyTransfers</references>
+        <references refid="classBpSourcePattern_1a3cf30b0c7d20c8e9ce119153c4df80e8" compoundref="BpSourcePattern_8h" startline="68">m_numAcsPacketsReceived</references>
+        <references refid="classBpSourcePattern_1a63167706f8ccdaeb6c128fcd93b6c906" compoundref="BpSourcePattern_8h" startline="66">m_numRfc5050CustodyTransfers</references>
+        <references refid="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" compoundref="BpSourcePattern_8h" startline="94">m_outductManager</references>
+        <references refid="classBpSourcePattern_1a0d457760a6b91cf04cb7ef94f7919e64" compoundref="BpSourcePattern_8h" startline="114">m_outstandingCtebCustodyIdsFragmentSet</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="classBpSourcePattern_1a99640a0f4d34c9c76c799e197d14d2e7" compoundref="BpSourcePattern_8h" startline="123">m_queueBundlesThatFailedToSend</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">BundleViewV7::m_renderedBundle</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aa02caa9a195b6e15c65278a509b22ca4" compoundref="bpv6_8h" startline="99">Bpv6CbhePrimaryBlock::m_reportToEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a065c785975a707ba0507eb2eb0d5bd71" compoundref="bpv7_8h" startline="328">Bpv7CbhePrimaryBlock::m_reportToEid</references>
+        <references refid="classBpSourcePattern_1ae4571a51290212869654a81e8b64e6e3" compoundref="BpSourcePattern_8h" startline="117">m_requireRxBundleBeforeNextTx</references>
+        <references refid="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" compoundref="BpSourcePattern_8h" startline="97">m_running</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" compoundref="BpSourcePattern_8h" startline="131">m_tcpclInductPtr</references>
+        <references refid="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" compoundref="BpSourcePattern_8h" startline="130">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="classBpSourcePattern_1a2fdf4f11bd65c5767e845ae61be7b363" compoundref="BpSourcePattern_8h" startline="101">m_useBpVersion7</references>
+        <references refid="classBpSourcePattern_1a1795cf65d6e60dcc5cd15f15ac9ddda0" compoundref="BpSourcePattern_8h" startline="98">m_useCustodyTransfer</references>
+        <references refid="classBpSourcePattern_1aa45d0d7bc2d9146cc090de104514756f" compoundref="BpSourcePattern_8h" startline="100">m_useInductForSendingBundles</references>
+        <references refid="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" compoundref="BpSourcePattern_8h" startline="128">m_waitingForRxBundleBeforeNextTxConditionVariable</references>
+        <references refid="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" compoundref="BpSourcePattern_8h" startline="127">m_waitingForRxBundleBeforeNextTxMutex</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a8395a03fca28c59b45a44b1067a39ff7" compoundref="TimestampUtil_8h" startline="140">TimestampUtil::bpv7_creation_timestamp_t::millisecondsSinceStartOfYear2000</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="structPaddedMallocatorConstants_1ae5bfda817fb358581fe657abc176dc98" compoundref="PaddedVectorUint8_8h" startline="32">PaddedMallocatorConstants::PADDING_ELEMENTS_BEFORE</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="classBpSecPolicyManager_1a6a05b756867b990f3cc18fc56eb81cd8" compoundref="BpSecPolicyManager_8cpp" startline="797" endline="856">BpSecPolicyManager::PopulateTargetArraysForSecuritySource</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990acaf55db72c49969e2ed270adbcd0a8f5">PRIORITY</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13dabdc3849565346067af4614054c4abbce">PRIORITY_BIT_MASK</references>
+        <references refid="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" compoundref="BpSecPolicyManager_8cpp" startline="908" endline="961">BpSecPolicyManager::ProcessOutgoingBundle</references>
+        <references refid="classzmq_1_1message__t_1aa84be585b079e958a4b139818ce80bee" compoundref="zmq_8hpp" startline="485" endline="492">zmq::message_t::rebuild</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0caa9bf54e11a2828f429b5c1adc0ed7ad6">RECEPTION_STATUS_REPORTS_REQUESTED</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a97caa79f4d4b31be229f7ebf9c22b033">REMOVE_BLOCK_IF_IT_CANT_BE_PROCESSED</references>
+        <references refid="classBundleViewV6_1a9de288b6fd509396de9109ea18f4c012" compoundref="BundleViewV6_8cpp" startline="106" endline="117">BundleViewV6::Render</references>
+        <references refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">BundleViewV7::Render</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a8da06c2ed5808afbaf28f9457caf5f3c">RESERVED_MAX_BLOCK_TYPES</references>
+        <references refid="classBundleViewV6_1a07862f753f57041253e7cb3e4f928b59" compoundref="BundleViewV6_8cpp" startline="312" endline="336">BundleViewV6::Reset</references>
+        <references refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">BundleViewV7::Reset</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1a8520a3a9830516384d794d752e4b4b58" compoundref="TimestampUtil_8h" startline="88">TimestampUtil::bpv6_creation_timestamp_t::secondsSinceStartOfYear2000</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1afd6f8b0d3f287d5255b73aff56fca0de" compoundref="TimestampUtil_8h" startline="89">TimestampUtil::bpv6_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a935711417d49e0da59df30409105a926" compoundref="TimestampUtil_8h" startline="141">TimestampUtil::bpv7_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structcbhe__eid__t_1a55b06071bd9a90713bdc90e42d5bc4b0" compoundref="Cbhe_8cpp" startline="55" endline="58">cbhe_eid_t::Set</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1af45583ae6d01a545846724308bda407c" compoundref="BundleViewV6_8cpp" startline="20" endline="22">BundleViewV6::Bpv6PrimaryBlockView::SetManuallyModified</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a21638f71a78fe7ba9e4f3342adb756b0" compoundref="BundleViewV7_8cpp" startline="45" endline="47">BundleViewV7::Bpv7PrimaryBlockView::SetManuallyModified</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1ad49f581e4812b23e7b97ad1b2e3e465f" compoundref="TimestampUtil_8cpp" startline="340" endline="342">TimestampUtil::bpv6_creation_timestamp_t::SetTimeFromNow</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a0f624721074822f2cd6deb387fc24d4e" compoundref="TimestampUtil_8cpp" startline="422" endline="424">TimestampUtil::bpv7_creation_timestamp_t::SetTimeFromNow</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13daecf2a6aabcb0538532ba2a7d0d281557">SINGLETON</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2ae60b4854b44ccfb2d92aa6f035171bb4">SOURCE</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <references refid="classBpSourcePattern_1a4192a857f6af7cb64a60618c6ea44f50" compoundref="BpSourcePattern_8cpp" startline="1237" endline="1243">TryWaitForDataAvailable</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::WholeRxBundleReadyCallback</definition>
+        <argsstring>(padded_vector_uint8_t &amp;wholeBundleVec)</argsstring>
+        <name>WholeRxBundleReadyCallback</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>wholeBundleVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="87" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="909" bodyend="1142"/>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da47330c484efdc1f575888f59b8643c86">ADMINRECORD</references>
+        <references refid="bpv6_8h_1a91d5094c18c45a5c4118b95873227637a2a11f05f8eab05b732e0ddafff3db63d">AGGREGATE_CUSTODY_SIGNAL</references>
+        <references refid="bpv6_8h_1a91d5094c18c45a5c4118b95873227637ab78e6d927084a94760617249801c50e7">BUNDLE_STATUS_REPORT</references>
+        <references refid="structcbhe__bundle__uuid__nofragment__t_1a3b3520a5ac508800117dc48c41226bf2" compoundref="Cbhe_8h" startline="101">cbhe_bundle_uuid_nofragment_t::creationSeconds</references>
+        <references refid="bpv6_8h_1a91d5094c18c45a5c4118b95873227637a8c5d5263c36daf91348353a129adefdd">CUSTODY_SIGNAL</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a9191ef0feb122758a29605600a830ffb" compoundref="Bpv6AdministrativeRecords_8cpp" startline="730" endline="735">Bpv6AdministrativeRecordContentCustodySignal::DidCustodyTransferSucceed</references>
+        <references refid="classBpv6AdministrativeRecordContentAggregateCustodySignal_1a141be11b6b0838f22fa04b56514a58bb" compoundref="Bpv6AdministrativeRecords_8cpp" startline="841" endline="843">Bpv6AdministrativeRecordContentAggregateCustodySignal::DidCustodyTransferSucceed</references>
+        <references refid="classBundleViewV6_1a86fd81cd00106f56c5f068e091b8fbe6" compoundref="BundleViewV6_8cpp" startline="243" endline="250">BundleViewV6::GetCanonicalBlocksByType</references>
+        <references refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" compoundref="BundleViewV7_8cpp" startline="413" endline="420">BundleViewV7::GetCanonicalBlocksByType</references>
+        <references refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" compoundref="Uri_8cpp" startline="24" endline="29">Uri::GetIpnUriString</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a0456795e999eb8b6e457198cafd803ba" compoundref="Bpv6AdministrativeRecords_8cpp" startline="736" endline="738">Bpv6AdministrativeRecordContentCustodySignal::GetReasonCode</references>
+        <references refid="classBpv6AdministrativeRecordContentAggregateCustodySignal_1a43c461b66e2cd16347cd4a4ecd15e997" compoundref="Bpv6AdministrativeRecords_8cpp" startline="844" endline="846">Bpv6AdministrativeRecordContentAggregateCustodySignal::GetReasonCode</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a1065014e4ee716e9e4bbd984070e668e">HOP_COUNT</references>
+        <references refid="bpv6_8h_1a7a8944083cc3269450c906a28ee3e213a022b0d95e8a1b3050d233d67f1d89231">LIFETIME_EXPIRED</references>
+        <references refid="classBundleViewV6_1ab6d45ef3d2e2ce6a23e6b7eab2d3071a" compoundref="BundleViewV6_8cpp" startline="271" endline="275">BundleViewV6::LoadBundle</references>
+        <references refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">BundleViewV7::LoadBundle</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structBpv6AdministrativeRecord_1a36b47bf1ca0329233f9607d582a79c4c" compoundref="bpv6_8h" startline="599">Bpv6AdministrativeRecord::m_adminRecordContentPtr</references>
+        <references refid="structBpv6AdministrativeRecord_1af92cbf537a385030cbdfbac1ed811b07" compoundref="bpv6_8h" startline="598">Bpv6AdministrativeRecord::m_adminRecordTypeCode</references>
+        <references refid="structBpv6CanonicalBlock_1ae30c6e82cb623bd6f77d97fa8cfcb171" compoundref="bpv6_8h" startline="187">Bpv6CanonicalBlock::m_blockTypeSpecificDataLength</references>
+        <references refid="structBpv6CanonicalBlock_1addd20445009c8e3c9a5f91516e3a93b3" compoundref="bpv6_8h" startline="188">Bpv6CanonicalBlock::m_blockTypeSpecificDataPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1af1e392bfdbeaf03a8d9dbcda4fc154e1" compoundref="bpv6_8h" startline="95">Bpv6CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="classBpv6AdministrativeRecordContentBundleStatusReport_1ae2c9d8f01feba0a595c76ac7c9238d3b" compoundref="bpv6_8h" startline="477">Bpv6AdministrativeRecordContentBundleStatusReport::m_bundleSourceEid</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a1e8fe3715d5a70aa839e92b0e54881e6" compoundref="bpv6_8h" startline="531">Bpv6AdministrativeRecordContentCustodySignal::m_bundleSourceEid</references>
+        <references refid="classBpSourcePattern_1a75daac470cc003000f373f25d4080202" compoundref="BpSourcePattern_8h" startline="115">m_cbheBundleUuidSet</references>
+        <references refid="classBpv6AdministrativeRecordContentBundleStatusReport_1a3e10f6075189d00b9660daf7ff64e991" compoundref="bpv6_8h" startline="475">Bpv6AdministrativeRecordContentBundleStatusReport::m_copyOfBundleCreationTimestamp</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1aae3519a1140f2c39d74e8754bea7a40d" compoundref="bpv6_8h" startline="529">Bpv6AdministrativeRecordContentCustodySignal::m_copyOfBundleCreationTimestamp</references>
+        <references refid="classBpv6AdministrativeRecordContentAggregateCustodySignal_1a888248f2693fb2baa1faa81d5905eea5" compoundref="bpv6_8h" startline="563">Bpv6AdministrativeRecordContentAggregateCustodySignal::m_custodyIdFills</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a0543a2b8132a58a3f60c0d9218fc7aaa" compoundref="bpv6_8h" startline="97">Bpv6CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" compoundref="BpSourcePattern_8h" startline="116">m_detectedNextCustodianSupportsCteb</references>
+        <references refid="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" compoundref="BpSourcePattern_8h" startline="134">m_hopCounts</references>
+        <references refid="classBpv6AdministrativeRecordContentCustodySignal_1a31896cb916cf218f125b377fa951ab18" compoundref="bpv6_8h" startline="522">Bpv6AdministrativeRecordContentCustodySignal::m_isFragment</references>
+        <references refid="classBpSourcePattern_1af58be2e56d0d0489795e9ae70a4285fb" compoundref="BpSourcePattern_8h" startline="118">m_isWaitingForRxBundleBeforeNextTx</references>
+        <references refid="classBpSourcePattern_1a2ca15662e2ae8679e078b109a98ccde3" compoundref="BpSourcePattern_8h" startline="133">m_lastPreviousNode</references>
+        <references refid="classBpSourcePattern_1ab1f2969d9b7c9c02ec3cac9e42614a0a" compoundref="BpSourcePattern_8h" startline="113">m_mutexBundleUuidSet</references>
+        <references refid="classBpSourcePattern_1a81376acbc1a02166ea7bded1553cae8a" compoundref="BpSourcePattern_8h" startline="112">m_mutexCtebSet</references>
+        <references refid="classBpSourcePattern_1a4eb9bc21e70d46117d2252d309f6b349" compoundref="BpSourcePattern_8h" startline="110">m_myCustodianEid</references>
+        <references refid="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" compoundref="BpSourcePattern_8h" startline="108">m_myEid</references>
+        <references refid="classBpSourcePattern_1a4564d639f48710e23d17a004b6121aaa" compoundref="BpSourcePattern_8h" startline="67">m_numAcsCustodyTransfers</references>
+        <references refid="classBpSourcePattern_1a3cf30b0c7d20c8e9ce119153c4df80e8" compoundref="BpSourcePattern_8h" startline="68">m_numAcsPacketsReceived</references>
+        <references refid="classBpSourcePattern_1a63167706f8ccdaeb6c128fcd93b6c906" compoundref="BpSourcePattern_8h" startline="66">m_numRfc5050CustodyTransfers</references>
+        <references refid="classBpSourcePattern_1a0d457760a6b91cf04cb7ef94f7919e64" compoundref="BpSourcePattern_8h" startline="114">m_outstandingCtebCustodyIdsFragmentSet</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="classBpv6AdministrativeRecordContentBundleStatusReport_1aabbf02776ef59272798121a778b155b2" compoundref="bpv6_8h" startline="463">Bpv6AdministrativeRecordContentBundleStatusReport::m_reasonCode</references>
+        <references refid="classBundleViewV6_1a150b26cc83d82384c8dfc52bd57d5171" compoundref="BundleViewV6_8h" startline="131">BundleViewV6::m_renderedBundle</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">BundleViewV7::m_renderedBundle</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="classBpv6AdministrativeRecordContentBundleStatusReport_1a9128d1610eac31d25440beb2fe81188d" compoundref="bpv6_8h" startline="462">Bpv6AdministrativeRecordContentBundleStatusReport::m_statusFlags</references>
+        <references refid="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" compoundref="BpSourcePattern_8h" startline="71">m_totalNonAdminRecordBpv6BundleBytesRx</references>
+        <references refid="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" compoundref="BpSourcePattern_8h" startline="72">m_totalNonAdminRecordBpv6BundlesRx</references>
+        <references refid="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" compoundref="BpSourcePattern_8h" startline="70">m_totalNonAdminRecordBpv6PayloadBytesRx</references>
+        <references refid="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" compoundref="BpSourcePattern_8h" startline="75">m_totalNonAdminRecordBpv7BundleBytesRx</references>
+        <references refid="classBpSourcePattern_1a608331545467a4700c85395363e8172f" compoundref="BpSourcePattern_8h" startline="76">m_totalNonAdminRecordBpv7BundlesRx</references>
+        <references refid="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" compoundref="BpSourcePattern_8h" startline="74">m_totalNonAdminRecordBpv7PayloadBytesRx</references>
+        <references refid="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" compoundref="BpSourcePattern_8h" startline="128">m_waitingForRxBundleBeforeNextTxConditionVariable</references>
+        <references refid="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" compoundref="BpSourcePattern_8h" startline="127">m_waitingForRxBundleBeforeNextTxMutex</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="classUri_1ab610ab33584a298de7885f6d713db018" compoundref="Uri_8cpp" startline="50" endline="56">Uri::ParseIpnUriString</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990ac8a2692003eb48983a08356f22ac783f">PREVIOUS_NODE</references>
+        <references refid="classBpSourcePattern_1af81631bb710c10b4e36da974ae176e6b" compoundref="BpSourcePattern_8cpp" startline="1144" endline="1148">ProcessNonAdminRecordBundlePayload</references>
+        <references refid="classFragmentSet_1a3ea00cef7b2335316b0f5f8c5295b310" compoundref="FragmentSet_8cpp" startline="161" endline="237">FragmentSet::RemoveFragment</references>
+        <references refid="bpv6_8h_1a5682d913a26bc95f98e01b8097a5e511abcaf6a1e8b33a69efbb3c6c932de2745">REPORTING_NODE_DELETED_BUNDLE</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1a8520a3a9830516384d794d752e4b4b58" compoundref="TimestampUtil_8h" startline="88">TimestampUtil::bpv6_creation_timestamp_t::secondsSinceStartOfYear2000</references>
+        <references refid="structcbhe__bundle__uuid__nofragment__t_1a2a08c8b2bae9653145398a4c9126490e" compoundref="Cbhe_8h" startline="102">cbhe_bundle_uuid_nofragment_t::sequence</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1afd6f8b0d3f287d5255b73aff56fca0de" compoundref="TimestampUtil_8h" startline="89">TimestampUtil::bpv6_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="structcbhe__bundle__uuid__nofragment__t_1a250422a98175ee1097e94a1c7e5ec85a" compoundref="Cbhe_8h" startline="103">cbhe_bundle_uuid_nofragment_t::srcEid</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::OnNewOpportunisticLinkCallback</definition>
+        <argsstring>(const uint64_t remoteNodeId, Induct *thisInductPtr, void *sinkPtr)</argsstring>
+        <name>OnNewOpportunisticLinkCallback</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+          <declname>thisInductPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>sinkPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="88" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1150" bodyend="1168"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" compoundref="BpSourcePattern_8h" startline="131">m_tcpclInductPtr</references>
+        <references refid="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" compoundref="BpSourcePattern_8h" startline="130">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a31c8bc913bc3e191693f0b7bfc6115ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::OnDeletedOpportunisticLinkCallback</definition>
+        <argsstring>(const uint64_t remoteNodeId, Induct *thisInductPtr, void *sinkPtrAboutToBeDeleted)</argsstring>
+        <name>OnDeletedOpportunisticLinkCallback</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+          <declname>thisInductPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>sinkPtrAboutToBeDeleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="89" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1169" bodyend="1178"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" compoundref="BpSourcePattern_8h" startline="130">m_tcpclOpportunisticRemoteNodeId</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::OnFailedBundleVecSendCallback</definition>
+        <argsstring>(padded_vector_uint8_t &amp;movableBundle, std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid, bool successCallbackCalled)</argsstring>
+        <name>OnFailedBundleVecSendCallback</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>movableBundle</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>successCallbackCalled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="90" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1180" bodyend="1206"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" compoundref="BpSourcePattern_8h" startline="126">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" compoundref="BpSourcePattern_8h" startline="129">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" compoundref="BpSourcePattern_8h" startline="119">m_linkIsDown</references>
+        <references refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" compoundref="BpSourcePattern_8h" startline="125">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a5c0f5fd11d105e9886e40b28002ba02a" compoundref="BpSourcePattern_8h" startline="120">m_mutexQueueBundlesThatFailedToSend</references>
+        <references refid="classBpSourcePattern_1a99640a0f4d34c9c76c799e197d14d2e7" compoundref="BpSourcePattern_8h" startline="123">m_queueBundlesThatFailedToSend</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::OnSuccessfulBundleSendCallback</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid)</argsstring>
+        <name>OnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="91" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1207" bodyend="1224"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" compoundref="BpSourcePattern_8h" startline="126">m_currentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" compoundref="BpSourcePattern_8h" startline="129">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" compoundref="BpSourcePattern_8h" startline="119">m_linkIsDown</references>
+        <references refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" compoundref="BpSourcePattern_8h" startline="125">m_mutexCurrentlySendingBundleIdSet</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BP_APP_PATTERNS_LIB_NO_EXPORT void</type>
+        <definition>void BpSourcePattern::OnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(bool isLinkDownEvent, uint64_t outductUuid)</argsstring>
+        <name>OnOutductLinkStatusChangedCallback</name>
+        <param>
+          <type>bool</type>
+          <declname>isLinkDownEvent</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="92" column="40" bodyfile="common/bpcodec/src/app_patterns/BpSourcePattern.cpp" bodystart="1225" bodyend="1235"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" compoundref="BpSourcePattern_8h" startline="129">m_cvCurrentlySendingBundleIdSet</references>
+        <references refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" compoundref="BpSourcePattern_8h" startline="119">m_linkIsDown</references>
+        <references refid="BpSourcePattern_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSourcePattern_8cpp" startline="39">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">Start</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BPing</label>
+        <link refid="classBPing"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>BpGenAsync</label>
+        <link refid="classBpGenAsync"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>BpSendPacket</label>
+        <link refid="classBpSendPacket"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BpSourcePattern</label>
+        <link refid="classBpSourcePattern"/>
+      </node>
+      <node id="7">
+        <label>BpSendStream</label>
+        <link refid="classBpSendStream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>BpSendFile</label>
+        <link refid="classBpSendFile"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>BpFileTransfer::Impl</label>
+        <link refid="classBpFileTransfer_1_1Impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BpSourcePattern</label>
+        <link refid="classBpSourcePattern"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_tcpclInductPtr</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_outductManager</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_outductFinalStats</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_inductManager</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_finalDestinationEid</edgelabel>
+          <edgelabel>m_lastPreviousNode</edgelabel>
+          <edgelabel>m_myCustodianEid</edgelabel>
+          <edgelabel>m_myEid</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OutductManager</label>
+        <link refid="classOutductManager"/>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>InductManager</label>
+        <link refid="classInductManager"/>
+      </node>
+      <node id="5">
+        <label>OutductFinalStats</label>
+        <link refid="structOutductFinalStats"/>
+      </node>
+      <node id="3">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="7">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpcodec/include/app_patterns/BpSourcePattern.h" line="52" column="1" bodyfile="common/bpcodec/include/app_patterns/BpSourcePattern.h" bodystart="52" bodyend="137"/>
+    <listofallmembers>
+      <member refid="classBpSourcePattern_1a14e5f3f966e37f4d17ce12535b0795f1" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>BpSourcePattern</name></member>
+      <member refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>BpSourcePatternThreadFunc</name></member>
+      <member refid="classBpSourcePattern_1a92386efd86951105b652a7971acbd406" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>bundle_userdata_pair_t</name></member>
+      <member refid="classBpSourcePattern_1aca3993057d01fe31d0884590cefc09c2" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>bundleid_payloadsize_pair_t</name></member>
+      <member refid="classBpSourcePattern_1ab65db72649664027f585d3b2ce45e9f5" prot="protected" virt="pure-virtual"><scope>BpSourcePattern</scope><name>CopyPayload_Step2</name></member>
+      <member refid="classBpSourcePattern_1a65736f8cce8b64a42be757a1b6f334e4" prot="protected" virt="pure-virtual"><scope>BpSourcePattern</scope><name>GetNextPayloadLength_Step1</name></member>
+      <member refid="classBpSourcePattern_1ad24d6a1122cb3b0932ef31bed17d093a" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_allOutductsReady</name></member>
+      <member refid="classBpSourcePattern_1aa51049d6c9a06e1493ca9329a706874e" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_bpSourcePatternThreadPtr</name></member>
+      <member refid="classBpSourcePattern_1ae7d9ffa9cf7ba1621b5daa1991f7c16e" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_bundleCount</name></member>
+      <member refid="classBpSourcePattern_1a2582e0f0bccacb08dfb04450cc47fee4" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_bundleLifetimeMilliseconds</name></member>
+      <member refid="classBpSourcePattern_1a3db81e0968f5dc69568ca0f34ebb6e1b" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_bundlePriority</name></member>
+      <member refid="classBpSourcePattern_1abaac83e06d9284aaf421d9e9109f0a30" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_bundleSendTimeoutSeconds</name></member>
+      <member refid="classBpSourcePattern_1a22f49d342ca728f581c2008bdfacd54c" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_bundleSendTimeoutTimeDuration</name></member>
+      <member refid="classBpSourcePattern_1a75daac470cc003000f373f25d4080202" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_cbheBundleUuidSet</name></member>
+      <member refid="classBpSourcePattern_1a5ade20a00f01c19e86a54a77910c1fc3" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_claRate</name></member>
+      <member refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_currentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1a33baeae43169c8915f2634c252ea197e" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_custodyTransferUseAcs</name></member>
+      <member refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_cvCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_detectedNextCustodianSupportsCteb</name></member>
+      <member refid="classBpSourcePattern_1acd6579e2620e404dc053b843aece9062" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_finalDestinationEid</name></member>
+      <member refid="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_hopCounts</name></member>
+      <member refid="classBpSourcePattern_1a573a77a84709ab74ba5883db184d93ab" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_inductManager</name></member>
+      <member refid="classBpSourcePattern_1af58be2e56d0d0489795e9ae70a4285fb" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_isWaitingForRxBundleBeforeNextTx</name></member>
+      <member refid="classBpSourcePattern_1a2ca15662e2ae8679e078b109a98ccde3" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_lastPreviousNode</name></member>
+      <member refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_linkIsDown</name></member>
+      <member refid="classBpSourcePattern_1ab1f2969d9b7c9c02ec3cac9e42614a0a" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_mutexBundleUuidSet</name></member>
+      <member refid="classBpSourcePattern_1a81376acbc1a02166ea7bded1553cae8a" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_mutexCtebSet</name></member>
+      <member refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_mutexCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1a5c0f5fd11d105e9886e40b28002ba02a" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_mutexQueueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSourcePattern_1a4eb9bc21e70d46117d2252d309f6b349" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_myCustodianEid</name></member>
+      <member refid="classBpSourcePattern_1abb54ce7d476cf54d3227188bed959b4e" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_myCustodianEidUriString</name></member>
+      <member refid="classBpSourcePattern_1aace92159af95fece0fb37f884030b4cc" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_myCustodianServiceId</name></member>
+      <member refid="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_myEid</name></member>
+      <member refid="classBpSourcePattern_1ac4121e9d009bd85d4c490c97d3e26f3e" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_nextBundleId</name></member>
+      <member refid="classBpSourcePattern_1a4564d639f48710e23d17a004b6121aaa" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_numAcsCustodyTransfers</name></member>
+      <member refid="classBpSourcePattern_1a3cf30b0c7d20c8e9ce119153c4df80e8" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_numAcsPacketsReceived</name></member>
+      <member refid="classBpSourcePattern_1a63167706f8ccdaeb6c128fcd93b6c906" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_numRfc5050CustodyTransfers</name></member>
+      <member refid="classBpSourcePattern_1a5918ea451e24872e50305840bbf66940" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_outductFinalStats</name></member>
+      <member refid="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_outductManager</name></member>
+      <member refid="classBpSourcePattern_1a0d457760a6b91cf04cb7ef94f7919e64" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_outstandingCtebCustodyIdsFragmentSet</name></member>
+      <member refid="classBpSourcePattern_1a99640a0f4d34c9c76c799e197d14d2e7" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_queueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSourcePattern_1ae4571a51290212869654a81e8b64e6e3" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_requireRxBundleBeforeNextTx</name></member>
+      <member refid="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_running</name></member>
+      <member refid="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_tcpclInductPtr</name></member>
+      <member refid="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_tcpclOpportunisticRemoteNodeId</name></member>
+      <member refid="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_totalNonAdminRecordBpv6BundleBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_totalNonAdminRecordBpv6BundlesRx</name></member>
+      <member refid="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_totalNonAdminRecordBpv6PayloadBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_totalNonAdminRecordBpv7BundleBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a608331545467a4700c85395363e8172f" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_totalNonAdminRecordBpv7BundlesRx</name></member>
+      <member refid="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_totalNonAdminRecordBpv7PayloadBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a2fdf4f11bd65c5767e845ae61be7b363" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_useBpVersion7</name></member>
+      <member refid="classBpSourcePattern_1a1795cf65d6e60dcc5cd15f15ac9ddda0" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_useCustodyTransfer</name></member>
+      <member refid="classBpSourcePattern_1aa45d0d7bc2d9146cc090de104514756f" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_useInductForSendingBundles</name></member>
+      <member refid="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_waitingForRxBundleBeforeNextTxConditionVariable</name></member>
+      <member refid="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>m_waitingForRxBundleBeforeNextTxMutex</name></member>
+      <member refid="classBpSourcePattern_1a31c8bc913bc3e191693f0b7bfc6115ba" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>OnDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>OnFailedBundleVecSendCallback</name></member>
+      <member refid="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>OnNewOpportunisticLinkCallback</name></member>
+      <member refid="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>OnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>OnSuccessfulBundleSendCallback</name></member>
+      <member refid="classBpSourcePattern_1af81631bb710c10b4e36da974ae176e6b" prot="protected" virt="virtual"><scope>BpSourcePattern</scope><name>ProcessNonAdminRecordBundlePayload</name></member>
+      <member refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>Start</name></member>
+      <member refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" prot="public" virt="non-virtual"><scope>BpSourcePattern</scope><name>Stop</name></member>
+      <member refid="classBpSourcePattern_1a4192a857f6af7cb64a60618c6ea44f50" prot="protected" virt="virtual"><scope>BpSourcePattern</scope><name>TryWaitForDataAvailable</name></member>
+      <member refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" prot="private" virt="non-virtual"><scope>BpSourcePattern</scope><name>WholeRxBundleReadyCallback</name></member>
+      <member refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" prot="public" virt="virtual"><scope>BpSourcePattern</scope><name>~BpSourcePattern</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

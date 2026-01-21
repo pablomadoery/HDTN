@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classOutductManager" kind="class" language="C++" prot="public">
+    <compoundname>OutductManager</compoundname>
+    <includes refid="OutductManager_8h" local="no">OutductManager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, std::shared_ptr&lt; <ref refid="classOutduct" kindref="compound">Outduct</ref> &gt; &gt;</type>
+        <definition>std::map&lt;uint64_t, std::shared_ptr&lt;Outduct&gt; &gt; OutductManager::m_finalDestNodeIdToOutductMap</definition>
+        <argsstring></argsstring>
+        <name>m_finalDestNodeIdToOutductMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="60" column="14" bodyfile="common/outduct_manager/include/OutductManager.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classOutductManager_1af680bf491f7b4aac76366f692b3a9040" compoundref="OutductManager_8cpp" startline="255" endline="278">GetAllOutductCapabilitiesTelemetry_ThreadSafe</referencedby>
+        <referencedby refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" compoundref="OutductManager_8cpp" startline="280" endline="287">GetOutductByFinalDestinationEid_ThreadSafe</referencedby>
+        <referencedby refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" compoundref="OutductManager_8cpp" startline="44" endline="167">LoadOutductsFromConfig</referencedby>
+        <referencedby refid="classOutductManager_1aa101a69def961e4f82cb43781f69599a" compoundref="OutductManager_8cpp" startline="232" endline="253">Reroute_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex OutductManager::m_finalDestNodeIdToOutductMapMutex</definition>
+        <argsstring></argsstring>
+        <name>m_finalDestNodeIdToOutductMapMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="61" column="18" bodyfile="common/outduct_manager/include/OutductManager.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classOutductManager_1af680bf491f7b4aac76366f692b3a9040" compoundref="OutductManager_8cpp" startline="255" endline="278">GetAllOutductCapabilitiesTelemetry_ThreadSafe</referencedby>
+        <referencedby refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" compoundref="OutductManager_8cpp" startline="280" endline="287">GetOutductByFinalDestinationEid_ThreadSafe</referencedby>
+        <referencedby refid="classOutductManager_1aa101a69def961e4f82cb43781f69599a" compoundref="OutductManager_8cpp" startline="232" endline="253">Reroute_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, std::shared_ptr&lt; <ref refid="classOutduct" kindref="compound">Outduct</ref> &gt; &gt;</type>
+        <definition>std::map&lt;uint64_t, std::shared_ptr&lt;Outduct&gt; &gt; OutductManager::m_nextHopNodeIdToOutductMap</definition>
+        <argsstring></argsstring>
+        <name>m_nextHopNodeIdToOutductMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="62" column="14" bodyfile="common/outduct_manager/include/OutductManager.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classOutductManager_1a0b3d91d32e52d3b20ab3f30c190ecddf" compoundref="OutductManager_8cpp" startline="289" endline="297">GetOutductByNextHopNodeId</referencedby>
+        <referencedby refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" compoundref="OutductManager_8cpp" startline="44" endline="167">LoadOutductsFromConfig</referencedby>
+        <referencedby refid="classOutductManager_1aa101a69def961e4f82cb43781f69599a" compoundref="OutductManager_8cpp" startline="232" endline="253">Reroute_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classOutduct" kindref="compound">Outduct</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Outduct&gt; &gt; OutductManager::m_outductsVec</definition>
+        <argsstring></argsstring>
+        <name>m_outductsVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="63" column="17" bodyfile="common/outduct_manager/include/OutductManager.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classOutductManager_1ad64ed646a077f9a435bad74308930a0c" compoundref="OutductManager_8cpp" startline="169" endline="177">AllReadyToForward</referencedby>
+        <referencedby refid="classOutductManager_1af680bf491f7b4aac76366f692b3a9040" compoundref="OutductManager_8cpp" startline="255" endline="278">GetAllOutductCapabilitiesTelemetry_ThreadSafe</referencedby>
+        <referencedby refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" compoundref="OutductManager_8cpp" startline="299" endline="308">GetOutductByOutductUuid</referencedby>
+        <referencedby refid="classOutductManager_1a5f1eef32d3d62816697bae23b6420522" compoundref="OutductManager_8cpp" startline="310" endline="319">GetOutductSharedPtrByOutductUuid</referencedby>
+        <referencedby refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" compoundref="OutductManager_8cpp" startline="44" endline="167">LoadOutductsFromConfig</referencedby>
+        <referencedby refid="classOutductManager_1ac8f8c475c0dbb34b3519e35a4bc3375f" compoundref="OutductManager_8cpp" startline="321" endline="338">PopulateAllOutductTelemetry</referencedby>
+        <referencedby refid="classOutductManager_1a44adbefe58cb9ea2d7f878f814dbd7f5" compoundref="OutductManager_8cpp" startline="179" endline="184">StopAllOutducts</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOutductManager_1ae62c06198f24e3fc36d0997a059c6542" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t OutductManager::m_numEventsTooManyUnackedBundles</definition>
+        <argsstring></argsstring>
+        <name>m_numEventsTooManyUnackedBundles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="64" column="14" bodyfile="common/outduct_manager/include/OutductManager.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classOutductManager_1a695d68f95c677efba575da0935849e4b" compoundref="OutductManager_8cpp" startline="35" endline="42">~OutductManager</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOutductManager_1a00081ee604e8b214eaf1c828c17ecb9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>OutductManager::OutductManager</definition>
+        <argsstring>()</argsstring>
+        <name>OutductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="36" column="32" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a695d68f95c677efba575da0935849e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>OutductManager::~OutductManager</definition>
+        <argsstring>()</argsstring>
+        <name>~OutductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="37" column="32" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="35" bodyend="42"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classOutductManager_1ae62c06198f24e3fc36d0997a059c6542" compoundref="OutductManager_8h" startline="64">m_numEventsTooManyUnackedBundles</references>
+        <references refid="classOutductManager_1a44adbefe58cb9ea2d7f878f814dbd7f5" compoundref="OutductManager_8cpp" startline="179" endline="184">StopAllOutducts</references>
+        <references refid="OutductManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="OutductManager_8cpp" startline="31">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool OutductManager::LoadOutductsFromConfig</definition>
+        <argsstring>(const OutductsConfig &amp;outductsConfig, const uint64_t myNodeId, const uint64_t maxUdpRxPacketSizeBytesForAllLtp, const uint64_t maxOpportunisticRxBundleSizeBytes, const OutductOpportunisticProcessReceivedBundleCallback_t &amp;outductOpportunisticProcessReceivedBundleCallback=OutductOpportunisticProcessReceivedBundleCallback_t(), const OnFailedBundleVecSendCallback_t &amp;outductOnFailedBundleVecSendCallback=OnFailedBundleVecSendCallback_t(), const OnFailedBundleZmqSendCallback_t &amp;outductOnFailedBundleZmqSendCallback=OnFailedBundleZmqSendCallback_t(), const OnSuccessfulBundleSendCallback_t &amp;onSuccessfulBundleSendCallback=OnSuccessfulBundleSendCallback_t(), const OnOutductLinkStatusChangedCallback_t &amp;onOutductLinkStatusChangedCallback=OnOutductLinkStatusChangedCallback_t())</argsstring>
+        <name>LoadOutductsFromConfig</name>
+        <param>
+          <type>const <ref refid="classOutductsConfig" kindref="compound">OutductsConfig</ref> &amp;</type>
+          <declname>outductsConfig</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>myNodeId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxUdpRxPacketSizeBytesForAllLtp</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxOpportunisticRxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref> &amp;</type>
+          <declname>outductOpportunisticProcessReceivedBundleCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>outductOnFailedBundleVecSendCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>outductOnFailedBundleZmqSendCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref> &amp;</type>
+          <declname>onSuccessfulBundleSendCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref> &amp;</type>
+          <declname>onOutductLinkStatusChangedCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="38" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="44" bodyend="167"/>
+        <references refid="structoutduct__element__config__t_1a626dd2558439ddd6ecaa456b25b0f492" compoundref="OutductsConfig_8h" startline="38">outduct_element_config_t::convergenceLayer</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" compoundref="OutductManager_8h" startline="60">m_finalDestNodeIdToOutductMap</references>
+        <references refid="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" compoundref="OutductManager_8h" startline="62">m_nextHopNodeIdToOutductMap</references>
+        <references refid="classOutductsConfig_1a10cfb4f516dedc7160df17d4571672fc" compoundref="OutductsConfig_8h" startline="149">OutductsConfig::m_outductElementConfigVector</references>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+        <references refid="structoutduct__element__config__t_1a0d1c24612edddc8d50883a821ee8a8f3" compoundref="OutductsConfig_8h" startline="43">outduct_element_config_t::maxSumOfBundleBytesInPipeline</references>
+        <references refid="structoutduct__element__config__t_1a2a91b49209685417015eddfdba6f6de5" compoundref="OutductsConfig_8h" startline="39">outduct_element_config_t::nextHopNodeId</references>
+        <references refid="classLtpUdpEngineManager_1a318f7d00c025d2b6affbdfa57bb0d69d" compoundref="LtpUdpEngineManager_8cpp" startline="32" endline="48">LtpUdpEngineManager::SetMaxUdpRxPacketSizeBytesForAllLtp</references>
+        <references refid="OutductManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="OutductManager_8cpp" startline="31">subprocess</references>
+        <references refid="structoutduct__element__config__t_1a806c6b448d0fd8c608676112212e7df4" compoundref="OutductsConfig_8h" startline="82">outduct_element_config_t::tcpclAllowOpportunisticReceiveBundles</references>
+        <references refid="structoutduct__element__config__t_1a1ece1e98c46843c433beddeb94e32df9" compoundref="OutductsConfig_8h" startline="87">outduct_element_config_t::tlsIsRequired</references>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">BpSinkPattern::Init</referencedby>
+        <referencedby refid="classBpReceivePacket_1a131a2e09a8b7764c6a5ef94ad436d81e" compoundref="BpReceivePacket_8cpp" startline="32" endline="41">BpReceivePacket::socketInit</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">BpSourcePattern::Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1ad64ed646a077f9a435bad74308930a0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool OutductManager::AllReadyToForward</definition>
+        <argsstring>() const</argsstring>
+        <name>AllReadyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="44" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="169" bodyend="177"/>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSinkPattern_1ae996237290c1368ebe6fb606fa21fdb1" compoundref="BpSinkPattern_8cpp" startline="114" endline="227">BpSinkPattern::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a44adbefe58cb9ea2d7f878f814dbd7f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void OutductManager::StopAllOutducts</definition>
+        <argsstring>()</argsstring>
+        <name>StopAllOutducts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="45" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="179" bodyend="184"/>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">BpSourcePattern::Stop</referencedby>
+        <referencedby refid="classOutductManager_1a695d68f95c677efba575da0935849e4b" compoundref="OutductManager_8cpp" startline="35" endline="42">~OutductManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT <ref refid="classOutduct" kindref="compound">Outduct</ref> *</type>
+        <definition>Outduct * OutductManager::GetOutductByFinalDestinationEid_ThreadSafe</definition>
+        <argsstring>(const cbhe_eid_t &amp;finalDestEid)</argsstring>
+        <name>GetOutductByFinalDestinationEid_ThreadSafe</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="46" column="41" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="280" bodyend="287"/>
+        <references refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" compoundref="OutductManager_8h" startline="60">m_finalDestNodeIdToOutductMap</references>
+        <references refid="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" compoundref="OutductManager_8h" startline="61">m_finalDestNodeIdToOutductMapMutex</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <referencedby refid="classOutductManager_1a51f21d2693bdfe0fd6994066be4f0bcf" compoundref="OutductManager_8cpp" startline="186" endline="200">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT <ref refid="classOutduct" kindref="compound">Outduct</ref> *</type>
+        <definition>Outduct * OutductManager::GetOutductByOutductUuid</definition>
+        <argsstring>(const uint64_t uuid)</argsstring>
+        <name>GetOutductByOutductUuid</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="47" column="41" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="299" bodyend="308"/>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpReceivePacket_1a1a9fad68ea68beba234519da13b1b63c" compoundref="BpReceivePacket_8cpp" startline="13" endline="30">BpReceivePacket::ProcessPayload</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3890e812d8965b0060120ce6e0e9b626" compoundref="BpSinkPattern_8cpp" startline="687" endline="817">BpSinkPattern::SenderReaderThreadFunc</referencedby>
+        <referencedby refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" compoundref="BpSourcePattern_8cpp" startline="137" endline="267">BpSourcePattern::Start</referencedby>
+        <referencedby refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" compoundref="BpSourcePattern_8cpp" startline="106" endline="135">BpSourcePattern::Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1aa101a69def961e4f82cb43781f69599a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool OutductManager::Reroute_ThreadSafe</definition>
+        <argsstring>(const uint64_t finalDestNodeId, const uint64_t newNextHopNodeId)</argsstring>
+        <name>Reroute_ThreadSafe</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>finalDestNodeId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newNextHopNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="48" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="232" bodyend="253"/>
+        <references refid="message_8hpp_1a6eb37e57a2db51080df432eb85f8711c" compoundref="message_8hpp" startline="79">HDTN_NOROUTE</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" compoundref="OutductManager_8h" startline="60">m_finalDestNodeIdToOutductMap</references>
+        <references refid="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" compoundref="OutductManager_8h" startline="61">m_finalDestNodeIdToOutductMapMutex</references>
+        <references refid="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" compoundref="OutductManager_8h" startline="62">m_nextHopNodeIdToOutductMap</references>
+        <references refid="OutductManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="OutductManager_8cpp" startline="31">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1af680bf491f7b4aac76366f692b3a9040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void OutductManager::GetAllOutductCapabilitiesTelemetry_ThreadSafe</definition>
+        <argsstring>(AllOutductCapabilitiesTelemetry_t &amp;allOutductCapabilitiesTelemetry)</argsstring>
+        <name>GetAllOutductCapabilitiesTelemetry_ThreadSafe</name>
+        <param>
+          <type><ref refid="structAllOutductCapabilitiesTelemetry__t" kindref="compound">AllOutductCapabilitiesTelemetry_t</ref> &amp;</type>
+          <declname>allOutductCapabilitiesTelemetry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="49" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="255" bodyend="278"/>
+        <references refid="structOutductCapabilityTelemetry__t_1abb2e38a045785ebcd23fa969a4b76a6c" compoundref="TelemetryDefinitions_8h" startline="103">OutductCapabilityTelemetry_t::assumedInitiallyDown</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a689c88d24b069c2a5d8f4be1e13d3f44" compoundref="TelemetryDefinitions_8h" startline="105">OutductCapabilityTelemetry_t::finalDestinationNodeIdList</references>
+        <references refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" compoundref="OutductManager_8h" startline="60">m_finalDestNodeIdToOutductMap</references>
+        <references refid="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" compoundref="OutductManager_8h" startline="61">m_finalDestNodeIdToOutductMapMutex</references>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a32a8ddb2f69a093b412edeaf4fd9ba74" compoundref="TelemetryDefinitions_8h" startline="100">OutductCapabilityTelemetry_t::maxBundlesInPipeline</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a452ef93342838797f8b574e46c49bb1d" compoundref="TelemetryDefinitions_8h" startline="101">OutductCapabilityTelemetry_t::maxBundleSizeBytesInPipeline</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a04672bcc8ebd6c638b95bef030ce65b9" compoundref="TelemetryDefinitions_8h" startline="102">OutductCapabilityTelemetry_t::nextHopNodeId</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a33cd295442b76ca142d75a8e000fb0aa" compoundref="TelemetryDefinitions_8h" startline="99">OutductCapabilityTelemetry_t::outductArrayIndex</references>
+        <references refid="structAllOutductCapabilitiesTelemetry__t_1af2bec1ba32e7338608ec6793360ae09a" compoundref="TelemetryDefinitions_8h" startline="121">AllOutductCapabilitiesTelemetry_t::outductCapabilityTelemetryList</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a5f1eef32d3d62816697bae23b6420522" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::shared_ptr&lt; <ref refid="classOutduct" kindref="compound">Outduct</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Outduct &gt; OutductManager::GetOutductSharedPtrByOutductUuid</definition>
+        <argsstring>(const uint64_t uuid)</argsstring>
+        <name>GetOutductSharedPtrByOutductUuid</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="50" column="48" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="310" bodyend="319"/>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a0b3d91d32e52d3b20ab3f30c190ecddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT <ref refid="classOutduct" kindref="compound">Outduct</ref> *</type>
+        <definition>Outduct * OutductManager::GetOutductByNextHopNodeId</definition>
+        <argsstring>(const uint64_t nextHopNodeId)</argsstring>
+        <name>GetOutductByNextHopNodeId</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>nextHopNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="51" column="41" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="289" bodyend="297"/>
+        <references refid="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" compoundref="OutductManager_8h" startline="62">m_nextHopNodeIdToOutductMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a51f21d2693bdfe0fd6994066be4f0bcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool OutductManager::Forward</definition>
+        <argsstring>(const cbhe_eid_t &amp;finalDestEid, const uint8_t *bundleData, const std::size_t size, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEid</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="53" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="186" bodyend="200"/>
+        <references refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" compoundref="OutductManager_8cpp" startline="280" endline="287">GetOutductByFinalDestinationEid_ThreadSafe</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="OutductManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="OutductManager_8cpp" startline="31">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a54689b4f131983d62afddae078a212ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool OutductManager::Forward</definition>
+        <argsstring>(const cbhe_eid_t &amp;finalDestEid, zmq::message_t &amp;movableDataZmq, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEid</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>movableDataZmq</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="54" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="201" bodyend="215"/>
+        <references refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" compoundref="OutductManager_8cpp" startline="280" endline="287">GetOutductByFinalDestinationEid_ThreadSafe</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="OutductManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="OutductManager_8cpp" startline="31">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1a01776f19e6e88d8d33e428c41cd81b9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool OutductManager::Forward</definition>
+        <argsstring>(const cbhe_eid_t &amp;finalDestEid, padded_vector_uint8_t &amp;movableDataVec, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEid</declname>
+        </param>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>movableDataVec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="55" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="216" bodyend="230"/>
+        <references refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" compoundref="OutductManager_8cpp" startline="280" endline="287">GetOutductByFinalDestinationEid_ThreadSafe</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="OutductManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="OutductManager_8cpp" startline="31">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classOutductManager_1ac8f8c475c0dbb34b3519e35a4bc3375f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void OutductManager::PopulateAllOutductTelemetry</definition>
+        <argsstring>(AllOutductTelemetry_t &amp;allOutductTelem)</argsstring>
+        <name>PopulateAllOutductTelemetry</name>
+        <param>
+          <type><ref refid="structAllOutductTelemetry__t" kindref="compound">AllOutductTelemetry_t</ref> &amp;</type>
+          <declname>allOutductTelem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/OutductManager.h" line="57" column="37" bodyfile="common/outduct_manager/src/OutductManager.cpp" bodystart="321" bodyend="338"/>
+        <references refid="classTimestampUtil_1a48adda43f5f32341582bbaa17462fdef" compoundref="TimestampUtil_8cpp" startline="43" endline="45">TimestampUtil::GetMillisecondsSinceEpochRfc5050</references>
+        <references refid="structAllOutductTelemetry__t_1aa8d6edbc6227c417235652957c9b020a" compoundref="TelemetryDefinitions_8h" startline="490">AllOutductTelemetry_t::m_listAllOutducts</references>
+        <references refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" compoundref="OutductManager_8h" startline="63">m_outductsVec</references>
+        <references refid="structAllOutductTelemetry__t_1a9b27e536a7afd7a8f956798c359eadd1" compoundref="TelemetryDefinitions_8h" startline="481">AllOutductTelemetry_t::m_timestampMilliseconds</references>
+        <references refid="structAllOutductTelemetry__t_1aeda43f7475a6c3767628187121d9e928" compoundref="TelemetryDefinitions_8h" startline="489">AllOutductTelemetry_t::m_totalBundleBytesSuccessfullySent</references>
+        <references refid="structAllOutductTelemetry__t_1ad88c11335520e03fed63a690ef0d282d" compoundref="TelemetryDefinitions_8h" startline="488">AllOutductTelemetry_t::m_totalBundlesSuccessfullySent</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/outduct_manager/include/OutductManager.h" line="34" column="1" bodyfile="common/outduct_manager/include/OutductManager.h" bodystart="34" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classOutductManager_1ad64ed646a077f9a435bad74308930a0c" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>AllReadyToForward</name></member>
+      <member refid="classOutductManager_1a51f21d2693bdfe0fd6994066be4f0bcf" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>Forward</name></member>
+      <member refid="classOutductManager_1a54689b4f131983d62afddae078a212ab" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>Forward</name></member>
+      <member refid="classOutductManager_1a01776f19e6e88d8d33e428c41cd81b9d" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>Forward</name></member>
+      <member refid="classOutductManager_1af680bf491f7b4aac76366f692b3a9040" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>GetAllOutductCapabilitiesTelemetry_ThreadSafe</name></member>
+      <member refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>GetOutductByFinalDestinationEid_ThreadSafe</name></member>
+      <member refid="classOutductManager_1a0b3d91d32e52d3b20ab3f30c190ecddf" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>GetOutductByNextHopNodeId</name></member>
+      <member refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>GetOutductByOutductUuid</name></member>
+      <member refid="classOutductManager_1a5f1eef32d3d62816697bae23b6420522" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>GetOutductSharedPtrByOutductUuid</name></member>
+      <member refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>LoadOutductsFromConfig</name></member>
+      <member refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" prot="private" virt="non-virtual"><scope>OutductManager</scope><name>m_finalDestNodeIdToOutductMap</name></member>
+      <member refid="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" prot="private" virt="non-virtual"><scope>OutductManager</scope><name>m_finalDestNodeIdToOutductMapMutex</name></member>
+      <member refid="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" prot="private" virt="non-virtual"><scope>OutductManager</scope><name>m_nextHopNodeIdToOutductMap</name></member>
+      <member refid="classOutductManager_1ae62c06198f24e3fc36d0997a059c6542" prot="private" virt="non-virtual"><scope>OutductManager</scope><name>m_numEventsTooManyUnackedBundles</name></member>
+      <member refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" prot="private" virt="non-virtual"><scope>OutductManager</scope><name>m_outductsVec</name></member>
+      <member refid="classOutductManager_1a00081ee604e8b214eaf1c828c17ecb9d" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>OutductManager</name></member>
+      <member refid="classOutductManager_1ac8f8c475c0dbb34b3519e35a4bc3375f" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>PopulateAllOutductTelemetry</name></member>
+      <member refid="classOutductManager_1aa101a69def961e4f82cb43781f69599a" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>Reroute_ThreadSafe</name></member>
+      <member refid="classOutductManager_1a44adbefe58cb9ea2d7f878f814dbd7f5" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>StopAllOutducts</name></member>
+      <member refid="classOutductManager_1a695d68f95c677efba575da0935849e4b" prot="public" virt="non-virtual"><scope>OutductManager</scope><name>~OutductManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

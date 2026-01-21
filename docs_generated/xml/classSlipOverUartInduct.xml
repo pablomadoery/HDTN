@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classSlipOverUartInduct" kind="class" language="C++" prot="public">
+    <compoundname>SlipOverUartInduct</compoundname>
+    <basecompoundref refid="classInduct" prot="public" virt="non-virtual">Induct</basecompoundref>
+    <includes refid="SlipOverUartInduct_8h" local="no">SlipOverUartInduct.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSlipOverUartInduct_1a11e0e3e2a839840e43c79f8ec42ed62d" prot="private" static="no" mutable="no">
+        <type><ref refid="classUartInterface" kindref="compound">UartInterface</ref></type>
+        <definition>UartInterface SlipOverUartInduct::m_uartInterface</definition>
+        <argsstring></argsstring>
+        <name>m_uartInterface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="49" column="19" bodyfile="common/induct_manager/include/SlipOverUartInduct.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" compoundref="SlipOverUartInduct_8cpp" startline="74" endline="97">NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1ab0663b326237286cc89db82b5f8bdf2f" compoundref="SlipOverUartInduct_8cpp" startline="128" endline="133">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1ae553bceb006928616ecfc21f91c1a236" compoundref="SlipOverUartInduct_8cpp" startline="99" endline="101">Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" prot="private" static="no" mutable="no">
+        <type><ref refid="structInduct_1_1OpportunisticBundleQueue" kindref="compound">OpportunisticBundleQueue</ref> *</type>
+        <definition>OpportunisticBundleQueue* SlipOverUartInduct::m_opportunisticBundleQueuePtr</definition>
+        <argsstring></argsstring>
+        <name>m_opportunisticBundleQueuePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="50" column="30" bodyfile="common/induct_manager/include/SlipOverUartInduct.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" compoundref="SlipOverUartInduct_8cpp" startline="74" endline="97">NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a14cab3353a980b309168406a5ded967f" compoundref="SlipOverUartInduct_8cpp" startline="104" endline="112">OnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1af24e257e81f1bf051fc748318dfc39ff" compoundref="SlipOverUartInduct_8cpp" startline="113" endline="121">OnFailedBundleZmqSendCallback</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1acaa28a58eff6d9ca479d990afbc1c699" compoundref="SlipOverUartInduct_8cpp" startline="122" endline="126">OnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>SlipOverUartInduct::SlipOverUartInduct</definition>
+        <argsstring>(const InductProcessBundleCallback_t &amp;inductProcessBundleCallback, const induct_element_config_t &amp;inductConfig, const uint64_t maxBundleSizeBytes, const OnNewOpportunisticLinkCallback_t &amp;onNewOpportunisticLinkCallback, const OnDeletedOpportunisticLinkCallback_t &amp;onDeletedOpportunisticLinkCallback)</argsstring>
+        <name>SlipOverUartInduct</name>
+        <param>
+          <type>const <ref refid="Induct_8h_1a86c4fd64e7b8ba210fcb5e112a9877e2" kindref="member">InductProcessBundleCallback_t</ref> &amp;</type>
+          <declname>inductProcessBundleCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structinduct__element__config__t" kindref="compound">induct_element_config_t</ref> &amp;</type>
+          <declname>inductConfig</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="Induct_8h_1a213e9f0c8b6ba856fed5c53e099be1cd" kindref="member">OnNewOpportunisticLinkCallback_t</ref> &amp;</type>
+          <declname>onNewOpportunisticLinkCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="Induct_8h_1ac4801775e6b9d5a59054e15790927b4c" kindref="member">OnDeletedOpportunisticLinkCallback_t</ref> &amp;</type>
+          <declname>onDeletedOpportunisticLinkCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="32" column="31" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="25" bodyend="60"/>
+        <references refid="classUri_1a25005e5cf294b1c369241e339c347c1e" compoundref="Uri_8cpp" startline="30" endline="35">Uri::GetIpnUriStringAnyServiceNumber</references>
+        <references refid="structInductConnectionTelemetry__t_1a918c4d384808ca15c0b500ea9e8c4f18" compoundref="TelemetryDefinitions_8h" startline="144">InductConnectionTelemetry_t::m_connectionName</references>
+        <references refid="classUartInterface_1ae702679c0ce2fe311b39418ad4a82ad8" compoundref="UartInterface_8h" startline="140">UartInterface::m_inductTelemetry</references>
+        <references refid="classInduct_1a1e17749fc05146922183f4f4ef32ee86" compoundref="Induct_8h" startline="92">Induct::m_mapNodeIdToOpportunisticBundleQueue</references>
+        <references refid="classInduct_1a5ac721528b8eaa20a6c9dcaf5adee326" compoundref="Induct_8h" startline="93">Induct::m_mapNodeIdToOpportunisticBundleQueueMutex</references>
+        <references refid="structInduct_1_1OpportunisticBundleQueue_1a7b125d5f38bb6a7a078cb5e7a767c75b" compoundref="Induct_8h" startline="80">Induct::OpportunisticBundleQueue::m_maxTxBundlesInPipeline</references>
+        <references refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" compoundref="Induct_8h" startline="95">Induct::m_onDeletedOpportunisticLinkCallback</references>
+        <references refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" compoundref="Induct_8h" startline="94">Induct::m_onNewOpportunisticLinkCallback</references>
+        <references refid="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" compoundref="SlipOverUartInduct_8h" startline="50">m_opportunisticBundleQueuePtr</references>
+        <references refid="structInduct_1_1OpportunisticBundleQueue_1a1a2881ea751961f0569cb6f6e90f9559" compoundref="Induct_8h" startline="79">Induct::OpportunisticBundleQueue::m_remoteNodeId</references>
+        <references refid="classSlipOverUartInduct_1a11e0e3e2a839840e43c79f8ec42ed62d" compoundref="SlipOverUartInduct_8h" startline="49">m_uartInterface</references>
+        <references refid="SlipOverUartInduct_8cpp_1a55499de18c2fb745ad53df160cb2378f" compoundref="SlipOverUartInduct_8cpp" startline="24">maxTxBundlesInFlight</references>
+        <references refid="classSlipOverUartInduct_1a14cab3353a980b309168406a5ded967f" compoundref="SlipOverUartInduct_8cpp" startline="104" endline="112">OnFailedBundleVecSendCallback</references>
+        <references refid="classSlipOverUartInduct_1af24e257e81f1bf051fc748318dfc39ff" compoundref="SlipOverUartInduct_8cpp" startline="113" endline="121">OnFailedBundleZmqSendCallback</references>
+        <references refid="classSlipOverUartInduct_1acaa28a58eff6d9ca479d990afbc1c699" compoundref="SlipOverUartInduct_8cpp" startline="122" endline="126">OnSuccessfulBundleSendCallback</references>
+        <references refid="structinduct__element__config__t_1ade7364197cbc3de4a963f8fe7486d3ab" compoundref="InductsConfig_8h" startline="73">induct_element_config_t::remoteNodeId</references>
+        <references refid="classUartInterface_1a7ada8c2226109fd7c8cfcbcec71d5767" compoundref="UartInterface_8cpp" startline="506" endline="508">UartInterface::SetOnFailedBundleVecSendCallback</references>
+        <references refid="classUartInterface_1a7419623d62cabe088eb12f3c5640a26d" compoundref="UartInterface_8cpp" startline="509" endline="511">UartInterface::SetOnFailedBundleZmqSendCallback</references>
+        <references refid="classUartInterface_1a692250e3959dd9c291f075081002a1fc" compoundref="UartInterface_8cpp" startline="512" endline="514">UartInterface::SetOnSuccessfulBundleSendCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1a39f166526eb44e2db71e5b056018e098" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>SlipOverUartInduct::~SlipOverUartInduct</definition>
+        <argsstring>() override</argsstring>
+        <name>~SlipOverUartInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="35" column="39" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="61" bodyend="70"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classInduct_1a557e332763667d6232acbcebcf4b788b" compoundref="Induct_8h" startline="89">Induct::m_inductConfig</references>
+        <references refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" compoundref="Induct_8h" startline="95">Induct::m_onDeletedOpportunisticLinkCallback</references>
+        <references refid="structinduct__element__config__t_1ade7364197cbc3de4a963f8fe7486d3ab" compoundref="InductsConfig_8h" startline="73">induct_element_config_t::remoteNodeId</references>
+        <references refid="SlipOverUartInduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="SlipOverUartInduct_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1ab0663b326237286cc89db82b5f8bdf2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void SlipOverUartInduct::PopulateInductTelemetry</definition>
+        <argsstring>(InductTelemetry_t &amp;inductTelem) override</argsstring>
+        <name>PopulateInductTelemetry</name>
+        <reimplements refid="classInduct_1a4b0dc7469558559ec0d99748a61ffde9">PopulateInductTelemetry</reimplements>
+        <param>
+          <type><ref refid="structInductTelemetry__t" kindref="compound">InductTelemetry_t</ref> &amp;</type>
+          <declname>inductTelem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="36" column="44" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="128" bodyend="133"/>
+        <references refid="structInductTelemetry__t_1a29369bf8ac458f4275a8a08a3580a929" compoundref="TelemetryDefinitions_8h" startline="297">InductTelemetry_t::m_convergenceLayer</references>
+        <references refid="classUartInterface_1ae702679c0ce2fe311b39418ad4a82ad8" compoundref="UartInterface_8h" startline="140">UartInterface::m_inductTelemetry</references>
+        <references refid="structInductTelemetry__t_1aa5e33785eab14435ec678b0bf14d7671" compoundref="TelemetryDefinitions_8h" startline="298">InductTelemetry_t::m_listInductConnections</references>
+        <references refid="classSlipOverUartInduct_1a11e0e3e2a839840e43c79f8ec42ed62d" compoundref="SlipOverUartInduct_8h" startline="49">m_uartInterface</references>
+        <references refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">UartInterface::SyncTelemetry</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSlipOverUartInduct_1ae025ed35276ca929ce677e7dfa4d3d24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SlipOverUartInduct::SlipOverUartInduct</definition>
+        <argsstring>()=delete</argsstring>
+        <name>SlipOverUartInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="40" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void SlipOverUartInduct::NotifyBundleReadyToSend_FromIoServiceThread</definition>
+        <argsstring>(const uint64_t remoteNodeId)</argsstring>
+        <name>NotifyBundleReadyToSend_FromIoServiceThread</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="42" column="39" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="74" bodyend="97"/>
+        <references refid="classInduct_1ae03c890c8d5a0ac0b5e3d71e928329fa" compoundref="Induct_8cpp" startline="132" endline="134">Induct::BundleSinkTryGetData_FromIoServiceThread</references>
+        <references refid="classUartInterface_1a7ce5d47d844738adca57ad4485bba1f2" compoundref="UartInterface_8cpp" startline="493" endline="496">UartInterface::Forward</references>
+        <references refid="classUartInterface_1a0ac1565063fca8ae8da84b62641ce351" compoundref="UartInterface_8cpp" startline="579" endline="581">UartInterface::GetTotalBundlesUnacked</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classInduct_1a557e332763667d6232acbcebcf4b788b" compoundref="Induct_8h" startline="89">Induct::m_inductConfig</references>
+        <references refid="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" compoundref="SlipOverUartInduct_8h" startline="50">m_opportunisticBundleQueuePtr</references>
+        <references refid="classSlipOverUartInduct_1a11e0e3e2a839840e43c79f8ec42ed62d" compoundref="SlipOverUartInduct_8h" startline="49">m_uartInterface</references>
+        <references refid="SlipOverUartInduct_8cpp_1a55499de18c2fb745ad53df160cb2378f" compoundref="SlipOverUartInduct_8cpp" startline="24">maxTxBundlesInFlight</references>
+        <references refid="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" compoundref="UartInterface_8cpp" startline="502" endline="504">UartInterface::ReadyToForward</references>
+        <references refid="structinduct__element__config__t_1ade7364197cbc3de4a963f8fe7486d3ab" compoundref="InductsConfig_8h" startline="73">induct_element_config_t::remoteNodeId</references>
+        <references refid="SlipOverUartInduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="SlipOverUartInduct_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classSlipOverUartInduct_1ae553bceb006928616ecfc21f91c1a236" compoundref="SlipOverUartInduct_8cpp" startline="99" endline="101">Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1ae553bceb006928616ecfc21f91c1a236" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void SlipOverUartInduct::Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</definition>
+        <argsstring>(const uint64_t remoteNodeId) override</argsstring>
+        <name>Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</name>
+        <reimplements refid="classInduct_1aad47fefdf9d04f67cef3eb3d5f5ea6db">Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</reimplements>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="43" column="44" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="99" bodyend="101"/>
+        <references refid="classUartInterface_1a884be027f514531cd2177416384dba5c" compoundref="UartInterface_8cpp" startline="595" endline="597">UartInterface::GetIoServiceRef</references>
+        <references refid="classSlipOverUartInduct_1a11e0e3e2a839840e43c79f8ec42ed62d" compoundref="SlipOverUartInduct_8h" startline="49">m_uartInterface</references>
+        <references refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" compoundref="SlipOverUartInduct_8cpp" startline="74" endline="97">NotifyBundleReadyToSend_FromIoServiceThread</references>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1a14cab3353a980b309168406a5ded967f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void SlipOverUartInduct::OnFailedBundleVecSendCallback</definition>
+        <argsstring>(padded_vector_uint8_t &amp;movableBundle, std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid, bool successCallbackCalled)</argsstring>
+        <name>OnFailedBundleVecSendCallback</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>movableBundle</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>successCallbackCalled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="45" column="39" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="104" bodyend="112"/>
+        <references refid="classInduct_1ad74c9b440a843473696defb025590a9f" compoundref="Induct_8cpp" startline="135" endline="138">Induct::BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</references>
+        <references refid="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" compoundref="SlipOverUartInduct_8h" startline="50">m_opportunisticBundleQueuePtr</references>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1af24e257e81f1bf051fc748318dfc39ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void SlipOverUartInduct::OnFailedBundleZmqSendCallback</definition>
+        <argsstring>(zmq::message_t &amp;movableBundle, std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid, bool successCallbackCalled)</argsstring>
+        <name>OnFailedBundleZmqSendCallback</name>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>movableBundle</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>successCallbackCalled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="46" column="39" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="113" bodyend="121"/>
+        <references refid="classInduct_1ad74c9b440a843473696defb025590a9f" compoundref="Induct_8cpp" startline="135" endline="138">Induct::BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</references>
+        <references refid="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" compoundref="SlipOverUartInduct_8h" startline="50">m_opportunisticBundleQueuePtr</references>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSlipOverUartInduct_1acaa28a58eff6d9ca479d990afbc1c699" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void SlipOverUartInduct::OnSuccessfulBundleSendCallback</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;userData, uint64_t outductUuid)</argsstring>
+        <name>OnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/SlipOverUartInduct.h" line="47" column="39" bodyfile="common/induct_manager/src/SlipOverUartInduct.cpp" bodystart="122" bodyend="126"/>
+        <references refid="classInduct_1ad74c9b440a843473696defb025590a9f" compoundref="Induct_8cpp" startline="135" endline="138">Induct::BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</references>
+        <references refid="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" compoundref="SlipOverUartInduct_8h" startline="50">m_opportunisticBundleQueuePtr</references>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+      </node>
+      <node id="1">
+        <label>SlipOverUartInduct</label>
+        <link refid="classSlipOverUartInduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>SlipOverUartInductConnectionTelemetry_t</label>
+        <link refid="structSlipOverUartInductConnectionTelemetry__t"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SlipOverUartOutductTelemetry_t</label>
+        <link refid="structSlipOverUartOutductTelemetry__t"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>JsonSerializable</label>
+        <link refid="classJsonSerializable"/>
+      </node>
+      <node id="9">
+        <label>InductConnectionTelemetry_t</label>
+        <link refid="structInductConnectionTelemetry__t"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SlipOverUartInduct</label>
+        <link refid="classSlipOverUartInduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_uartInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>SlipDecodeState_t</label>
+        <link refid="structSlipDecodeState__t"/>
+      </node>
+      <node id="4">
+        <label>UartInterface</label>
+        <link refid="classUartInterface"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_outductTelemetry</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_inductTelemetry</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+          <edgelabel>m_txBundlesCb</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_slipDecodeState</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>OutductTelemetry_t</label>
+        <link refid="structOutductTelemetry__t"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="10">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/induct_manager/include/SlipOverUartInduct.h" line="30" column="1" bodyfile="common/induct_manager/include/SlipOverUartInduct.h" bodystart="30" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classInduct_1ad74c9b440a843473696defb025590a9f" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</name></member>
+      <member refid="classInduct_1ae03c890c8d5a0ac0b5e3d71e928329fa" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>BundleSinkTryGetData_FromIoServiceThread</name></member>
+      <member refid="classInduct_1a0cbe038ec6320e7b05110dbc63e847a3" prot="public" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a17724854b4a473b9a57526cd0dc4f071" prot="public" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a74322837f4037aec13e5bb937ca5badf" prot="public" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a761599f28ca13bb6845eb2f7c69b7dff" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1ae7cbc5d5364a77fc3246b4b346bb658d" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>Induct</name></member>
+      <member refid="classInduct_1a647593fe6c02215c386ebaa63a0d0824" prot="public" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>Induct</name></member>
+      <member refid="classInduct_1aaf85eacba6c3124f59a725aab11ebcb6" prot="public" virt="virtual"><scope>SlipOverUartInduct</scope><name>Init</name></member>
+      <member refid="classInduct_1a557e332763667d6232acbcebcf4b788b" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_inductConfig</name></member>
+      <member refid="classInduct_1a88863aafd33849d348fbd6d97ffc1092" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_inductProcessBundleCallback</name></member>
+      <member refid="classInduct_1a1e17749fc05146922183f4f4ef32ee86" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_mapNodeIdToOpportunisticBundleQueue</name></member>
+      <member refid="classInduct_1a5ac721528b8eaa20a6c9dcaf5adee326" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_mapNodeIdToOpportunisticBundleQueueMutex</name></member>
+      <member refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_onDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" prot="protected" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_onNewOpportunisticLinkCallback</name></member>
+      <member refid="classSlipOverUartInduct_1a7e86c26df073d0b0e351e982fc48cffa" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_opportunisticBundleQueuePtr</name></member>
+      <member refid="classSlipOverUartInduct_1a11e0e3e2a839840e43c79f8ec42ed62d" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>m_uartInterface</name></member>
+      <member refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>NotifyBundleReadyToSend_FromIoServiceThread</name></member>
+      <member refid="classSlipOverUartInduct_1a14cab3353a980b309168406a5ded967f" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>OnFailedBundleVecSendCallback</name></member>
+      <member refid="classSlipOverUartInduct_1af24e257e81f1bf051fc748318dfc39ff" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>OnFailedBundleZmqSendCallback</name></member>
+      <member refid="classSlipOverUartInduct_1acaa28a58eff6d9ca479d990afbc1c699" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>OnSuccessfulBundleSendCallback</name></member>
+      <member refid="classSlipOverUartInduct_1ab0663b326237286cc89db82b5f8bdf2f" prot="public" virt="virtual"><scope>SlipOverUartInduct</scope><name>PopulateInductTelemetry</name></member>
+      <member refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" prot="public" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>SlipOverUartInduct</name></member>
+      <member refid="classSlipOverUartInduct_1ae025ed35276ca929ce677e7dfa4d3d24" prot="private" virt="non-virtual"><scope>SlipOverUartInduct</scope><name>SlipOverUartInduct</name></member>
+      <member refid="classSlipOverUartInduct_1ae553bceb006928616ecfc21f91c1a236" prot="private" virt="virtual"><scope>SlipOverUartInduct</scope><name>Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</name></member>
+      <member refid="classInduct_1a178422af7be2fddc07d57292bc4e033c" prot="public" virt="virtual"><scope>SlipOverUartInduct</scope><name>~Induct</name></member>
+      <member refid="classSlipOverUartInduct_1a39f166526eb44e2db71e5b056018e098" prot="public" virt="virtual"><scope>SlipOverUartInduct</scope><name>~SlipOverUartInduct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

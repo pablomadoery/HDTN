@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="UdpDelaySim_8h" kind="file" language="C++">
+    <compoundname>UdpDelaySim.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" local="yes">CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</includes>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes local="no">boost/date_time.hpp</includes>
+    <includes local="no">list</includes>
+    <includes local="no">atomic</includes>
+    <includes local="yes">udp_delay_sim_lib_export.h</includes>
+    <includedby refid="TestLtpUdpEngine_8cpp" local="yes">common/ltp/test/TestLtpUdpEngine.cpp</includedby>
+    <includedby refid="UdpDelaySim_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySim.cpp</includedby>
+    <includedby refid="UdpDelaySimRunner_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySimRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>list</label>
+      </node>
+      <node id="5">
+        <label>atomic</label>
+      </node>
+      <node id="4">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="3">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</label>
+        <link refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="11">
+        <label>udp_delay_sim_lib_export.h</label>
+      </node>
+      <node id="8">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="1">
+        <label>module/udp_delay_sim/include/UdpDelaySim.h</label>
+        <link refid="UdpDelaySim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="6">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="9">
+        <label>boost/date_time.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>common/ltp/test/TestLtpUdpEngine.cpp</label>
+        <link refid="TestLtpUdpEngine_8cpp"/>
+      </node>
+      <node id="3">
+        <label>module/udp_delay_sim/src/UdpDelaySim.cpp</label>
+        <link refid="UdpDelaySim_8cpp"/>
+      </node>
+      <node id="1">
+        <label>module/udp_delay_sim/include/UdpDelaySim.h</label>
+        <link refid="UdpDelaySim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>module/udp_delay_sim/src/UdpDelaySimRunner.cpp</label>
+        <link refid="UdpDelaySimRunner_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classUdpDelaySim" prot="public">UdpDelaySim</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classUdpDelaySim" kindref="compound">UdpDelaySim</ref> class is a proxy server which delays incoming udp packets by a specified millisecond delay before forwarding those packets on to the specified remote destination. The direction is one way, so create two separate instances/processes of <ref refid="classUdpDelaySim" kindref="compound">UdpDelaySim</ref> in order to achieve bidirectional communication such as LTP. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_UDP_DELAY_SIM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_UDP_DELAY_SIM_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/date_time.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;udp_delay_sim_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classUdpDelaySim" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classUdpDelaySim" kindref="compound">UdpDelaySim</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="classUdpDelaySim_1a8ed38eba750b4451916307d202c85b6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classUdpDelaySim_1a8ed38eba750b4451916307d202c85b6c" kindref="member">UdpDelaySim</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::function&lt;bool(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;<sp/>udpPacketReceived,<sp/>std::size_t<sp/>bytesTransferred)&gt;<sp/><ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/><ref refid="classUdpDelaySim_1a8ed38eba750b4451916307d202c85b6c" kindref="member">UdpDelaySim</ref>(uint16_t<sp/><ref refid="TestLtpUdpEngine_8cpp_1a3902949a46fd9c9d56193f381c3a9105" kindref="member">myBoundUdpPort</ref>,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>remoteHostnameToForwardPacketsTo,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>remotePortToForwardPacketsTo,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCircularBufferVectors,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxUdpPacketSizeBytes,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::time_duration<sp/>&amp;<sp/>sendDelay,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/>lossOfSignalStartMs,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/>lossOfSignalDurationMs,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>autoStart);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/><ref refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" kindref="member">~UdpDelaySim</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" kindref="member">Stop</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" kindref="member">StartIfNotAlreadyRunning</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" kindref="member">DoUdpShutdown</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" kindref="member">SetUdpDropSimulatorFunction_ThreadSafe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref><sp/>&amp;<sp/>udpDropSimulatorFunction);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" kindref="member">QueuePacketForDelayedSend_NotThreadSafe</ref>(std::vector&lt;uint8_t&gt;<sp/>&amp;<sp/>udpPacketToSwapIn,<sp/>std::size_t<sp/>bytesTransferred);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" kindref="member">SetUdpDropSimulatorFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref><sp/>&amp;<sp/>udpDropSimulatorFunction);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" kindref="member">OnResolve</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code<sp/>&amp;<sp/>ec,<sp/>boost::asio::ip::udp::resolver::results_type<sp/>results);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" kindref="member">StartUdpReceive</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" kindref="member">HandleUdpReceive</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code<sp/>&amp;<sp/>error,<sp/>std::size_t<sp/>bytesTransferred);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" kindref="member">HandleUdpSend</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code&amp;<sp/>error,<sp/>std::size_t<sp/>bytes_transferred);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" kindref="member">TryRestartSendDelayTimer</ref>();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" kindref="member">OnSendDelay_TimerExpired</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code&amp;<sp/>e,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>consumeIndex);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" kindref="member">TransferRate_TimerExpired</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code&amp;<sp/>e);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" kindref="member">LossOfSignal_TimerExpired</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code&amp;<sp/>e,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isStartOfLos);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="classUdpDelaySim_1a3e635efa918f8673cb293a73016b46b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__async_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref><sp/><ref refid="classUdpDelaySim_1a3e635efa918f8673cb293a73016b46b4" kindref="member">m_ioService</ref>;</highlight></codeline>
+<codeline lineno="198" refid="classUdpDelaySim_1a4adc4e02f80e18ec6df35923763f268e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::ip::udp::resolver<sp/><ref refid="classUdpDelaySim_1a4adc4e02f80e18ec6df35923763f268e" kindref="member">m_resolver</ref>;</highlight></codeline>
+<codeline lineno="200" refid="classUdpDelaySim_1ad20c5abf95e506edb05965259b6dab0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::deadline_timer<sp/><ref refid="classUdpDelaySim_1ad20c5abf95e506edb05965259b6dab0e" kindref="member">m_udpPacketSendDelayTimer</ref>;</highlight></codeline>
+<codeline lineno="202" refid="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::deadline_timer<sp/><ref refid="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" kindref="member">m_timerTransferRateStats</ref>;</highlight></codeline>
+<codeline lineno="204" refid="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::deadline_timer<sp/><ref refid="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" kindref="member">m_timerLossOfSignal</ref>;</highlight></codeline>
+<codeline lineno="206" refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::ip::udp::socket<sp/><ref refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" kindref="member">m_udpSocket</ref>;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="classUdpDelaySim_1ab4f135765d62ed988aaf78e6c5fa79c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::posix_time::ptime<sp/><ref refid="classUdpDelaySim_1ab4f135765d62ed988aaf78e6c5fa79c8" kindref="member">m_lastPtime</ref>;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="212" refid="classUdpDelaySim_1a09c4a8fbe24ad57acbaca6da61a1240e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="classUdpDelaySim_1a09c4a8fbe24ad57acbaca6da61a1240e" kindref="member">M_MY_BOUND_UDP_PORT</ref>;</highlight></codeline>
+<codeline lineno="214" refid="classUdpDelaySim_1a7b93b346d3847d46aa7f834fba869daf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classUdpDelaySim_1a7b93b346d3847d46aa7f834fba869daf" kindref="member">M_REMOTE_HOSTNAME_TO_FORWARD_PACKETS_TO</ref>;</highlight></codeline>
+<codeline lineno="216" refid="classUdpDelaySim_1a454053fba5e3ef2ed2233e6ddbaca455" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classUdpDelaySim_1a454053fba5e3ef2ed2233e6ddbaca455" kindref="member">M_REMOTE_PORT_TO_FORWARD_PACKETS_TO</ref>;</highlight></codeline>
+<codeline lineno="218" refid="classUdpDelaySim_1ad44bc8234863ddb44e7e7486589ca109" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1ad44bc8234863ddb44e7e7486589ca109" kindref="member">M_NUM_CIRCULAR_BUFFER_VECTORS</ref>;</highlight></codeline>
+<codeline lineno="220" refid="classUdpDelaySim_1acd4b89a5e03d2b3a5936c6591906fb61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1acd4b89a5e03d2b3a5936c6591906fb61" kindref="member">M_MAX_UDP_PACKET_SIZE_BYTES</ref>;</highlight></codeline>
+<codeline lineno="222" refid="classUdpDelaySim_1a5df1f4f0a7ff65f4f0916a4da4d9873d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::time_duration<sp/><ref refid="classUdpDelaySim_1a5df1f4f0a7ff65f4f0916a4da4d9873d" kindref="member">M_SEND_DELAY</ref>;</highlight></codeline>
+<codeline lineno="224" refid="classUdpDelaySim_1a849379192bb104e03ff1f0dd3987c38c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="classUdpDelaySim_1a849379192bb104e03ff1f0dd3987c38c" kindref="member">m_udpReceiveBuffer</ref>;</highlight></codeline>
+<codeline lineno="226" refid="classUdpDelaySim_1aaff74fd332f5c27d7f538aed4dd36064" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::ip::udp::endpoint<sp/><ref refid="classUdpDelaySim_1aaff74fd332f5c27d7f538aed4dd36064" kindref="member">m_remoteEndpointReceived</ref>;</highlight></codeline>
+<codeline lineno="228" refid="classUdpDelaySim_1aa69d2f25133e512ee9437d25d6974c47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::ip::udp::endpoint<sp/><ref refid="classUdpDelaySim_1aa69d2f25133e512ee9437d25d6974c47" kindref="member">m_udpDestinationEndpoint</ref>;</highlight></codeline>
+<codeline lineno="230" refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref><sp/><ref refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" kindref="member">m_circularIndexBuffer</ref>;</highlight></codeline>
+<codeline lineno="232" refid="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;uint8_t&gt;<sp/>&gt;<sp/><ref refid="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" kindref="member">m_udpReceiveBuffersCbVec</ref>;</highlight></codeline>
+<codeline lineno="234" refid="classUdpDelaySim_1a2a227721231326abac02149d17cdb1ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint64_t&gt;<sp/><ref refid="classUdpDelaySim_1a2a227721231326abac02149d17cdb1ca" kindref="member">m_udpReceiveBytesTransferredCbVec</ref>;</highlight></codeline>
+<codeline lineno="236" refid="classUdpDelaySim_1a69e610a6d1ab3e6c6650fb94ea1dc764" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;boost::posix_time::ptime&gt;<sp/><ref refid="classUdpDelaySim_1a69e610a6d1ab3e6c6650fb94ea1dc764" kindref="member">m_expiriesCbVec</ref>;</highlight></codeline>
+<codeline lineno="238" refid="classUdpDelaySim_1ac2f780c4c616e9e6c38d4e15ff2af620" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;boost::thread&gt;<sp/><ref refid="classUdpDelaySim_1ac2f780c4c616e9e6c38d4e15ff2af620" kindref="member">m_ioServiceThreadPtr</ref>;</highlight></codeline>
+<codeline lineno="240" refid="classUdpDelaySim_1aca9484cc62e03e79542f285f9a6a2e9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1aca9484cc62e03e79542f285f9a6a2e9f" kindref="member">m_printedCbTooSmallNotice</ref>;</highlight></codeline>
+<codeline lineno="242" refid="classUdpDelaySim_1a43bbe08ad3c544411ce78f0237bc9021" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1a43bbe08ad3c544411ce78f0237bc9021" kindref="member">m_sendDelayTimerIsRunning</ref>;</highlight></codeline>
+<codeline lineno="244" refid="classUdpDelaySim_1adfb6a00eedb352f0a86e8b264b855d76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1adfb6a00eedb352f0a86e8b264b855d76" kindref="member">m_isStateLossOfSignal</ref>;</highlight></codeline>
+<codeline lineno="246" refid="classUdpDelaySim_1ac829132afa4b0e23227ff3b60b022ee3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classUdpDelaySim_1ac829132afa4b0e23227ff3b60b022ee3" kindref="member">m_setUdpDropSimulatorFunctionInProgress</ref>;</highlight></codeline>
+<codeline lineno="248" refid="classUdpDelaySim_1a69b02e1ac4b220b2b3e2706af6b7c19e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a69b02e1ac4b220b2b3e2706af6b7c19e" kindref="member">m_lossOfSignalStartMs</ref>;</highlight></codeline>
+<codeline lineno="250" refid="classUdpDelaySim_1a901f48e6fc034fec88bf173dc5192466" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::time_duration<sp/><ref refid="classUdpDelaySim_1a901f48e6fc034fec88bf173dc5192466" kindref="member">m_lossOfSignalDuration</ref>;</highlight></codeline>
+<codeline lineno="252" refid="classUdpDelaySim_1ab2a27ae5dc4d122f0586739cd186564a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySim_1ab2a27ae5dc4d122f0586739cd186564a" kindref="member">m_countLossOfSignalTimerStarts</ref>;</highlight></codeline>
+<codeline lineno="254" refid="classUdpDelaySim_1ace6a5807668d49c5657c508ca6aa3bcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::condition_variable<sp/><ref refid="classUdpDelaySim_1ace6a5807668d49c5657c508ca6aa3bcd" kindref="member">m_cvSetUdpDropSimulatorFunction</ref>;</highlight></codeline>
+<codeline lineno="256" refid="classUdpDelaySim_1af6d04b84d48792c1be5a10c911e9b593" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/><ref refid="classUdpDelaySim_1af6d04b84d48792c1be5a10c911e9b593" kindref="member">m_mutexSetUdpDropSimulatorFunction</ref>;</highlight></codeline>
+<codeline lineno="258" refid="classUdpDelaySim_1a6207987e379920ac591a9fb2d0cdda13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref><sp/><ref refid="classUdpDelaySim_1a6207987e379920ac591a9fb2d0cdda13" kindref="member">m_udpDropSimulatorFunction</ref>;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//stats</highlight></codeline>
+<codeline lineno="262" refid="classUdpDelaySim_1a00fcfa848bb918ca3124a2140aa3e751" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a00fcfa848bb918ca3124a2140aa3e751" kindref="member">m_lastTotalUdpPacketsReceived</ref>;</highlight></codeline>
+<codeline lineno="264" refid="classUdpDelaySim_1a2256e11f0aa16654557f5eccfd983498" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a2256e11f0aa16654557f5eccfd983498" kindref="member">m_lastTotalUdpBytesReceived</ref>;</highlight></codeline>
+<codeline lineno="266" refid="classUdpDelaySim_1af2be6121827b9d9777e237a6388a15ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1af2be6121827b9d9777e237a6388a15ec" kindref="member">m_lastTotalUdpPacketsSent</ref>;</highlight></codeline>
+<codeline lineno="268" refid="classUdpDelaySim_1ad718b3a2849448ae27dfc279f3b48b0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1ad718b3a2849448ae27dfc279f3b48b0a" kindref="member">m_lastTotalUdpBytesSent</ref>;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="271" refid="classUdpDelaySim_1a83264e3e3cc58c4f9f733717ccc62717" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a83264e3e3cc58c4f9f733717ccc62717" kindref="member">m_countCircularBufferOverruns</ref>;</highlight></codeline>
+<codeline lineno="273" refid="classUdpDelaySim_1a698ba287d96a7e76d27f463e86d6a117" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a698ba287d96a7e76d27f463e86d6a117" kindref="member">m_countMaxCircularBufferSize</ref>;</highlight></codeline>
+<codeline lineno="275" refid="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" kindref="member">m_countTotalUdpPacketsReceived</ref>;</highlight></codeline>
+<codeline lineno="277" refid="classUdpDelaySim_1a447a9fa020cd6eec4a6c6ceb449224cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a447a9fa020cd6eec4a6c6ceb449224cc" kindref="member">m_countTotalUdpBytesReceived</ref>;</highlight></codeline>
+<codeline lineno="279" refid="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" kindref="member">m_countTotalUdpPacketsSent</ref>;</highlight></codeline>
+<codeline lineno="281" refid="classUdpDelaySim_1a7b45916f88b93cdf50696dbfa6ff496e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classUdpDelaySim_1a7b45916f88b93cdf50696dbfa6ff496e" kindref="member">m_countTotalUdpBytesSent</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//_UDP_DELAY_SIM_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="module/udp_delay_sim/include/UdpDelaySim.h"/>
+  </compounddef>
+</doxygen>

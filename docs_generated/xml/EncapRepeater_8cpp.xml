@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="EncapRepeater_8cpp" kind="file" language="C++">
+    <compoundname>EncapRepeater.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes refid="EncapAsyncDuplexLocalStream_8h" local="yes">../../../common/util/include/EncapAsyncDuplexLocalStream.h</includes>
+    <includes local="no">boost/make_unique.hpp</includes>
+    <includes local="no">boost/program_options.hpp</includes>
+    <includes local="no">queue</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>atomic</label>
+      </node>
+      <node id="23">
+        <label>queue</label>
+      </node>
+      <node id="15">
+        <label>limits</label>
+      </node>
+      <node id="7">
+        <label>boost/filesystem/operations.hpp</label>
+      </node>
+      <node id="19">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="22">
+        <label>boost/program_options.hpp</label>
+      </node>
+      <node id="9">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="21">
+        <label>boost/config/detail/suffix.hpp</label>
+      </node>
+      <node id="17">
+        <label>CcsdsEncapDecode.h</label>
+        <link refid="CcsdsEncapDecode_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>vector</label>
+      </node>
+      <node id="12">
+        <label>PaddedVectorUint8.h</label>
+        <link refid="PaddedVectorUint8_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>new</label>
+      </node>
+      <node id="13">
+        <label>cstdlib</label>
+      </node>
+      <node id="3">
+        <label>../../../common/util/include/EncapAsyncDuplexLocalStream.h</label>
+        <link refid="EncapAsyncDuplexLocalStream_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="8">
+        <label>boost/make_unique.hpp</label>
+      </node>
+      <node id="20">
+        <label>boost/endian/conversion.hpp</label>
+      </node>
+      <node id="18">
+        <label>CcsdsEncap.h</label>
+        <link refid="CcsdsEncap_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>module/encap_repeater/src/EncapRepeater.cpp</label>
+        <link refid="EncapRepeater_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classEncapRepeater" prot="public">EncapRepeater</innerclass>
+    <innerclass refid="structEncapRepeater_1_1StreamInfo" prot="private">EncapRepeater::StreamInfo</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="EncapRepeater_8cpp_1a4f1c2f0d994f58dd745ff95480226173" prot="public" static="no">
+        <name>STREAM_NAME_HELPER_STRING</name>
+        <initializer>&quot;Unix path to local socket (e.g. /tmp/my_socket_name ).&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/encap_repeater/src/EncapRepeater.cpp" line="217" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="EncapRepeater_8cpp_1ac0f2228420376f4db7e1274f2b41667c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, const char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/encap_repeater/src/EncapRepeater.cpp" line="209" column="5" bodyfile="module/encap_repeater/src/EncapRepeater.cpp" bodystart="209" bodyend="295"/>
+        <references refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a96d4cdff8ed57e93e3b3d843cffe3af7">BP</references>
+        <references refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a8e60eae3ffa88b49daf258ebacf32359">LTP</references>
+        <references refid="classEncapRepeater_1a7b21524f82d89e01b72591fc1e056ecf" compoundref="EncapRepeater_8cpp" startline="94" endline="123">EncapRepeater::RunForever</references>
+        <references refid="EncapRepeater_8cpp_1a4f1c2f0d994f58dd745ff95480226173">STREAM_NAME_HELPER_STRING</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classEncapRepeater" kindref="compound">EncapRepeater</ref> application serves as an example for writing code to intercept/extract CCSDS Encap packets from HDTN. This example is single threaded, asynchronous, and cross platform. It relies on only five stand-alone header files from the HDTN code base:<itemizedlist>
+<listitem><para>/common/util/include/EncapAsyncDuplexLocalStream.h</para>
+</listitem><listitem><para>/common/util/include/CcsdsEncap.h</para>
+</listitem><listitem><para>/common/util/include/CcsdsEncapEncode.h</para>
+</listitem><listitem><para>/common/util/include/CcsdsEncapDecode.h</para>
+</listitem><listitem><para>/common/util/include/PaddedVectorUint8.h This application has a demo in the tests/test_scripts_[linux,windows] folder named test_stcp_to_bpencap_repeater_fast_cutthrough.[sh,bat]. This application sits in the middle of two nodes and repeats BP_encap or LTP_encap packets as shown in the following diagram: <verbatim>          duplex stream 0                          duplex stream 1
+      (e.g. /tmp/local_sock_0)                  (e.g. /tmp/local_sock_1) (Posix AF_UNIX socket)
+      (e.g. \\.\pipe\local_pipe_0)              (e.g. \\.\pipe\local_pipe_1) (Windows named pipe)
+</verbatim> +---<mdash/>+ +-------<mdash/>++----<mdash/>+ +----<mdash/>+ <linebreak/>
+ | |-------------------<mdash/>&gt;| encap |tx queue|---------------<mdash/>&gt;| | <linebreak/>
+ |node0 | +-----<mdash/>+ repeater +-----<mdash/>+ | node1 | <linebreak/>
+ | |&lt;----------<mdash/>|tx queue| |&lt;------------------------<mdash/>| | <linebreak/>
+ +---<mdash/>+ +----<mdash/>++-------<mdash/>+ +----<mdash/>+ </para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../common/util/include/EncapAsyncDuplexLocalStream.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/make_unique.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/program_options.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classEncapRepeater" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEncapRepeater" kindref="compound">EncapRepeater</ref><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="structEncapRepeater_1_1StreamInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="structEncapRepeater_1_1StreamInfo_1a010110a94458594fdfdefc7bf73ae2ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structEncapRepeater_1_1StreamInfo_1a010110a94458594fdfdefc7bf73ae2ff" kindref="member">StreamInfo</ref>()<sp/>:<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1a54ea4a0aa6ff56cac11c02e8f76de7e7" kindref="member">writeInProgress</ref>(false),<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1a818618098fa93900e6b41e248b7bb739" kindref="member">sendErrorOccurred</ref>(false),<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1ab522b3b4cd3f8d6322810a693a68baba" kindref="member">otherStreamIndex</ref>(UINT8_MAX)<sp/>{}</highlight></codeline>
+<codeline lineno="49" refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;EncapAsyncDuplexLocalStream&gt;<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>;</highlight></codeline>
+<codeline lineno="50" refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::queue&lt;padded_vector_uint8_t&gt;<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>;</highlight></codeline>
+<codeline lineno="51" refid="structEncapRepeater_1_1StreamInfo_1a54ea4a0aa6ff56cac11c02e8f76de7e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1a54ea4a0aa6ff56cac11c02e8f76de7e7" kindref="member">writeInProgress</ref>;</highlight></codeline>
+<codeline lineno="52" refid="structEncapRepeater_1_1StreamInfo_1a818618098fa93900e6b41e248b7bb739" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1a818618098fa93900e6b41e248b7bb739" kindref="member">sendErrorOccurred</ref>;</highlight></codeline>
+<codeline lineno="53" refid="structEncapRepeater_1_1StreamInfo_1ab522b3b4cd3f8d6322810a693a68baba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structEncapRepeater_1_1StreamInfo_1ab522b3b4cd3f8d6322810a693a68baba" kindref="member">otherStreamIndex</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classEncapRepeater_1a873a6fdbc67b1ed19d373bf1a1631e3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a873a6fdbc67b1ed19d373bf1a1631e3f" kindref="member">EncapRepeater</ref>()<sp/><sp/>:<sp/><ref refid="classEncapRepeater_1aec223c24bce0b1a2c0f530b049a40ee1" kindref="member">m_signals</ref>(<ref refid="classEncapRepeater_1aa55a4fe14f97a21ee3215d7bc18bdae5" kindref="member">m_ioService</ref>),<sp/><ref refid="classEncapRepeater_1ae11979e3d15f48c565e842ff0131eff3" kindref="member">m_queueSize</ref>(0)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;int,<sp/>const<sp/>char*&gt;<sp/>signalsToAdd[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{SIGINT,<sp/></highlight><highlight class="stringliteral">&quot;SIGINT&quot;</highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,{SIGTERM,<sp/></highlight><highlight class="stringliteral">&quot;SIGTERM&quot;</highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SIGQUIT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,{SIGQUIT,<sp/></highlight><highlight class="stringliteral">&quot;SIGQUIT&quot;</highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>std::size_t<sp/>numSignalsToAdd<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(signalsToAdd)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*signalsToAdd);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numSignalsToAdd;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1aec223c24bce0b1a2c0f530b049a40ee1" kindref="member">m_signals</ref>.add(signalsToAdd[i].first);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::system_error&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Signal<sp/>handler<sp/>will<sp/>be<sp/>unable<sp/>to<sp/>catch<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>signalsToAdd[i].second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76" refid="classEncapRepeater_1a2e53e5f37e8f7ee8048e5b5be41da76f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a2e53e5f37e8f7ee8048e5b5be41da76f" kindref="member">~EncapRepeater</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1afc67812cb82707ecb5204e7fe697a6b0" kindref="member">Stop</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classEncapRepeater_1afc67812cb82707ecb5204e7fe697a6b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1afc67812cb82707ecb5204e7fe697a6b0" kindref="member">Stop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[i].<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>.reset();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1aa55a4fe14f97a21ee3215d7bc18bdae5" kindref="member">m_ioService</ref>.stop();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//used<sp/>by<sp/>signal<sp/>handler<sp/>which<sp/>shares<sp/>the<sp/>same<sp/>io_service<sp/>(and<sp/>its<sp/>thread)<sp/>as<sp/>the<sp/>streams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classEncapRepeater_1ac19d3a5eb8d95f38f3448d74f84b391c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1ac19d3a5eb8d95f38f3448d74f84b391c" kindref="member">Stop_CalledFromWithinIoServiceThread</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[i].<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>-&gt;Stop_CalledFromWithinIoServiceThread();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classEncapRepeater_1a7b21524f82d89e01b72591fc1e056ecf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1a7b21524f82d89e01b72591fc1e056ecf" kindref="member">RunForever</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>socketOrPipePath0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isStreamCreator0,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>socketOrPipePath1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isStreamCreator1,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5" kindref="member">ENCAP_PACKET_TYPE</ref><sp/>encapPacketType,<sp/>uint32_t<sp/>queueSize)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1ae11979e3d15f48c565e842ff0131eff3" kindref="member">m_queueSize</ref><sp/>=<sp/>queueSize;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//create<sp/>two<sp/>streams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[i].<ref refid="structEncapRepeater_1_1StreamInfo_1ab522b3b4cd3f8d6322810a693a68baba" kindref="member">otherStreamIndex</ref><sp/>=<sp/>(i<sp/>+<sp/>1)<sp/>%<sp/>2;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[i].<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref><sp/>=<sp/>boost::make_unique&lt;EncapAsyncDuplexLocalStream&gt;(</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1aa55a4fe14f97a21ee3215d7bc18bdae5" kindref="member">m_ioService</ref>,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>encapPacketType,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,</highlight><highlight class="comment">//maxBundleSizeBytes,<sp/>//initial<sp/>resize<sp/>(don&apos;t<sp/>waste<sp/>memory<sp/>with<sp/>potential<sp/>max<sp/>bundle<sp/>size)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::bind(&amp;<ref refid="classEncapRepeater_1aad67dad09f6fed16c0b239a3b48a1b10" kindref="member">EncapRepeater::OnFullEncapPacketReceived</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::placeholders::_1,<sp/>boost::placeholders::_2,<sp/>boost::placeholders::_3,<sp/>i),</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::bind(&amp;<ref refid="classEncapRepeater_1a8dcd32e82bc45912fbe6f40fa0f5ee4e" kindref="member">EncapRepeater::OnLocalStreamConnectionStatusChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::placeholders::_1,<sp/>i),</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="comment">//true<sp/>=&gt;<sp/>don&apos;t<sp/>discard<sp/>1-8<sp/>byte<sp/>encap<sp/>header<sp/>in<sp/>OnFullEncapPacketReceived</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(i.e.<sp/>receivedFullEncapPacket<sp/>will<sp/>be<sp/>the<sp/>concatenation<sp/>of<sp/>encap<sp/>header<sp/>+<sp/>encap<sp/>payload<sp/>(PDU))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//false<sp/>=&gt;<sp/>receivedFullEncapPacket<sp/>will<sp/>be<sp/>just<sp/>the<sp/>encap<sp/>payload<sp/>(PDU)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[0].encapAsyncDuplexLocalStream-&gt;Init(socketOrPipePath0,<sp/>isStreamCreator0))<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[1].encapAsyncDuplexLocalStream-&gt;Init(socketOrPipePath1,<sp/>isStreamCreator1))<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1aec223c24bce0b1a2c0f530b049a40ee1" kindref="member">m_signals</ref>.async_wait(boost::bind(&amp;<ref refid="classEncapRepeater_1ac19d3a5eb8d95f38f3448d74f84b391c" kindref="member">EncapRepeater::Stop_CalledFromWithinIoServiceThread</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1aa55a4fe14f97a21ee3215d7bc18bdae5" kindref="member">m_ioService</ref>.run();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classEncapRepeater_1a8dcd32e82bc45912fbe6f40fa0f5ee4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1a8dcd32e82bc45912fbe6f40fa0f5ee4e" kindref="member">OnLocalStreamConnectionStatusChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOnConnectionEvent,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>thisStreamIndex)<sp/></highlight><highlight class="comment">//thisStreamIndex<sp/>=<sp/>non-standard<sp/>parameter<sp/>value<sp/>permanently<sp/>set<sp/>in<sp/>constructor<sp/>by<sp/>boost::bind</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;EncapRepeater[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>((int)thisStreamIndex)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>connection<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>((isOnConnectionEvent)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;up&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;down&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//in<sp/>case<sp/>this<sp/>was<sp/>the<sp/>second<sp/>to<sp/>connect,<sp/>send<sp/>anything<sp/>that<sp/>might<sp/>have<sp/>been<sp/>queued<sp/>up<sp/>to<sp/>be<sp/>sent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isOnConnectionEvent)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref>&amp;<sp/>txStreamInfo<sp/>=<sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[thisStreamIndex];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a0f3519707aa070b2e6fe8cfc8fabd512" kindref="member">TrySendQueued</ref>(txStreamInfo);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classEncapRepeater_1aad67dad09f6fed16c0b239a3b48a1b10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1aad67dad09f6fed16c0b239a3b48a1b10" kindref="member">OnFullEncapPacketReceived</ref>(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref>&amp;<sp/>receivedFullEncapPacket,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>decodedEncapPayloadSize,<sp/>uint8_t<sp/>decodedEncapHeaderSize,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>thisRxStreamIndex)<sp/></highlight><highlight class="comment">//thisRxStreamIndex<sp/>=<sp/>non-standard<sp/>parameter<sp/>value<sp/>permanently<sp/>set<sp/>in<sp/>constructor<sp/>by<sp/>boost::bind</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)decodedEncapPayloadSize;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)decodedEncapHeaderSize;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//note:<sp/>decodedEncapHeaderSize<sp/>always<sp/>set<sp/>even<sp/>if<sp/>the<sp/>encap<sp/>header<sp/>was<sp/>discarded</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref>&amp;<sp/>thisRxStreamInfo<sp/>=<sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[thisRxStreamIndex];</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref>&amp;<sp/>otherTxStreamInfo<sp/>=<sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[thisRxStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ab522b3b4cd3f8d6322810a693a68baba" kindref="member">otherStreamIndex</ref>];</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//receivedFullEncapPacket<sp/>is<sp/>[encap<sp/>header<sp/>+<sp/>encap<sp/>payload]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otherTxStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>.push(std::move(receivedFullEncapPacket));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a0f3519707aa070b2e6fe8cfc8fabd512" kindref="member">TrySendQueued</ref>(otherTxStreamInfo);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//The<sp/>user<sp/>must<sp/>manually<sp/>restart<sp/>the<sp/>read<sp/>operation<sp/>of<sp/>the<sp/>reader<sp/>pushing<sp/>to<sp/>the<sp/>tx<sp/>repeater<sp/>queue.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>queue<sp/>limit<sp/>is<sp/>reached,<sp/>do<sp/>not<sp/>restart<sp/>the<sp/>read<sp/>operation<sp/>(i.e.<sp/>pause<sp/>it).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Pausing<sp/>will<sp/>cause<sp/>flow<sp/>control<sp/>to<sp/>kick<sp/>in<sp/>on<sp/>the<sp/>remote<sp/>process<sp/>pushing<sp/>to<sp/>the<sp/>OS<sp/>stream.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Unpausing<sp/>will<sp/>occur<sp/>when<sp/>the<sp/>HandleSend<sp/>callback<sp/>function<sp/>is<sp/>called.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(otherTxStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>.size()<sp/>&lt;<sp/>5)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thisRxStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>-&gt;StartReadFirstEncapHeaderByte_NotThreadSafe();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classEncapRepeater_1a0f3519707aa070b2e6fe8cfc8fabd512" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1a0f3519707aa070b2e6fe8cfc8fabd512" kindref="member">TrySendQueued</ref>(<ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref>&amp;<sp/>txStreamInfo)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>-&gt;ReadyToSend())<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a818618098fa93900e6b41e248b7bb739" kindref="member">sendErrorOccurred</ref>.load(std::memory_order_acquire))<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a54ea4a0aa6ff56cac11c02e8f76de7e7" kindref="member">writeInProgress</ref>.exchange(</highlight><highlight class="keyword">true</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::async_write(txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>-&gt;GetStreamHandleRef(),</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::buffer(txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>.front()),</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::bind(&amp;<ref refid="classEncapRepeater_1a15bc1a3b695a2a5273f43ec928290289" kindref="member">EncapRepeater::HandleSend</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::placeholders::error,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::placeholders::bytes_transferred,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::ref(txStreamInfo)));</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183" refid="classEncapRepeater_1a15bc1a3b695a2a5273f43ec928290289" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEncapRepeater_1a15bc1a3b695a2a5273f43ec928290289" kindref="member">HandleSend</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code&amp;<sp/>error,<sp/>std::size_t<sp/>bytes_transferred,<sp/><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref>&amp;<sp/>txStreamInfo)<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)bytes_transferred;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>.pop();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a54ea4a0aa6ff56cac11c02e8f76de7e7" kindref="member">writeInProgress</ref>.store(</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>std::memory_order_release);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error)<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a818618098fa93900e6b41e248b7bb739" kindref="member">sendErrorOccurred</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//prevents<sp/>sending<sp/>from<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;EncapRepeater::HandleSend:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>error.message()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater_1a0f3519707aa070b2e6fe8cfc8fabd512" kindref="member">TrySendQueued</ref>(txStreamInfo);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//a<sp/>pop<sp/>occurred<sp/>in<sp/>the<sp/>queue,<sp/>so<sp/>make<sp/>sure<sp/>the<sp/>read<sp/>operation<sp/>of<sp/>the<sp/>reader<sp/>pushing<sp/>to<sp/>this<sp/>tx<sp/>queue<sp/>is<sp/>not<sp/>paused</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//from<sp/>hitting<sp/>the<sp/>max<sp/>queue<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ac060458dee97e0ec581c22bd8e58d164" kindref="member">toSendQueue</ref>.size()<sp/>&lt;<sp/>5)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref>&amp;<sp/>otherRxStreamInfo<sp/>=<sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[txStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1ab522b3b4cd3f8d6322810a693a68baba" kindref="member">otherStreamIndex</ref>];</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otherRxStreamInfo.<ref refid="structEncapRepeater_1_1StreamInfo_1a8c0df852133ed2537b05f8e3ff399e6b" kindref="member">encapAsyncDuplexLocalStream</ref>-&gt;StartReadFirstEncapHeaderByte_NotThreadSafe();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="203" refid="classEncapRepeater_1aa55a4fe14f97a21ee3215d7bc18bdae5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__async_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref><sp/><ref refid="classEncapRepeater_1aa55a4fe14f97a21ee3215d7bc18bdae5" kindref="member">m_ioService</ref>;</highlight></codeline>
+<codeline lineno="204" refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structEncapRepeater_1_1StreamInfo" kindref="compound">StreamInfo</ref><sp/><ref refid="classEncapRepeater_1a134af1d01e317afd12b794b2e4786610" kindref="member">m_streamInfos</ref>[2];</highlight></codeline>
+<codeline lineno="205" refid="classEncapRepeater_1aec223c24bce0b1a2c0f530b049a40ee1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::signal_set<sp/><ref refid="classEncapRepeater_1aec223c24bce0b1a2c0f530b049a40ee1" kindref="member">m_signals</ref>;<sp/></highlight><highlight class="comment">//Register<sp/>keyboard<sp/>interrupt<sp/>signals<sp/>to<sp/>listen<sp/>for.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="classEncapRepeater_1ae11979e3d15f48c565e842ff0131eff3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classEncapRepeater_1ae11979e3d15f48c565e842ff0131eff3" kindref="member">m_queueSize</ref>;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="EncapRepeater_8cpp_1ac0f2228420376f4db7e1274f2b41667c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EncapRepeater_8cpp_1ac0f2228420376f4db7e1274f2b41667c" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>streamNames[2];</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isStreamCreators[2];</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>queueSize;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5" kindref="member">ENCAP_PACKET_TYPE</ref><sp/>encapPacketType;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>STREAM_USE_WINDOWS_NAMED_PIPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>STREAM_NAME_HELPER_STRING<sp/>&quot;Windows<sp/>path<sp/>to<sp/>named<sp/>pipe<sp/>(e.g.<sp/>\\\\.\\pipe\\my_pipe_name<sp/>).&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>STREAM_NAME_HELPER_STRING<sp/>&quot;Unix<sp/>path<sp/>to<sp/>local<sp/>socket<sp/>(e.g.<sp/>/tmp/my_socket_name<sp/>).&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::program_options::options_description<sp/>desc(</highlight><highlight class="stringliteral">&quot;Allowed<sp/>options&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.add_options()</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Produce<sp/>help<sp/>message.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;stream-name-0&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/><ref refid="EncapRepeater_8cpp_1a4f1c2f0d994f58dd745ff95480226173" kindref="member">STREAM_NAME_HELPER_STRING</ref>)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;stream-init-0&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;valid<sp/>values<sp/>are<sp/>[open,<sp/>create]&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;stream-name-1&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/><ref refid="EncapRepeater_8cpp_1a4f1c2f0d994f58dd745ff95480226173" kindref="member">STREAM_NAME_HELPER_STRING</ref>)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;stream-init-1&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;valid<sp/>values<sp/>are<sp/>[open,<sp/>create]&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;queue-size&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;uint32_t&gt;()-&gt;default_value(5),<sp/></highlight><highlight class="stringliteral">&quot;Max<sp/>number<sp/>of<sp/>encap<sp/>packets<sp/>to<sp/>buffer<sp/>when<sp/>receiver<sp/>faster<sp/>than<sp/>sender&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;encap-packet-type&quot;</highlight><highlight class="normal">,<sp/>boost::program_options::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;valid<sp/>values<sp/>are<sp/>[bp,<sp/>ltp]&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::variables_map<sp/>vm;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::store(boost::program_options::parse_command_line(argc,<sp/>argv,<sp/>desc,<sp/>boost::program_options::command_line_style::unix_style<sp/>|<sp/>boost::program_options::command_line_style::case_insensitive),<sp/>vm);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::program_options::notify(vm);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>streamNames[0]<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;stream-name-0&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>streamNames[1]<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;stream-name-1&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>inits[2];</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inits[0]<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;stream-init-0&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inits[1]<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;stream-init-1&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inits[i]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;open&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isStreamCreators[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inits[i]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;create&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isStreamCreators[i]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;stream-init-&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>must<sp/>be<sp/>one<sp/>of<sp/>[open,<sp/>create]..<sp/>got<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>inits[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>queueSize<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;queue-size&quot;</highlight><highlight class="normal">].as&lt;uint32_t&gt;();</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>encapPacketTypeStr<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;encap-packet-type&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(encapPacketTypeStr<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;bp&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>encapPacketType<sp/>=<sp/><ref refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a96d4cdff8ed57e93e3b3d843cffe3af7" kindref="member">ENCAP_PACKET_TYPE::BP</ref>;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(encapPacketTypeStr<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;ltp&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>encapPacketType<sp/>=<sp/><ref refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a8e60eae3ffa88b49daf258ebacf32359" kindref="member">ENCAP_PACKET_TYPE::LTP</ref>;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;encap-packet-type<sp/>must<sp/>be<sp/>one<sp/>of<sp/>[bp,<sp/>ltp]..<sp/>got<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>encapPacketTypeStr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(boost::bad_any_cast&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>data<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(...)<sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Exception<sp/>of<sp/>unknown<sp/>type!\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEncapRepeater" kindref="compound">EncapRepeater</ref><sp/>r;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.<ref refid="classEncapRepeater_1a7b21524f82d89e01b72591fc1e056ecf" kindref="member">RunForever</ref>(streamNames[0],<sp/>isStreamCreators[0],<sp/>streamNames[1],<sp/>isStreamCreators[1],<sp/>encapPacketType,<sp/>queueSize);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="module/encap_repeater/src/EncapRepeater.cpp"/>
+  </compounddef>
+</doxygen>

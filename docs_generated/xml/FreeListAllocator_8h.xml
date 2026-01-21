@@ -1,0 +1,1768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="FreeListAllocator_8h" kind="file" language="C++">
+    <compoundname>FreeListAllocator.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">type_traits</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="BundleViewV6_8h" local="yes">common/bpcodec/include/codec/BundleViewV6.h</includedby>
+    <includedby refid="BundleViewV7_8h" local="yes">common/bpcodec/include/codec/BundleViewV7.h</includedby>
+    <includedby refid="LtpBundleSource_8h" local="yes">common/ltp/include/LtpBundleSource.h</includedby>
+    <includedby refid="LtpEngine_8h" local="yes">common/ltp/include/LtpEngine.h</includedby>
+    <includedby refid="LtpTimerManager_8h" local="yes">common/ltp/include/LtpTimerManager.h</includedby>
+    <includedby refid="FragmentSet_8h" local="yes">common/util/include/FragmentSet.h</includedby>
+    <includedby refid="UserDataRecycler_8h" local="yes">common/util/include/UserDataRecycler.h</includedby>
+    <includedby refid="TestFreeListAllocator_8cpp" local="yes">common/util/test/TestFreeListAllocator.cpp</includedby>
+    <includedby refid="receive_8cpp" local="yes">module/ingress/src/receive.cpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>utility</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/FreeListAllocator.h</label>
+        <link refid="FreeListAllocator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="61">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamMain.cpp</label>
+        <link refid="BpSendStreamMain_8cpp"/>
+      </node>
+      <node id="108">
+        <label>common/ltp/include/LtpBundleSink.h</label>
+        <link refid="LtpBundleSink_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>common/ltp/src/LtpBundleSource.cpp</label>
+        <link refid="LtpBundleSource_8cpp"/>
+      </node>
+      <node id="17">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketMain.cpp</label>
+        <link refid="BpReceivePacketMain_8cpp"/>
+      </node>
+      <node id="142">
+        <label>common/ltp/src/LtpTimerManager.cpp</label>
+        <link refid="LtpTimerManager_8cpp"/>
+      </node>
+      <node id="9">
+        <label>common/bpcodec/include/app_patterns/BpSinkPattern.h</label>
+        <link refid="BpSinkPattern_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>common/masker/src/RedundantMasker.cpp</label>
+        <link refid="RedundantMasker_8cpp"/>
+      </node>
+      <node id="170">
+        <label>module/storage/include/HashMap16BitFixedSize.h</label>
+        <link refid="HashMap16BitFixedSize_8h"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>common/bpcodec/src/codec/Bpv6Fragment.cpp</label>
+        <link refid="Bpv6Fragment_8cpp"/>
+      </node>
+      <node id="112">
+        <label>common/induct_manager/src/LtpOverEncapLocalStreamInduct.cpp</label>
+        <link refid="LtpOverEncapLocalStreamInduct_8cpp"/>
+      </node>
+      <node id="133">
+        <label>common/ltp/test/TestLtpUdpEngine.cpp</label>
+        <link refid="TestLtpUdpEngine_8cpp"/>
+      </node>
+      <node id="135">
+        <label>common/ltp/src/LtpEngine.cpp</label>
+        <link refid="LtpEngine_8cpp"/>
+      </node>
+      <node id="6">
+        <label>common/bpcodec/test/TestBpv6Fragmentation.cpp</label>
+        <link refid="TestBpv6Fragmentation_8cpp"/>
+      </node>
+      <node id="99">
+        <label>common/ltp/include/LtpOverUdpBundleSource.h</label>
+        <link refid="LtpOverUdpBundleSource_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>common/bpcodec/apps/bpreceivepacket/include/BpReceivePacket.h</label>
+        <link refid="BpReceivePacket_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamRunner.cpp</label>
+        <link refid="BpSendStreamRunner_8cpp"/>
+      </node>
+      <node id="183">
+        <label>common/util/test/TestUserDataRecycler.cpp</label>
+        <link refid="TestUserDataRecycler_8cpp"/>
+      </node>
+      <node id="136">
+        <label>common/ltp/test/TestLtpEngine.cpp</label>
+        <link refid="TestLtpEngine_8cpp"/>
+      </node>
+      <node id="113">
+        <label>common/induct_manager/include/LtpOverIpcInduct.h</label>
+        <link refid="LtpOverIpcInduct_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketRunner.cpp</label>
+        <link refid="BpReceivePacketRunner_8cpp"/>
+      </node>
+      <node id="34">
+        <label>common/bpcodec/include/app_patterns/BpSourcePattern.h</label>
+        <link refid="BpSourcePattern_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>common/ltp/include/LtpOverUdpBundleSink.h</label>
+        <link refid="LtpOverUdpBundleSink_8h"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>common/bpcodec/apps/bpsendpacket/include/BpSendPacket.h</label>
+        <link refid="BpSendPacket_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>common/induct_manager/src/LtpOverUdpInduct.cpp</label>
+        <link refid="LtpOverUdpInduct_8cpp"/>
+      </node>
+      <node id="94">
+        <label>common/outduct_manager/src/OutductManager.cpp</label>
+        <link refid="OutductManager_8cpp"/>
+      </node>
+      <node id="74">
+        <label>common/masker/src/ShiftingMasker.cpp</label>
+        <link refid="ShiftingMasker_8cpp"/>
+      </node>
+      <node id="157">
+        <label>module/ingress/src/IngressAsyncRunner.cpp</label>
+        <link refid="IngressAsyncRunner_8cpp"/>
+      </node>
+      <node id="48">
+        <label>common/bpcodec/apps/bping/src/BPingRunner.cpp</label>
+        <link refid="BPingRunner_8cpp"/>
+      </node>
+      <node id="139">
+        <label>common/ltp/src/LtpSessionReceiver.cpp</label>
+        <link refid="LtpSessionReceiver_8cpp"/>
+      </node>
+      <node id="24">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp</label>
+        <link refid="BpReceiveStream_8cpp"/>
+      </node>
+      <node id="138">
+        <label>common/ltp/include/LtpSessionReceiver.h</label>
+        <link refid="LtpSessionReceiver_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>common/bpcodec/apps/bpsendfile/include/BpSendFileRunner.h</label>
+        <link refid="BpSendFileRunner_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>common/ltp/src/LtpOverEncapLocalStreamBundleSink.cpp</label>
+        <link refid="LtpOverEncapLocalStreamBundleSink_8cpp"/>
+      </node>
+      <node id="78">
+        <label>module/storage/unit_tests/BundleStorageManagerMtTests.cpp</label>
+        <link refid="BundleStorageManagerMtTests_8cpp"/>
+      </node>
+      <node id="58">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacketRunner.cpp</label>
+        <link refid="BpSendPacketRunner_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/bpcodec/include/codec/BundleViewV6.h</label>
+        <link refid="BundleViewV6_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncMain.cpp</label>
+        <link refid="BpGenAsyncMain_8cpp"/>
+      </node>
+      <node id="178">
+        <label>common/ltp/src/LtpFragmentSet.cpp</label>
+        <link refid="LtpFragmentSet_8cpp"/>
+      </node>
+      <node id="44">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsync.cpp</label>
+        <link refid="BpGenAsync_8cpp"/>
+      </node>
+      <node id="69">
+        <label>common/masker/include/Masker.h</label>
+        <link refid="Masker_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>common/bpcodec/src/codec/BundleViewV7.cpp</label>
+        <link refid="BundleViewV7_8cpp"/>
+      </node>
+      <node id="20">
+        <label>common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h</label>
+        <link refid="BpReceiveStream_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>common/ltp/include/LtpUdpEngineManager.h</label>
+        <link refid="LtpUdpEngineManager_8h"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamRunner.cpp</label>
+        <link refid="BpReceiveStreamRunner_8cpp"/>
+      </node>
+      <node id="92">
+        <label>common/outduct_manager/include/LtpOverEncapLocalStreamOutduct.h</label>
+        <link refid="LtpOverEncapLocalStreamOutduct_8h"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>common/outduct_manager/include/LtpOutduct.h</label>
+        <link refid="LtpOutduct_8h"/>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>common/ltp/include/LtpOverEncapLocalStreamBundleSink.h</label>
+        <link refid="LtpOverEncapLocalStreamBundleSink_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>common/bpcodec/src/codec/BundleViewV6.cpp</label>
+        <link refid="BundleViewV6_8cpp"/>
+      </node>
+      <node id="123">
+        <label>common/ltp/src/LtpOverUdpBundleSink.cpp</label>
+        <link refid="LtpOverUdpBundleSink_8cpp"/>
+      </node>
+      <node id="125">
+        <label>common/ltp/include/LtpEncapLocalStreamEngine.h</label>
+        <link refid="LtpEncapLocalStreamEngine_8h"/>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>common/ltp/src/LtpBundleSink.cpp</label>
+        <link refid="LtpBundleSink_8cpp"/>
+      </node>
+      <node id="70">
+        <label>common/masker/include/RedundantMasker.h</label>
+        <link refid="RedundantMasker_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>common/bpcodec/apps/bping/src/BPingMain.cpp</label>
+        <link refid="BPingMain_8cpp"/>
+      </node>
+      <node id="29">
+        <label>common/bpcodec/apps/bpsink/include/BpSinkAsyncRunner.h</label>
+        <link refid="BpSinkAsyncRunner_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>common/bpcodec/apps/bpsendfile/include/BpSendFile.h</label>
+        <link refid="BpSendFile_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>module/storage/src/BundleStorageCatalog.cpp</label>
+        <link refid="BundleStorageCatalog_8cpp"/>
+      </node>
+      <node id="98">
+        <label>common/outduct_manager/src/LtpOverIpcOutduct.cpp</label>
+        <link refid="LtpOverIpcOutduct_8cpp"/>
+      </node>
+      <node id="36">
+        <label>common/bpcodec/apps/bpfiletransfer/include/BpFileTransferRunner.h</label>
+        <link refid="BpFileTransferRunner_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>common/ltp/src/LtpIpcEngine.cpp</label>
+        <link refid="LtpIpcEngine_8cpp"/>
+      </node>
+      <node id="66">
+        <label>common/bpcodec/test/TestCustodyTransfer.cpp</label>
+        <link refid="TestCustodyTransfer_8cpp"/>
+      </node>
+      <node id="65">
+        <label>common/bpcodec/src/codec/CustodyTransferManager.cpp</label>
+        <link refid="CustodyTransferManager_8cpp"/>
+      </node>
+      <node id="46">
+        <label>common/bpcodec/apps/bping/include/BPingRunner.h</label>
+        <link refid="BPingRunner_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>common/ltp/include/LtpTimerManager.h</label>
+        <link refid="LtpTimerManager_8h"/>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>common/masker/include/ShiftingMasker.h</label>
+        <link refid="ShiftingMasker_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferRunner.cpp</label>
+        <link refid="LtpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="83">
+        <label>common/bpsec/include/BpSecBundleProcessor.h</label>
+        <link refid="BpSecBundleProcessor_8h"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>common/bpcodec/src/app_patterns/BpSinkPattern.cpp</label>
+        <link refid="BpSinkPattern_8cpp"/>
+      </node>
+      <node id="22">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</label>
+        <link refid="BpReceiveStreamMain_8cpp"/>
+      </node>
+      <node id="89">
+        <label>common/ltp/include/LtpBundleSource.h</label>
+        <link refid="LtpBundleSource_8h"/>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>module/storage/src/StorageRunner.cpp</label>
+        <link refid="StorageRunner_8cpp"/>
+      </node>
+      <node id="115">
+        <label>common/induct_manager/include/LtpOverUdpInduct.h</label>
+        <link refid="LtpOverUdpInduct_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp</label>
+        <link refid="BpSendFile_8cpp"/>
+      </node>
+      <node id="140">
+        <label>common/ltp/include/LtpSessionSender.h</label>
+        <link refid="LtpSessionSender_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>common/outduct_manager/src/LtpOverUdpOutduct.cpp</label>
+        <link refid="LtpOverUdpOutduct_8cpp"/>
+      </node>
+      <node id="121">
+        <label>common/ltp/src/LtpOverIpcBundleSink.cpp</label>
+        <link refid="LtpOverIpcBundleSink_8cpp"/>
+      </node>
+      <node id="159">
+        <label>common/outduct_manager/include/OutductManager.h</label>
+        <link refid="OutductManager_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>common/bpcodec/test/TestBpsecDefaultSecurityContexts.cpp</label>
+        <link refid="TestBpsecDefaultSecurityContexts_8cpp"/>
+      </node>
+      <node id="167">
+        <label>module/storage/include/CustodyTimers.h</label>
+        <link refid="CustodyTimers_8h"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileRunner.cpp</label>
+        <link refid="BpReceiveFileRunner_8cpp"/>
+      </node>
+      <node id="77">
+        <label>module/storage/src/BundleStorageManagerBase.cpp</label>
+        <link refid="BundleStorageManagerBase_8cpp"/>
+      </node>
+      <node id="176">
+        <label>module/storage/unit_tests/TestBundleUuidToUint64HashMap.cpp</label>
+        <link refid="TestBundleUuidToUint64HashMap_8cpp"/>
+      </node>
+      <node id="177">
+        <label>common/ltp/include/LtpFragmentSet.h</label>
+        <link refid="LtpFragmentSet_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>common/bpcodec/include/codec/BundleViewV7.h</label>
+        <link refid="BundleViewV7_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>common/bpcodec/apps/bpfiletransfer/include/BpFileTransfer.h</label>
+        <link refid="BpFileTransfer_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>module/router/src/router.cpp</label>
+        <link refid="router_8cpp"/>
+      </node>
+      <node id="53">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileRunner.cpp</label>
+        <link refid="BpSendFileRunner_8cpp"/>
+      </node>
+      <node id="27">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsync.cpp</label>
+        <link refid="BpSinkAsync_8cpp"/>
+      </node>
+      <node id="148">
+        <label>common/bpcodec/test/TestCustodyIdAllocator.cpp</label>
+        <link refid="TestCustodyIdAllocator_8cpp"/>
+      </node>
+      <node id="30">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncMain.cpp</label>
+        <link refid="BpSinkAsyncMain_8cpp"/>
+      </node>
+      <node id="28">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncRunner.cpp</label>
+        <link refid="BpSinkAsyncRunner_8cpp"/>
+      </node>
+      <node id="19">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacket.cpp</label>
+        <link refid="BpReceivePacket_8cpp"/>
+      </node>
+      <node id="146">
+        <label>common/bpcodec/include/codec/CustodyIdAllocator.h</label>
+        <link refid="CustodyIdAllocator_8h"/>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>common/bpcodec/src/app_patterns/BpSourcePattern.cpp</label>
+        <link refid="BpSourcePattern_8cpp"/>
+      </node>
+      <node id="39">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp</label>
+        <link refid="BpFileTransfer_8cpp"/>
+      </node>
+      <node id="179">
+        <label>common/ltp/test/TestLtpFragmentSet.cpp</label>
+        <link refid="TestLtpFragmentSet_8cpp"/>
+      </node>
+      <node id="41">
+        <label>common/bpcodec/apps/bpgen/include/BpGenAsyncRunner.h</label>
+        <link refid="BpGenAsyncRunner_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferRunner.cpp</label>
+        <link refid="BpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="150">
+        <label>common/bpcodec/src/codec/Bpv6CanonicalBlock.cpp</label>
+        <link refid="Bpv6CanonicalBlock_8cpp"/>
+      </node>
+      <node id="174">
+        <label>module/storage/unit_tests/TestStorageRunner.cpp</label>
+        <link refid="TestStorageRunner_8cpp"/>
+      </node>
+      <node id="173">
+        <label>module/storage/unit_tests/TestBundleStorageCatalog.cpp</label>
+        <link refid="TestBundleStorageCatalog_8cpp"/>
+      </node>
+      <node id="117">
+        <label>common/induct_manager/src/LtpInduct.cpp</label>
+        <link refid="LtpInduct_8cpp"/>
+      </node>
+      <node id="175">
+        <label>module/storage/src/HashMap16BitFixedSize.cpp</label>
+        <link refid="HashMap16BitFixedSize_8cpp"/>
+      </node>
+      <node id="114">
+        <label>common/induct_manager/src/LtpOverIpcInduct.cpp</label>
+        <link refid="LtpOverIpcInduct_8cpp"/>
+      </node>
+      <node id="162">
+        <label>module/storage/src/BundleStorageManagerAsio.cpp</label>
+        <link refid="BundleStorageManagerAsio_8cpp"/>
+      </node>
+      <node id="151">
+        <label>common/bpcodec/src/codec/Bpv6CbhePrimaryBlock.cpp</label>
+        <link refid="Bpv6CbhePrimaryBlock_8cpp"/>
+      </node>
+      <node id="11">
+        <label>common/bpcodec/apps/bpreceivefile/include/BpReceiveFileRunner.h</label>
+        <link refid="BpReceiveFileRunner_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileMain.cpp</label>
+        <link refid="BpSendFileMain_8cpp"/>
+      </node>
+      <node id="43">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncRunner.cpp</label>
+        <link refid="BpGenAsyncRunner_8cpp"/>
+      </node>
+      <node id="182">
+        <label>common/util/include/UserDataRecycler.h</label>
+        <link refid="UserDataRecycler_8h"/>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>common/bpcodec/apps/bpsendpacket/include/BpSendPacketRunner.h</label>
+        <link refid="BpSendPacketRunner_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>common/bpsec/test/TestBpsecDefault.cpp</label>
+        <link refid="TestBpsecDefault_8cpp"/>
+      </node>
+      <node id="132">
+        <label>common/ltp/src/LtpUdpEngineManager.cpp</label>
+        <link refid="LtpUdpEngineManager_8cpp"/>
+      </node>
+      <node id="141">
+        <label>common/ltp/src/LtpSessionSender.cpp</label>
+        <link refid="LtpSessionSender_8cpp"/>
+      </node>
+      <node id="84">
+        <label>common/bpsec/include/BpSecPolicyManager.h</label>
+        <link refid="BpSecPolicyManager_8h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>common/ltp/include/LtpOverIpcBundleSink.h</label>
+        <link refid="LtpOverIpcBundleSink_8h"/>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>module/storage/unit_tests/TestCustodyTimers.cpp</label>
+        <link refid="TestCustodyTimers_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/bpcodec/src/codec/Bpv6FragmentManager.cpp</label>
+        <link refid="Bpv6FragmentManager_8cpp"/>
+      </node>
+      <node id="40">
+        <label>common/bpcodec/apps/bpgen/include/BpGenAsync.h</label>
+        <link refid="BpGenAsync_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>common/bpcodec/apps/bpreceivefile/include/BpReceiveFile.h</label>
+        <link refid="BpReceiveFile_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>common/outduct_manager/src/LtpOutduct.cpp</label>
+        <link refid="LtpOutduct_8cpp"/>
+      </node>
+      <node id="85">
+        <label>common/bpsec/src/BpSecPolicyManager.cpp</label>
+        <link refid="BpSecPolicyManager_8cpp"/>
+      </node>
+      <node id="95">
+        <label>common/ltp/include/LtpOverIpcBundleSource.h</label>
+        <link refid="LtpOverIpcBundleSource_8h"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+      </node>
+      <node id="165">
+        <label>module/storage/include/BundleStorageManagerMT.h</label>
+        <link refid="BundleStorageManagerMT_8h"/>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>common/ltp/include/LtpIpcEngine.h</label>
+        <link refid="LtpIpcEngine_8h"/>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>common/bpcodec/apps/bpsink/include/BpSinkAsync.h</label>
+        <link refid="BpSinkAsync_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>common/masker/src/Masker.cpp</label>
+        <link refid="Masker_8cpp"/>
+      </node>
+      <node id="12">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileMain.cpp</label>
+        <link refid="BpReceiveFileMain_8cpp"/>
+      </node>
+      <node id="171">
+        <label>module/storage/include/BundleStorageCatalog.h</label>
+        <link refid="BundleStorageCatalog_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacket.cpp</label>
+        <link refid="BpSendPacket_8cpp"/>
+      </node>
+      <node id="107">
+        <label>common/ltp/include/LtpEngine.h</label>
+        <link refid="LtpEngine_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>common/util/include/FreeListAllocator.h</label>
+        <link refid="FreeListAllocator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacketMain.cpp</label>
+        <link refid="BpSendPacketMain_8cpp"/>
+      </node>
+      <node id="37">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferMain.cpp</label>
+        <link refid="BpFileTransferMain_8cpp"/>
+      </node>
+      <node id="163">
+        <label>module/storage/src/test/StorageSpeedTestMain.cpp</label>
+        <link refid="StorageSpeedTestMain_8cpp"/>
+      </node>
+      <node id="181">
+        <label>common/util/src/MemoryInFiles.cpp</label>
+        <link refid="MemoryInFiles_8cpp"/>
+      </node>
+      <node id="45">
+        <label>common/bpcodec/apps/bping/include/BPing.h</label>
+        <link refid="BPing_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>module/storage/src/ZmqStorageInterface.cpp</label>
+        <link refid="ZmqStorageInterface_8cpp"/>
+      </node>
+      <node id="153">
+        <label>common/bpcodec/src/codec/Bpv6MetadataExtensionBlock.cpp</label>
+        <link refid="Bpv6MetadataExtensionBlock_8cpp"/>
+      </node>
+      <node id="184">
+        <label>common/util/test/TestFreeListAllocator.cpp</label>
+        <link refid="TestFreeListAllocator_8cpp"/>
+      </node>
+      <node id="8">
+        <label>common/bpcodec/include/codec/Bpv6FragmentManager.h</label>
+        <link refid="Bpv6FragmentManager_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>common/bpcodec/test/TestBundleViewV7.cpp</label>
+        <link refid="TestBundleViewV7_8cpp"/>
+      </node>
+      <node id="60">
+        <label>common/bpcodec/apps/BpSendStream/include/BpSendStreamRunner.h</label>
+        <link refid="BpSendStreamRunner_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>common/bpsec/test/TestBpSecPolicyManager.cpp</label>
+        <link refid="TestBpSecPolicyManager_8cpp"/>
+      </node>
+      <node id="91">
+        <label>common/ltp/src/LtpOverEncapLocalStreamBundleSource.cpp</label>
+        <link refid="LtpOverEncapLocalStreamBundleSource_8cpp"/>
+      </node>
+      <node id="59">
+        <label>common/bpcodec/apps/BpSendStream/include/BpSendStream.h</label>
+        <link refid="BpSendStream_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>module/ingress/src/receive.cpp</label>
+        <link refid="receive_8cpp"/>
+      </node>
+      <node id="101">
+        <label>common/outduct_manager/include/LtpOverUdpOutduct.h</label>
+        <link refid="LtpOverUdpOutduct_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>common/bpcodec/test/TestBundleViewV6.cpp</label>
+        <link refid="TestBundleViewV6_8cpp"/>
+      </node>
+      <node id="110">
+        <label>common/induct_manager/include/LtpOverEncapLocalStreamInduct.h</label>
+        <link refid="LtpOverEncapLocalStreamInduct_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>common/include/message.hpp</label>
+        <link refid="message_8hpp"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFile.cpp</label>
+        <link refid="BpReceiveFile_8cpp"/>
+      </node>
+      <node id="147">
+        <label>common/bpcodec/src/codec/CustodyIdAllocator.cpp</label>
+        <link refid="CustodyIdAllocator_8cpp"/>
+      </node>
+      <node id="106">
+        <label>module/egress/src/EgressAsync.cpp</label>
+        <link refid="EgressAsync_8cpp"/>
+      </node>
+      <node id="156">
+        <label>module/hdtn_one_process/src/HdtnOneProcessRunner.cpp</label>
+        <link refid="HdtnOneProcessRunner_8cpp"/>
+      </node>
+      <node id="145">
+        <label>common/bpcodec/include/codec/bpv6.h</label>
+        <link refid="bpv6_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>common/ltp/src/LtpEncapLocalStreamEngine.cpp</label>
+        <link refid="LtpEncapLocalStreamEngine_8cpp"/>
+      </node>
+      <node id="154">
+        <label>common/bpcodec/test/TestAggregateCustodySignal.cpp</label>
+        <link refid="TestAggregateCustodySignal_8cpp"/>
+      </node>
+      <node id="97">
+        <label>common/outduct_manager/include/LtpOverIpcOutduct.h</label>
+        <link refid="LtpOverIpcOutduct_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>common/induct_manager/include/LtpInduct.h</label>
+        <link refid="LtpInduct_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>common/bpcodec/apps/BpReceiveStream/include/BpReceiveStreamRunner.h</label>
+        <link refid="BpReceiveStreamRunner_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>common/outduct_manager/src/LtpOverEncapLocalStreamOutduct.cpp</label>
+        <link refid="LtpOverEncapLocalStreamOutduct_8cpp"/>
+      </node>
+      <node id="149">
+        <label>common/bpcodec/src/codec/Bpv6AdministrativeRecords.cpp</label>
+        <link refid="Bpv6AdministrativeRecords_8cpp"/>
+      </node>
+      <node id="161">
+        <label>module/storage/include/BundleStorageManagerAsio.h</label>
+        <link refid="BundleStorageManagerAsio_8h"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>common/ltp/include/LtpOverEncapLocalStreamBundleSource.h</label>
+        <link refid="LtpOverEncapLocalStreamBundleSource_8h"/>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>common/ltp/src/LtpUdpEngine.cpp</label>
+        <link refid="LtpUdpEngine_8cpp"/>
+      </node>
+      <node id="32">
+        <label>common/bpcodec/test/TestBpSinkPattern.cpp</label>
+        <link refid="TestBpSinkPattern_8cpp"/>
+      </node>
+      <node id="160">
+        <label>module/storage/include/BundleStorageManagerBase.h</label>
+        <link refid="BundleStorageManagerBase_8h"/>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>module/storage/src/CustodyTimers.cpp</label>
+        <link refid="CustodyTimers_8cpp"/>
+      </node>
+      <node id="33">
+        <label>common/bpcodec/include/codec/CustodyTransferManager.h</label>
+        <link refid="CustodyTransferManager_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>module/storage/src/BundleStorageManagerMT.cpp</label>
+        <link refid="BundleStorageManagerMT_8cpp"/>
+      </node>
+      <node id="96">
+        <label>common/ltp/src/LtpOverIpcBundleSource.cpp</label>
+        <link refid="LtpOverIpcBundleSource_8cpp"/>
+      </node>
+      <node id="63">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStream.cpp</label>
+        <link refid="BpSendStream_8cpp"/>
+      </node>
+      <node id="87">
+        <label>common/bpsec/src/BpSecBundleProcessor.cpp</label>
+        <link refid="BpSecBundleProcessor_8cpp"/>
+      </node>
+      <node id="129">
+        <label>common/ltp/include/LtpUdpEngine.h</label>
+        <link refid="LtpUdpEngine_8h"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>common/induct_manager/src/InductManager.cpp</label>
+        <link refid="InductManager_8cpp"/>
+      </node>
+      <node id="100">
+        <label>common/ltp/src/LtpOverUdpBundleSource.cpp</label>
+        <link refid="LtpOverUdpBundleSource_8cpp"/>
+      </node>
+      <node id="180">
+        <label>common/util/src/FragmentSet.cpp</label>
+        <link refid="FragmentSet_8cpp"/>
+      </node>
+      <node id="49">
+        <label>common/bpcodec/apps/bping/src/BPing.cpp</label>
+        <link refid="BPing_8cpp"/>
+      </node>
+      <node id="16">
+        <label>common/bpcodec/apps/bpreceivepacket/include/BpReceivePacketRunner.h</label>
+        <link refid="BpReceivePacketRunner_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>common/bpcodec/src/codec/Bpv6ExtensionBlocks.cpp</label>
+        <link refid="Bpv6ExtensionBlocks_8cpp"/>
+      </node>
+      <node id="164">
+        <label>module/storage/unit_tests/deprecated/BundleStorageManagerMtAsFifoTests.cpp</label>
+        <link refid="BundleStorageManagerMtAsFifoTests_8cpp"/>
+      </node>
+      <node id="143">
+        <label>common/ltp/test/TestLtpTimerManager.cpp</label>
+        <link refid="TestLtpTimerManager_8cpp"/>
+      </node>
+      <node id="144">
+        <label>common/util/include/FragmentSet.h</label>
+        <link refid="FragmentSet_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/bpcodec/include/codec/Bpv6Fragment.h</label>
+        <link refid="Bpv6Fragment_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classFreeListAllocator" prot="public">FreeListAllocator</innerclass>
+    <innerclass refid="unionFreeListAllocator_1_1node" prot="private">FreeListAllocator::node</innerclass>
+    <innerclass refid="structFreeListAllocator_1_1rebind" prot="public">FreeListAllocator::rebind</innerclass>
+    <innerclass refid="classFreeListAllocatorDynamic" prot="public">FreeListAllocatorDynamic</innerclass>
+    <innerclass refid="unionFreeListAllocatorDynamic_1_1node" prot="private">FreeListAllocatorDynamic::node</innerclass>
+    <innerclass refid="structFreeListAllocatorDynamic_1_1rebind" prot="public">FreeListAllocatorDynamic::rebind</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="FreeListAllocator_8h_1adddf4671572bda68ea7be35a0375605c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const FreeListAllocator&lt; T &gt; &amp;, const FreeListAllocator&lt; U &gt; &amp;)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; T &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; U &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="171" column="13" bodyfile="common/util/include/FreeListAllocator.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="FreeListAllocator_8h_1a34e22433c1f37499140d7af1d7bb12e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const FreeListAllocator&lt; T &gt; &amp;, const FreeListAllocator&lt; U &gt; &amp;)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; T &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; U &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="177" column="13" bodyfile="common/util/include/FreeListAllocator.h" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="FreeListAllocator_8h_1acfccea14e5642f8c63b8c710a7f7520b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const FreeListAllocatorDynamic&lt; T &gt; &amp;, const FreeListAllocatorDynamic&lt; U &gt; &amp;)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; T &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; U &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="317" column="13" bodyfile="common/util/include/FreeListAllocator.h" bodystart="317" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="FreeListAllocator_8h_1aba8198a8041d13a8e11fbb64edef795d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const FreeListAllocatorDynamic&lt; T &gt; &amp;, const FreeListAllocatorDynamic&lt; U &gt; &amp;)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; T &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; U &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="322" column="13" bodyfile="common/util/include/FreeListAllocator.h" bodystart="322" bodyend="324"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>Idea from <ulink url="https://stackoverflow.com/questions/24278803/how-can-i-write-a-stateful-allocator-in-c11-given-requirements-on-copy-constr">https://stackoverflow.com/questions/24278803/how-can-i-write-a-stateful-allocator-in-c11-given-requirements-on-copy-constr</ulink> An allocator designed for node-based containers like an std::set which preserves up to MaxListSize &quot;unused elements prior to deletion&quot; in order to reduce new and delete operations. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FREE_LIST_ALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FREE_LIST_ALLOCATOR_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>//motivation<sp/>behind<sp/>FreeListAllocator<sp/>is<sp/>as<sp/>follows,<sp/>the<sp/>first<sp/>is<sp/>fastest<sp/>and<sp/>doesn&apos;t<sp/>spend<sp/>time<sp/>in<sp/>operator<sp/>new</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>{<sp/>//fastest<sp/>by<sp/>far</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::set&lt;int,<sp/>std::less&lt;int&gt;,<sp/>FreeListAllocator&lt;int&gt;<sp/>&gt;<sp/>s;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::timer::auto_cpu_timer<sp/>timer;</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(unsigned<sp/>int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10000000;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.insert(5);<sp/>s.insert(10);<sp/>s.insert(2);<sp/>s.clear();</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>{<sp/>//slowest</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::set&lt;int&gt;<sp/>s;</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::timer::auto_cpu_timer<sp/>timer;</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(unsigned<sp/>int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10000000;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.insert(5);<sp/>s.insert(10);<sp/>s.insert(2);<sp/>s.clear();</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>{<sp/>//second<sp/>fastest</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::container::set&lt;int,<sp/>std::less&lt;int&gt;,<sp/>boost::container::adaptive_pool&lt;int&gt;<sp/>&gt;<sp/>s;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::timer::auto_cpu_timer<sp/>timer;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(unsigned<sp/>int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10000000;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.insert(5);<sp/>s.insert(10);<sp/>s.insert(2);<sp/>s.clear();</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>{<sp/>//slow</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::set&lt;int,<sp/>std::less&lt;int&gt;,<sp/>boost::container::adaptive_pool&lt;int&gt;<sp/>&gt;<sp/>s;</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::timer::auto_cpu_timer<sp/>timer;</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(unsigned<sp/>int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10000000;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.insert(5);<sp/>s.insert(10);<sp/>s.insert(2);<sp/>s.clear();</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;type_traits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>MaxListSize<sp/>=<sp/>100&gt;</highlight></codeline>
+<codeline lineno="62" refid="classFreeListAllocator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref><sp/>{</highlight></codeline>
+<codeline lineno="63" refid="unionFreeListAllocator_1_1node" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref><sp/>{</highlight></codeline>
+<codeline lineno="64" refid="unionFreeListAllocator_1_1node_1aed5186e8838fce6f3dcd4bde878ea747" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*<sp/><ref refid="unionFreeListAllocator_1_1node_1aed5186e8838fce6f3dcd4bde878ea747" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="65" refid="unionFreeListAllocator_1_1node_1a1ac72c972f957924ba24226ed19f62e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::aligned_storage&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T),<sp/></highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(T)&gt;::type<sp/><ref refid="unionFreeListAllocator_1_1node_1a1ac72c972f957924ba24226ed19f62e4" kindref="member">storage</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="classFreeListAllocator_1a00d8cc9cb2446c4b15975ca7783cd5d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator_1a00d8cc9cb2446c4b15975ca7783cd5d4" kindref="member">clear</ref>()<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*<sp/>p<sp/>=<sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(p)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*<sp/>tmp<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>p-&gt;<ref refid="unionFreeListAllocator_1_1node_1aed5186e8838fce6f3dcd4bde878ea747" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>technique<sp/>is<sp/>useful<sp/>in<sp/>classes<sp/>that<sp/>have<sp/>multiple<sp/>constructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*<sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82" refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="83" refid="classFreeListAllocator_1a4ae56e928cf0579c5ea92d55863de2f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocator_1a4ae56e928cf0579c5ea92d55863de2f4" kindref="member">listSizeCopy</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//for<sp/>unit<sp/>testing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classFreeListAllocator_1aff55dee0e5689a6c3174a64f4a1da0d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator_1aff55dee0e5689a6c3174a64f4a1da0d8" kindref="member">value_type</ref><sp/>=<sp/>T;</highlight></codeline>
+<codeline lineno="86" refid="classFreeListAllocator_1a774cbab3a058a05b9bd69f7572df4f6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator_1a774cbab3a058a05b9bd69f7572df4f6d" kindref="member">size_type</ref><sp/>=<sp/>std::size_t;</highlight></codeline>
+<codeline lineno="87" refid="classFreeListAllocator_1a10557405c5ce34b192b591767d310910" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator_1a10557405c5ce34b192b591767d310910" kindref="member">propagate_on_container_move_assignment</ref><sp/>=<sp/>std::true_type;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//the<sp/>three<sp/>constructor<sp/>versions<sp/>must<sp/>be<sp/>defined<sp/>(even<sp/>if<sp/>they<sp/>do<sp/>nothing)<sp/>to<sp/>allow<sp/>for<sp/>copy-constructions<sp/>from<sp/>allocator<sp/>objects<sp/>of<sp/>other<sp/>types.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classFreeListAllocator_1aaafab529364d8da614d72a2f099e3de5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1aaafab529364d8da614d72a2f099e3de5" kindref="member">FreeListAllocator</ref>()<sp/>noexcept<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="91" refid="classFreeListAllocator_1a805280ce11f14bcb4e77c85428868722" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>(const<sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&amp;<sp/>other)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1a4ae56e928cf0579c5ea92d55863de2f4" kindref="member">listSizeCopy</ref>(other.<ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref>)<sp/>{}<sp/></highlight><highlight class="comment">//do<sp/>not<sp/>copy<sp/>the<sp/>list<sp/>to<sp/>avoid<sp/>double<sp/>delete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="94" refid="classFreeListAllocator_1a2a30dc9fb16ead806ca7053ca67f9281" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1a2a30dc9fb16ead806ca7053ca67f9281" kindref="member">FreeListAllocator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator&lt;U, MaxListSize&gt;</ref>&amp;<sp/>other)<sp/>noexcept<sp/>:<sp/></highlight><highlight class="comment">//used<sp/>by<sp/>get_allocator()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1a4ae56e928cf0579c5ea92d55863de2f4" kindref="member">listSizeCopy</ref>(other.listSize)<sp/>{}<sp/></highlight><highlight class="comment">//do<sp/>not<sp/>copy<sp/>the<sp/>list<sp/>to<sp/>avoid<sp/>double<sp/>delete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classFreeListAllocator_1a175b2aa4095dae1584c4040934df44fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1a175b2aa4095dae1584c4040934df44fb" kindref="member">FreeListAllocator</ref>(<ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&amp;&amp;<sp/>other)<sp/>noexcept<sp/>:<sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref>(other.list),<sp/><ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref>(other.listSize)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.list<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.listSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.listSizeCopy<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classFreeListAllocator_1aeee8e758511215487a9a73fcd6a71698" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocator_1aeee8e758511215487a9a73fcd6a71698" kindref="member">GetCurrentListSizeFromGetAllocatorCopy</ref>()<sp/>const<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator_1a4ae56e928cf0579c5ea92d55863de2f4" kindref="member">listSizeCopy</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classFreeListAllocator_1ac3f416c8ca448564755159014e8f988d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocator_1ac3f416c8ca448564755159014e8f988d" kindref="member">GetMaxListSize</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>MaxListSize;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classFreeListAllocator_1accb461e511ad03094fee86568cd42076" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&amp;<sp/><ref refid="classFreeListAllocator_1accb461e511ad03094fee86568cd42076" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&amp;<sp/>other)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>noop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1a4ae56e928cf0579c5ea92d55863de2f4" kindref="member">listSizeCopy</ref><sp/>=<sp/>other.listSize;<sp/></highlight><highlight class="comment">//do<sp/>not<sp/>copy<sp/>the<sp/>list<sp/>to<sp/>avoid<sp/>double<sp/>delete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classFreeListAllocator_1acf8556df0506d407d5ce2db85a77fea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&amp;<sp/><ref refid="classFreeListAllocator_1accb461e511ad03094fee86568cd42076" kindref="member">operator = </ref>(<ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&amp;&amp;<sp/>other)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1a00d8cc9cb2446c4b15975ca7783cd5d4" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref><sp/>=<sp/>other.list;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref><sp/>=<sp/>other.listSize;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.list<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.listSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classFreeListAllocator_1aa8c55ac4bba3b293a667a6cf9acc7dfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1aa8c55ac4bba3b293a667a6cf9acc7dfc" kindref="member">~FreeListAllocator</ref>()<sp/>noexcept<sp/>{<sp/><ref refid="classFreeListAllocator_1a00d8cc9cb2446c4b15975ca7783cd5d4" kindref="member">clear</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="classFreeListAllocator_1abe2bdcb93a3dca5ee97907f32d330987" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="classFreeListAllocator_1abe2bdcb93a3dca5ee97907f32d330987" kindref="member">allocate</ref>(<ref refid="classFreeListAllocator_1a774cbab3a058a05b9bd69f7572df4f6d" kindref="member">size_type</ref><sp/>n)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Allocate(&quot;<sp/>&lt;&lt;<sp/>n<sp/>&lt;&lt;<sp/>&quot;)<sp/>from<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*<sp/>ptr<sp/>=<sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ptr)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;freelist\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref><sp/>=<sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref>-&gt;<ref refid="unionFreeListAllocator_1_1node_1aed5186e8838fce6f3dcd4bde878ea747" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--<ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;new<sp/>node\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ptr);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;::operator<sp/>new\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(::operator<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(n<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T)));</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classFreeListAllocator_1ad97716357372fa6bcc3a8a938b10df74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator_1ad97716357372fa6bcc3a8a938b10df74" kindref="member">deallocate</ref>(T*<sp/>ptr,<sp/><ref refid="classFreeListAllocator_1a774cbab3a058a05b9bd69f7572df4f6d" kindref="member">size_type</ref><sp/>n)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Deallocate(&quot;<sp/>&lt;&lt;<sp/>static_cast&lt;void*&gt;(ptr)<sp/>&lt;&lt;<sp/>&quot;,<sp/>&quot;<sp/>&lt;&lt;<sp/>n<sp/>&lt;&lt;<sp/>&quot;)<sp/>to<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((n<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(<ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref><sp/>&lt;<sp/>MaxListSize))<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;freelist\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*<sp/>node_ptr<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="unionFreeListAllocator_1_1node" kindref="compound">node</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ptr);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node_ptr-&gt;<ref refid="unionFreeListAllocator_1_1node_1aed5186e8838fce6f3dcd4bde878ea747" kindref="member">next</ref><sp/>=<sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocator_1aa7accb12c21775a9b46c7897c44cc2d8" kindref="member">list</ref><sp/>=<sp/>node_ptr;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classFreeListAllocator_1ab126c6d0c06adcdd7248f92d7432e4fd" kindref="member">listSize</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;::operator<sp/>delete\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::operator<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">(ptr);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="164" refid="structFreeListAllocator_1_1rebind" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structFreeListAllocator_1_1rebind" kindref="compound">rebind</ref><sp/>{</highlight></codeline>
+<codeline lineno="165" refid="structFreeListAllocator_1_1rebind_1a4980f0324aeca0b30a50d33a21e734eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator&lt;U, MaxListSize&gt;</ref><sp/><ref refid="structFreeListAllocator_1_1rebind_1a4980f0324aeca0b30a50d33a21e734eb" kindref="member">other</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="171" refid="FreeListAllocator_8h_1adddf4671572bda68ea7be35a0375605c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="FreeListAllocator_8h_1adddf4671572bda68ea7be35a0375605c" kindref="member">operator == </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator&lt;T&gt;</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator&lt;U&gt;</ref>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;ret<sp/>true\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="177" refid="FreeListAllocator_8h_1a34e22433c1f37499140d7af1d7bb12e8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="FreeListAllocator_8h_1a34e22433c1f37499140d7af1d7bb12e8" kindref="member">operator != </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator&lt;T&gt;</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator&lt;U&gt;</ref>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;ret<sp/>false\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>MaxInitialListSize<sp/>=<sp/>100&gt;</highlight></codeline>
+<codeline lineno="194" refid="classFreeListAllocatorDynamic" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref><sp/>{</highlight></codeline>
+<codeline lineno="195" refid="unionFreeListAllocatorDynamic_1_1node" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref><sp/>{</highlight></codeline>
+<codeline lineno="196" refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*<sp/><ref refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="197" refid="unionFreeListAllocatorDynamic_1_1node_1a30e20c504416bd45ad8e2e61376a9807" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::aligned_storage&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T),<sp/></highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(T)&gt;::type<sp/><ref refid="unionFreeListAllocatorDynamic_1_1node_1a30e20c504416bd45ad8e2e61376a9807" kindref="member">storage</ref>;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" kindref="member">clear</ref>()<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*<sp/>p<sp/>=<sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(p)<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*<sp/>tmp<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>p-&gt;<ref refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>technique<sp/>is<sp/>useful<sp/>in<sp/>classes<sp/>that<sp/>have<sp/>multiple<sp/>constructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*<sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="215" refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="216" refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" kindref="member">listSizeCopy</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//for<sp/>unit<sp/>testing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;std::size_t&gt;<sp/><ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref><sp/>=<sp/>std::make_shared&lt;std::size_t&gt;(MaxInitialListSize);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="classFreeListAllocatorDynamic_1a251994e2bfd282faa9dd9f10430a556b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1a251994e2bfd282faa9dd9f10430a556b" kindref="member">value_type</ref><sp/>=<sp/>T;</highlight></codeline>
+<codeline lineno="220" refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" kindref="member">size_type</ref><sp/>=<sp/>std::size_t;</highlight></codeline>
+<codeline lineno="221" refid="classFreeListAllocatorDynamic_1a732ae49bbeb38debe7cba4ffd1457fc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1a732ae49bbeb38debe7cba4ffd1457fc2" kindref="member">propagate_on_container_move_assignment</ref><sp/>=<sp/>std::true_type;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//the<sp/>three<sp/>constructor<sp/>versions<sp/>must<sp/>be<sp/>defined<sp/>(even<sp/>if<sp/>they<sp/>do<sp/>nothing)<sp/>to<sp/>allow<sp/>for<sp/>copy-constructions<sp/>from<sp/>allocator<sp/>objects<sp/>of<sp/>other<sp/>types.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="classFreeListAllocatorDynamic_1a6dcb6b71c04e2dab18a7ee8788fe6be4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a6dcb6b71c04e2dab18a7ee8788fe6be4" kindref="member">FreeListAllocatorDynamic</ref>()<sp/>noexcept<sp/>{}<sp/></highlight><highlight class="comment">//<sp/>=<sp/>default;<sp/>will<sp/>fail<sp/>compile<sp/>because<sp/>of<sp/>shared_ptr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="classFreeListAllocatorDynamic_1a419223279e75853bf626b77877afc674" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a419223279e75853bf626b77877afc674" kindref="member">FreeListAllocatorDynamic</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&amp;<sp/>other)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" kindref="member">listSizeCopy</ref>(other.listSize),<sp/></highlight><highlight class="comment">//do<sp/>not<sp/>copy<sp/>the<sp/>list<sp/>to<sp/>avoid<sp/>double<sp/>delete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref>(other.maxListSizePtr)<sp/>{}<sp/></highlight><highlight class="comment">//increase<sp/>use_count<sp/>of<sp/>shared_ptr<sp/>so<sp/>SetMaxListSize<sp/>will<sp/>work<sp/>after<sp/>get_allocator()<sp/>copies</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="230" refid="classFreeListAllocatorDynamic_1a602d61ab37e64e263dea5b011fe15834" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a602d61ab37e64e263dea5b011fe15834" kindref="member">FreeListAllocatorDynamic</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic&lt;U, MaxInitialListSize&gt;</ref>&amp;<sp/>other)<sp/>noexcept<sp/>:<sp/></highlight><highlight class="comment">//used<sp/>by<sp/>get_allocator()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" kindref="member">listSizeCopy</ref>(other.listSize),<sp/></highlight><highlight class="comment">//do<sp/>not<sp/>copy<sp/>the<sp/>list<sp/>to<sp/>avoid<sp/>double<sp/>delete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref>(other.maxListSizePtr)<sp/>{}<sp/></highlight><highlight class="comment">//increase<sp/>use_count<sp/>of<sp/>shared_ptr<sp/>so<sp/>SetMaxListSize<sp/>will<sp/>work<sp/>after<sp/>get_allocator()<sp/>copies</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="classFreeListAllocatorDynamic_1a70792cf191de61f63dd4fabc586c5bbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a70792cf191de61f63dd4fabc586c5bbf" kindref="member">FreeListAllocatorDynamic</ref>(<ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&amp;&amp;<sp/>other)<sp/>noexcept<sp/>:</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref>(other.list),</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref>(other.listSize),</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref>(std::make_shared&lt;std::size_t&gt;(*(other.maxListSizePtr)))<sp/></highlight><highlight class="comment">//copy<sp/>to<sp/>new<sp/>shared_ptr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.list<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.listSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.listSizeCopy<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//other.maxListSizePtr.reset();<sp/>//keep<sp/>other<sp/>in<sp/>a<sp/>valid<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245" refid="classFreeListAllocatorDynamic_1a63f52fe599ded0d121f666d01a135665" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocatorDynamic_1a63f52fe599ded0d121f666d01a135665" kindref="member">GetCurrentListSizeFromGetAllocatorCopy</ref>()<sp/>const<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" kindref="member">listSizeCopy</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="classFreeListAllocatorDynamic_1a49637f72921cfae30325875d67b9d798" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/><ref refid="classFreeListAllocatorDynamic_1a49637f72921cfae30325875d67b9d798" kindref="member">GetMaxListSize</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="classFreeListAllocatorDynamic_1aa766a444ce9819ec33f711af371ff124" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1aa766a444ce9819ec33f711af371ff124" kindref="member">SetMaxListSizeFromGetAllocatorCopy</ref>(std::size_t<sp/>newMaxListSize)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref><sp/>=<sp/>newMaxListSize;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="classFreeListAllocatorDynamic_1a313ef9ffde66cf9a43f90a7375c4763f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&amp;<sp/><ref refid="classFreeListAllocatorDynamic_1a313ef9ffde66cf9a43f90a7375c4763f" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&amp;<sp/>other)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>noop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" kindref="member">listSizeCopy</ref><sp/>=<sp/>other.listSize;<sp/></highlight><highlight class="comment">//do<sp/>not<sp/>copy<sp/>the<sp/>list<sp/>to<sp/>avoid<sp/>double<sp/>delete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="classFreeListAllocatorDynamic_1a180b88867bd242d7096ff1ada5fe566d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&amp;<sp/><ref refid="classFreeListAllocatorDynamic_1a313ef9ffde66cf9a43f90a7375c4763f" kindref="member">operator = </ref>(<ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&amp;&amp;<sp/>other)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref><sp/>=<sp/>other.list;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref><sp/>=<sp/>other.listSize;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.list<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other.listSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272" refid="classFreeListAllocatorDynamic_1a00ceba10963ec05a3c155512b5b5b575" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1a00ceba10963ec05a3c155512b5b5b575" kindref="member">~FreeListAllocatorDynamic</ref>()<sp/>noexcept<sp/>{<sp/><ref refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" kindref="member">clear</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274" refid="classFreeListAllocatorDynamic_1adaea705e22379d2f9a8aa1f3fd3cb6cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="classFreeListAllocatorDynamic_1adaea705e22379d2f9a8aa1f3fd3cb6cc" kindref="member">allocate</ref>(<ref refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" kindref="member">size_type</ref><sp/>n)<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Allocate(&quot;<sp/>&lt;&lt;<sp/>n<sp/>&lt;&lt;<sp/>&quot;)<sp/>from<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*<sp/>ptr<sp/>=<sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ptr)<sp/>{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;freelist\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref><sp/>=<sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref>-&gt;<ref refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--<ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;new<sp/>node\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ptr);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;::operator<sp/>new\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(::operator<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(n<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T)));</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" kindref="member">deallocate</ref>(T*<sp/>ptr,<sp/><ref refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" kindref="member">size_type</ref><sp/>n)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Deallocate(&quot;<sp/>&lt;&lt;<sp/>static_cast&lt;void*&gt;(ptr)<sp/>&lt;&lt;<sp/>&quot;,<sp/>&quot;<sp/>&lt;&lt;<sp/>n<sp/>&lt;&lt;<sp/>&quot;)<sp/>to<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((n<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(<ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref><sp/>&lt;<sp/>(*<ref refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" kindref="member">maxListSizePtr</ref>)))<sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;freelist\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*<sp/>node_ptr<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ptr);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node_ptr-&gt;<ref refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" kindref="member">next</ref><sp/>=<sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" kindref="member">list</ref><sp/>=<sp/>node_ptr;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" kindref="member">listSize</ref>;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;::operator<sp/>delete\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::operator<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">(ptr);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="310" refid="structFreeListAllocatorDynamic_1_1rebind" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structFreeListAllocatorDynamic_1_1rebind" kindref="compound">rebind</ref><sp/>{</highlight></codeline>
+<codeline lineno="311" refid="structFreeListAllocatorDynamic_1_1rebind_1ad73a78cc703772659567fb3c07cc7948" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic&lt;U, MaxInitialListSize&gt;</ref><sp/><ref refid="structFreeListAllocatorDynamic_1_1rebind_1ad73a78cc703772659567fb3c07cc7948" kindref="member">other</ref>;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="313"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="317" refid="FreeListAllocator_8h_1acfccea14e5642f8c63b8c710a7f7520b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="FreeListAllocator_8h_1adddf4671572bda68ea7be35a0375605c" kindref="member">operator == </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic&lt;T&gt;</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic&lt;U&gt;</ref>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="322" refid="FreeListAllocator_8h_1aba8198a8041d13a8e11fbb64edef795d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="FreeListAllocator_8h_1a34e22433c1f37499140d7af1d7bb12e8" kindref="member">operator != </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic&lt;T&gt;</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic&lt;U&gt;</ref>&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//FREE_LIST_ALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/FreeListAllocator.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="UdpDelaySimRunner_8h" kind="file" language="C++">
+    <compoundname>UdpDelaySimRunner.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">udp_delay_sim_lib_export.h</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="UdpDelaySimMain_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySimMain.cpp</includedby>
+    <includedby refid="UdpDelaySimRunner_8cpp" local="yes">module/udp_delay_sim/src/UdpDelaySimRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>atomic</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>udp_delay_sim_lib_export.h</label>
+      </node>
+      <node id="1">
+        <label>module/udp_delay_sim/include/UdpDelaySimRunner.h</label>
+        <link refid="UdpDelaySimRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>module/udp_delay_sim/include/UdpDelaySimRunner.h</label>
+        <link refid="UdpDelaySimRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>module/udp_delay_sim/src/UdpDelaySimRunner.cpp</label>
+        <link refid="UdpDelaySimRunner_8cpp"/>
+      </node>
+      <node id="2">
+        <label>module/udp_delay_sim/src/UdpDelaySimMain.cpp</label>
+        <link refid="UdpDelaySimMain_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classUdpDelaySimRunner" prot="public">UdpDelaySimRunner</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classUdpDelaySimRunner" kindref="compound">UdpDelaySimRunner</ref> class processes command line args and spins up a single instance of <ref refid="classUdpDelaySim" kindref="compound">UdpDelaySim</ref> within its own process with ctrl-c interrupt support. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_UDP_DELAY_SIM_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_UDP_DELAY_SIM_RUNNER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;udp_delay_sim_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classUdpDelaySimRunner" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classUdpDelaySimRunner" kindref="compound">UdpDelaySimRunner</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/><ref refid="classUdpDelaySimRunner_1a73c89c746df36c9e82680fe4302c6fe6" kindref="member">UdpDelaySimRunner</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/><ref refid="classUdpDelaySimRunner_1a0ef07c67a6c15103c1c5f73b370d8a42" kindref="member">~UdpDelaySimRunner</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySimRunner_1ac6e5c839ddb47af9a15b7c5d19b7d7e0" kindref="member">Run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[],<sp/>std::atomic&lt;bool&gt;&amp;<sp/>running,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useSignalHandler);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>UDP_DELAY_SIM_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUdpDelaySimRunner_1adefb35d055421c8d0b1c9d33539ae005" kindref="member">MonitorExitKeypressThreadFunction</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classUdpDelaySimRunner_1ade239d404942e251c532c331688e790d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classUdpDelaySimRunner_1ade239d404942e251c532c331688e790d" kindref="member">m_runningFromSigHandler</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_UDP_DELAY_SIM_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="module/udp_delay_sim/include/UdpDelaySimRunner.h"/>
+  </compounddef>
+</doxygen>

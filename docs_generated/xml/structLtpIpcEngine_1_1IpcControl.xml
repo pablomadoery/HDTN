@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structLtpIpcEngine_1_1IpcControl" kind="struct" language="C++" prot="public">
+    <compoundname>LtpIpcEngine::IpcControl</compoundname>
+    <includes refid="LtpIpcEngine_8h" local="no">LtpIpcEngine.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLtpIpcEngine_1_1IpcControl_1ad822b53852fd9c30cb53621894e45bf8" prot="public" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpIpcEngine::IpcControl::m_bytesPerElement</definition>
+        <argsstring></argsstring>
+        <name>m_bytesPerElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="61" column="24" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">LtpIpcEngine::DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">LtpIpcEngine::ReadRemoteTxShmThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLtpIpcEngine_1_1IpcControl_1a3d32098b6d98feafe10455d01065f51e" prot="public" static="no" mutable="no">
+        <type>boost::interprocess::interprocess_semaphore</type>
+        <definition>boost::interprocess::interprocess_semaphore LtpIpcEngine::IpcControl::m_waitUntilNotFull_postHasFreeSpace_semaphore</definition>
+        <argsstring></argsstring>
+        <name>m_waitUntilNotFull_postHasFreeSpace_semaphore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="63" column="53" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">LtpIpcEngine::DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1aee578f85033d24f0d343b005fafa79e8" compoundref="LtpIpcEngine_8cpp" startline="312" endline="316">LtpIpcEngine::PacketInFullyProcessedCallback</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">LtpIpcEngine::ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">LtpIpcEngine::Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLtpIpcEngine_1_1IpcControl_1a31c04d4f504042ba5be5d7cd7135b2a5" prot="public" static="no" mutable="no">
+        <type>boost::interprocess::interprocess_semaphore</type>
+        <definition>boost::interprocess::interprocess_semaphore LtpIpcEngine::IpcControl::m_waitUntilNotEmpty_postHasData_semaphore</definition>
+        <argsstring></argsstring>
+        <name>m_waitUntilNotEmpty_postHasData_semaphore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="64" column="53" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">LtpIpcEngine::DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">LtpIpcEngine::ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">LtpIpcEngine::Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLtpIpcEngine_1_1IpcControl_1ac65342453dbd64dd11241d8cc24a9ede" prot="public" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable LtpIpcEngine::IpcControl::m_circularIndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_circularIndexBuffer</name>
+        <briefdescription>
+<para>Circular index buffer, used to index the circular vector of receive buffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="66" column="69" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">LtpIpcEngine::DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">LtpIpcEngine::ReadRemoteTxShmThreadFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structLtpIpcEngine_1_1IpcControl_1ab7c3b2cd04cabdfdfee7ea976aa97361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpIpcEngine::IpcControl::IpcControl</definition>
+        <argsstring>()=delete</argsstring>
+        <name>IpcControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="53" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structLtpIpcEngine_1_1IpcControl_1adc834d0d5b634a09e1085cf6ff78ac22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LtpIpcEngine::IpcControl::IpcControl</definition>
+        <argsstring>(const unsigned int numCbElements, const uint64_t bytesPerElement)</argsstring>
+        <name>IpcControl</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numCbElements</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bytesPerElement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="54" column="9" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="54" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LtpIpcEngine::IpcControl</label>
+        <link refid="structLtpIpcEngine_1_1IpcControl"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpIpcEngine.h" line="51" column="5" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="52" bodyend="67"/>
+    <listofallmembers>
+      <member refid="structLtpIpcEngine_1_1IpcControl_1ab7c3b2cd04cabdfdfee7ea976aa97361" prot="public" virt="non-virtual"><scope>LtpIpcEngine::IpcControl</scope><name>IpcControl</name></member>
+      <member refid="structLtpIpcEngine_1_1IpcControl_1adc834d0d5b634a09e1085cf6ff78ac22" prot="public" virt="non-virtual"><scope>LtpIpcEngine::IpcControl</scope><name>IpcControl</name></member>
+      <member refid="structLtpIpcEngine_1_1IpcControl_1ad822b53852fd9c30cb53621894e45bf8" prot="public" virt="non-virtual"><scope>LtpIpcEngine::IpcControl</scope><name>m_bytesPerElement</name></member>
+      <member refid="structLtpIpcEngine_1_1IpcControl_1ac65342453dbd64dd11241d8cc24a9ede" prot="public" virt="non-virtual"><scope>LtpIpcEngine::IpcControl</scope><name>m_circularIndexBuffer</name></member>
+      <member refid="structLtpIpcEngine_1_1IpcControl_1a31c04d4f504042ba5be5d7cd7135b2a5" prot="public" virt="non-virtual"><scope>LtpIpcEngine::IpcControl</scope><name>m_waitUntilNotEmpty_postHasData_semaphore</name></member>
+      <member refid="structLtpIpcEngine_1_1IpcControl_1a3d32098b6d98feafe10455d01065f51e" prot="public" virt="non-virtual"><scope>LtpIpcEngine::IpcControl</scope><name>m_waitUntilNotFull_postHasFreeSpace_semaphore</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpSecBundleProcessor" kind="class" language="C++" prot="public">
+    <compoundname>BpSecBundleProcessor</compoundname>
+    <includes refid="BpSecBundleProcessor_8h" local="no">BpSecBundleProcessor.h</includes>
+    <innerclass refid="structBpSecBundleProcessor_1_1BpSecError" prot="public">BpSecBundleProcessor::BpSecError</innerclass>
+    <innerclass refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters" prot="public">BpSecBundleProcessor::ConfidentialityReceivedParameters</innerclass>
+    <innerclass refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" prot="public">BpSecBundleProcessor::EvpCipherCtxWrapper</innerclass>
+    <innerclass refid="structBpSecBundleProcessor_1_1HmacCtxWrapper" prot="public">BpSecBundleProcessor::HmacCtxWrapper</innerclass>
+    <innerclass refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters" prot="public">BpSecBundleProcessor::IntegrityReceivedParameters</innerclass>
+    <innerclass refid="structBpSecBundleProcessor_1_1ReusableElementsInternal" prot="public">BpSecBundleProcessor::ReusableElementsInternal</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>BPSEC_ERROR_CODES</name>
+        <enumvalue id="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321a079c6dcd1b1ee137ecf0244d4f8bad01" prot="public">
+          <name>CORRUPTED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321ab658275933ad9e95917cee526405369b" prot="public">
+          <name>MISCONFIGURED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321a10d1208b485425756fcc932229386b02" prot="public">
+          <name>MISSING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="60" column="5" bodyfile="common/bpsec/include/BpSecBundleProcessor.h" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classBpSecBundleProcessor_1ad9a7e750e4ca8e32937486749f7716cd" prot="public" static="no">
+        <type>std::forward_list&lt; <ref refid="structBpSecBundleProcessor_1_1BpSecError" kindref="compound">BpSecError</ref> &gt;</type>
+        <definition>typedef std::forward_list&lt;BpSecError&gt; BpSecBundleProcessor::BpSecErrorFlist</definition>
+        <argsstring></argsstring>
+        <name>BpSecErrorFlist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="73" column="31" bodyfile="common/bpsec/include/BpSecBundleProcessor.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpSecBundleProcessor_1aa5452a9108a771adff6079e41651a5ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BpSecBundleProcessor::BpSecBundleProcessor</definition>
+        <argsstring>()=delete</argsstring>
+        <name>BpSecBundleProcessor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="38" column="5"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classBpSecBundleProcessor_1aee788ee986721abcc4d5571b45f5b75c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT std::string</type>
+        <definition>std::string BpSecBundleProcessor::ErrorListToString</definition>
+        <argsstring>(const BpSecErrorFlist &amp;errorList)</argsstring>
+        <name>ErrorListToString</name>
+        <param>
+          <type>const <ref refid="classBpSecBundleProcessor_1ad9a7e750e4ca8e32937486749f7716cd" kindref="member">BpSecErrorFlist</ref> &amp;</type>
+          <declname>errorList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="74" column="41" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="1630" bodyend="1641"/>
+        <references refid="TestBpSecPolicyManager_8cpp_1aeb4195b868fc952f1da6c3ec5ac63d7a" compoundref="TestBpSecPolicyManager_8cpp" startline="586">errorList</references>
+        <references refid="structBpSecBundleProcessor_1_1BpSecError_1af33179de460310aac5bc981b88510622" compoundref="BpSecBundleProcessor_8h" startline="71">BpSecBundleProcessor::BpSecError::m_errorStringPtr</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a5c7e8352e6126b084d3ab2ef8068b3ea" compoundref="TestBpSecPolicyManager_8cpp" startline="142" endline="204">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSinkPattern_1a3ec1a76a3df143ad0e0c2b6c12660347" compoundref="BpSinkPattern_8cpp" startline="231" endline="511">BpSinkPattern::Process</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" compoundref="receive_8cpp" startline="1486" endline="2207">hdtn::Ingress::Impl::ProcessPaddedData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1a4b680a024e893a789e5f813b7d49155d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::HmacSha</definition>
+        <argsstring>(HmacCtxWrapper &amp;ctxWrapper, const COSE_ALGORITHMS variant, const std::vector&lt; boost::asio::const_buffer &gt; &amp;ipptParts, const uint8_t *key, const uint64_t keyLength, uint8_t *messageDigestOut, unsigned int &amp;messageDigestOutSize)</argsstring>
+        <name>HmacSha</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1HmacCtxWrapper" kindref="compound">HmacCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type>const <ref refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523" kindref="member">COSE_ALGORITHMS</ref></type>
+          <declname>variant</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; boost::asio::const_buffer &gt; &amp;</type>
+          <declname>ipptParts</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>messageDigestOut</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>messageDigestOutSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generates Keyed Hash for integrity</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl HMAC_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SHA variant to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ipptParts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Integrity-Protected Plaintext (IPPT) to hash. These are pointer-length pieces to avoid having to concatenate everything to contiguous memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The HMAC key to be used for hashing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The HMAC key length to be used for hashing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>messageDigestOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated hash output of this function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>messageDigestOutSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated size (in bytes) of the hash output of this function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="137" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="129" bodyend="211"/>
+        <references refid="BpSecBundleProcessor_8cpp_1a23dab68bac8cb94ac8934d85adfb1c0f" compoundref="BpSecBundleProcessor_8cpp" startline="100">ALG_MINUS_5_TO_BYTE_LENGTH_LUT</references>
+        <references refid="BpSecBundleProcessor_8cpp_1aabb6323b2de81f36fc199a44176c3224" compoundref="BpSecBundleProcessor_8cpp" startline="120">ALG_MINUS_5_TO_EVPMD_LUT</references>
+        <references refid="structBpSecBundleProcessor_1_1HmacCtxWrapper_1a6d3969306bcccaf61ffe3af069de7c67" compoundref="BpSecBundleProcessor_8h" startline="52">BpSecBundleProcessor::HmacCtxWrapper::m_pimpl</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1ab249529ba006f4469aa26fef61073e56" compoundref="TestBpsecDefault_8cpp" startline="31" endline="102">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" compoundref="BpSecBundleProcessor_8cpp" startline="1118" endline="1423">TryVerifyBundleIntegrityByIndividualBib</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT <ref refid="classBpSecBundleProcessor_1ad9a7e750e4ca8e32937486749f7716cd" kindref="member">BpSecErrorFlist</ref></type>
+        <definition>BpSecBundleProcessor::BpSecErrorFlist BpSecBundleProcessor::TryVerifyBundleIntegrityByIndividualBib</definition>
+        <argsstring>(HmacCtxWrapper &amp;ctxWrapper, EvpCipherCtxWrapper &amp;ctxWrapperForKeyUnwrap, BundleViewV7 &amp;bv, BundleViewV7::Bpv7CanonicalBlockView &amp;bibBlockView, const IntegrityReceivedParameters &amp;integrityReceivedParameters, ReusableElementsInternal &amp;reusableElementsInternal, const bool markBibForDeletion)</argsstring>
+        <name>TryVerifyBundleIntegrityByIndividualBib</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1HmacCtxWrapper" kindref="compound">HmacCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapperForKeyUnwrap</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" kindref="compound">BundleViewV7::Bpv7CanonicalBlockView</ref> &amp;</type>
+          <declname>bibBlockView</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters" kindref="compound">IntegrityReceivedParameters</ref> &amp;</type>
+          <declname>integrityReceivedParameters</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1ReusableElementsInternal" kindref="compound">ReusableElementsInternal</ref> &amp;</type>
+          <declname>reusableElementsInternal</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>markBibForDeletion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Verifies the BIB block within the preloaded bundle view. The bundle must be loaded with padded data. This function would generally be called within a loop over all BIB blocks within the bundle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl HMAC_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctxWrapperForKeyUnwrap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context (for key unwrap operations). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preloaded bundle view. The bundle must be loaded with padded data! </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bibBlockView</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The BIB of interest to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters" kindref="compound">IntegrityReceivedParameters</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The values required for verification of the BIB blocks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reusableElementsInternal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Create this once throughout the program duration. This parameter is used internally and resizes constantly. This parameter is intended to minimize unnecessary allocations/deallocations. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>markBibForDeletion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, mark BIB block for deletion on successful verification so that it will be removed after the next rerender of the bundleview. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The bundle view is left unrendered (i.e. if there are other operations needing completed prior to render). The bundle must be manually rerendered in-place. </para>
+</simplesect>
+<simplesect kind="return"><para>empty list if there were no errors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="161" column="45" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="1118" bodyend="1423"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="classBpSecBundleProcessor_1ad8918388b59855cfcc789cd5c74f83f1" compoundref="BpSecBundleProcessor_8cpp" startline="515" endline="582">AesUnwrapKey</references>
+        <references refid="classBinaryConversions_1a994424cd45d20b2dc3bfb813454a4ecb" compoundref="BinaryConversions_8cpp" startline="40" endline="42">BinaryConversions::BytesToHexString</references>
+        <references refid="CborUint_8h_1a9bea877c4933b86bc1e94df2aad393c7" compoundref="CborUint_8cpp" startline="55" endline="61">CborEncodeU64BufSize9</references>
+        <references refid="CborUint_8h_1accf8814d1d561e4da1b594c49c415431" compoundref="CborUint_8h" startline="70">CborGetEncodingSizeU64</references>
+        <references refid="structBpSecBundleProcessor_1_1ReusableElementsInternal_1afc3ef17ae2fb142d7b4b7c7292e1ed8b" compoundref="BpSecBundleProcessor_8h" startline="57">BpSecBundleProcessor::ReusableElementsInternal::constBufferVec</references>
+        <references refid="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321a079c6dcd1b1ee137ecf0244d4f8bad01">CORRUPTED</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aeb4195b868fc952f1da6c3ec5ac63d7a" compoundref="TestBpSecPolicyManager_8cpp" startline="586">errorList</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a0ff1ee1c32a8ab8c10bca284b4aeeb2f" compoundref="BpSecBundleProcessor_8h" startline="89">BpSecBundleProcessor::IntegrityReceivedParameters::expectedScopeMask</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a92c39b0dee143eb264dc51eeadec91cc" compoundref="BpSecBundleProcessor_8h" startline="93">BpSecBundleProcessor::IntegrityReceivedParameters::expectedTargetBlockTypesMask</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1aeae84f3d1afb63ed1bffa41f6113b1ca" compoundref="BpSecBundleProcessor_8h" startline="87">BpSecBundleProcessor::IntegrityReceivedParameters::expectedVariant</references>
+        <references refid="structBpv7BlockIntegrityBlock_1a09cfb8e6d89b4406ba1f448aafcea912" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="750" endline="752">Bpv7BlockIntegrityBlock::GetAesWrappedKeyPtr</references>
+        <references refid="structBpv7BlockIntegrityBlock_1abfc037f4c38a94a6a92495517ced05c4" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="744" endline="746">Bpv7BlockIntegrityBlock::GetAllExpectedHmacPtrs</references>
+        <references refid="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" compoundref="BundleViewV7_8cpp" startline="421" endline="428">BundleViewV7::GetCanonicalBlockByBlockNumber</references>
+        <references refid="structBpv7BlockIntegrityBlock_1a1eb64a9b4ad6563d6e77b88ab0b03e42" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="722" endline="735">Bpv7BlockIntegrityBlock::GetSecurityParameterScope</references>
+        <references refid="structBpv7BlockIntegrityBlock_1aed91188817ec85b72b74b573b2da66d7" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="719" endline="721">Bpv7BlockIntegrityBlock::GetSecurityParameterShaVariant</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a91073f6e4bcc2824fe7364923f29508f">HMAC_256_256</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523ac0d5599228fa0acc1ada1e4457268455">HMAC_384_384</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a60aaa781b11184373953d05bd6baf7a6">HMAC_512_512</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a7747d9d154bb8fa26294801c7c393ae5" compoundref="BpSecBundleProcessor_8h" startline="82">BpSecBundleProcessor::IntegrityReceivedParameters::hmacKey</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a6cc9d2c109015e0ff0a0f9d41b6de551" compoundref="BpSecBundleProcessor_8h" startline="84">BpSecBundleProcessor::IntegrityReceivedParameters::hmacKeyLength</references>
+        <references refid="classBpSecBundleProcessor_1a4b680a024e893a789e5f813b7d49155d" compoundref="BpSecBundleProcessor_8cpp" startline="129" endline="211">HmacSha</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297a7a5496f26673f3d6d059fbec706a7e60">INCLUDE_PRIMARY_BLOCK</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297aed034a994fe8d4532b347c7120840d96">INCLUDE_SECURITY_HEADER</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297af3b9103edce03b2969a413c33d875f77">INCLUDE_TARGET_HEADER</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1aefae643a55be35935ff5883a007ba54a" compoundref="BundleViewV7_8h" startline="96">BundleViewV7::Bpv7CanonicalBlockView::isEncrypted</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a5b39212d7820a7ed3db826878802b7c4" compoundref="BpSecBundleProcessor_8h" startline="77">BpSecBundleProcessor::IntegrityReceivedParameters::keyEncryptionKey</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a89e349476ae5c2e0a6154969234c0da5" compoundref="BpSecBundleProcessor_8h" startline="79">BpSecBundleProcessor::IntegrityReceivedParameters::keyEncryptionKeyLength</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a5505a79365f669b82abb85cfe2c325d7" compoundref="bpv7_8h" startline="558">Bpv7AbstractSecurityBlock::m_securityTargets</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321ab658275933ad9e95917cee526405369b">MISCONFIGURED</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297ae8edae5a8869583a6fb1a2642853dc85">NO_ADDITIONAL_SCOPE</references>
+        <references refid="BpSecBundleProcessor_8cpp_1ae523cbcd44323bd66e10f7827df9ed4c" compoundref="BpSecBundleProcessor_8cpp" startline="1109" endline="1114">ShaVariantToString</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1a1e58667c320055e08c0658c239d41c5d" compoundref="TestBpsecDefault_8cpp" startline="104" endline="189">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" compoundref="BpSecPolicyManager_8cpp" startline="570" endline="795">BpSecPolicyManager::ProcessReceivedBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::TryAddBundleIntegrity</definition>
+        <argsstring>(HmacCtxWrapper &amp;ctxWrapper, EvpCipherCtxWrapper &amp;ctxWrapperForKeyWrap, BundleViewV7 &amp;bv, BPSEC_BIB_HMAC_SHA2_INTEGRITY_SCOPE_MASKS integrityScopeMask, COSE_ALGORITHMS variant, BPV7_CRC_TYPE bibCrcType, const cbhe_eid_t &amp;securitySource, const uint64_t *targetBlockNumbers, const unsigned int numTargetBlockNumbers, const uint8_t *keyEncryptionKey, const unsigned int keyEncryptionKeyLength, const uint8_t *hmacKey, const unsigned int hmacKeyLength, ReusableElementsInternal &amp;reusableElementsInternal, const uint64_t *insertBibBeforeThisBlockNumberIfNotNull, const bool renderInPlaceWhenFinished)</argsstring>
+        <name>TryAddBundleIntegrity</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1HmacCtxWrapper" kindref="compound">HmacCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapperForKeyWrap</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297" kindref="member">BPSEC_BIB_HMAC_SHA2_INTEGRITY_SCOPE_MASKS</ref></type>
+          <declname>integrityScopeMask</declname>
+        </param>
+        <param>
+          <type><ref refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523" kindref="member">COSE_ALGORITHMS</ref></type>
+          <declname>variant</declname>
+        </param>
+        <param>
+          <type><ref refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9b" kindref="member">BPV7_CRC_TYPE</ref></type>
+          <declname>bibCrcType</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>securitySource</declname>
+        </param>
+        <param>
+          <type>const uint64_t *</type>
+          <declname>targetBlockNumbers</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numTargetBlockNumbers</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>keyEncryptionKey</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>keyEncryptionKeyLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hmacKey</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>hmacKeyLength</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1ReusableElementsInternal" kindref="compound">ReusableElementsInternal</ref> &amp;</type>
+          <declname>reusableElementsInternal</declname>
+        </param>
+        <param>
+          <type>const uint64_t *</type>
+          <declname>insertBibBeforeThisBlockNumberIfNotNull</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>renderInPlaceWhenFinished</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a BIB block to the preloaded bundle view. The bundle must be loaded with padded data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl HMAC_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctxWrapperForKeyWrap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context (for key wrap operations). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preloaded bundle view. The bundle must be loaded with padded data! </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>integrityScopeMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scope mask used for determining the Integrity-Protected Plaintext (IPPT) to hash. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>variant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SHA variant to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bibCrcType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Defines the CRC (if any) to use for the new BIB block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>securitySource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CBHE encoded security source to use for the new BIB block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetBlockNumbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A uint64 array of block numbers that the new BIB block shall target. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numTargetBlockNumbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the targetBlockNumbers array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key used for wrapping the HMAC key and adding a wrapped key in the new BIB block. (set to NULL if not present) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the keyEncryptionKey. (should set to 0 if keyEncryptionKey is NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hmacKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The HMAC key to be used for hashing (when no wrapped key is present) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hmacKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the hmacKey. (should set to 0 if hmacKey is NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reusableElementsInternal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Create this once throughout the program duration. This parameter is used internally and resizes constantly. This parameter is intended to minimize unnecessary allocations/deallocations. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>insertBibBeforeThisBlockNumberIfNotNull</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If not NULL, places the BIB before this particular block number, used for making unit tests match examples. If NULL, the BIB is placed immediately after the primary block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>renderInPlaceWhenFinished</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Perform a render in place automatically on the bundle view at function completion. Set to false to render manually (i.e. if there are other operations needing completed prior to render). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="193" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="1425" bodyend="1628"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="structBpv7BlockIntegrityBlock_1ab7f4f71d0f8b7deb1ad83266ff717d54" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="747" endline="749">Bpv7BlockIntegrityBlock::AddAndGetAesWrappedKeyPtr</references>
+        <references refid="structBpv7BlockIntegrityBlock_1afa80b813d1dec184fd7dea7d635c2223" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="714" endline="718">Bpv7BlockIntegrityBlock::AddOrUpdateSecurityParameterShaVariant</references>
+        <references refid="structBpv7BlockIntegrityBlock_1a51d5b10bce30d21eb5c4079a20173f94" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="736" endline="740">Bpv7BlockIntegrityBlock::AddSecurityParameterIntegrityScope</references>
+        <references refid="classBpSecBundleProcessor_1a8bbe50080064bb652581c56a5a8da335" compoundref="BpSecBundleProcessor_8cpp" startline="446" endline="513">AesWrapKey</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a23dab68bac8cb94ac8934d85adfb1c0f" compoundref="BpSecBundleProcessor_8cpp" startline="100">ALG_MINUS_5_TO_BYTE_LENGTH_LUT</references>
+        <references refid="structBpv7BlockIntegrityBlock_1a979a060223b0131d35d948ad8e2079ab" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="741" endline="743">Bpv7BlockIntegrityBlock::AppendAndGetExpectedHmacPtr</references>
+        <references refid="classBinaryConversions_1a994424cd45d20b2dc3bfb813454a4ecb" compoundref="BinaryConversions_8cpp" startline="40" endline="42">BinaryConversions::BytesToHexString</references>
+        <references refid="CborUint_8h_1a9bea877c4933b86bc1e94df2aad393c7" compoundref="CborUint_8cpp" startline="55" endline="61">CborEncodeU64BufSize9</references>
+        <references refid="CborUint_8h_1accf8814d1d561e4da1b594c49c415431" compoundref="CborUint_8h" startline="70">CborGetEncodingSizeU64</references>
+        <references refid="structBpSecBundleProcessor_1_1ReusableElementsInternal_1afc3ef17ae2fb142d7b4b7c7292e1ed8b" compoundref="BpSecBundleProcessor_8h" startline="57">BpSecBundleProcessor::ReusableElementsInternal::constBufferVec</references>
+        <references refid="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" compoundref="BundleViewV7_8cpp" startline="421" endline="428">BundleViewV7::GetCanonicalBlockByBlockNumber</references>
+        <references refid="classBundleViewV7_1aef5477a08b82d8ec3f6398e73691f478" compoundref="BundleViewV7_8cpp" startline="453" endline="473">BundleViewV7::GetNextFreeCanonicalBlockNumber</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="classBpSecBundleProcessor_1a4b680a024e893a789e5f813b7d49155d" compoundref="BpSecBundleProcessor_8cpp" startline="129" endline="211">HmacSha</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297a7a5496f26673f3d6d059fbec706a7e60">INCLUDE_PRIMARY_BLOCK</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297aed034a994fe8d4532b347c7120840d96">INCLUDE_SECURITY_HEADER</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297af3b9103edce03b2969a413c33d875f77">INCLUDE_TARGET_HEADER</references>
+        <references refid="classBundleViewV7_1af8442aea88c73af5c7892463bf5630d7" compoundref="BundleViewV7_8cpp" startline="389" endline="401">BundleViewV7::InsertMoveCanonicalBlockBeforeBlockNumber</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1aefae643a55be35935ff5883a007ba54a" compoundref="BundleViewV7_8h" startline="96">BundleViewV7::Bpv7CanonicalBlockView::isEncrypted</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a81dddd265e2dd790bb1bd1524e232cc4" compoundref="bpv7_8h" startline="560">Bpv7AbstractSecurityBlock::m_securityContextFlags</references>
+        <references refid="structBpv7AbstractSecurityBlock_1acc80b8f7a709aed734f902dab867c394" compoundref="bpv7_8h" startline="561">Bpv7AbstractSecurityBlock::m_securitySource</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a5505a79365f669b82abb85cfe2c325d7" compoundref="bpv7_8h" startline="558">Bpv7AbstractSecurityBlock::m_securityTargets</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297ae8edae5a8869583a6fb1a2642853dc85">NO_ADDITIONAL_SCOPE</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="structPaddedMallocatorConstants_1ae5bfda817fb358581fe657abc176dc98" compoundref="PaddedVectorUint8_8h" startline="32">PaddedMallocatorConstants::PADDING_ELEMENTS_BEFORE</references>
+        <references refid="classBundleViewV7_1a8df3bf5b6cd73c2fa639fd05efb89a0f" compoundref="BundleViewV7_8cpp" startline="368" endline="375">BundleViewV7::PrependMoveCanonicalBlock</references>
+        <references refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" compoundref="BundleViewV7_8cpp" startline="191" endline="230">BundleViewV7::RenderInPlace</references>
+        <references refid="structBpv7CanonicalBlock_1a1e342453d205ba05a5fa41bde0420d32" compoundref="Bpv7CanonicalBlock_8cpp" startline="248" endline="254">Bpv7CanonicalBlock::SerializeAadPart</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a6b85d4a6d7409ed04ea0a8e57d54e350" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="102" endline="104">Bpv7AbstractSecurityBlock::SetSecurityContextParametersPresent</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1a1e58667c320055e08c0658c239d41c5d" compoundref="TestBpsecDefault_8cpp" startline="104" endline="189">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" compoundref="BpSecPolicyManager_8cpp" startline="908" endline="961">BpSecPolicyManager::ProcessOutgoingBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1aecfb29c842d1135cbb4f9ecab888f3ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::AesGcmEncrypt</definition>
+        <argsstring>(EvpCipherCtxWrapper &amp;ctxWrapper, const uint8_t *unencryptedData, const uint64_t unencryptedDataLength, const uint8_t *key, const uint64_t keyLength, const uint8_t *iv, const uint64_t ivLength, const std::vector&lt; boost::asio::const_buffer &gt; &amp;aadParts, uint8_t *cipherTextOut, uint64_t &amp;cipherTextOutSize, uint8_t *tagOut)</argsstring>
+        <name>AesGcmEncrypt</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>unencryptedData</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>unencryptedDataLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>ivLength</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; boost::asio::const_buffer &gt; &amp;</type>
+          <declname>aadParts</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>cipherTextOut</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>cipherTextOutSize</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>tagOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encrypts data (optionally in-place) for confidentiality. Ciphertext length is equivalent to plaintext length.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unencryptedData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plaintext data to encrypt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unencryptedDataLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of unencryptedData. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data encryption key (DEK) to be used for encrypting the plaintext data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the data encryption key (DEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initialization vector to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ivLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the initialization vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aadParts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The additional authenticated data (AAD) to use. These are pointer-length pieces to avoid having to concatenate everything to contiguous memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated ciphertext of this function. Must not be partially overlapping with unencryptedData. If this cipherTextOut pointer is the same as the unencryptedData pointer (fully overlapping), the encryption will be done in-place. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextOutSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated size (in bytes) of the ciphertext output of this function (will be equivalent to plaintext length). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="224" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="216" bodyend="340"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper_1a490f7d0309a9528506a16387b6fcaa1c" compoundref="BpSecBundleProcessor_8h" startline="44">BpSecBundleProcessor::EvpCipherCtxWrapper::m_pimpl</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1a40784e25ab534d1c74b049147752f20e" compoundref="TestBpsecDefault_8cpp" startline="413" endline="585">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">TryEncryptBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1af0db7c90728deaccb154ae40d3c9e70d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::AesGcmDecrypt</definition>
+        <argsstring>(EvpCipherCtxWrapper &amp;ctxWrapper, const uint8_t *encryptedData, const uint64_t encryptedDataLength, const uint8_t *key, const uint64_t keyLength, const uint8_t *iv, const uint64_t ivLength, const std::vector&lt; boost::asio::const_buffer &gt; &amp;aadParts, const uint8_t *tag, uint8_t *decryptedDataOut, uint64_t &amp;decryptedDataOutSize)</argsstring>
+        <name>AesGcmDecrypt</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>encryptedData</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>encryptedDataLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>ivLength</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; boost::asio::const_buffer &gt; &amp;</type>
+          <declname>aadParts</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>decryptedDataOut</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>decryptedDataOutSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrypts data (optionally in-place) for confidentiality. Plaintext length is equivalent to ciphertext length.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>encryptedData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ciphertext data to decrypt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>encryptedDataLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of encryptedData. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data encryption key (DEK) to be used for decrypting the plaintext data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the data encryption key (DEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initialization vector to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ivLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the initialization vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aadParts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The additional authenticated data (AAD) to use. These are pointer-length pieces to avoid having to concatenate everything to contiguous memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The authentication tag to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>decryptedDataOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated plaintext of this function. Must not be partially overlapping with encryptedData. If this decryptedDataOut pointer is the same as the encryptedData pointer (fully overlapping), the decryption will be done in-place. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>decryptedDataOutSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated size (in bytes) of the plaintext output of this function (will be equivalent to encryptedDataLength length). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="249" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="342" bodyend="444"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper_1a490f7d0309a9528506a16387b6fcaa1c" compoundref="BpSecBundleProcessor_8h" startline="44">BpSecBundleProcessor::EvpCipherCtxWrapper::m_pimpl</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1a40784e25ab534d1c74b049147752f20e" compoundref="TestBpsecDefault_8cpp" startline="413" endline="585">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" compoundref="BpSecBundleProcessor_8cpp" startline="594" endline="897">TryDecryptBundleByIndividualBcb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1a8bbe50080064bb652581c56a5a8da335" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::AesWrapKey</definition>
+        <argsstring>(EvpCipherCtxWrapper &amp;ctxWrapper, const uint8_t *keyEncryptionKey, const unsigned int keyEncryptionKeyLength, const uint8_t *keyToWrap, const unsigned int keyToWrapLength, uint8_t *wrappedKeyOut, unsigned int &amp;wrappedKeyOutSize)</argsstring>
+        <name>AesWrapKey</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>keyEncryptionKey</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>keyEncryptionKeyLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>keyToWrap</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>keyToWrapLength</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>wrappedKeyOut</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>wrappedKeyOutSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wraps a key.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context (for keywrap operations). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key encryption key (KEK) to be used for encrypting/wrapping the data encryption key (DEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the key encryption key (KEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyToWrap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data encryption key (DEK) to be encrypted/wrapped. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyToWrapLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the data encryption key (DEK) that will be getting wrapped. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wrappedKeyOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated wrapped key of this function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wrappedKeyOutSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated size (in bytes) of the wrapped key (will be equivalent to keyEncryptionKeyLength + 8). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="269" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="446" bodyend="513"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper_1a490f7d0309a9528506a16387b6fcaa1c" compoundref="BpSecBundleProcessor_8h" startline="44">BpSecBundleProcessor::EvpCipherCtxWrapper::m_pimpl</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1a40784e25ab534d1c74b049147752f20e" compoundref="TestBpsecDefault_8cpp" startline="413" endline="585">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">TryEncryptBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1ad8918388b59855cfcc789cd5c74f83f1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::AesUnwrapKey</definition>
+        <argsstring>(EvpCipherCtxWrapper &amp;ctxWrapper, const uint8_t *keyEncryptionKey, const unsigned int keyEncryptionKeyLength, const uint8_t *keyToUnwrap, const unsigned int keyToUnwrapLength, uint8_t *unwrappedKeyOut, unsigned int &amp;unwrappedKeyOutSize)</argsstring>
+        <name>AesUnwrapKey</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>keyEncryptionKey</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>keyEncryptionKeyLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>keyToUnwrap</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>keyToUnwrapLength</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>unwrappedKeyOut</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>unwrappedKeyOutSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unwraps a key.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context (for key unwrap operations). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key encryption key (KEK) to be used for unwrapping the data encryption key (DEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the key encryption key (KEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyToUnwrap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wrapped key to be unwrapped into a data encryption key (DEK). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyToUnwrapLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the wrapped key. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unwrappedKeyOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated (unwrapped) data encryption key (DEK) of this function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unwrappedKeyOutSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The generated size (in bytes) of the unwrapped key (will be equivalent to keyEncryptionKeyLength). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="286" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="515" bodyend="582"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper_1a490f7d0309a9528506a16387b6fcaa1c" compoundref="BpSecBundleProcessor_8h" startline="44">BpSecBundleProcessor::EvpCipherCtxWrapper::m_pimpl</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1a40784e25ab534d1c74b049147752f20e" compoundref="TestBpsecDefault_8cpp" startline="413" endline="585">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" compoundref="BpSecBundleProcessor_8cpp" startline="594" endline="897">TryDecryptBundleByIndividualBcb</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" compoundref="BpSecBundleProcessor_8cpp" startline="1118" endline="1423">TryVerifyBundleIntegrityByIndividualBib</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT <ref refid="classBpSecBundleProcessor_1ad9a7e750e4ca8e32937486749f7716cd" kindref="member">BpSecErrorFlist</ref></type>
+        <definition>BpSecBundleProcessor::BpSecErrorFlist BpSecBundleProcessor::TryDecryptBundleByIndividualBcb</definition>
+        <argsstring>(EvpCipherCtxWrapper &amp;ctxWrapper, EvpCipherCtxWrapper &amp;ctxWrapperForKeyUnwrap, BundleViewV7 &amp;bv, BundleViewV7::Bpv7CanonicalBlockView &amp;bcbBlockView, const ConfidentialityReceivedParameters &amp;confidentialityReceivedParameters, ReusableElementsInternal &amp;reusableElementsInternal, const bool verifyOnly)</argsstring>
+        <name>TryDecryptBundleByIndividualBcb</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapperForKeyUnwrap</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" kindref="compound">BundleViewV7::Bpv7CanonicalBlockView</ref> &amp;</type>
+          <declname>bcbBlockView</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters" kindref="compound">ConfidentialityReceivedParameters</ref> &amp;</type>
+          <declname>confidentialityReceivedParameters</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1ReusableElementsInternal" kindref="compound">ReusableElementsInternal</ref> &amp;</type>
+          <declname>reusableElementsInternal</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>verifyOnly</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrypts the BCB target block(s) within the preloaded bundle view in-place. The bundle must be loaded with padded data. This function would generally be called within a loop over all BCB blocks within the bundle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctxWrapperForKeyUnwrap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context (for key unwrap operations). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preloaded bundle view. The bundle must be loaded with padded data! </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bcbBlockView</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The BCB of interest to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters" kindref="compound">ConfidentialityReceivedParameters</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The values required for verification of the BCB blocks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reusableElementsInternal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Create this once throughout the program duration. This parameter is used internally and resizes constantly. This parameter is intended to minimize unnecessary allocations/deallocations. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verifyOnly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, Decrypt to temporary memory, leaving the bundle unmodified (for verifiers of confidentiality). Set to false to render manually (i.e. if there are other operations needing completed prior to render). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The BCB block is marked for deletion on successful in-place decryption. The bundle view must be manually rerendered in-place. </para>
+</simplesect>
+<simplesect kind="return"><para>empty list if there were no errors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="307" column="45" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="594" bodyend="897"/>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a8d368451da2eab1875d188c4d335f4fe">A128GCM</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a47bfe8960e664b28982098daf4deb4c4">A256GCM</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="classBpSecBundleProcessor_1af0db7c90728deaccb154ae40d3c9e70d" compoundref="BpSecBundleProcessor_8cpp" startline="342" endline="444">AesGcmDecrypt</references>
+        <references refid="classBpSecBundleProcessor_1ad8918388b59855cfcc789cd5c74f83f1" compoundref="BpSecBundleProcessor_8cpp" startline="515" endline="582">AesUnwrapKey</references>
+        <references refid="BpSecBundleProcessor_8cpp_1aadfc568a299474cd89a8ab1385ac67fe" compoundref="BpSecBundleProcessor_8cpp" startline="586" endline="590">AesVariantToString</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1a7308ddc6e33b2383e0283e26484ba5f8" compoundref="TestBpSecPolicyManager_8cpp" startline="723">bcbPtr</references>
+        <references refid="classBinaryConversions_1a994424cd45d20b2dc3bfb813454a4ecb" compoundref="BinaryConversions_8cpp" startline="40" endline="42">BinaryConversions::BytesToHexString</references>
+        <references refid="structBpSecBundleProcessor_1_1ReusableElementsInternal_1afc3ef17ae2fb142d7b4b7c7292e1ed8b" compoundref="BpSecBundleProcessor_8h" startline="57">BpSecBundleProcessor::ReusableElementsInternal::constBufferVec</references>
+        <references refid="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321a079c6dcd1b1ee137ecf0244d4f8bad01">CORRUPTED</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1ace75a16911780c51e013f641a3529e3a" compoundref="BpSecBundleProcessor_8h" startline="106">BpSecBundleProcessor::ConfidentialityReceivedParameters::dataEncryptionKey</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a03c0e4b01d85e85fed47f2a11238a293" compoundref="BpSecBundleProcessor_8h" startline="108">BpSecBundleProcessor::ConfidentialityReceivedParameters::dataEncryptionKeyLength</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aeb4195b868fc952f1da6c3ec5ac63d7a" compoundref="TestBpSecPolicyManager_8cpp" startline="586">errorList</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a7ae6c7c596806ffc786436cdace97d54" compoundref="BpSecBundleProcessor_8h" startline="117">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedAadScopeMask</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1ad70fef54f89cdf1f75960110e5ef9553" compoundref="BpSecBundleProcessor_8h" startline="112">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedIvLength</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a109427f643342183ac0c212fb452a930" compoundref="BpSecBundleProcessor_8h" startline="121">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedTargetBlockTypesMask</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1ab3ec905cffe6f3a1e4646ba0f4c2b5e9" compoundref="BpSecBundleProcessor_8h" startline="114">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedVariant</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1abb8d7a9c0e86472f3a0fe633cfd27354" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="808" endline="810">Bpv7BlockConfidentialityBlock::GetAesWrappedKeyPtr</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1aa89a2ce135343c35c881b7c4a9f25595" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="820" endline="822">Bpv7BlockConfidentialityBlock::GetAllPayloadAuthenticationTagPtrs</references>
+        <references refid="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" compoundref="BundleViewV7_8cpp" startline="421" endline="428">BundleViewV7::GetCanonicalBlockByBlockNumber</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1a3d8602d64ed24ba8e0bedb6f25a0a27e" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="814" endline="816">Bpv7BlockConfidentialityBlock::GetInitializationVectorPtr</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1aa827171f50bea3b7fe20a5f52231dd32" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="783" endline="785">Bpv7BlockConfidentialityBlock::GetSecurityParameterAesVariant</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1aa2006cb463d163687fb5b523b10c5188" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="791" endline="804">Bpv7BlockConfidentialityBlock::GetSecurityParameterScope</references>
+        <references refid="structBpv7CanonicalBlock_1ab683bc568dcbda62a0276dc05cce8814" compoundref="Bpv7CanonicalBlock_8cpp" startline="235" endline="247">Bpv7CanonicalBlock::GetSerializationSizeOfAadPart</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaa7a5496f26673f3d6d059fbec706a7e60">INCLUDE_PRIMARY_BLOCK</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaaed034a994fe8d4532b347c7120840d96">INCLUDE_SECURITY_HEADER</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaaf3b9103edce03b2969a413c33d875f77">INCLUDE_TARGET_HEADER</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1aefae643a55be35935ff5883a007ba54a" compoundref="BundleViewV7_8h" startline="96">BundleViewV7::Bpv7CanonicalBlockView::isEncrypted</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a2414dae583270f6eea38f7ec369d42b5" compoundref="BpSecBundleProcessor_8h" startline="100">BpSecBundleProcessor::ConfidentialityReceivedParameters::keyEncryptionKey</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1af98fa6d43b7d54b08efc95b1b274fb5b" compoundref="BpSecBundleProcessor_8h" startline="102">BpSecBundleProcessor::ConfidentialityReceivedParameters::keyEncryptionKeyLength</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="structBpv7CanonicalBlock_1ae440c38f8ace47da7b0b059c1b074fc4" compoundref="bpv7_8h" startline="392">Bpv7CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a5505a79365f669b82abb85cfe2c325d7" compoundref="bpv7_8h" startline="558">Bpv7AbstractSecurityBlock::m_securityTargets</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321ab658275933ad9e95917cee526405369b">MISCONFIGURED</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaae8edae5a8869583a6fb1a2642853dc85">NO_ADDITIONAL_SCOPE</references>
+        <references refid="structBpv7CanonicalBlock_1ad190ba097fa3361b48506042a01f04f7" compoundref="Bpv7CanonicalBlock_8cpp" startline="259" endline="275">Bpv7CanonicalBlock::RecomputeCrcAfterDataModification</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <references refid="structBpSecBundleProcessor_1_1ReusableElementsInternal_1a16b4cc328df64ffc4f947bf3a88c55d2" compoundref="BpSecBundleProcessor_8h" startline="58">BpSecBundleProcessor::ReusableElementsInternal::verifyOnlyDecryptionTemporaryMemory</references>
+        <references refid="structBpv7CanonicalBlock_1a8a051ca148e4dd1f04e94866807550a3" compoundref="Bpv7CanonicalBlock_8cpp" startline="547" endline="549">Bpv7CanonicalBlock::Virtual_DeserializeExtensionBlockDataBpv7</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1ac12770f6463285f38817a42c9cb54e38" compoundref="TestBpsecDefault_8cpp" startline="587" endline="708">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" compoundref="BpSecPolicyManager_8cpp" startline="570" endline="795">BpSecPolicyManager::ProcessReceivedBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecBundleProcessor::TryEncryptBundle</definition>
+        <argsstring>(EvpCipherCtxWrapper &amp;ctxWrapper, EvpCipherCtxWrapper &amp;ctxWrapperForKeyWrap, BundleViewV7 &amp;bv, BPSEC_BCB_AES_GCM_AAD_SCOPE_MASKS aadScopeMask, COSE_ALGORITHMS aesVariant, BPV7_CRC_TYPE bcbCrcType, const cbhe_eid_t &amp;securitySource, const uint64_t *targetBlockNumbers, const unsigned int numTargetBlockNumbers, const uint8_t *iv, const unsigned int ivLength, const uint8_t *keyEncryptionKey, const unsigned int keyEncryptionKeyLength, const uint8_t *dataEncryptionKey, const unsigned int dataEncryptionKeyLength, ReusableElementsInternal &amp;reusableElementsInternal, const uint64_t *insertBcbBeforeThisBlockNumberIfNotNull, const bool renderInPlaceWhenFinished)</argsstring>
+        <name>TryEncryptBundle</name>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapper</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1EvpCipherCtxWrapper" kindref="compound">EvpCipherCtxWrapper</ref> &amp;</type>
+          <declname>ctxWrapperForKeyWrap</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="bpv7_8h_1a5917330d03245bb798250c276ad5feda" kindref="member">BPSEC_BCB_AES_GCM_AAD_SCOPE_MASKS</ref></type>
+          <declname>aadScopeMask</declname>
+        </param>
+        <param>
+          <type><ref refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523" kindref="member">COSE_ALGORITHMS</ref></type>
+          <declname>aesVariant</declname>
+        </param>
+        <param>
+          <type><ref refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9b" kindref="member">BPV7_CRC_TYPE</ref></type>
+          <declname>bcbCrcType</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>securitySource</declname>
+        </param>
+        <param>
+          <type>const uint64_t *</type>
+          <declname>targetBlockNumbers</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numTargetBlockNumbers</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>ivLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>keyEncryptionKey</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>keyEncryptionKeyLength</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>dataEncryptionKey</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>dataEncryptionKeyLength</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecBundleProcessor_1_1ReusableElementsInternal" kindref="compound">ReusableElementsInternal</ref> &amp;</type>
+          <declname>reusableElementsInternal</declname>
+        </param>
+        <param>
+          <type>const uint64_t *</type>
+          <declname>insertBcbBeforeThisBlockNumberIfNotNull</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>renderInPlaceWhenFinished</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a BCB block to the preloaded bundle view and encrypts the targets. The bundle must be loaded with padded data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctxWrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctxWrapperForKeyWrap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reusable (allocated once) openssl EVP_CIPHER_CTX context (for key wrap operations). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preloaded bundle view. The bundle must be loaded with padded data! </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aadScopeMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scope mask used for determining the additional authenticated data (AAD). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aesVariant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The AES variant to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bcbCrcType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Defines the CRC (if any) to use for the new BCB block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>securitySource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CBHE encoded security source to use for the new BCB block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetBlockNumbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A uint64 array of block numbers that the new BCB block shall target. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numTargetBlockNumbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the targetBlockNumbers array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initialization vector to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ivLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length in bytes of the initialization vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key used for wrapping the data encryption key (DEK) included in the BCB blocks. (set to NULL if not present) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyEncryptionKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the keyEncryptionKey. (should set to 0 if keyEncryptionKey is NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dataEncryptionKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key (DEK) to be used for encrypting (when no wrapped key is present) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dataEncryptionKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the dataEncryptionKey. (should set to 0 if hmacKey is NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reusableElementsInternal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Create this once throughout the program duration. This parameter is used internally and resizes constantly. This parameter is intended to minimize unnecessary allocations/deallocations. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>insertBcbBeforeThisBlockNumberIfNotNull</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If not NULL, places the BCB before this particular block number, used for making unit tests match examples. If NULL, the BCB is placed immediately after the primary block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>renderInPlaceWhenFinished</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Perform a render in place automatically on the bundle view at function completion. Set to false to render manually (i.e. if there are other operations needing completed prior to render). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>A new BCB block is added on successful in-place encryption of the BCB&apos;s target(s) to the bv (<ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref>), and the bundle is rerendered in-place. </para>
+</simplesect>
+<simplesect kind="return"><para>true if there were no errors, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecBundleProcessor.h" line="342" column="34" bodyfile="common/bpsec/src/BpSecBundleProcessor.cpp" bodystart="903" bodyend="1107"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1a3394f66b974d9d739729044f2038ef19" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="805" endline="807">Bpv7BlockConfidentialityBlock::AddAndGetAesWrappedKeyPtr</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1ae02aa2a6f0b0c607d9375d0fa55e6386" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="811" endline="813">Bpv7BlockConfidentialityBlock::AddAndGetInitializationVectorPtr</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1ac1b301ffdff41aff081991d110d4824c" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="778" endline="782">Bpv7BlockConfidentialityBlock::AddOrUpdateSecurityParameterAesVariant</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1ac2b86aefa13c3eaca7745a9b197fece8" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="786" endline="790">Bpv7BlockConfidentialityBlock::AddSecurityParameterScope</references>
+        <references refid="classBpSecBundleProcessor_1aecfb29c842d1135cbb4f9ecab888f3ff" compoundref="BpSecBundleProcessor_8cpp" startline="216" endline="340">AesGcmEncrypt</references>
+        <references refid="classBpSecBundleProcessor_1a8bbe50080064bb652581c56a5a8da335" compoundref="BpSecBundleProcessor_8cpp" startline="446" endline="513">AesWrapKey</references>
+        <references refid="structBpv7BlockConfidentialityBlock_1a1fac2dc23af4cd5ddfa0882adb85ff84" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="817" endline="819">Bpv7BlockConfidentialityBlock::AppendAndGetPayloadAuthenticationTagPtr</references>
+        <references refid="classBinaryConversions_1a994424cd45d20b2dc3bfb813454a4ecb" compoundref="BinaryConversions_8cpp" startline="40" endline="42">BinaryConversions::BytesToHexString</references>
+        <references refid="structBpSecBundleProcessor_1_1ReusableElementsInternal_1afc3ef17ae2fb142d7b4b7c7292e1ed8b" compoundref="BpSecBundleProcessor_8h" startline="57">BpSecBundleProcessor::ReusableElementsInternal::constBufferVec</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a360948fbfd81b513af2863474cec6928" compoundref="BundleViewV7_8h" startline="94">BundleViewV7::Bpv7CanonicalBlockView::dirty</references>
+        <references refid="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" compoundref="BundleViewV7_8cpp" startline="421" endline="428">BundleViewV7::GetCanonicalBlockByBlockNumber</references>
+        <references refid="classBundleViewV7_1aef5477a08b82d8ec3f6398e73691f478" compoundref="BundleViewV7_8cpp" startline="453" endline="473">BundleViewV7::GetNextFreeCanonicalBlockNumber</references>
+        <references refid="structBpv7CanonicalBlock_1ab683bc568dcbda62a0276dc05cce8814" compoundref="Bpv7CanonicalBlock_8cpp" startline="235" endline="247">Bpv7CanonicalBlock::GetSerializationSizeOfAadPart</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaa7a5496f26673f3d6d059fbec706a7e60">INCLUDE_PRIMARY_BLOCK</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaaed034a994fe8d4532b347c7120840d96">INCLUDE_SECURITY_HEADER</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaaf3b9103edce03b2969a413c33d875f77">INCLUDE_TARGET_HEADER</references>
+        <references refid="classBundleViewV7_1af8442aea88c73af5c7892463bf5630d7" compoundref="BundleViewV7_8cpp" startline="389" endline="401">BundleViewV7::InsertMoveCanonicalBlockBeforeBlockNumber</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1aefae643a55be35935ff5883a007ba54a" compoundref="BundleViewV7_8h" startline="96">BundleViewV7::Bpv7CanonicalBlockView::isEncrypted</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1ae440c38f8ace47da7b0b059c1b074fc4" compoundref="bpv7_8h" startline="392">Bpv7CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a81dddd265e2dd790bb1bd1524e232cc4" compoundref="bpv7_8h" startline="560">Bpv7AbstractSecurityBlock::m_securityContextFlags</references>
+        <references refid="structBpv7AbstractSecurityBlock_1acc80b8f7a709aed734f902dab867c394" compoundref="bpv7_8h" startline="561">Bpv7AbstractSecurityBlock::m_securitySource</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a5505a79365f669b82abb85cfe2c325d7" compoundref="bpv7_8h" startline="558">Bpv7AbstractSecurityBlock::m_securityTargets</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a865a5a2b66b3051418dd7f615e5e096e">MUST_BE_REPLICATED</references>
+        <references refid="bpv7_8h_1a5917330d03245bb798250c276ad5fedaae8edae5a8869583a6fb1a2642853dc85">NO_ADDITIONAL_SCOPE</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="structPaddedMallocatorConstants_1ae5bfda817fb358581fe657abc176dc98" compoundref="PaddedVectorUint8_8h" startline="32">PaddedMallocatorConstants::PADDING_ELEMENTS_BEFORE</references>
+        <references refid="classBundleViewV7_1a8df3bf5b6cd73c2fa639fd05efb89a0f" compoundref="BundleViewV7_8cpp" startline="368" endline="375">BundleViewV7::PrependMoveCanonicalBlock</references>
+        <references refid="structBpv7CanonicalBlock_1ad190ba097fa3361b48506042a01f04f7" compoundref="Bpv7CanonicalBlock_8cpp" startline="259" endline="275">Bpv7CanonicalBlock::RecomputeCrcAfterDataModification</references>
+        <references refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" compoundref="BundleViewV7_8cpp" startline="191" endline="230">BundleViewV7::RenderInPlace</references>
+        <references refid="structBpv7CanonicalBlock_1a1e342453d205ba05a5fa41bde0420d32" compoundref="Bpv7CanonicalBlock_8cpp" startline="248" endline="254">Bpv7CanonicalBlock::SerializeAadPart</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a6b85d4a6d7409ed04ea0a8e57d54e350" compoundref="Bpv7BpSecExtensionBlocks_8cpp" startline="102" endline="104">Bpv7AbstractSecurityBlock::SetSecurityContextParametersPresent</references>
+        <references refid="BpSecBundleProcessor_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecBundleProcessor_8cpp" startline="39">subprocess</references>
+        <referencedby refid="TestBpsecDefault_8cpp_1ac12770f6463285f38817a42c9cb54e38" compoundref="TestBpsecDefault_8cpp" startline="587" endline="708">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" compoundref="BpSecPolicyManager_8cpp" startline="908" endline="961">BpSecPolicyManager::ProcessOutgoingBundle</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/bpsec/include/BpSecBundleProcessor.h" line="37" column="1" bodyfile="common/bpsec/include/BpSecBundleProcessor.h" bodystart="37" bodyend="357"/>
+    <listofallmembers>
+      <member refid="classBpSecBundleProcessor_1af0db7c90728deaccb154ae40d3c9e70d" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>AesGcmDecrypt</name></member>
+      <member refid="classBpSecBundleProcessor_1aecfb29c842d1135cbb4f9ecab888f3ff" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>AesGcmEncrypt</name></member>
+      <member refid="classBpSecBundleProcessor_1ad8918388b59855cfcc789cd5c74f83f1" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>AesUnwrapKey</name></member>
+      <member refid="classBpSecBundleProcessor_1a8bbe50080064bb652581c56a5a8da335" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>AesWrapKey</name></member>
+      <member refid="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>BPSEC_ERROR_CODES</name></member>
+      <member refid="classBpSecBundleProcessor_1aa5452a9108a771adff6079e41651a5ee" prot="private" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>BpSecBundleProcessor</name></member>
+      <member refid="classBpSecBundleProcessor_1ad9a7e750e4ca8e32937486749f7716cd" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>BpSecErrorFlist</name></member>
+      <member refid="classBpSecBundleProcessor_1aee788ee986721abcc4d5571b45f5b75c" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>ErrorListToString</name></member>
+      <member refid="classBpSecBundleProcessor_1a4b680a024e893a789e5f813b7d49155d" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>HmacSha</name></member>
+      <member refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>TryAddBundleIntegrity</name></member>
+      <member refid="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>TryDecryptBundleByIndividualBcb</name></member>
+      <member refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>TryEncryptBundle</name></member>
+      <member refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" prot="public" virt="non-virtual"><scope>BpSecBundleProcessor</scope><name>TryVerifyBundleIntegrityByIndividualBib</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

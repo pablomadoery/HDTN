@@ -1,0 +1,1433 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtp" kind="class" language="C++" prot="public">
+    <compoundname>Ltp</compoundname>
+    <includes refid="Ltp_8h" local="no">Ltp.h</includes>
+    <innerclass refid="structLtp_1_1client__service__raw__data__t" prot="public">Ltp::client_service_raw_data_t</innerclass>
+    <innerclass refid="structLtp_1_1data__segment__metadata__t" prot="public">Ltp::data_segment_metadata_t</innerclass>
+    <innerclass refid="structLtp_1_1hash__session__id__t" prot="public">Ltp::hash_session_id_t</innerclass>
+    <innerclass refid="structLtp_1_1ltp__extension__t" prot="public">Ltp::ltp_extension_t</innerclass>
+    <innerclass refid="structLtp_1_1ltp__extensions__t" prot="public">Ltp::ltp_extensions_t</innerclass>
+    <innerclass refid="structLtp_1_1reception__claim__t" prot="public">Ltp::reception_claim_t</innerclass>
+    <innerclass refid="structLtp_1_1report__segment__t" prot="public">Ltp::report_segment_t</innerclass>
+    <innerclass refid="structLtp_1_1session__id__t" prot="public">Ltp::session_id_t</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classLtp_1a3c7db4a2c014fd78248f7f2b67fd2bb6" prot="public" static="no">
+        <type>boost::function&lt; bool(uint8_t segmentTypeFlags, const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;sessionId, <ref refid="structLtp_1_1client__service__raw__data__t" kindref="compound">client_service_raw_data_t</ref> &amp;clientServiceRawData, const <ref refid="structLtp_1_1data__segment__metadata__t" kindref="compound">data_segment_metadata_t</ref> &amp;dataSegmentMetadata, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;headerExtensions, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;trailerExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;bool(uint8_t segmentTypeFlags, const session_id_t &amp; sessionId, client_service_raw_data_t&amp; clientServiceRawData, const data_segment_metadata_t &amp; dataSegmentMetadata, Ltp::ltp_extensions_t &amp; headerExtensions, Ltp::ltp_extensions_t &amp; trailerExtensions)&gt; Ltp::DataSegmentContentsReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>DataSegmentContentsReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="256" column="2" bodyfile="common/ltp/include/Ltp.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtp_1a65fe6b1a0387df4a8dd9cca8dd896314" prot="public" static="no">
+        <type>boost::function&lt; void(const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;sessionId, const <ref refid="structLtp_1_1report__segment__t" kindref="compound">report_segment_t</ref> &amp;reportSegment, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;headerExtensions, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;trailerExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;void(const session_id_t &amp; sessionId, const report_segment_t &amp; reportSegment, Ltp::ltp_extensions_t &amp; headerExtensions, Ltp::ltp_extensions_t &amp; trailerExtensions)&gt; Ltp::ReportSegmentContentsReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>ReportSegmentContentsReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="259" column="2" bodyfile="common/ltp/include/Ltp.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtp_1af6ea586b7156a1505e91e229baf24a5d" prot="public" static="no">
+        <type>boost::function&lt; void(const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;sessionId, uint64_t reportSerialNumberBeingAcknowledged, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;headerExtensions, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;trailerExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;void(const session_id_t &amp; sessionId, uint64_t reportSerialNumberBeingAcknowledged, Ltp::ltp_extensions_t &amp; headerExtensions, Ltp::ltp_extensions_t &amp; trailerExtensions)&gt; Ltp::ReportAcknowledgementSegmentContentsReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>ReportAcknowledgementSegmentContentsReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="261" column="2" bodyfile="common/ltp/include/Ltp.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtp_1a317862e92a342fd773dc76a4ab69e7ad" prot="public" static="no">
+        <type>boost::function&lt; void(const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;sessionId, <ref refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743c" kindref="member">CANCEL_SEGMENT_REASON_CODES</ref> reasonCode, bool isFromSender, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;headerExtensions, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;trailerExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;void(const session_id_t &amp; sessionId, CANCEL_SEGMENT_REASON_CODES reasonCode, bool isFromSender, Ltp::ltp_extensions_t &amp; headerExtensions, Ltp::ltp_extensions_t &amp; trailerExtensions)&gt; Ltp::CancelSegmentContentsReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>CancelSegmentContentsReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="263" column="2" bodyfile="common/ltp/include/Ltp.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtp_1a82690c004e49faf2f9c70bc83e0392fe" prot="public" static="no">
+        <type>boost::function&lt; void(const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;sessionId, bool isToSender, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;headerExtensions, <ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;trailerExtensions)&gt;</type>
+        <definition>typedef boost::function&lt;void(const session_id_t &amp; sessionId, bool isToSender, Ltp::ltp_extensions_t &amp; headerExtensions, Ltp::ltp_extensions_t &amp; trailerExtensions)&gt; Ltp::CancelAcknowledgementSegmentContentsReadCallback_t</definition>
+        <argsstring></argsstring>
+        <name>CancelAcknowledgementSegmentContentsReadCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="265" column="2" bodyfile="common/ltp/include/Ltp.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtp_1a557c7932cfde1538714385c55f01c9cf" prot="public" static="no">
+        <type>boost::function&lt; void(uint64_t sessionOriginatorEngineId)&gt;</type>
+        <definition>typedef boost::function&lt;void(uint64_t sessionOriginatorEngineId)&gt; Ltp::SessionOriginatorEngineIdDecodedCallback_t</definition>
+        <argsstring></argsstring>
+        <name>SessionOriginatorEngineIdDecodedCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="267" column="29" bodyfile="common/ltp/include/Ltp.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classLtp_1aad3a9ec864b1f1dd6f820c4ef47376d8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; Ltp::m_sdnvTempVec</definition>
+        <argsstring></argsstring>
+        <name>m_sdnvTempVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="308" column="13" bodyfile="common/ltp/include/Ltp.h" bodystart="308" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a6799165039d8b86018721e0633312697" prot="public" static="no" mutable="no">
+        <type><ref refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6" kindref="member">LTP_MAIN_RX_STATE</ref></type>
+        <definition>LTP_MAIN_RX_STATE Ltp::m_mainRxState</definition>
+        <argsstring></argsstring>
+        <name>m_mainRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="309" column="23" bodyfile="common/ltp/include/Ltp.h" bodystart="309" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</referencedby>
+        <referencedby refid="classLtp_1af6d83d4c4dde0341279e02d06e0beb35" compoundref="Ltp_8cpp" startline="370" endline="372">IsAtBeginningState</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" compoundref="Ltp_8cpp" startline="374" endline="377">SetBeginningState</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a173a2f4109921f9109109da0ac9bce85" prot="public" static="no" mutable="no">
+        <type><ref refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9" kindref="member">LTP_HEADER_RX_STATE</ref></type>
+        <definition>LTP_HEADER_RX_STATE Ltp::m_headerRxState</definition>
+        <argsstring></argsstring>
+        <name>m_headerRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="310" column="25" bodyfile="common/ltp/include/Ltp.h" bodystart="310" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</referencedby>
+        <referencedby refid="classLtp_1af6d83d4c4dde0341279e02d06e0beb35" compoundref="Ltp_8cpp" startline="370" endline="372">IsAtBeginningState</referencedby>
+        <referencedby refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" compoundref="Ltp_8cpp" startline="374" endline="377">SetBeginningState</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aa9664d6b50e9c548d4801867bc758395" prot="public" static="no" mutable="no">
+        <type><ref refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045" kindref="member">LTP_TRAILER_RX_STATE</ref></type>
+        <definition>LTP_TRAILER_RX_STATE Ltp::m_trailerRxState</definition>
+        <argsstring></argsstring>
+        <name>m_trailerRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="311" column="26" bodyfile="common/ltp/include/Ltp.h" bodystart="311" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a79163f125e3bd462e40b96870209f2d8" prot="public" static="no" mutable="no">
+        <type><ref refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430" kindref="member">LTP_DATA_SEGMENT_RX_STATE</ref></type>
+        <definition>LTP_DATA_SEGMENT_RX_STATE Ltp::m_dataSegmentRxState</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="312" column="31" bodyfile="common/ltp/include/Ltp.h" bodystart="312" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a874946f1e1d244f291ec4b4052553084" compoundref="Ltp_8cpp" startline="1097" endline="1256">TryShortcutReadDataSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1abdc5c9ef437bbb4de00d31f56691e335" prot="public" static="no" mutable="no">
+        <type><ref refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77b" kindref="member">LTP_REPORT_SEGMENT_RX_STATE</ref></type>
+        <definition>LTP_REPORT_SEGMENT_RX_STATE Ltp::m_reportSegmentRxState</definition>
+        <argsstring></argsstring>
+        <name>m_reportSegmentRxState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="313" column="33" bodyfile="common/ltp/include/Ltp.h" bodystart="313" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aa86b3300687827ae0439be9def4b8139" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Ltp::m_segmentTypeFlags</definition>
+        <argsstring></argsstring>
+        <name>m_segmentTypeFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="316" column="13" bodyfile="common/ltp/include/Ltp.h" bodystart="316" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a874946f1e1d244f291ec4b4052553084" compoundref="Ltp_8cpp" startline="1097" endline="1256">TryShortcutReadDataSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aafb95a44002978968fb9ef43cf8fa77e" prot="public" static="no" mutable="no">
+        <type><ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref></type>
+        <definition>session_id_t Ltp::m_sessionId</definition>
+        <argsstring></argsstring>
+        <name>m_sessionId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="317" column="18" bodyfile="common/ltp/include/Ltp.h" bodystart="317" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1af1ee3f9d0c769c44012e5edb0d5090aa" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Ltp::m_numHeaderExtensionTlvs</definition>
+        <argsstring></argsstring>
+        <name>m_numHeaderExtensionTlvs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="318" column="13" bodyfile="common/ltp/include/Ltp.h" bodystart="318" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a0247b0011a8ed4ab0c4a700d41dbbe48" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Ltp::m_numTrailerExtensionTlvs</definition>
+        <argsstring></argsstring>
+        <name>m_numTrailerExtensionTlvs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="319" column="13" bodyfile="common/ltp/include/Ltp.h" bodystart="319" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1ae3dff8cd4f878839a772c58571b34236" prot="public" static="no" mutable="no">
+        <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref></type>
+        <definition>ltp_extensions_t Ltp::m_headerExtensions</definition>
+        <argsstring></argsstring>
+        <name>m_headerExtensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="320" column="22" bodyfile="common/ltp/include/Ltp.h" bodystart="320" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1af77fce0615cccb487aef3f2dad3d4acc" prot="public" static="no" mutable="no">
+        <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref></type>
+        <definition>ltp_extensions_t Ltp::m_trailerExtensions</definition>
+        <argsstring></argsstring>
+        <name>m_trailerExtensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="321" column="22" bodyfile="common/ltp/include/Ltp.h" bodystart="321" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1add0a1ce7e80fc56921b2f408e31b84ea" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Ltp::m_currentHeaderExtensionLength</definition>
+        <argsstring></argsstring>
+        <name>m_currentHeaderExtensionLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="322" column="14" bodyfile="common/ltp/include/Ltp.h" bodystart="322" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1abd909cb4721a43ab6744a1c9c545a75a" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Ltp::m_currentTrailerExtensionLength</definition>
+        <argsstring></argsstring>
+        <name>m_currentTrailerExtensionLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="323" column="14" bodyfile="common/ltp/include/Ltp.h" bodystart="323" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aa33743c5f65ee31f613cbc8b33f0cdf5" prot="public" static="no" mutable="no">
+        <type><ref refid="structLtp_1_1data__segment__metadata__t" kindref="compound">data_segment_metadata_t</ref></type>
+        <definition>data_segment_metadata_t Ltp::m_dataSegmentMetadata</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentMetadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="325" column="29" bodyfile="common/ltp/include/Ltp.h" bodystart="325" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a874946f1e1d244f291ec4b4052553084" compoundref="Ltp_8cpp" startline="1097" endline="1256">TryShortcutReadDataSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1af33cc994bed5c499c7d0a885658655bf" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; Ltp::m_dataSegment_clientServiceData</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegment_clientServiceData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="326" column="17" bodyfile="common/ltp/include/Ltp.h" bodystart="326" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a874946f1e1d244f291ec4b4052553084" compoundref="Ltp_8cpp" startline="1097" endline="1256">TryShortcutReadDataSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a49b3a1446d0f36faea06765ea5adb783" prot="public" static="no" mutable="no">
+        <type><ref refid="structLtp_1_1client__service__raw__data__t" kindref="compound">client_service_raw_data_t</ref></type>
+        <definition>client_service_raw_data_t Ltp::m_dataSegment_clientServiceRawDataWrapper</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegment_clientServiceRawDataWrapper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="327" column="31" bodyfile="common/ltp/include/Ltp.h" bodystart="327" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aa43c2ebdf4348104a54936fd3b12445f" prot="public" static="no" mutable="no">
+        <type><ref refid="structLtp_1_1report__segment__t" kindref="compound">report_segment_t</ref></type>
+        <definition>report_segment_t Ltp::m_reportSegment</definition>
+        <argsstring></argsstring>
+        <name>m_reportSegment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="329" column="22" bodyfile="common/ltp/include/Ltp.h" bodystart="329" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aba56407f7bcaf3a43405322525d6cc51" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Ltp::m_reportAcknowledgementSegment_reportSerialNumber</definition>
+        <argsstring></argsstring>
+        <name>m_reportAcknowledgementSegment_reportSerialNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="331" column="14" bodyfile="common/ltp/include/Ltp.h" bodystart="331" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aaf1f3d966f91e751964701c8e3c3b3de" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Ltp::m_cancelSegment_reasonCode</definition>
+        <argsstring></argsstring>
+        <name>m_cancelSegment_reasonCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="333" column="13" bodyfile="common/ltp/include/Ltp.h" bodystart="333" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a003d1e214752b04640ed7f4bea7f1864" prot="public" static="no" mutable="no">
+        <type><ref refid="classLtp_1a3c7db4a2c014fd78248f7f2b67fd2bb6" kindref="member">DataSegmentContentsReadCallback_t</ref></type>
+        <definition>DataSegmentContentsReadCallback_t Ltp::m_dataSegmentContentsReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_dataSegmentContentsReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="336" column="35" bodyfile="common/ltp/include/Ltp.h" bodystart="336" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1ac3aff2f8fee0908ad629a1df23143fe7" compoundref="Ltp_8cpp" startline="343" endline="345">SetDataSegmentContentsReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1ac497c8cfec0db3ba962ba971bf25fb11" prot="public" static="no" mutable="no">
+        <type><ref refid="classLtp_1a65fe6b1a0387df4a8dd9cca8dd896314" kindref="member">ReportSegmentContentsReadCallback_t</ref></type>
+        <definition>ReportSegmentContentsReadCallback_t Ltp::m_reportSegmentContentsReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_reportSegmentContentsReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="337" column="41" bodyfile="common/ltp/include/Ltp.h" bodystart="337" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1aaccd9031c629409aaf9a328e8edf264e" compoundref="Ltp_8cpp" startline="346" endline="348">SetReportSegmentContentsReadCallback</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1aa1fc997c7fe10f129faf765ef6b58712" prot="public" static="no" mutable="no">
+        <type><ref refid="classLtp_1af6ea586b7156a1505e91e229baf24a5d" kindref="member">ReportAcknowledgementSegmentContentsReadCallback_t</ref></type>
+        <definition>ReportAcknowledgementSegmentContentsReadCallback_t Ltp::m_reportAcknowledgementSegmentContentsReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_reportAcknowledgementSegmentContentsReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="338" column="56" bodyfile="common/ltp/include/Ltp.h" bodystart="338" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a32396475590319665a0110b8f863532a" compoundref="Ltp_8cpp" startline="349" endline="351">SetReportAcknowledgementSegmentContentsReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1a504ceae5e298759c944a997411f0c7df" prot="public" static="no" mutable="no">
+        <type><ref refid="classLtp_1a317862e92a342fd773dc76a4ab69e7ad" kindref="member">CancelSegmentContentsReadCallback_t</ref></type>
+        <definition>CancelSegmentContentsReadCallback_t Ltp::m_cancelSegmentContentsReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_cancelSegmentContentsReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="339" column="41" bodyfile="common/ltp/include/Ltp.h" bodystart="339" bodyend="-1"/>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1ad372f2589b5476fa1ef428527f99c05d" compoundref="Ltp_8cpp" startline="352" endline="354">SetCancelSegmentContentsReadCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtp_1ae372783477799832d1cadade029ef9b3" prot="public" static="no" mutable="no">
+        <type><ref refid="classLtp_1a82690c004e49faf2f9c70bc83e0392fe" kindref="member">CancelAcknowledgementSegmentContentsReadCallback_t</ref></type>
+        <definition>CancelAcknowledgementSegmentContentsReadCallback_t Ltp::m_cancelAcknowledgementSegmentContentsReadCallback</definition>
+        <argsstring></argsstring>
+        <name>m_cancelAcknowledgementSegmentContentsReadCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="340" column="56" bodyfile="common/ltp/include/Ltp.h" bodystart="340" bodyend="-1"/>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1ac6ff8078adfbb43270a0707aa923f4f1" compoundref="Ltp_8cpp" startline="355" endline="357">SetCancelAcknowledgementSegmentContentsReadCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtp_1a0032fbeb8806b234fe63b88111a4e99f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>Ltp::Ltp</definition>
+        <argsstring>()</argsstring>
+        <name>Ltp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="269" column="20" bodyfile="common/ltp/src/Ltp.cpp" bodystart="336" bodyend="338"/>
+        <references refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" compoundref="Ltp_8cpp" startline="359" endline="368">InitRx</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a97842e5756e6e409b4899f9324094600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>Ltp::~Ltp</definition>
+        <argsstring>()</argsstring>
+        <name>~Ltp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="270" column="20" bodyfile="common/ltp/src/Ltp.cpp" bodystart="339" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1ac3aff2f8fee0908ad629a1df23143fe7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::SetDataSegmentContentsReadCallback</definition>
+        <argsstring>(const DataSegmentContentsReadCallback_t &amp;callback)</argsstring>
+        <name>SetDataSegmentContentsReadCallback</name>
+        <param>
+          <type>const <ref refid="classLtp_1a3c7db4a2c014fd78248f7f2b67fd2bb6" kindref="member">DataSegmentContentsReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="272" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="343" bodyend="345"/>
+        <references refid="classLtp_1a003d1e214752b04640ed7f4bea7f1864" compoundref="Ltp_8h" startline="336">m_dataSegmentContentsReadCallback</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1aaccd9031c629409aaf9a328e8edf264e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::SetReportSegmentContentsReadCallback</definition>
+        <argsstring>(const ReportSegmentContentsReadCallback_t &amp;callback)</argsstring>
+        <name>SetReportSegmentContentsReadCallback</name>
+        <param>
+          <type>const <ref refid="classLtp_1a65fe6b1a0387df4a8dd9cca8dd896314" kindref="member">ReportSegmentContentsReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="273" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="346" bodyend="348"/>
+        <references refid="classLtp_1ac497c8cfec0db3ba962ba971bf25fb11" compoundref="Ltp_8h" startline="337">m_reportSegmentContentsReadCallback</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a32396475590319665a0110b8f863532a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::SetReportAcknowledgementSegmentContentsReadCallback</definition>
+        <argsstring>(const ReportAcknowledgementSegmentContentsReadCallback_t &amp;callback)</argsstring>
+        <name>SetReportAcknowledgementSegmentContentsReadCallback</name>
+        <param>
+          <type>const <ref refid="classLtp_1af6ea586b7156a1505e91e229baf24a5d" kindref="member">ReportAcknowledgementSegmentContentsReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="274" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="349" bodyend="351"/>
+        <references refid="classLtp_1aa1fc997c7fe10f129faf765ef6b58712" compoundref="Ltp_8h" startline="338">m_reportAcknowledgementSegmentContentsReadCallback</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1ad372f2589b5476fa1ef428527f99c05d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::SetCancelSegmentContentsReadCallback</definition>
+        <argsstring>(const CancelSegmentContentsReadCallback_t &amp;callback)</argsstring>
+        <name>SetCancelSegmentContentsReadCallback</name>
+        <param>
+          <type>const <ref refid="classLtp_1a317862e92a342fd773dc76a4ab69e7ad" kindref="member">CancelSegmentContentsReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="275" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="352" bodyend="354"/>
+        <references refid="classLtp_1a504ceae5e298759c944a997411f0c7df" compoundref="Ltp_8h" startline="339">m_cancelSegmentContentsReadCallback</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1ac6ff8078adfbb43270a0707aa923f4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::SetCancelAcknowledgementSegmentContentsReadCallback</definition>
+        <argsstring>(const CancelAcknowledgementSegmentContentsReadCallback_t &amp;callback)</argsstring>
+        <name>SetCancelAcknowledgementSegmentContentsReadCallback</name>
+        <param>
+          <type>const <ref refid="classLtp_1a82690c004e49faf2f9c70bc83e0392fe" kindref="member">CancelAcknowledgementSegmentContentsReadCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="276" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="355" bodyend="357"/>
+        <references refid="classLtp_1ae372783477799832d1cadade029ef9b3" compoundref="Ltp_8h" startline="340">m_cancelAcknowledgementSegmentContentsReadCallback</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" compoundref="LtpEngine_8cpp" startline="37" endline="235">LtpEngine::LtpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::InitRx</definition>
+        <argsstring>()</argsstring>
+        <name>InitRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="279" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="359" bodyend="368"/>
+        <references refid="classLtp_1a79163f125e3bd462e40b96870209f2d8" compoundref="Ltp_8h" startline="312">m_dataSegmentRxState</references>
+        <references refid="classLtp_1a173a2f4109921f9109109da0ac9bce85" compoundref="Ltp_8h" startline="310">m_headerRxState</references>
+        <references refid="classLtp_1a6799165039d8b86018721e0633312697" compoundref="Ltp_8h" startline="309">m_mainRxState</references>
+        <references refid="classLtp_1abdc5c9ef437bbb4de00d31f56691e335" compoundref="Ltp_8h" startline="313">m_reportSegmentRxState</references>
+        <references refid="classLtp_1aad3a9ec864b1f1dd6f820c4ef47376d8" compoundref="Ltp_8h" startline="308">m_sdnvTempVec</references>
+        <references refid="classLtp_1aa9664d6b50e9c548d4801867bc758395" compoundref="Ltp_8h" startline="311">m_trailerRxState</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430ae4cda3f078b6b775eb0dc847277902fe">READ_CLIENT_SERVICE_ID_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9a1c2874d8a9acca5ddd2edda104c3aa6d">READ_CONTROL_BYTE</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a143d65120a93500ea25025bbde06f6ee">READ_HEADER</references>
+        <references refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045a5ab20f65bdce8b8007827f38815ef6e8">READ_ONE_TRAILER_EXTENSION_TAG_BYTE</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77baaa23a5cb2335cf6c27b64d041ecca494">READ_REPORT_SERIAL_NUMBER_SDNV</references>
+        <referencedby refid="classLtp_1a0032fbeb8806b234fe63b88111a4e99f" compoundref="Ltp_8cpp" startline="336" endline="338">Ltp</referencedby>
+        <referencedby refid="classLtpEngine_1a64bb0494968816f34b5306f2a45c74e5" compoundref="LtpEngine_8cpp" startline="369" endline="399">LtpEngine::PacketIn</referencedby>
+        <referencedby refid="classLtpEngine_1a97feb8f9afbd72c0059d3962a528582b" compoundref="LtpEngine_8cpp" startline="275" endline="339">LtpEngine::Reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1aaba851041c670322ea731238da3ad8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool Ltp::HandleReceivedChars</definition>
+        <argsstring>(const uint8_t *rxVals, std::size_t numChars, bool &amp;operationIsOngoing, std::string &amp;errorMessage, SessionOriginatorEngineIdDecodedCallback_t *sessionOriginatorEngineIdDecodedCallbackPtr=NULL)</argsstring>
+        <name>HandleReceivedChars</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>rxVals</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>numChars</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>operationIsOngoing</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <param>
+          <type><ref refid="classLtp_1a557c7932cfde1538714385c55f01c9cf" kindref="member">SessionOriginatorEngineIdDecodedCallback_t</ref> *</type>
+          <declname>sessionOriginatorEngineIdDecodedCallbackPtr</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="280" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="385" bodyend="1003"/>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a7df8d9ebb554a49e33bb3c803021dfb7">CANCEL_SEGMENT_FROM_BLOCK_SENDER</references>
+        <references refid="structLtp_1_1report__segment__t_1af650c565b23b4a34279776baa56e7d34" compoundref="Ltp_8h" startline="175">Ltp::report_segment_t::checkpointSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ad12ffecbc698619e863ca80e83926d87" compoundref="Ltp_8h" startline="243">Ltp::data_segment_metadata_t::checkpointSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a129a03feee19c6966245d6ddde940f1c" compoundref="Ltp_8h" startline="238">Ltp::data_segment_metadata_t::clientServiceId</references>
+        <references refid="structLtp_1_1client__service__raw__data__t_1a344541036ab76a4542b34b666d4741a8" compoundref="Ltp_8h" startline="247">Ltp::client_service_raw_data_t::data</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a6b198bf4f2baef4762ae03f1c97cb1c4" compoundref="Ltp_8h" startline="212">Ltp::ltp_extensions_t::extensionsVec</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a735e043bde5826a9e38abe31751716ac" compoundref="Ltp_8h" startline="240">Ltp::data_segment_metadata_t::length</references>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="classLtp_1aaf1f3d966f91e751964701c8e3c3b3de" compoundref="Ltp_8h" startline="333">m_cancelSegment_reasonCode</references>
+        <references refid="classLtp_1a504ceae5e298759c944a997411f0c7df" compoundref="Ltp_8h" startline="339">m_cancelSegmentContentsReadCallback</references>
+        <references refid="classLtp_1add0a1ce7e80fc56921b2f408e31b84ea" compoundref="Ltp_8h" startline="322">m_currentHeaderExtensionLength</references>
+        <references refid="classLtp_1abd909cb4721a43ab6744a1c9c545a75a" compoundref="Ltp_8h" startline="323">m_currentTrailerExtensionLength</references>
+        <references refid="classLtp_1af33cc994bed5c499c7d0a885658655bf" compoundref="Ltp_8h" startline="326">m_dataSegment_clientServiceData</references>
+        <references refid="classLtp_1a49b3a1446d0f36faea06765ea5adb783" compoundref="Ltp_8h" startline="327">m_dataSegment_clientServiceRawDataWrapper</references>
+        <references refid="classLtp_1a003d1e214752b04640ed7f4bea7f1864" compoundref="Ltp_8h" startline="336">m_dataSegmentContentsReadCallback</references>
+        <references refid="classLtp_1aa33743c5f65ee31f613cbc8b33f0cdf5" compoundref="Ltp_8h" startline="325">m_dataSegmentMetadata</references>
+        <references refid="classLtp_1a79163f125e3bd462e40b96870209f2d8" compoundref="Ltp_8h" startline="312">m_dataSegmentRxState</references>
+        <references refid="classLtp_1ae3dff8cd4f878839a772c58571b34236" compoundref="Ltp_8h" startline="320">m_headerExtensions</references>
+        <references refid="classLtp_1a173a2f4109921f9109109da0ac9bce85" compoundref="Ltp_8h" startline="310">m_headerRxState</references>
+        <references refid="classLtp_1a6799165039d8b86018721e0633312697" compoundref="Ltp_8h" startline="309">m_mainRxState</references>
+        <references refid="classLtp_1af1ee3f9d0c769c44012e5edb0d5090aa" compoundref="Ltp_8h" startline="318">m_numHeaderExtensionTlvs</references>
+        <references refid="classLtp_1a0247b0011a8ed4ab0c4a700d41dbbe48" compoundref="Ltp_8h" startline="319">m_numTrailerExtensionTlvs</references>
+        <references refid="classLtp_1aba56407f7bcaf3a43405322525d6cc51" compoundref="Ltp_8h" startline="331">m_reportAcknowledgementSegment_reportSerialNumber</references>
+        <references refid="classLtp_1aa1fc997c7fe10f129faf765ef6b58712" compoundref="Ltp_8h" startline="338">m_reportAcknowledgementSegmentContentsReadCallback</references>
+        <references refid="classLtp_1aa43c2ebdf4348104a54936fd3b12445f" compoundref="Ltp_8h" startline="329">m_reportSegment</references>
+        <references refid="classLtp_1ac497c8cfec0db3ba962ba971bf25fb11" compoundref="Ltp_8h" startline="337">m_reportSegmentContentsReadCallback</references>
+        <references refid="classLtp_1abdc5c9ef437bbb4de00d31f56691e335" compoundref="Ltp_8h" startline="313">m_reportSegmentRxState</references>
+        <references refid="classLtp_1aad3a9ec864b1f1dd6f820c4ef47376d8" compoundref="Ltp_8h" startline="308">m_sdnvTempVec</references>
+        <references refid="classLtp_1aa86b3300687827ae0439be9def4b8139" compoundref="Ltp_8h" startline="316">m_segmentTypeFlags</references>
+        <references refid="classLtp_1aafb95a44002978968fb9ef43cf8fa77e" compoundref="Ltp_8h" startline="317">m_sessionId</references>
+        <references refid="classLtp_1af77fce0615cccb487aef3f2dad3d4acc" compoundref="Ltp_8h" startline="321">m_trailerExtensions</references>
+        <references refid="classLtp_1aa9664d6b50e9c548d4801867bc758395" compoundref="Ltp_8h" startline="311">m_trailerRxState</references>
+        <references refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</references>
+        <references refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ac5fc5a67ca76ebec9818a4c0184b44fc" compoundref="Ltp_8h" startline="239">Ltp::data_segment_metadata_t::offset</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6ae8c3361338438c5d4b3fa20d0246d57c">READ_CANCEL_SEGMENT_CONTENT_BYTE</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a3e69c539e2b00fa857ba2cdb7a8bb7ca">READ_CHECKPOINT_SERIAL_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a833e9736af2358c32a821dac743c7841">READ_CLIENT_SERVICE_DATA</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430ae4cda3f078b6b775eb0dc847277902fe">READ_CLIENT_SERVICE_ID_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9a1c2874d8a9acca5ddd2edda104c3aa6d">READ_CONTROL_BYTE</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a1a2511b6472be18f55b2df186033b0ac">READ_DATA_SEGMENT_CONTENT</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a143d65120a93500ea25025bbde06f6ee">READ_HEADER</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a6639d959bb9f107ed90ede79b00818e3">READ_LENGTH_SDNV</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77bad94d616f074e3b2b1925e371de9f0d9b">READ_LOWER_BOUND_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9ad0ca5b3570c2e5d84186eabb643892ae">READ_NUM_EXTENSIONS_BYTE</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a41ae781292f24a6867669a93d70f98e2">READ_OFFSET_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9a7a47345ab05eb95e0cc323eebde26382">READ_ONE_HEADER_EXTENSION_LENGTH_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9aa7263cac590c4239d12422866b8f878c">READ_ONE_HEADER_EXTENSION_TAG_BYTE</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9a5c17ffc3b2ac7e0b852feba5a357c89e">READ_ONE_HEADER_EXTENSION_VALUE</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77bac7ae488c86fd576cf48e880ded515804">READ_ONE_RECEPTION_CLAIM_LENGTH_SDNV</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77ba855a67297524bd13a9fe274a33f22b45">READ_ONE_RECEPTION_CLAIM_OFFSET_SDNV</references>
+        <references refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045a5ff1120c7cfcd6f1ba9f540b4fbb9b0d">READ_ONE_TRAILER_EXTENSION_LENGTH_SDNV</references>
+        <references refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045a5ab20f65bdce8b8007827f38815ef6e8">READ_ONE_TRAILER_EXTENSION_TAG_BYTE</references>
+        <references refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045aa7a6301a9704c6813a902f0163de9b49">READ_ONE_TRAILER_EXTENSION_VALUE</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77bab556b9d86287f2cffaf87189e76e9c2e">READ_RECEPTION_CLAIM_COUNT_SDNV</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a4271675493fc224eb628eb46506682d1">READ_REPORT_ACKNOWLEDGEMENT_SEGMENT_CONTENT</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6af426edd82124a2a2bb6d8a3f3d723194">READ_REPORT_SEGMENT_CONTENT</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430aaa23a5cb2335cf6c27b64d041ecca494">READ_REPORT_SERIAL_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9ad287927cdc4be4ec28791fffe8de9b44">READ_SESSION_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9ac48aa00b4890bf6f068cbe0c2caa32f2">READ_SESSION_ORIGINATOR_ENGINE_ID_SDNV</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a82512f80010461adc0401bf7e24ae319">READ_TRAILER</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77ba8bf09a18e4534dcd0472ae0b99ab5943">READ_UPPER_BOUND_SDNV</references>
+        <references refid="structLtp_1_1report__segment__t_1a27853ce21a38874c3411c50e990875ec" compoundref="Ltp_8h" startline="179">Ltp::report_segment_t::receptionClaims</references>
+        <references refid="structLtp_1_1report__segment__t_1a90038772c82de1f0226ef138b5b8521e" compoundref="Ltp_8h" startline="174">Ltp::report_segment_t::reportSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a3102b193618b4d942875e6b227f57bab" compoundref="Ltp_8h" startline="244">Ltp::data_segment_metadata_t::reportSerialNumber</references>
+        <references refid="Sdnv_8h_1a45e2ac244f1a090d6893dcc0cff368d4" compoundref="Sdnv_8cpp" startline="1167" endline="1173">SdnvDecodeArrayU64</references>
+        <references refid="Sdnv_8h_1aed9b084e1f882d083c1f235615779f25" compoundref="Sdnv_8cpp" startline="113" endline="124">SdnvDecodeU64</references>
+        <references refid="Ltp_8cpp_1aa20d5b6a84f252d1a8ce60512972b4a1" compoundref="Ltp_8cpp" startline="31">SdnvMaximumEncodedSize</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <references refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" compoundref="Ltp_8cpp" startline="374" endline="377">SetBeginningState</references>
+        <references refid="structLtp_1_1ltp__extension__t_1a98856e6488b1ebf5f72aff6684432f84" compoundref="Ltp_8h" startline="196">Ltp::ltp_extension_t::tag</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a9543c7b8a531701805a1d87fa6250184" compoundref="Ltp_8h" startline="241">Ltp::data_segment_metadata_t::tmpCheckpointSerialNumber</references>
+        <references refid="structLtp_1_1report__segment__t_1a9c184ee0e0367d44924c74426d47a6bd" compoundref="Ltp_8h" startline="178">Ltp::report_segment_t::tmpReceptionClaimCount</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a12bde37cd3ca7d2d5e14a340cb1c9513" compoundref="Ltp_8h" startline="242">Ltp::data_segment_metadata_t::tmpReportSerialNumber</references>
+        <references refid="structLtp_1_1client__service__raw__data__t_1af67549f464ac0e936bda056bb3ca46b6" compoundref="Ltp_8h" startline="249">Ltp::client_service_raw_data_t::underlyingMovableDataIfNotNull</references>
+        <references refid="structLtp_1_1report__segment__t_1af504db1308322137aa123529c1643586" compoundref="Ltp_8h" startline="176">Ltp::report_segment_t::upperBound</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtp_1a4d90d076ff257baad32ec25644cfb591" compoundref="Ltp_8cpp" startline="380" endline="382">HandleReceivedChar</referencedby>
+        <referencedby refid="classLtpEngine_1a64bb0494968816f34b5306f2a45c74e5" compoundref="LtpEngine_8cpp" startline="369" endline="399">LtpEngine::PacketIn</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a4d90d076ff257baad32ec25644cfb591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool Ltp::HandleReceivedChar</definition>
+        <argsstring>(const uint8_t rxVal, bool &amp;operationIsOngoing, std::string &amp;errorMessage)</argsstring>
+        <name>HandleReceivedChar</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>rxVal</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>operationIsOngoing</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="282" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="380" bodyend="382"/>
+        <references refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1af6d83d4c4dde0341279e02d06e0beb35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool Ltp::IsAtBeginningState</definition>
+        <argsstring>() const</argsstring>
+        <name>IsAtBeginningState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="283" column="25" bodyfile="common/ltp/src/Ltp.cpp" bodystart="370" bodyend="372"/>
+        <references refid="classLtp_1a173a2f4109921f9109109da0ac9bce85" compoundref="Ltp_8h" startline="310">m_headerRxState</references>
+        <references refid="classLtp_1a6799165039d8b86018721e0633312697" compoundref="Ltp_8h" startline="309">m_mainRxState</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9a1c2874d8a9acca5ddd2edda104c3aa6d">READ_CONTROL_BYTE</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a143d65120a93500ea25025bbde06f6ee">READ_HEADER</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1a64bb0494968816f34b5306f2a45c74e5" compoundref="LtpEngine_8cpp" startline="369" endline="399">LtpEngine::PacketIn</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLtp_1a34a09bd9d33e228e8a07166c1c1aba45" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>static LTP_LIB_EXPORT void Ltp::GenerateReportAcknowledgementSegment</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;reportAckSegment, const session_id_t &amp;sessionId, uint64_t reportSerialNumber)</argsstring>
+        <name>GenerateReportAcknowledgementSegment</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>reportAckSegment</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>reportSerialNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="286" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a81f9acd027db5140d5190a22fac4f2f4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::GenerateLtpHeaderPlusDataSegmentMetadata</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ltpHeaderPlusDataSegmentMetadata, LTP_DATA_SEGMENT_TYPE_FLAGS dataSegmentTypeFlags, const session_id_t &amp;sessionId, const data_segment_metadata_t &amp;dataSegmentMetadata, ltp_extensions_t *headerExtensions=NULL, uint8_t numTrailerExtensions=0)</argsstring>
+        <name>GenerateLtpHeaderPlusDataSegmentMetadata</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ltpHeaderPlusDataSegmentMetadata</declname>
+        </param>
+        <param>
+          <type><ref refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48" kindref="member">LTP_DATA_SEGMENT_TYPE_FLAGS</ref></type>
+          <declname>dataSegmentTypeFlags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1data__segment__metadata__t" kindref="compound">data_segment_metadata_t</ref> &amp;</type>
+          <declname>dataSegmentMetadata</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>headerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>numTrailerExtensions</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="287" column="32" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1496" bodyend="1519"/>
+        <references refid="structLtp_1_1ltp__extensions__t_1a6b198bf4f2baef4762ae03f1c97cb1c4" compoundref="Ltp_8h" startline="212">Ltp::ltp_extensions_t::extensionsVec</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a0cafbfb4e51977980ed7fe3bf1e00e82" compoundref="Ltp_8cpp" startline="278" endline="284">Ltp::ltp_extensions_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ac531d829ad0e80407e0e2d95ad026afe" compoundref="Ltp_8cpp" startline="325" endline="334">Ltp::data_segment_metadata_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="Sdnv_8h_1a7bce5ab6cfe94493a65ef8d90ce3b53b" compoundref="Sdnv_8cpp" startline="90" endline="96">SdnvEncodeU64BufSize10</references>
+        <references refid="Ltp_8cpp_1aa20d5b6a84f252d1a8ce60512972b4a1" compoundref="Ltp_8cpp" startline="31">SdnvMaximumEncodedSize</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a730707ccf4cf7dd3bfcbabca2b5348ff" compoundref="Ltp_8cpp" startline="271" endline="277">Ltp::ltp_extensions_t::Serialize</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ad1e6afcd035903e0c65761c13080f93e" compoundref="Ltp_8cpp" startline="314" endline="324">Ltp::data_segment_metadata_t::Serialize</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">LtpSessionSender::NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">LtpSessionSender::NextTimeCriticalDataToSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1af068116abf3523e55bd9adf3a9949fec" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::GenerateReportSegmentLtpPacket</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ltpReportSegmentPacket, const session_id_t &amp;sessionId, const report_segment_t &amp;reportSegmentStruct, ltp_extensions_t *headerExtensions=NULL, ltp_extensions_t *trailerExtensions=NULL)</argsstring>
+        <name>GenerateReportSegmentLtpPacket</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ltpReportSegmentPacket</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1report__segment__t" kindref="compound">report_segment_t</ref> &amp;</type>
+          <declname>reportSegmentStruct</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>headerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>trailerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="290" column="32" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1521" bodyend="1552"/>
+        <references refid="structLtp_1_1ltp__extensions__t_1a6b198bf4f2baef4762ae03f1c97cb1c4" compoundref="Ltp_8h" startline="212">Ltp::ltp_extensions_t::extensionsVec</references>
+        <references refid="structLtp_1_1report__segment__t_1ad6c877934dfac1f3ac88ff947713eeeb" compoundref="Ltp_8cpp" startline="199" endline="201">Ltp::report_segment_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a0cafbfb4e51977980ed7fe3bf1e00e82" compoundref="Ltp_8cpp" startline="278" endline="284">Ltp::ltp_extensions_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2ac6c3d767c5923c383ab40256c55df622">REPORT_SEGMENT</references>
+        <references refid="Sdnv_8h_1a7bce5ab6cfe94493a65ef8d90ce3b53b" compoundref="Sdnv_8cpp" startline="90" endline="96">SdnvEncodeU64BufSize10</references>
+        <references refid="Ltp_8cpp_1aa20d5b6a84f252d1a8ce60512972b4a1" compoundref="Ltp_8cpp" startline="31">SdnvMaximumEncodedSize</references>
+        <references refid="structLtp_1_1report__segment__t_1ae8a583d52236005e4fc43eb6c782c7d5" compoundref="Ltp_8cpp" startline="186" endline="198">Ltp::report_segment_t::Serialize</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a730707ccf4cf7dd3bfcbabca2b5348ff" compoundref="Ltp_8cpp" startline="271" endline="277">Ltp::ltp_extensions_t::Serialize</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionReceiver_1ab6156df15ea95c2a8e8e5e10ba98fa3e" compoundref="LtpSessionReceiver_8cpp" startline="260" endline="309">LtpSessionReceiver::NextDataToSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1adeeef45525fcee31ce0b18f0a03c2129" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::GenerateReportAcknowledgementSegmentLtpPacket</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ltpReportAcknowledgementSegmentPacket, const session_id_t &amp;sessionId, uint64_t reportSerialNumberBeingAcknowledged, ltp_extensions_t *headerExtensions=NULL, ltp_extensions_t *trailerExtensions=NULL)</argsstring>
+        <name>GenerateReportAcknowledgementSegmentLtpPacket</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ltpReportAcknowledgementSegmentPacket</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>reportSerialNumberBeingAcknowledged</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>headerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>trailerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="292" column="32" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1554" bodyend="1584"/>
+        <references refid="structLtp_1_1ltp__extensions__t_1a6b198bf4f2baef4762ae03f1c97cb1c4" compoundref="Ltp_8h" startline="212">Ltp::ltp_extensions_t::extensionsVec</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a0cafbfb4e51977980ed7fe3bf1e00e82" compoundref="Ltp_8cpp" startline="278" endline="284">Ltp::ltp_extensions_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a870ae9d913690444aeea588d8a970aac">REPORT_ACK_SEGMENT</references>
+        <references refid="Sdnv_8h_1a7bce5ab6cfe94493a65ef8d90ce3b53b" compoundref="Sdnv_8cpp" startline="90" endline="96">SdnvEncodeU64BufSize10</references>
+        <references refid="Ltp_8cpp_1aa20d5b6a84f252d1a8ce60512972b4a1" compoundref="Ltp_8cpp" startline="31">SdnvMaximumEncodedSize</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a730707ccf4cf7dd3bfcbabca2b5348ff" compoundref="Ltp_8cpp" startline="271" endline="277">Ltp::ltp_extensions_t::Serialize</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">LtpSessionSender::ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpEngine_1a644106fe2bdb511cc64bd561bc3d2d13" compoundref="LtpEngine_8cpp" startline="1353" endline="1376">LtpEngine::ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a42e156e2f1e0a5e46715743cff3e717f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::GenerateCancelSegmentLtpPacket</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ltpCancelSegmentPacket, const session_id_t &amp;sessionId, CANCEL_SEGMENT_REASON_CODES reasonCode, bool isFromSender, ltp_extensions_t *headerExtensions=NULL, ltp_extensions_t *trailerExtensions=NULL)</argsstring>
+        <name>GenerateCancelSegmentLtpPacket</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ltpCancelSegmentPacket</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type><ref refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743c" kindref="member">CANCEL_SEGMENT_REASON_CODES</ref></type>
+          <declname>reasonCode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isFromSender</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>headerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>trailerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="294" column="32" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1586" bodyend="1616"/>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aebe56857e4998ad2ab452a29293ff8ff">CANCEL_SEGMENT_FROM_BLOCK_RECEIVER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a7df8d9ebb554a49e33bb3c803021dfb7">CANCEL_SEGMENT_FROM_BLOCK_SENDER</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a6b198bf4f2baef4762ae03f1c97cb1c4" compoundref="Ltp_8h" startline="212">Ltp::ltp_extensions_t::extensionsVec</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a0cafbfb4e51977980ed7fe3bf1e00e82" compoundref="Ltp_8cpp" startline="278" endline="284">Ltp::ltp_extensions_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="Sdnv_8h_1a7bce5ab6cfe94493a65ef8d90ce3b53b" compoundref="Sdnv_8cpp" startline="90" endline="96">SdnvEncodeU64BufSize10</references>
+        <references refid="Ltp_8cpp_1aa20d5b6a84f252d1a8ce60512972b4a1" compoundref="Ltp_8cpp" startline="31">SdnvMaximumEncodedSize</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a730707ccf4cf7dd3bfcbabca2b5348ff" compoundref="Ltp_8cpp" startline="271" endline="277">Ltp::ltp_extensions_t::Serialize</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1ac85ce5836f8fc5186fc5eb9c8eab7b60" compoundref="LtpEngine_8cpp" startline="619" endline="790">LtpEngine::GetNextPacketToSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1ad22d7e9723c01e22fa41ebe56c339b69" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void Ltp::GenerateCancelAcknowledgementSegmentLtpPacket</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;ltpCancelAcknowledgementSegmentPacket, const session_id_t &amp;sessionId, bool isToSender, ltp_extensions_t *headerExtensions=NULL, ltp_extensions_t *trailerExtensions=NULL)</argsstring>
+        <name>GenerateCancelAcknowledgementSegmentLtpPacket</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ltpCancelAcknowledgementSegmentPacket</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isToSender</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>headerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">ltp_extensions_t</ref> *</type>
+          <declname>trailerExtensions</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="296" column="32" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1618" bodyend="1647"/>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2af21c44a2cb3f4a7e376c97461f87fa6c">CANCEL_ACK_SEGMENT_TO_BLOCK_RECEIVER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a97926264efe6e68fb23920b3429a35c7">CANCEL_ACK_SEGMENT_TO_BLOCK_SENDER</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a6b198bf4f2baef4762ae03f1c97cb1c4" compoundref="Ltp_8h" startline="212">Ltp::ltp_extensions_t::extensionsVec</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a0cafbfb4e51977980ed7fe3bf1e00e82" compoundref="Ltp_8cpp" startline="278" endline="284">Ltp::ltp_extensions_t::GetMaximumDataRequiredForSerialization</references>
+        <references refid="Sdnv_8h_1a7bce5ab6cfe94493a65ef8d90ce3b53b" compoundref="Sdnv_8cpp" startline="90" endline="96">SdnvEncodeU64BufSize10</references>
+        <references refid="Ltp_8cpp_1aa20d5b6a84f252d1a8ce60512972b4a1" compoundref="Ltp_8cpp" startline="31">SdnvMaximumEncodedSize</references>
+        <references refid="structLtp_1_1ltp__extensions__t_1a730707ccf4cf7dd3bfcbabca2b5348ff" compoundref="Ltp_8cpp" startline="271" endline="277">Ltp::ltp_extensions_t::Serialize</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="structLtp_1_1session__id__t_1a9aab086a6f5df2dfba5e112d5d3f30d3" compoundref="Ltp_8h" startline="136">Ltp::session_id_t::sessionOriginatorEngineId</references>
+        <referencedby refid="TestLtp_8cpp_1a7bb96640a89d18474ef2c4b6b3138e8a" compoundref="TestLtp_8cpp" startline="203" endline="1423">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpEngine_1aa06809e349b0b88d89d34365d8ca1072" compoundref="LtpEngine_8cpp" startline="1045" endline="1122">LtpEngine::CancelSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1aacbfed077a29e920efab1d9579acffe9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool Ltp::GetMessageDirectionFromSegmentFlags</definition>
+        <argsstring>(const uint8_t segmentFlags, bool &amp;isSenderToReceiver)</argsstring>
+        <name>GetMessageDirectionFromSegmentFlags</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>segmentFlags</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>isSenderToReceiver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="299" column="32" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1650" bodyend="1693"/>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2af21c44a2cb3f4a7e376c97461f87fa6c">CANCEL_ACK_SEGMENT_TO_BLOCK_RECEIVER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a97926264efe6e68fb23920b3429a35c7">CANCEL_ACK_SEGMENT_TO_BLOCK_SENDER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aebe56857e4998ad2ab452a29293ff8ff">CANCEL_SEGMENT_FROM_BLOCK_RECEIVER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a7df8d9ebb554a49e33bb3c803021dfb7">CANCEL_SEGMENT_FROM_BLOCK_SENDER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a213fc8a346baa3254951ef6c4406560f">GREENDATA</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aaff48cb7d510f000f7b0d5d45dca68e3">GREENDATA_ENDOFBLOCK</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a2b0e9679fd255ebce77eb08f1b875309">REDDATA</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aeb34ba39a7c9b1e7329390af570dbd28">REDDATA_CHECKPOINT</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a79eaf6bb9184760388df824111465927">REDDATA_CHECKPOINT_ENDOFREDPART</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aa43abc107ecde61174884294c8634ce5">REDDATA_CHECKPOINT_ENDOFREDPART_ENDOFBLOCK</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a870ae9d913690444aeea588d8a970aac">REPORT_ACK_SEGMENT</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2ac6c3d767c5923c383ab40256c55df622">REPORT_SEGMENT</references>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">LtpUdpEngineManager::HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a120bb1dfb97cb935e2f510f08ca85e4b" compoundref="LtpIpcEngine_8cpp" startline="318" endline="377">LtpIpcEngine::VerifyIpcPacketReceive</referencedby>
+        <referencedby refid="classLtpEncapLocalStreamEngine_1af6de3663ff93e1f1b33ab04331ed0716" compoundref="LtpEncapLocalStreamEngine_8cpp" startline="237" endline="296">LtpEncapLocalStreamEngine::VerifyLtpPacketReceive</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void Ltp::SetBeginningState</definition>
+        <argsstring>()</argsstring>
+        <name>SetBeginningState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="302" column="28" bodyfile="common/ltp/src/Ltp.cpp" bodystart="374" bodyend="377"/>
+        <references refid="classLtp_1a173a2f4109921f9109109da0ac9bce85" compoundref="Ltp_8h" startline="310">m_headerRxState</references>
+        <references refid="classLtp_1a6799165039d8b86018721e0633312697" compoundref="Ltp_8h" startline="309">m_mainRxState</references>
+        <references refid="Ltp_8h_1a8ed42489e3dedf81ce3fb1d9df0aa4e9a1c2874d8a9acca5ddd2edda104c3aa6d">READ_CONTROL_BYTE</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a143d65120a93500ea25025bbde06f6ee">READ_HEADER</references>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+        <referencedby refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" compoundref="Ltp_8cpp" startline="1045" endline="1088">NextStateAfterTrailerExtensions</referencedby>
+        <referencedby refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT const uint8_t *</type>
+        <definition>const uint8_t * Ltp::NextStateAfterHeaderExtensions</definition>
+        <argsstring>(const uint8_t *rxVals, std::size_t &amp;numChars, std::string &amp;errorMessage)</argsstring>
+        <name>NextStateAfterHeaderExtensions</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>rxVals</declname>
+        </param>
+        <param>
+          <type>std::size_t &amp;</type>
+          <declname>numChars</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="303" column="38" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1005" bodyend="1043"/>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a97926264efe6e68fb23920b3429a35c7">CANCEL_ACK_SEGMENT_TO_BLOCK_SENDER</references>
+        <references refid="classLtp_1ae372783477799832d1cadade029ef9b3" compoundref="Ltp_8h" startline="340">m_cancelAcknowledgementSegmentContentsReadCallback</references>
+        <references refid="classLtp_1a79163f125e3bd462e40b96870209f2d8" compoundref="Ltp_8h" startline="312">m_dataSegmentRxState</references>
+        <references refid="classLtp_1ae3dff8cd4f878839a772c58571b34236" compoundref="Ltp_8h" startline="320">m_headerExtensions</references>
+        <references refid="classLtp_1a6799165039d8b86018721e0633312697" compoundref="Ltp_8h" startline="309">m_mainRxState</references>
+        <references refid="classLtp_1a0247b0011a8ed4ab0c4a700d41dbbe48" compoundref="Ltp_8h" startline="319">m_numTrailerExtensionTlvs</references>
+        <references refid="classLtp_1abdc5c9ef437bbb4de00d31f56691e335" compoundref="Ltp_8h" startline="313">m_reportSegmentRxState</references>
+        <references refid="classLtp_1aad3a9ec864b1f1dd6f820c4ef47376d8" compoundref="Ltp_8h" startline="308">m_sdnvTempVec</references>
+        <references refid="classLtp_1aa86b3300687827ae0439be9def4b8139" compoundref="Ltp_8h" startline="316">m_segmentTypeFlags</references>
+        <references refid="classLtp_1aafb95a44002978968fb9ef43cf8fa77e" compoundref="Ltp_8h" startline="317">m_sessionId</references>
+        <references refid="classLtp_1af77fce0615cccb487aef3f2dad3d4acc" compoundref="Ltp_8h" startline="321">m_trailerExtensions</references>
+        <references refid="classLtp_1aa9664d6b50e9c548d4801867bc758395" compoundref="Ltp_8h" startline="311">m_trailerRxState</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6ae8c3361338438c5d4b3fa20d0246d57c">READ_CANCEL_SEGMENT_CONTENT_BYTE</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430ae4cda3f078b6b775eb0dc847277902fe">READ_CLIENT_SERVICE_ID_SDNV</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a1a2511b6472be18f55b2df186033b0ac">READ_DATA_SEGMENT_CONTENT</references>
+        <references refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045a5ab20f65bdce8b8007827f38815ef6e8">READ_ONE_TRAILER_EXTENSION_TAG_BYTE</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a4271675493fc224eb628eb46506682d1">READ_REPORT_ACKNOWLEDGEMENT_SEGMENT_CONTENT</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6af426edd82124a2a2bb6d8a3f3d723194">READ_REPORT_SEGMENT_CONTENT</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77baaa23a5cb2335cf6c27b64d041ecca494">READ_REPORT_SERIAL_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a82512f80010461adc0401bf7e24ae319">READ_TRAILER</references>
+        <references refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" compoundref="Ltp_8cpp" startline="374" endline="377">SetBeginningState</references>
+        <references refid="classLtp_1a874946f1e1d244f291ec4b4052553084" compoundref="Ltp_8cpp" startline="1097" endline="1256">TryShortcutReadDataSegmentSdnvs</references>
+        <references refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" compoundref="Ltp_8cpp" startline="1262" endline="1490">TryShortcutReadReportSegmentSdnvs</references>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT bool</type>
+        <definition>bool Ltp::NextStateAfterTrailerExtensions</definition>
+        <argsstring>(bool &amp;operationIsOngoing, std::string &amp;errorMessage)</argsstring>
+        <name>NextStateAfterTrailerExtensions</name>
+        <param>
+          <type>bool &amp;</type>
+          <declname>operationIsOngoing</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="304" column="28" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1045" bodyend="1088"/>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a97926264efe6e68fb23920b3429a35c7">CANCEL_ACK_SEGMENT_TO_BLOCK_SENDER</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a7df8d9ebb554a49e33bb3c803021dfb7">CANCEL_SEGMENT_FROM_BLOCK_SENDER</references>
+        <references refid="classLtp_1ae372783477799832d1cadade029ef9b3" compoundref="Ltp_8h" startline="340">m_cancelAcknowledgementSegmentContentsReadCallback</references>
+        <references refid="classLtp_1aaf1f3d966f91e751964701c8e3c3b3de" compoundref="Ltp_8h" startline="333">m_cancelSegment_reasonCode</references>
+        <references refid="classLtp_1a504ceae5e298759c944a997411f0c7df" compoundref="Ltp_8h" startline="339">m_cancelSegmentContentsReadCallback</references>
+        <references refid="classLtp_1a49b3a1446d0f36faea06765ea5adb783" compoundref="Ltp_8h" startline="327">m_dataSegment_clientServiceRawDataWrapper</references>
+        <references refid="classLtp_1a003d1e214752b04640ed7f4bea7f1864" compoundref="Ltp_8h" startline="336">m_dataSegmentContentsReadCallback</references>
+        <references refid="classLtp_1aa33743c5f65ee31f613cbc8b33f0cdf5" compoundref="Ltp_8h" startline="325">m_dataSegmentMetadata</references>
+        <references refid="classLtp_1ae3dff8cd4f878839a772c58571b34236" compoundref="Ltp_8h" startline="320">m_headerExtensions</references>
+        <references refid="classLtp_1a0247b0011a8ed4ab0c4a700d41dbbe48" compoundref="Ltp_8h" startline="319">m_numTrailerExtensionTlvs</references>
+        <references refid="classLtp_1aba56407f7bcaf3a43405322525d6cc51" compoundref="Ltp_8h" startline="331">m_reportAcknowledgementSegment_reportSerialNumber</references>
+        <references refid="classLtp_1aa1fc997c7fe10f129faf765ef6b58712" compoundref="Ltp_8h" startline="338">m_reportAcknowledgementSegmentContentsReadCallback</references>
+        <references refid="classLtp_1aa43c2ebdf4348104a54936fd3b12445f" compoundref="Ltp_8h" startline="329">m_reportSegment</references>
+        <references refid="classLtp_1ac497c8cfec0db3ba962ba971bf25fb11" compoundref="Ltp_8h" startline="337">m_reportSegmentContentsReadCallback</references>
+        <references refid="classLtp_1aa86b3300687827ae0439be9def4b8139" compoundref="Ltp_8h" startline="316">m_segmentTypeFlags</references>
+        <references refid="classLtp_1aafb95a44002978968fb9ef43cf8fa77e" compoundref="Ltp_8h" startline="317">m_sessionId</references>
+        <references refid="classLtp_1af77fce0615cccb487aef3f2dad3d4acc" compoundref="Ltp_8h" startline="321">m_trailerExtensions</references>
+        <references refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" compoundref="Ltp_8cpp" startline="374" endline="377">SetBeginningState</references>
+        <referencedby refid="classLtp_1aaba851041c670322ea731238da3ad8fe" compoundref="Ltp_8cpp" startline="385" endline="1003">HandleReceivedChars</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a874946f1e1d244f291ec4b4052553084" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT const uint8_t *</type>
+        <definition>const uint8_t * Ltp::TryShortcutReadDataSegmentSdnvs</definition>
+        <argsstring>(const uint8_t *rxVals, std::size_t &amp;numChars, std::string &amp;errorMessage)</argsstring>
+        <name>TryShortcutReadDataSegmentSdnvs</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>rxVals</declname>
+        </param>
+        <param>
+          <type>std::size_t &amp;</type>
+          <declname>numChars</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="305" column="38" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1097" bodyend="1256"/>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ad12ffecbc698619e863ca80e83926d87" compoundref="Ltp_8h" startline="243">Ltp::data_segment_metadata_t::checkpointSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a129a03feee19c6966245d6ddde940f1c" compoundref="Ltp_8h" startline="238">Ltp::data_segment_metadata_t::clientServiceId</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a735e043bde5826a9e38abe31751716ac" compoundref="Ltp_8h" startline="240">Ltp::data_segment_metadata_t::length</references>
+        <references refid="classLtp_1af33cc994bed5c499c7d0a885658655bf" compoundref="Ltp_8h" startline="326">m_dataSegment_clientServiceData</references>
+        <references refid="classLtp_1aa33743c5f65ee31f613cbc8b33f0cdf5" compoundref="Ltp_8h" startline="325">m_dataSegmentMetadata</references>
+        <references refid="classLtp_1a79163f125e3bd462e40b96870209f2d8" compoundref="Ltp_8h" startline="312">m_dataSegmentRxState</references>
+        <references refid="classLtp_1aa86b3300687827ae0439be9def4b8139" compoundref="Ltp_8h" startline="316">m_segmentTypeFlags</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ac5fc5a67ca76ebec9818a4c0184b44fc" compoundref="Ltp_8h" startline="239">Ltp::data_segment_metadata_t::offset</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a3e69c539e2b00fa857ba2cdb7a8bb7ca">READ_CHECKPOINT_SERIAL_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a833e9736af2358c32a821dac743c7841">READ_CLIENT_SERVICE_DATA</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a6639d959bb9f107ed90ede79b00818e3">READ_LENGTH_SDNV</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430a41ae781292f24a6867669a93d70f98e2">READ_OFFSET_SDNV</references>
+        <references refid="Ltp_8h_1af2bc69fb899bd6ae19bc854a4e3e3430aaa23a5cb2335cf6c27b64d041ecca494">READ_REPORT_SERIAL_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aeb34ba39a7c9b1e7329390af570dbd28">REDDATA_CHECKPOINT</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2a79eaf6bb9184760388df824111465927">REDDATA_CHECKPOINT_ENDOFREDPART</references>
+        <references refid="Ltp_8h_1ab980f260e508fded2419f339da6e6cb2aa43abc107ecde61174884294c8634ce5">REDDATA_CHECKPOINT_ENDOFREDPART_ENDOFBLOCK</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a3102b193618b4d942875e6b227f57bab" compoundref="Ltp_8h" startline="244">Ltp::data_segment_metadata_t::reportSerialNumber</references>
+        <references refid="Sdnv_8h_1a45e2ac244f1a090d6893dcc0cff368d4" compoundref="Sdnv_8cpp" startline="1167" endline="1173">SdnvDecodeArrayU64</references>
+        <references refid="Sdnv_8h_1aed9b084e1f882d083c1f235615779f25" compoundref="Sdnv_8cpp" startline="113" endline="124">SdnvDecodeU64</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a9543c7b8a531701805a1d87fa6250184" compoundref="Ltp_8h" startline="241">Ltp::data_segment_metadata_t::tmpCheckpointSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a12bde37cd3ca7d2d5e14a340cb1c9513" compoundref="Ltp_8h" startline="242">Ltp::data_segment_metadata_t::tmpReportSerialNumber</references>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtp_1a94d2b4e05b57521527d269405ca441f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT const uint8_t *</type>
+        <definition>const uint8_t * Ltp::TryShortcutReadReportSegmentSdnvs</definition>
+        <argsstring>(const uint8_t *rxVals, std::size_t &amp;numChars, std::string &amp;errorMessage)</argsstring>
+        <name>TryShortcutReadReportSegmentSdnvs</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>rxVals</declname>
+        </param>
+        <param>
+          <type>std::size_t &amp;</type>
+          <declname>numChars</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/Ltp.h" line="306" column="38" bodyfile="common/ltp/src/Ltp.cpp" bodystart="1262" bodyend="1490"/>
+        <references refid="structLtp_1_1report__segment__t_1af650c565b23b4a34279776baa56e7d34" compoundref="Ltp_8h" startline="175">Ltp::report_segment_t::checkpointSerialNumber</references>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="classLtp_1ae3dff8cd4f878839a772c58571b34236" compoundref="Ltp_8h" startline="320">m_headerExtensions</references>
+        <references refid="classLtp_1a6799165039d8b86018721e0633312697" compoundref="Ltp_8h" startline="309">m_mainRxState</references>
+        <references refid="classLtp_1a0247b0011a8ed4ab0c4a700d41dbbe48" compoundref="Ltp_8h" startline="319">m_numTrailerExtensionTlvs</references>
+        <references refid="classLtp_1aa43c2ebdf4348104a54936fd3b12445f" compoundref="Ltp_8h" startline="329">m_reportSegment</references>
+        <references refid="classLtp_1ac497c8cfec0db3ba962ba971bf25fb11" compoundref="Ltp_8h" startline="337">m_reportSegmentContentsReadCallback</references>
+        <references refid="classLtp_1abdc5c9ef437bbb4de00d31f56691e335" compoundref="Ltp_8h" startline="313">m_reportSegmentRxState</references>
+        <references refid="classLtp_1aafb95a44002978968fb9ef43cf8fa77e" compoundref="Ltp_8h" startline="317">m_sessionId</references>
+        <references refid="classLtp_1af77fce0615cccb487aef3f2dad3d4acc" compoundref="Ltp_8h" startline="321">m_trailerExtensions</references>
+        <references refid="classLtp_1aa9664d6b50e9c548d4801867bc758395" compoundref="Ltp_8h" startline="311">m_trailerRxState</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77ba3e69c539e2b00fa857ba2cdb7a8bb7ca">READ_CHECKPOINT_SERIAL_NUMBER_SDNV</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77bad94d616f074e3b2b1925e371de9f0d9b">READ_LOWER_BOUND_SDNV</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77bac7ae488c86fd576cf48e880ded515804">READ_ONE_RECEPTION_CLAIM_LENGTH_SDNV</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77ba855a67297524bd13a9fe274a33f22b45">READ_ONE_RECEPTION_CLAIM_OFFSET_SDNV</references>
+        <references refid="Ltp_8h_1adad44510f8aa15f8fd437b893d929045a5ab20f65bdce8b8007827f38815ef6e8">READ_ONE_TRAILER_EXTENSION_TAG_BYTE</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77bab556b9d86287f2cffaf87189e76e9c2e">READ_RECEPTION_CLAIM_COUNT_SDNV</references>
+        <references refid="Ltp_8h_1aca8af78a558170941cfda20f5c7ee5c6a82512f80010461adc0401bf7e24ae319">READ_TRAILER</references>
+        <references refid="Ltp_8h_1aae6a721380f00b0f309833f4a3e1f77ba8bf09a18e4534dcd0472ae0b99ab5943">READ_UPPER_BOUND_SDNV</references>
+        <references refid="structLtp_1_1report__segment__t_1a27853ce21a38874c3411c50e990875ec" compoundref="Ltp_8h" startline="179">Ltp::report_segment_t::receptionClaims</references>
+        <references refid="structLtp_1_1report__segment__t_1a90038772c82de1f0226ef138b5b8521e" compoundref="Ltp_8h" startline="174">Ltp::report_segment_t::reportSerialNumber</references>
+        <references refid="Sdnv_8h_1a45e2ac244f1a090d6893dcc0cff368d4" compoundref="Sdnv_8cpp" startline="1167" endline="1173">SdnvDecodeArrayU64</references>
+        <references refid="Sdnv_8h_1aed9b084e1f882d083c1f235615779f25" compoundref="Sdnv_8cpp" startline="113" endline="124">SdnvDecodeU64</references>
+        <references refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" compoundref="Ltp_8cpp" startline="374" endline="377">SetBeginningState</references>
+        <references refid="structLtp_1_1report__segment__t_1a9c184ee0e0367d44924c74426d47a6bd" compoundref="Ltp_8h" startline="178">Ltp::report_segment_t::tmpReceptionClaimCount</references>
+        <references refid="structLtp_1_1report__segment__t_1af504db1308322137aa123529c1643586" compoundref="Ltp_8h" startline="176">Ltp::report_segment_t::upperBound</references>
+        <referencedby refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" compoundref="Ltp_8cpp" startline="1005" endline="1043">NextStateAfterHeaderExtensions</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>Ltp::ltp_extensions_t</label>
+        <link refid="structLtp_1_1ltp__extensions__t"/>
+      </node>
+      <node id="1">
+        <label>Ltp</label>
+        <link refid="classLtp"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_dataSegment_clientServiceRawDataWrapper</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_dataSegmentMetadata</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_sessionId</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_headerExtensions</edgelabel>
+          <edgelabel>m_trailerExtensions</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_reportSegment</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Ltp::client_service_raw_data_t</label>
+        <link refid="structLtp_1_1client__service__raw__data__t"/>
+      </node>
+      <node id="3">
+        <label>Ltp::data_segment_metadata_t</label>
+        <link refid="structLtp_1_1data__segment__metadata__t"/>
+      </node>
+      <node id="6">
+        <label>Ltp::report_segment_t</label>
+        <link refid="structLtp_1_1report__segment__t"/>
+      </node>
+      <node id="4">
+        <label>Ltp::session_id_t</label>
+        <link refid="structLtp_1_1session__id__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/Ltp.h" line="131" column="1" bodyfile="common/ltp/include/Ltp.h" bodystart="131" bodyend="341"/>
+    <listofallmembers>
+      <member refid="classLtp_1a82690c004e49faf2f9c70bc83e0392fe" prot="public" virt="non-virtual"><scope>Ltp</scope><name>CancelAcknowledgementSegmentContentsReadCallback_t</name></member>
+      <member refid="classLtp_1a317862e92a342fd773dc76a4ab69e7ad" prot="public" virt="non-virtual"><scope>Ltp</scope><name>CancelSegmentContentsReadCallback_t</name></member>
+      <member refid="classLtp_1a3c7db4a2c014fd78248f7f2b67fd2bb6" prot="public" virt="non-virtual"><scope>Ltp</scope><name>DataSegmentContentsReadCallback_t</name></member>
+      <member refid="classLtp_1ad22d7e9723c01e22fa41ebe56c339b69" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GenerateCancelAcknowledgementSegmentLtpPacket</name></member>
+      <member refid="classLtp_1a42e156e2f1e0a5e46715743cff3e717f" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GenerateCancelSegmentLtpPacket</name></member>
+      <member refid="classLtp_1a81f9acd027db5140d5190a22fac4f2f4" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GenerateLtpHeaderPlusDataSegmentMetadata</name></member>
+      <member refid="classLtp_1a34a09bd9d33e228e8a07166c1c1aba45" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GenerateReportAcknowledgementSegment</name></member>
+      <member refid="classLtp_1adeeef45525fcee31ce0b18f0a03c2129" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GenerateReportAcknowledgementSegmentLtpPacket</name></member>
+      <member refid="classLtp_1af068116abf3523e55bd9adf3a9949fec" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GenerateReportSegmentLtpPacket</name></member>
+      <member refid="classLtp_1aacbfed077a29e920efab1d9579acffe9" prot="public" virt="non-virtual"><scope>Ltp</scope><name>GetMessageDirectionFromSegmentFlags</name></member>
+      <member refid="classLtp_1a4d90d076ff257baad32ec25644cfb591" prot="public" virt="non-virtual"><scope>Ltp</scope><name>HandleReceivedChar</name></member>
+      <member refid="classLtp_1aaba851041c670322ea731238da3ad8fe" prot="public" virt="non-virtual"><scope>Ltp</scope><name>HandleReceivedChars</name></member>
+      <member refid="classLtp_1af3d3766c659cf9dca52d0e92b7948c81" prot="public" virt="non-virtual"><scope>Ltp</scope><name>InitRx</name></member>
+      <member refid="classLtp_1af6d83d4c4dde0341279e02d06e0beb35" prot="public" virt="non-virtual"><scope>Ltp</scope><name>IsAtBeginningState</name></member>
+      <member refid="classLtp_1a0032fbeb8806b234fe63b88111a4e99f" prot="public" virt="non-virtual"><scope>Ltp</scope><name>Ltp</name></member>
+      <member refid="classLtp_1ae372783477799832d1cadade029ef9b3" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_cancelAcknowledgementSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1aaf1f3d966f91e751964701c8e3c3b3de" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_cancelSegment_reasonCode</name></member>
+      <member refid="classLtp_1a504ceae5e298759c944a997411f0c7df" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_cancelSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1add0a1ce7e80fc56921b2f408e31b84ea" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_currentHeaderExtensionLength</name></member>
+      <member refid="classLtp_1abd909cb4721a43ab6744a1c9c545a75a" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_currentTrailerExtensionLength</name></member>
+      <member refid="classLtp_1af33cc994bed5c499c7d0a885658655bf" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_dataSegment_clientServiceData</name></member>
+      <member refid="classLtp_1a49b3a1446d0f36faea06765ea5adb783" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_dataSegment_clientServiceRawDataWrapper</name></member>
+      <member refid="classLtp_1a003d1e214752b04640ed7f4bea7f1864" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_dataSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1aa33743c5f65ee31f613cbc8b33f0cdf5" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_dataSegmentMetadata</name></member>
+      <member refid="classLtp_1a79163f125e3bd462e40b96870209f2d8" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_dataSegmentRxState</name></member>
+      <member refid="classLtp_1ae3dff8cd4f878839a772c58571b34236" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_headerExtensions</name></member>
+      <member refid="classLtp_1a173a2f4109921f9109109da0ac9bce85" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_headerRxState</name></member>
+      <member refid="classLtp_1a6799165039d8b86018721e0633312697" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_mainRxState</name></member>
+      <member refid="classLtp_1af1ee3f9d0c769c44012e5edb0d5090aa" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_numHeaderExtensionTlvs</name></member>
+      <member refid="classLtp_1a0247b0011a8ed4ab0c4a700d41dbbe48" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_numTrailerExtensionTlvs</name></member>
+      <member refid="classLtp_1aba56407f7bcaf3a43405322525d6cc51" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_reportAcknowledgementSegment_reportSerialNumber</name></member>
+      <member refid="classLtp_1aa1fc997c7fe10f129faf765ef6b58712" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_reportAcknowledgementSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1aa43c2ebdf4348104a54936fd3b12445f" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_reportSegment</name></member>
+      <member refid="classLtp_1ac497c8cfec0db3ba962ba971bf25fb11" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_reportSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1abdc5c9ef437bbb4de00d31f56691e335" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_reportSegmentRxState</name></member>
+      <member refid="classLtp_1aad3a9ec864b1f1dd6f820c4ef47376d8" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_sdnvTempVec</name></member>
+      <member refid="classLtp_1aa86b3300687827ae0439be9def4b8139" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_segmentTypeFlags</name></member>
+      <member refid="classLtp_1aafb95a44002978968fb9ef43cf8fa77e" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_sessionId</name></member>
+      <member refid="classLtp_1af77fce0615cccb487aef3f2dad3d4acc" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_trailerExtensions</name></member>
+      <member refid="classLtp_1aa9664d6b50e9c548d4801867bc758395" prot="public" virt="non-virtual"><scope>Ltp</scope><name>m_trailerRxState</name></member>
+      <member refid="classLtp_1aba88adbfd8e6a4985b89fceaddf24129" prot="private" virt="non-virtual"><scope>Ltp</scope><name>NextStateAfterHeaderExtensions</name></member>
+      <member refid="classLtp_1a3f67c331d3d8a2ca09b402649beb4f86" prot="private" virt="non-virtual"><scope>Ltp</scope><name>NextStateAfterTrailerExtensions</name></member>
+      <member refid="classLtp_1af6ea586b7156a1505e91e229baf24a5d" prot="public" virt="non-virtual"><scope>Ltp</scope><name>ReportAcknowledgementSegmentContentsReadCallback_t</name></member>
+      <member refid="classLtp_1a65fe6b1a0387df4a8dd9cca8dd896314" prot="public" virt="non-virtual"><scope>Ltp</scope><name>ReportSegmentContentsReadCallback_t</name></member>
+      <member refid="classLtp_1a557c7932cfde1538714385c55f01c9cf" prot="public" virt="non-virtual"><scope>Ltp</scope><name>SessionOriginatorEngineIdDecodedCallback_t</name></member>
+      <member refid="classLtp_1aab2b1a1589c5d787d5f08c7fcb1f9ad7" prot="private" virt="non-virtual"><scope>Ltp</scope><name>SetBeginningState</name></member>
+      <member refid="classLtp_1ac6ff8078adfbb43270a0707aa923f4f1" prot="public" virt="non-virtual"><scope>Ltp</scope><name>SetCancelAcknowledgementSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1ad372f2589b5476fa1ef428527f99c05d" prot="public" virt="non-virtual"><scope>Ltp</scope><name>SetCancelSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1ac3aff2f8fee0908ad629a1df23143fe7" prot="public" virt="non-virtual"><scope>Ltp</scope><name>SetDataSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1a32396475590319665a0110b8f863532a" prot="public" virt="non-virtual"><scope>Ltp</scope><name>SetReportAcknowledgementSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1aaccd9031c629409aaf9a328e8edf264e" prot="public" virt="non-virtual"><scope>Ltp</scope><name>SetReportSegmentContentsReadCallback</name></member>
+      <member refid="classLtp_1a874946f1e1d244f291ec4b4052553084" prot="private" virt="non-virtual"><scope>Ltp</scope><name>TryShortcutReadDataSegmentSdnvs</name></member>
+      <member refid="classLtp_1a94d2b4e05b57521527d269405ca441f8" prot="private" virt="non-virtual"><scope>Ltp</scope><name>TryShortcutReadReportSegmentSdnvs</name></member>
+      <member refid="classLtp_1a97842e5756e6e409b4899f9324094600" prot="public" virt="non-virtual"><scope>Ltp</scope><name>~Ltp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

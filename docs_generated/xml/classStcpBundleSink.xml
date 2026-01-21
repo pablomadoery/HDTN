@@ -1,0 +1,749 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classStcpBundleSink" kind="class" language="C++" prot="public">
+    <compoundname>StcpBundleSink</compoundname>
+    <includes refid="StcpBundleSink_8h" local="no">StcpBundleSink.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classStcpBundleSink_1a47a4e501c0cecd18660c3254d07b879d" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;wholeBundleVec)&gt;</type>
+        <definition>typedef boost::function&lt;void(padded_vector_uint8_t &amp; wholeBundleVec)&gt; StcpBundleSink::WholeBundleReadyCallback_t</definition>
+        <argsstring></argsstring>
+        <name>WholeBundleReadyCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="41" column="29" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classStcpBundleSink_1acb268ccd8c57095bc443004841cf4717" prot="public" static="no">
+        <type>boost::function&lt; void()&gt;</type>
+        <definition>typedef boost::function&lt;void()&gt; StcpBundleSink::NotifyReadyToDeleteCallback_t</definition>
+        <argsstring></argsstring>
+        <name>NotifyReadyToDeleteCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="42" column="29" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classStcpBundleSink_1a17f4e5b674cb5e65e882c1d2e1d07b89" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classStcpBundleSink_1a47a4e501c0cecd18660c3254d07b879d" kindref="member">WholeBundleReadyCallback_t</ref></type>
+        <definition>const WholeBundleReadyCallback_t StcpBundleSink::m_wholeBundleReadyCallback</definition>
+        <argsstring></argsstring>
+        <name>m_wholeBundleReadyCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="66" column="38" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a48541d9451db2777300bf4250d6c939d" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classStcpBundleSink_1acb268ccd8c57095bc443004841cf4717" kindref="member">NotifyReadyToDeleteCallback_t</ref></type>
+        <definition>const NotifyReadyToDeleteCallback_t StcpBundleSink::m_notifyReadyToDeleteCallback</definition>
+        <argsstring></argsstring>
+        <name>m_notifyReadyToDeleteCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="67" column="41" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a501efad5ab2190571286fddc532bee90" compoundref="StcpBundleSink_8cpp" startline="239" endline="268">HandleSocketShutdown</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1aaa736c5ac3887dc6cc57cc0586e2794e" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt;</type>
+        <definition>std::shared_ptr&lt;boost::asio::ip::tcp::socket&gt; StcpBundleSink::m_tcpSocketPtr</definition>
+        <argsstring></argsstring>
+        <name>m_tcpSocketPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="69" column="21" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a501efad5ab2190571286fddc532bee90" compoundref="StcpBundleSink_8cpp" startline="239" endline="268">HandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+        <referencedby refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a4c8033552b2e88fd39509900f5a44eb3" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service&amp; StcpBundleSink::m_tcpSocketIoServiceRef</definition>
+        <argsstring></argsstring>
+        <name>m_tcpSocketIoServiceRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="70" column="30" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" compoundref="StcpBundleSink_8cpp" startline="235" endline="237">DoStcpShutdown</referencedby>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1acbe5cddb7c43c853bae73191242b3be7" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int StcpBundleSink::M_NUM_CIRCULAR_BUFFER_VECTORS</definition>
+        <argsstring></argsstring>
+        <name>M_NUM_CIRCULAR_BUFFER_VECTORS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="72" column="24" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" compoundref="StcpBundleSink_8cpp" startline="25" endline="60">StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a9be95150a2be2e2e473e25e50a1d00ec" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t StcpBundleSink::M_MAX_BUNDLE_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_BUNDLE_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="73" column="20" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a977d7bb0434de3daf25befb77280365f" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable StcpBundleSink::m_circularIndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_circularIndexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="74" column="65" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+        <referencedby refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a26bd1baa41a565532db5163210e92707" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt;</type>
+        <definition>std::vector&lt;padded_vector_uint8_t &gt; StcpBundleSink::m_tcpReceiveBuffersCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_tcpReceiveBuffersCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="75" column="17" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1ac43cc55d015b0ecf29eafe4647fecaaa" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable StcpBundleSink::m_conditionVariableCb</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariableCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="76" column="31" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a9bc8c555bfad5b3d6313c1ee41c6ccb8" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex StcpBundleSink::m_mutexCb</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="77" column="18" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a538d780fdc32762d174448775d3047ee" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; StcpBundleSink::m_threadCbReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadCbReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="78" column="21" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" compoundref="StcpBundleSink_8cpp" startline="25" endline="60">StcpBundleSink</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1abc44a5323857a38642e715b4d5a353c3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StcpBundleSink::m_stateTcpReadActive</definition>
+        <argsstring></argsstring>
+        <name>m_stateTcpReadActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="79" column="10" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1ad34c1cf212eeacb3340c1e583ddb16b9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StcpBundleSink::m_printedCbTooSmallNotice</definition>
+        <argsstring></argsstring>
+        <name>m_printedCbTooSmallNotice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="80" column="10" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a928be49e12c9c2d9ed268d1a682ad331" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSink::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="81" column="17" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+        <referencedby refid="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" compoundref="StcpBundleSink_8cpp" startline="25" endline="60">StcpBundleSink</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a2e745905323ce4931867a9746cfd98ed" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSink::m_safeToDelete</definition>
+        <argsstring></argsstring>
+        <name>m_safeToDelete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="82" column="17" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a501efad5ab2190571286fddc532bee90" compoundref="StcpBundleSink_8cpp" startline="239" endline="268">HandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSink_1a23c73c313bb792b49130a8cbfb55b8d9" compoundref="StcpBundleSink_8cpp" startline="270" endline="272">ReadyToBeDeleted</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1af8440848a6cba26da794a62088e49a3f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::atomic&lt; bool &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;std::atomic&lt;bool&gt; &gt; StcpBundleSink::m_classIsDeletedSharedPtr</definition>
+        <argsstring></argsstring>
+        <name>m_classIsDeletedSharedPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="83" column="21" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a822c8f1a36f6c843134592a8bea3415f" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t StcpBundleSink::m_incomingBundleSize</definition>
+        <argsstring></argsstring>
+        <name>m_incomingBundleSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="84" column="14" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+        <referencedby refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a3036c0474bf7250b1e58ea84a066c8da" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string StcpBundleSink::M_CONNECTION_NAME</definition>
+        <argsstring></argsstring>
+        <name>M_CONNECTION_NAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="87" column="23" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" compoundref="StcpBundleSink_8cpp" startline="274" endline="280">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1ab62b3b08836583ecf16b89259937b8f8" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string StcpBundleSink::M_INPUT_NAME</definition>
+        <argsstring></argsstring>
+        <name>M_INPUT_NAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="88" column="23" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" compoundref="StcpBundleSink_8cpp" startline="274" endline="280">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a257b75fd2a6ca359dde0f28405ca0b4d" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSink::m_totalStcpBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalStcpBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="89" column="17" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" compoundref="StcpBundleSink_8cpp" startline="274" endline="280">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1ae7503e1f5ba4e8319cd89712611e32a2" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSink::m_totalBundleBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="90" column="17" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" compoundref="StcpBundleSink_8cpp" startline="274" endline="280">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSink_1a2777bcc4873591bd862d8656c5ec10b6" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSink::m_totalBundlesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="91" column="17" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" compoundref="StcpBundleSink_8cpp" startline="274" endline="280">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classStcpBundleSink_1ac459be025a92b86444d00e84bfa4763a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StcpBundleSink::StcpBundleSink</definition>
+        <argsstring>()</argsstring>
+        <name>StcpBundleSink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="39" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a0f52c1c0c3a29134b434b42efa76538c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::TryStartTcpReceive</definition>
+        <argsstring>(std::shared_ptr&lt; std::atomic&lt; bool &gt; &gt; &amp;classIsDeletedSharedPtr)</argsstring>
+        <name>TryStartTcpReceive</name>
+        <param>
+          <type>std::shared_ptr&lt; std::atomic&lt; bool &gt; &gt; &amp;</type>
+          <declname>classIsDeletedSharedPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="55" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="102" bodyend="109"/>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <references refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::TryStartTcpReceive</definition>
+        <argsstring>()</argsstring>
+        <name>TryStartTcpReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="56" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="112" bodyend="134"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classStcpBundleSink_1a977d7bb0434de3daf25befb77280365f" compoundref="StcpBundleSink_8h" startline="74">m_circularIndexBuffer</references>
+        <references refid="classStcpBundleSink_1a822c8f1a36f6c843134592a8bea3415f" compoundref="StcpBundleSink_8h" startline="84">m_incomingBundleSize</references>
+        <references refid="classStcpBundleSink_1ad34c1cf212eeacb3340c1e583ddb16b9" compoundref="StcpBundleSink_8h" startline="80">m_printedCbTooSmallNotice</references>
+        <references refid="classStcpBundleSink_1abc44a5323857a38642e715b4d5a353c3" compoundref="StcpBundleSink_8h" startline="79">m_stateTcpReadActive</references>
+        <references refid="classStcpBundleSink_1aaa736c5ac3887dc6cc57cc0586e2794e" compoundref="StcpBundleSink_8h" startline="69">m_tcpSocketPtr</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</referencedby>
+        <referencedby refid="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" compoundref="StcpBundleSink_8cpp" startline="25" endline="60">StcpBundleSink</referencedby>
+        <referencedby refid="classStcpBundleSink_1a0f52c1c0c3a29134b434b42efa76538c" compoundref="StcpBundleSink_8cpp" startline="102" endline="109">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::HandleTcpReceiveIncomingBundleSize</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred, const unsigned int writeIndex)</argsstring>
+        <name>HandleTcpReceiveIncomingBundleSize</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>writeIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="57" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="137" bodyend="176"/>
+        <references refid="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" compoundref="StcpBundleSink_8cpp" startline="235" endline="237">DoStcpShutdown</references>
+        <references refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSink_1a822c8f1a36f6c843134592a8bea3415f" compoundref="StcpBundleSink_8h" startline="84">m_incomingBundleSize</references>
+        <references refid="classStcpBundleSink_1a9be95150a2be2e2e473e25e50a1d00ec" compoundref="StcpBundleSink_8h" startline="73">M_MAX_BUNDLE_SIZE_BYTES</references>
+        <references refid="classStcpBundleSink_1a26bd1baa41a565532db5163210e92707" compoundref="StcpBundleSink_8h" startline="75">m_tcpReceiveBuffersCbVec</references>
+        <references refid="classStcpBundleSink_1aaa736c5ac3887dc6cc57cc0586e2794e" compoundref="StcpBundleSink_8h" startline="69">m_tcpSocketPtr</references>
+        <references refid="classStcpBundleSink_1a257b75fd2a6ca359dde0f28405ca0b4d" compoundref="StcpBundleSink_8h" startline="89">m_totalStcpBytesReceived</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::HandleTcpReceiveBundleData</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>HandleTcpReceiveBundleData</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="58" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="178" bodyend="203"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" compoundref="StcpBundleSink_8cpp" startline="235" endline="237">DoStcpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSink_1a977d7bb0434de3daf25befb77280365f" compoundref="StcpBundleSink_8h" startline="74">m_circularIndexBuffer</references>
+        <references refid="classStcpBundleSink_1ac43cc55d015b0ecf29eafe4647fecaaa" compoundref="StcpBundleSink_8h" startline="76">m_conditionVariableCb</references>
+        <references refid="classStcpBundleSink_1a822c8f1a36f6c843134592a8bea3415f" compoundref="StcpBundleSink_8h" startline="84">m_incomingBundleSize</references>
+        <references refid="classStcpBundleSink_1a9bc8c555bfad5b3d6313c1ee41c6ccb8" compoundref="StcpBundleSink_8h" startline="77">m_mutexCb</references>
+        <references refid="classStcpBundleSink_1abc44a5323857a38642e715b4d5a353c3" compoundref="StcpBundleSink_8h" startline="79">m_stateTcpReadActive</references>
+        <references refid="classStcpBundleSink_1ae7503e1f5ba4e8319cd89712611e32a2" compoundref="StcpBundleSink_8h" startline="90">m_totalBundleBytesReceived</references>
+        <references refid="classStcpBundleSink_1a2777bcc4873591bd862d8656c5ec10b6" compoundref="StcpBundleSink_8h" startline="91">m_totalBundlesReceived</references>
+        <references refid="classStcpBundleSink_1a257b75fd2a6ca359dde0f28405ca0b4d" compoundref="StcpBundleSink_8h" startline="89">m_totalStcpBytesReceived</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <references refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</references>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::PopCbThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>PopCbThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="59" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="207" bodyend="233"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSink_1a977d7bb0434de3daf25befb77280365f" compoundref="StcpBundleSink_8h" startline="74">m_circularIndexBuffer</references>
+        <references refid="classStcpBundleSink_1af8440848a6cba26da794a62088e49a3f" compoundref="StcpBundleSink_8h" startline="83">m_classIsDeletedSharedPtr</references>
+        <references refid="classStcpBundleSink_1ac43cc55d015b0ecf29eafe4647fecaaa" compoundref="StcpBundleSink_8h" startline="76">m_conditionVariableCb</references>
+        <references refid="classStcpBundleSink_1a9bc8c555bfad5b3d6313c1ee41c6ccb8" compoundref="StcpBundleSink_8h" startline="77">m_mutexCb</references>
+        <references refid="classStcpBundleSink_1a928be49e12c9c2d9ed268d1a682ad331" compoundref="StcpBundleSink_8h" startline="81">m_running</references>
+        <references refid="classStcpBundleSink_1a26bd1baa41a565532db5163210e92707" compoundref="StcpBundleSink_8h" startline="75">m_tcpReceiveBuffersCbVec</references>
+        <references refid="classStcpBundleSink_1a4c8033552b2e88fd39509900f5a44eb3" compoundref="StcpBundleSink_8h" startline="70">m_tcpSocketIoServiceRef</references>
+        <references refid="classStcpBundleSink_1a17f4e5b674cb5e65e882c1d2e1d07b89" compoundref="StcpBundleSink_8h" startline="66">m_wholeBundleReadyCallback</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <references refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</references>
+        <referencedby refid="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" compoundref="StcpBundleSink_8cpp" startline="25" endline="60">StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::DoStcpShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>DoStcpShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="60" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="235" bodyend="237"/>
+        <references refid="classStcpBundleSink_1a501efad5ab2190571286fddc532bee90" compoundref="StcpBundleSink_8cpp" startline="239" endline="268">HandleSocketShutdown</references>
+        <references refid="classStcpBundleSink_1a4c8033552b2e88fd39509900f5a44eb3" compoundref="StcpBundleSink_8h" startline="70">m_tcpSocketIoServiceRef</references>
+        <referencedby refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" compoundref="StcpBundleSink_8cpp" startline="178" endline="203">HandleTcpReceiveBundleData</referencedby>
+        <referencedby refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" compoundref="StcpBundleSink_8cpp" startline="137" endline="176">HandleTcpReceiveIncomingBundleSize</referencedby>
+        <referencedby refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" compoundref="StcpBundleSink_8cpp" startline="62" endline="100">~StcpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a501efad5ab2190571286fddc532bee90" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSink::HandleSocketShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>HandleSocketShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="61" column="29" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="239" bodyend="268"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSink_1a48541d9451db2777300bf4250d6c939d" compoundref="StcpBundleSink_8h" startline="67">m_notifyReadyToDeleteCallback</references>
+        <references refid="classStcpBundleSink_1a2e745905323ce4931867a9746cfd98ed" compoundref="StcpBundleSink_8h" startline="82">m_safeToDelete</references>
+        <references refid="classStcpBundleSink_1aaa736c5ac3887dc6cc57cc0586e2794e" compoundref="StcpBundleSink_8h" startline="69">m_tcpSocketPtr</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" compoundref="StcpBundleSink_8cpp" startline="235" endline="237">DoStcpShutdown</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT</type>
+        <definition>StcpBundleSink::StcpBundleSink</definition>
+        <argsstring>(std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt; tcpSocketPtr, boost::asio::io_service &amp;tcpSocketIoServiceRef, const WholeBundleReadyCallback_t &amp;wholeBundleReadyCallback, const unsigned int numCircularBufferVectors, const uint64_t maxBundleSizeBytes, const NotifyReadyToDeleteCallback_t &amp;notifyReadyToDeleteCallback=NotifyReadyToDeleteCallback_t())</argsstring>
+        <name>StcpBundleSink</name>
+        <param>
+          <type>std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt;</type>
+          <declname>tcpSocketPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>tcpSocketIoServiceRef</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classStcpBundleSink_1a47a4e501c0cecd18660c3254d07b879d" kindref="member">WholeBundleReadyCallback_t</ref> &amp;</type>
+          <declname>wholeBundleReadyCallback</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numCircularBufferVectors</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classStcpBundleSink_1acb268ccd8c57095bc443004841cf4717" kindref="member">NotifyReadyToDeleteCallback_t</ref> &amp;</type>
+          <declname>notifyReadyToDeleteCallback</declname>
+          <defval><ref refid="classStcpBundleSink_1acb268ccd8c57095bc443004841cf4717" kindref="member">NotifyReadyToDeleteCallback_t</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="44" column="21" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="25" bodyend="60"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSink_1acbe5cddb7c43c853bae73191242b3be7" compoundref="StcpBundleSink_8h" startline="72">M_NUM_CIRCULAR_BUFFER_VECTORS</references>
+        <references refid="classStcpBundleSink_1a928be49e12c9c2d9ed268d1a682ad331" compoundref="StcpBundleSink_8h" startline="81">m_running</references>
+        <references refid="classStcpBundleSink_1a538d780fdc32762d174448775d3047ee" compoundref="StcpBundleSink_8h" startline="78">m_threadCbReaderPtr</references>
+        <references refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" compoundref="StcpBundleSink_8cpp" startline="207" endline="233">PopCbThreadFunc</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+        <references refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" compoundref="StcpBundleSink_8cpp" startline="112" endline="134">TryStartTcpReceive</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT</type>
+        <definition>StcpBundleSink::~StcpBundleSink</definition>
+        <argsstring>()</argsstring>
+        <name>~StcpBundleSink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="50" column="21" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="62" bodyend="100"/>
+        <references refid="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" compoundref="StcpBundleSink_8cpp" startline="235" endline="237">DoStcpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSink_1af8440848a6cba26da794a62088e49a3f" compoundref="StcpBundleSink_8h" startline="83">m_classIsDeletedSharedPtr</references>
+        <references refid="classStcpBundleSink_1ac43cc55d015b0ecf29eafe4647fecaaa" compoundref="StcpBundleSink_8h" startline="76">m_conditionVariableCb</references>
+        <references refid="classStcpBundleSink_1a3036c0474bf7250b1e58ea84a066c8da" compoundref="StcpBundleSink_8h" startline="87">M_CONNECTION_NAME</references>
+        <references refid="classStcpBundleSink_1ab62b3b08836583ecf16b89259937b8f8" compoundref="StcpBundleSink_8h" startline="88">M_INPUT_NAME</references>
+        <references refid="classStcpBundleSink_1a9bc8c555bfad5b3d6313c1ee41c6ccb8" compoundref="StcpBundleSink_8h" startline="77">m_mutexCb</references>
+        <references refid="classStcpBundleSink_1a928be49e12c9c2d9ed268d1a682ad331" compoundref="StcpBundleSink_8h" startline="81">m_running</references>
+        <references refid="classStcpBundleSink_1a2e745905323ce4931867a9746cfd98ed" compoundref="StcpBundleSink_8h" startline="82">m_safeToDelete</references>
+        <references refid="classStcpBundleSink_1a538d780fdc32762d174448775d3047ee" compoundref="StcpBundleSink_8h" startline="78">m_threadCbReaderPtr</references>
+        <references refid="classStcpBundleSink_1ae7503e1f5ba4e8319cd89712611e32a2" compoundref="StcpBundleSink_8h" startline="90">m_totalBundleBytesReceived</references>
+        <references refid="classStcpBundleSink_1a2777bcc4873591bd862d8656c5ec10b6" compoundref="StcpBundleSink_8h" startline="91">m_totalBundlesReceived</references>
+        <references refid="classStcpBundleSink_1a257b75fd2a6ca359dde0f28405ca0b4d" compoundref="StcpBundleSink_8h" startline="89">m_totalStcpBytesReceived</references>
+        <references refid="StcpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSink_8cpp" startline="23">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a23c73c313bb792b49130a8cbfb55b8d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT bool</type>
+        <definition>bool StcpBundleSink::ReadyToBeDeleted</definition>
+        <argsstring>()</argsstring>
+        <name>ReadyToBeDeleted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="51" column="26" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="270" bodyend="272"/>
+        <references refid="classStcpBundleSink_1a2e745905323ce4931867a9746cfd98ed" compoundref="StcpBundleSink_8h" startline="82">m_safeToDelete</references>
+        <referencedby refid="classStcpInduct_1af05104da726f70baf389e234f507770d" compoundref="StcpInduct_8cpp" startline="104" endline="120">StcpInduct::RemoveInactiveTcpConnections</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSink::GetTelemetry</definition>
+        <argsstring>(StcpInductConnectionTelemetry_t &amp;telem) const</argsstring>
+        <name>GetTelemetry</name>
+        <param>
+          <type><ref refid="structStcpInductConnectionTelemetry__t" kindref="compound">StcpInductConnectionTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSink.h" line="52" column="26" bodyfile="common/stcp/src/StcpBundleSink.cpp" bodystart="274" bodyend="280"/>
+        <references refid="classStcpBundleSink_1a3036c0474bf7250b1e58ea84a066c8da" compoundref="StcpBundleSink_8h" startline="87">M_CONNECTION_NAME</references>
+        <references refid="structInductConnectionTelemetry__t_1a918c4d384808ca15c0b500ea9e8c4f18" compoundref="TelemetryDefinitions_8h" startline="144">InductConnectionTelemetry_t::m_connectionName</references>
+        <references refid="classStcpBundleSink_1ab62b3b08836583ecf16b89259937b8f8" compoundref="StcpBundleSink_8h" startline="88">M_INPUT_NAME</references>
+        <references refid="structInductConnectionTelemetry__t_1abada9608295c2708ce7eff85d37a6b44" compoundref="TelemetryDefinitions_8h" startline="145">InductConnectionTelemetry_t::m_inputName</references>
+        <references refid="classStcpBundleSink_1ae7503e1f5ba4e8319cd89712611e32a2" compoundref="StcpBundleSink_8h" startline="90">m_totalBundleBytesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1ad4c6971bc09c9c2f9fa0bd2a623ff1f6" compoundref="TelemetryDefinitions_8h" startline="147">InductConnectionTelemetry_t::m_totalBundleBytesReceived</references>
+        <references refid="classStcpBundleSink_1a2777bcc4873591bd862d8656c5ec10b6" compoundref="StcpBundleSink_8h" startline="91">m_totalBundlesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1a3eca817c07ea8e451ecc5a599e1886d2" compoundref="TelemetryDefinitions_8h" startline="146">InductConnectionTelemetry_t::m_totalBundlesReceived</references>
+        <references refid="classStcpBundleSink_1a257b75fd2a6ca359dde0f28405ca0b4d" compoundref="StcpBundleSink_8h" startline="89">m_totalStcpBytesReceived</references>
+        <references refid="structStcpInductConnectionTelemetry__t_1a58d2388e1060fe5089cf3fd22cc195cd" compoundref="TelemetryDefinitions_8h" startline="159">StcpInductConnectionTelemetry_t::m_totalStcpBytesReceived</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>StcpBundleSink</label>
+        <link refid="classStcpBundleSink"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/stcp/include/StcpBundleSink.h" line="37" column="1" bodyfile="common/stcp/include/StcpBundleSink.h" bodystart="37" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classStcpBundleSink_1a6f2a6a9219b6acc82f1dfdd5aa1c6021" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>DoStcpShutdown</name></member>
+      <member refid="classStcpBundleSink_1a2c51a4bff59fce334c718e3e5d008460" prot="public" virt="non-virtual"><scope>StcpBundleSink</scope><name>GetTelemetry</name></member>
+      <member refid="classStcpBundleSink_1a501efad5ab2190571286fddc532bee90" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>HandleSocketShutdown</name></member>
+      <member refid="classStcpBundleSink_1a02e11f9d1f115acf66aa06f712198197" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>HandleTcpReceiveBundleData</name></member>
+      <member refid="classStcpBundleSink_1a93c24caa52eedb1b265da14828ed1824" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>HandleTcpReceiveIncomingBundleSize</name></member>
+      <member refid="classStcpBundleSink_1a977d7bb0434de3daf25befb77280365f" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_circularIndexBuffer</name></member>
+      <member refid="classStcpBundleSink_1af8440848a6cba26da794a62088e49a3f" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_classIsDeletedSharedPtr</name></member>
+      <member refid="classStcpBundleSink_1ac43cc55d015b0ecf29eafe4647fecaaa" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_conditionVariableCb</name></member>
+      <member refid="classStcpBundleSink_1a3036c0474bf7250b1e58ea84a066c8da" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>M_CONNECTION_NAME</name></member>
+      <member refid="classStcpBundleSink_1a822c8f1a36f6c843134592a8bea3415f" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_incomingBundleSize</name></member>
+      <member refid="classStcpBundleSink_1ab62b3b08836583ecf16b89259937b8f8" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>M_INPUT_NAME</name></member>
+      <member refid="classStcpBundleSink_1a9be95150a2be2e2e473e25e50a1d00ec" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>M_MAX_BUNDLE_SIZE_BYTES</name></member>
+      <member refid="classStcpBundleSink_1a9bc8c555bfad5b3d6313c1ee41c6ccb8" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_mutexCb</name></member>
+      <member refid="classStcpBundleSink_1a48541d9451db2777300bf4250d6c939d" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_notifyReadyToDeleteCallback</name></member>
+      <member refid="classStcpBundleSink_1acbe5cddb7c43c853bae73191242b3be7" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>M_NUM_CIRCULAR_BUFFER_VECTORS</name></member>
+      <member refid="classStcpBundleSink_1ad34c1cf212eeacb3340c1e583ddb16b9" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_printedCbTooSmallNotice</name></member>
+      <member refid="classStcpBundleSink_1a928be49e12c9c2d9ed268d1a682ad331" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_running</name></member>
+      <member refid="classStcpBundleSink_1a2e745905323ce4931867a9746cfd98ed" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_safeToDelete</name></member>
+      <member refid="classStcpBundleSink_1abc44a5323857a38642e715b4d5a353c3" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_stateTcpReadActive</name></member>
+      <member refid="classStcpBundleSink_1a26bd1baa41a565532db5163210e92707" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_tcpReceiveBuffersCbVec</name></member>
+      <member refid="classStcpBundleSink_1a4c8033552b2e88fd39509900f5a44eb3" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_tcpSocketIoServiceRef</name></member>
+      <member refid="classStcpBundleSink_1aaa736c5ac3887dc6cc57cc0586e2794e" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_tcpSocketPtr</name></member>
+      <member refid="classStcpBundleSink_1a538d780fdc32762d174448775d3047ee" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_threadCbReaderPtr</name></member>
+      <member refid="classStcpBundleSink_1ae7503e1f5ba4e8319cd89712611e32a2" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_totalBundleBytesReceived</name></member>
+      <member refid="classStcpBundleSink_1a2777bcc4873591bd862d8656c5ec10b6" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_totalBundlesReceived</name></member>
+      <member refid="classStcpBundleSink_1a257b75fd2a6ca359dde0f28405ca0b4d" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_totalStcpBytesReceived</name></member>
+      <member refid="classStcpBundleSink_1a17f4e5b674cb5e65e882c1d2e1d07b89" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>m_wholeBundleReadyCallback</name></member>
+      <member refid="classStcpBundleSink_1acb268ccd8c57095bc443004841cf4717" prot="public" virt="non-virtual"><scope>StcpBundleSink</scope><name>NotifyReadyToDeleteCallback_t</name></member>
+      <member refid="classStcpBundleSink_1a3c24d7acc85be561e4dff7ad2e7fb6a1" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>PopCbThreadFunc</name></member>
+      <member refid="classStcpBundleSink_1a23c73c313bb792b49130a8cbfb55b8d9" prot="public" virt="non-virtual"><scope>StcpBundleSink</scope><name>ReadyToBeDeleted</name></member>
+      <member refid="classStcpBundleSink_1ac459be025a92b86444d00e84bfa4763a" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>StcpBundleSink</name></member>
+      <member refid="classStcpBundleSink_1afe674e8a90ea0259035c60f281e23b8e" prot="public" virt="non-virtual"><scope>StcpBundleSink</scope><name>StcpBundleSink</name></member>
+      <member refid="classStcpBundleSink_1a0f52c1c0c3a29134b434b42efa76538c" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>TryStartTcpReceive</name></member>
+      <member refid="classStcpBundleSink_1a58181eced66b5b0aeb7cc46f51708a7b" prot="private" virt="non-virtual"><scope>StcpBundleSink</scope><name>TryStartTcpReceive</name></member>
+      <member refid="classStcpBundleSink_1a47a4e501c0cecd18660c3254d07b879d" prot="public" virt="non-virtual"><scope>StcpBundleSink</scope><name>WholeBundleReadyCallback_t</name></member>
+      <member refid="classStcpBundleSink_1a239936ecd858485483f44d13ae3aa6b5" prot="public" virt="non-virtual"><scope>StcpBundleSink</scope><name>~StcpBundleSink</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

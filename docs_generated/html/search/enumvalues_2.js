@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['cancel_5fack_5fsegment_5fto_5fblock_5freceiver_11306',['CANCEL_ACK_SEGMENT_TO_BLOCK_RECEIVER',['../Ltp_8h.html#ab980f260e508fded2419f339da6e6cb2af21c44a2cb3f4a7e376c97461f87fa6c',1,'Ltp.h']]],
+  ['cancel_5fack_5fsegment_5fto_5fblock_5fsender_11307',['CANCEL_ACK_SEGMENT_TO_BLOCK_SENDER',['../Ltp_8h.html#ab980f260e508fded2419f339da6e6cb2a97926264efe6e68fb23920b3429a35c7',1,'Ltp.h']]],
+  ['cancel_5fsegment_5ffrom_5fblock_5freceiver_11308',['CANCEL_SEGMENT_FROM_BLOCK_RECEIVER',['../Ltp_8h.html#ab980f260e508fded2419f339da6e6cb2aebe56857e4998ad2ab452a29293ff8ff',1,'Ltp.h']]],
+  ['cancel_5fsegment_5ffrom_5fblock_5fsender_11309',['CANCEL_SEGMENT_FROM_BLOCK_SENDER',['../Ltp_8h.html#ab980f260e508fded2419f339da6e6cb2a7df8d9ebb554a49e33bb3c803021dfb7',1,'Ltp.h']]],
+  ['cli_11310',['cli',['../classhdtn_1_1Logger.html#a513128f16944ed8169d3c4d4abb0d499a0898b22730d57afcd394d8e4889ece4a',1,'hdtn::Logger']]],
+  ['confidentiality_11311',['CONFIDENTIALITY',['../bpv7_8h.html#a025393b305d35b199a7f15fa91377990a4ddb4b92d87973bd0fc314979deba833',1,'bpv7.h']]],
+  ['contact_5ffailure_11312',['CONTACT_FAILURE',['../TcpclV4_8h.html#a4f4e4fedfb3193650387379d9782c0d7aab48f4eb518c35c0ba19321779d5193e',1,'TcpclV4.h']]],
+  ['content_5ftype_11313',['content_type',['../Cose_8h.html#a6fb0fc8d312bd01905d6cd807958264eaeae05b08fff80e185c849f1314a3dca4',1,'Cose.h']]],
+  ['corrupted_11314',['CORRUPTED',['../classBpSecBundleProcessor.html#a98418777495110b6d16f9092fff4a321a079c6dcd1b1ee137ecf0244d4f8bad01',1,'BpSecBundleProcessor']]],
+  ['counter_5fsignature_11315',['counter_signature',['../Cose_8h.html#a6fb0fc8d312bd01905d6cd807958264ea8de969a99d50b32279b4b08fc9da71d9',1,'Cose.h']]],
+  ['countersignature0_11316',['CounterSignature0',['../Cose_8h.html#a6fb0fc8d312bd01905d6cd807958264ea4746a7a91969eddad6889c06ae34f696',1,'Cose.h']]],
+  ['crc16_5fx25_11317',['CRC16_X25',['../bpv7_8h.html#a010a470cda51253c80c237da855e6c9ba1402ab949f24e72cab60563fe2d17065',1,'bpv7.h']]],
+  ['crc32c_11318',['CRC32C',['../bpv7_8h.html#a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a',1,'bpv7.h']]],
+  ['crit_11319',['crit',['../Cose_8h.html#a6fb0fc8d312bd01905d6cd807958264ea5888c6a8bb862595985926d16c7dcf13',1,'Cose.h']]],
+  ['custody_5faccepted_11320',['CUSTODY_ACCEPTED',['../bpv7_8h.html#a4de853dda4f99c7aa25c18f3f21769b8a04002e42057509ebb389e04acf1f5e38',1,'bpv7.h']]],
+  ['custody_5frequested_11321',['CUSTODY_REQUESTED',['../bpv6_8h.html#a5b229f58f6b0391577dadbdecba6c13dad18592631af9d972cc052408d5905441',1,'bpv6.h']]],
+  ['custody_5fsignal_11322',['CUSTODY_SIGNAL',['../bpv6_8h.html#a91d5094c18c45a5c4118b95873227637a8c5d5263c36daf91348353a129adefdd',1,'CUSTODY_SIGNAL():&#160;bpv6.h'],['../bpv7_8h.html#a68cc1a1dc91bdd37de69337b13cda26da8c5d5263c36daf91348353a129adefdd',1,'CUSTODY_SIGNAL():&#160;bpv7.h']]],
+  ['custody_5fstatus_5freports_5frequested_11323',['CUSTODY_STATUS_REPORTS_REQUESTED',['../bpv6_8h.html#a5b229f58f6b0391577dadbdecba6c13daa7312f1d30359448b21747b18c7f9a36',1,'bpv6.h']]],
+  ['custody_5ftransfer_5fenhancement_11324',['CUSTODY_TRANSFER_ENHANCEMENT',['../bpv6_8h.html#a9d685151800c2cb7f64b3d25ee9a5132a5dfc36dbc63b82b1fd55b8200d738b6a',1,'bpv6.h']]]
+];

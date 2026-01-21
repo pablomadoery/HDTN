@@ -1,0 +1,813 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="TcpclBundleSink_8cpp" kind="file" language="C++">
+    <compoundname>TcpclBundleSink.cpp</compoundname>
+    <includes local="no">boost/bind/bind.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes refid="TcpclBundleSink_8h" local="yes">TcpclBundleSink.h</includes>
+    <includes refid="Logger_8h" local="yes">Logger.h</includes>
+    <includes local="no">boost/make_unique.hpp</includes>
+    <includes refid="Uri_8h" local="yes">Uri.h</includes>
+    <includes refid="ThreadNamer_8h" local="yes">ThreadNamer.h</includes>
+    <incdepgraph>
+      <node id="73">
+        <label>boost/smart_ptr/make_shared_object.hpp</label>
+      </node>
+      <node id="35">
+        <label>list</label>
+      </node>
+      <node id="22">
+        <label>atomic</label>
+      </node>
+      <node id="72">
+        <label>boost/log/utility/value_ref.hpp</label>
+      </node>
+      <node id="65">
+        <label>boost/log/sources/severity_channel_logger.hpp</label>
+      </node>
+      <node id="29">
+        <label>iomanip</label>
+      </node>
+      <node id="21">
+        <label>queue</label>
+      </node>
+      <node id="46">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="24">
+        <label>zmq.h</label>
+      </node>
+      <node id="17">
+        <label>limits</label>
+      </node>
+      <node id="59">
+        <label>boost/log/sinks.hpp</label>
+      </node>
+      <node id="12">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="75">
+        <label>log_lib_export.h</label>
+      </node>
+      <node id="47">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</label>
+        <link refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>cstdint</label>
+      </node>
+      <node id="63">
+        <label>boost/log/sources/basic_logger.hpp</label>
+      </node>
+      <node id="48">
+        <label>stdint.h</label>
+      </node>
+      <node id="57">
+        <label>boost/log/core.hpp</label>
+      </node>
+      <node id="36">
+        <label>telemetry_definitions_export.h</label>
+      </node>
+      <node id="25">
+        <label>cassert</label>
+      </node>
+      <node id="40">
+        <label>bpcodec_export.h</label>
+      </node>
+      <node id="67">
+        <label>boost/log/support/date_time.hpp</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>TcpclBundleSink.h</label>
+        <link refid="TcpclBundleSink_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="77">
+        <label>Uri.h</label>
+        <link refid="Uri_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>boost/log/sources/severity_logger.hpp</label>
+      </node>
+      <node id="74">
+        <label>boost/smart_ptr/shared_ptr.hpp</label>
+      </node>
+      <node id="68">
+        <label>boost/log/trivial.hpp</label>
+      </node>
+      <node id="60">
+        <label>boost/log/sinks/sync_frontend.hpp</label>
+      </node>
+      <node id="41">
+        <label>JsonSerializable.h</label>
+        <link refid="JsonSerializable_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>exception</label>
+      </node>
+      <node id="19">
+        <label>tcpcl_lib_export.h</label>
+      </node>
+      <node id="52">
+        <label>fstream</label>
+      </node>
+      <node id="39">
+        <label>ostream</label>
+      </node>
+      <node id="13">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="2">
+        <label>boost/bind/bind.hpp</label>
+      </node>
+      <node id="58">
+        <label>boost/log/expressions.hpp</label>
+      </node>
+      <node id="44">
+        <label>boost/property_tree/json_parser/error.hpp</label>
+      </node>
+      <node id="8">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="34">
+        <label>TelemetryDefinitions.h</label>
+        <link refid="TelemetryDefinitions_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="50">
+        <label>boost/config/detail/suffix.hpp</label>
+      </node>
+      <node id="31">
+        <label>BundleCallbackFunctionDefines.h</label>
+        <link refid="BundleCallbackFunctionDefines_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="37">
+        <label>codec/Cbhe.h</label>
+        <link refid="Cbhe_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>boost/log/sinks/text_file_backend.hpp</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+      <node id="51">
+        <label>Logger.h</label>
+        <link refid="Logger_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>PaddedVectorUint8.h</label>
+        <link refid="PaddedVectorUint8_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>new</label>
+      </node>
+      <node id="30">
+        <label>sstream</label>
+      </node>
+      <node id="62">
+        <label>boost/log/sinks/text_ostream_backend.hpp</label>
+      </node>
+      <node id="64">
+        <label>boost/log/sources/record_ostream.hpp</label>
+      </node>
+      <node id="78">
+        <label>ThreadNamer.h</label>
+        <link refid="ThreadNamer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cstdlib</label>
+      </node>
+      <node id="20">
+        <label>TcpAsyncSender.h</label>
+        <link refid="TcpAsyncSender_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="33">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="18">
+        <label>iostream</label>
+      </node>
+      <node id="69">
+        <label>boost/log/utility/manipulators/add_value.hpp</label>
+      </node>
+      <node id="5">
+        <label>TcpclV3BidirectionalLink.h</label>
+        <link refid="TcpclV3BidirectionalLink_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>cstddef</label>
+      </node>
+      <node id="76">
+        <label>boost/make_unique.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/tcpcl/src/TcpclBundleSink.cpp</label>
+        <link refid="TcpclBundleSink_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>boost/log/attributes.hpp</label>
+      </node>
+      <node id="71">
+        <label>boost/log/utility/setup/file.hpp</label>
+      </node>
+      <node id="70">
+        <label>boost/log/utility/setup/common_attributes.hpp</label>
+      </node>
+      <node id="79">
+        <label>thread</label>
+      </node>
+      <node id="49">
+        <label>BidirectionalLink.h</label>
+        <link refid="BidirectionalLink_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>set</label>
+      </node>
+      <node id="53">
+        <label>boost/core/null_deleter.hpp</label>
+      </node>
+      <node id="27">
+        <label>algorithm</label>
+      </node>
+      <node id="26">
+        <label>cstring</label>
+      </node>
+      <node id="56">
+        <label>boost/log/attributes/scoped_attribute.hpp</label>
+      </node>
+      <node id="11">
+        <label>Tcpcl.h</label>
+        <link refid="Tcpcl_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="23">
+        <label>zmq.hpp</label>
+        <link refid="zmq_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">hdtn::Logger::SubProcess</ref></type>
+        <definition>constexpr hdtn::Logger::SubProcess subprocess</definition>
+        <argsstring></argsstring>
+        <name>subprocess</name>
+        <initializer>= <ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a334c4a4c42fdb79d7ebc3e73b517e6f8" kindref="member">hdtn::Logger::SubProcess::none</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/src/TcpclBundleSink.cpp" line="23" column="43" bodyfile="common/tcpcl/src/TcpclBundleSink.cpp" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSink_1ae92d7940fe3706668c6b081fb9df2be5" compoundref="TcpclBundleSink_8cpp" startline="169" endline="186">TcpclBundleSink::HandleTcpReceiveSome</referencedby>
+        <referencedby refid="classTcpclBundleSink_1a612970abb7e9f5e7d13005c572fe8815" compoundref="TcpclBundleSink_8cpp" startline="188" endline="214">TcpclBundleSink::PopCbThreadFunc</referencedby>
+        <referencedby refid="classTcpclBundleSink_1aed82cb642287455d686fbab393971c35" compoundref="TcpclBundleSink_8cpp" startline="253" endline="263">TcpclBundleSink::TrySendOpportunisticBundleIfAvailable_FromIoServiceThread</referencedby>
+        <referencedby refid="classTcpclBundleSink_1a72136f2355d9655de332c6919f53455e" compoundref="TcpclBundleSink_8cpp" startline="140" endline="147">TcpclBundleSink::TryStartTcpReceive</referencedby>
+        <referencedby refid="classTcpclBundleSink_1afc02fe77f031f883319e8573d6cb3241" compoundref="TcpclBundleSink_8cpp" startline="91" endline="137">TcpclBundleSink::~TcpclBundleSink</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/bind/bind.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TcpclBundleSink_8h" kindref="compound">TcpclBundleSink.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Logger_8h" kindref="compound">Logger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/make_unique.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Uri_8h" kindref="compound">Uri.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ThreadNamer_8h" kindref="compound">ThreadNamer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499" kindref="member">hdtn::Logger::SubProcess</ref><sp/><ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref><sp/>=<sp/><ref refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a334c4a4c42fdb79d7ebc3e73b517e6f8" kindref="member">hdtn::Logger::SubProcess::none</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classTcpclBundleSink_1ac01104ab6f5078ce1433d20415cf503f" refkind="member"><highlight class="normal"><ref refid="classTcpclBundleSink_1a827612f3ba0dad1a79ab27d834fb83ff" kindref="member">TcpclBundleSink::TcpclBundleSink</ref>(</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>desiredKeepAliveIntervalSeconds,<sp/></highlight><highlight class="comment">//new</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;boost::asio::ip::tcp::socket&gt;<sp/>&amp;<sp/>tcpSocketPtr,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__async_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref><sp/>&amp;<sp/>tcpSocketIoServiceRef,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1aa24763c4dc8a7e8ea92b99a2d399d5a7" kindref="member">WholeBundleReadyCallback_t</ref><sp/>&amp;<sp/>wholeBundleReadyCallback,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ConnectionClosedCallback_t<sp/>connectionClosedCallback,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCircularBufferVectors,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>circularBufferBytesPerVector,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>myNodeId,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>maxBundleSizeBytes,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1aa57f7eb51c8829d865ccdefcefd5758a" kindref="member">NotifyReadyToDeleteCallback_t</ref><sp/>&amp;<sp/>notifyReadyToDeleteCallback,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1aa9bc9ec26963b49b3dc91f145d7871a0" kindref="member">OnContactHeaderCallback_t</ref><sp/>&amp;<sp/>onContactHeaderCallback,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>TryGetOpportunisticDataFunction_t<sp/>&amp;<sp/>tryGetOpportunisticDataFunction,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>NotifyOpportunisticDataAckedCallback_t<sp/>&amp;<sp/>notifyOpportunisticDataAckedCallback,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxUnacked,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>maxFragmentSize)<sp/>:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink" kindref="compound">TcpclV3BidirectionalLink</ref>(</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;TcpclV3BundleSink&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3,<sp/></highlight><highlight class="comment">//bundleSink<sp/>shutdown<sp/>message<sp/>shall<sp/>send<sp/>3<sp/>second<sp/>reconnection<sp/>delay<sp/>to<sp/>prevent<sp/>disabling<sp/>hdtn<sp/>outduct<sp/>reconnect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/></highlight><highlight class="comment">//bundleSink<sp/>shall<sp/>delete<sp/>socket<sp/>after<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>true,<sp/></highlight><highlight class="comment">//contactHeaderMustReply</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desiredKeepAliveIntervalSeconds,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;tcpSocketIoServiceRef,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxUnacked,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxBundleSizeBytes,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxFragmentSize,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>myNodeId,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//expectedRemoteEidUri<sp/>empty<sp/>=&gt;<sp/>don&apos;t<sp/>check<sp/>remote<sp/>connections<sp/>to<sp/>this<sp/>sink<sp/>(allow<sp/>all<sp/>ipn&apos;s)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>),</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>m_wholeBundleReadyCallback(wholeBundleReadyCallback),</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>m_notifyReadyToDeleteCallback(notifyReadyToDeleteCallback),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>m_onContactHeaderCallback(onContactHeaderCallback),</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>m_tcpSocketIoServiceRef(tcpSocketIoServiceRef),</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>M_NUM_CIRCULAR_BUFFER_VECTORS(numCircularBufferVectors),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>M_CIRCULAR_BUFFER_BYTES_PER_VECTOR(circularBufferBytesPerVector),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>m_circularIndexBuffer(M_NUM_CIRCULAR_BUFFER_VECTORS),</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>m_tcpReceiveBuffersCbVec(M_NUM_CIRCULAR_BUFFER_VECTORS),</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>m_tcpReceiveBytesTransferredCbVec(M_NUM_CIRCULAR_BUFFER_VECTORS),</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_stateTcpReadActive(false),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>m_printedCbTooSmallNotice(false),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>m_running(false),</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>m_classIsDeletedSharedPtr(std::make_shared&lt;std::atomic&lt;bool&gt;<sp/>&gt;(false))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" kindref="member">m_base_tcpSocketPtr</ref><sp/>=<sp/>tcpSocketPtr;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a91e4592f18087874868e0060751a946d" kindref="member">m_base_inductConnectionName</ref><sp/>=<sp/>tcpSocketPtr-&gt;remote_endpoint().address().to_string()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>+<sp/>boost::lexical_cast&lt;std::string&gt;(tcpSocketPtr-&gt;remote_endpoint().port());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a4fd7ecf8ca14cacd7878387a916387af" kindref="member">m_base_inductInputName</ref><sp/>=<sp/>std::string(</highlight><highlight class="stringliteral">&quot;*:&quot;</highlight><highlight class="normal">)<sp/>+<sp/>boost::lexical_cast&lt;std::string&gt;(tcpSocketPtr-&gt;local_endpoint().port());</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classTcpclBundleSink_1a63566b73bf9f9b64b271dd1d32be2f94" kindref="member">M_NUM_CIRCULAR_BUFFER_VECTORS</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a63bd72a3e622e415982535737496ca54" kindref="member">m_tcpReceiveBuffersCbVec</ref>[i].resize(<ref refid="classTcpclBundleSink_1ac3b2550933255e7e0805afce795e7e05" kindref="member">M_CIRCULAR_BUFFER_BYTES_PER_VECTOR</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" kindref="member">m_base_tcpAsyncSenderPtr</ref><sp/>=<sp/>boost::make_unique&lt;TcpAsyncSender&gt;(<ref refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" kindref="member">m_base_tcpSocketPtr</ref>,<sp/><ref refid="classTcpclBundleSink_1a9faf8c32fd18ad86ace430f7a3ae403f" kindref="member">m_tcpSocketIoServiceRef</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" kindref="member">m_base_tcpAsyncSenderPtr</ref>-&gt;SetOnFailedBundleVecSendCallback(<ref refid="classTcpclV3BidirectionalLink_1ac9396684ec1cf948d3e1efa87978dc85" kindref="member">m_base_onFailedBundleVecSendCallback</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" kindref="member">m_base_tcpAsyncSenderPtr</ref>-&gt;SetOnFailedBundleZmqSendCallback(<ref refid="classTcpclV3BidirectionalLink_1a4feec10b150500bb7a0a633fb2a5621d" kindref="member">m_base_onFailedBundleZmqSendCallback</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" kindref="member">m_base_tcpAsyncSenderPtr</ref>-&gt;SetUserAssignedUuid(<ref refid="classTcpclV3BidirectionalLink_1af63f1a01cbded7e807dbae4032efdbf9" kindref="member">m_base_userAssignedUuid</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a9a5753d9a7634938db2b0b0602a543ab" kindref="member">m_running</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ae8716178f96018f8244525ffe1a74d56" kindref="member">m_threadCbReaderPtr</ref><sp/>=<sp/>boost::make_unique&lt;boost::thread&gt;(</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::bind(&amp;<ref refid="classTcpclBundleSink_1a612970abb7e9f5e7d13005c572fe8815" kindref="member">TcpclBundleSink::PopCbThreadFunc</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">));<sp/></highlight><highlight class="comment">//create<sp/>and<sp/>start<sp/>the<sp/>worker<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" kindref="member">TryStartTcpReceive</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classTcpclBundleSink_1afc02fe77f031f883319e8573d6cb3241" refkind="member"><highlight class="normal"><ref refid="classTcpclBundleSink_1afc02fe77f031f883319e8573d6cb3241" kindref="member">TcpclBundleSink::~TcpclBundleSink</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//prevent<sp/>io_service<sp/>posts<sp/>from<sp/>circular<sp/>buffer<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a854d528df1de47e70363672b6f3750fc" kindref="member">m_classIsDeletedSharedPtr</ref>-&gt;store(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>std::memory_order_release);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//prevent<sp/>TcpclBundleSink<sp/>Opportunistic<sp/>sending<sp/>of<sp/>bundles<sp/>from<sp/>exiting<sp/>before<sp/>all<sp/>bundles<sp/>sent<sp/>and<sp/>acked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a75a5f1cafecbde940a9faae7c6c0706e" kindref="member">BaseClass_TryToWaitForAllBundlesToFinishSending</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classTcpclV3BidirectionalLink_1ae7e06abb791a64b64581bef0f810d19b" kindref="member">m_base_sinkIsSafeToDelete</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a36946841371073e318314e2c8b0cd8a9" kindref="member">BaseClass_DoTcpclShutdown</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<ref refid="classTcpclV3BidirectionalLink_1ae7e06abb791a64b64581bef0f810d19b" kindref="member">m_base_sinkIsSafeToDelete</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::this_thread::sleep(boost::posix_time::milliseconds(250));</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::thread_resource_error&amp;)<sp/>{}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::thread_interrupted&amp;)<sp/>{}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::condition_error&amp;)<sp/>{}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::lock_error&amp;)<sp/>{}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a39fcb044a15936030da50ff9c8d1178f" kindref="member">m_mutexCb</ref>.lock();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a9a5753d9a7634938db2b0b0602a543ab" kindref="member">m_running</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//thread<sp/>stopping<sp/>criteria</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a39fcb044a15936030da50ff9c8d1178f" kindref="member">m_mutexCb</ref>.unlock();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a9fa267968afce31f92d6ac5ad2fd7c7d" kindref="member">m_conditionVariableCb</ref>.notify_one();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classTcpclBundleSink_1ae8716178f96018f8244525ffe1a74d56" kindref="member">m_threadCbReaderPtr</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ae8716178f96018f8244525ffe1a74d56" kindref="member">m_threadCbReaderPtr</ref>-&gt;join();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ae8716178f96018f8244525ffe1a74d56" kindref="member">m_threadCbReaderPtr</ref>.reset();<sp/></highlight><highlight class="comment">//delete<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::thread_resource_error&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>stopping<sp/>TcpclBundleSink<sp/>threadCbReader&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//print<sp/>stats<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b" kindref="member">LOG_INFO</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TcpclV3<sp/>Induct<sp/>/<sp/>Bundle<sp/>Sink:&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalBundlesSent<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1a7882ce41d186514ff7c4446edc3f6349" kindref="member">totalBundlesSent</ref></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalBundlesSentAndAcked<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1adbcd8d3d5c8355856cfc7e7b8b61e593" kindref="member">totalBundlesSentAndAcked</ref></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalBundleBytesSent<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1a362f4fcd3437aca1db62bf4f23a6b730" kindref="member">totalBundleBytesSent</ref></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalBundleBytesSentAndAcked<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1abbe014532e7453e08c276d44cf481cab" kindref="member">totalBundleBytesSentAndAcked</ref></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalFragmentsSent<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1a6d5fd7382a530841111a90fcce1cf2a8" kindref="member">totalFragmentsSent</ref></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalFragmentsSentAndAcked<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1a7a47a9733bcb50c1e60dfd8a94bb7fc1" kindref="member">totalFragmentsSentAndAcked</ref></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalBundlesReceived<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1a613337c0e873f40f7183d60720a8f5db" kindref="member">totalBundlesReceived</ref></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalBundleBytesReceived<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1aeaa053de5c59f28e6c98526f2a691ecd" kindref="member">totalBundleBytesReceived</ref></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>totalFragmentsReceived<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" kindref="member">m_base_telem</ref>.<ref refid="structBidirectionalLinkAtomicTelem__t_1a3bce292d24c6d4b73bca345d047125f2" kindref="member">totalFragmentsReceived</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" kindref="member">m_base_tcpAsyncSenderPtr</ref>.reset();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="classTcpclBundleSink_1a72136f2355d9655de332c6919f53455e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" kindref="member">TcpclBundleSink::TryStartTcpReceive</ref>(std::shared_ptr&lt;std::atomic&lt;bool&gt;<sp/>&gt;&amp;<sp/>classIsDeletedSharedPtr)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(classIsDeletedSharedPtr<sp/>&amp;&amp;<sp/>(!classIsDeletedSharedPtr-&gt;load(std::memory_order_acquire)))<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" kindref="member">TryStartTcpReceive</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" kindref="member">LOG_DEBUG</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TcpclBundleSink::TryStartTcpReceive<sp/>preventing<sp/>use<sp/>after<sp/>free&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" kindref="member">TcpclBundleSink::TryStartTcpReceive</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((!<ref refid="classTcpclBundleSink_1ab2a63aebe4def1490ae1863e68c127bc" kindref="member">m_stateTcpReadActive</ref>)<sp/>&amp;&amp;<sp/>(<ref refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" kindref="member">m_base_tcpSocketPtr</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>writeIndex<sp/>=<sp/><ref refid="classTcpclBundleSink_1a28c2784faf3044bf06ba54ccf1e141c1" kindref="member">m_circularIndexBuffer</ref>.<ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" kindref="member">GetIndexForWrite</ref>();<sp/></highlight><highlight class="comment">//store<sp/>the<sp/>volatile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(writeIndex<sp/>==<sp/><ref refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" kindref="member">CIRCULAR_INDEX_BUFFER_FULL</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classTcpclBundleSink_1ae4da00b4b782c1f683dc7538b8f8c6e4" kindref="member">m_printedCbTooSmallNotice</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ae4da00b4b782c1f683dc7538b8f8c6e4" kindref="member">m_printedCbTooSmallNotice</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" kindref="member">LOG_WARNING</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TcpclBundleSink::StartTcpReceive():<sp/>buffers<sp/>full..<sp/>you<sp/>might<sp/>want<sp/>to<sp/>increase<sp/>the<sp/>circular<sp/>buffer<sp/>size<sp/>for<sp/>better<sp/>performance!&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ab2a63aebe4def1490ae1863e68c127bc" kindref="member">m_stateTcpReadActive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" kindref="member">m_base_tcpSocketPtr</ref>-&gt;async_read_some(</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::buffer(<ref refid="classTcpclBundleSink_1a63bd72a3e622e415982535737496ca54" kindref="member">m_tcpReceiveBuffersCbVec</ref>[writeIndex]),</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::bind(&amp;<ref refid="classTcpclBundleSink_1ae92d7940fe3706668c6b081fb9df2be5" kindref="member">TcpclBundleSink::HandleTcpReceiveSome</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::placeholders::error,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::placeholders::bytes_transferred,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writeIndex));</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169" refid="classTcpclBundleSink_1ae92d7940fe3706668c6b081fb9df2be5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1ae92d7940fe3706668c6b081fb9df2be5" kindref="member">TcpclBundleSink::HandleTcpReceiveSome</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code<sp/>&amp;<sp/>error,<sp/>std::size_t<sp/>bytesTransferred,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>writeIndex)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!error)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a9c5cf9aa308cd6c9c01bf9101555c863" kindref="member">m_tcpReceiveBytesTransferredCbVec</ref>[writeIndex]<sp/>=<sp/>bytesTransferred;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a39fcb044a15936030da50ff9c8d1178f" kindref="member">m_mutexCb</ref>.lock();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a28c2784faf3044bf06ba54ccf1e141c1" kindref="member">m_circularIndexBuffer</ref>.<ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" kindref="member">CommitWrite</ref>();<sp/></highlight><highlight class="comment">//write<sp/>complete<sp/>at<sp/>this<sp/>point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a39fcb044a15936030da50ff9c8d1178f" kindref="member">m_mutexCb</ref>.unlock();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a9fa267968afce31f92d6ac5ad2fd7c7d" kindref="member">m_conditionVariableCb</ref>.notify_one();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ab2a63aebe4def1490ae1863e68c127bc" kindref="member">m_stateTcpReadActive</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//must<sp/>be<sp/>false<sp/>before<sp/>calling<sp/>TryStartTcpReceive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" kindref="member">TryStartTcpReceive</ref>();<sp/></highlight><highlight class="comment">//restart<sp/>operation<sp/>only<sp/>if<sp/>there<sp/>was<sp/>no<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error<sp/>==<sp/>boost::asio::error::eof)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b" kindref="member">LOG_INFO</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TcpclBundleSink<sp/>Tcp<sp/>connection<sp/>closed<sp/>cleanly<sp/>by<sp/>peer&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a36946841371073e318314e2c8b0cd8a9" kindref="member">BaseClass_DoTcpclShutdown</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error<sp/>!=<sp/>boost::asio::error::operation_aborted)<sp/>{<sp/></highlight><highlight class="comment">//will<sp/>always<sp/>be<sp/>operation_aborted<sp/>when<sp/>thread<sp/>is<sp/>terminating</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TcpclBundleSink::HandleTcpReceiveSome:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>error.message();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="classTcpclBundleSink_1a612970abb7e9f5e7d13005c572fe8815" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a612970abb7e9f5e7d13005c572fe8815" kindref="member">TcpclBundleSink::PopCbThreadFunc</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" kindref="member">ThreadNamer::SetThisThreadName</ref>(</highlight><highlight class="stringliteral">&quot;TcpclBundleSinkCbReader&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{<sp/></highlight><highlight class="comment">//keep<sp/>thread<sp/>alive<sp/>if<sp/>running<sp/>or<sp/>cb<sp/>not<sp/>empty,<sp/>i.e.<sp/>&quot;while<sp/>(m_running<sp/>||<sp/>(m_circularIndexBuffer.GetIndexForRead()<sp/>!=<sp/>CIRCULAR_INDEX_BUFFER_EMPTY))&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>consumeIndex<sp/>=<sp/><ref refid="classTcpclBundleSink_1a28c2784faf3044bf06ba54ccf1e141c1" kindref="member">m_circularIndexBuffer</ref>.<ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" kindref="member">GetIndexForRead</ref>();<sp/></highlight><highlight class="comment">//store<sp/>the<sp/>volatile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::post(<ref refid="classTcpclBundleSink_1a9faf8c32fd18ad86ace430f7a3ae403f" kindref="member">m_tcpSocketIoServiceRef</ref>,<sp/>boost::bind(&amp;<ref refid="classTcpclBundleSink_1a07da5dfa572a82228254fe57da0c3047" kindref="member">TcpclBundleSink::TryStartTcpReceive</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="classTcpclBundleSink_1a854d528df1de47e70363672b6f3750fc" kindref="member">m_classIsDeletedSharedPtr</ref>));<sp/></highlight><highlight class="comment">//keep<sp/>this<sp/>a<sp/>thread<sp/>safe<sp/>operation<sp/>by<sp/>letting<sp/>ioService<sp/>thread<sp/>run<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(consumeIndex<sp/>==<sp/><ref refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" kindref="member">CIRCULAR_INDEX_BUFFER_EMPTY</ref>)<sp/>{<sp/></highlight><highlight class="comment">//if<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//try<sp/>again,<sp/>but<sp/>with<sp/>the<sp/>mutex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::mutex::scoped_lock<sp/>lock(<ref refid="classTcpclBundleSink_1a39fcb044a15936030da50ff9c8d1178f" kindref="member">m_mutexCb</ref>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>consumeIndex<sp/>=<sp/><ref refid="classTcpclBundleSink_1a28c2784faf3044bf06ba54ccf1e141c1" kindref="member">m_circularIndexBuffer</ref>.<ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" kindref="member">GetIndexForRead</ref>();<sp/></highlight><highlight class="comment">//store<sp/>the<sp/>volatile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(consumeIndex<sp/>==<sp/><ref refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" kindref="member">CIRCULAR_INDEX_BUFFER_EMPTY</ref>)<sp/>{<sp/></highlight><highlight class="comment">//if<sp/>empty<sp/>again<sp/>(lock<sp/>mutex<sp/>(above)<sp/>before<sp/>checking<sp/>condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classTcpclBundleSink_1a9a5753d9a7634938db2b0b0602a543ab" kindref="member">m_running</ref>.load(std::memory_order_acquire))<sp/>{<sp/></highlight><highlight class="comment">//m_running<sp/>is<sp/>mutex<sp/>protected,<sp/>if<sp/>it<sp/>stopped<sp/>running,<sp/>exit<sp/>the<sp/>thread<sp/>(lock<sp/>mutex<sp/>(above)<sp/>before<sp/>checking<sp/>condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//thread<sp/>stopping<sp/>criteria<sp/>(empty<sp/>and<sp/>not<sp/>running)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a9fa267968afce31f92d6ac5ad2fd7c7d" kindref="member">m_conditionVariableCb</ref>.wait(lock);<sp/></highlight><highlight class="comment">//<sp/>call<sp/>lock.unlock()<sp/>and<sp/>blocks<sp/>the<sp/>current<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//thread<sp/>is<sp/>now<sp/>unblocked,<sp/>and<sp/>the<sp/>lock<sp/>is<sp/>reacquired<sp/>by<sp/>invoking<sp/>lock.lock()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a7b33bfababc84930663a0b5e5051368f" kindref="member">m_base_dataReceivedServedAsKeepaliveReceived</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a2b17a85a77fc13c14776d07666835eb6" kindref="member">m_base_tcpclV3RxStateMachine</ref>.<ref refid="classTcpcl_1a508bf09573c62c1f7c61621dbcadbc0e" kindref="member">HandleReceivedChars</ref>(<ref refid="classTcpclBundleSink_1a63bd72a3e622e415982535737496ca54" kindref="member">m_tcpReceiveBuffersCbVec</ref>[consumeIndex].data(),<sp/><ref refid="classTcpclBundleSink_1a9c5cf9aa308cd6c9c01bf9101555c863" kindref="member">m_tcpReceiveBytesTransferredCbVec</ref>[consumeIndex]);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a28c2784faf3044bf06ba54ccf1e141c1" kindref="member">m_circularIndexBuffer</ref>.<ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" kindref="member">CommitRead</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b" kindref="member">LOG_INFO</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TcpclBundleSink<sp/>Circular<sp/>buffer<sp/>reader<sp/>thread<sp/>exiting&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="classTcpclBundleSink_1ad43e6d5559211e1851c4c9aa6cc22619" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1ad43e6d5559211e1851c4c9aa6cc22619" kindref="member">TcpclBundleSink::Virtual_OnTcpSendSuccessful_CalledFromIoServiceThread</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classTcpclBundleSink_1a62f4b3a37b35fc6c8f948c4c0f5cd787" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a62f4b3a37b35fc6c8f948c4c0f5cd787" kindref="member">TcpclBundleSink::Virtual_OnContactHeaderCompletedSuccessfully</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classTcpclBundleSink_1a997d2951396e4704e31101cc4b2a49e2" kindref="member">m_onContactHeaderCallback</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a997d2951396e4704e31101cc4b2a49e2" kindref="member">m_onContactHeaderCallback</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="classTcpclBundleSink_1aa4ec180466eeb119e3ad6438f347c1f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1aa4ec180466eeb119e3ad6438f347c1f5" kindref="member">TcpclBundleSink::Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classTcpclBundleSink_1ad2796f43effb1e1371d993889b5acdaa" kindref="member">m_notifyReadyToDeleteCallback</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ad2796f43effb1e1371d993889b5acdaa" kindref="member">m_notifyReadyToDeleteCallback</ref>();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="classTcpclBundleSink_1acc8a86ab28f18190c5dfbc28972272ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1acc8a86ab28f18190c5dfbc28972272ba" kindref="member">TcpclBundleSink::Virtual_OnSuccessfulWholeBundleAcknowledged</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classTcpclBundleSink_1ab142fb145373d14746567e1445f06957" kindref="member">m_notifyOpportunisticDataAckedCallback</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ab142fb145373d14746567e1445f06957" kindref="member">m_notifyOpportunisticDataAckedCallback</ref>();</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="classTcpclBundleSink_1a796fd783c3989efbca36dfdd201cadfb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a796fd783c3989efbca36dfdd201cadfb" kindref="member">TcpclBundleSink::Virtual_WholeBundleReady</ref>(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref><sp/>&amp;<sp/>wholeBundleVec)<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a8b218c4797696b24e8bac51faeeae713" kindref="member">m_wholeBundleReadyCallback</ref>(wholeBundleVec);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="classTcpclBundleSink_1a39ec32dda24696811cd6deff7ada3e26" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a39ec32dda24696811cd6deff7ada3e26" kindref="member">TcpclBundleSink::ReadyToBeDeleted</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classTcpclV3BidirectionalLink_1ae7e06abb791a64b64581bef0f810d19b" kindref="member">m_base_sinkIsSafeToDelete</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="classTcpclBundleSink_1a07021f89c5d2c9fb17c6a16f6135c517" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="classTcpclBundleSink_1a07021f89c5d2c9fb17c6a16f6135c517" kindref="member">TcpclBundleSink::GetRemoteNodeId</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classTcpclV3BidirectionalLink_1a6fea5046f845596705779b1460d6e1a7" kindref="member">m_base_tcpclRemoteNodeId</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="classTcpclBundleSink_1aed82cb642287455d686fbab393971c35" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1aed82cb642287455d686fbab393971c35" kindref="member">TcpclBundleSink::TrySendOpportunisticBundleIfAvailable_FromIoServiceThread</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classTcpclV3BidirectionalLink_1ae4e574b1ac0928919bd6d594b0003b63" kindref="member">m_base_shutdownCalled</ref><sp/>||<sp/><ref refid="classTcpclV3BidirectionalLink_1ae7e06abb791a64b64581bef0f810d19b" kindref="member">m_base_sinkIsSafeToDelete</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" kindref="member">LOG_ERROR</ref>(<ref refid="TcpclBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" kindref="member">subprocess</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;opportunistic<sp/>link<sp/>unavailable&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;std::unique_ptr&lt;zmq::message_t&gt;,<sp/><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref>&gt;<sp/>bundleDataPair;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>totalBundlesUnacked<sp/>=<sp/><ref refid="classBidirectionalLink_1a0ff771211a65c4b3c2b4fc4776147c12" kindref="member">BaseClass_GetTotalBundlesUnacked</ref>();</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((totalBundlesUnacked<sp/>&lt;<sp/><ref refid="classTcpclV3BidirectionalLink_1a2870489ab3bd1d3d3db273693a850125" kindref="member">M_BASE_MAX_UNACKED_BUNDLES_IN_PIPELINE</ref>)<sp/>&amp;&amp;<sp/><ref refid="classTcpclBundleSink_1a0dab7fe2db02b3f33a303b224e06198c" kindref="member">m_tryGetOpportunisticDataFunction</ref><sp/>&amp;&amp;<sp/><ref refid="classTcpclBundleSink_1a0dab7fe2db02b3f33a303b224e06198c" kindref="member">m_tryGetOpportunisticDataFunction</ref>(bundleDataPair))<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTcpclV3BidirectionalLink_1a696af74cdff78dda7dc95553fbf58155" kindref="member">BaseClass_Forward</ref>(bundleDataPair.first,<sp/>bundleDataPair.second,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(bundleDataPair.first),<sp/>std::vector&lt;uint8_t&gt;());</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265" refid="classTcpclBundleSink_1a13e1d40aab765fd5014716c82f58cc0e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a13e1d40aab765fd5014716c82f58cc0e" kindref="member">TcpclBundleSink::SetTryGetOpportunisticDataFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a237babb7723e3f6f5679789cd426398f" kindref="member">TryGetOpportunisticDataFunction_t</ref><sp/>&amp;<sp/>tryGetOpportunisticDataFunction)<sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1a0dab7fe2db02b3f33a303b224e06198c" kindref="member">m_tryGetOpportunisticDataFunction</ref><sp/>=<sp/>tryGetOpportunisticDataFunction;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="268" refid="classTcpclBundleSink_1ad9ed3a767c3761290b60bb7034a9633c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1ad9ed3a767c3761290b60bb7034a9633c" kindref="member">TcpclBundleSink::SetNotifyOpportunisticDataAckedCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classTcpclBundleSink_1a8c3a479bfdc478236c4f4fe3752c740b" kindref="member">NotifyOpportunisticDataAckedCallback_t</ref><sp/>&amp;<sp/>notifyOpportunisticDataAckedCallback)<sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTcpclBundleSink_1ab142fb145373d14746567e1445f06957" kindref="member">m_notifyOpportunisticDataAckedCallback</ref><sp/>=<sp/>notifyOpportunisticDataAckedCallback;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/tcpcl/src/TcpclBundleSink.cpp"/>
+  </compounddef>
+</doxygen>

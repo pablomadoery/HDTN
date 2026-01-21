@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="MemoryManagerTree_8h" kind="file" language="C++">
+    <compoundname>MemoryManagerTree.h</compoundname>
+    <includes local="no">boost/integer.hpp</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="BundleStorageConfig_8h" local="yes">BundleStorageConfig.h</includes>
+    <includes local="yes">storage_lib_export.h</includes>
+    <includedby refid="MemoryManagerTree_8cpp" local="yes">module/storage/deprecated/MemoryManagerTree.cpp</includedby>
+    <includedby refid="MemoryManagerTreeTests_8cpp" local="yes">module/storage/unit_tests/deprecated/MemoryManagerTreeTests.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="5">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>module/storage/deprecated/MemoryManagerTree.h</label>
+        <link refid="MemoryManagerTree_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>BundleStorageConfig.h</label>
+        <link refid="BundleStorageConfig_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>storage_lib_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>module/storage/unit_tests/deprecated/MemoryManagerTreeTests.cpp</label>
+        <link refid="MemoryManagerTreeTests_8cpp"/>
+      </node>
+      <node id="1">
+        <label>module/storage/deprecated/MemoryManagerTree.h</label>
+        <link refid="MemoryManagerTree_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>module/storage/deprecated/MemoryManagerTree.cpp</label>
+        <link refid="MemoryManagerTree_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structMemoryManagerLeafNode" prot="public">MemoryManagerLeafNode</innerclass>
+    <innerclass refid="structMemoryManagerInnerNode" prot="public">MemoryManagerInnerNode</innerclass>
+    <innerclass refid="classMemoryManagerTree" prot="public">MemoryManagerTree</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_MEMORY_MANAGER_TREE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_MEMORY_MANAGER_TREE_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/integer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BundleStorageConfig_8h" kindref="compound">BundleStorageConfig.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;storage_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structMemoryManagerLeafNode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>{</highlight></codeline>
+<codeline lineno="24" refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structMemoryManagerInnerNode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>{</highlight></codeline>
+<codeline lineno="28" refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref>;</highlight></codeline>
+<codeline lineno="29" refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;<sp/></highlight><highlight class="comment">//array<sp/>of<sp/>64<sp/>child<sp/>nodes<sp/>or<sp/>leafnodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classMemoryManagerTree" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMemoryManagerTree" kindref="compound">MemoryManagerTree</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" kindref="member">SetupTree</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" kindref="member">FreeTree</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_EXPORT<sp/>boost::uint32_t<sp/><ref refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" kindref="member">GetAndSetFirstFreeSegmentId</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" kindref="member">FreeSegmentId</ref>(boost::uint32_t<sp/>segmentId);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" kindref="member">SetupTree</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" kindref="member">FreeTree</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" kindref="member">GetAndSetFirstFreeSegmentId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node,<sp/>boost::uint32_t<sp/>*<sp/>segmentId);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>STORAGE_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" kindref="member">FreeSegmentId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node,<sp/>boost::uint32_t<sp/>segmentId,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*success);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/><ref refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" kindref="member">m_rootNode</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_MEMORY_MANAGER_TREE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="module/storage/deprecated/MemoryManagerTree.h"/>
+  </compounddef>
+</doxygen>

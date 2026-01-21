@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpBundleSink" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>LtpBundleSink</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <derivedcompoundref refid="classLtpOverEncapLocalStreamBundleSink" prot="public" virt="non-virtual">LtpOverEncapLocalStreamBundleSink</derivedcompoundref>
+    <derivedcompoundref refid="classLtpOverIpcBundleSink" prot="public" virt="non-virtual">LtpOverIpcBundleSink</derivedcompoundref>
+    <derivedcompoundref refid="classLtpOverUdpBundleSink" prot="public" virt="non-virtual">LtpOverUdpBundleSink</derivedcompoundref>
+    <includes refid="LtpBundleSink_8h" local="no">LtpBundleSink.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classLtpBundleSink_1a3092cb3fd6167cad9510cf28ee985327" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;wholeBundleVec)&gt;</type>
+        <definition>typedef boost::function&lt;void(padded_vector_uint8_t &amp; wholeBundleVec)&gt; LtpBundleSink::LtpWholeBundleReadyCallback_t</definition>
+        <argsstring></argsstring>
+        <name>LtpWholeBundleReadyCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="39" column="29" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpBundleSink_1a4234c94a23dee2c8a89f2fabf0347c1a" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classLtpBundleSink_1a3092cb3fd6167cad9510cf28ee985327" kindref="member">LtpWholeBundleReadyCallback_t</ref></type>
+        <definition>const LtpWholeBundleReadyCallback_t LtpBundleSink::m_ltpWholeBundleReadyCallback</definition>
+        <argsstring></argsstring>
+        <name>m_ltpWholeBundleReadyCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="56" column="41" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSink_1a6dffb13323e8685626f6a25f7c50c9d7" compoundref="LtpBundleSink_8cpp" startline="53" endline="66">RedPartReceptionCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classLtpBundleSink_1a1819440bfadbf086a9de5121a3d2bc9f" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref></type>
+        <definition>const LtpEngineConfig LtpBundleSink::m_ltpRxCfg</definition>
+        <argsstring></argsstring>
+        <name>m_ltpRxCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="59" column="27" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classLtpOverEncapLocalStreamBundleSink_1afef5d22499cc9fbb1e2b68126372b5bf" compoundref="LtpOverEncapLocalStreamBundleSink_8cpp" startline="29" endline="44">LtpOverEncapLocalStreamBundleSink::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverIpcBundleSink_1a2bb0cbe18afeade3cdc244f9b6b8d5b0" compoundref="LtpOverIpcBundleSink_8cpp" startline="29" endline="51">LtpOverIpcBundleSink::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSink_1a6cfa8a351053d2ebc9722d5a0dcd01d2" compoundref="LtpOverUdpBundleSink_8cpp" startline="30" endline="48">LtpOverUdpBundleSink::SetLtpEnginePtr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSink_1a5d1dbb349dca3419d7ece60d43209dd3" prot="protected" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpBundleSink::M_EXPECTED_SESSION_ORIGINATOR_ENGINE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_EXPECTED_SESSION_ORIGINATOR_ENGINE_ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="60" column="20" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classLtpOverUdpBundleSink_1a9f5a9cc170a4f9173cb6c63841c0caae" compoundref="LtpOverUdpBundleSink_8cpp" startline="57" endline="71">LtpOverUdpBundleSink::~LtpOverUdpBundleSink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSink_1aa28f114971d118a8af8bb18cb6ad3305" prot="protected" static="no" mutable="no">
+        <type><ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> *</type>
+        <definition>LtpEngine* LtpBundleSink::m_ltpEnginePtr</definition>
+        <argsstring></argsstring>
+        <name>m_ltpEnginePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="61" column="16" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSink_1a1ae6f0f7ed5c807b3adb8ccf28f38246" compoundref="LtpBundleSink_8cpp" startline="37" endline="47">Init</referencedby>
+        <referencedby refid="classLtpOverEncapLocalStreamBundleSink_1afef5d22499cc9fbb1e2b68126372b5bf" compoundref="LtpOverEncapLocalStreamBundleSink_8cpp" startline="29" endline="44">LtpOverEncapLocalStreamBundleSink::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverIpcBundleSink_1a2bb0cbe18afeade3cdc244f9b6b8d5b0" compoundref="LtpOverIpcBundleSink_8cpp" startline="29" endline="51">LtpOverIpcBundleSink::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSink_1a6cfa8a351053d2ebc9722d5a0dcd01d2" compoundref="LtpOverUdpBundleSink_8cpp" startline="30" endline="48">LtpOverUdpBundleSink::SetLtpEnginePtr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSink_1a84f0ca40b52e4e9ced93c489b054fc58" prot="protected" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string LtpBundleSink::M_CONNECTION_NAME</definition>
+        <argsstring></argsstring>
+        <name>M_CONNECTION_NAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="64" column="23" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">GetTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSink_1a041c2fbb2bf61100c1c4c9a0c291a8fd" prot="protected" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string LtpBundleSink::M_INPUT_NAME</definition>
+        <argsstring></argsstring>
+        <name>M_INPUT_NAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="65" column="23" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">GetTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSink_1a25a6ffe65f17cba4924cf8c5dae22096" prot="protected" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpBundleSink::m_totalBundlesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="66" column="17" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSink_1a6dffb13323e8685626f6a25f7c50c9d7" compoundref="LtpBundleSink_8cpp" startline="53" endline="66">RedPartReceptionCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpBundleSink_1acbf2e3b7830e364deafca71ae239bbea" prot="protected" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpBundleSink::m_totalBundleBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="67" column="17" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">GetTelemetry</referencedby>
+        <referencedby refid="classLtpBundleSink_1a6dffb13323e8685626f6a25f7c50c9d7" compoundref="LtpBundleSink_8cpp" startline="53" endline="66">RedPartReceptionCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpBundleSink_1a01005503842ae28468b784166bd7e4f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpBundleSink::LtpBundleSink</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpBundleSink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="37" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1a6dffb13323e8685626f6a25f7c50c9d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpBundleSink::RedPartReceptionCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;sessionId, padded_vector_uint8_t &amp;movableClientServiceDataVec, uint64_t lengthOfRedPart, uint64_t clientServiceId, bool isEndOfBlock)</argsstring>
+        <name>RedPartReceptionCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>movableClientServiceDataVec</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>lengthOfRedPart</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>clientServiceId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isEndOfBlock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="52" column="28" bodyfile="common/ltp/src/LtpBundleSink.cpp" bodystart="53" bodyend="66"/>
+        <references refid="TestLtpEngine_8cpp_1abe960eb9e1c9e3c427fb209d36ec66f8" compoundref="TestLtpEngine_8cpp" startline="488">clientServiceId</references>
+        <references refid="classLtpBundleSink_1a4234c94a23dee2c8a89f2fabf0347c1a" compoundref="LtpBundleSink_8h" startline="56">m_ltpWholeBundleReadyCallback</references>
+        <references refid="classLtpBundleSink_1acbf2e3b7830e364deafca71ae239bbea" compoundref="LtpBundleSink_8h" startline="67">m_totalBundleBytesReceived</references>
+        <references refid="classLtpBundleSink_1a25a6ffe65f17cba4924cf8c5dae22096" compoundref="LtpBundleSink_8h" startline="66">m_totalBundlesReceived</references>
+        <referencedby refid="classLtpBundleSink_1a1ae6f0f7ed5c807b3adb8ccf28f38246" compoundref="LtpBundleSink_8cpp" startline="37" endline="47">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1a6fe13d14d7a4acc1833ce435ad922f56" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpBundleSink::ReceptionSessionCancelledCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;sessionId, CANCEL_SEGMENT_REASON_CODES reasonCode)</argsstring>
+        <name>ReceptionSessionCancelledCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type><ref refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743c" kindref="member">CANCEL_SEGMENT_REASON_CODES</ref></type>
+          <declname>reasonCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="54" column="28" bodyfile="common/ltp/src/LtpBundleSink.cpp" bodystart="69" bodyend="71"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="LtpBundleSink_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpBundleSink_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classLtpBundleSink_1a1ae6f0f7ed5c807b3adb8ccf28f38246" compoundref="LtpBundleSink_8cpp" startline="37" endline="47">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpBundleSink_1ac89ce918451a79a2bf9cac9a4dd20415" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpBundleSink::LtpBundleSink</definition>
+        <argsstring>(const LtpWholeBundleReadyCallback_t &amp;ltpWholeBundleReadyCallback, const LtpEngineConfig &amp;ltpRxCfg)</argsstring>
+        <name>LtpBundleSink</name>
+        <param>
+          <type>const <ref refid="classLtpBundleSink_1a3092cb3fd6167cad9510cf28ee985327" kindref="member">LtpWholeBundleReadyCallback_t</ref> &amp;</type>
+          <declname>ltpWholeBundleReadyCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref> &amp;</type>
+          <declname>ltpRxCfg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="41" column="20" bodyfile="common/ltp/src/LtpBundleSink.cpp" bodystart="24" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1ad4408f721488d7ebd90276b8799cfe38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpBundleSink::~LtpBundleSink</definition>
+        <argsstring>()</argsstring>
+        <name>~LtpBundleSink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="42" column="28" bodyfile="common/ltp/src/LtpBundleSink.cpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1a1ae6f0f7ed5c807b3adb8ccf28f38246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpBundleSink::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="43" column="25" bodyfile="common/ltp/src/LtpBundleSink.cpp" bodystart="37" bodyend="47"/>
+        <references refid="classLtpBundleSink_1aa28f114971d118a8af8bb18cb6ad3305" compoundref="LtpBundleSink_8h" startline="61">m_ltpEnginePtr</references>
+        <references refid="classLtpBundleSink_1a6fe13d14d7a4acc1833ce435ad922f56" compoundref="LtpBundleSink_8cpp" startline="69" endline="71">ReceptionSessionCancelledCallback</references>
+        <references refid="classLtpBundleSink_1a6dffb13323e8685626f6a25f7c50c9d7" compoundref="LtpBundleSink_8cpp" startline="53" endline="66">RedPartReceptionCallback</references>
+        <references refid="classLtpBundleSink_1a5af69082159d57b0f21bf48a781553fd">SetLtpEnginePtr</references>
+        <references refid="classLtpEngine_1a773bd49c8ec82f41967225938184eac4" compoundref="LtpEngine_8cpp" startline="1480" endline="1482">LtpEngine::SetReceptionSessionCancelledCallback</references>
+        <references refid="classLtpEngine_1a31312b9da9693a7a76438219626f38b9" compoundref="LtpEngine_8cpp" startline="1474" endline="1476">LtpEngine::SetRedPartReceptionCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpBundleSink::GetTelemetry</definition>
+        <argsstring>(LtpInductConnectionTelemetry_t &amp;telem) const</argsstring>
+        <name>GetTelemetry</name>
+        <param>
+          <type><ref refid="structLtpInductConnectionTelemetry__t" kindref="compound">LtpInductConnectionTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="44" column="25" bodyfile="common/ltp/src/LtpBundleSink.cpp" bodystart="73" bodyend="100"/>
+        <references refid="classLtpBundleSink_1a89b30811970dcc70d9d26c154e207f44">GetTransportLayerSpecificTelem</references>
+        <references refid="classLtpBundleSink_1a84f0ca40b52e4e9ced93c489b054fc58" compoundref="LtpBundleSink_8h" startline="64">M_CONNECTION_NAME</references>
+        <references refid="structInductConnectionTelemetry__t_1a918c4d384808ca15c0b500ea9e8c4f18" compoundref="TelemetryDefinitions_8h" startline="144">InductConnectionTelemetry_t::m_connectionName</references>
+        <references refid="classLtpEngine_1afaec1d6368c078f8ab48b70a866163be" compoundref="LtpEngine_8h" startline="1180">LtpEngine::m_countAsyncSendsLimitedByRate</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1aca485611158a9afa9c7a05a6aa11b71d" compoundref="TelemetryDefinitions_8h" startline="285">LtpInductConnectionTelemetry_t::m_countTxUdpPacketsLimitedByRate</references>
+        <references refid="classLtpBundleSink_1a041c2fbb2bf61100c1c4c9a0c291a8fd" compoundref="LtpBundleSink_8h" startline="65">M_INPUT_NAME</references>
+        <references refid="structInductConnectionTelemetry__t_1abada9608295c2708ce7eff85d37a6b44" compoundref="TelemetryDefinitions_8h" startline="145">InductConnectionTelemetry_t::m_inputName</references>
+        <references refid="classLtpBundleSink_1aa28f114971d118a8af8bb18cb6ad3305" compoundref="LtpBundleSink_8h" startline="61">m_ltpEnginePtr</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1adc5c68628f291f61d1f5940d103316aa" compoundref="TelemetryDefinitions_8h" startline="271">LtpInductConnectionTelemetry_t::m_numDelayedFullyClaimedPrimaryReportSegmentsSent</references>
+        <references refid="classLtpEngine_1a118775a99920325d3610df81635fcfce" compoundref="LtpEngine_8h" startline="1237">LtpEngine::m_numDelayedFullyClaimedPrimaryReportSegmentsSentRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a74f7d9a928a01f40f6a580e66d9afd3c" compoundref="TelemetryDefinitions_8h" startline="272">LtpInductConnectionTelemetry_t::m_numDelayedFullyClaimedSecondaryReportSegmentsSent</references>
+        <references refid="classLtpEngine_1a07cc9142b412ee2276a6b3ce13c46339" compoundref="LtpEngine_8h" startline="1239">LtpEngine::m_numDelayedFullyClaimedSecondaryReportSegmentsSentRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a0e0f1746598b34bf69f73773c04528e5" compoundref="TelemetryDefinitions_8h" startline="273">LtpInductConnectionTelemetry_t::m_numDelayedPartiallyClaimedPrimaryReportSegmentsSent</references>
+        <references refid="classLtpEngine_1a7865d752880e0c9ccca8698e46e42336" compoundref="LtpEngine_8h" startline="1241">LtpEngine::m_numDelayedPartiallyClaimedPrimaryReportSegmentsSentRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a5b9ba8ef854d1bc209936d90a1171adb" compoundref="TelemetryDefinitions_8h" startline="274">LtpInductConnectionTelemetry_t::m_numDelayedPartiallyClaimedSecondaryReportSegmentsSent</references>
+        <references refid="classLtpEngine_1ac44e7895529da02c5e7945efc12b7f45" compoundref="LtpEngine_8h" startline="1243">LtpEngine::m_numDelayedPartiallyClaimedSecondaryReportSegmentsSentRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1adb347964628b11e5eebc82365ef2e280" compoundref="TelemetryDefinitions_8h" startline="270">LtpInductConnectionTelemetry_t::m_numGapsFilledByOutOfOrderDataSegments</references>
+        <references refid="classLtpEngine_1aa96c52cebe678593e90904420bad57d1" compoundref="LtpEngine_8h" startline="1235">LtpEngine::m_numGapsFilledByOutOfOrderDataSegmentsRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a21d25867d814c2e28d68a6a745a9ed75" compoundref="TelemetryDefinitions_8h" startline="269">LtpInductConnectionTelemetry_t::m_numReportSegmentsCreatedViaSplit</references>
+        <references refid="classLtpEngine_1a2c366ddcce89f58bddd5117b789abc40" compoundref="LtpEngine_8h" startline="1233">LtpEngine::m_numReportSegmentsCreatedViaSplitRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1ad8eeed386504ea14237c9d31dc2f9024" compoundref="TelemetryDefinitions_8h" startline="268">LtpInductConnectionTelemetry_t::m_numReportSegmentsTooLargeAndNeedingSplit</references>
+        <references refid="classLtpEngine_1a9a5dd020869dae6b25ad0a71bc65c28e" compoundref="LtpEngine_8h" startline="1231">LtpEngine::m_numReportSegmentsTooLargeAndNeedingSplitRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a9f1d94dd9da21036899eee48207a174c" compoundref="TelemetryDefinitions_8h" startline="267">LtpInductConnectionTelemetry_t::m_numReportSegmentsUnableToBeIssued</references>
+        <references refid="classLtpEngine_1a3198a5091e8c461058b7e810b5789e32" compoundref="LtpEngine_8h" startline="1229">LtpEngine::m_numReportSegmentsUnableToBeIssuedRef</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a4a42b87509bcca5796d707b2d8b1548b" compoundref="TelemetryDefinitions_8h" startline="266">LtpInductConnectionTelemetry_t::m_numReportSegmentTimerExpiredCallbacks</references>
+        <references refid="classLtpEngine_1a95ecb54427055af145d6aa11aecc5fb4" compoundref="LtpEngine_8h" startline="1227">LtpEngine::m_numReportSegmentTimerExpiredCallbacksRef</references>
+        <references refid="classLtpEngine_1af8e0b9091c58b682193f8d82f3a32306" compoundref="LtpEngine_8h" startline="1212">LtpEngine::m_numRxSessionsCancelledBySender</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a18a77fd850d88b0cb1db28101fcfd737" compoundref="TelemetryDefinitions_8h" startline="279">LtpInductConnectionTelemetry_t::m_numRxSessionsCancelledBySender</references>
+        <references refid="classLtpEngine_1a89e22b17ea67c8745c91a0db340e85c3" compoundref="LtpEngine_8h" startline="1214">LtpEngine::m_numStagnantRxSessionsDeleted</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1ab3e9e8d74f8c5746150b9581de8bae4f" compoundref="TelemetryDefinitions_8h" startline="280">LtpInductConnectionTelemetry_t::m_numStagnantRxSessionsDeleted</references>
+        <references refid="classLtpBundleSink_1acbf2e3b7830e364deafca71ae239bbea" compoundref="LtpBundleSink_8h" startline="67">m_totalBundleBytesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1ad4c6971bc09c9c2f9fa0bd2a623ff1f6" compoundref="TelemetryDefinitions_8h" startline="147">InductConnectionTelemetry_t::m_totalBundleBytesReceived</references>
+        <references refid="classLtpBundleSink_1a25a6ffe65f17cba4924cf8c5dae22096" compoundref="LtpBundleSink_8h" startline="66">m_totalBundlesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1a3eca817c07ea8e451ecc5a599e1886d2" compoundref="TelemetryDefinitions_8h" startline="146">InductConnectionTelemetry_t::m_totalBundlesReceived</references>
+        <references refid="classLtpEngine_1acfaed5ddbfb81f4a8231ea549ee576f0" compoundref="LtpEngine_8h" startline="1198">LtpEngine::m_totalCancelSegmentsAcknowledged</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a7c57c0b49789b3dd40c602508be143ca" compoundref="TelemetryDefinitions_8h" startline="278">LtpInductConnectionTelemetry_t::m_totalCancelSegmentsAcknowledged</references>
+        <references refid="classLtpEngine_1ae079576b5fbc92cf4305560456ecd7eb" compoundref="LtpEngine_8h" startline="1194">LtpEngine::m_totalCancelSegmentSendRetries</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a7a4254f45c5ca19f5ddc67d77959c248" compoundref="TelemetryDefinitions_8h" startline="276">LtpInductConnectionTelemetry_t::m_totalCancelSegmentSendRetries</references>
+        <references refid="classLtpEngine_1acfd032abbb14553c1286a52db854e29e" compoundref="LtpEngine_8h" startline="1196">LtpEngine::m_totalCancelSegmentsFailedToSend</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a8f249145e155b775e8e7c1530446fe17" compoundref="TelemetryDefinitions_8h" startline="277">LtpInductConnectionTelemetry_t::m_totalCancelSegmentsFailedToSend</references>
+        <references refid="classLtpEngine_1acc439a7edd94073c12bfe384ad10d32e" compoundref="LtpEngine_8h" startline="1192">LtpEngine::m_totalCancelSegmentsStarted</references>
+        <references refid="structLtpInductConnectionTelemetry__t_1a30fb8acd26dc6a5da7e17f49aabbe6ab" compoundref="TelemetryDefinitions_8h" startline="275">LtpInductConnectionTelemetry_t::m_totalCancelSegmentsStarted</references>
+        <referencedby refid="classLtpInduct_1ade7cc381f23b28b21d1e5eeeaef6070f" compoundref="LtpInduct_8cpp" startline="63" endline="77">LtpInduct::PopulateInductTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1a69f18e7747219a665fd0dbcfe119ecde" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>virtual LTP_LIB_EXPORT bool LtpBundleSink::ReadyToBeDeleted</definition>
+        <argsstring>()=0</argsstring>
+        <name>ReadyToBeDeleted</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamBundleSink_1ac87da490d6c6f9c8fb541db3019a9091">ReadyToBeDeleted</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcBundleSink_1a8e36371c2abb8f9ac59edb2cda3bfea0">ReadyToBeDeleted</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpBundleSink_1af56298b579f2e9e576b6239f349eae07">ReadyToBeDeleted</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="45" column="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classLtpBundleSink_1a5af69082159d57b0f21bf48a781553fd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>virtual LTP_LIB_EXPORT bool LtpBundleSink::SetLtpEnginePtr</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetLtpEnginePtr</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamBundleSink_1afef5d22499cc9fbb1e2b68126372b5bf">SetLtpEnginePtr</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcBundleSink_1a2bb0cbe18afeade3cdc244f9b6b8d5b0">SetLtpEnginePtr</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpBundleSink_1a6cfa8a351053d2ebc9722d5a0dcd01d2">SetLtpEnginePtr</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="47" column="33"/>
+        <referencedby refid="classLtpBundleSink_1a1ae6f0f7ed5c807b3adb8ccf28f38246" compoundref="LtpBundleSink_8cpp" startline="37" endline="47">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpBundleSink_1a89b30811970dcc70d9d26c154e207f44" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>virtual LTP_LIB_EXPORT void LtpBundleSink::GetTransportLayerSpecificTelem</definition>
+        <argsstring>(LtpInductConnectionTelemetry_t &amp;telem) const =0</argsstring>
+        <name>GetTransportLayerSpecificTelem</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamBundleSink_1ad4f5906056f7911a381ffb47f598dac5">GetTransportLayerSpecificTelem</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcBundleSink_1ae2056eb8038dd7c71136eb3c74c2e4a9">GetTransportLayerSpecificTelem</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpBundleSink_1aba74cdf7407c58414d651bcd2bbf2c92">GetTransportLayerSpecificTelem</reimplementedby>
+        <param>
+          <type><ref refid="structLtpInductConnectionTelemetry__t" kindref="compound">LtpInductConnectionTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpBundleSink.h" line="48" column="33"/>
+        <referencedby refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">GetTelemetry</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LtpBundleSink</label>
+        <link refid="classLtpBundleSink"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LtpOverEncapLocalStreamBundleSink</label>
+        <link refid="classLtpOverEncapLocalStreamBundleSink"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="5">
+        <label>LtpOverUdpBundleSink</label>
+        <link refid="classLtpOverUdpBundleSink"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LtpOverIpcBundleSink</label>
+        <link refid="classLtpOverIpcBundleSink"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>LtpSessionReceiver::LtpSessionReceiverCommonData</label>
+        <link refid="structLtpSessionReceiver_1_1LtpSessionReceiverCommonData"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecyclerRef</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbersRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReportsRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>LtpTimerManager&lt; Ltp::session_id_t, Ltp::hash_session_id_t &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_activeSerialNumberBeingTimed</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Ltp::ltp_extensions_t</label>
+        <link refid="structLtp_1_1ltp__extensions__t"/>
+      </node>
+      <node id="1">
+        <label>LtpBundleSink</label>
+        <link refid="classLtpBundleSink"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_ltpRxCfg</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_ltpEnginePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>UserDataRecycler&lt; LtpSessionReceiverRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="19">
+        <label>UserDataRecycler&lt; LtpSessionSenderRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="7">
+        <label>Ltp</label>
+        <link refid="classLtp"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_dataSegment_clientServiceRawDataWrapper</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_dataSegmentMetadata</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_sessionId</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_headerExtensions</edgelabel>
+          <edgelabel>m_trailerExtensions</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_reportSegment</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>LtpSessionSender::LtpSessionSenderCommonData</label>
+        <link refid="structLtpSessionSender_1_1LtpSessionSenderCommonData"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_csnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbersRef</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegmentsRef</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecyclerRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>LtpRandomNumberGenerator::Rng</label>
+        <link refid="classLtpRandomNumberGenerator_1_1Rng"/>
+      </node>
+      <node id="8">
+        <label>Ltp::client_service_raw_data_t</label>
+        <link refid="structLtp_1_1client__service__raw__data__t"/>
+      </node>
+      <node id="18">
+        <label>LtpTimerManager&lt; uint64_t, std::hash&lt; uint64_t &gt; &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LtpEngineConfig</label>
+        <link refid="structLtpEngineConfig"/>
+      </node>
+      <node id="4">
+        <label>LtpEngine</label>
+        <link refid="classLtpEngine"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_ltpRxStateMachine</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_ltpSessionReceiverCommonData</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecycler</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_cancelSegmentTimerExpiredCallback</edgelabel>
+          <edgelabel>m_csnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallback</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfCancelSegments</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReports</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_ltpSessionSenderCommonData</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegments</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecycler</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>m_tokenRateLimiter</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LtpRandomNumberGenerator</label>
+        <link refid="classLtpRandomNumberGenerator"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Ltp::data_segment_metadata_t</label>
+        <link refid="structLtp_1_1data__segment__metadata__t"/>
+      </node>
+      <node id="12">
+        <label>Ltp::report_segment_t</label>
+        <link refid="structLtp_1_1report__segment__t"/>
+      </node>
+      <node id="10">
+        <label>Ltp::session_id_t</label>
+        <link refid="structLtp_1_1session__id__t"/>
+      </node>
+      <node id="20">
+        <label>TokenRateLimiter</label>
+        <link refid="classTokenRateLimiter"/>
+      </node>
+      <node id="16">
+        <label>UserDataRecycler&lt; std::vector&lt; uint8_t &gt; &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpBundleSink.h" line="35" column="1" bodyfile="common/ltp/include/LtpBundleSink.h" bodystart="35" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" prot="public" virt="non-virtual"><scope>LtpBundleSink</scope><name>GetTelemetry</name></member>
+      <member refid="classLtpBundleSink_1a89b30811970dcc70d9d26c154e207f44" prot="protected" virt="pure-virtual"><scope>LtpBundleSink</scope><name>GetTransportLayerSpecificTelem</name></member>
+      <member refid="classLtpBundleSink_1a1ae6f0f7ed5c807b3adb8ccf28f38246" prot="public" virt="non-virtual"><scope>LtpBundleSink</scope><name>Init</name></member>
+      <member refid="classLtpBundleSink_1a01005503842ae28468b784166bd7e4f9" prot="private" virt="non-virtual"><scope>LtpBundleSink</scope><name>LtpBundleSink</name></member>
+      <member refid="classLtpBundleSink_1ac89ce918451a79a2bf9cac9a4dd20415" prot="public" virt="non-virtual"><scope>LtpBundleSink</scope><name>LtpBundleSink</name></member>
+      <member refid="classLtpBundleSink_1a3092cb3fd6167cad9510cf28ee985327" prot="public" virt="non-virtual"><scope>LtpBundleSink</scope><name>LtpWholeBundleReadyCallback_t</name></member>
+      <member refid="classLtpBundleSink_1a84f0ca40b52e4e9ced93c489b054fc58" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>M_CONNECTION_NAME</name></member>
+      <member refid="classLtpBundleSink_1a5d1dbb349dca3419d7ece60d43209dd3" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>M_EXPECTED_SESSION_ORIGINATOR_ENGINE_ID</name></member>
+      <member refid="classLtpBundleSink_1a041c2fbb2bf61100c1c4c9a0c291a8fd" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>M_INPUT_NAME</name></member>
+      <member refid="classLtpBundleSink_1aa28f114971d118a8af8bb18cb6ad3305" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>m_ltpEnginePtr</name></member>
+      <member refid="classLtpBundleSink_1a1819440bfadbf086a9de5121a3d2bc9f" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>m_ltpRxCfg</name></member>
+      <member refid="classLtpBundleSink_1a4234c94a23dee2c8a89f2fabf0347c1a" prot="private" virt="non-virtual"><scope>LtpBundleSink</scope><name>m_ltpWholeBundleReadyCallback</name></member>
+      <member refid="classLtpBundleSink_1acbf2e3b7830e364deafca71ae239bbea" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>m_totalBundleBytesReceived</name></member>
+      <member refid="classLtpBundleSink_1a25a6ffe65f17cba4924cf8c5dae22096" prot="protected" virt="non-virtual"><scope>LtpBundleSink</scope><name>m_totalBundlesReceived</name></member>
+      <member refid="classLtpBundleSink_1a69f18e7747219a665fd0dbcfe119ecde" prot="public" virt="pure-virtual"><scope>LtpBundleSink</scope><name>ReadyToBeDeleted</name></member>
+      <member refid="classLtpBundleSink_1a6fe13d14d7a4acc1833ce435ad922f56" prot="private" virt="non-virtual"><scope>LtpBundleSink</scope><name>ReceptionSessionCancelledCallback</name></member>
+      <member refid="classLtpBundleSink_1a6dffb13323e8685626f6a25f7c50c9d7" prot="private" virt="non-virtual"><scope>LtpBundleSink</scope><name>RedPartReceptionCallback</name></member>
+      <member refid="classLtpBundleSink_1a5af69082159d57b0f21bf48a781553fd" prot="protected" virt="pure-virtual"><scope>LtpBundleSink</scope><name>SetLtpEnginePtr</name></member>
+      <member refid="classLtpBundleSink_1ad4408f721488d7ebd90276b8799cfe38" prot="public" virt="virtual"><scope>LtpBundleSink</scope><name>~LtpBundleSink</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

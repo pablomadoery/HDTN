@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="windows_2dir__monitor__impl_8hpp" kind="file" language="C++">
+    <compoundname>dir_monitor_impl.hpp</compoundname>
+    <includes local="no">boost/noncopyable.hpp</includes>
+    <includes local="no">boost/ptr_container/ptr_unordered_map.hpp</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">deque</includes>
+    <includes local="no">windows.h</includes>
+    <includedby refid="windows_2basic__dir__monitor__service_8hpp" local="yes">common/util/include/dir_monitor/windows/basic_dir_monitor_service.hpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>windows.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="6">
+        <label>deque</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/dir_monitor/windows/dir_monitor_impl.hpp</label>
+        <link refid="windows_2dir__monitor__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/ptr_container/ptr_unordered_map.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>common/util/include/dir_monitor/windows/basic_dir_monitor_service.hpp</label>
+        <link refid="windows_2basic__dir__monitor__service_8hpp"/>
+      </node>
+      <node id="1">
+        <label>common/util/include/dir_monitor/windows/dir_monitor_impl.hpp</label>
+        <link refid="windows_2dir__monitor__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classboost_1_1asio_1_1dir__monitor__impl" prot="public">boost::asio::dir_monitor_impl</innerclass>
+    <innerclass refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle" prot="public">boost::asio::dir_monitor_impl::windows_handle</innerclass>
+    <innernamespace refid="namespaceboost">boost</innernamespace>
+    <innernamespace refid="namespaceboost_1_1asio">boost::asio</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2008,<sp/>2009<sp/>Boris<sp/>Schaeling<sp/>&lt;boris@highscore.de&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.<sp/>(See<sp/>accompanying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>file<sp/>LICENSE_1_0.txt<sp/>or<sp/>copy<sp/>at<sp/>http://www.boost.org/LICENSE_1_0.txt)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/noncopyable.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/ptr_container/ptr_unordered_map.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceboost" kindref="compound">boost</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">asio<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">dir_monitor_impl</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22" refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle" kindref="compound">windows_handle</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>boost::noncopyable</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1a9a7c57cacb9e640a6ff37bed0669ebf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1a9a7c57cacb9e640a6ff37bed0669ebf3" kindref="member">windows_handle</ref>(HANDLE<sp/>handle)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1a5364088068910bd207258e3fff3577dc" kindref="member">handle_</ref>(handle)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1ab49b6af899230114ccf4ec95d443716a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1ab49b6af899230114ccf4ec95d443716a" kindref="member">~windows_handle</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseHandle(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1a5364088068910bd207258e3fff3577dc" kindref="member">handle_</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1a5364088068910bd207258e3fff3577dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HANDLE<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle_1a5364088068910bd207258e3fff3577dc" kindref="member">handle_</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" kindref="member">dir_monitor_impl</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>(true)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classboost_1_1asio_1_1dir__monitor__impl_1adb99d1d66d563d5cb5d27e58561e5466" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1adb99d1d66d563d5cb5d27e58561e5466" kindref="member">add_directory</ref>(std::string<sp/>dirname,<sp/>HANDLE<sp/>handle)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>.insert(dirname,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1_1windows__handle" kindref="compound">windows_handle</ref>(handle));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad1cc32088768aa3721576d90e7c61ed5" kindref="member">remove_directory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;dirname)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>.erase(dirname);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" kindref="member">destroy</ref>()</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>.notify_all();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" kindref="member">popfront_event</ref>(boost::system::error_code<sp/>&amp;ec)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>.wait(lock,<sp/>[&amp;]<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref><sp/>&amp;&amp;<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.empty());<sp/>});</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref><sp/>ev;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ec<sp/>=<sp/>boost::system::error_code();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ec<sp/>=<sp/>boost::asio::error::operation_aborted;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.empty())</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ev<sp/>=<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.front();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.pop_front();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ev;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref><sp/>ev)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.push_back(ev);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>.notify_all();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="91" refid="classboost_1_1asio_1_1dir__monitor__impl_1a5ed7ee15fdd6f9b0bd00348f1402411b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::ptr_unordered_map&lt;std::string,<sp/>windows_handle&gt;<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a5ed7ee15fdd6f9b0bd00348f1402411b" kindref="member">dirs_</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::condition_variable<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::deque&lt;dir_monitor_event&gt;<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/dir_monitor/windows/dir_monitor_impl.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,671 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTcpclBundleSource" kind="class" language="C++" prot="public">
+    <compoundname>TcpclBundleSource</compoundname>
+    <basecompoundref refid="classTcpclV3BidirectionalLink" prot="public" virt="non-virtual">TcpclV3BidirectionalLink</basecompoundref>
+    <includes refid="TcpclBundleSource_8h" local="no">TcpclBundleSource.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTcpclBundleSource_1abf3e2ff661f5dca2fc2fd69f9706c1e0" prot="private" static="no" mutable="no">
+        <type>boost::asio::io_service::work</type>
+        <definition>boost::asio::io_service::work TcpclBundleSource::m_work</definition>
+        <argsstring></argsstring>
+        <name>m_work</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="58" column="35" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1a193d603d6d57d50bccad20f25adb2de2" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::tcp::resolver</type>
+        <definition>boost::asio::ip::tcp::resolver TcpclBundleSource::m_resolver</definition>
+        <argsstring></argsstring>
+        <name>m_resolver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="59" column="36" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1ac24e64918eea0c85ccd1f3890dfabfe5" compoundref="TcpclBundleSource_8cpp" startline="103" endline="109">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1ad4225544af4f51e2de3e07a855100424" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer TcpclBundleSource::m_reconnectAfterShutdownTimer</definition>
+        <argsstring></argsstring>
+        <name>m_reconnectAfterShutdownTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="60" column="33" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1a56f0508270ced66b260a219a47fbf710" compoundref="TcpclBundleSource_8cpp" startline="223" endline="228">Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1a78c49e55756c2a746af85c4629d0560f" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer TcpclBundleSource::m_reconnectAfterOnConnectErrorTimer</definition>
+        <argsstring></argsstring>
+        <name>m_reconnectAfterOnConnectErrorTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="61" column="33" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" compoundref="TcpclBundleSource_8cpp" startline="129" endline="162">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1abc03a80dc7384ae3722b6647af4ff7cf" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::tcp::resolver::results_type</type>
+        <definition>boost::asio::ip::tcp::resolver::results_type TcpclBundleSource::m_resolverResults</definition>
+        <argsstring></argsstring>
+        <name>m_resolverResults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="63" column="50" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1a4a70b8b61adc46f1df1a45b71e4ca63a" compoundref="TcpclBundleSource_8cpp" startline="246" endline="263">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classTcpclBundleSource_1aba2f5e05d8fb74a40d18e0feb3c71f94" compoundref="TcpclBundleSource_8cpp" startline="164" endline="178">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classTcpclBundleSource_1a01746d7d34cd70dce6a865b2894f5af3" compoundref="TcpclBundleSource_8cpp" startline="111" endline="127">OnResolve</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1af729481988b6048da5a9f742db0f7aa9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; TcpclBundleSource::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="64" column="21" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1ade450ff945f8c96a6eaafe3cffa526d6" compoundref="TcpclBundleSource_8cpp" startline="58" endline="96">Stop</referencedby>
+        <referencedby refid="classTcpclBundleSource_1adf747f47311db3e69afb12387d0a552a" compoundref="TcpclBundleSource_8cpp" startline="26" endline="52">TcpclBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1a74167bb943f145d2fe0c8f991c786234" prot="private" static="no" mutable="no">
+        <type>const <ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref></type>
+        <definition>const OutductOpportunisticProcessReceivedBundleCallback_t TcpclBundleSource::m_outductOpportunisticProcessReceivedBundleCallback</definition>
+        <argsstring></argsstring>
+        <name>m_outductOpportunisticProcessReceivedBundleCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="72" column="63" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1a318ac8a95f52076bbcba98a109a8f9f3" compoundref="TcpclBundleSource_8cpp" startline="235" endline="242">Virtual_WholeBundleReady</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTcpclBundleSource_1abcb48bc5392599ddfc39d8ccd82ea181" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; TcpclBundleSource::m_tcpReadSomeBufferVec</definition>
+        <argsstring></argsstring>
+        <name>m_tcpReadSomeBufferVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="75" column="17" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classTcpclBundleSource_1a63ff0553b7809b73351834038017bc44" compoundref="TcpclBundleSource_8cpp" startline="190" endline="208">HandleTcpReceiveSome</referencedby>
+        <referencedby refid="classTcpclBundleSource_1a7bc9703c6053fb3ae118cef5a40fd142" compoundref="TcpclBundleSource_8cpp" startline="183" endline="189">StartTcpReceive</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classTcpclBundleSource_1a39e222f106da270ae8f29e4f2e660645" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TcpclBundleSource::TcpclBundleSource</definition>
+        <argsstring>()</argsstring>
+        <name>TcpclBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="32" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a01746d7d34cd70dce6a865b2894f5af3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::OnResolve</definition>
+        <argsstring>(const boost::system::error_code &amp;ec, boost::asio::ip::tcp::resolver::results_type results)</argsstring>
+        <name>OnResolve</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>boost::asio::ip::tcp::resolver::results_type</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="45" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="111" bodyend="127"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV3BidirectionalLink_1ab89754b8cbaed12f248a4824a5afaee8" compoundref="TcpclV3BidirectionalLink_8h" startline="82">TcpclV3BidirectionalLink::m_base_ioServiceRef</references>
+        <references refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" compoundref="TcpclV3BidirectionalLink_8h" startline="100">TcpclV3BidirectionalLink::m_base_tcpSocketPtr</references>
+        <references refid="classTcpclBundleSource_1abc03a80dc7384ae3722b6647af4ff7cf" compoundref="TcpclBundleSource_8h" startline="63">m_resolverResults</references>
+        <references refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" compoundref="TcpclBundleSource_8cpp" startline="129" endline="162">OnConnect</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classTcpclBundleSource_1ac24e64918eea0c85ccd1f3890dfabfe5" compoundref="TcpclBundleSource_8cpp" startline="103" endline="109">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::OnConnect</definition>
+        <argsstring>(const boost::system::error_code &amp;ec)</argsstring>
+        <name>OnConnect</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="46" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="129" bodyend="162"/>
+        <references refid="classTcpcl_1a7f8d5e83e46261dd025cd2a89aea6bd2" compoundref="Tcpcl_8cpp" startline="420" endline="434">Tcpcl::GenerateContactHeader</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV3BidirectionalLink_1af1d7b9661169a39282d514774efffcc4" compoundref="TcpclV3BidirectionalLink_8h" startline="75">TcpclV3BidirectionalLink::M_BASE_DESIRED_KEEPALIVE_INTERVAL_SECONDS</references>
+        <references refid="classTcpclV3BidirectionalLink_1a1d18190cfd289434d778d27b3a799a72" compoundref="TcpclV3BidirectionalLink_8h" startline="102">TcpclV3BidirectionalLink::m_base_handleTcpSendCallback</references>
+        <references refid="classTcpclV3BidirectionalLink_1ab89754b8cbaed12f248a4824a5afaee8" compoundref="TcpclV3BidirectionalLink_8h" startline="82">TcpclV3BidirectionalLink::m_base_ioServiceRef</references>
+        <references refid="classTcpclV3BidirectionalLink_1ac9396684ec1cf948d3e1efa87978dc85" compoundref="TcpclV3BidirectionalLink_8h" startline="115">TcpclV3BidirectionalLink::m_base_onFailedBundleVecSendCallback</references>
+        <references refid="classTcpclV3BidirectionalLink_1a4feec10b150500bb7a0a633fb2a5621d" compoundref="TcpclV3BidirectionalLink_8h" startline="116">TcpclV3BidirectionalLink::m_base_onFailedBundleZmqSendCallback</references>
+        <references refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" compoundref="TcpclV3BidirectionalLink_8h" startline="101">TcpclV3BidirectionalLink::m_base_tcpAsyncSenderPtr</references>
+        <references refid="classTcpclV3BidirectionalLink_1a66b64821997a479d927068e71519c149" compoundref="TcpclV3BidirectionalLink_8h" startline="89">TcpclV3BidirectionalLink::m_base_tcpclShutdownComplete</references>
+        <references refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" compoundref="TcpclV3BidirectionalLink_8h" startline="100">TcpclV3BidirectionalLink::m_base_tcpSocketPtr</references>
+        <references refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" compoundref="BidirectionalLink_8h" startline="104">BidirectionalLink::m_base_telem</references>
+        <references refid="classTcpclV3BidirectionalLink_1ab034bcb2d8e8c389869b6afe8de634c8" compoundref="TcpclV3BidirectionalLink_8h" startline="78">TcpclV3BidirectionalLink::M_BASE_THIS_TCPCL_EID_STRING</references>
+        <references refid="classTcpclV3BidirectionalLink_1af63f1a01cbded7e807dbae4032efdbf9" compoundref="TcpclV3BidirectionalLink_8h" startline="119">TcpclV3BidirectionalLink::m_base_userAssignedUuid</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="structTcpAsyncSenderElement_1abf9fc18b9a3d914d6dd13ba801d81a2e" compoundref="TcpAsyncSender_8h" startline="63">TcpAsyncSenderElement::m_onSuccessfulSendCallbackByIoServiceThreadPtr</references>
+        <references refid="classTcpclBundleSource_1a78c49e55756c2a746af85c4629d0560f" compoundref="TcpclBundleSource_8h" startline="61">m_reconnectAfterOnConnectErrorTimer</references>
+        <references refid="structTcpAsyncSenderElement_1a35bc1324cf94167d9c586171101a5a23" compoundref="TcpAsyncSender_8h" startline="60">TcpAsyncSenderElement::m_underlyingDataVecHeaders</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a20464e0221943ecd0caa36562cb55706" compoundref="BidirectionalLink_8h" startline="69">BidirectionalLinkAtomicTelem_t::numTcpReconnectAttempts</references>
+        <references refid="classTcpclBundleSource_1aba2f5e05d8fb74a40d18e0feb3c71f94" compoundref="TcpclBundleSource_8cpp" startline="164" endline="178">OnReconnectAfterOnConnectError_TimerExpired</references>
+        <references refid="Tcpcl_8h_1a8696f7bbc4f76093d3a4c50b94cc8688a419b5b7cc9165b3bb794b1dde6871c0e">REQUEST_ACK_OF_BUNDLE_SEGMENTS</references>
+        <references refid="classTcpclBundleSource_1a7bc9703c6053fb3ae118cef5a40fd142" compoundref="TcpclBundleSource_8cpp" startline="183" endline="189">StartTcpReceive</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classTcpclBundleSource_1a4a70b8b61adc46f1df1a45b71e4ca63a" compoundref="TcpclBundleSource_8cpp" startline="246" endline="263">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classTcpclBundleSource_1aba2f5e05d8fb74a40d18e0feb3c71f94" compoundref="TcpclBundleSource_8cpp" startline="164" endline="178">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classTcpclBundleSource_1a01746d7d34cd70dce6a865b2894f5af3" compoundref="TcpclBundleSource_8cpp" startline="111" endline="127">OnResolve</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1aba2f5e05d8fb74a40d18e0feb3c71f94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::OnReconnectAfterOnConnectError_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnReconnectAfterOnConnectError_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="47" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="164" bodyend="178"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" compoundref="TcpclV3BidirectionalLink_8h" startline="100">TcpclV3BidirectionalLink::m_base_tcpSocketPtr</references>
+        <references refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" compoundref="BidirectionalLink_8h" startline="104">BidirectionalLink::m_base_telem</references>
+        <references refid="classTcpclBundleSource_1abc03a80dc7384ae3722b6647af4ff7cf" compoundref="TcpclBundleSource_8h" startline="63">m_resolverResults</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a20464e0221943ecd0caa36562cb55706" compoundref="BidirectionalLink_8h" startline="69">BidirectionalLinkAtomicTelem_t::numTcpReconnectAttempts</references>
+        <references refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" compoundref="TcpclBundleSource_8cpp" startline="129" endline="162">OnConnect</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" compoundref="TcpclBundleSource_8cpp" startline="129" endline="162">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a7bc9703c6053fb3ae118cef5a40fd142" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::StartTcpReceive</definition>
+        <argsstring>()</argsstring>
+        <name>StartTcpReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="48" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="183" bodyend="189"/>
+        <references refid="classTcpclBundleSource_1a63ff0553b7809b73351834038017bc44" compoundref="TcpclBundleSource_8cpp" startline="190" endline="208">HandleTcpReceiveSome</references>
+        <references refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" compoundref="TcpclV3BidirectionalLink_8h" startline="100">TcpclV3BidirectionalLink::m_base_tcpSocketPtr</references>
+        <references refid="classTcpclBundleSource_1abcb48bc5392599ddfc39d8ccd82ea181" compoundref="TcpclBundleSource_8h" startline="75">m_tcpReadSomeBufferVec</references>
+        <referencedby refid="classTcpclBundleSource_1a63ff0553b7809b73351834038017bc44" compoundref="TcpclBundleSource_8cpp" startline="190" endline="208">HandleTcpReceiveSome</referencedby>
+        <referencedby refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" compoundref="TcpclBundleSource_8cpp" startline="129" endline="162">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a63ff0553b7809b73351834038017bc44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::HandleTcpReceiveSome</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>HandleTcpReceiveSome</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="49" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="190" bodyend="208"/>
+        <references refid="classTcpclV3BidirectionalLink_1a36946841371073e318314e2c8b0cd8a9" compoundref="TcpclV3BidirectionalLink_8cpp" startline="348" endline="350">TcpclV3BidirectionalLink::BaseClass_DoTcpclShutdown</references>
+        <references refid="classTcpcl_1a508bf09573c62c1f7c61621dbcadbc0e" compoundref="Tcpcl_8cpp" startline="73" endline="418">Tcpcl::HandleReceivedChars</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV3BidirectionalLink_1a7b33bfababc84930663a0b5e5051368f" compoundref="TcpclV3BidirectionalLink_8h" startline="91">TcpclV3BidirectionalLink::m_base_dataReceivedServedAsKeepaliveReceived</references>
+        <references refid="classTcpclV3BidirectionalLink_1a2b17a85a77fc13c14776d07666835eb6" compoundref="TcpclV3BidirectionalLink_8h" startline="96">TcpclV3BidirectionalLink::m_base_tcpclV3RxStateMachine</references>
+        <references refid="classTcpclBundleSource_1abcb48bc5392599ddfc39d8ccd82ea181" compoundref="TcpclBundleSource_8h" startline="75">m_tcpReadSomeBufferVec</references>
+        <references refid="classTcpclBundleSource_1a7bc9703c6053fb3ae118cef5a40fd142" compoundref="TcpclBundleSource_8cpp" startline="183" endline="189">StartTcpReceive</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classTcpclBundleSource_1a7bc9703c6053fb3ae118cef5a40fd142" compoundref="TcpclBundleSource_8cpp" startline="183" endline="189">StartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a4a70b8b61adc46f1df1a45b71e4ca63a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::OnNeedToReconnectAfterShutdown_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnNeedToReconnectAfterShutdown_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="50" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="246" bodyend="263"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV3BidirectionalLink_1ab89754b8cbaed12f248a4824a5afaee8" compoundref="TcpclV3BidirectionalLink_8h" startline="82">TcpclV3BidirectionalLink::m_base_ioServiceRef</references>
+        <references refid="classTcpclV3BidirectionalLink_1ae4e574b1ac0928919bd6d594b0003b63" compoundref="TcpclV3BidirectionalLink_8h" startline="86">TcpclV3BidirectionalLink::m_base_shutdownCalled</references>
+        <references refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" compoundref="TcpclV3BidirectionalLink_8h" startline="101">TcpclV3BidirectionalLink::m_base_tcpAsyncSenderPtr</references>
+        <references refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" compoundref="TcpclV3BidirectionalLink_8h" startline="100">TcpclV3BidirectionalLink::m_base_tcpSocketPtr</references>
+        <references refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" compoundref="BidirectionalLink_8h" startline="104">BidirectionalLink::m_base_telem</references>
+        <references refid="classTcpclBundleSource_1abc03a80dc7384ae3722b6647af4ff7cf" compoundref="TcpclBundleSource_8h" startline="63">m_resolverResults</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a20464e0221943ecd0caa36562cb55706" compoundref="BidirectionalLink_8h" startline="69">BidirectionalLinkAtomicTelem_t::numTcpReconnectAttempts</references>
+        <references refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" compoundref="TcpclBundleSource_8cpp" startline="129" endline="162">OnConnect</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+        <referencedby refid="classTcpclBundleSource_1a56f0508270ced66b260a219a47fbf710" compoundref="TcpclBundleSource_8cpp" startline="223" endline="228">Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a56f0508270ced66b260a219a47fbf710" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</definition>
+        <argsstring>() override</argsstring>
+        <name>Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</name>
+        <reimplements refid="classTcpclV3BidirectionalLink_1ab7d02221a0a3c848894eeef96d265be5">Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="52" column="38" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="223" bodyend="228"/>
+        <references refid="classTcpclV3BidirectionalLink_1af77443f41a19c62a9942db557e2576f6" compoundref="TcpclV3BidirectionalLink_8h" startline="94">TcpclV3BidirectionalLink::m_base_reconnectionDelaySecondsIfNotZero</references>
+        <references refid="classTcpclBundleSource_1ad4225544af4f51e2de3e07a855100424" compoundref="TcpclBundleSource_8h" startline="60">m_reconnectAfterShutdownTimer</references>
+        <references refid="classTcpclBundleSource_1a4a70b8b61adc46f1df1a45b71e4ca63a" compoundref="TcpclBundleSource_8cpp" startline="246" endline="263">OnNeedToReconnectAfterShutdown_TimerExpired</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1afccf375ca80b46c36a7bb34bf8cc6212" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::Virtual_OnSuccessfulWholeBundleAcknowledged</definition>
+        <argsstring>() override</argsstring>
+        <name>Virtual_OnSuccessfulWholeBundleAcknowledged</name>
+        <reimplements refid="classTcpclV3BidirectionalLink_1a27f844cef5e4e2f9496c7a397267d9dc">Virtual_OnSuccessfulWholeBundleAcknowledged</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="53" column="38" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="230" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a318ac8a95f52076bbcba98a109a8f9f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TCPCL_LIB_NO_EXPORT void</type>
+        <definition>void TcpclBundleSource::Virtual_WholeBundleReady</definition>
+        <argsstring>(padded_vector_uint8_t &amp;wholeBundleVec) override</argsstring>
+        <name>Virtual_WholeBundleReady</name>
+        <reimplements refid="classTcpclV3BidirectionalLink_1a718239f13916157542fb35e52faa1f25">Virtual_WholeBundleReady</reimplements>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>wholeBundleVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="54" column="38" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="235" bodyend="242"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclBundleSource_1a74167bb943f145d2fe0c8f991c786234" compoundref="TcpclBundleSource_8h" startline="72">m_outductOpportunisticProcessReceivedBundleCallback</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTcpclBundleSource_1adf747f47311db3e69afb12387d0a552a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT</type>
+        <definition>TcpclBundleSource::TcpclBundleSource</definition>
+        <argsstring>(const uint16_t desiredKeepAliveIntervalSeconds, const uint64_t myNodeId, const std::string &amp;expectedRemoteEidUri, const unsigned int maxUnacked, const uint64_t maxFragmentSize, const OutductOpportunisticProcessReceivedBundleCallback_t &amp;outductOpportunisticProcessReceivedBundleCallback=OutductOpportunisticProcessReceivedBundleCallback_t())</argsstring>
+        <name>TcpclBundleSource</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>desiredKeepAliveIntervalSeconds</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>myNodeId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>expectedRemoteEidUri</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>maxUnacked</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxFragmentSize</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref> &amp;</type>
+          <declname>outductOpportunisticProcessReceivedBundleCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="34" column="22" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="26" bodyend="52"/>
+        <references refid="classTcpclV3BidirectionalLink_1ab89754b8cbaed12f248a4824a5afaee8" compoundref="TcpclV3BidirectionalLink_8h" startline="82">TcpclV3BidirectionalLink::m_base_ioServiceRef</references>
+        <references refid="classTcpclBundleSource_1af729481988b6048da5a9f742db0f7aa9" compoundref="TcpclBundleSource_8h" startline="64">m_ioServiceThreadPtr</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1a7a60ee3e7cf820fddff60efef7b4dcf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>TCPCL_LIB_EXPORT</type>
+        <definition>TcpclBundleSource::~TcpclBundleSource</definition>
+        <argsstring>() override</argsstring>
+        <name>~TcpclBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="38" column="30" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="54" bodyend="56"/>
+        <references refid="classTcpclBundleSource_1ade450ff945f8c96a6eaafe3cffa526d6" compoundref="TcpclBundleSource_8cpp" startline="58" endline="96">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1ade450ff945f8c96a6eaafe3cffa526d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclBundleSource::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="39" column="27" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="58" bodyend="96"/>
+        <references refid="classTcpclV3BidirectionalLink_1a36946841371073e318314e2c8b0cd8a9" compoundref="TcpclV3BidirectionalLink_8cpp" startline="348" endline="350">TcpclV3BidirectionalLink::BaseClass_DoTcpclShutdown</references>
+        <references refid="classTcpclV3BidirectionalLink_1a75a5f1cafecbde940a9faae7c6c0706e" compoundref="TcpclV3BidirectionalLink_8cpp" startline="117" endline="155">TcpclV3BidirectionalLink::BaseClass_TryToWaitForAllBundlesToFinishSending</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTcpclV3BidirectionalLink_1ab89754b8cbaed12f248a4824a5afaee8" compoundref="TcpclV3BidirectionalLink_8h" startline="82">TcpclV3BidirectionalLink::m_base_ioServiceRef</references>
+        <references refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" compoundref="TcpclV3BidirectionalLink_8h" startline="101">TcpclV3BidirectionalLink::m_base_tcpAsyncSenderPtr</references>
+        <references refid="classTcpclV3BidirectionalLink_1a66b64821997a479d927068e71519c149" compoundref="TcpclV3BidirectionalLink_8h" startline="89">TcpclV3BidirectionalLink::m_base_tcpclShutdownComplete</references>
+        <references refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" compoundref="BidirectionalLink_8h" startline="104">BidirectionalLink::m_base_telem</references>
+        <references refid="classTcpclBundleSource_1af729481988b6048da5a9f742db0f7aa9" compoundref="TcpclBundleSource_8h" startline="64">m_ioServiceThreadPtr</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a20464e0221943ecd0caa36562cb55706" compoundref="BidirectionalLink_8h" startline="69">BidirectionalLinkAtomicTelem_t::numTcpReconnectAttempts</references>
+        <references refid="TcpclBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TcpclBundleSource_8cpp" startline="24">subprocess</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1aeaa053de5c59f28e6c98526f2a691ecd" compoundref="BidirectionalLink_8h" startline="56">BidirectionalLinkAtomicTelem_t::totalBundleBytesReceived</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a362f4fcd3437aca1db62bf4f23a6b730" compoundref="BidirectionalLink_8h" startline="64">BidirectionalLinkAtomicTelem_t::totalBundleBytesSent</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1abbe014532e7453e08c276d44cf481cab" compoundref="BidirectionalLink_8h" startline="65">BidirectionalLinkAtomicTelem_t::totalBundleBytesSentAndAcked</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a613337c0e873f40f7183d60720a8f5db" compoundref="BidirectionalLink_8h" startline="53">BidirectionalLinkAtomicTelem_t::totalBundlesReceived</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a7882ce41d186514ff7c4446edc3f6349" compoundref="BidirectionalLink_8h" startline="61">BidirectionalLinkAtomicTelem_t::totalBundlesSent</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1adbcd8d3d5c8355856cfc7e7b8b61e593" compoundref="BidirectionalLink_8h" startline="62">BidirectionalLinkAtomicTelem_t::totalBundlesSentAndAcked</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a3bce292d24c6d4b73bca345d047125f2" compoundref="BidirectionalLink_8h" startline="50">BidirectionalLinkAtomicTelem_t::totalFragmentsReceived</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a6d5fd7382a530841111a90fcce1cf2a8" compoundref="BidirectionalLink_8h" startline="58">BidirectionalLinkAtomicTelem_t::totalFragmentsSent</references>
+        <references refid="structBidirectionalLinkAtomicTelem__t_1a7a47a9733bcb50c1e60dfd8a94bb7fc1" compoundref="BidirectionalLink_8h" startline="59">BidirectionalLinkAtomicTelem_t::totalFragmentsSentAndAcked</references>
+        <referencedby refid="classTcpclOutduct_1ac18f77b27b66545b9afd8fceb4df32c6" compoundref="TcpclOutduct_8cpp" startline="66" endline="68">TcpclOutduct::Stop</referencedby>
+        <referencedby refid="classTcpclBundleSource_1a7a60ee3e7cf820fddff60efef7b4dcf3" compoundref="TcpclBundleSource_8cpp" startline="54" endline="56">~TcpclBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1ac24e64918eea0c85ccd1f3890dfabfe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT void</type>
+        <definition>void TcpclBundleSource::Connect</definition>
+        <argsstring>(const std::string &amp;hostname, const std::string &amp;port)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="42" column="27" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="103" bodyend="109"/>
+        <references refid="classTcpclBundleSource_1a193d603d6d57d50bccad20f25adb2de2" compoundref="TcpclBundleSource_8h" startline="59">m_resolver</references>
+        <references refid="classTcpclBundleSource_1a01746d7d34cd70dce6a865b2894f5af3" compoundref="TcpclBundleSource_8cpp" startline="111" endline="127">OnResolve</references>
+        <referencedby refid="classTcpclOutduct_1ac74aada0fd688898ce9ddef3edfda79f" compoundref="TcpclOutduct_8cpp" startline="60" endline="62">TcpclOutduct::Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTcpclBundleSource_1aa90a6450285fea29003900c427520da9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TCPCL_LIB_EXPORT bool</type>
+        <definition>bool TcpclBundleSource::ReadyToForward</definition>
+        <argsstring>() const</argsstring>
+        <name>ReadyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/tcpcl/include/TcpclBundleSource.h" line="43" column="27" bodyfile="common/tcpcl/src/TcpclBundleSource.cpp" bodystart="265" bodyend="267"/>
+        <references refid="classTcpclV3BidirectionalLink_1a7a33214ec287c4e516d71de8bab47e21" compoundref="TcpclV3BidirectionalLink_8h" startline="87">TcpclV3BidirectionalLink::m_base_readyToForward</references>
+        <referencedby refid="classTcpclOutduct_1a8d8e86b8fa675ae8180ebe0bac329fd3" compoundref="TcpclOutduct_8cpp" startline="63" endline="65">TcpclOutduct::ReadyToForward</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TcpclBundleSource</label>
+        <link refid="classTcpclBundleSource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TcpclV3BidirectionalLink</label>
+        <link refid="classTcpclV3BidirectionalLink"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>BidirectionalLink</label>
+        <link refid="classBidirectionalLink"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>BidirectionalLinkAtomicTelem_t</label>
+        <link refid="structBidirectionalLinkAtomicTelem__t"/>
+      </node>
+      <node id="1">
+        <label>TcpclBundleSource</label>
+        <link refid="classTcpclBundleSource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TcpclV3BidirectionalLink</label>
+        <link refid="classTcpclV3BidirectionalLink"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_base_tcpclV3RxStateMachine</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_base_bytesToAckCb</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Tcpcl</label>
+        <link refid="classTcpcl"/>
+      </node>
+      <node id="3">
+        <label>BidirectionalLink</label>
+        <link refid="classBidirectionalLink"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_base_telem</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/tcpcl/include/TcpclBundleSource.h" line="30" column="1" bodyfile="common/tcpcl/include/TcpclBundleSource.h" bodystart="30" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classTcpclV3BidirectionalLink_1a12f37fb675c08a8f388b84318ba452c7" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_AckCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1af53402c32b681388d7d7fefdecd6d2c0" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_BundleRefusalCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a387921124bd0c9075b0f559da5b9f8ae" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_ContactHeaderCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a521053f47dd72f3d6593f6bd55be6d55" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_DataSegmentCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1acc3ac7e958f9f86019dc6c981dd6de89" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_DoHandleSocketShutdown</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a36946841371073e318314e2c8b0cd8a9" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_DoTcpclShutdown</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a696af74cdff78dda7dc95553fbf58155" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_Forward</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a44684ffad28b872eec2aa471fb9634f2" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_Forward</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a1f3bbd6422df398fc5c7f6aa22237b89" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_Forward</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ad631c9fa370205ed7ed8368115757215" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_Forward</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a2c7a58c063b64714156ecad732ffc922" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTelemetry</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a27e9129a3a11749bd00718c58dd8e71f" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTelemetry</name></member>
+      <member refid="classBidirectionalLink_1a2a9ebddd48448cf4b19d112fb8f2c9b4" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTotalBundleBytesAcked</name></member>
+      <member refid="classBidirectionalLink_1ab8734813628436113cff80bfe664b2a2" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTotalBundleBytesSent</name></member>
+      <member refid="classBidirectionalLink_1a073b42ea8c4d7c20d789edb7b2e088e1" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTotalBundleBytesUnacked</name></member>
+      <member refid="classBidirectionalLink_1aa9f8b91bddd978089f60b100089a2d0e" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTotalBundlesAcked</name></member>
+      <member refid="classBidirectionalLink_1a59f1a0da019f5e1ab96429c858d00546" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTotalBundlesSent</name></member>
+      <member refid="classBidirectionalLink_1a0ff771211a65c4b3c2b4fc4776147c12" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_GetTotalBundlesUnacked</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a61ebfb1cb109e912a299f25fcb07e009" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_HandleTcpSend</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a62aa8e1a37762b4936116153a023d576" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_HandleTcpSendShutdown</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a30f1470131a4a414d2fe975334b562f8" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_KeepAliveCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a76138307eebfce6510278db22f2ffdfe" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_NextBundleLengthCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ad9d1b751d9609aae1509c67b2642d235" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_OnNeedToSendKeepAliveMessage_TimerExpired</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a7353ef4c1ff339cde304c55539b6c359" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_OnNoKeepAlivePacketReceived_TimerExpired</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ad4d6ee79d95b4510bf936e4615a7e648" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_OnSendShutdownMessageTimeout_TimerExpired</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a537bac0a106c020abc5c4545963c8a4c" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_RestartNeedToSendKeepAliveMessageTimer</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ae9dd688b712a3c7cad732356e2b1b592" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_RestartNoKeepaliveReceivedTimer</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1acb3d1904a6d482d5d2634daa0c5c97c9" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a4b266248758835f3e703d25ce77ce766" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a77bed4a9389d6b8eefa7d7d0eddca57e" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a127feec23af3ccd07e63ca20b4851da4" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ab72ff48485aea2e2ae6288ca5f13d627" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_SetUserAssignedUuid</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a6ee3775d9d4cd6c63e3e7df627e19f4b" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_ShutdownCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a75a5f1cafecbde940a9faae7c6c0706e" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BaseClass_TryToWaitForAllBundlesToFinishSending</name></member>
+      <member refid="classBidirectionalLink_1a147f6bab3ff4a90e9c4d021835a8c7ea" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>BidirectionalLink</name></member>
+      <member refid="classTcpclBundleSource_1ac24e64918eea0c85ccd1f3890dfabfe5" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>Connect</name></member>
+      <member refid="classTcpclBundleSource_1a63ff0553b7809b73351834038017bc44" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>HandleTcpReceiveSome</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a2d73ad4019c8db9e3a27db8e7a91e279" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_bytesToAckCb</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1afeca26e4850a077b82e0e576c68c0584" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_bytesToAckCbVec</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a541add3496a7e2e1b74a67e4b8ca4f6f" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_CONTACT_HEADER_MUST_REPLY</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a5df17c6bbe3e7090811abbb92b1481dc" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_contactHeaderFlags</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a7b33bfababc84930663a0b5e5051368f" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_dataReceivedServedAsKeepaliveReceived</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1aad93934ed1f035468746c66f29a1fa50" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_dataSentServedAsKeepaliveSent</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a9b55860fe7fbf1b0b0e0b4447e1441d2" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_DELETE_SOCKET_AFTER_SHUTDOWN</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1af1d7b9661169a39282d514774efffcc4" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_DESIRED_KEEPALIVE_INTERVAL_SECONDS</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a147f123495c5c10291126503e17da174" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_EXPECTED_REMOTE_CONTACT_HEADER_EID_STRING_IF_NOT_EMPTY</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a1e903e83f7f0c0d2809a77fecb5eb2a5" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_fragmentBytesToAckCbVec</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a7f4709310bc1c6075e7fdeccea78bfdd" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_fragmentedBundleRxConcat</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ac0adfafd2f12e8d950fc5cd473f6d901" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_fragmentVectorIndexCbVec</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a1d18190cfd289434d778d27b3a799a72" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_handleTcpSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a0d6c1f724cb5fb7fa03f380da166539c" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_handleTcpSendShutdownCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a30f0fb11b7bbda99c14da670605fde5e" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_IMPLEMENTATION_STRING_FOR_COUT</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a91e4592f18087874868e0060751a946d" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_inductConnectionName</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a4fd7ecf8ca14cacd7878387a916387af" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_inductInputName</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ab89754b8cbaed12f248a4824a5afaee8" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_ioServiceRef</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1aaa34630a7389c218639eeafcd104d1a0" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_keepAliveIntervalSeconds</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a7a0e09cd6f42c4f387cd9c60238bc018" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_localConditionVariableAckReceived</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a1524d3621e14da9bfcfac0ef4a5acc9a" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_localIoServiceUniquePtr</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1afaa038b5e1f253857397836e99df549d" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_MAX_FRAGMENT_SIZE</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a2870489ab3bd1d3d3db273693a850125" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_MAX_UNACKED_BUNDLES_IN_PIPELINE</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ab71bfb789bd8981e2a8e34701d687b28" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_needToSendKeepAliveMessageTimer</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ada5d1849d4129d1a229e7954c55c37fb" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_noKeepAlivePacketReceivedTimer</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ac9396684ec1cf948d3e1efa87978dc85" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_onFailedBundleVecSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a4feec10b150500bb7a0a633fb2a5621d" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ad799a8a9cf01f40d2273f757068f5186" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_onOutductLinkStatusChangedCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1aa8fd3569e50f97b4dd8bae4f3612ad0f" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_onSuccessfulBundleSendCallback</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a7a33214ec287c4e516d71de8bab47e21" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_readyToForward</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1af77443f41a19c62a9942db557e2576f6" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_reconnectionDelaySecondsIfNotZero</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a83d7b58c45eb1ecf48d9826bd6b4b351" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_sendShutdownMessageTimeoutTimer</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ab181a8f6ad864dc44e0b353d76755d1c" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_SHUTDOWN_MESSAGE_RECONNECTION_DELAY_SECONDS_TO_SEND</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ae4e574b1ac0928919bd6d594b0003b63" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_shutdownCalled</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ae7e06abb791a64b64581bef0f810d19b" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_sinkIsSafeToDelete</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ad12bf6c51fb4ae3a43e4c2b6c031a7f4" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_tcpAsyncSenderPtr</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a478d61db501ddee120bbbaa461ade6f0" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_tcpclRemoteEidString</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a6fea5046f845596705779b1460d6e1a7" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_tcpclRemoteNodeId</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a66b64821997a479d927068e71519c149" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_tcpclShutdownComplete</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a2b17a85a77fc13c14776d07666835eb6" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_tcpclV3RxStateMachine</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a1972095b63829cde29a77c24ab5c2649" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_tcpSocketPtr</name></member>
+      <member refid="classBidirectionalLink_1acb6020e1c0f2e8d2afc75648ee3d8c0c" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_telem</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ab034bcb2d8e8c389869b6afe8de634c8" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_THIS_TCPCL_EID_STRING</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ae3b430113a7eb7e2d26422839e8bb489" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>M_BASE_UNACKED_BUNDLE_CB_SIZE</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a0367bcaf2a3f5e885f97090f3dab0dc8" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_useLocalConditionVariableAckReceived</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1af63f1a01cbded7e807dbae4032efdbf9" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_userAssignedUuid</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ae7b24a66554d4877f31dc993b493a0c9" prot="protected" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_base_userDataCbVec</name></member>
+      <member refid="classTcpclBundleSource_1af729481988b6048da5a9f742db0f7aa9" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classTcpclBundleSource_1a74167bb943f145d2fe0c8f991c786234" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_outductOpportunisticProcessReceivedBundleCallback</name></member>
+      <member refid="classTcpclBundleSource_1a78c49e55756c2a746af85c4629d0560f" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_reconnectAfterOnConnectErrorTimer</name></member>
+      <member refid="classTcpclBundleSource_1ad4225544af4f51e2de3e07a855100424" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_reconnectAfterShutdownTimer</name></member>
+      <member refid="classTcpclBundleSource_1a193d603d6d57d50bccad20f25adb2de2" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_resolver</name></member>
+      <member refid="classTcpclBundleSource_1abc03a80dc7384ae3722b6647af4ff7cf" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_resolverResults</name></member>
+      <member refid="classTcpclBundleSource_1abcb48bc5392599ddfc39d8ccd82ea181" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_tcpReadSomeBufferVec</name></member>
+      <member refid="classTcpclBundleSource_1abf3e2ff661f5dca2fc2fd69f9706c1e0" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>m_work</name></member>
+      <member refid="classTcpclBundleSource_1acca936ee58465802006a991c2d22b616" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>OnConnect</name></member>
+      <member refid="classTcpclBundleSource_1a4a70b8b61adc46f1df1a45b71e4ca63a" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>OnNeedToReconnectAfterShutdown_TimerExpired</name></member>
+      <member refid="classTcpclBundleSource_1aba2f5e05d8fb74a40d18e0feb3c71f94" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>OnReconnectAfterOnConnectError_TimerExpired</name></member>
+      <member refid="classTcpclBundleSource_1a01746d7d34cd70dce6a865b2894f5af3" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>OnResolve</name></member>
+      <member refid="classTcpclBundleSource_1aa90a6450285fea29003900c427520da9" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>ReadyToForward</name></member>
+      <member refid="classTcpclBundleSource_1a7bc9703c6053fb3ae118cef5a40fd142" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>StartTcpReceive</name></member>
+      <member refid="classTcpclBundleSource_1ade450ff945f8c96a6eaafe3cffa526d6" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>Stop</name></member>
+      <member refid="classTcpclBundleSource_1a39e222f106da270ae8f29e4f2e660645" prot="private" virt="non-virtual"><scope>TcpclBundleSource</scope><name>TcpclBundleSource</name></member>
+      <member refid="classTcpclBundleSource_1adf747f47311db3e69afb12387d0a552a" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>TcpclBundleSource</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a680f46bb021f5fe3faa2712e17b4ec65" prot="public" virt="non-virtual"><scope>TcpclBundleSource</scope><name>TcpclV3BidirectionalLink</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1ade91c38c0aba0acd5dc8727a3f196dd1" prot="public" virt="virtual"><scope>TcpclBundleSource</scope><name>Virtual_GetMaxTxBundlesInPipeline</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a44ed8eeec764005e52b6cea46bf98754" prot="protected" virt="virtual"><scope>TcpclBundleSource</scope><name>Virtual_OnContactHeaderCompletedSuccessfully</name></member>
+      <member refid="classTcpclBundleSource_1afccf375ca80b46c36a7bb34bf8cc6212" prot="private" virt="virtual"><scope>TcpclBundleSource</scope><name>Virtual_OnSuccessfulWholeBundleAcknowledged</name></member>
+      <member refid="classTcpclBundleSource_1a56f0508270ced66b260a219a47fbf710" prot="private" virt="virtual"><scope>TcpclBundleSource</scope><name>Virtual_OnTcpclShutdownComplete_CalledFromIoServiceThread</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a2475a8d646d373dfaeeb2dff992a252a" prot="protected" virt="virtual"><scope>TcpclBundleSource</scope><name>Virtual_OnTcpSendSuccessful_CalledFromIoServiceThread</name></member>
+      <member refid="classTcpclBundleSource_1a318ac8a95f52076bbcba98a109a8f9f3" prot="private" virt="virtual"><scope>TcpclBundleSource</scope><name>Virtual_WholeBundleReady</name></member>
+      <member refid="classTcpclBundleSource_1a7a60ee3e7cf820fddff60efef7b4dcf3" prot="public" virt="virtual"><scope>TcpclBundleSource</scope><name>~TcpclBundleSource</name></member>
+      <member refid="classTcpclV3BidirectionalLink_1a903495eb809229d9bef2b493c1bf206b" prot="public" virt="virtual"><scope>TcpclBundleSource</scope><name>~TcpclV3BidirectionalLink</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUdpBatchSender" kind="class" language="C++" prot="public">
+    <compoundname>UdpBatchSender</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="UdpBatchSender_8h" local="no">UdpBatchSender.h</includes>
+    <innerclass refid="classUdpBatchSender_1_1Impl" prot="public">UdpBatchSender::Impl</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classUdpBatchSender_1a66756dd191089eb060284c5378b6a257" prot="public" static="no">
+        <type>boost::function&lt; void(bool success, std::shared_ptr&lt; std::vector&lt; <ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref> &gt; &gt; &amp;udpSendPacketInfoVecSharedPtr, const std::size_t numPacketsSent)&gt;</type>
+        <definition>typedef boost::function&lt;void(bool success, std::shared_ptr&lt;std::vector&lt;UdpSendPacketInfo&gt; &gt;&amp; udpSendPacketInfoVecSharedPtr, const std::size_t numPacketsSent)&gt; UdpBatchSender::OnSentPacketsCallback_t</definition>
+        <argsstring></argsstring>
+        <name>OnSentPacketsCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="41" column="2" bodyfile="common/util/include/UdpBatchSender.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classUdpBatchSender_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; UdpBatchSender::m_pimpl</definition>
+        <argsstring></argsstring>
+        <name>m_pimpl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="133" column="21" bodyfile="common/util/include/UdpBatchSender.h" bodystart="131" bodyend="-1"/>
+        <referencedby refid="classUdpBatchSender_1ab8fbeec272de68473395d01bbb0e01d8" compoundref="UdpBatchSender_8cpp" startline="633" endline="635">GetCurrentUdpEndpoint</referencedby>
+        <referencedby refid="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" compoundref="UdpBatchSender_8cpp" startline="240" endline="242">Init</referencedby>
+        <referencedby refid="classUdpBatchSender_1aa838f62a08d9f72fd01e27a859021736" compoundref="UdpBatchSender_8cpp" startline="430" endline="435">QueueSendPacketsOperation_CalledFromWithinIoServiceThread</referencedby>
+        <referencedby refid="classUdpBatchSender_1a45c30a30456f369b8f5d659d5c083f76" compoundref="UdpBatchSender_8cpp" startline="419" endline="423">QueueSendPacketsOperation_ThreadSafe</referencedby>
+        <referencedby refid="classUdpBatchSender_1a51a2ddafe1ba15ac2b5d4edad62fd90c" compoundref="UdpBatchSender_8cpp" startline="593" endline="595">SetEndpointAndReconnect_ThreadSafe</referencedby>
+        <referencedby refid="classUdpBatchSender_1afa54b995056ddbd946474f21a8327b3b" compoundref="UdpBatchSender_8cpp" startline="412" endline="414">SetOnSentPacketsCallback</referencedby>
+        <referencedby refid="classUdpBatchSender_1acfc9bba93919f62989ff081e534bd74c" compoundref="UdpBatchSender_8cpp" startline="347" endline="349">Stop</referencedby>
+        <referencedby refid="classUdpBatchSender_1adb0093a3d12170c4bc3a45ebaaa1a57c" compoundref="UdpBatchSender_8cpp" startline="365" endline="367">Stop_CalledFromWithinIoServiceThread</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUdpBatchSender_1a6df1f808b83bd9e988057bfc2341b3bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>UdpBatchSender::UdpBatchSender</definition>
+        <argsstring>(boost::asio::io_service &amp;ioServiceSingleThreadedRef)</argsstring>
+        <name>UdpBatchSender</name>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioServiceSingleThreadedRef</declname>
+        </param>
+        <briefdescription>
+<para>Bind socket to io_service, does not open the socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="44" column="22" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="218" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1ad98565f2a3f8df6f10cafa024b542a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>UdpBatchSender::~UdpBatchSender</definition>
+        <argsstring>()</argsstring>
+        <name>~UdpBatchSender</name>
+        <briefdescription>
+<para>Call <ref refid="classUdpBatchSender_1acfc9bba93919f62989ff081e534bd74c" kindref="member">UdpBatchSender::Stop()</ref> to release managed resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="47" column="22" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="233" bodyend="235"/>
+        <references refid="classUdpBatchSender_1acfc9bba93919f62989ff081e534bd74c" compoundref="UdpBatchSender_8cpp" startline="347" endline="349">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1acfc9bba93919f62989ff081e534bd74c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform graceful shutdown.</para>
+<para>If no previous successful call to <ref refid="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" kindref="member">UdpBatchSender::Init()</ref>, returns immediately. Else, tries to perform graceful shutdown on the socket, then releases all underlying I/O resources. <simplesect kind="post"><para>The object is ready to be reused after the next successful call to <ref refid="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" kindref="member">UdpBatchSender::Init()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="55" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="347" bodyend="349"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <referencedby refid="classUdpBatchSender_1_1Impl_1ae38f00ff61e5ebaedbe916af9ef57664" compoundref="UdpBatchSender_8cpp" startline="236" endline="238">UdpBatchSender::Impl::~Impl</referencedby>
+        <referencedby refid="classUdpBatchSender_1ad98565f2a3f8df6f10cafa024b542a45" compoundref="UdpBatchSender_8cpp" startline="233" endline="235">~UdpBatchSender</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1adb0093a3d12170c4bc3a45ebaaa1a57c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::Stop_CalledFromWithinIoServiceThread</definition>
+        <argsstring>()</argsstring>
+        <name>Stop_CalledFromWithinIoServiceThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform a graceful shutdown from within the io_service thread, perhaps called by a signal handler that uses the io_service..</para>
+<para>If no previous successful call to <ref refid="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" kindref="member">Init()</ref>, returns immediately. Else, tries to perform graceful shutdown on the socket, then releases all underlying I/O resources. <simplesect kind="post"><para>The object is ready to be reused after the next successful call to <ref refid="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" kindref="member">Init()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="64" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="365" bodyend="367"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <referencedby refid="TestUdpBatchSender_8cpp_1a074e6ee922769f3b82671dceb9bbb305" compoundref="TestUdpBatchSender_8cpp" startline="81" endline="175">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool UdpBatchSender::Init</definition>
+        <argsstring>(const std::string &amp;remoteHostname, const uint16_t remotePort)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>remoteHostname</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>remotePort</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize the underlying I/O and connect to given host at given port.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteHostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote host to connect to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remotePort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote port to connect to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the connection could be established, or False if connection failed or the object has already been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="72" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="240" bodyend="242"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a6cb3ae8554c5ea717fc137e2e4df4c5e" compoundref="TestLtpUdpEngine_8cpp" startline="1706">remoteHostname</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a22d57b4e6250d4fb6114d1776078bfbd" compoundref="TestLtpUdpEngine_8cpp" startline="1707">remotePort</references>
+        <referencedby refid="TestUdpBatchSender_8cpp_1a074e6ee922769f3b82671dceb9bbb305" compoundref="TestUdpBatchSender_8cpp" startline="81" endline="175">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classUdpBatchSender_1_1Impl_1a8697497d3904f60c0efddeb36a57f76e" compoundref="UdpBatchSender_8cpp" startline="243" endline="265">UdpBatchSender::Impl::Init</referencedby>
+        <referencedby refid="classLtpUdpEngine_1a668e58d795f628e6f309912e5b2b2cb3" compoundref="LtpUdpEngine_8cpp" startline="22" endline="62">LtpUdpEngine::LtpUdpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1a0610fb3305169276000ab5c9121c05e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool UdpBatchSender::Init</definition>
+        <argsstring>(const boost::asio::ip::udp::endpoint &amp;udpDestinationEndpoint)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const boost::asio::ip::udp::endpoint &amp;</type>
+          <declname>udpDestinationEndpoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize the underlying I/O and connect to given UDP endpoint.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>udpDestinationEndpoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote UDP endpoint to connect to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the connection could be established, or False if connection failed or the object has already been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="79" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="266" bodyend="268"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1ab8fbeec272de68473395d01bbb0e01d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint UdpBatchSender::GetCurrentUdpEndpoint</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentUdpEndpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current UDP endpoint.</para>
+<para><simplesect kind="return"><para>The current UDP endpoint. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="85" column="53" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="633" bodyend="635"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1a45c30a30456f369b8f5d659d5c083f76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::QueueSendPacketsOperation_ThreadSafe</definition>
+        <argsstring>(std::shared_ptr&lt; std::vector&lt; UdpSendPacketInfo &gt; &gt; &amp;&amp;udpSendPacketInfoVecSharedPtr, const std::size_t numPacketsToSend)</argsstring>
+        <name>QueueSendPacketsOperation_ThreadSafe</name>
+        <param>
+          <type>std::shared_ptr&lt; std::vector&lt; <ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref> &gt; &gt; &amp;&amp;</type>
+          <declname>udpSendPacketInfoVecSharedPtr</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>numPacketsToSend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a packet batch send operation (thread-safe).</para>
+<para>Initiates an asynchronous request to UdpBatchSender::PerformSendPacketsOperation(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>constBufferVecs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packets to send. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingDataToDeleteOnSentCallbackVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(internal) Vector of LtpClientServiceDataToSend::underlyingDataToDeleteOnSentCallback. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingCsDataToDeleteOnSentCallbackVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(internal) Vector of LtpClientServiceDataToSend::underlyingCsDataToDeleteOnSentCallback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="94" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="419" bodyend="423"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <referencedby refid="TestUdpBatchSender_8cpp_1a074e6ee922769f3b82671dceb9bbb305" compoundref="TestUdpBatchSender_8cpp" startline="81" endline="175">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1aa838f62a08d9f72fd01e27a859021736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::QueueSendPacketsOperation_CalledFromWithinIoServiceThread</definition>
+        <argsstring>(std::shared_ptr&lt; std::vector&lt; UdpSendPacketInfo &gt; &gt; &amp;&amp;udpSendPacketInfoVecSharedPtr, const std::size_t numPacketsToSend)</argsstring>
+        <name>QueueSendPacketsOperation_CalledFromWithinIoServiceThread</name>
+        <param>
+          <type>std::shared_ptr&lt; std::vector&lt; <ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref> &gt; &gt; &amp;&amp;</type>
+          <declname>udpSendPacketInfoVecSharedPtr</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>numPacketsToSend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a packet batch send operation, called ONLY from within the same io_service::run thread (not thread-safe).</para>
+<para>Initiates an asynchronous request to UdpBatchSender::PerformSendPacketsOperation(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>constBufferVecs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packets to send. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingDataToDeleteOnSentCallbackVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(internal) Vector of LtpClientServiceDataToSend::underlyingDataToDeleteOnSentCallback. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingCsDataToDeleteOnSentCallbackVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(internal) Vector of LtpClientServiceDataToSend::underlyingCsDataToDeleteOnSentCallback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="104" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="430" bodyend="435"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <referencedby refid="classLtpUdpEngine_1a691453d193677a676b75cacdf4c0be00" compoundref="LtpUdpEngine_8cpp" startline="131" endline="139">LtpUdpEngine::SendPackets</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1afa54b995056ddbd946474f21a8327b3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::SetOnSentPacketsCallback</definition>
+        <argsstring>(const OnSentPacketsCallback_t &amp;callback)</argsstring>
+        <name>SetOnSentPacketsCallback</name>
+        <param>
+          <type>const <ref refid="classUdpBatchSender_1a66756dd191089eb060284c5378b6a257" kindref="member">OnSentPacketsCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the onSentPackets callback.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="111" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="412" bodyend="414"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <referencedby refid="TestUdpBatchSender_8cpp_1a074e6ee922769f3b82671dceb9bbb305" compoundref="TestUdpBatchSender_8cpp" startline="81" endline="175">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpUdpEngine_1a668e58d795f628e6f309912e5b2b2cb3" compoundref="LtpUdpEngine_8cpp" startline="22" endline="62">LtpUdpEngine::LtpUdpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1a51a2ddafe1ba15ac2b5d4edad62fd90c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::SetEndpointAndReconnect_ThreadSafe</definition>
+        <argsstring>(const boost::asio::ip::udp::endpoint &amp;remoteEndpoint)</argsstring>
+        <name>SetEndpointAndReconnect_ThreadSafe</name>
+        <param>
+          <type>const boost::asio::ip::udp::endpoint &amp;</type>
+          <declname>remoteEndpoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a request to connect (thread-safe).</para>
+<para>Initiates an asynchronous request to UdpBatchSender::SetEndpointAndReconnect(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteEndpoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote UDP endpoint to connect to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="118" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="593" bodyend="595"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <referencedby refid="TestUdpBatchSender_8cpp_1a074e6ee922769f3b82671dceb9bbb305" compoundref="TestUdpBatchSender_8cpp" startline="81" endline="175">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classLtpUdpEngine_1a6ee2d7f101ff07a993234ad7f3543a76" compoundref="LtpUdpEngine_8cpp" startline="227" endline="232">LtpUdpEngine::SetEndpoint</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpBatchSender_1aac53bc88c00798ae7c9e86eb32d67c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void UdpBatchSender::SetEndpointAndReconnect_ThreadSafe</definition>
+        <argsstring>(const std::string &amp;remoteHostname, const uint16_t remotePort)</argsstring>
+        <name>SetEndpointAndReconnect_ThreadSafe</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>remoteHostname</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>remotePort</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a request to connect (thread-safe).</para>
+<para>Initiates an asynchronous request to UdpBatchSender::SetEndpointAndReconnect(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteHostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote host to connect to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remotePort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote port to connect to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/UdpBatchSender.h" line="126" column="27" bodyfile="common/util/src/UdpBatchSender.cpp" bodystart="599" bodyend="601"/>
+        <references refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" compoundref="UdpBatchSender_8h" startline="131">m_pimpl</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a6cb3ae8554c5ea717fc137e2e4df4c5e" compoundref="TestLtpUdpEngine_8cpp" startline="1706">remoteHostname</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a22d57b4e6250d4fb6114d1776078bfbd" compoundref="TestLtpUdpEngine_8cpp" startline="1707">remotePort</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>UdpBatchSender</label>
+        <link refid="classUdpBatchSender"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>UdpBatchSender</label>
+        <link refid="classUdpBatchSender"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/util/include/UdpBatchSender.h" line="34" column="1" bodyfile="common/util/include/UdpBatchSender.h" bodystart="34" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classUdpBatchSender_1ab8fbeec272de68473395d01bbb0e01d8" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>GetCurrentUdpEndpoint</name></member>
+      <member refid="classUdpBatchSender_1abd523d1154bf4cff04519858022e3d9c" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>Init</name></member>
+      <member refid="classUdpBatchSender_1a0610fb3305169276000ab5c9121c05e6" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>Init</name></member>
+      <member refid="classUdpBatchSender_1a0cd9846c7b2bd62e96cb9bed9607c729" prot="private" virt="non-virtual"><scope>UdpBatchSender</scope><name>m_pimpl</name></member>
+      <member refid="classUdpBatchSender_1a66756dd191089eb060284c5378b6a257" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>OnSentPacketsCallback_t</name></member>
+      <member refid="classUdpBatchSender_1aa838f62a08d9f72fd01e27a859021736" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>QueueSendPacketsOperation_CalledFromWithinIoServiceThread</name></member>
+      <member refid="classUdpBatchSender_1a45c30a30456f369b8f5d659d5c083f76" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>QueueSendPacketsOperation_ThreadSafe</name></member>
+      <member refid="classUdpBatchSender_1a51a2ddafe1ba15ac2b5d4edad62fd90c" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>SetEndpointAndReconnect_ThreadSafe</name></member>
+      <member refid="classUdpBatchSender_1aac53bc88c00798ae7c9e86eb32d67c60" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>SetEndpointAndReconnect_ThreadSafe</name></member>
+      <member refid="classUdpBatchSender_1afa54b995056ddbd946474f21a8327b3b" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>SetOnSentPacketsCallback</name></member>
+      <member refid="classUdpBatchSender_1acfc9bba93919f62989ff081e534bd74c" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>Stop</name></member>
+      <member refid="classUdpBatchSender_1adb0093a3d12170c4bc3a45ebaaa1a57c" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>Stop_CalledFromWithinIoServiceThread</name></member>
+      <member refid="classUdpBatchSender_1a6df1f808b83bd9e988057bfc2341b3bd" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>UdpBatchSender</name></member>
+      <member refid="classUdpBatchSender_1ad98565f2a3f8df6f10cafa024b542a45" prot="public" virt="non-virtual"><scope>UdpBatchSender</scope><name>~UdpBatchSender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

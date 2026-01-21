@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpInduct" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>LtpInduct</compoundname>
+    <basecompoundref refid="classInduct" prot="public" virt="non-virtual">Induct</basecompoundref>
+    <derivedcompoundref refid="classLtpOverEncapLocalStreamInduct" prot="public" virt="non-virtual">LtpOverEncapLocalStreamInduct</derivedcompoundref>
+    <derivedcompoundref refid="classLtpOverIpcInduct" prot="public" virt="non-virtual">LtpOverIpcInduct</derivedcompoundref>
+    <derivedcompoundref refid="classLtpOverUdpInduct" prot="public" virt="non-virtual">LtpOverUdpInduct</derivedcompoundref>
+    <includes refid="LtpInduct_8h" local="no">LtpInduct.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classLtpInduct_1ac737d89f2d5556d00bd051a28e01ef37" prot="protected" static="no" mutable="no">
+        <type><ref refid="classLtpBundleSink" kindref="compound">LtpBundleSink</ref> *</type>
+        <definition>LtpBundleSink* LtpInduct::m_ltpBundleSinkPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ltpBundleSinkPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="39" column="19" bodyfile="common/induct_manager/include/LtpInduct.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classLtpInduct_1ade7cc381f23b28b21d1e5eeeaef6070f" compoundref="LtpInduct_8cpp" startline="63" endline="77">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classLtpOverEncapLocalStreamInduct_1ac31b217445a77ab20b85a66fd3f9ea04" compoundref="LtpOverEncapLocalStreamInduct_8cpp" startline="29" endline="36">LtpOverEncapLocalStreamInduct::SetLtpBundleSinkPtr</referencedby>
+        <referencedby refid="classLtpOverIpcInduct_1a81d8fdd2438578aaa7c58f84d4a243f2" compoundref="LtpOverIpcInduct_8cpp" startline="27" endline="34">LtpOverIpcInduct::SetLtpBundleSinkPtr</referencedby>
+        <referencedby refid="classLtpOverUdpInduct_1a4d9b620d75ce8b20b328d5c807a2737b" compoundref="LtpOverUdpInduct_8cpp" startline="27" endline="34">LtpOverUdpInduct::SetLtpBundleSinkPtr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpInduct_1aa57caefffb64aa9a4d940a931ff0018d" prot="protected" static="no" mutable="no">
+        <type><ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref></type>
+        <definition>LtpEngineConfig LtpInduct::m_ltpRxCfg</definition>
+        <argsstring></argsstring>
+        <name>m_ltpRxCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="40" column="21" bodyfile="common/induct_manager/include/LtpInduct.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classLtpInduct_1af04f62cb434dc7c02dbf595a87c6331f" compoundref="LtpInduct_8cpp" startline="21" endline="55">LtpInduct</referencedby>
+        <referencedby refid="classLtpInduct_1ade7cc381f23b28b21d1e5eeeaef6070f" compoundref="LtpInduct_8cpp" startline="63" endline="77">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classLtpOverEncapLocalStreamInduct_1ac31b217445a77ab20b85a66fd3f9ea04" compoundref="LtpOverEncapLocalStreamInduct_8cpp" startline="29" endline="36">LtpOverEncapLocalStreamInduct::SetLtpBundleSinkPtr</referencedby>
+        <referencedby refid="classLtpOverIpcInduct_1a81d8fdd2438578aaa7c58f84d4a243f2" compoundref="LtpOverIpcInduct_8cpp" startline="27" endline="34">LtpOverIpcInduct::SetLtpBundleSinkPtr</referencedby>
+        <referencedby refid="classLtpOverUdpInduct_1a4d9b620d75ce8b20b328d5c807a2737b" compoundref="LtpOverUdpInduct_8cpp" startline="27" endline="34">LtpOverUdpInduct::SetLtpBundleSinkPtr</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpInduct_1af04f62cb434dc7c02dbf595a87c6331f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>LtpInduct::LtpInduct</definition>
+        <argsstring>(const InductProcessBundleCallback_t &amp;inductProcessBundleCallback, const induct_element_config_t &amp;inductConfig, const uint64_t maxBundleSizeBytes)</argsstring>
+        <name>LtpInduct</name>
+        <param>
+          <type>const <ref refid="Induct_8h_1a86c4fd64e7b8ba210fcb5e112a9877e2" kindref="member">InductProcessBundleCallback_t</ref> &amp;</type>
+          <declname>inductProcessBundleCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structinduct__element__config__t" kindref="compound">induct_element_config_t</ref> &amp;</type>
+          <declname>inductConfig</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="30" column="31" bodyfile="common/induct_manager/src/LtpInduct.cpp" bodystart="21" bodyend="55"/>
+        <references refid="structinduct__element__config__t_1ad1022838ddbf00773829090d9e0a7630" compoundref="InductsConfig_8h" startline="65">induct_element_config_t::activeSessionDataOnDiskDirectory</references>
+        <references refid="structLtpEngineConfig_1a0763759a09f2a0119ce2d0658b4a5ced" compoundref="LtpEngineConfig_8h" startline="232">LtpEngineConfig::activeSessionDataOnDiskDirectory</references>
+        <references refid="structinduct__element__config__t_1a7d6070f83d976b568c8f43d45abac54b" compoundref="InductsConfig_8h" startline="64">induct_element_config_t::activeSessionDataOnDiskNewFileDurationMs</references>
+        <references refid="structLtpEngineConfig_1af2376157350aed7ab80a30f11e0281fb" compoundref="LtpEngineConfig_8h" startline="224">LtpEngineConfig::activeSessionDataOnDiskNewFileDurationMsOrZeroToDisable</references>
+        <references refid="structinduct__element__config__t_1a813113ff159d3b7b47efb10a022deb2c" compoundref="InductsConfig_8h" startline="39">induct_element_config_t::boundPort</references>
+        <references refid="structLtpEngineConfig_1a170699ecfa38cc0c052108ac12e938e7" compoundref="LtpEngineConfig_8h" startline="135">LtpEngineConfig::checkpointEveryNthDataPacketSender</references>
+        <references refid="structinduct__element__config__t_1aaa44dd31687ec4cd89f8b192014f6a33" compoundref="InductsConfig_8h" startline="52">induct_element_config_t::clientServiceId</references>
+        <references refid="structLtpEngineConfig_1a42eb7872c51d024e446f1135621ebbaa" compoundref="LtpEngineConfig_8h" startline="52">LtpEngineConfig::clientServiceId</references>
+        <references refid="structLtpEngineConfig_1afdfdac47cbc2428cbf3938ab7002d851" compoundref="LtpEngineConfig_8h" startline="205">LtpEngineConfig::delaySendingOfDataSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="structinduct__element__config__t_1a63b52ee618cd7c1361c1d1e3b95d5e41" compoundref="InductsConfig_8h" startline="62">induct_element_config_t::delaySendingOfReportSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a7d24cf72557b24b668aff6736ed88770" compoundref="LtpEngineConfig_8h" startline="198">LtpEngineConfig::delaySendingOfReportSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a285c4bcb053c6ff6eca4aef88b40911d" compoundref="LtpEngineConfig_8h" startline="109">LtpEngineConfig::encapLocalSocketOrPipePath</references>
+        <references refid="structLtpEngineConfig_1afa274d7da389c6f2c4fa918c83187fc9" compoundref="LtpEngineConfig_8h" startline="124">LtpEngineConfig::estimatedBytesToReceivePerSession</references>
+        <references refid="structLtpEngineConfig_1a22b27ed88b40a71fa2a6bbd32d999c1e" compoundref="LtpEngineConfig_8h" startline="146">LtpEngineConfig::force32BitRandomNumbers</references>
+        <references refid="structLtpEngineConfig_1a05e457da7911caf752206356abcc4485" compoundref="LtpEngineConfig_8h" startline="57">LtpEngineConfig::isInduct</references>
+        <references refid="structinduct__element__config__t_1a4073b79029cc70349ff1175e25676f03" compoundref="InductsConfig_8h" startline="63">induct_element_config_t::keepActiveSessionDataOnDisk</references>
+        <references refid="structinduct__element__config__t_1a006c0d26d4cd527a218b2945f9bdd2c8" compoundref="InductsConfig_8h" startline="56">induct_element_config_t::ltpEncapLocalSocketOrPipePath</references>
+        <references refid="structinduct__element__config__t_1a9c3a1655e4709005c5f6c1a8da37caaa" compoundref="InductsConfig_8h" startline="60">induct_element_config_t::ltpMaxExpectedSimultaneousSessions</references>
+        <references refid="structinduct__element__config__t_1a59e5edbf2835af39b777ac820ab9d43b" compoundref="InductsConfig_8h" startline="54">induct_element_config_t::ltpMaxRetriesPerSerialNumber</references>
+        <references refid="structinduct__element__config__t_1a8f99aa5bd58fa80f78cd665430f72b74" compoundref="InductsConfig_8h" startline="61">induct_element_config_t::ltpMaxUdpPacketsToSendPerSystemCall</references>
+        <references refid="structinduct__element__config__t_1afa9c07e0eae3f7d275ece86114589dd3" compoundref="InductsConfig_8h" startline="55">induct_element_config_t::ltpRandomNumberSizeBits</references>
+        <references refid="structinduct__element__config__t_1acb002d8cb8be0cb2f53f71fb49278d6a" compoundref="InductsConfig_8h" startline="57">induct_element_config_t::ltpRemoteUdpHostname</references>
+        <references refid="structinduct__element__config__t_1a524f0fcd1ed1b81eb2b981ff769ce141" compoundref="InductsConfig_8h" startline="58">induct_element_config_t::ltpRemoteUdpPort</references>
+        <references refid="structinduct__element__config__t_1ac8fcba34cc986531dfdec09ff7f7e75f" compoundref="InductsConfig_8h" startline="49">induct_element_config_t::ltpReportSegmentMtu</references>
+        <references refid="structinduct__element__config__t_1a56acf6996640ee9c927ce18cb3947137" compoundref="InductsConfig_8h" startline="59">induct_element_config_t::ltpRxDataSegmentSessionNumberRecreationPreventerHistorySize</references>
+        <references refid="classLtpInduct_1aa57caefffb64aa9a4d940a931ff0018d" compoundref="LtpInduct_8h" startline="40">m_ltpRxCfg</references>
+        <references refid="structLtpEngineConfig_1a7c62d960314ed9eaaaf4c90f6aeee30c" compoundref="LtpEngineConfig_8h" startline="130">LtpEngineConfig::maxRedRxBytesPerSession</references>
+        <references refid="structLtpEngineConfig_1a6d29cdf8079f48b11ee646ea37818d8c" compoundref="LtpEngineConfig_8h" startline="140">LtpEngineConfig::maxRetriesPerSerialNumber</references>
+        <references refid="structLtpEngineConfig_1a6faf94f6fa8ceafb610adc0d5a771ebd" compoundref="LtpEngineConfig_8h" startline="152">LtpEngineConfig::maxSendRateBitsPerSecOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a65262bfda5b82c5e99873ef54d726e26" compoundref="LtpEngineConfig_8h" startline="158">LtpEngineConfig::maxSimultaneousSessions</references>
+        <references refid="structLtpEngineConfig_1a1e47195525407f2e2480ce7655eb2a8f" compoundref="LtpEngineConfig_8h" startline="175">LtpEngineConfig::maxUdpPacketsToSendPerSystemCall</references>
+        <references refid="structLtpEngineConfig_1a07a85204646f86f00c78b7aca99bb6eb" compoundref="LtpEngineConfig_8h" startline="64">LtpEngineConfig::mtuClientServiceData</references>
+        <references refid="structLtpEngineConfig_1a8235168074f9299b1735fcd30c150329" compoundref="LtpEngineConfig_8h" startline="71">LtpEngineConfig::mtuReportSegment</references>
+        <references refid="structLtpEngineConfig_1a0fa582174017651a0be58e1d27bf9949" compoundref="LtpEngineConfig_8h" startline="98">LtpEngineConfig::myBoundUdpPort</references>
+        <references refid="structinduct__element__config__t_1acd6c7ca4a51e95fdfe80e7c8bf6ae1db" compoundref="InductsConfig_8h" startline="40">induct_element_config_t::numRxCircularBufferElements</references>
+        <references refid="structLtpEngineConfig_1a78bed3a14f8e63e1bd32c0f7bf9ba239" compoundref="LtpEngineConfig_8h" startline="115">LtpEngineConfig::numUdpRxCircularBufferVectors</references>
+        <references refid="structLtpEngineConfig_1a1d11c611d71f54ad1f33286c36e60b18" compoundref="LtpEngineConfig_8h" startline="77">LtpEngineConfig::oneWayLightTime</references>
+        <references refid="structinduct__element__config__t_1ad10f98a3e6e05c170b4d633ca204af53" compoundref="InductsConfig_8h" startline="50">induct_element_config_t::oneWayLightTimeMs</references>
+        <references refid="structLtpEngineConfig_1aa1e502a8a0bee5c78d2e31156cadb5a7" compoundref="LtpEngineConfig_8h" startline="83">LtpEngineConfig::oneWayMarginTime</references>
+        <references refid="structinduct__element__config__t_1a423074488a7d14b1c3e646358413c068" compoundref="InductsConfig_8h" startline="51">induct_element_config_t::oneWayMarginTimeMs</references>
+        <references refid="structinduct__element__config__t_1a5eac3097df90f6337469e63dafa5f7ca" compoundref="InductsConfig_8h" startline="53">induct_element_config_t::preallocatedRedDataBytes</references>
+        <references refid="structLtpEngineConfig_1a6b8f1a839c371d086806f7219df4ac4a" compoundref="LtpEngineConfig_8h" startline="238">LtpEngineConfig::rateLimitPrecisionMicroSec</references>
+        <references refid="structLtpEngineConfig_1a03646d1713438df39ba955253b02e10a" compoundref="LtpEngineConfig_8h" startline="39">LtpEngineConfig::remoteEngineId</references>
+        <references refid="structLtpEngineConfig_1a3b5c1559c2a733cc8b8fba4cbbc3bc59" compoundref="LtpEngineConfig_8h" startline="88">LtpEngineConfig::remoteHostname</references>
+        <references refid="structinduct__element__config__t_1a5481e2dfbb60185d876bb0be5f87ed40" compoundref="InductsConfig_8h" startline="48">induct_element_config_t::remoteLtpEngineId</references>
+        <references refid="structLtpEngineConfig_1ab13f2bce8c0cb0043ebce1b9a2189b0d" compoundref="LtpEngineConfig_8h" startline="93">LtpEngineConfig::remotePort</references>
+        <references refid="structLtpEngineConfig_1a14dcbf504447d844df362bc97a200b1c" compoundref="LtpEngineConfig_8h" startline="165">LtpEngineConfig::rxDataSegmentSessionNumberRecreationPreventerHistorySizeOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1aabd8c6f6a4c12778745c09dc7a792726" compoundref="LtpEngineConfig_8h" startline="184">LtpEngineConfig::senderPingSecondsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a3941215c3bd5169de2cd0b3dd312ba86" compoundref="LtpEngineConfig_8h" startline="34">LtpEngineConfig::thisEngineId</references>
+        <references refid="structinduct__element__config__t_1adc384662832d8f77fc245d77f2f31980" compoundref="InductsConfig_8h" startline="47">induct_element_config_t::thisLtpEngineId</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpInduct_1a5b2ac478e3d63546b9ae25443a1789da" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>LtpInduct::~LtpInduct</definition>
+        <argsstring>() override</argsstring>
+        <name>~LtpInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="31" column="39" bodyfile="common/induct_manager/src/LtpInduct.cpp" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpInduct_1ab608160a7952603e1c1abdf294a78943" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool LtpInduct::Init</definition>
+        <argsstring>() override</argsstring>
+        <name>Init</name>
+        <reimplements refid="classInduct_1aaf85eacba6c3124f59a725aab11ebcb6">Init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="32" column="44" bodyfile="common/induct_manager/src/LtpInduct.cpp" bodystart="57" bodyend="59"/>
+        <references refid="classLtpInduct_1ab42b8cd66601a03d101fa7886d7c0bf8">SetLtpBundleSinkPtr</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpInduct_1ade7cc381f23b28b21d1e5eeeaef6070f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void LtpInduct::PopulateInductTelemetry</definition>
+        <argsstring>(InductTelemetry_t &amp;inductTelem) override</argsstring>
+        <name>PopulateInductTelemetry</name>
+        <reimplements refid="classInduct_1a4b0dc7469558559ec0d99748a61ffde9">PopulateInductTelemetry</reimplements>
+        <param>
+          <type><ref refid="structInductTelemetry__t" kindref="compound">InductTelemetry_t</ref> &amp;</type>
+          <declname>inductTelem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="33" column="44" bodyfile="common/induct_manager/src/LtpInduct.cpp" bodystart="63" bodyend="77"/>
+        <references refid="structinduct__element__config__t_1a4fde88bb40193402d0ced12a92efa962" compoundref="InductsConfig_8h" startline="38">induct_element_config_t::convergenceLayer</references>
+        <references refid="classLtpBundleSink_1a8017bc0e4ac253daa365cb5df982c42a" compoundref="LtpBundleSink_8cpp" startline="73" endline="100">LtpBundleSink::GetTelemetry</references>
+        <references refid="structInductTelemetry__t_1a29369bf8ac458f4275a8a08a3580a929" compoundref="TelemetryDefinitions_8h" startline="297">InductTelemetry_t::m_convergenceLayer</references>
+        <references refid="classInduct_1a557e332763667d6232acbcebcf4b788b" compoundref="Induct_8h" startline="89">Induct::m_inductConfig</references>
+        <references refid="structInductTelemetry__t_1aa5e33785eab14435ec678b0bf14d7671" compoundref="TelemetryDefinitions_8h" startline="298">InductTelemetry_t::m_listInductConnections</references>
+        <references refid="classLtpInduct_1ac737d89f2d5556d00bd051a28e01ef37" compoundref="LtpInduct_8h" startline="39">m_ltpBundleSinkPtr</references>
+        <references refid="classLtpInduct_1aa57caefffb64aa9a4d940a931ff0018d" compoundref="LtpInduct_8h" startline="40">m_ltpRxCfg</references>
+        <references refid="structLtpEngineConfig_1a0fa582174017651a0be58e1d27bf9949" compoundref="LtpEngineConfig_8h" startline="98">LtpEngineConfig::myBoundUdpPort</references>
+        <references refid="TestLtpEngine_8cpp_1a0c7c287c52ef81bc2b96ac534486db6b" compoundref="TestCborUint_8cpp" startline="477">t</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpInduct_1a9e6781daf3dfb3b5ae3304f04af29ff2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpInduct::LtpInduct</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="35" column="5"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classLtpInduct_1ab42b8cd66601a03d101fa7886d7c0bf8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>virtual INDUCT_MANAGER_LIB_EXPORT bool LtpInduct::SetLtpBundleSinkPtr</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetLtpBundleSinkPtr</name>
+        <reimplementedby refid="classLtpOverEncapLocalStreamInduct_1ac31b217445a77ab20b85a66fd3f9ea04">SetLtpBundleSinkPtr</reimplementedby>
+        <reimplementedby refid="classLtpOverIpcInduct_1a81d8fdd2438578aaa7c58f84d4a243f2">SetLtpBundleSinkPtr</reimplementedby>
+        <reimplementedby refid="classLtpOverUdpInduct_1a4d9b620d75ce8b20b328d5c807a2737b">SetLtpBundleSinkPtr</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/LtpInduct.h" line="37" column="44"/>
+        <referencedby refid="classLtpInduct_1ab608160a7952603e1c1abdf294a78943" compoundref="LtpInduct_8cpp" startline="57" endline="59">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>LtpOverEncapLocalStreamInduct</label>
+        <link refid="classLtpOverEncapLocalStreamInduct"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LtpOverUdpInduct</label>
+        <link refid="classLtpOverUdpInduct"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+      </node>
+      <node id="1">
+        <label>LtpInduct</label>
+        <link refid="classLtpInduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LtpOverIpcInduct</label>
+        <link refid="classLtpOverIpcInduct"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="16">
+        <label>LtpSessionReceiver::LtpSessionReceiverCommonData</label>
+        <link refid="structLtpSessionReceiver_1_1LtpSessionReceiverCommonData"/>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecyclerRef</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbersRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReportsRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>LtpTimerManager&lt; Ltp::session_id_t, Ltp::hash_session_id_t &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_activeSerialNumberBeingTimed</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Ltp::ltp_extensions_t</label>
+        <link refid="structLtp_1_1ltp__extensions__t"/>
+      </node>
+      <node id="5">
+        <label>LtpBundleSink</label>
+        <link refid="classLtpBundleSink"/>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_ltpRxCfg</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_ltpEnginePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>UserDataRecycler&lt; LtpSessionReceiverRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="22">
+        <label>UserDataRecycler&lt; LtpSessionSenderRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="6">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="10">
+        <label>Ltp</label>
+        <link refid="classLtp"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_dataSegment_clientServiceRawDataWrapper</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_dataSegmentMetadata</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_sessionId</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_headerExtensions</edgelabel>
+          <edgelabel>m_trailerExtensions</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_reportSegment</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>LtpSessionSender::LtpSessionSenderCommonData</label>
+        <link refid="structLtpSessionSender_1_1LtpSessionSenderCommonData"/>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_csnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbersRef</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegmentsRef</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecyclerRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>LtpRandomNumberGenerator::Rng</label>
+        <link refid="classLtpRandomNumberGenerator_1_1Rng"/>
+      </node>
+      <node id="1">
+        <label>LtpInduct</label>
+        <link refid="classLtpInduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_ltpRxCfg</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_ltpBundleSinkPtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Ltp::client_service_raw_data_t</label>
+        <link refid="structLtp_1_1client__service__raw__data__t"/>
+      </node>
+      <node id="21">
+        <label>LtpTimerManager&lt; uint64_t, std::hash&lt; uint64_t &gt; &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LtpEngineConfig</label>
+        <link refid="structLtpEngineConfig"/>
+      </node>
+      <node id="3">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="7">
+        <label>LtpEngine</label>
+        <link refid="classLtpEngine"/>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_ltpRxStateMachine</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_ltpSessionReceiverCommonData</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecycler</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_cancelSegmentTimerExpiredCallback</edgelabel>
+          <edgelabel>m_csnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallback</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfCancelSegments</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReports</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>m_ltpSessionSenderCommonData</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegments</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecycler</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>m_tokenRateLimiter</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>LtpRandomNumberGenerator</label>
+        <link refid="classLtpRandomNumberGenerator"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Ltp::data_segment_metadata_t</label>
+        <link refid="structLtp_1_1data__segment__metadata__t"/>
+      </node>
+      <node id="15">
+        <label>Ltp::report_segment_t</label>
+        <link refid="structLtp_1_1report__segment__t"/>
+      </node>
+      <node id="13">
+        <label>Ltp::session_id_t</label>
+        <link refid="structLtp_1_1session__id__t"/>
+      </node>
+      <node id="23">
+        <label>TokenRateLimiter</label>
+        <link refid="classTokenRateLimiter"/>
+      </node>
+      <node id="19">
+        <label>UserDataRecycler&lt; std::vector&lt; uint8_t &gt; &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/induct_manager/include/LtpInduct.h" line="28" column="1" bodyfile="common/induct_manager/include/LtpInduct.h" bodystart="28" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classInduct_1ad74c9b440a843473696defb025590a9f" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</name></member>
+      <member refid="classInduct_1ae03c890c8d5a0ac0b5e3d71e928329fa" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>BundleSinkTryGetData_FromIoServiceThread</name></member>
+      <member refid="classInduct_1a0cbe038ec6320e7b05110dbc63e847a3" prot="public" virt="non-virtual"><scope>LtpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a17724854b4a473b9a57526cd0dc4f071" prot="public" virt="non-virtual"><scope>LtpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a74322837f4037aec13e5bb937ca5badf" prot="public" virt="non-virtual"><scope>LtpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a761599f28ca13bb6845eb2f7c69b7dff" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1ae7cbc5d5364a77fc3246b4b346bb658d" prot="private" virt="non-virtual"><scope>LtpInduct</scope><name>Induct</name></member>
+      <member refid="classInduct_1a647593fe6c02215c386ebaa63a0d0824" prot="public" virt="non-virtual"><scope>LtpInduct</scope><name>Induct</name></member>
+      <member refid="classLtpInduct_1ab608160a7952603e1c1abdf294a78943" prot="public" virt="virtual"><scope>LtpInduct</scope><name>Init</name></member>
+      <member refid="classLtpInduct_1af04f62cb434dc7c02dbf595a87c6331f" prot="public" virt="non-virtual"><scope>LtpInduct</scope><name>LtpInduct</name></member>
+      <member refid="classLtpInduct_1a9e6781daf3dfb3b5ae3304f04af29ff2" prot="private" virt="non-virtual"><scope>LtpInduct</scope><name>LtpInduct</name></member>
+      <member refid="classInduct_1a557e332763667d6232acbcebcf4b788b" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_inductConfig</name></member>
+      <member refid="classInduct_1a88863aafd33849d348fbd6d97ffc1092" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_inductProcessBundleCallback</name></member>
+      <member refid="classLtpInduct_1ac737d89f2d5556d00bd051a28e01ef37" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_ltpBundleSinkPtr</name></member>
+      <member refid="classLtpInduct_1aa57caefffb64aa9a4d940a931ff0018d" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_ltpRxCfg</name></member>
+      <member refid="classInduct_1a1e17749fc05146922183f4f4ef32ee86" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_mapNodeIdToOpportunisticBundleQueue</name></member>
+      <member refid="classInduct_1a5ac721528b8eaa20a6c9dcaf5adee326" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_mapNodeIdToOpportunisticBundleQueueMutex</name></member>
+      <member refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_onDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" prot="protected" virt="non-virtual"><scope>LtpInduct</scope><name>m_onNewOpportunisticLinkCallback</name></member>
+      <member refid="classLtpInduct_1ade7cc381f23b28b21d1e5eeeaef6070f" prot="public" virt="virtual"><scope>LtpInduct</scope><name>PopulateInductTelemetry</name></member>
+      <member refid="classLtpInduct_1ab42b8cd66601a03d101fa7886d7c0bf8" prot="protected" virt="pure-virtual"><scope>LtpInduct</scope><name>SetLtpBundleSinkPtr</name></member>
+      <member refid="classInduct_1aad47fefdf9d04f67cef3eb3d5f5ea6db" prot="protected" virt="virtual"><scope>LtpInduct</scope><name>Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</name></member>
+      <member refid="classInduct_1a178422af7be2fddc07d57292bc4e033c" prot="public" virt="virtual"><scope>LtpInduct</scope><name>~Induct</name></member>
+      <member refid="classLtpInduct_1a5b2ac478e3d63546b9ae25443a1789da" prot="public" virt="virtual"><scope>LtpInduct</scope><name>~LtpInduct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

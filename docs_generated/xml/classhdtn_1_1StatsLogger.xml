@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classhdtn_1_1StatsLogger" kind="class" language="C++" prot="public">
+    <compoundname>hdtn::StatsLogger</compoundname>
+    <includes refid="StatsLogger_8h" local="no">StatsLogger.h</includes>
+    <innerclass refid="structhdtn_1_1StatsLogger_1_1metric__t" prot="public">hdtn::StatsLogger::metric_t</innerclass>
+    <innerclass refid="structhdtn_1_1StatsLogger_1_1timestampMs__t" prot="private">hdtn::StatsLogger::timestampMs_t</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classhdtn_1_1StatsLogger_1ae5ae926fc7db6d349fd99116bc5ce74a" prot="public" static="no">
+        <type>boost::log::sinks::synchronous_sink&lt; boost::log::sinks::text_file_backend &gt;</type>
+        <definition>typedef boost::log::sinks::synchronous_sink&lt; boost::log::sinks::text_file_backend &gt; hdtn::StatsLogger::sink_t</definition>
+        <argsstring></argsstring>
+        <name>sink_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="54" column="49" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classhdtn_1_1StatsLogger_1a692cdc3aaef91e412391817c043237bf" prot="private" static="no">
+        <type>boost::log::attributes::mutable_constant&lt; std::string, boost::shared_mutex, boost::unique_lock&lt; boost::shared_mutex &gt;, boost::shared_lock&lt; boost::shared_mutex &gt; &gt;</type>
+        <definition>typedef boost::log::attributes::mutable_constant&lt; std::string, boost::shared_mutex, boost::unique_lock&lt; boost::shared_mutex &gt;, boost::shared_lock&lt; boost::shared_mutex &gt; &gt; hdtn::StatsLogger::file_name_attr_t</definition>
+        <argsstring></argsstring>
+        <name>file_name_attr_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread-safe attributes used for logging. Shared lock for read, exclusive lock for write. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="119" column="2" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1a8a7a4da9d3b1c24a1a520a1cb4994238" prot="private" static="yes" mutable="no">
+        <type>STATS_LIB_EXPORT boost::log::sources::logger_mt</type>
+        <definition>boost::log::sources::logger_mt hdtn::StatsLogger::m_logger</definition>
+        <argsstring></argsstring>
+        <name>m_logger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Underlying log source </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="108" column="60" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" compoundref="StatsLogger_8cpp" startline="50" endline="68">Log</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a0170764a7870dbca80ec89ac54c589c6" compoundref="StatsLogger_8cpp" startline="97" endline="100">registerAttributes</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab24dd9317be564ab09b496b133bffcbe" compoundref="StatsLogger_8cpp" startline="138" endline="152">writeHeader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1a8aea7fd1762a1b90f0708f9e1d52e60a" prot="private" static="yes" mutable="no">
+        <type>STATS_LIB_EXPORT <ref refid="classhdtn_1_1StatsLogger_1a692cdc3aaef91e412391817c043237bf" kindref="member">file_name_attr_t</ref></type>
+        <definition>StatsLogger::file_name_attr_t hdtn::StatsLogger::file_name_attr</definition>
+        <argsstring></argsstring>
+        <name>file_name_attr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="120" column="46" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" compoundref="StatsLogger_8cpp" startline="50" endline="68">Log</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a0170764a7870dbca80ec89ac54c589c6" compoundref="StatsLogger_8cpp" startline="97" endline="100">registerAttributes</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab24dd9317be564ab09b496b133bffcbe" compoundref="StatsLogger_8cpp" startline="138" endline="152">writeHeader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1aee4ac844f92889f3c94f6b214e961a2d" prot="private" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classhdtn_1_1StatsLogger" kindref="compound">StatsLogger</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; StatsLogger &gt; hdtn::StatsLogger::StatsLogger_</definition>
+        <argsstring></argsstring>
+        <name>StatsLogger_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Attributes for managing singleton instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="125" column="28" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" compoundref="StatsLogger_8cpp" startline="81" endline="95">ensureInitialized</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1a5f6671c13549ab4dcc48e885d23d4656" prot="private" static="yes" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::StatsLogger::mutexSingletonInstance_</definition>
+        <argsstring></argsstring>
+        <name>mutexSingletonInstance_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="126" column="25" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="126" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" compoundref="StatsLogger_8cpp" startline="81" endline="95">ensureInitialized</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" compoundref="StatsLogger_8cpp" startline="50" endline="68">Log</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1aa947e7da3f2350be5656a9ea91383bc1" compoundref="StatsLogger_8cpp" startline="70" endline="79">Reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1a14cf86e59f31f3d71f632d352b877bdf" prot="private" static="yes" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt; bool &gt; hdtn::StatsLogger::StatsLoggerSingletonFullyInitialized_</definition>
+        <argsstring></argsstring>
+        <name>StatsLoggerSingletonFullyInitialized_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="127" column="24" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="127" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" compoundref="StatsLogger_8cpp" startline="81" endline="95">ensureInitialized</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1adcef4f654ae7c0663a5eb3579db0e163" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, boost::shared_ptr&lt; <ref refid="classhdtn_1_1StatsLogger_1ae5ae926fc7db6d349fd99116bc5ce74a" kindref="member">StatsLogger::sink_t</ref> &gt; &gt;</type>
+        <definition>std::map&lt; std::string, boost::shared_ptr&lt; StatsLogger::sink_t &gt; &gt; hdtn::StatsLogger::m_initializedFiles</definition>
+        <argsstring></argsstring>
+        <name>m_initializedFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="128" column="21" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="128" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" compoundref="StatsLogger_8cpp" startline="81" endline="95">ensureInitialized</referencedby>
+        <referencedby refid="classhdtn_1_1StatsLogger_1aa947e7da3f2350be5656a9ea91383bc1" compoundref="StatsLogger_8cpp" startline="70" endline="79">Reset</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classhdtn_1_1StatsLogger_1a6b9bd1aa7f0d673d61a58100f88864c0" prot="private" static="no" mutable="no">
+        <type>boost::phoenix::function&lt; <ref refid="structhdtn_1_1StatsLogger_1_1timestampMs__t" kindref="compound">StatsLogger::timestampMs_t</ref> &gt;</type>
+        <definition>boost::phoenix::function&lt;StatsLogger::timestampMs_t&gt; hdtn::StatsLogger::m_timestampMsFormatter</definition>
+        <argsstring></argsstring>
+        <name>m_timestampMsFormatter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="136" column="30" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a4958731e8e905e68fab4eecc204216ef" compoundref="StatsLogger_8cpp" startline="107" endline="136">createFileSink</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_EXPORT void</type>
+        <definition>void hdtn::StatsLogger::Log</definition>
+        <argsstring>(const std::string &amp;fileName, const std::vector&lt; StatsLogger::metric_t &gt; &amp;metrics)</argsstring>
+        <name>Log</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structhdtn_1_1StatsLogger_1_1metric__t" kindref="compound">StatsLogger::metric_t</ref> &gt; &amp;</type>
+          <declname>metrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logs a set of metrics to the specified file. A new file is created if it doesn&apos;t yet exist. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="59" column="34" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="50" bodyend="68"/>
+        <references refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" compoundref="StatsLogger_8cpp" startline="81" endline="95">ensureInitialized</references>
+        <references refid="classhdtn_1_1StatsLogger_1a8aea7fd1762a1b90f0708f9e1d52e60a" compoundref="StatsLogger_8h" startline="120">file_name_attr</references>
+        <references refid="classhdtn_1_1StatsLogger_1a8a7a4da9d3b1c24a1a520a1cb4994238" compoundref="StatsLogger_8h" startline="108">m_logger</references>
+        <references refid="classhdtn_1_1StatsLogger_1a5f6671c13549ab4dcc48e885d23d4656" compoundref="StatsLogger_8h" startline="126">mutexSingletonInstance_</references>
+        <referencedby refid="classBpSinkPattern_1a46859c04ef870a0bc4d6c4347858830f" compoundref="BpSinkPattern_8cpp" startline="513" endline="561">BpSinkPattern::LogStats</referencedby>
+        <referencedby refid="classTelemetryLogger_1af93db7299200b75b29a828e056022fde" compoundref="TelemetryLogger_8cpp" startline="25" endline="68">TelemetryLogger::LogTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1aa947e7da3f2350be5656a9ea91383bc1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_EXPORT void</type>
+        <definition>void hdtn::StatsLogger::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears all of the file sinks associated with this logger </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="67" column="34" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="70" bodyend="79"/>
+        <references refid="classhdtn_1_1StatsLogger_1adcef4f654ae7c0663a5eb3579db0e163" compoundref="StatsLogger_8h" startline="128">m_initializedFiles</references>
+        <references refid="classhdtn_1_1StatsLogger_1a5f6671c13549ab4dcc48e885d23d4656" compoundref="StatsLogger_8h" startline="126">mutexSingletonInstance_</references>
+        <referencedby refid="TestBpSinkPattern_8cpp_1ae8962e75bb0d67d8c42fa551d930207f" compoundref="TestBpSinkPattern_8cpp" startline="71" endline="98">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1ac37dda9617d647c492da22546fc1a1c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_EXPORT</type>
+        <definition>hdtn::StatsLogger::~StatsLogger</definition>
+        <argsstring>()</argsstring>
+        <name>~StatsLogger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="69" column="22" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="154" bodyend="154"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1a7cc9c250e28cb2f82e9c34a114be048d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT</type>
+        <definition>hdtn::StatsLogger::StatsLogger</definition>
+        <argsstring>()</argsstring>
+        <name>StatsLogger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="71" column="25" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="44" bodyend="48"/>
+        <references refid="classhdtn_1_1StatsLogger_1a0170764a7870dbca80ec89ac54c589c6" compoundref="StatsLogger_8cpp" startline="97" endline="100">registerAttributes</references>
+        <referencedby refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" compoundref="StatsLogger_8cpp" startline="81" endline="95">ensureInitialized</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1a61f555b37d07ad5b3d0bbab3ca9b0b0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT</type>
+        <definition>STATS_LIB_NO_EXPORT hdtn::StatsLogger::StatsLogger</definition>
+        <argsstring>(StatsLogger const &amp;)=delete</argsstring>
+        <name>StatsLogger</name>
+        <param>
+          <type><ref refid="classhdtn_1_1StatsLogger" kindref="compound">StatsLogger</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="72" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1a9db4df088d84db75a32934663ff2005b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT <ref refid="classhdtn_1_1StatsLogger" kindref="compound">StatsLogger</ref> &amp;</type>
+        <definition>STATS_LIB_NO_EXPORT StatsLogger&amp; hdtn::StatsLogger::operator=</definition>
+        <argsstring>(StatsLogger const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classhdtn_1_1StatsLogger" kindref="compound">StatsLogger</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="73" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1a0170764a7870dbca80ec89ac54c589c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT void</type>
+        <definition>void hdtn::StatsLogger::registerAttributes</definition>
+        <argsstring>()</argsstring>
+        <name>registerAttributes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers attributes used for log messages </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="78" column="30" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="97" bodyend="100"/>
+        <references refid="classhdtn_1_1StatsLogger_1a8aea7fd1762a1b90f0708f9e1d52e60a" compoundref="StatsLogger_8h" startline="120">file_name_attr</references>
+        <references refid="classhdtn_1_1StatsLogger_1a8a7a4da9d3b1c24a1a520a1cb4994238" compoundref="StatsLogger_8h" startline="108">m_logger</references>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a7cc9c250e28cb2f82e9c34a114be048d" compoundref="StatsLogger_8cpp" startline="44" endline="48">StatsLogger</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1a4958731e8e905e68fab4eecc204216ef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT boost::shared_ptr&lt; <ref refid="classhdtn_1_1StatsLogger_1ae5ae926fc7db6d349fd99116bc5ce74a" kindref="member">StatsLogger::sink_t</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; StatsLogger::sink_t &gt; hdtn::StatsLogger::createFileSink</definition>
+        <argsstring>(const std::string &amp;fileName, const std::vector&lt; StatsLogger::metric_t &gt; &amp;metrics)</argsstring>
+        <name>createFileSink</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structhdtn_1_1StatsLogger_1_1metric__t" kindref="compound">StatsLogger::metric_t</ref> &gt; &amp;</type>
+          <declname>metrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a file sink for the given file name. Used to split stats into separate files. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="84" column="43" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="107" bodyend="136"/>
+        <references refid="classhdtn_1_1StatsLogger_1a6b9bd1aa7f0d673d61a58100f88864c0" compoundref="StatsLogger_8h" startline="136">m_timestampMsFormatter</references>
+        <references refid="namespacehdtn_1ab28f572099a76644550bcb4008001e92" compoundref="StatsLogger_8cpp" startline="20">hdtn::maxFilesPerMetric</references>
+        <references refid="classhdtn_1_1StatsLogger_1ab24dd9317be564ab09b496b133bffcbe" compoundref="StatsLogger_8cpp" startline="138" endline="152">writeHeader</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT void</type>
+        <definition>void hdtn::StatsLogger::ensureInitialized</definition>
+        <argsstring>(const std::string &amp;fileName, const std::vector&lt; StatsLogger::metric_t &gt; &amp;metrics)</argsstring>
+        <name>ensureInitialized</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structhdtn_1_1StatsLogger_1_1metric__t" kindref="compound">StatsLogger::metric_t</ref> &gt; &amp;</type>
+          <declname>metrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the <ref refid="classhdtn_1_1StatsLogger" kindref="compound">StatsLogger</ref> if it hasn&apos;t been created yet </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="92" column="37" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="81" bodyend="95"/>
+        <references refid="classhdtn_1_1StatsLogger_1adcef4f654ae7c0663a5eb3579db0e163" compoundref="StatsLogger_8h" startline="128">m_initializedFiles</references>
+        <references refid="classhdtn_1_1StatsLogger_1a5f6671c13549ab4dcc48e885d23d4656" compoundref="StatsLogger_8h" startline="126">mutexSingletonInstance_</references>
+        <references refid="classhdtn_1_1StatsLogger_1a7cc9c250e28cb2f82e9c34a114be048d" compoundref="StatsLogger_8cpp" startline="44" endline="48">StatsLogger</references>
+        <references refid="classhdtn_1_1StatsLogger_1aee4ac844f92889f3c94f6b214e961a2d" compoundref="StatsLogger_8h" startline="125">StatsLogger_</references>
+        <references refid="classhdtn_1_1StatsLogger_1a14cf86e59f31f3d71f632d352b877bdf" compoundref="StatsLogger_8h" startline="127">StatsLoggerSingletonFullyInitialized_</references>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" compoundref="StatsLogger_8cpp" startline="50" endline="68">Log</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classhdtn_1_1StatsLogger_1ab24dd9317be564ab09b496b133bffcbe" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATS_LIB_NO_EXPORT void</type>
+        <definition>void hdtn::StatsLogger::writeHeader</definition>
+        <argsstring>(const std::string &amp;fileName, const std::vector&lt; StatsLogger::metric_t &gt; &amp;metrics)</argsstring>
+        <name>writeHeader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structhdtn_1_1StatsLogger_1_1metric__t" kindref="compound">StatsLogger::metric_t</ref> &gt; &amp;</type>
+          <declname>metrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes the header to a new log file </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stats_logger/include/StatsLogger.h" line="100" column="37" bodyfile="common/stats_logger/src/StatsLogger.cpp" bodystart="138" bodyend="152"/>
+        <references refid="classhdtn_1_1StatsLogger_1a8aea7fd1762a1b90f0708f9e1d52e60a" compoundref="StatsLogger_8h" startline="120">file_name_attr</references>
+        <references refid="classhdtn_1_1StatsLogger_1a8a7a4da9d3b1c24a1a520a1cb4994238" compoundref="StatsLogger_8h" startline="108">m_logger</references>
+        <referencedby refid="classhdtn_1_1StatsLogger_1a4958731e8e905e68fab4eecc204216ef" compoundref="StatsLogger_8cpp" startline="107" endline="136">createFileSink</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classhdtn_1_1StatsLogger" kindref="compound">StatsLogger</ref> class used to create log file for metrics. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/stats_logger/include/StatsLogger.h" line="34" column="1" bodyfile="common/stats_logger/include/StatsLogger.h" bodystart="35" bodyend="137"/>
+    <listofallmembers>
+      <member refid="classhdtn_1_1StatsLogger_1a4958731e8e905e68fab4eecc204216ef" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>createFileSink</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1ab8f8adb0d176367bcfd67682a60f00dd" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>ensureInitialized</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a8aea7fd1762a1b90f0708f9e1d52e60a" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>file_name_attr</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a692cdc3aaef91e412391817c043237bf" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>file_name_attr_t</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a8757fcbde18518081b87be519c90d844" prot="public" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>Log</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1adcef4f654ae7c0663a5eb3579db0e163" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>m_initializedFiles</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a8a7a4da9d3b1c24a1a520a1cb4994238" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>m_logger</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a6b9bd1aa7f0d673d61a58100f88864c0" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>m_timestampMsFormatter</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a5f6671c13549ab4dcc48e885d23d4656" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>mutexSingletonInstance_</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a9db4df088d84db75a32934663ff2005b" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>operator=</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a0170764a7870dbca80ec89ac54c589c6" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>registerAttributes</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1aa947e7da3f2350be5656a9ea91383bc1" prot="public" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>Reset</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1ae5ae926fc7db6d349fd99116bc5ce74a" prot="public" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>sink_t</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a7cc9c250e28cb2f82e9c34a114be048d" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>StatsLogger</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a61f555b37d07ad5b3d0bbab3ca9b0b0a" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>StatsLogger</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1aee4ac844f92889f3c94f6b214e961a2d" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>StatsLogger_</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1a14cf86e59f31f3d71f632d352b877bdf" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>StatsLoggerSingletonFullyInitialized_</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1ab24dd9317be564ab09b496b133bffcbe" prot="private" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>writeHeader</name></member>
+      <member refid="classhdtn_1_1StatsLogger_1ac37dda9617d647c492da22546fc1a1c1" prot="public" virt="non-virtual"><scope>hdtn::StatsLogger</scope><name>~StatsLogger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

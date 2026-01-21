@@ -1,0 +1,1023 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpUdpEngineManager" kind="class" language="C++" prot="public">
+    <compoundname>LtpUdpEngineManager</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="LtpUdpEngineManager_8h" local="no">LtpUdpEngineManager.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1ad952e7435061ea7b83e032e33b047f68" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; uint16_t, std::weak_ptr&lt; <ref refid="classLtpUdpEngineManager" kindref="compound">LtpUdpEngineManager</ref> &gt; &gt;</type>
+        <definition>std::map&lt; uint16_t, std::weak_ptr&lt; LtpUdpEngineManager &gt; &gt; LtpUdpEngineManager::m_staticMapBoundPortToLtpUdpEngineManagerPtr</definition>
+        <argsstring></argsstring>
+        <name>m_staticMapBoundPortToLtpUdpEngineManagerPtr</name>
+        <briefdescription>
+<para>Registered engine managers, mapped by bound port. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="187" column="21" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="187" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a91367de52770ee7f7bca3ce276b29e2a" compoundref="LtpUdpEngineManager_8cpp" startline="51" endline="68">GetOrCreateInstance</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a4e961d12a5e476adf575df92dc4d15b6" prot="private" static="yes" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex LtpUdpEngineManager::m_staticMutex</definition>
+        <argsstring></argsstring>
+        <name>m_staticMutex</name>
+        <briefdescription>
+<para>Engine manger registry mutex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="189" column="25" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="189" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a91367de52770ee7f7bca3ce276b29e2a" compoundref="LtpUdpEngineManager_8cpp" startline="51" endline="68">GetOrCreateInstance</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a318f7d00c025d2b6affbdfa57bb0d69d" compoundref="LtpUdpEngineManager_8cpp" startline="32" endline="48">SetMaxUdpRxPacketSizeBytesForAllLtp</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a7891ba73f8116431fa0adcafce6b8515" prot="private" static="yes" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpUdpEngineManager::M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</definition>
+        <argsstring></argsstring>
+        <name>M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Maximum UDP packet size in bytes, applies to all registered engines. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="191" column="21" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="191" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a91367de52770ee7f7bca3ce276b29e2a" compoundref="LtpUdpEngineManager_8cpp" startline="51" endline="68">GetOrCreateInstance</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a318f7d00c025d2b6affbdfa57bb0d69d" compoundref="LtpUdpEngineManager_8cpp" startline="32" endline="48">SetMaxUdpRxPacketSizeBytesForAllLtp</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a5811999852f21c80616a8c284db3235c" prot="private" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t LtpUdpEngineManager::M_MY_BOUND_UDP_PORT</definition>
+        <argsstring></argsstring>
+        <name>M_MY_BOUND_UDP_PORT</name>
+        <briefdescription>
+<para>Our managed UDP socket port, if the port number 0 the socket is bound to a random ephemeral port. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="195" column="20" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="195" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1af31a70db337f6410d43f13b13078816f" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service LtpUdpEngineManager::m_ioServiceUdp</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceUdp</name>
+        <briefdescription>
+<para>I/O execution context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="197" column="29" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="197" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a92e998239bf6a3aa2b66864794f570f5" compoundref="LtpUdpEngineManager_8cpp" startline="120" endline="122">RemoveLtpUdpEngineByRemoteEngineId_ThreadSafe</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" compoundref="LtpUdpEngineManager_8cpp" startline="251" endline="265">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a3ba891d555cd43f3fddee26d36f0ad86" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::resolver</type>
+        <definition>boost::asio::ip::udp::resolver LtpUdpEngineManager::m_resolver</definition>
+        <argsstring></argsstring>
+        <name>m_resolver</name>
+        <briefdescription>
+<para>UDP endpoint resolver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="199" column="36" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="199" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1aba4c57c7b3c3178354087788c6758a47" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::socket</type>
+        <definition>boost::asio::ip::udp::socket LtpUdpEngineManager::m_udpSocket</definition>
+        <argsstring></argsstring>
+        <name>m_udpSocket</name>
+        <briefdescription>
+<para>Our managed UDP socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="201" column="34" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="201" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a9d9f68ae6de9bdddfe4c32a3382a4349" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer LtpUdpEngineManager::m_retryAfterSocketErrorTimer</definition>
+        <argsstring></argsstring>
+        <name>m_retryAfterSocketErrorTimer</name>
+        <briefdescription>
+<para>Socket error retry timer, the time to wait before retrying failed operation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="204" column="33" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="204" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a6f4f195de83db1c33b6ddc86e732ff28" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer LtpUdpEngineManager::m_socketRestoredTimer</definition>
+        <argsstring></argsstring>
+        <name>m_socketRestoredTimer</name>
+        <briefdescription>
+<para>Socket restore from quarantine timer, the duration without experiencing socket errors required before the engine manager is marked as operational. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="206" column="33" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="206" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" compoundref="LtpUdpEngineManager_8cpp" startline="377" endline="385">OnRetryAfterSocketError_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a519c20eeeec28ed549c8febc36e6016d" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint LtpUdpEngineManager::m_udpDestinationResolvedEndpointDataSourceToDataSink</definition>
+        <argsstring></argsstring>
+        <name>m_udpDestinationResolvedEndpointDataSourceToDataSink</name>
+        <briefdescription>
+<para>... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="208" column="36" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1ae2ba6e9b4244a1f40fb5cf59b35c1aab" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; LtpUdpEngineManager::m_ioServiceUdpThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceUdpThreadPtr</name>
+        <briefdescription>
+<para>Thread that invokes m_ioServiceUdp.run() </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="210" column="21" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="210" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" compoundref="LtpUdpEngineManager_8cpp" startline="251" endline="265">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1ade827bafe3447cbefea0351fef97994d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; boost::uint8_t &gt;</type>
+        <definition>std::vector&lt;boost::uint8_t&gt; LtpUdpEngineManager::m_udpReceiveBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBuffer</name>
+        <briefdescription>
+<para>Packet receive buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="214" column="17" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="214" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1aeea3fe4e8d1a92e243b7b84dfa2d4869" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint LtpUdpEngineManager::m_remoteEndpointReceived</definition>
+        <argsstring></argsstring>
+        <name>m_remoteEndpointReceived</name>
+        <briefdescription>
+<para>Remote UDP endpoint to receive from. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="216" column="36" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="216" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> &gt;</type>
+        <definition>std::map&lt;uint64_t, LtpUdpEngine&gt; LtpUdpEngineManager::m_mapRemoteEngineIdToLtpUdpEngineReceiver</definition>
+        <argsstring></argsstring>
+        <name>m_mapRemoteEngineIdToLtpUdpEngineReceiver</name>
+        <briefdescription>
+<para>Registered inducts, mapped by engine ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="219" column="14" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="219" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a876273cbcf0aac2e5d1686bafd3ff5d7" compoundref="LtpUdpEngineManager_8cpp" startline="114" endline="118">GetLtpUdpEnginePtrByRemoteEngineId</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" compoundref="LtpUdpEngineManager_8cpp" startline="123" endline="153">RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1ab46ff605f0219bb265db5d8d8d9e71bf" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> &gt;::iterator</type>
+        <definition>std::map&lt;uint64_t, LtpUdpEngine&gt;::iterator LtpUdpEngineManager::m_cachedItRemoteEngineIdToLtpUdpEngineReceiver</definition>
+        <argsstring></argsstring>
+        <name>m_cachedItRemoteEngineIdToLtpUdpEngineReceiver</name>
+        <briefdescription>
+<para>Cached iterator of induct, references m_mapRemoteEngineIdToLtpUdpEngineReceiver, can be invalid/stale do check before use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="221" column="25" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="221" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" compoundref="LtpUdpEngineManager_8cpp" startline="123" endline="153">RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> &gt;</type>
+        <definition>std::map&lt;uint64_t, LtpUdpEngine&gt; LtpUdpEngineManager::m_mapRemoteEngineIdToLtpUdpEngineTransmitter</definition>
+        <argsstring></argsstring>
+        <name>m_mapRemoteEngineIdToLtpUdpEngineTransmitter</name>
+        <briefdescription>
+<para>Registered outducts, mapped by engine ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="223" column="14" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="223" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a876273cbcf0aac2e5d1686bafd3ff5d7" compoundref="LtpUdpEngineManager_8cpp" startline="114" endline="118">GetLtpUdpEnginePtrByRemoteEngineId</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" compoundref="LtpUdpEngineManager_8cpp" startline="123" endline="153">RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a94577685d7272fb78e7888146a2297fd" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> * &gt;</type>
+        <definition>std::vector&lt;LtpUdpEngine*&gt; LtpUdpEngineManager::m_vecEngineIndexToLtpUdpEngineTransmitterPtr</definition>
+        <argsstring></argsstring>
+        <name>m_vecEngineIndexToLtpUdpEngineTransmitterPtr</name>
+        <briefdescription>
+<para>Registered engines bound to our port, indexed by engine index, the index comes from parsing the session number with <ref refid="classLtpRandomNumberGenerator_1a962eee701e277cbc7e5676a68064137d" kindref="member">LtpRandomNumberGenerator::GetEngineIndexFromRandomSessionNumber()</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="225" column="17" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="225" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" compoundref="LtpUdpEngineManager_8cpp" startline="123" endline="153">RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a233274d0484602cd249154eaa13931f0" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int LtpUdpEngineManager::m_nextEngineIndex</definition>
+        <argsstring></argsstring>
+        <name>m_nextEngineIndex</name>
+        <briefdescription>
+<para>Engine index to assign to the next registered outduct. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="227" column="18" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="227" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" compoundref="LtpUdpEngineManager_8cpp" startline="156" endline="244">AddLtpUdpEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; LtpUdpEngineManager::m_readyToForward</definition>
+        <argsstring></argsstring>
+        <name>m_readyToForward</name>
+        <briefdescription>
+<para>Whether the engine manager should currently be considered operational. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="230" column="17" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="230" bodyend="-1"/>
+        <referencedby refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1abb37fc2be42b16fc307c50a140ca9c28" compoundref="LtpUdpEngineManager_8cpp" startline="427" endline="429">ReadyToForward</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a43425eaf3784928faa2d98794010393d" compoundref="LtpUdpEngineManager_8cpp" startline="387" endline="393">SocketRestored_TimerExpired</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a241eff152bab1ee07c05ca6f6a8ad513" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpUdpEngineManager::LtpUdpEngineManager</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpUdpEngineManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="40" column="5"/>
+        <referencedby refid="classLtpUdpEngineManager_1a91367de52770ee7f7bca3ce276b29e2a" compoundref="LtpUdpEngineManager_8cpp" startline="51" endline="68">GetOrCreateInstance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1aafad7b44a8f24c2afddc5241d4b602e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpUdpEngineManager::LtpUdpEngineManager</definition>
+        <argsstring>(const uint16_t myBoundUdpPort, const bool autoStart)</argsstring>
+        <name>LtpUdpEngineManager</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>myBoundUdpPort</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>autoStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bind I/O components to m_ioServiceUdp. Preallocate space in m_vecEngineIndexToLtpUdpEngineTransmitterPtr to cover the addressing space for indexing by engine index (2 ^ [8 engine index bytes]). Set m_readyToForward to False to initialize engine manager as idle. If autoStart is set to True, call <ref refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" kindref="member">LtpUdpEngineManager::StartIfNotAlreadyRunning()</ref> to start the engine manager. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>myBoundUdpPort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Our UDP port. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>autoStart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the engine manager should start automatically on construction. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="50" column="20" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="71" bodyend="86"/>
+        <references refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::StartUdpReceive</definition>
+        <argsstring>()</argsstring>
+        <name>StartUdpReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the receive loop for the remote endpoint to receive from.</para>
+<para>Initiates an asynchronous receive operation with <ref refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" kindref="member">LtpUdpEngineManager::HandleUdpReceive()</ref> as a completion handler. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="129" column="28" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="268" bodyend="275"/>
+        <references refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</references>
+        <references refid="classLtpUdpEngineManager_1aeea3fe4e8d1a92e243b7b84dfa2d4869" compoundref="LtpUdpEngineManager_8h" startline="216">m_remoteEndpointReceived</references>
+        <references refid="classLtpUdpEngineManager_1ade827bafe3447cbefea0351fef97994d" compoundref="LtpUdpEngineManager_8h" startline="214">m_udpReceiveBuffer</references>
+        <references refid="classLtpUdpEngineManager_1aba4c57c7b3c3178354087788c6758a47" compoundref="LtpUdpEngineManager_8h" startline="201">m_udpSocket</references>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" compoundref="LtpUdpEngineManager_8cpp" startline="377" endline="385">OnRetryAfterSocketError_TimerExpired</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" compoundref="LtpUdpEngineManager_8cpp" startline="89" endline="112">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::HandleUdpReceive</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>HandleUdpReceive</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle a UDP receive operation.</para>
+<para>If a fatal error occurred during the receive operation, returns immediately letting m_ioServiceUdp run out of work and leaving the engine manager in an idle state. In case of a recoverable error, the engine manager is set to idle, a link-down event is emitted to the underlying <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> with PostExternalLinkDownEvent_ThreadSafe(), and to retry after a specified duration, the socket error timer is started asynchronously with <ref refid="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" kindref="member">LtpUdpEngineManager::OnRetryAfterSocketError_TimerExpired()</ref> as a completion handler.</para>
+<para>Attempts to parse the start an LTP header to get the session originator and session number, if packet is malformed it gets dropped and the receive loop starts again. Parses the direction of the packet with <ref refid="classLtp_1aacbfed077a29e920efab1d9579acffe9" kindref="member">Ltp::GetMessageDirectionFromSegmentFlags()</ref>.<orderedlist>
+<listitem><para>When (sender -&gt; receiver), we have received a message type that only travels from an outduct (sender) to an induct (receiver), the session originator value can be used directly to search through the cache or registered inducts to access the referenced engine.</para>
+</listitem><listitem><para>When (receiver -&gt; sender), we have received a message type that only travels from an induct (receiver) to an outduct (sender), the session originator value is our engine ID, to get a proper identifier we can use we need to feed the session number to <ref refid="classLtpRandomNumberGenerator_1a962eee701e277cbc7e5676a68064137d" kindref="member">LtpRandomNumberGenerator::GetEngineIndexFromRandomSessionNumber()</ref>, the returned engine index can then be used directly to index the outduct pointer vector to access the referenced engine.</para>
+</listitem></orderedlist>
+</para>
+<para>On successful processing, signals the underlying <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> that a packet has been received with PostPacketFromManager_ThreadSafe(), then calls <ref refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" kindref="member">LtpUdpEngineManager::StartUdpReceive()</ref> to achieve a receive loop. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytesTransferred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes received. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="150" column="28" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="278" bodyend="375"/>
+        <references refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</references>
+        <references refid="classLtpRandomNumberGenerator_1a962eee701e277cbc7e5676a68064137d" compoundref="LtpRandomNumberGenerator_8cpp" startline="209" endline="214">LtpRandomNumberGenerator::GetEngineIndexFromRandomSessionNumber</references>
+        <references refid="classLtp_1aacbfed077a29e920efab1d9579acffe9" compoundref="Ltp_8cpp" startline="1650" endline="1693">Ltp::GetMessageDirectionFromSegmentFlags</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classLtpUdpEngineManager_1ab46ff605f0219bb265db5d8d8d9e71bf" compoundref="LtpUdpEngineManager_8h" startline="221">m_cachedItRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" compoundref="LtpUdpEngineManager_8h" startline="219">m_mapRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" compoundref="LtpUdpEngineManager_8h" startline="223">m_mapRemoteEngineIdToLtpUdpEngineTransmitter</references>
+        <references refid="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" compoundref="LtpUdpEngineManager_8h" startline="230">m_readyToForward</references>
+        <references refid="classLtpUdpEngineManager_1a9d9f68ae6de9bdddfe4c32a3382a4349" compoundref="LtpUdpEngineManager_8h" startline="204">m_retryAfterSocketErrorTimer</references>
+        <references refid="classLtpUdpEngineManager_1a6f4f195de83db1c33b6ddc86e732ff28" compoundref="LtpUdpEngineManager_8h" startline="206">m_socketRestoredTimer</references>
+        <references refid="classLtpUdpEngineManager_1a7891ba73f8116431fa0adcafce6b8515" compoundref="LtpUdpEngineManager_8h" startline="191">M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</references>
+        <references refid="classLtpUdpEngineManager_1ade827bafe3447cbefea0351fef97994d" compoundref="LtpUdpEngineManager_8h" startline="214">m_udpReceiveBuffer</references>
+        <references refid="classLtpUdpEngineManager_1a94577685d7272fb78e7888146a2297fd" compoundref="LtpUdpEngineManager_8h" startline="225">m_vecEngineIndexToLtpUdpEngineTransmitterPtr</references>
+        <references refid="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" compoundref="LtpUdpEngineManager_8cpp" startline="377" endline="385">OnRetryAfterSocketError_TimerExpired</references>
+        <references refid="classLtpUdpEngine_1ab4df35d476fd75b921a818853d47dcfc" compoundref="LtpUdpEngine_8cpp" startline="97" endline="116">LtpUdpEngine::PostPacketFromManager_ThreadSafe</references>
+        <references refid="Sdnv_8h_1aed9b084e1f882d083c1f235615779f25" compoundref="Sdnv_8cpp" startline="113" endline="124">SdnvDecodeU64</references>
+        <references refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <references refid="TestCborUint_8cpp_1ab2458bac57f09e186773d28ccf9b674c" compoundref="TestCborUint_8cpp" startline="474">totalBytesDecoded</references>
+        <referencedby refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::OnRetryAfterSocketError_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnRetryAfterSocketError_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle socket error retry timer expiry.</para>
+<para>If the expiry occurred due to the timer being manually cancelled, returns immediately. Else, starts the restore from quarantine timer asynchronously with <ref refid="classLtpUdpEngineManager_1a43425eaf3784928faa2d98794010393d" kindref="member">LtpUdpEngineManager::SocketRestored_TimerExpired()</ref>, then calls <ref refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" kindref="member">LtpUdpEngineManager::StartUdpReceive()</ref> to try and resume the receive loop. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="159" column="28" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="377" bodyend="385"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpUdpEngineManager_1a6f4f195de83db1c33b6ddc86e732ff28" compoundref="LtpUdpEngineManager_8h" startline="206">m_socketRestoredTimer</references>
+        <references refid="classLtpUdpEngineManager_1a43425eaf3784928faa2d98794010393d" compoundref="LtpUdpEngineManager_8cpp" startline="387" endline="393">SocketRestored_TimerExpired</references>
+        <references refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a43425eaf3784928faa2d98794010393d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::SocketRestored_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>SocketRestored_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle restore from quarantine timer expiry.</para>
+<para>If the expiry occurred due to the timer being manually cancelled, returns immediately. Else, this indicates that the engine has not experienced any socket errors and has been running normally for the duration the timer was active and can now safely be considered operational and marked as such for external services to then be able to query and resume their own operations. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="168" column="28" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="387" bodyend="393"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" compoundref="LtpUdpEngineManager_8h" startline="230">m_readyToForward</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" compoundref="LtpUdpEngineManager_8cpp" startline="377" endline="385">OnRetryAfterSocketError_TimerExpired</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a4627137e3a0f40a03595e2ee9cfc8fcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpUdpEngineManager::~LtpUdpEngineManager</definition>
+        <argsstring>()</argsstring>
+        <name>~LtpUdpEngineManager</name>
+        <briefdescription>
+<para>Call <ref refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" kindref="member">LtpUdpEngineManager::Stop()</ref> to release managed resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="53" column="20" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="246" bodyend="249"/>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" compoundref="LtpUdpEngineManager_8cpp" startline="251" endline="265">Stop</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpUdpEngineManager::StartIfNotAlreadyRunning</definition>
+        <argsstring>()</argsstring>
+        <name>StartIfNotAlreadyRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>First bind the LTP UDP socket to myBoundUdpPort from the constructor. If binding succeeds, start the LTP udp socket io_service thread and start UDP asynchronous receiving. It is recommended this be called after all UDP engines have been added in case remote peers are already sending UDP packets to this manager.</para>
+<para><simplesect kind="return"><para>True if the operation completed successfully (or completed successfully in the past). Subsequent calls to <ref refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" kindref="member">StartIfNotAlreadyRunning()</ref> will succeed if the first call to <ref refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" kindref="member">StartIfNotAlreadyRunning()</ref> succeeded. False if the operation failed (socket didn&apos;t bind). </para>
+</simplesect>
+<simplesect kind="post"><para>If and only if this is the first call, then the socket is bound, a dedicated io_service thread for the udp socket is running, and the udp socket is listening for incoming packets on the bound port. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="65" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="89" bodyend="112"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpUdpEngineManager_1af31a70db337f6410d43f13b13078816f" compoundref="LtpUdpEngineManager_8h" startline="197">m_ioServiceUdp</references>
+        <references refid="classLtpUdpEngineManager_1ae2ba6e9b4244a1f40fb5cf59b35c1aab" compoundref="LtpUdpEngineManager_8h" startline="210">m_ioServiceUdpThreadPtr</references>
+        <references refid="classLtpUdpEngineManager_1a5811999852f21c80616a8c284db3235c" compoundref="LtpUdpEngineManager_8h" startline="195">M_MY_BOUND_UDP_PORT</references>
+        <references refid="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" compoundref="LtpUdpEngineManager_8h" startline="230">m_readyToForward</references>
+        <references refid="classLtpUdpEngineManager_1aba4c57c7b3c3178354087788c6758a47" compoundref="LtpUdpEngineManager_8h" startline="201">m_udpSocket</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" compoundref="LtpUdpEngineManager_8cpp" startline="268" endline="275">StartUdpReceive</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpUdpEngineManager_1aafad7b44a8f24c2afddc5241d4b602e5" compoundref="LtpUdpEngineManager_8cpp" startline="71" endline="86">LtpUdpEngineManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpUdpEngineManager::AddLtpUdpEngine</definition>
+        <argsstring>(const LtpEngineConfig &amp;ltpRxOrTxCfg)</argsstring>
+        <name>AddLtpUdpEngine</name>
+        <param>
+          <type>const <ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref> &amp;</type>
+          <declname>ltpRxOrTxCfg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add an <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> to the <ref refid="classLtpUdpEngineManager" kindref="compound">LtpUdpEngineManager</ref>. If bidirectionallity is desired (receiving client service data in both directions), call this function twice with isInduct set to True in one call and False in the other call. A max of 7 engines can be added for one outduct with the same udp port.</para>
+<para><simplesect kind="return"><para>True if the operation completed successfully (or false otherwise). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="74" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="156" bodyend="244"/>
+        <references refid="structLtpEngineConfig_1a0763759a09f2a0119ce2d0658b4a5ced" compoundref="LtpEngineConfig_8h" startline="232">LtpEngineConfig::activeSessionDataOnDiskDirectory</references>
+        <references refid="structLtpEngineConfig_1af2376157350aed7ab80a30f11e0281fb" compoundref="LtpEngineConfig_8h" startline="224">LtpEngineConfig::activeSessionDataOnDiskNewFileDurationMsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1afdfdac47cbc2428cbf3938ab7002d851" compoundref="LtpEngineConfig_8h" startline="205">LtpEngineConfig::delaySendingOfDataSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a7d24cf72557b24b668aff6736ed88770" compoundref="LtpEngineConfig_8h" startline="198">LtpEngineConfig::delaySendingOfReportSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a05e457da7911caf752206356abcc4485" compoundref="LtpEngineConfig_8h" startline="57">LtpEngineConfig::isInduct</references>
+        <references refid="TestLtpEngine_8cpp_1a9942be1b49301a408ae9d0dd11a80496" compoundref="TestLtpEngine_8cpp" startline="489">isInduct</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" compoundref="LtpUdpEngineManager_8h" startline="219">m_mapRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" compoundref="LtpUdpEngineManager_8h" startline="223">m_mapRemoteEngineIdToLtpUdpEngineTransmitter</references>
+        <references refid="classLtpUdpEngineManager_1a233274d0484602cd249154eaa13931f0" compoundref="LtpUdpEngineManager_8h" startline="227">m_nextEngineIndex</references>
+        <references refid="classLtpUdpEngineManager_1a3ba891d555cd43f3fddee26d36f0ad86" compoundref="LtpUdpEngineManager_8h" startline="199">m_resolver</references>
+        <references refid="classLtpUdpEngineManager_1a7891ba73f8116431fa0adcafce6b8515" compoundref="LtpUdpEngineManager_8h" startline="191">M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</references>
+        <references refid="classLtpUdpEngineManager_1aba4c57c7b3c3178354087788c6758a47" compoundref="LtpUdpEngineManager_8h" startline="201">m_udpSocket</references>
+        <references refid="classLtpUdpEngineManager_1a94577685d7272fb78e7888146a2297fd" compoundref="LtpUdpEngineManager_8h" startline="225">m_vecEngineIndexToLtpUdpEngineTransmitterPtr</references>
+        <references refid="structLtpEngineConfig_1a65262bfda5b82c5e99873ef54d726e26" compoundref="LtpEngineConfig_8h" startline="158">LtpEngineConfig::maxSimultaneousSessions</references>
+        <references refid="structLtpEngineConfig_1a1e47195525407f2e2480ce7655eb2a8f" compoundref="LtpEngineConfig_8h" startline="175">LtpEngineConfig::maxUdpPacketsToSendPerSystemCall</references>
+        <references refid="structLtpEngineConfig_1a03646d1713438df39ba955253b02e10a" compoundref="LtpEngineConfig_8h" startline="39">LtpEngineConfig::remoteEngineId</references>
+        <references refid="structLtpEngineConfig_1a3b5c1559c2a733cc8b8fba4cbbc3bc59" compoundref="LtpEngineConfig_8h" startline="88">LtpEngineConfig::remoteHostname</references>
+        <references refid="structLtpEngineConfig_1ab13f2bce8c0cb0043ebce1b9a2189b0d" compoundref="LtpEngineConfig_8h" startline="93">LtpEngineConfig::remotePort</references>
+        <references refid="structLtpEngineConfig_1aabd8c6f6a4c12778745c09dc7a792726" compoundref="LtpEngineConfig_8h" startline="184">LtpEngineConfig::senderPingSecondsOrZeroToDisable</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <references refid="structLtpEngineConfig_1a3941215c3bd5169de2cd0b3dd312ba86" compoundref="LtpEngineConfig_8h" startline="34">LtpEngineConfig::thisEngineId</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a876273cbcf0aac2e5d1686bafd3ff5d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> *</type>
+        <definition>LtpUdpEngine * LtpUdpEngineManager::GetLtpUdpEnginePtrByRemoteEngineId</definition>
+        <argsstring>(const uint64_t remoteEngineId, const bool isInduct)</argsstring>
+        <name>GetLtpUdpEnginePtrByRemoteEngineId</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteEngineId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isInduct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Find registered engine by engine ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteEngineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The engine ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isInduct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to search through inducts (or outducts). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the engine if exists and is of the correct type indicated by isInduct, or NULL otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="82" column="34" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="114" bodyend="118"/>
+        <references refid="TestLtpEngine_8cpp_1a9942be1b49301a408ae9d0dd11a80496" compoundref="TestLtpEngine_8cpp" startline="489">isInduct</references>
+        <references refid="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" compoundref="LtpUdpEngineManager_8h" startline="219">m_mapRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" compoundref="LtpUdpEngineManager_8h" startline="223">m_mapRemoteEngineIdToLtpUdpEngineTransmitter</references>
+        <references refid="TestLtpEngine_8cpp_1a8621a6cc4d1d256276eeed371f0e9c2e" compoundref="TestLtpEngine_8cpp" startline="487">remoteEngineId</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a92e998239bf6a3aa2b66864794f570f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::RemoveLtpUdpEngineByRemoteEngineId_ThreadSafe</definition>
+        <argsstring>(const uint64_t remoteEngineId, const bool isInduct, const boost::function&lt; void()&gt; &amp;callback)</argsstring>
+        <name>RemoveLtpUdpEngineByRemoteEngineId_ThreadSafe</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteEngineId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isInduct</declname>
+        </param>
+        <param>
+          <type>const boost::function&lt; void()&gt; &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a request to remove a registered engine by engine ID (thread-safe).</para>
+<para>Initiates an asynchronous request to <ref refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" kindref="member">LtpUdpEngineManager::RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe()</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteEngineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The engine ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isInduct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to search through inducts (or outducts). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to invoke on completion. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="91" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="120" bodyend="122"/>
+        <references refid="TestLtpEngine_8cpp_1a9942be1b49301a408ae9d0dd11a80496" compoundref="TestLtpEngine_8cpp" startline="489">isInduct</references>
+        <references refid="classLtpUdpEngineManager_1af31a70db337f6410d43f13b13078816f" compoundref="LtpUdpEngineManager_8h" startline="197">m_ioServiceUdp</references>
+        <references refid="TestLtpEngine_8cpp_1a8621a6cc4d1d256276eeed371f0e9c2e" compoundref="TestLtpEngine_8cpp" startline="487">remoteEngineId</references>
+        <references refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" compoundref="LtpUdpEngineManager_8cpp" startline="123" endline="153">RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</definition>
+        <argsstring>(const uint64_t remoteEngineId, const bool isInduct, const boost::function&lt; void()&gt; &amp;callback)</argsstring>
+        <name>RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteEngineId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isInduct</declname>
+        </param>
+        <param>
+          <type>const boost::function&lt; void()&gt; &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove a registered engine by engine ID.</para>
+<para>Removes the registered engine if exists and is of the correct type indicated by isInduct. On removal, invalidates the cache if appropriate, then cleans up the remaining reference in m_vecEngineIndexToLtpUdpEngineTransmitterPtr. Invokes callback on completion. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>remoteEngineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The engine ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isInduct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to search through inducts (or outducts). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to invoke on completion. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The necessary state held by the engine manager on the to-be-removed engine will have been cleaned up by the time callback is invoked. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="103" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="123" bodyend="153"/>
+        <references refid="TestLtpEngine_8cpp_1a9942be1b49301a408ae9d0dd11a80496" compoundref="TestLtpEngine_8cpp" startline="489">isInduct</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpUdpEngineManager_1ab46ff605f0219bb265db5d8d8d9e71bf" compoundref="LtpUdpEngineManager_8h" startline="221">m_cachedItRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" compoundref="LtpUdpEngineManager_8h" startline="219">m_mapRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" compoundref="LtpUdpEngineManager_8h" startline="223">m_mapRemoteEngineIdToLtpUdpEngineTransmitter</references>
+        <references refid="classLtpUdpEngineManager_1a94577685d7272fb78e7888146a2297fd" compoundref="LtpUdpEngineManager_8h" startline="225">m_vecEngineIndexToLtpUdpEngineTransmitterPtr</references>
+        <references refid="TestLtpEngine_8cpp_1a8621a6cc4d1d256276eeed371f0e9c2e" compoundref="TestLtpEngine_8cpp" startline="487">remoteEngineId</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpUdpEngineManager_1a92e998239bf6a3aa2b66864794f570f5" compoundref="LtpUdpEngineManager_8cpp" startline="120" endline="122">RemoveLtpUdpEngineByRemoteEngineId_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform engine manager shutdown.</para>
+<para>Initiates an asynchronous call to <ref refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" kindref="member">LtpUdpEngineManager::DoUdpShutdown()</ref> to release UDP resources, then releases all underlying I/O resources. <simplesect kind="post"><para>The object is ready to be reused after the next successful call to <ref refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" kindref="member">LtpUdpEngineManager::StartIfNotAlreadyRunning()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="110" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="251" bodyend="265"/>
+        <references refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" compoundref="LtpUdpEngineManager_8cpp" startline="398" endline="425">DoUdpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpUdpEngineManager_1af31a70db337f6410d43f13b13078816f" compoundref="LtpUdpEngineManager_8h" startline="197">m_ioServiceUdp</references>
+        <references refid="classLtpUdpEngineManager_1ae2ba6e9b4244a1f40fb5cf59b35c1aab" compoundref="LtpUdpEngineManager_8h" startline="210">m_ioServiceUdpThreadPtr</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpUdpEngineManager_1a4627137e3a0f40a03595e2ee9cfc8fcf" compoundref="LtpUdpEngineManager_8cpp" startline="246" endline="249">~LtpUdpEngineManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::DoUdpShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>DoUdpShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform engine manager shutdown.</para>
+<para>Stops timers, closes managed socket, sets engine manager to idle, clears registered engines and invalidates cache. <simplesect kind="post"><para>The LTP resources are ready to be reused, but the engine manager will remain in the running state until the next call to <ref refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" kindref="member">LtpUdpEngineManager::Stop()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="117" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="398" bodyend="425"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classLtpUdpEngineManager_1ab46ff605f0219bb265db5d8d8d9e71bf" compoundref="LtpUdpEngineManager_8h" startline="221">m_cachedItRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" compoundref="LtpUdpEngineManager_8h" startline="219">m_mapRemoteEngineIdToLtpUdpEngineReceiver</references>
+        <references refid="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" compoundref="LtpUdpEngineManager_8h" startline="223">m_mapRemoteEngineIdToLtpUdpEngineTransmitter</references>
+        <references refid="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" compoundref="LtpUdpEngineManager_8h" startline="230">m_readyToForward</references>
+        <references refid="classLtpUdpEngineManager_1a9d9f68ae6de9bdddfe4c32a3382a4349" compoundref="LtpUdpEngineManager_8h" startline="204">m_retryAfterSocketErrorTimer</references>
+        <references refid="classLtpUdpEngineManager_1a6f4f195de83db1c33b6ddc86e732ff28" compoundref="LtpUdpEngineManager_8h" startline="206">m_socketRestoredTimer</references>
+        <references refid="classLtpUdpEngineManager_1aba4c57c7b3c3178354087788c6758a47" compoundref="LtpUdpEngineManager_8h" startline="201">m_udpSocket</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" compoundref="LtpUdpEngineManager_8cpp" startline="278" endline="375">HandleUdpReceive</referencedby>
+        <referencedby refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" compoundref="LtpUdpEngineManager_8cpp" startline="251" endline="265">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1abb37fc2be42b16fc307c50a140ca9c28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpUdpEngineManager::ReadyToForward</definition>
+        <argsstring>()</argsstring>
+        <name>ReadyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query whether the engine manager should be considered operational.</para>
+<para><simplesect kind="return"><para>True if the engine manager is marked as operational, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="123" column="25" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="427" bodyend="429"/>
+        <references refid="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" compoundref="LtpUdpEngineManager_8h" startline="230">m_readyToForward</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a91367de52770ee7f7bca3ce276b29e2a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT std::shared_ptr&lt; <ref refid="classLtpUdpEngineManager" kindref="compound">LtpUdpEngineManager</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; LtpUdpEngineManager &gt; LtpUdpEngineManager::GetOrCreateInstance</definition>
+        <argsstring>(const uint16_t myBoundUdpPort, const bool autoStart)</argsstring>
+        <name>GetOrCreateInstance</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>myBoundUdpPort</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>autoStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get or create an engine manager instance.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>myBoundUdpPort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The UDP port already managed or to-be-bound by the returned engine manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>autoStart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether a new instance should be automatically started on construction, does NOT affect existing instances. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A shared pointer to the existing or newly-created engien manager instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="176" column="43" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="51" bodyend="68"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpUdpEngineManager_1a241eff152bab1ee07c05ca6f6a8ad513">LtpUdpEngineManager</references>
+        <references refid="classLtpUdpEngineManager_1a7891ba73f8116431fa0adcafce6b8515" compoundref="LtpUdpEngineManager_8h" startline="191">M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</references>
+        <references refid="classLtpUdpEngineManager_1ad952e7435061ea7b83e032e33b047f68" compoundref="LtpUdpEngineManager_8h" startline="187">m_staticMapBoundPortToLtpUdpEngineManagerPtr</references>
+        <references refid="classLtpUdpEngineManager_1a4e961d12a5e476adf575df92dc4d15b6" compoundref="LtpUdpEngineManager_8h" startline="189">m_staticMutex</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a3902949a46fd9c9d56193f381c3a9105" compoundref="TestLtpUdpEngine_8cpp" startline="1708">myBoundUdpPort</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classLtpFileTransferRunner_1aa57b7f8ec05958f79a239ae640203cd7" compoundref="LtpFileTransferRunner_8cpp" startline="62" endline="400">LtpFileTransferRunner::Run</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSink_1a6cfa8a351053d2ebc9722d5a0dcd01d2" compoundref="LtpOverUdpBundleSink_8cpp" startline="30" endline="48">LtpOverUdpBundleSink::SetLtpEnginePtr</referencedby>
+        <referencedby refid="classLtpOverUdpBundleSource_1ac5aa13e6981a76c563f85bdc863f0a37" compoundref="LtpOverUdpBundleSource_8cpp" startline="47" endline="63">LtpOverUdpBundleSource::SetLtpEnginePtr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpUdpEngineManager_1a318f7d00c025d2b6affbdfa57bb0d69d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpUdpEngineManager::SetMaxUdpRxPacketSizeBytesForAllLtp</definition>
+        <argsstring>(const uint64_t maxUdpRxPacketSizeBytesForAllLtp)</argsstring>
+        <name>SetMaxUdpRxPacketSizeBytesForAllLtp</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxUdpRxPacketSizeBytesForAllLtp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the maximum UDP packet size in bytes across all registered engines.</para>
+<para>Needs to be called at least once in the lifetime of the program before starting any external I/O. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxUdpRxPacketSizeBytesForAllLtp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum UDP packet size in bytes to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpUdpEngineManager.h" line="183" column="32" bodyfile="common/ltp/src/LtpUdpEngineManager.cpp" bodystart="32" bodyend="48"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpUdpEngineManager_1a7891ba73f8116431fa0adcafce6b8515" compoundref="LtpUdpEngineManager_8h" startline="191">M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</references>
+        <references refid="classLtpUdpEngineManager_1a4e961d12a5e476adf575df92dc4d15b6" compoundref="LtpUdpEngineManager_8h" startline="189">m_staticMutex</references>
+        <references refid="LtpUdpEngineManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpUdpEngineManager_8cpp" startline="25">subprocess</references>
+        <referencedby refid="classInductManager_1aea87b128d7fac1fa2696c064e899d163" compoundref="InductManager_8cpp" startline="34" endline="93">InductManager::LoadInductsFromConfig</referencedby>
+        <referencedby refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" compoundref="OutductManager_8cpp" startline="44" endline="167">OutductManager::LoadOutductsFromConfig</referencedby>
+        <referencedby refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</referencedby>
+        <referencedby refid="classLtpFileTransferRunner_1aa57b7f8ec05958f79a239ae640203cd7" compoundref="LtpFileTransferRunner_8cpp" startline="62" endline="400">LtpFileTransferRunner::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>LtpUdpEngineManager</label>
+        <link refid="classLtpUdpEngineManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>LtpUdpEngineManager</label>
+        <link refid="classLtpUdpEngineManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpUdpEngineManager.h" line="38" column="1" bodyfile="common/ltp/include/LtpUdpEngineManager.h" bodystart="38" bodyend="232"/>
+    <listofallmembers>
+      <member refid="classLtpUdpEngineManager_1a7787c35867ad6f92b93dffc183140686" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>AddLtpUdpEngine</name></member>
+      <member refid="classLtpUdpEngineManager_1a9efedf73bf4403ec5a5e2ba748544333" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>DoUdpShutdown</name></member>
+      <member refid="classLtpUdpEngineManager_1a876273cbcf0aac2e5d1686bafd3ff5d7" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>GetLtpUdpEnginePtrByRemoteEngineId</name></member>
+      <member refid="classLtpUdpEngineManager_1a91367de52770ee7f7bca3ce276b29e2a" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>GetOrCreateInstance</name></member>
+      <member refid="classLtpUdpEngineManager_1af8cb0cdd7983f972b4156981b437fceb" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>HandleUdpReceive</name></member>
+      <member refid="classLtpUdpEngineManager_1a241eff152bab1ee07c05ca6f6a8ad513" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>LtpUdpEngineManager</name></member>
+      <member refid="classLtpUdpEngineManager_1aafad7b44a8f24c2afddc5241d4b602e5" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>LtpUdpEngineManager</name></member>
+      <member refid="classLtpUdpEngineManager_1ab46ff605f0219bb265db5d8d8d9e71bf" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_cachedItRemoteEngineIdToLtpUdpEngineReceiver</name></member>
+      <member refid="classLtpUdpEngineManager_1af31a70db337f6410d43f13b13078816f" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_ioServiceUdp</name></member>
+      <member refid="classLtpUdpEngineManager_1ae2ba6e9b4244a1f40fb5cf59b35c1aab" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_ioServiceUdpThreadPtr</name></member>
+      <member refid="classLtpUdpEngineManager_1a6b9081f9aa93d682a5dcc8064f0aa42c" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_mapRemoteEngineIdToLtpUdpEngineReceiver</name></member>
+      <member refid="classLtpUdpEngineManager_1a5a791fa0d87ae233407a840ed012ae55" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_mapRemoteEngineIdToLtpUdpEngineTransmitter</name></member>
+      <member refid="classLtpUdpEngineManager_1a5811999852f21c80616a8c284db3235c" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>M_MY_BOUND_UDP_PORT</name></member>
+      <member refid="classLtpUdpEngineManager_1a233274d0484602cd249154eaa13931f0" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_nextEngineIndex</name></member>
+      <member refid="classLtpUdpEngineManager_1a207c3fbcfdbc4a1e298fff07f0d1ac72" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_readyToForward</name></member>
+      <member refid="classLtpUdpEngineManager_1aeea3fe4e8d1a92e243b7b84dfa2d4869" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_remoteEndpointReceived</name></member>
+      <member refid="classLtpUdpEngineManager_1a3ba891d555cd43f3fddee26d36f0ad86" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_resolver</name></member>
+      <member refid="classLtpUdpEngineManager_1a9d9f68ae6de9bdddfe4c32a3382a4349" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_retryAfterSocketErrorTimer</name></member>
+      <member refid="classLtpUdpEngineManager_1a6f4f195de83db1c33b6ddc86e732ff28" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_socketRestoredTimer</name></member>
+      <member refid="classLtpUdpEngineManager_1a7891ba73f8116431fa0adcafce6b8515" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>M_STATIC_MAX_UDP_RX_PACKET_SIZE_BYTES_FOR_ALL_LTP_UDP_ENGINES</name></member>
+      <member refid="classLtpUdpEngineManager_1ad952e7435061ea7b83e032e33b047f68" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_staticMapBoundPortToLtpUdpEngineManagerPtr</name></member>
+      <member refid="classLtpUdpEngineManager_1a4e961d12a5e476adf575df92dc4d15b6" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_staticMutex</name></member>
+      <member refid="classLtpUdpEngineManager_1a519c20eeeec28ed549c8febc36e6016d" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_udpDestinationResolvedEndpointDataSourceToDataSink</name></member>
+      <member refid="classLtpUdpEngineManager_1ade827bafe3447cbefea0351fef97994d" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_udpReceiveBuffer</name></member>
+      <member refid="classLtpUdpEngineManager_1aba4c57c7b3c3178354087788c6758a47" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_udpSocket</name></member>
+      <member refid="classLtpUdpEngineManager_1a94577685d7272fb78e7888146a2297fd" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>m_vecEngineIndexToLtpUdpEngineTransmitterPtr</name></member>
+      <member refid="classLtpUdpEngineManager_1af2b236276abdabc23ee72194214869a8" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>OnRetryAfterSocketError_TimerExpired</name></member>
+      <member refid="classLtpUdpEngineManager_1abb37fc2be42b16fc307c50a140ca9c28" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>ReadyToForward</name></member>
+      <member refid="classLtpUdpEngineManager_1a3464677165ed4b1fd3d880ee971991d9" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>RemoveLtpUdpEngineByRemoteEngineId_NotThreadSafe</name></member>
+      <member refid="classLtpUdpEngineManager_1a92e998239bf6a3aa2b66864794f570f5" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>RemoveLtpUdpEngineByRemoteEngineId_ThreadSafe</name></member>
+      <member refid="classLtpUdpEngineManager_1a318f7d00c025d2b6affbdfa57bb0d69d" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>SetMaxUdpRxPacketSizeBytesForAllLtp</name></member>
+      <member refid="classLtpUdpEngineManager_1a43425eaf3784928faa2d98794010393d" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>SocketRestored_TimerExpired</name></member>
+      <member refid="classLtpUdpEngineManager_1ab0b2755837e94ad138d2336bc02ad911" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>StartIfNotAlreadyRunning</name></member>
+      <member refid="classLtpUdpEngineManager_1a63b8ceb464ef9565ecb41d509ebb363a" prot="private" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>StartUdpReceive</name></member>
+      <member refid="classLtpUdpEngineManager_1a57ebaa49dec0d1e40d39610ee709be66" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>Stop</name></member>
+      <member refid="classLtpUdpEngineManager_1a4627137e3a0f40a03595e2ee9cfc8fcf" prot="public" virt="non-virtual"><scope>LtpUdpEngineManager</scope><name>~LtpUdpEngineManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

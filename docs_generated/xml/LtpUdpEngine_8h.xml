@@ -1,0 +1,763 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="LtpUdpEngine_8h" kind="file" language="C++">
+    <compoundname>LtpUdpEngine.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">queue</includes>
+    <includes refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" local="yes">CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</includes>
+    <includes refid="LtpEngine_8h" local="yes">LtpEngine.h</includes>
+    <includes refid="UdpBatchSender_8h" local="yes">UdpBatchSender.h</includes>
+    <includes refid="LtpEngineConfig_8h" local="yes">LtpEngineConfig.h</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="LtpUdpEngineManager_8h" local="yes">common/ltp/include/LtpUdpEngineManager.h</includedby>
+    <includedby refid="LtpUdpEngine_8cpp" local="yes">common/ltp/src/LtpUdpEngine.cpp</includedby>
+    <incdepgraph>
+      <node id="17">
+        <label>list</label>
+      </node>
+      <node id="11">
+        <label>atomic</label>
+      </node>
+      <node id="30">
+        <label>boost/random/random_device.hpp</label>
+      </node>
+      <node id="51">
+        <label>iomanip</label>
+      </node>
+      <node id="7">
+        <label>queue</label>
+      </node>
+      <node id="47">
+        <label>zmq.h</label>
+      </node>
+      <node id="44">
+        <label>limits</label>
+      </node>
+      <node id="9">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="31">
+        <label>LtpSessionReceiver.h</label>
+        <link refid="LtpSessionReceiver_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</label>
+        <link refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>cstdint</label>
+      </node>
+      <node id="61">
+        <label>UdpBatchSender.h</label>
+        <link refid="UdpBatchSender_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>stdint.h</label>
+      </node>
+      <node id="40">
+        <label>LtpNoticesToClientService.h</label>
+        <link refid="LtpNoticesToClientService_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>boost/date_time/posix_time/posix_time_types.hpp</label>
+      </node>
+      <node id="48">
+        <label>cassert</label>
+      </node>
+      <node id="18">
+        <label>Ltp.h</label>
+        <link refid="Ltp_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="32">
+        <label>LtpTimerManager.h</label>
+        <link refid="LtpTimerManager_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="58">
+        <label>TokenRateLimiter.h</label>
+        <link refid="TokenRateLimiter_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="55">
+        <label>unordered_set</label>
+      </node>
+      <node id="53">
+        <label>LtpSessionSender.h</label>
+        <link refid="LtpSessionSender_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>exception</label>
+      </node>
+      <node id="14">
+        <label>LtpFragmentSet.h</label>
+        <link refid="LtpFragmentSet_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>LtpClientServiceDataToSend.h</label>
+        <link refid="LtpClientServiceDataToSend_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="60">
+        <label>BundleCallbackFunctionDefines.h</label>
+        <link refid="BundleCallbackFunctionDefines_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="34">
+        <label>UserDataRecycler.h</label>
+        <link refid="UserDataRecycler_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+      <node id="54">
+        <label>LtpSessionRecreationPreventer.h</label>
+        <link refid="LtpSessionRecreationPreventer_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>PaddedVectorUint8.h</label>
+        <link refid="PaddedVectorUint8_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>new</label>
+      </node>
+      <node id="27">
+        <label>utility</label>
+      </node>
+      <node id="52">
+        <label>sstream</label>
+      </node>
+      <node id="37">
+        <label>MemoryInFiles.h</label>
+        <link refid="MemoryInFiles_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>LtpEngine.h</label>
+        <link refid="LtpEngine_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>FreeListAllocator.h</label>
+        <link refid="FreeListAllocator_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>cstdlib</label>
+      </node>
+      <node id="12">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="25">
+        <label>iostream</label>
+      </node>
+      <node id="57">
+        <label>boost/date_time.hpp</label>
+      </node>
+      <node id="19">
+        <label>ltp_lib_export.h</label>
+      </node>
+      <node id="33">
+        <label>unordered_map</label>
+      </node>
+      <node id="39">
+        <label>ForwardListQueue.h</label>
+        <link refid="ForwardListQueue_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>LtpEngineConfig.h</label>
+        <link refid="LtpEngineConfig_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>type_traits</label>
+      </node>
+      <node id="16">
+        <label>set</label>
+      </node>
+      <node id="29">
+        <label>boost/random.hpp</label>
+      </node>
+      <node id="35">
+        <label>forward_list</label>
+      </node>
+      <node id="24">
+        <label>algorithm</label>
+      </node>
+      <node id="28">
+        <label>LtpRandomNumberGenerator.h</label>
+        <link refid="LtpRandomNumberGenerator_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>boost/core/noncopyable.hpp</label>
+      </node>
+      <node id="49">
+        <label>cstring</label>
+      </node>
+      <node id="1">
+        <label>common/ltp/include/LtpUdpEngine.h</label>
+        <link refid="LtpUdpEngine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>memory</label>
+      </node>
+      <node id="46">
+        <label>zmq.hpp</label>
+        <link refid="zmq_8hpp"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>FragmentSet.h</label>
+        <link refid="FragmentSet_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="15">
+        <label>common/ltp/test/TestLtpUdpEngine.cpp</label>
+        <link refid="TestLtpUdpEngine_8cpp"/>
+      </node>
+      <node id="9">
+        <label>common/ltp/include/LtpOverUdpBundleSource.h</label>
+        <link refid="LtpOverUdpBundleSource_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>common/ltp/include/LtpOverUdpBundleSink.h</label>
+        <link refid="LtpOverUdpBundleSink_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>common/induct_manager/src/LtpOverUdpInduct.cpp</label>
+        <link refid="LtpOverUdpInduct_8cpp"/>
+      </node>
+      <node id="13">
+        <label>common/outduct_manager/src/OutductManager.cpp</label>
+        <link refid="OutductManager_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/ltp/include/LtpUdpEngineManager.h</label>
+        <link refid="LtpUdpEngineManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>common/ltp/src/LtpOverUdpBundleSink.cpp</label>
+        <link refid="LtpOverUdpBundleSink_8cpp"/>
+      </node>
+      <node id="3">
+        <label>common/ltp/apps/ltp_file_transfer/src/LtpFileTransferRunner.cpp</label>
+        <link refid="LtpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="5">
+        <label>common/induct_manager/include/LtpOverUdpInduct.h</label>
+        <link refid="LtpOverUdpInduct_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>common/outduct_manager/src/LtpOverUdpOutduct.cpp</label>
+        <link refid="LtpOverUdpOutduct_8cpp"/>
+      </node>
+      <node id="14">
+        <label>common/ltp/src/LtpUdpEngineManager.cpp</label>
+        <link refid="LtpUdpEngineManager_8cpp"/>
+      </node>
+      <node id="11">
+        <label>common/outduct_manager/include/LtpOverUdpOutduct.h</label>
+        <link refid="LtpOverUdpOutduct_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>common/ltp/src/LtpUdpEngine.cpp</label>
+        <link refid="LtpUdpEngine_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/ltp/include/LtpUdpEngine.h</label>
+        <link refid="LtpUdpEngine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>common/induct_manager/src/InductManager.cpp</label>
+        <link refid="InductManager_8cpp"/>
+      </node>
+      <node id="10">
+        <label>common/ltp/src/LtpOverUdpBundleSource.cpp</label>
+        <link refid="LtpOverUdpBundleSource_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classLtpUdpEngine" prot="public">LtpUdpEngine</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref> class is a child class of <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref>. It manages a reference to a bidirectional udp socket and a circular buffer of incoming UDP packets to feed into the <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref>. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_LTP_UDP_ENGINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_LTP_UDP_ENGINE_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LtpEngine_8h" kindref="compound">LtpEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="UdpBatchSender_8h" kindref="compound">UdpBatchSender.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LtpEngineConfig_8h" kindref="compound">LtpEngineConfig.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classLtpUdpEngine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="Ltp_8h_1a0bf444ee9d42af20bf48d64ebe2a975a" kindref="member">CLASS_VISIBILITY_LTP_LIB</ref><sp/><ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classLtpEngine" kindref="compound">LtpEngine</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="classLtpUdpEngine_1afce29fc5465d8ea5d6786a8201b76a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpUdpEngine_1afce29fc5465d8ea5d6786a8201b76a73" kindref="member">LtpUdpEngine</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/><ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref>(</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::ip::udp::socket<sp/>&amp;<sp/>udpSocketRef,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>engineIndexForEncodingIntoRandomSessionNumber,<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::asio::ip::udp::endpoint<sp/>&amp;<sp/>remoteEndpoint,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>maxUdpRxPacketSizeBytes,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref>&amp;<sp/>ltpRxOrTxCfg);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classLtpUdpEngine" kindref="compound">LtpUdpEngine</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Reset_ThreadSafe_Blocking();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLtpEngine_1a97feb8f9afbd72c0059d3962a528582b" kindref="member">Reset</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PostPacketFromManager_ThreadSafe(std::vector&lt;uint8_t&gt;<sp/>&amp;<sp/>packetIn_thenSwappedForAnotherSameSizeVector,<sp/>std::size_t<sp/>size);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetEndpoint_ThreadSafe(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::asio::ip::udp::endpoint&amp;<sp/>remoteEndpoint);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetEndpoint_ThreadSafe(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="TestLtpUdpEngine_8cpp_1a6cb3ae8554c5ea717fc137e2e4df4c5e" kindref="member">remoteHostname</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="TestLtpUdpEngine_8cpp_1a22d57b4e6250d4fb6114d1776078bfbd" kindref="member">remotePort</ref>);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ReadyToSend()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PacketInFullyProcessedCallback(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success)<sp/>override;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SendPacket(const<sp/>std::vector&lt;<ref refid="namespaceboost" kindref="compound">boost</ref>::asio::const_buffer&gt;&amp;<sp/>constBufferVec,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;std::vector&lt;std::vector&lt;uint8_t&gt;<sp/>&gt;<sp/>&gt;&amp;&amp;<sp/>underlyingDataToDeleteOnSentCallback,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;<ref refid="classLtpClientServiceDataToSend" kindref="compound">LtpClientServiceDataToSend</ref>&gt;&amp;&amp;<sp/>underlyingCsDataToDeleteOnSentCallback)<sp/>override;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleUdpSend(std::shared_ptr&lt;std::vector&lt;std::vector&lt;uint8_t&gt;<sp/>&gt;<sp/>&gt;<sp/>&amp;<sp/>underlyingDataToDeleteOnSentCallback,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;<ref refid="classLtpClientServiceDataToSend" kindref="compound">LtpClientServiceDataToSend</ref>&gt;&amp;<sp/>underlyingCsDataToDeleteOnSentCallback,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/><ref refid="namespaceboost" kindref="compound">boost</ref>::system::error_code&amp;<sp/>error,<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bytes_transferred);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SendPackets(std::shared_ptr&lt;std::vector&lt;<ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref>&gt;<sp/>&gt;&amp;&amp;<sp/>udpSendPacketInfoVecSharedPtr,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numPacketsToSend)<sp/>override;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TestUdpBatchSender_8cpp_1a0a48f832f381fb86e26d6bc824d1b203" kindref="member">OnSentPacketsCallback</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/>std::shared_ptr&lt;std::vector&lt;<ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref>&gt;<sp/>&gt;&amp;<sp/>udpSendPacketInfoVecSharedPtr,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numPacketsSent);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetEndpoint(const<sp/><ref refid="namespaceboost" kindref="compound">boost</ref>::asio::ip::udp::endpoint&amp;<sp/>remoteEndpoint);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>LTP_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetEndpoint(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="TestLtpUdpEngine_8cpp_1a6cb3ae8554c5ea717fc137e2e4df4c5e" kindref="member">remoteHostname</ref>,<sp/>const<sp/>uint16_t<sp/><ref refid="TestLtpUdpEngine_8cpp_1a22d57b4e6250d4fb6114d1776078bfbd" kindref="member">remotePort</ref>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176" refid="classLtpUdpEngine_1acadacb6a0567c0cdf1398af3f6aed76e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classUdpBatchSender" kindref="compound">UdpBatchSender</ref><sp/>m_udpBatchSenderConnected;</highlight></codeline>
+<codeline lineno="178" refid="classLtpUdpEngine_1a29092e2286dd5089681edc413a004b1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceboost" kindref="compound">boost</ref>::asio::ip::udp::<ref refid="TelemetryConnection_8h_1a5792b7506df852d6af678728eaf991dca61f2529360aec54f5dc9804b842cf3fa" kindref="member">socket</ref><sp/>&amp;<sp/>m_udpSocketRef;</highlight></codeline>
+<codeline lineno="180" refid="classLtpUdpEngine_1a598aaf5d517194ee85ced8aed3fbab97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceboost" kindref="compound">boost</ref>::asio::ip::udp::endpoint<sp/>m_remoteEndpoint;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classLtpUdpEngine_1a6caad0a7c734bc4fe41b0df254a5a8d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>M_NUM_CIRCULAR_BUFFER_VECTORS;</highlight></codeline>
+<codeline lineno="185" refid="classLtpUdpEngine_1afd293386783421ca3c8a30fa1ebd3c90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref><sp/>m_circularIndexBuffer;</highlight></codeline>
+<codeline lineno="187" refid="classLtpUdpEngine_1a434f1c2f02a26ad4703803c5ecd39f30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;<ref refid="namespaceboost" kindref="compound">boost</ref>::uint8_t&gt;<sp/>&gt;<sp/>m_udpReceiveBuffersCbVec;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="classLtpUdpEngine_1a503507b6c6b2c7a753db5e7fc947c675" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_printedCbTooSmallNotice;</highlight></codeline>
+<codeline lineno="191" refid="classLtpUdpEngine_1aaac2e136da20e8f21f3c3ad44574a01a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;<sp/>m_printedUdpSendFailedNotice;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>safe<sp/>unit<sp/>test<sp/>resets</highlight></codeline>
+<codeline lineno="195" refid="classLtpUdpEngine_1a1ca3e11aee23eb5685deb2f5bae3fe3f" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;<sp/>m_resetInProgress;</highlight></codeline>
+<codeline lineno="197" refid="classLtpUdpEngine_1a2b954e4079f18240fd051b38615f7726" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceboost" kindref="compound">boost</ref>::mutex<sp/>m_resetMutex;</highlight></codeline>
+<codeline lineno="199" refid="classLtpUdpEngine_1a8bb530cbdcf5c3a15aa9e00814077fa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceboost" kindref="compound">boost</ref>::condition_variable<sp/>m_resetConditionVariable;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="203" refid="classLtpUdpEngine_1a7c78a7dbf69ed4414961a32b80acb195" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countAsyncSendCalls;</highlight></codeline>
+<codeline lineno="205" refid="classLtpUdpEngine_1a5aaa00d8dc541e3845fa19f0ab92ecd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countAsyncSendCallbackCalls;<sp/></highlight><highlight class="comment">//same<sp/>as<sp/>udp<sp/>packets<sp/>sent</highlight></codeline>
+<codeline lineno="207" refid="classLtpUdpEngine_1aecbbf0076e7d068be2e4cd7fdbe417e5" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countBatchSendCalls;</highlight></codeline>
+<codeline lineno="209" refid="classLtpUdpEngine_1a2b2b2aabc8d9a6cbf7acdb9b8121e073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countBatchSendCallbackCalls;</highlight></codeline>
+<codeline lineno="211" refid="classLtpUdpEngine_1aab9b5de32a3160336c82041c32907f55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countBatchUdpPacketsSent;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//total<sp/>udp<sp/>packets<sp/>sent<sp/>is<sp/>m_countAsyncSendCallbackCalls<sp/>+<sp/>m_countBatchUdpPacketsSent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="classLtpUdpEngine_1a92ef333a8443a7464b1257b96ea72dca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countCircularBufferOverruns;</highlight></codeline>
+<codeline lineno="217" refid="classLtpUdpEngine_1a0d898424fdfde9ddff07c2f32e994308" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;uint64_t&gt;<sp/>m_countUdpPacketsReceived;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_LTP_UDP_ENGINE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/ltp/include/LtpUdpEngine.h"/>
+  </compounddef>
+</doxygen>

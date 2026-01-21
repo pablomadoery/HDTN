@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fsevents_2dir__monitor__impl_8hpp" kind="file" language="C++">
+    <compoundname>dir_monitor_impl.hpp</compoundname>
+    <includes local="no">boost/filesystem/path.hpp</includes>
+    <includes local="no">boost/filesystem/operations.hpp</includes>
+    <includes local="no">boost/unordered_set.hpp</includes>
+    <includes local="no">boost/system/error_code.hpp</includes>
+    <includes local="no">boost/system/system_error.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">deque</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes local="no">CoreServices/CoreServices.h</includes>
+    <includedby refid="fsevents_2basic__dir__monitor__service_8hpp" local="yes">common/util/include/dir_monitor/fsevents/basic_dir_monitor_service.hpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>boost/filesystem/operations.hpp</label>
+      </node>
+      <node id="1">
+        <label>common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp</label>
+        <link refid="fsevents_2dir__monitor__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="10">
+        <label>CoreServices/CoreServices.h</label>
+      </node>
+      <node id="6">
+        <label>boost/system/system_error.hpp</label>
+      </node>
+      <node id="2">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/system/error_code.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/unordered_set.hpp</label>
+      </node>
+      <node id="8">
+        <label>deque</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp</label>
+        <link refid="fsevents_2dir__monitor__impl_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>common/util/include/dir_monitor/fsevents/basic_dir_monitor_service.hpp</label>
+        <link refid="fsevents_2basic__dir__monitor__service_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classboost_1_1asio_1_1dir__monitor__impl" prot="public">boost::asio::dir_monitor_impl</innerclass>
+    <innernamespace refid="namespaceboost">boost</innernamespace>
+    <innernamespace refid="namespaceboost_1_1asio">boost::asio</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="fsevents_2dir__monitor__impl_8hpp_1aaeefa8203d4c0262507247307422b172" prot="public" static="no">
+        <name>DIR_MONITOR_USE_DISPATCH_QUEUE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" line="24" column="18" bodyfile="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FSEvents-based<sp/>implementation<sp/>for<sp/>OSX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Apple<sp/>documentation<sp/>about<sp/>FSEvents<sp/>interface:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>https://developer.apple.com/library/mac/documentation/Darwin/Reference/FSEvents_Ref/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>Reference/reference.html#//apple_ref/doc/c_ref/kFSEventStreamCreateFlagFileEvents</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2014<sp/>Stanislav<sp/>Karchebnyy<sp/>&lt;berkus@atta-metta.net&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.<sp/>(See<sp/>accompanying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>file<sp/>LICENSE_1_0.txt<sp/>or<sp/>copy<sp/>at<sp/>http://www.boost.org/LICENSE_1_0.txt)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem/path.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem/operations.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/unordered_set.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/system/error_code.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/system/system_error.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;CoreServices/CoreServices.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="fsevents_2dir__monitor__impl_8hpp_1aaeefa8203d4c0262507247307422b172" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DIR_MONITOR_USE_DISPATCH_QUEUE<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceboost" kindref="compound">boost</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">asio<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classboost_1_1asio_1_1dir__monitor__impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classboost_1_1asio_1_1dir__monitor__impl" kindref="compound">dir_monitor_impl</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32" refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a1003bcb0b69f0ac72a40f05fdcd419cc" kindref="member">dir_monitor_impl</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>(true),</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">#ifdef<sp/><ref refid="fsevents_2dir__monitor__impl_8hpp_1aaeefa8203d4c0262507247307422b172" kindref="member">DIR_MONITOR_USE_DISPATCH_QUEUE</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" kindref="member">queue_</ref>(dispatch_queue_create(</highlight><highlight class="stringliteral">&quot;DirectoryMonitor&quot;</highlight><highlight class="normal">,<sp/>DISPATCH_QUEUE_SERIAL)),</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">#else</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>work_thread_(&amp;<ref refid="namespaceboost" kindref="compound">boost</ref>::asio::<ref refid="classboost_1_1asio_1_1dir__monitor__impl" kindref="compound">dir_monitor_impl</ref>::<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" kindref="member">work_thread</ref>,<sp/>this),</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>(nullptr)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a997f210d34350b99ca8d9e4592900177" kindref="member">~dir_monitor_impl</ref>()</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DIR_MONITOR_USE_DISPATCH_QUEUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" kindref="member">stop_fsevents</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dispatch_release(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" kindref="member">queue_</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stop_work_thread();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>work_thread_.join();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" kindref="member">stop_fsevents</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab2786bf24f363f8d8a55f33d4848a885" kindref="member">add_directory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::filesystem::path&amp;<sp/>dirname)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" kindref="member">dirs_mutex_</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>.insert(dirname.native());</highlight><highlight class="comment">//@todo<sp/>Store<sp/>path<sp/>in<sp/>dictionary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" kindref="member">stop_fsevents</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" kindref="member">start_fsevents</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a9d6e968b0e7c0d4933ec6838e438e74a" kindref="member">remove_directory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::filesystem::path&amp;<sp/>dirname)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" kindref="member">dirs_mutex_</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>.erase(dirname.native());</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" kindref="member">stop_fsevents</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" kindref="member">start_fsevents</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" kindref="member">already_added_directory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::filesystem::path&amp;<sp/>dirname)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" kindref="member">dirs_mutex_</ref>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>.count(dirname.native()));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a50f414a187894af7fef76c90cae6ad62" kindref="member">destroy</ref>()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>.notify_all();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a1a4eb1dadcbd164e90d3bba8dd3e68fe" kindref="member">popfront_event</ref>(boost::system::error_code<sp/>&amp;ec)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref><sp/>&amp;&amp;<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.empty())</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>.wait(lock);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref><sp/>ev;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.empty())</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ec<sp/>=<sp/>boost::system::error_code();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ev<sp/>=<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.front();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.pop_front();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ec<sp/>=<sp/>boost::asio::error::operation_aborted;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ev;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref><sp/>ev)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>.push_back(ev);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>.notify_all();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="114" refid="classboost_1_1asio_1_1dir__monitor__impl_1ac63495416a0f98967a2fe184b3ebae1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>CFArrayRef<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ac63495416a0f98967a2fe184b3ebae1a" kindref="member">make_array</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::unordered_set&lt;std::string&gt;&amp;<sp/>in)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CFMutableArrayRef<sp/>arr<sp/>=<sp/>CFArrayCreateMutable(kCFAllocatorDefault,<sp/>in.size(),<sp/>&amp;kCFTypeArrayCallBacks);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="Environment_8cpp_1ad8ab729381f270b100f3d05b6c6676fc" kindref="member">str</ref><sp/>:<sp/>in)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CFStringRef<sp/>cfstr<sp/>=<sp/>CFStringCreateWithCString(kCFAllocatorDefault,<sp/><ref refid="Environment_8cpp_1ad8ab729381f270b100f3d05b6c6676fc" kindref="member">str</ref>.c_str(),<sp/>kCFStringEncodingUTF8);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CFArrayAppendValue(arr,<sp/>cfstr);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>@todo<sp/>CFRelease(cfstr);<sp/>??</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>arr;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a9725d9abeee7507f914ccc501e5be177" kindref="member">start_fsevents</ref>()</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>.size()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamContext<sp/>context<sp/>=<sp/>{0,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL,<sp/>NULL};</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref><sp/>=</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamCreate(</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kCFAllocatorDefault,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" kindref="member">boost::asio::dir_monitor_impl::fsevents_callback</ref>,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;context,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ac63495416a0f98967a2fe184b3ebae1a" kindref="member">make_array</ref>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>),</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kFSEventStreamEventIdSinceNow,<sp/></highlight><highlight class="comment">/*<sp/>only<sp/>new<sp/>modifications<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//(CFTimeInterval)5.0,<sp/>/*<sp/>5<sp/>seconds<sp/>latency<sp/>interval<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(CFTimeInterval)0.0,<sp/></highlight><highlight class="comment">//added<sp/>by<sp/>BT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kFSEventStreamCreateFlagFileEvents</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>kFSEventStreamCreateFlagNoDefer<sp/></highlight><highlight class="comment">//added<sp/>by<sp/>BT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamRetain(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">//As<sp/>of<sp/>Boost<sp/>v1.66.0,<sp/>get_system_category<sp/>was<sp/>deprecated<sp/>with<sp/>language:<sp/>&quot;Boost.System<sp/>deprecates<sp/>the<sp/>old<sp/>names,<sp/>but<sp/>will<sp/>provide<sp/>them<sp/>when<sp/>the<sp/>macro<sp/>BOOST_SYSTEM_ENABLE_DEPRECATED<sp/>is<sp/>defined.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">//Prior<sp/>versions<sp/>&lt;=<sp/>1.65.1<sp/>it<sp/>said:<sp/>&quot;Boost.System<sp/>deprecates<sp/>the<sp/>old<sp/>names,<sp/>but<sp/>continues<sp/>to<sp/>provide<sp/>them<sp/>unless<sp/>macro<sp/>BOOST_SYSTEM_NO_DEPRECATED<sp/>is<sp/>defined.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BOOST_VERSION<sp/>&lt;<sp/>106600)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::system::system_error<sp/>e(boost::system::error_code(errno,<sp/>boost::system::get_system_category()),<sp/></highlight><highlight class="stringliteral">&quot;boost::asio::dir_monitor_impl::init_kqueue:<sp/>kqueue<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::system::system_error<sp/>e(boost::system::error_code(errno,<sp/>boost::system::system_category()),<sp/></highlight><highlight class="stringliteral">&quot;boost::asio::dir_monitor_impl::init_kqueue:<sp/>kqueue<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::throw_exception(e);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DIR_MONITOR_USE_DISPATCH_QUEUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamSetDispatchQueue(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>,<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" kindref="member">queue_</ref>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamStart(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!runloop_)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::this_thread::yield();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamScheduleWithRunLoop(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>,<sp/>runloop_,<sp/>kCFRunLoopDefaultMode);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamStart(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>runloop_cond_.notify_all();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamFlushAsync(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a2205663a7d6a7768d930671e68956054" kindref="member">stop_fsevents</ref>()</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamStop(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>FSEventStreamUnscheduleFromRunLoop(fsevents_,<sp/>runloop_,<sp/>kCFRunLoopDefaultMode);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamInvalidate(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FSEventStreamRelease(<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1abd6effd7a6e561e39ebd3feab2f01468" kindref="member">fsevents_callback</ref>(</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ConstFSEventStreamRef<sp/>streamRef,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*clientCallBackInfo,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numEvents,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*eventPaths,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FSEventStreamEventFlags<sp/>eventFlags[],</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FSEventStreamEventId<sp/>eventIds[])</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)streamRef;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)eventIds;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**paths<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**)eventPaths;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl" kindref="compound">dir_monitor_impl</ref>*<sp/>impl<sp/>=<sp/>(<ref refid="classboost_1_1asio_1_1dir__monitor__impl" kindref="compound">dir_monitor_impl</ref>*)clientCallBackInfo;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numEvents;<sp/>++i)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::filesystem::path<sp/>dir(paths[i]);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//dir<sp/>is<sp/>an<sp/>absolute<sp/>file<sp/>path<sp/>with<sp/>all<sp/>symbolic<sp/>links<sp/>resolved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventFlags[i]<sp/>&amp;<sp/>kFSEventStreamEventFlagMustScanSubDirs)<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref>(dir,<sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa7b622a5d1e77f42f318a2d39ebae42b" kindref="member">dir_monitor_event::recursive_rescan</ref>));</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventFlags[i]<sp/>&amp;<sp/>kFSEventStreamEventFlagItemCreated)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ae81ae920427203d6e1766669d82fb3a2" kindref="member">already_added_directory</ref>(dir))<sp/>{<sp/></highlight><highlight class="comment">//fix<sp/>to<sp/>ignore<sp/>when<sp/>creating<sp/>directory<sp/>right<sp/>before<sp/>adding<sp/>to<sp/>the<sp/>monitor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref>(dir,<sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caae9a8ad02c0c7c8463d743ffdf3249d16" kindref="member">dir_monitor_event::added</ref>));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventFlags[i]<sp/>&amp;<sp/>kFSEventStreamEventFlagItemRemoved)<sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref>(dir,<sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa1f3230361dbbe664592982bcca34ef5" kindref="member">dir_monitor_event::removed</ref>));</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventFlags[i]<sp/>&amp;<sp/>kFSEventStreamEventFlagItemModified)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref>(dir,<sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caadfbb04dbed0897e2aac05a96cf7e1392" kindref="member">dir_monitor_event::modified</ref>));</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventFlags[i]<sp/>&amp;<sp/>kFSEventStreamEventFlagItemRenamed)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!boost::filesystem::exists(dir))</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref>(dir,<sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caaa299c4ec0ad83ba2feb965cccee64319" kindref="member">dir_monitor_event::renamed_old_name</ref>));</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>impl-&gt;<ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a66de826fbc3c0df8ded72a5863d94905" kindref="member">pushback_event</ref>(<ref refid="structboost_1_1asio_1_1dir__monitor__event" kindref="compound">dir_monitor_event</ref>(dir,<sp/><ref refid="structboost_1_1asio_1_1dir__monitor__event_1a2dddf073f2ebe99d976c6a844163e9caa327c08c6651880b182876010f3b8e61f" kindref="member">dir_monitor_event::renamed_new_name</ref>));</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DIR_MONITOR_USE_DISPATCH_QUEUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad617e5fa9e12801305aad30db605a34f" kindref="member">work_thread</ref>()</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>runloop_<sp/>=<sp/>CFRunLoopGetCurrent();</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(running())</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(runloop_mutex_);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>runloop_cond_.wait(lock);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CFRunLoopRun();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>running()</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::unique_lock&lt;boost::mutex&gt;<sp/>lock(work_thread_mutex_);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stop_work_thread()</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Access<sp/>to<sp/>run_<sp/>is<sp/>sychronized<sp/>with<sp/>running().</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::mutex::scoped_lock<sp/>lock(work_thread_mutex_);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CFRunLoopStop(runloop_);<sp/></highlight><highlight class="comment">//<sp/>exits<sp/>the<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>runloop_cond_.notify_all();</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>CFRunLoopRef<sp/>runloop_;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/>runloop_mutex_;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::condition_variable<sp/>runloop_cond_;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/>work_thread_mutex_;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::thread<sp/>work_thread_;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad06d60a70e35ee17b6652cb821ae9868" kindref="member">run_</ref>;</highlight></codeline>
+<codeline lineno="267" refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>dispatch_queue_t<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ae816ac77ac1b9f6a7bcb43c97a4c9bc5" kindref="member">queue_</ref>;<sp/></highlight><highlight class="comment">//added<sp/>by<sp/>BT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FSEventStreamRef<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ad77c39bb8c6d54f866ba7a48040bac46" kindref="member">fsevents_</ref>;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272" refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa9301cad1b2a72a2ff5ace46373415af" kindref="member">dirs_mutex_</ref>;</highlight></codeline>
+<codeline lineno="273" refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::unordered_set&lt;std::string&gt;<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a18f6e9aab663ef76e6140166961c15b3" kindref="member">dirs_</ref>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1ab40236a5207f564fe61a2d4d20932d73" kindref="member">events_mutex_</ref>;</highlight></codeline>
+<codeline lineno="276" refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::condition_variable<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1a7aaf66848fb9e70eb3f473bd78aa0d08" kindref="member">events_cond_</ref>;</highlight></codeline>
+<codeline lineno="277" refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::deque&lt;dir_monitor_event&gt;<sp/><ref refid="classboost_1_1asio_1_1dir__monitor__impl_1aa275b108f6503d1b366b040e5768f18f" kindref="member">events_</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>asio<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>boost<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/util/include/dir_monitor/fsevents/dir_monitor_impl.hpp"/>
+  </compounddef>
+</doxygen>

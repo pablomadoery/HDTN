@@ -1,0 +1,544 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structMemoryInFiles_1_1Impl_1_1FileInfo" kind="struct" language="C++" prot="private">
+    <compoundname>MemoryInFiles::Impl::FileInfo</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a6fa5b659f8a8ddea781b328d2f13676d" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="structMemoryInFiles_1_1Impl_1_1io__operation__t" kindref="compound">io_operation_t</ref> &gt;</type>
+        <definition>std::queue&lt;io_operation_t&gt; MemoryInFiles::Impl::FileInfo::m_queueIoOperations</definition>
+        <argsstring></argsstring>
+        <name>m_queueIoOperations</name>
+        <briefdescription>
+<para>I/O operation queue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="338" column="20" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a593a357843f94a82de2409fee2cf7007" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="structMemoryInFiles_1_1Impl_1a37c503ae4f7d6606b33c33f54638e451" kindref="member">file_handle_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;file_handle_t&gt; MemoryInFiles::Impl::FileInfo::m_fileHandlePtr</definition>
+        <argsstring></argsstring>
+        <name>m_fileHandlePtr</name>
+        <briefdescription>
+<para>Pointer to the underlying system file handle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="340" column="25" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="340" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a4b195d39ac3b4c2575274245f8b943c9" compoundref="MemoryInFiles_8cpp" startline="494" endline="538">FileInfo</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3e569d1866fd98b61a077809ece69c9a" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path MemoryInFiles::Impl::FileInfo::m_filePath</definition>
+        <argsstring></argsstring>
+        <name>m_filePath</name>
+        <briefdescription>
+<para>Filesystem path to the associated file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="342" column="33" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="342" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a4b195d39ac3b4c2575274245f8b943c9" compoundref="MemoryInFiles_8cpp" startline="494" endline="538">FileInfo</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b20b04cedbf1003ee228655f7826fff" prot="private" static="no" mutable="no">
+        <type><ref refid="structMemoryInFiles_1_1Impl" kindref="compound">MemoryInFiles::Impl</ref> &amp;</type>
+        <definition>MemoryInFiles::Impl&amp; MemoryInFiles::Impl::FileInfo::m_implRef</definition>
+        <argsstring></argsstring>
+        <name>m_implRef</name>
+        <briefdescription>
+<para>PIMPL reference. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="344" column="29" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a633b92f7b8afd7bde6e346fe7b008bd5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::FileInfo::m_diskOperationInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_diskOperationInProgress</name>
+        <briefdescription>
+<para>Whether an I/O operation is currently in progress. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="346" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1abef5e818be539753c41f2784252bb01f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::FileInfo::m_valid</definition>
+        <argsstring></argsstring>
+        <name>m_valid</name>
+        <briefdescription>
+<para>Whether the associated file is open and ready to be operated on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="348" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="348" bodyend="-1"/>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a4b195d39ac3b4c2575274245f8b943c9" compoundref="MemoryInFiles_8cpp" startline="494" endline="538">FileInfo</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1ae5ebb2bdd0f27ce661cc156a29b5e24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryInFiles::Impl::FileInfo::FileInfo</definition>
+        <argsstring>()=delete</argsstring>
+        <name>FileInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="267" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a4b195d39ac3b4c2575274245f8b943c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryInFiles::Impl::FileInfo::FileInfo</definition>
+        <argsstring>(const boost::filesystem::path &amp;filePath, boost::asio::io_service &amp;ioServiceRef, MemoryInFiles::Impl &amp;implRef)</argsstring>
+        <name>FileInfo</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioServiceRef</declname>
+        </param>
+        <param>
+          <type><ref refid="structMemoryInFiles_1_1Impl" kindref="compound">MemoryInFiles::Impl</ref> &amp;</type>
+          <declname>implRef</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filesystem path to the associated file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ioServiceRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I/O execution context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>implRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PIMPL reference. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="273" column="9" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="494" bodyend="538"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a593a357843f94a82de2409fee2cf7007" compoundref="MemoryInFiles_8cpp" startline="340">m_fileHandlePtr</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3e569d1866fd98b61a077809ece69c9a" compoundref="MemoryInFiles_8cpp" startline="342">m_filePath</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1abef5e818be539753c41f2784252bb01f" compoundref="MemoryInFiles_8cpp" startline="348">m_valid</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1afc18cca3959c23d2655c9d34b8e7301a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryInFiles::Impl::FileInfo::~FileInfo</definition>
+        <argsstring>()</argsstring>
+        <name>~FileInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up any open system file resources and deletes the associated file from disk. <simplesect kind="post"><para>Decrements the pending I/O operation reference counter (m_queuedOperationsReferenceCount). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="278" column="9" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="539" bodyend="549"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1ac907aae793c0e7e2c3d4ffd82efab539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::FileInfo::WriteMemoryAsync</definition>
+        <argsstring>(MemoryBlockInfo &amp;memoryBlockInfoRef, const uint64_t offsetWithinFile, const void *data, uint64_t length, std::shared_ptr&lt; write_memory_handler_t &gt; &amp;handlerPtr)</argsstring>
+        <name>WriteMemoryAsync</name>
+        <param>
+          <type><ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo" kindref="compound">MemoryBlockInfo</ref> &amp;</type>
+          <declname>memoryBlockInfoRef</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>offsetWithinFile</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classMemoryInFiles_1ae3964edb385f55d6e912a550cd763e03" kindref="member">write_memory_handler_t</ref> &gt; &amp;</type>
+          <declname>handlerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try queuing an asynchronous I/O write operation. If the file is NOT open and ready to be operated on, returns immediately. Else, queues a new I/O operation, increments the pending I/O operation reference counter, then calls <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" kindref="member">FileInfo::TryStartNextQueuedIoOperation()</ref> to trigger processing of the next queued I/O operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockInfoRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The associated memory block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offsetWithinFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file offset to begin writing to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type-erased input begin pointer to read from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data length in bytes to write. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handlerPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type-erased I/O completion handler pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the file is open and ready to be operated on, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>MIGHT increment the pending I/O operation reference counter (m_queuedOperationsReferenceCount). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="291" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="586" bodyend="593"/>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a7f91ebe815991d2fc4eeb8f6a2692801" compoundref="MemoryInFiles_8cpp" startline="410">MemoryInFiles::Impl::MemoryBlockInfo::m_queuedOperationsReferenceCount</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1ab25a82cecb4f7a0dc70f181264e2a1bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MemoryInFiles::Impl::FileInfo::ReadMemoryAsync</definition>
+        <argsstring>(MemoryBlockInfo &amp;memoryBlockInfoRef, const uint64_t offsetWithinFile, void *data, uint64_t length, std::shared_ptr&lt; read_memory_handler_t &gt; &amp;handlerPtr)</argsstring>
+        <name>ReadMemoryAsync</name>
+        <param>
+          <type><ref refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo" kindref="compound">MemoryBlockInfo</ref> &amp;</type>
+          <declname>memoryBlockInfoRef</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>offsetWithinFile</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classMemoryInFiles_1a5e24dc250a10ba5ae849ed6ada35ba30" kindref="member">read_memory_handler_t</ref> &gt; &amp;</type>
+          <declname>handlerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try queuing an asynchronous I/O read operation. If the file is NOT open and ready to be operated on, returns immediately. Else, queues a new I/O operation, increments the pending I/O operation reference counter, then calls <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" kindref="member">FileInfo::TryStartNextQueuedIoOperation()</ref> to trigger processing of the next queued I/O operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memoryBlockInfoRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The associated memory block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offsetWithinFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file offset to begin reading from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type-erased output begin pointer to read into. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data length in bytes to read. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handlerPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type-erased I/O completion handler pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the file is open and ready to be operated on, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>MIGHT increment the pending I/O operation reference counter (m_queuedOperationsReferenceCount). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="304" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="611" bodyend="618"/>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a7f91ebe815991d2fc4eeb8f6a2692801" compoundref="MemoryInFiles_8cpp" startline="410">MemoryInFiles::Impl::MemoryBlockInfo::m_queuedOperationsReferenceCount</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1aa38b569e18041d9cb0674fd7994aa8e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::FileInfo::HandleDiskWriteCompleted</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleDiskWriteCompleted</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle completion of a system write operation. If this is the last component of a multi-write operation, calls the final I/O operation handler (<ref refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1ae2423528637d1e8aff45e205c0068e3e" kindref="member">io_operation_t::m_writeHandlerPtr</ref>) (if any). ALWAYS calls <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b727e17c0cfa9a6de6ebb72cd8d92cb" kindref="member">FileInfo::FinishCompletionHandler()</ref> to finalize the completion of the I/O operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytes_transferred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes written. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="312" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="594" bodyend="609"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1ae2423528637d1e8aff45e205c0068e3e" compoundref="MemoryInFiles_8cpp" startline="263">MemoryInFiles::Impl::io_operation_t::m_writeHandlerPtr</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" compoundref="MemoryInFiles_8cpp" startline="550" endline="585">TryStartNextQueuedIoOperation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1ab1ec7a84c1cf7222f49af9a6908784f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::FileInfo::HandleDiskReadCompleted</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleDiskReadCompleted</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle completion of a system read operation. If this is the last component of a multi-read operation, calls the final I/O operation handler (<ref refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1afebcab1b0bed05e7f81e50d5ce6569b0" kindref="member">io_operation_t::m_readHandlerPtr</ref>) (if any). ALWAYS calls <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b727e17c0cfa9a6de6ebb72cd8d92cb" kindref="member">FileInfo::FinishCompletionHandler()</ref> to finalize the completion of the I/O operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytes_transferred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="319" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="619" bodyend="634"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1afebcab1b0bed05e7f81e50d5ce6569b0" compoundref="MemoryInFiles_8cpp" startline="261">MemoryInFiles::Impl::io_operation_t::m_readHandlerPtr</references>
+        <references refid="MemoryInFiles_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="MemoryInFiles_8cpp" startline="39">subprocess</references>
+        <referencedby refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" compoundref="MemoryInFiles_8cpp" startline="550" endline="585">TryStartNextQueuedIoOperation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b727e17c0cfa9a6de6ebb72cd8d92cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::FileInfo::FinishCompletionHandler</definition>
+        <argsstring>(io_operation_t &amp;op)</argsstring>
+        <name>FinishCompletionHandler</name>
+        <param>
+          <type><ref refid="structMemoryInFiles_1_1Impl_1_1io__operation__t" kindref="compound">io_operation_t</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finalize completion of the given I/O operation. If the associated memory block is due deletion and there are no pending I/O operations left, initiates an asynchronous request to <ref refid="structMemoryInFiles_1_1Impl_1a42103be7fc11d1ab58cb2d6b6769b2cc" kindref="member">Impl::ForceDeleteMemoryBlock()</ref> to clean up the memory block. Calls <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" kindref="member">FileInfo::TryStartNextQueuedIoOperation()</ref> to trigger processing of the next queued I/O operation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>op</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The completed I/O operation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>Decrements the pending I/O operation reference counter (m_queuedOperationsReferenceCount). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="327" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="635" bodyend="644"/>
+        <references refid="structMemoryInFiles_1_1Impl_1a42103be7fc11d1ab58cb2d6b6769b2cc" compoundref="MemoryInFiles_8cpp" startline="810" endline="817">MemoryInFiles::Impl::ForceDeleteMemoryBlock</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a68447f579832d0cea72c4247a519456b" compoundref="MemoryInFiles_8cpp" startline="412">MemoryInFiles::Impl::MemoryBlockInfo::m_markedForDeletion</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a99bc4c80e9690f2c5956122d4a709430" compoundref="MemoryInFiles_8cpp" startline="404">MemoryInFiles::Impl::MemoryBlockInfo::m_memoryBlockId</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1a255d033bde304e1dfd202970dc0175a4" compoundref="MemoryInFiles_8cpp" startline="251">MemoryInFiles::Impl::io_operation_t::m_memoryBlockInfoRef</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1MemoryBlockInfo_1a7f91ebe815991d2fc4eeb8f6a2692801" compoundref="MemoryInFiles_8cpp" startline="410">MemoryInFiles::Impl::MemoryBlockInfo::m_queuedOperationsReferenceCount</references>
+      </memberdef>
+      <memberdef kind="function" id="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryInFiles::Impl::FileInfo::TryStartNextQueuedIoOperation</definition>
+        <argsstring>()</argsstring>
+        <name>TryStartNextQueuedIoOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try start next I/O operation. If there are no queued operations left or an operation is currently in progress, returns immediately. Else, acts accordingly to the following cases:<orderedlist>
+<listitem><para>For read operations, initiates an asynchronous system read operation with <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1ab1ec7a84c1cf7222f49af9a6908784f1" kindref="member">FileInfo::HandleDiskReadCompleted()</ref> as a completion handler.</para>
+</listitem><listitem><para>For write operations, initiates an asynchronous system write operation with <ref refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1aa38b569e18041d9cb0674fd7994aa8e6" kindref="member">FileInfo::HandleDiskWriteCompleted()</ref> as a completion handler. </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/src/MemoryInFiles.cpp" line="334" column="14" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="550" bodyend="585"/>
+        <references refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1ab1ec7a84c1cf7222f49af9a6908784f1" compoundref="MemoryInFiles_8cpp" startline="619" endline="634">HandleDiskReadCompleted</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1aa38b569e18041d9cb0674fd7994aa8e6" compoundref="MemoryInFiles_8cpp" startline="594" endline="609">HandleDiskWriteCompleted</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1a0ef9fa073c39f7f94e566cf24684cde7" compoundref="MemoryInFiles_8cpp" startline="255">MemoryInFiles::Impl::io_operation_t::m_length</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1a3d0426fd9462324e89162170f3504295" compoundref="MemoryInFiles_8cpp" startline="253">MemoryInFiles::Impl::io_operation_t::m_offsetWithinFile</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1ade439d73fcf712a3fb06b055d86183a7" compoundref="MemoryInFiles_8cpp" startline="257">MemoryInFiles::Impl::io_operation_t::m_readToThisLocationPtr</references>
+        <references refid="structMemoryInFiles_1_1Impl_1_1io__operation__t_1ae2a692b21e76fe39bf6817a73592edd8" compoundref="MemoryInFiles_8cpp" startline="259">MemoryInFiles::Impl::io_operation_t::m_writeFromThisLocationPtr</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>MemoryInFiles::Impl::FileInfo</label>
+        <link refid="structMemoryInFiles_1_1Impl_1_1FileInfo"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>MemoryInFiles::Impl::FileInfo</label>
+        <link refid="structMemoryInFiles_1_1Impl_1_1FileInfo"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_implRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MemoryInFiles::Impl</label>
+        <link refid="structMemoryInFiles_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/util/src/MemoryInFiles.cpp" line="266" column="5" bodyfile="common/util/src/MemoryInFiles.cpp" bodystart="266" bodyend="349"/>
+    <listofallmembers>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1ae5ebb2bdd0f27ce661cc156a29b5e24f" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>FileInfo</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a4b195d39ac3b4c2575274245f8b943c9" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>FileInfo</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b727e17c0cfa9a6de6ebb72cd8d92cb" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>FinishCompletionHandler</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1ab1ec7a84c1cf7222f49af9a6908784f1" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>HandleDiskReadCompleted</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1aa38b569e18041d9cb0674fd7994aa8e6" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>HandleDiskWriteCompleted</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a633b92f7b8afd7bde6e346fe7b008bd5" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>m_diskOperationInProgress</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a593a357843f94a82de2409fee2cf7007" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>m_fileHandlePtr</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3e569d1866fd98b61a077809ece69c9a" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>m_filePath</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a7b20b04cedbf1003ee228655f7826fff" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>m_implRef</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a6fa5b659f8a8ddea781b328d2f13676d" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>m_queueIoOperations</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1abef5e818be539753c41f2784252bb01f" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>m_valid</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1ab25a82cecb4f7a0dc70f181264e2a1bf" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>ReadMemoryAsync</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1a3c4f9dcf53259cf84204553bd070c777" prot="private" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>TryStartNextQueuedIoOperation</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1ac907aae793c0e7e2c3d4ffd82efab539" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>WriteMemoryAsync</name></member>
+      <member refid="structMemoryInFiles_1_1Impl_1_1FileInfo_1afc18cca3959c23d2655c9d34b8e7301a" prot="public" virt="non-virtual"><scope>MemoryInFiles::Impl::FileInfo</scope><name>~FileInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

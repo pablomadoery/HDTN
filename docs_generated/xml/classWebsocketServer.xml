@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classWebsocketServer" kind="class" language="C++" prot="public">
+    <compoundname>WebsocketServer</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="WebsocketServer_8h" local="no">WebsocketServer.h</includes>
+    <innerclass refid="classWebsocketServer_1_1Connection" prot="public">WebsocketServer::Connection</innerclass>
+    <innerclass refid="classWebsocketServer_1_1Impl" prot="public">WebsocketServer::Impl</innerclass>
+    <innerclass refid="structWebsocketServer_1_1ProgramOptions" prot="public">WebsocketServer::ProgramOptions</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classWebsocketServer_1a5d26e4129a1317acfb51c2f0673de815" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="classWebsocketServer_1_1Connection" kindref="compound">WebsocketServer::Connection</ref> &amp;conn)&gt;</type>
+        <definition>typedef boost::function&lt;void(WebsocketServer::Connection&amp; conn)&gt; WebsocketServer::OnNewWebsocketConnectionCallback_t</definition>
+        <argsstring></argsstring>
+        <name>OnNewWebsocketConnectionCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="79" column="33" bodyfile="module/telem_cmd_interface/include/WebsocketServer.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classWebsocketServer_1aff2ab52100b413264c0a985fbc7ba28b" prot="public" static="no">
+        <type>boost::function&lt; bool(<ref refid="classWebsocketServer_1_1Connection" kindref="compound">WebsocketServer::Connection</ref> &amp;conn, std::string &amp;receivedString)&gt;</type>
+        <definition>typedef boost::function&lt;bool(WebsocketServer::Connection&amp; conn, std::string&amp; receivedString)&gt; WebsocketServer::OnNewWebsocketTextDataReceivedCallback_t</definition>
+        <argsstring></argsstring>
+        <name>OnNewWebsocketTextDataReceivedCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="80" column="33" bodyfile="module/telem_cmd_interface/include/WebsocketServer.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classWebsocketServer_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; WebsocketServer::m_pimpl</definition>
+        <argsstring></argsstring>
+        <name>m_pimpl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="110" column="25" bodyfile="module/telem_cmd_interface/include/WebsocketServer.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classWebsocketServer_1a98449c285e803ffbfb9b9c7e9b10af7d" compoundref="WebsocketServer_8cpp" startline="244" endline="250">Init</referencedby>
+        <referencedby refid="classWebsocketServer_1aa1d5a6c175b375938de1ed5ead016785" compoundref="WebsocketServer_8cpp" startline="284" endline="286">SendTextDataToActiveWebsockets</referencedby>
+        <referencedby refid="classWebsocketServer_1_1Connection_1a406a9751d9cbbd3eb67c76ef8e733a84" compoundref="WebsocketServer_8cpp" startline="147" endline="157">WebsocketServer::Connection::SendTextDataToThisConnection</referencedby>
+        <referencedby refid="classWebsocketServer_1a5c986bd227a1e3985701c801ea1c87c3" compoundref="WebsocketServer_8cpp" startline="252" endline="254">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebsocketServer_1a840773418ea2abd733468b70c2b0c86e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool WebsocketServer::m_valid</definition>
+        <argsstring></argsstring>
+        <name>m_valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="112" column="14" bodyfile="module/telem_cmd_interface/include/WebsocketServer.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classWebsocketServer_1a2a525c037db345b032cac0957dbe3110" compoundref="WebsocketServer_8cpp" startline="260" endline="266">EnabledAndValid</referencedby>
+        <referencedby refid="classWebsocketServer_1a98449c285e803ffbfb9b9c7e9b10af7d" compoundref="WebsocketServer_8cpp" startline="244" endline="250">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWebsocketServer_1adbbc376558ce2c3e2f90bf07ad341f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT</type>
+        <definition>WebsocketServer::WebsocketServer</definition>
+        <argsstring>()</argsstring>
+        <name>WebsocketServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="82" column="26" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a0ee0b45831865c20f40a4a1fc8a1e6a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT</type>
+        <definition>WebsocketServer::~WebsocketServer</definition>
+        <argsstring>()</argsstring>
+        <name>~WebsocketServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="83" column="26" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="256" bodyend="258"/>
+        <references refid="classWebsocketServer_1a5c986bd227a1e3985701c801ea1c87c3" compoundref="WebsocketServer_8cpp" startline="252" endline="254">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a98449c285e803ffbfb9b9c7e9b10af7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT bool</type>
+        <definition>bool WebsocketServer::Init</definition>
+        <argsstring>(const ProgramOptions &amp;options, const OnNewWebsocketConnectionCallback_t &amp;onNewWebsocketConnectionCallback, const OnNewWebsocketTextDataReceivedCallback_t &amp;onNewWebsocketTextDataReceivedCallback)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="structWebsocketServer_1_1ProgramOptions" kindref="compound">ProgramOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classWebsocketServer_1a5d26e4129a1317acfb51c2f0673de815" kindref="member">OnNewWebsocketConnectionCallback_t</ref> &amp;</type>
+          <declname>onNewWebsocketConnectionCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classWebsocketServer_1aff2ab52100b413264c0a985fbc7ba28b" kindref="member">OnNewWebsocketTextDataReceivedCallback_t</ref> &amp;</type>
+          <declname>onNewWebsocketTextDataReceivedCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts the runner as an async thread <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>inprocContextPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>context to use for the inproc zmq connections </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>program options for the runner </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="90" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="244" bodyend="250"/>
+        <references refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" compoundref="WebsocketServer_8h" startline="109">m_pimpl</references>
+        <references refid="classWebsocketServer_1a840773418ea2abd733468b70c2b0c86e" compoundref="WebsocketServer_8h" startline="112">m_valid</references>
+        <referencedby refid="classBpFileTransfer_1_1Impl_1aa1ca3f66758c67c347398c49e7c660ce" compoundref="BpFileTransfer_8cpp" startline="265" endline="275">BpFileTransfer::Impl::InitWebServer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a5c986bd227a1e3985701c801ea1c87c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebsocketServer::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops the runner </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="97" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="252" bodyend="254"/>
+        <references refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" compoundref="WebsocketServer_8h" startline="109">m_pimpl</references>
+        <referencedby refid="classWebsocketServer_1a0ee0b45831865c20f40a4a1fc8a1e6a1" compoundref="WebsocketServer_8cpp" startline="256" endline="258">~WebsocketServer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a2a525c037db345b032cac0957dbe3110" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT bool</type>
+        <definition>bool WebsocketServer::EnabledAndValid</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>EnabledAndValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="98" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="260" bodyend="266"/>
+        <references refid="classWebsocketServer_1a840773418ea2abd733468b70c2b0c86e" compoundref="WebsocketServer_8h" startline="112">m_valid</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1aa1d5a6c175b375938de1ed5ead016785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebsocketServer::SendTextDataToActiveWebsockets</definition>
+        <argsstring>(const char *str, std::size_t strSize)</argsstring>
+        <name>SendTextDataToActiveWebsockets</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>strSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="102" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="284" bodyend="286"/>
+        <references refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" compoundref="WebsocketServer_8h" startline="109">m_pimpl</references>
+        <references refid="Environment_8cpp_1ad8ab729381f270b100f3d05b6c6676fc" compoundref="Environment_8cpp" startline="22">str</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a87e58346c7a7ad5903aeecec731becee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebsocketServer::SendTextDataToActiveWebsockets</definition>
+        <argsstring>(std::string &amp;&amp;str)</argsstring>
+        <name>SendTextDataToActiveWebsockets</name>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="103" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="287" bodyend="289"/>
+        <references refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" compoundref="WebsocketServer_8h" startline="109">m_pimpl</references>
+        <references refid="Environment_8cpp_1ad8ab729381f270b100f3d05b6c6676fc" compoundref="Environment_8cpp" startline="22">str</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1abd9402376b5265cf3f5c4158c53a2388" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebsocketServer::SendTextDataToActiveWebsockets</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>SendTextDataToActiveWebsockets</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="104" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="290" bodyend="292"/>
+        <references refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" compoundref="WebsocketServer_8h" startline="109">m_pimpl</references>
+        <references refid="Environment_8cpp_1ad8ab729381f270b100f3d05b6c6676fc" compoundref="Environment_8cpp" startline="22">str</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a4a69e10d79d9336390ba0faf79951fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void WebsocketServer::SendTextDataToActiveWebsockets</definition>
+        <argsstring>(const std::shared_ptr&lt; std::string &gt; &amp;strPtr)</argsstring>
+        <name>SendTextDataToActiveWebsockets</name>
+        <param>
+          <type>const std::shared_ptr&lt; std::string &gt; &amp;</type>
+          <declname>strPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="105" column="31" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="293" bodyend="295"/>
+        <references refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" compoundref="WebsocketServer_8h" startline="109">m_pimpl</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classWebsocketServer_1a927e7e7d511332b91c0105ea1d22a02f" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT bool</type>
+        <definition>bool WebsocketServer::IsCompiled</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>IsCompiled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="99" column="38" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="268" bodyend="274"/>
+        <referencedby refid="TelemetryRunnerProgramOptionsTests_8cpp_1a53cb52cddf59493751f7bd7af247d8de" compoundref="TelemetryRunnerProgramOptionsTests_8cpp" startline="5" endline="23">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketServer_1a1ff340094d8ce19144970d01c36e8a30" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT bool</type>
+        <definition>bool WebsocketServer::IsCompiledWithSsl</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>IsCompiledWithSsl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="100" column="38" bodyfile="module/telem_cmd_interface/src/WebsocketServer.cpp" bodystart="276" bodyend="282"/>
+        <referencedby refid="TelemetryRunnerProgramOptionsTests_8cpp_1a53cb52cddf59493751f7bd7af247d8de" compoundref="TelemetryRunnerProgramOptionsTests_8cpp" startline="5" endline="23">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>WebsocketServer</label>
+        <link refid="classWebsocketServer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>WebsocketServer</label>
+        <link refid="classWebsocketServer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/telem_cmd_interface/include/WebsocketServer.h" line="32" column="1" bodyfile="module/telem_cmd_interface/include/WebsocketServer.h" bodystart="33" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classWebsocketServer_1a2a525c037db345b032cac0957dbe3110" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>EnabledAndValid</name></member>
+      <member refid="classWebsocketServer_1a98449c285e803ffbfb9b9c7e9b10af7d" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>Init</name></member>
+      <member refid="classWebsocketServer_1a927e7e7d511332b91c0105ea1d22a02f" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>IsCompiled</name></member>
+      <member refid="classWebsocketServer_1a1ff340094d8ce19144970d01c36e8a30" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>IsCompiledWithSsl</name></member>
+      <member refid="classWebsocketServer_1ac02960c70686ceaa080cc264c13494e7" prot="private" virt="non-virtual"><scope>WebsocketServer</scope><name>m_pimpl</name></member>
+      <member refid="classWebsocketServer_1a840773418ea2abd733468b70c2b0c86e" prot="private" virt="non-virtual"><scope>WebsocketServer</scope><name>m_valid</name></member>
+      <member refid="classWebsocketServer_1a5d26e4129a1317acfb51c2f0673de815" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>OnNewWebsocketConnectionCallback_t</name></member>
+      <member refid="classWebsocketServer_1aff2ab52100b413264c0a985fbc7ba28b" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>OnNewWebsocketTextDataReceivedCallback_t</name></member>
+      <member refid="classWebsocketServer_1aa1d5a6c175b375938de1ed5ead016785" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>SendTextDataToActiveWebsockets</name></member>
+      <member refid="classWebsocketServer_1a87e58346c7a7ad5903aeecec731becee" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>SendTextDataToActiveWebsockets</name></member>
+      <member refid="classWebsocketServer_1abd9402376b5265cf3f5c4158c53a2388" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>SendTextDataToActiveWebsockets</name></member>
+      <member refid="classWebsocketServer_1a4a69e10d79d9336390ba0faf79951fb9" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>SendTextDataToActiveWebsockets</name></member>
+      <member refid="classWebsocketServer_1a5c986bd227a1e3985701c801ea1c87c3" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>Stop</name></member>
+      <member refid="classWebsocketServer_1adbbc376558ce2c3e2f90bf07ad341f78" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>WebsocketServer</name></member>
+      <member refid="classWebsocketServer_1a0ee0b45831865c20f40a4a1fc8a1e6a1" prot="public" virt="non-virtual"><scope>WebsocketServer</scope><name>~WebsocketServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

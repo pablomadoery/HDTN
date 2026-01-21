@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="md_module_cli_README" kind="page">
+    <compoundname>md_module_cli_README</compoundname>
+    <title>HDTN CLI</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The HDTN CLI is a command line interface for the HDTN software. It is used to configure and control and instance of HDTN.</para>
+<sect2 id="md_module_cli_README_1autotoc_md11">
+<title>Usage</title>
+<para>The HDTN CLI is invoked by running the <computeroutput>hdtn-cli</computeroutput> command. HDTN must be running for the CLI to work. Currently, it only supports a limited set of command options. To see the list of options, run <computeroutput>hdtn-cli --help</computeroutput>. To get started:</para>
+<para><orderedlist>
+<listitem><para>Build HDTN (see instructions in the main README.md)</para>
+</listitem><listitem><para>Install HDTN (see instructions in the main README.md)</para>
+</listitem><listitem><para>Run an instance of HDTN (see instructions in the main README.md)</para>
+</listitem><listitem><para>Run <computeroutput>hdtn-cli --help</computeroutput> for a list of commands</para>
+</listitem><listitem><para>Run <computeroutput>hdtn-cli &lt;command1&gt; &lt;command2&gt; ...</computeroutput> to run the desired CLI commands</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md_module_cli_README_1autotoc_md12">
+<title>Examples</title>
+<para>The following examples show how to use the CLI to configure and control HDTN.</para>
+<sect3 id="md_module_cli_README_1autotoc_md13">
+<title>Get a list of available options:</title>
+<para><programlisting><codeline><highlight class="normal">$<sp/>hdtn-cli<sp/>--help</highlight></codeline>
+<codeline><highlight class="normal">Options:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--help<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Produce<sp/>help<sp/>message</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--hostname<sp/>arg<sp/>(=127.0.0.1)<sp/>HDTN<sp/>hostname</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--port<sp/>arg<sp/>(=10305)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HDTN<sp/>port</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--contact-plan-file<sp/>arg<sp/><sp/><sp/><sp/><sp/>Local<sp/>contact<sp/>plan<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--contact-plan-json<sp/>arg<sp/><sp/><sp/><sp/><sp/>Contact<sp/>plan<sp/>json<sp/>string</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--outduct[0].rateBps<sp/>arg<sp/><sp/><sp/><sp/>Outduct<sp/>rate<sp/>limit<sp/>(bits<sp/>per<sp/>second)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>--outduct[1].rateBps<sp/>arg<sp/><sp/><sp/><sp/>Outduct<sp/>rate<sp/>limit<sp/>(bits<sp/>per<sp/>second)</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md_module_cli_README_1autotoc_md14">
+<title>Upload a new contact plan file:</title>
+<para><programlisting><codeline><highlight class="normal">$<sp/>hdtn-cli<sp/>--contact-plan-file=/home/user/contact_plan.json</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md_module_cli_README_1autotoc_md15">
+<title>Upload a new contact plan via json</title>
+<para><programlisting><codeline><highlight class="normal">$<sp/>hdtn-cli<sp/>--contact-plan-json=&apos;{&quot;contacts&quot;:[{&quot;contact&quot;:0,&quot;source&quot;:102,&quot;dest&quot;:10,&quot;startTime&quot;:0,&quot;endTime&quot;:2000,&quot;rateBitsPerSec&quot;:1000000000,&quot;owlt&quot;:1},{&quot;contact&quot;:1,&quot;source&quot;:10,&quot;dest&quot;:2,&quot;startTime&quot;:0,&quot;endTime&quot;:2000,&quot;rateBitsPerSec&quot;:1000000000,&quot;owlt&quot;:1},<sp/><sp/><sp/>{&quot;contact&quot;:2,&quot;source&quot;:101,&quot;dest&quot;:10,&quot;startTime&quot;:0,&quot;endTime&quot;:2000,&quot;rateBitsPerSec&quot;:1000000000,&quot;owlt&quot;:1},{&quot;contact&quot;:3,&quot;source&quot;:10,&quot;dest&quot;:1,&quot;startTime&quot;:0,&quot;endTime&quot;:2000,&quot;rateBitsPerSec&quot;:1000000000,&quot;owlt&quot;:1}]}&apos;</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md_module_cli_README_1autotoc_md16">
+<title>Set the rate limit of the first outduct to 1 Mbps:</title>
+<para><programlisting><codeline><highlight class="normal">$<sp/>hdtn-cli<sp/>--outduct[0].rateBps=1000000</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md_module_cli_README_1autotoc_md17">
+<title>Set the rate limit of the first and second outducts to 1 Mbps:</title>
+<para><programlisting><codeline><highlight class="normal">$<sp/>hdtn-cli<sp/>--outduct[0].rateBps=1000000<sp/>--outduct[1].rateBps=1000000</highlight></codeline>
+</programlisting> </para>
+</sect3>
+</sect2>
+    </detaileddescription>
+    <location file="module/cli/README.md"/>
+  </compounddef>
+</doxygen>

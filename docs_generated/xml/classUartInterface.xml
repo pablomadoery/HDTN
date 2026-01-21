@@ -1,0 +1,1625 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUartInterface" kind="class" language="C++" prot="public">
+    <compoundname>UartInterface</compoundname>
+    <includes refid="UartInterface_8h" local="no">UartInterface.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classUartInterface_1a2ffc6bee236bd56ce2f1b2ac4c760247" prot="public" static="no">
+        <type>boost::function&lt; void(<ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;wholeBundleVec)&gt;</type>
+        <definition>typedef boost::function&lt;void(padded_vector_uint8_t&amp; wholeBundleVec)&gt; UartInterface::WholeBundleReadyCallback_t</definition>
+        <argsstring></argsstring>
+        <name>WholeBundleReadyCallback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="46" column="29" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUartInterface_1a185a4983ee569d4447cfe2e892ce2dd1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UartInterface::m_useLocalConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_useLocalConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="92" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a7a51683cd3d762c9ee5ed938f9c2a855" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UartInterface::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="93" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a44af129255508aeb2aa7c2f2a3236377" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UartInterface::m_runningNormally</definition>
+        <argsstring></argsstring>
+        <name>m_runningNormally</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="94" column="10" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a615d0e458540190261b51af7b6b2ad68" compoundref="UartInterface_8cpp" startline="25" endline="27">IsRunningNormally</referencedby>
+        <referencedby refid="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" compoundref="UartInterface_8cpp" startline="502" endline="504">ReadyToForward</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1aaad67037f31e09371b40c04b8cc743b7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UartInterface::m_rxBundleOverran</definition>
+        <argsstring></argsstring>
+        <name>m_rxBundleOverran</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="95" column="10" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a233478d831d5818ef0aae2ad48c1d87f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UartInterface::m_stateSerialReadActive</definition>
+        <argsstring></argsstring>
+        <name>m_stateSerialReadActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="96" column="10" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1af5e5d62c7b7bc7f882bd8d345c7d317b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UartInterface::m_writeInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_writeInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="97" column="10" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a456f773e56a56e01d3b30c04083ee457" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UartInterface::m_sendErrorOccurred</definition>
+        <argsstring></argsstring>
+        <name>m_sendErrorOccurred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="98" column="10" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" compoundref="UartInterface_8cpp" startline="502" endline="504">ReadyToForward</referencedby>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1acb0b075a3f8f6960bb3b15ebc2adc80a" prot="private" static="no" mutable="no">
+        <type><ref refid="structSlipDecodeState__t" kindref="compound">SlipDecodeState_t</ref></type>
+        <definition>SlipDecodeState_t UartInterface::m_slipDecodeState</definition>
+        <argsstring></argsstring>
+        <name>m_slipDecodeState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="99" column="23" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1adde824fe7aab96f6318bd5c0b551241f" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int UartInterface::M_NUM_RX_CIRCULAR_BUFFER_VECTORS</definition>
+        <argsstring></argsstring>
+        <name>M_NUM_RX_CIRCULAR_BUFFER_VECTORS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="100" column="24" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a0dce8ca52647a663e9d2b21cf9d34d60" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string UartInterface::m_comPortName</definition>
+        <argsstring></argsstring>
+        <name>m_comPortName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="101" column="23" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a3025a3e609ad2af47509361934098750" prot="private" static="no" mutable="no">
+        <type>const std::size_t</type>
+        <definition>const std::size_t UartInterface::m_maxRxBundleSizeBytes</definition>
+        <argsstring></argsstring>
+        <name>m_maxRxBundleSizeBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="102" column="23" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service UartInterface::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="103" column="29" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a884be027f514531cd2177416384dba5c" compoundref="UartInterface_8cpp" startline="595" endline="597">GetIoServiceRef</referencedby>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1ae2b04d4987866485ba08b6857d43621a" compoundref="UartInterface_8cpp" startline="383" endline="385">TrySendBundleIfAvailable_ThreadSafe</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a87fdba4dfed8f3ade95ea057faa7187e" prot="private" static="no" mutable="no">
+        <type>boost::asio::serial_port</type>
+        <definition>boost::asio::serial_port UartInterface::m_serialPort</definition>
+        <argsstring></argsstring>
+        <name>m_serialPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="104" column="30" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+        <referencedby refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a87882392f34e6727f03aecc38ab9e754" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; UartInterface::m_readSomeBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_readSomeBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="105" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a84045fbb36317312feafbb21f4ebf43d" prot="private" static="no" mutable="no">
+        <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> *</type>
+        <definition>padded_vector_uint8_t* UartInterface::m_currentRxBundlePtr</definition>
+        <argsstring></argsstring>
+        <name>m_currentRxBundlePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="106" column="27" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a0661681013c902fab7528cd31709b5d3" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable UartInterface::m_circularIndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_circularIndexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="107" column="65" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a9ce4d7441639ddc6282411ef4a61ae06" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &gt;</type>
+        <definition>std::vector&lt;padded_vector_uint8_t &gt; UartInterface::m_bundleRxBuffersCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_bundleRxBuffersCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="108" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1adc38923ba7002539b51084ffbb3c561e" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable UartInterface::m_conditionVariableCb</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariableCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="109" column="31" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a9084c9b6eeda65b19751d6a5f3eceb70" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex UartInterface::m_mutexCb</definition>
+        <argsstring></argsstring>
+        <name>m_mutexCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="110" column="18" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1aa63284ce4af099e82779004486f4c7c3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; UartInterface::m_threadCbReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadCbReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="111" column="21" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1adc5e7534a256527479701d30504c7917" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; UartInterface::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="112" column="21" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a3da566b0a592a59ccee4817b967d4ec4" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable UartInterface::m_localConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_localConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="113" column="31" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1aa55d54452280886eb170255910944e5b" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int UartInterface::MAX_TX_BUNDLES_IN_FLIGHT</definition>
+        <argsstring></argsstring>
+        <name>MAX_TX_BUNDLES_IN_FLIGHT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="115" column="24" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1ac370880ed8dd657a77f659f59958e162" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable UartInterface::m_txBundlesCb</definition>
+        <argsstring></argsstring>
+        <name>m_txBundlesCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="116" column="65" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" compoundref="UartInterface_8cpp" startline="412" endline="422">EmptySendQueueOnFailure</referencedby>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structSerialSendElement" kindref="compound">SerialSendElement</ref> &gt;</type>
+        <definition>std::vector&lt;SerialSendElement&gt; UartInterface::m_txBundlesCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_txBundlesCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="117" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" compoundref="UartInterface_8cpp" startline="412" endline="422">EmptySendQueueOnFailure</referencedby>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1ac60e33b31b7ffe06d5b96da23e196f41" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classUartInterface_1a2ffc6bee236bd56ce2f1b2ac4c760247" kindref="member">WholeBundleReadyCallback_t</ref></type>
+        <definition>const WholeBundleReadyCallback_t UartInterface::m_wholeBundleReadyCallback</definition>
+        <argsstring></argsstring>
+        <name>m_wholeBundleReadyCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="119" column="38" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1ac205868af9f2d15b1728d4978898ed15" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref></type>
+        <definition>OnFailedBundleVecSendCallback_t UartInterface::m_onFailedBundleVecSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleVecSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="121" column="37" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" compoundref="UartInterface_8cpp" startline="522" endline="530">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classUartInterface_1a7ada8c2226109fd7c8cfcbcec71d5767" compoundref="UartInterface_8cpp" startline="506" endline="508">SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a9f1132742813ff9670cd2fc296d61cb0" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref></type>
+        <definition>OnFailedBundleZmqSendCallback_t UartInterface::m_onFailedBundleZmqSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleZmqSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="122" column="37" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="122" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" compoundref="UartInterface_8cpp" startline="522" endline="530">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classUartInterface_1a7419623d62cabe088eb12f3c5640a26d" compoundref="UartInterface_8cpp" startline="509" endline="511">SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a4e7b8a4f83e9658a411f30335077e5dc" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref></type>
+        <definition>OnSuccessfulBundleSendCallback_t UartInterface::m_onSuccessfulBundleSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onSuccessfulBundleSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="123" column="38" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1a692250e3959dd9c291f075081002a1fc" compoundref="UartInterface_8cpp" startline="512" endline="514">SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a592e8fd87acd335b5b515da871d762b6" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref></type>
+        <definition>OnOutductLinkStatusChangedCallback_t UartInterface::m_onOutductLinkStatusChangedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onOutductLinkStatusChangedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="124" column="42" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a89d9445caec0543dac96aa13f3021727" compoundref="UartInterface_8cpp" startline="515" endline="517">SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a2c4555f69ff9ed18294e0f81b3a5b929" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UartInterface::m_userAssignedUuid</definition>
+        <argsstring></argsstring>
+        <name>m_userAssignedUuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="125" column="14" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" compoundref="UartInterface_8cpp" startline="522" endline="530">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1aec3d7a3c4b7d924be4efa4e98e0742c9" compoundref="UartInterface_8cpp" startline="518" endline="520">SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a74dd3891d65396b8b640a717400ef6aa" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundlesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="128" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="128" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a757e7dfc9946d2052dae8316cbb84f8b" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundleBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="129" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="129" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundlesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="130" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+        <referencedby refid="classUartInterface_1a860cd60f241c3dad9ea7b289e4040046" compoundref="UartInterface_8cpp" startline="575" endline="577">GetTotalBundlesSent</referencedby>
+        <referencedby refid="classUartInterface_1a0ac1565063fca8ae8da84b62641ce351" compoundref="UartInterface_8cpp" startline="579" endline="581">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundleBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="131" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="131" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+        <referencedby refid="classUartInterface_1a4676d06809578babbdb75ad1f2ee4a19" compoundref="UartInterface_8cpp" startline="587" endline="589">GetTotalBundleBytesSent</referencedby>
+        <referencedby refid="classUartInterface_1a6df0042c89d15d5e178f42e187ae975f" compoundref="UartInterface_8cpp" startline="591" endline="593">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundlesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="132" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a47dff3d95c0f2fe933f9b018e3605a26" compoundref="UartInterface_8cpp" startline="571" endline="573">GetTotalBundlesAcked</referencedby>
+        <referencedby refid="classUartInterface_1a0ac1565063fca8ae8da84b62641ce351" compoundref="UartInterface_8cpp" startline="579" endline="581">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundleBytesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="133" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="133" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a403c05c513e185327862f7181bd7fe28" compoundref="UartInterface_8cpp" startline="583" endline="585">GetTotalBundleBytesAcked</referencedby>
+        <referencedby refid="classUartInterface_1a6df0042c89d15d5e178f42e187ae975f" compoundref="UartInterface_8cpp" startline="591" endline="593">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a177dd3cc9d2d159f538a2db522df9592" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalBundlesFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="134" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="134" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" compoundref="UartInterface_8cpp" startline="522" endline="530">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a10126ab461048a7b718b1d1a02be2083" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalSlipBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalSlipBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="135" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="135" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a992967064f79ec5a51feb583e164650d" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalSlipBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalSlipBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="136" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a21a5dd1434c2e44ece8caca010ccd55f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_totalReceivedChunks</definition>
+        <argsstring></argsstring>
+        <name>m_totalReceivedChunks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="137" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1af334dc28aa9eff0c4aca0b1b6035ff63" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; UartInterface::m_largestReceivedBytesPerChunk</definition>
+        <argsstring></argsstring>
+        <name>m_largestReceivedBytesPerChunk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="138" column="17" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="138" bodyend="-1"/>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUartInterface_1ae702679c0ce2fe311b39418ad4a82ad8" prot="public" static="no" mutable="no">
+        <type><ref refid="structSlipOverUartInductConnectionTelemetry__t" kindref="compound">SlipOverUartInductConnectionTelemetry_t</ref></type>
+        <definition>SlipOverUartInductConnectionTelemetry_t UartInterface::m_inductTelemetry</definition>
+        <argsstring></argsstring>
+        <name>m_inductTelemetry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="140" column="45" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="140" bodyend="-1"/>
+        <referencedby refid="classSlipOverUartInduct_1ab0663b326237286cc89db82b5f8bdf2f" compoundref="SlipOverUartInduct_8cpp" startline="128" endline="133">SlipOverUartInduct::PopulateInductTelemetry</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct::SlipOverUartInduct</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUartInterface_1a7249b1da63a014d81b931a8258a733ec" prot="public" static="no" mutable="no">
+        <type><ref refid="structSlipOverUartOutductTelemetry__t" kindref="compound">SlipOverUartOutductTelemetry_t</ref></type>
+        <definition>SlipOverUartOutductTelemetry_t UartInterface::m_outductTelemetry</definition>
+        <argsstring></argsstring>
+        <name>m_outductTelemetry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="141" column="36" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classSlipOverUartOutduct_1a2c6b0ca3bb41c62048384f32e0986118" compoundref="SlipOverUartOutduct_8cpp" startline="77" endline="81">SlipOverUartOutduct::PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+        <referencedby refid="classUartInterface_1aa483b864583695244cee00acef53106d" compoundref="UartInterface_8cpp" startline="532" endline="569">SyncTelemetry</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT</type>
+        <definition>UartInterface::UartInterface</definition>
+        <argsstring>(const std::string &amp;comPortName, const unsigned int baudRate, const unsigned int numRxCircularBufferVectors, const std::size_t maxRxBundleSizeBytes, const unsigned int maxTxBundlesInFlight, const WholeBundleReadyCallback_t &amp;wholeBundleReadyCallback)</argsstring>
+        <name>UartInterface</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>comPortName</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>baudRate</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numRxCircularBufferVectors</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>maxRxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>maxTxBundlesInFlight</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classUartInterface_1a2ffc6bee236bd56ce2f1b2ac4c760247" kindref="member">WholeBundleReadyCallback_t</ref> &amp;</type>
+          <declname>wholeBundleReadyCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="48" column="31" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="31" bodyend="141"/>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUartInterface_1a9ce4d7441639ddc6282411ef4a61ae06" compoundref="UartInterface_8h" startline="108">m_bundleRxBuffersCbVec</references>
+        <references refid="classUartInterface_1a0dce8ca52647a663e9d2b21cf9d34d60" compoundref="UartInterface_8h" startline="101">m_comPortName</references>
+        <references refid="structInductConnectionTelemetry__t_1a918c4d384808ca15c0b500ea9e8c4f18" compoundref="TelemetryDefinitions_8h" startline="144">InductConnectionTelemetry_t::m_connectionName</references>
+        <references refid="classUartInterface_1ae702679c0ce2fe311b39418ad4a82ad8" compoundref="UartInterface_8h" startline="140">m_inductTelemetry</references>
+        <references refid="structInductConnectionTelemetry__t_1abada9608295c2708ce7eff85d37a6b44" compoundref="TelemetryDefinitions_8h" startline="145">InductConnectionTelemetry_t::m_inputName</references>
+        <references refid="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" compoundref="UartInterface_8h" startline="103">m_ioService</references>
+        <references refid="classUartInterface_1adc5e7534a256527479701d30504c7917" compoundref="UartInterface_8h" startline="112">m_ioServiceThreadPtr</references>
+        <references refid="classUartInterface_1a3025a3e609ad2af47509361934098750" compoundref="UartInterface_8h" startline="102">m_maxRxBundleSizeBytes</references>
+        <references refid="classUartInterface_1adde824fe7aab96f6318bd5c0b551241f" compoundref="UartInterface_8h" startline="100">M_NUM_RX_CIRCULAR_BUFFER_VECTORS</references>
+        <references refid="classUartInterface_1a87882392f34e6727f03aecc38ab9e754" compoundref="UartInterface_8h" startline="105">m_readSomeBuffer</references>
+        <references refid="classUartInterface_1a7a51683cd3d762c9ee5ed938f9c2a855" compoundref="UartInterface_8h" startline="93">m_running</references>
+        <references refid="classUartInterface_1a44af129255508aeb2aa7c2f2a3236377" compoundref="UartInterface_8h" startline="94">m_runningNormally</references>
+        <references refid="classUartInterface_1a87fdba4dfed8f3ade95ea057faa7187e" compoundref="UartInterface_8h" startline="104">m_serialPort</references>
+        <references refid="classUartInterface_1aa63284ce4af099e82779004486f4c7c3" compoundref="UartInterface_8h" startline="111">m_threadCbReaderPtr</references>
+        <references refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" compoundref="UartInterface_8h" startline="117">m_txBundlesCbVec</references>
+        <references refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</references>
+        <references refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <references refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a0a15e66cf6ffca1143fa990224b43c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT</type>
+        <definition>UartInterface::~UartInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~UartInterface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="53" column="31" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="143" bodyend="145"/>
+        <references refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a852aab6112bc2c469971a599b006ac70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="54" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="146" bodyend="226"/>
+        <references refid="classUartInterface_1a0ac1565063fca8ae8da84b62641ce351" compoundref="UartInterface_8cpp" startline="579" endline="581">GetTotalBundlesUnacked</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUartInterface_1a0dce8ca52647a663e9d2b21cf9d34d60" compoundref="UartInterface_8h" startline="101">m_comPortName</references>
+        <references refid="classUartInterface_1adc38923ba7002539b51084ffbb3c561e" compoundref="UartInterface_8h" startline="109">m_conditionVariableCb</references>
+        <references refid="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" compoundref="UartInterface_8h" startline="103">m_ioService</references>
+        <references refid="classUartInterface_1adc5e7534a256527479701d30504c7917" compoundref="UartInterface_8h" startline="112">m_ioServiceThreadPtr</references>
+        <references refid="classUartInterface_1af334dc28aa9eff0c4aca0b1b6035ff63" compoundref="UartInterface_8h" startline="138">m_largestReceivedBytesPerChunk</references>
+        <references refid="classUartInterface_1a3da566b0a592a59ccee4817b967d4ec4" compoundref="UartInterface_8h" startline="113">m_localConditionVariableAckReceived</references>
+        <references refid="classUartInterface_1a9084c9b6eeda65b19751d6a5f3eceb70" compoundref="UartInterface_8h" startline="110">m_mutexCb</references>
+        <references refid="classUartInterface_1a7249b1da63a014d81b931a8258a733ec" compoundref="UartInterface_8h" startline="141">m_outductTelemetry</references>
+        <references refid="classUartInterface_1a7a51683cd3d762c9ee5ed938f9c2a855" compoundref="UartInterface_8h" startline="93">m_running</references>
+        <references refid="classUartInterface_1aa63284ce4af099e82779004486f4c7c3" compoundref="UartInterface_8h" startline="111">m_threadCbReaderPtr</references>
+        <references refid="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" compoundref="UartInterface_8h" startline="133">m_totalBundleBytesAcked</references>
+        <references refid="classUartInterface_1a757e7dfc9946d2052dae8316cbb84f8b" compoundref="UartInterface_8h" startline="129">m_totalBundleBytesReceived</references>
+        <references refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" compoundref="UartInterface_8h" startline="131">m_totalBundleBytesSent</references>
+        <references refid="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" compoundref="UartInterface_8h" startline="132">m_totalBundlesAcked</references>
+        <references refid="classUartInterface_1a177dd3cc9d2d159f538a2db522df9592" compoundref="UartInterface_8h" startline="134">m_totalBundlesFailedToSend</references>
+        <references refid="classUartInterface_1a74dd3891d65396b8b640a717400ef6aa" compoundref="UartInterface_8h" startline="128">m_totalBundlesReceived</references>
+        <references refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" compoundref="UartInterface_8h" startline="130">m_totalBundlesSent</references>
+        <references refid="classUartInterface_1a21a5dd1434c2e44ece8caca010ccd55f" compoundref="UartInterface_8h" startline="137">m_totalReceivedChunks</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1afc6bb2de2b6334d74e7c6ccf76ae83c5" compoundref="TelemetryDefinitions_8h" startline="431">SlipOverUartOutductTelemetry_t::m_totalReceivedChunks</references>
+        <references refid="classUartInterface_1a992967064f79ec5a51feb583e164650d" compoundref="UartInterface_8h" startline="136">m_totalSlipBytesReceived</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1a383e55e54c9a5449fb483ba3e91dff69" compoundref="TelemetryDefinitions_8h" startline="430">SlipOverUartOutductTelemetry_t::m_totalSlipBytesReceived</references>
+        <references refid="classUartInterface_1a10126ab461048a7b718b1d1a02be2083" compoundref="UartInterface_8h" startline="135">m_totalSlipBytesSent</references>
+        <references refid="classUartInterface_1a185a4983ee569d4447cfe2e892ce2dd1" compoundref="UartInterface_8h" startline="92">m_useLocalConditionVariableAckReceived</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classSlipOverUartOutduct_1a322ed2dd557c1394bf9295b05dcdea73" compoundref="SlipOverUartOutduct_8cpp" startline="69" endline="71">SlipOverUartOutduct::Stop</referencedby>
+        <referencedby refid="classUartInterface_1a0a15e66cf6ffca1143fa990224b43c60" compoundref="UartInterface_8cpp" startline="143" endline="145">~UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a615d0e458540190261b51af7b6b2ad68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT bool</type>
+        <definition>bool UartInterface::IsRunningNormally</definition>
+        <argsstring>()</argsstring>
+        <name>IsRunningNormally</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="55" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="25" bodyend="27"/>
+        <references refid="classUartInterface_1a44af129255508aeb2aa7c2f2a3236377" compoundref="UartInterface_8h" startline="94">m_runningNormally</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a884be027f514531cd2177416384dba5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT <ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service &amp; UartInterface::GetIoServiceRef</definition>
+        <argsstring>()</argsstring>
+        <name>GetIoServiceRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="56" column="55" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="595" bodyend="597"/>
+        <references refid="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" compoundref="UartInterface_8h" startline="103">m_ioService</references>
+        <referencedby refid="classSlipOverUartInduct_1ae553bceb006928616ecfc21f91c1a236" compoundref="SlipOverUartInduct_8cpp" startline="99" endline="101">SlipOverUartInduct::Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a7ce5d47d844738adca57ad4485bba1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT bool</type>
+        <definition>bool UartInterface::Forward</definition>
+        <argsstring>(const uint8_t *bundleData, const std::size_t size, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="58" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="493" bodyend="496"/>
+        <referencedby refid="classSlipOverUartOutduct_1a614139f9a106dd890dda661f88d67fb3" compoundref="SlipOverUartOutduct_8cpp" startline="37" endline="39">SlipOverUartOutduct::Forward</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" compoundref="SlipOverUartInduct_8cpp" startline="74" endline="97">SlipOverUartInduct::NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT bool</type>
+        <definition>bool UartInterface::Forward</definition>
+        <argsstring>(zmq::message_t &amp;dataZmq, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>dataZmq</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="59" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="424" bodyend="455"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structSerialSendElement_1acef1340728494b2612d73876ab2cf25b" compoundref="UartInterface_8h" startline="39">SerialSendElement::m_slipEncodedBundle</references>
+        <references refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" compoundref="UartInterface_8h" startline="131">m_totalBundleBytesSent</references>
+        <references refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" compoundref="UartInterface_8h" startline="130">m_totalBundlesSent</references>
+        <references refid="classUartInterface_1a10126ab461048a7b718b1d1a02be2083" compoundref="UartInterface_8h" startline="135">m_totalSlipBytesSent</references>
+        <references refid="classUartInterface_1ac370880ed8dd657a77f659f59958e162" compoundref="UartInterface_8h" startline="116">m_txBundlesCb</references>
+        <references refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" compoundref="UartInterface_8h" startline="117">m_txBundlesCbVec</references>
+        <references refid="structSerialSendElement_1a1f484e53e49f222927eb58684baea522" compoundref="UartInterface_8h" startline="40">SerialSendElement::m_underlyingDataVecBundle</references>
+        <references refid="structSerialSendElement_1a4bf0eea92eb5f2eaa85232dda7531482" compoundref="UartInterface_8h" startline="41">SerialSendElement::m_underlyingDataZmqBundle</references>
+        <references refid="structSerialSendElement_1a720459888544a1156c3e2e2517e97e51" compoundref="UartInterface_8h" startline="38">SerialSendElement::m_userData</references>
+        <references refid="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" compoundref="UartInterface_8cpp" startline="502" endline="504">ReadyToForward</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="slip_8h_1a4f1ecb0d34b51538dc5ee69c585b2d66" compoundref="slip_8c" startline="42" endline="68">SlipEncode</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <references refid="classUartInterface_1ae2b04d4987866485ba08b6857d43621a" compoundref="UartInterface_8cpp" startline="383" endline="385">TrySendBundleIfAvailable_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1ae02a4effb535c163ef8d3eeca1be41c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT bool</type>
+        <definition>bool UartInterface::Forward</definition>
+        <argsstring>(padded_vector_uint8_t &amp;dataVec, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>dataVec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="60" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="457" bodyend="490"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structSerialSendElement_1acef1340728494b2612d73876ab2cf25b" compoundref="UartInterface_8h" startline="39">SerialSendElement::m_slipEncodedBundle</references>
+        <references refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" compoundref="UartInterface_8h" startline="131">m_totalBundleBytesSent</references>
+        <references refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" compoundref="UartInterface_8h" startline="130">m_totalBundlesSent</references>
+        <references refid="classUartInterface_1a10126ab461048a7b718b1d1a02be2083" compoundref="UartInterface_8h" startline="135">m_totalSlipBytesSent</references>
+        <references refid="classUartInterface_1ac370880ed8dd657a77f659f59958e162" compoundref="UartInterface_8h" startline="116">m_txBundlesCb</references>
+        <references refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" compoundref="UartInterface_8h" startline="117">m_txBundlesCbVec</references>
+        <references refid="structSerialSendElement_1a1f484e53e49f222927eb58684baea522" compoundref="UartInterface_8h" startline="40">SerialSendElement::m_underlyingDataVecBundle</references>
+        <references refid="structSerialSendElement_1a4bf0eea92eb5f2eaa85232dda7531482" compoundref="UartInterface_8h" startline="41">SerialSendElement::m_underlyingDataZmqBundle</references>
+        <references refid="structSerialSendElement_1a720459888544a1156c3e2e2517e97e51" compoundref="UartInterface_8h" startline="38">SerialSendElement::m_userData</references>
+        <references refid="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" compoundref="UartInterface_8cpp" startline="502" endline="504">ReadyToForward</references>
+        <references refid="classzmq_1_1message__t_1aa84be585b079e958a4b139818ce80bee" compoundref="zmq_8hpp" startline="485" endline="492">zmq::message_t::rebuild</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="slip_8h_1a4f1ecb0d34b51538dc5ee69c585b2d66" compoundref="slip_8c" startline="42" endline="68">SlipEncode</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <references refid="classUartInterface_1ae2b04d4987866485ba08b6857d43621a" compoundref="UartInterface_8cpp" startline="383" endline="385">TrySendBundleIfAvailable_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT bool</type>
+        <definition>bool UartInterface::ReadyToForward</definition>
+        <argsstring>()</argsstring>
+        <name>ReadyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="62" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="502" bodyend="504"/>
+        <references refid="classUartInterface_1a44af129255508aeb2aa7c2f2a3236377" compoundref="UartInterface_8h" startline="94">m_runningNormally</references>
+        <references refid="classUartInterface_1a456f773e56a56e01d3b30c04083ee457" compoundref="UartInterface_8h" startline="98">m_sendErrorOccurred</references>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" compoundref="SlipOverUartInduct_8cpp" startline="74" endline="97">SlipOverUartInduct::NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classSlipOverUartOutduct_1aab69108b745517ece1356b5343adc516" compoundref="SlipOverUartOutduct_8cpp" startline="66" endline="68">SlipOverUartOutduct::ReadyToForward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a7ada8c2226109fd7c8cfcbcec71d5767" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::SetOnFailedBundleVecSendCallback</definition>
+        <argsstring>(const OnFailedBundleVecSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleVecSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="63" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="506" bodyend="508"/>
+        <references refid="classUartInterface_1ac205868af9f2d15b1728d4978898ed15" compoundref="UartInterface_8h" startline="121">m_onFailedBundleVecSendCallback</references>
+        <referencedby refid="classSlipOverUartOutduct_1a0c9a00c9014d24e077992455626af6b6" compoundref="SlipOverUartOutduct_8cpp" startline="47" endline="49">SlipOverUartOutduct::SetOnFailedBundleVecSendCallback</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct::SlipOverUartInduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a7419623d62cabe088eb12f3c5640a26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::SetOnFailedBundleZmqSendCallback</definition>
+        <argsstring>(const OnFailedBundleZmqSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleZmqSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="64" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="509" bodyend="511"/>
+        <references refid="classUartInterface_1a9f1132742813ff9670cd2fc296d61cb0" compoundref="UartInterface_8h" startline="122">m_onFailedBundleZmqSendCallback</references>
+        <referencedby refid="classSlipOverUartOutduct_1aedc5808760672b3c7d06480367e643f5" compoundref="SlipOverUartOutduct_8cpp" startline="50" endline="52">SlipOverUartOutduct::SetOnFailedBundleZmqSendCallback</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct::SlipOverUartInduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a692250e3959dd9c291f075081002a1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::SetOnSuccessfulBundleSendCallback</definition>
+        <argsstring>(const OnSuccessfulBundleSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="65" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="512" bodyend="514"/>
+        <references refid="classUartInterface_1a4e7b8a4f83e9658a411f30335077e5dc" compoundref="UartInterface_8h" startline="123">m_onSuccessfulBundleSendCallback</references>
+        <referencedby refid="classSlipOverUartOutduct_1a6a1157e6bbe4cbc471f51e1e46456f8e" compoundref="SlipOverUartOutduct_8cpp" startline="53" endline="55">SlipOverUartOutduct::SetOnSuccessfulBundleSendCallback</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1a1f7dd9cfdfa54962e444c10f476e8412" compoundref="SlipOverUartInduct_8cpp" startline="25" endline="60">SlipOverUartInduct::SlipOverUartInduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a89d9445caec0543dac96aa13f3021727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::SetOnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(const OnOutductLinkStatusChangedCallback_t &amp;callback)</argsstring>
+        <name>SetOnOutductLinkStatusChangedCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="66" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="515" bodyend="517"/>
+        <references refid="classUartInterface_1a592e8fd87acd335b5b515da871d762b6" compoundref="UartInterface_8h" startline="124">m_onOutductLinkStatusChangedCallback</references>
+        <referencedby refid="classSlipOverUartOutduct_1a44c0690a20bd117002f8109d49e6326d" compoundref="SlipOverUartOutduct_8cpp" startline="56" endline="58">SlipOverUartOutduct::SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1aec3d7a3c4b7d924be4efa4e98e0742c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::SetUserAssignedUuid</definition>
+        <argsstring>(uint64_t userAssignedUuid)</argsstring>
+        <name>SetUserAssignedUuid</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>userAssignedUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="67" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="518" bodyend="520"/>
+        <references refid="classUartInterface_1a2c4555f69ff9ed18294e0f81b3a5b929" compoundref="UartInterface_8h" startline="125">m_userAssignedUuid</references>
+        <referencedby refid="classSlipOverUartOutduct_1a07532929f228c1be0bdd6e39bb6351a8" compoundref="SlipOverUartOutduct_8cpp" startline="59" endline="61">SlipOverUartOutduct::SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1aa483b864583695244cee00acef53106d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT void</type>
+        <definition>void UartInterface::SyncTelemetry</definition>
+        <argsstring>()</argsstring>
+        <name>SyncTelemetry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="68" column="36" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="532" bodyend="569"/>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a25a8d590d10b0f5922d49db1622ff228" compoundref="TelemetryDefinitions_8h" startline="225">SlipOverUartInductConnectionTelemetry_t::m_averageReceivedBytesPerChunk</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1a004026b4fb708c43d0b569dd7064950d" compoundref="TelemetryDefinitions_8h" startline="433">SlipOverUartOutductTelemetry_t::m_averageReceivedBytesPerChunk</references>
+        <references refid="classUartInterface_1ae702679c0ce2fe311b39418ad4a82ad8" compoundref="UartInterface_8h" startline="140">m_inductTelemetry</references>
+        <references refid="classUartInterface_1af334dc28aa9eff0c4aca0b1b6035ff63" compoundref="UartInterface_8h" startline="138">m_largestReceivedBytesPerChunk</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a030833daf06ab893e89a1191da902a1e" compoundref="TelemetryDefinitions_8h" startline="224">SlipOverUartInductConnectionTelemetry_t::m_largestReceivedBytesPerChunk</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1a1a426595a53618dd7b28b28de20705ee" compoundref="TelemetryDefinitions_8h" startline="432">SlipOverUartOutductTelemetry_t::m_largestReceivedBytesPerChunk</references>
+        <references refid="classUartInterface_1a7249b1da63a014d81b931a8258a733ec" compoundref="UartInterface_8h" startline="141">m_outductTelemetry</references>
+        <references refid="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" compoundref="UartInterface_8h" startline="133">m_totalBundleBytesAcked</references>
+        <references refid="structOutductTelemetry__t_1aa1a904b6804b71b413bdea60126e38c1" compoundref="TelemetryDefinitions_8h" startline="332">OutductTelemetry_t::m_totalBundleBytesAcked</references>
+        <references refid="classUartInterface_1a757e7dfc9946d2052dae8316cbb84f8b" compoundref="UartInterface_8h" startline="129">m_totalBundleBytesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1ad4c6971bc09c9c2f9fa0bd2a623ff1f6" compoundref="TelemetryDefinitions_8h" startline="147">InductConnectionTelemetry_t::m_totalBundleBytesReceived</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1aeb3353a26765842281b879bd832daac6" compoundref="TelemetryDefinitions_8h" startline="436">SlipOverUartOutductTelemetry_t::m_totalBundleBytesReceived</references>
+        <references refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" compoundref="UartInterface_8h" startline="131">m_totalBundleBytesSent</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a8acad0659fe75f098e5a78c3d2392bc3" compoundref="TelemetryDefinitions_8h" startline="230">SlipOverUartInductConnectionTelemetry_t::m_totalBundleBytesSent</references>
+        <references refid="structOutductTelemetry__t_1a9e32d16d9c482eed5b0e828b067104df" compoundref="TelemetryDefinitions_8h" startline="334">OutductTelemetry_t::m_totalBundleBytesSent</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a79739b2fea0a0ca0e6a91fce9db26f6b" compoundref="TelemetryDefinitions_8h" startline="228">SlipOverUartInductConnectionTelemetry_t::m_totalBundleBytesSentAndAcked</references>
+        <references refid="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" compoundref="UartInterface_8h" startline="132">m_totalBundlesAcked</references>
+        <references refid="structOutductTelemetry__t_1a45241d2505fe58e6532781c6a040b198" compoundref="TelemetryDefinitions_8h" startline="331">OutductTelemetry_t::m_totalBundlesAcked</references>
+        <references refid="classUartInterface_1a177dd3cc9d2d159f538a2db522df9592" compoundref="UartInterface_8h" startline="134">m_totalBundlesFailedToSend</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a0d86630ab498612ac3ba8cff5ba5fdd1" compoundref="TelemetryDefinitions_8h" startline="231">SlipOverUartInductConnectionTelemetry_t::m_totalBundlesFailedToSend</references>
+        <references refid="structOutductTelemetry__t_1a20f16bdb75ed0860f053feaa37ae63f8" compoundref="TelemetryDefinitions_8h" startline="335">OutductTelemetry_t::m_totalBundlesFailedToSend</references>
+        <references refid="classUartInterface_1a74dd3891d65396b8b640a717400ef6aa" compoundref="UartInterface_8h" startline="128">m_totalBundlesReceived</references>
+        <references refid="structInductConnectionTelemetry__t_1a3eca817c07ea8e451ecc5a599e1886d2" compoundref="TelemetryDefinitions_8h" startline="146">InductConnectionTelemetry_t::m_totalBundlesReceived</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1ac901be53857259e87283272f1610c525" compoundref="TelemetryDefinitions_8h" startline="435">SlipOverUartOutductTelemetry_t::m_totalBundlesReceived</references>
+        <references refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" compoundref="UartInterface_8h" startline="130">m_totalBundlesSent</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a7a058034f8d1d1248e53577f70524709" compoundref="TelemetryDefinitions_8h" startline="229">SlipOverUartInductConnectionTelemetry_t::m_totalBundlesSent</references>
+        <references refid="structOutductTelemetry__t_1a5195f83a37144955b554a692d2207ec5" compoundref="TelemetryDefinitions_8h" startline="333">OutductTelemetry_t::m_totalBundlesSent</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a749677c90081bdf3988349bd8edf5d2a" compoundref="TelemetryDefinitions_8h" startline="227">SlipOverUartInductConnectionTelemetry_t::m_totalBundlesSentAndAcked</references>
+        <references refid="classUartInterface_1a21a5dd1434c2e44ece8caca010ccd55f" compoundref="UartInterface_8h" startline="137">m_totalReceivedChunks</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a53117d1d134fd92118a650e571519efb" compoundref="TelemetryDefinitions_8h" startline="223">SlipOverUartInductConnectionTelemetry_t::m_totalReceivedChunks</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1afc6bb2de2b6334d74e7c6ccf76ae83c5" compoundref="TelemetryDefinitions_8h" startline="431">SlipOverUartOutductTelemetry_t::m_totalReceivedChunks</references>
+        <references refid="classUartInterface_1a992967064f79ec5a51feb583e164650d" compoundref="UartInterface_8h" startline="136">m_totalSlipBytesReceived</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1a7ffff34b5b867b621bbc5e0b95bb6bd0" compoundref="TelemetryDefinitions_8h" startline="222">SlipOverUartInductConnectionTelemetry_t::m_totalSlipBytesReceived</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1a383e55e54c9a5449fb483ba3e91dff69" compoundref="TelemetryDefinitions_8h" startline="430">SlipOverUartOutductTelemetry_t::m_totalSlipBytesReceived</references>
+        <references refid="classUartInterface_1a10126ab461048a7b718b1d1a02be2083" compoundref="UartInterface_8h" startline="135">m_totalSlipBytesSent</references>
+        <references refid="structSlipOverUartInductConnectionTelemetry__t_1ac256665b3a40a887ac5b2104f9e64d69" compoundref="TelemetryDefinitions_8h" startline="221">SlipOverUartInductConnectionTelemetry_t::m_totalSlipBytesSent</references>
+        <references refid="structSlipOverUartOutductTelemetry__t_1af4b96813c91407b2d1d57192c3771063" compoundref="TelemetryDefinitions_8h" startline="429">SlipOverUartOutductTelemetry_t::m_totalSlipBytesSent</references>
+        <referencedby refid="classSlipOverUartInduct_1ab0663b326237286cc89db82b5f8bdf2f" compoundref="SlipOverUartInduct_8cpp" startline="128" endline="133">SlipOverUartInduct::PopulateInductTelemetry</referencedby>
+        <referencedby refid="classSlipOverUartOutduct_1a2c6b0ca3bb41c62048384f32e0986118" compoundref="SlipOverUartOutduct_8cpp" startline="77" endline="81">SlipOverUartOutduct::PopulateOutductTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a47dff3d95c0f2fe933f9b018e3605a26" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UartInterface::GetTotalBundlesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="70" column="43" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="571" bodyend="573"/>
+        <references refid="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" compoundref="UartInterface_8h" startline="132">m_totalBundlesAcked</references>
+        <referencedby refid="classSlipOverUartOutduct_1aebaf5005711eefe483099da4472a068e" compoundref="SlipOverUartOutduct_8cpp" startline="72" endline="76">SlipOverUartOutduct::GetOutductFinalStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a860cd60f241c3dad9ea7b289e4040046" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UartInterface::GetTotalBundlesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="71" column="43" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="575" bodyend="577"/>
+        <references refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" compoundref="UartInterface_8h" startline="130">m_totalBundlesSent</references>
+        <referencedby refid="classSlipOverUartOutduct_1aebaf5005711eefe483099da4472a068e" compoundref="SlipOverUartOutduct_8cpp" startline="72" endline="76">SlipOverUartOutduct::GetOutductFinalStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a0ac1565063fca8ae8da84b62641ce351" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UartInterface::GetTotalBundlesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="72" column="43" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="579" bodyend="581"/>
+        <references refid="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" compoundref="UartInterface_8h" startline="132">m_totalBundlesAcked</references>
+        <references refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" compoundref="UartInterface_8h" startline="130">m_totalBundlesSent</references>
+        <referencedby refid="classSlipOverUartOutduct_1ac56e20ab3d0d0a1762d5dfb57da5073e" compoundref="SlipOverUartOutduct_8cpp" startline="34" endline="36">SlipOverUartOutduct::GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classSlipOverUartInduct_1aa3c0645b363b215840ce8a55fe375215" compoundref="SlipOverUartInduct_8cpp" startline="74" endline="97">SlipOverUartInduct::NotifyBundleReadyToSend_FromIoServiceThread</referencedby>
+        <referencedby refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" compoundref="UartInterface_8cpp" startline="146" endline="226">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a403c05c513e185327862f7181bd7fe28" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UartInterface::GetTotalBundleBytesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="73" column="43" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="583" bodyend="585"/>
+        <references refid="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" compoundref="UartInterface_8h" startline="133">m_totalBundleBytesAcked</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a4676d06809578babbdb75ad1f2ee4a19" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UartInterface::GetTotalBundleBytesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="74" column="43" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="587" bodyend="589"/>
+        <references refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" compoundref="UartInterface_8h" startline="131">m_totalBundleBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a6df0042c89d15d5e178f42e187ae975f" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t UartInterface::GetTotalBundleBytesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="75" column="43" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="591" bodyend="593"/>
+        <references refid="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" compoundref="UartInterface_8h" startline="133">m_totalBundleBytesAcked</references>
+        <references refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" compoundref="UartInterface_8h" startline="131">m_totalBundleBytesSent</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::TryStartSerialReceive</definition>
+        <argsstring>()</argsstring>
+        <name>TryStartSerialReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="78" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="230" bodyend="239"/>
+        <references refid="classUartInterface_1a87882392f34e6727f03aecc38ab9e754" compoundref="UartInterface_8h" startline="105">m_readSomeBuffer</references>
+        <references refid="classUartInterface_1a87fdba4dfed8f3ade95ea057faa7187e" compoundref="UartInterface_8h" startline="104">m_serialPort</references>
+        <references refid="classUartInterface_1a233478d831d5818ef0aae2ad48c1d87f" compoundref="UartInterface_8h" startline="96">m_stateSerialReadActive</references>
+        <references refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</references>
+        <referencedby refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" compoundref="UartInterface_8cpp" startline="321" endline="358">PopCbThreadFunc</referencedby>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::PopCbThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>PopCbThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="79" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="321" bodyend="358"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUartInterface_1a9ce4d7441639ddc6282411ef4a61ae06" compoundref="UartInterface_8h" startline="108">m_bundleRxBuffersCbVec</references>
+        <references refid="classUartInterface_1a0661681013c902fab7528cd31709b5d3" compoundref="UartInterface_8h" startline="107">m_circularIndexBuffer</references>
+        <references refid="classUartInterface_1a0dce8ca52647a663e9d2b21cf9d34d60" compoundref="UartInterface_8h" startline="101">m_comPortName</references>
+        <references refid="classUartInterface_1adc38923ba7002539b51084ffbb3c561e" compoundref="UartInterface_8h" startline="109">m_conditionVariableCb</references>
+        <references refid="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" compoundref="UartInterface_8h" startline="103">m_ioService</references>
+        <references refid="classUartInterface_1a3025a3e609ad2af47509361934098750" compoundref="UartInterface_8h" startline="102">m_maxRxBundleSizeBytes</references>
+        <references refid="classUartInterface_1a9084c9b6eeda65b19751d6a5f3eceb70" compoundref="UartInterface_8h" startline="110">m_mutexCb</references>
+        <references refid="classUartInterface_1a7a51683cd3d762c9ee5ed938f9c2a855" compoundref="UartInterface_8h" startline="93">m_running</references>
+        <references refid="classUartInterface_1a757e7dfc9946d2052dae8316cbb84f8b" compoundref="UartInterface_8h" startline="129">m_totalBundleBytesReceived</references>
+        <references refid="classUartInterface_1a74dd3891d65396b8b640a717400ef6aa" compoundref="UartInterface_8h" startline="128">m_totalBundlesReceived</references>
+        <references refid="classUartInterface_1ac60e33b31b7ffe06d5b96da23e196f41" compoundref="UartInterface_8h" startline="119">m_wholeBundleReadyCallback</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <references refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</references>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::ResetRxStates</definition>
+        <argsstring>()</argsstring>
+        <name>ResetRxStates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="80" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="241" bodyend="258"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classUartInterface_1a9ce4d7441639ddc6282411ef4a61ae06" compoundref="UartInterface_8h" startline="108">m_bundleRxBuffersCbVec</references>
+        <references refid="classUartInterface_1a0661681013c902fab7528cd31709b5d3" compoundref="UartInterface_8h" startline="107">m_circularIndexBuffer</references>
+        <references refid="classUartInterface_1a84045fbb36317312feafbb21f4ebf43d" compoundref="UartInterface_8h" startline="106">m_currentRxBundlePtr</references>
+        <references refid="classUartInterface_1aaad67037f31e09371b40c04b8cc743b7" compoundref="UartInterface_8h" startline="95">m_rxBundleOverran</references>
+        <references refid="classUartInterface_1acb0b075a3f8f6960bb3b15ebc2adc80a" compoundref="UartInterface_8h" startline="99">m_slipDecodeState</references>
+        <references refid="slip_8h_1a55ce68e4d9e891c9d043311a34091c73" compoundref="slip_8c" startline="92" endline="94">SlipDecodeInit</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" compoundref="UartInterface_8cpp" startline="260" endline="319">SerialReceiveSomeHandler</referencedby>
+        <referencedby refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" compoundref="UartInterface_8cpp" startline="31" endline="141">UartInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::TrySendBundleIfAvailable_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>TrySendBundleIfAvailable_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="81" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="360" bodyend="381"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" compoundref="UartInterface_8cpp" startline="412" endline="422">EmptySendQueueOnFailure</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</references>
+        <references refid="classUartInterface_1a456f773e56a56e01d3b30c04083ee457" compoundref="UartInterface_8h" startline="98">m_sendErrorOccurred</references>
+        <references refid="classUartInterface_1a87fdba4dfed8f3ade95ea057faa7187e" compoundref="UartInterface_8h" startline="104">m_serialPort</references>
+        <references refid="structSerialSendElement_1acef1340728494b2612d73876ab2cf25b" compoundref="UartInterface_8h" startline="39">SerialSendElement::m_slipEncodedBundle</references>
+        <references refid="classUartInterface_1ac370880ed8dd657a77f659f59958e162" compoundref="UartInterface_8h" startline="116">m_txBundlesCb</references>
+        <references refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" compoundref="UartInterface_8h" startline="117">m_txBundlesCbVec</references>
+        <references refid="classUartInterface_1af5e5d62c7b7bc7f882bd8d345c7d317b" compoundref="UartInterface_8h" startline="97">m_writeInProgress</references>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1ae2b04d4987866485ba08b6857d43621a" compoundref="UartInterface_8cpp" startline="383" endline="385">TrySendBundleIfAvailable_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1ae2b04d4987866485ba08b6857d43621a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::TrySendBundleIfAvailable_ThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>TrySendBundleIfAvailable_ThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="82" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="383" bodyend="385"/>
+        <references refid="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" compoundref="UartInterface_8h" startline="103">m_ioService</references>
+        <references refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</references>
+        <referencedby refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" compoundref="UartInterface_8cpp" startline="424" endline="455">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::SerialReceiveSomeHandler</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>SerialReceiveSomeHandler</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="83" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="260" bodyend="319"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classUartInterface_1a0661681013c902fab7528cd31709b5d3" compoundref="UartInterface_8h" startline="107">m_circularIndexBuffer</references>
+        <references refid="classUartInterface_1adc38923ba7002539b51084ffbb3c561e" compoundref="UartInterface_8h" startline="109">m_conditionVariableCb</references>
+        <references refid="classUartInterface_1a84045fbb36317312feafbb21f4ebf43d" compoundref="UartInterface_8h" startline="106">m_currentRxBundlePtr</references>
+        <references refid="classUartInterface_1af334dc28aa9eff0c4aca0b1b6035ff63" compoundref="UartInterface_8h" startline="138">m_largestReceivedBytesPerChunk</references>
+        <references refid="classUartInterface_1a3025a3e609ad2af47509361934098750" compoundref="UartInterface_8h" startline="102">m_maxRxBundleSizeBytes</references>
+        <references refid="classUartInterface_1a9084c9b6eeda65b19751d6a5f3eceb70" compoundref="UartInterface_8h" startline="110">m_mutexCb</references>
+        <references refid="classUartInterface_1a87882392f34e6727f03aecc38ab9e754" compoundref="UartInterface_8h" startline="105">m_readSomeBuffer</references>
+        <references refid="classUartInterface_1aaad67037f31e09371b40c04b8cc743b7" compoundref="UartInterface_8h" startline="95">m_rxBundleOverran</references>
+        <references refid="classUartInterface_1acb0b075a3f8f6960bb3b15ebc2adc80a" compoundref="UartInterface_8h" startline="99">m_slipDecodeState</references>
+        <references refid="classUartInterface_1a233478d831d5818ef0aae2ad48c1d87f" compoundref="UartInterface_8h" startline="96">m_stateSerialReadActive</references>
+        <references refid="classUartInterface_1a21a5dd1434c2e44ece8caca010ccd55f" compoundref="UartInterface_8h" startline="137">m_totalReceivedChunks</references>
+        <references refid="classUartInterface_1a992967064f79ec5a51feb583e164650d" compoundref="UartInterface_8h" startline="136">m_totalSlipBytesReceived</references>
+        <references refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" compoundref="UartInterface_8cpp" startline="241" endline="258">ResetRxStates</references>
+        <references refid="slip_8h_1ae49b0173d10a25c64794f268930c4332" compoundref="slip_8h" startline="50" endline="73">SlipDecodeChar_Inline</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <references refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</references>
+        <referencedby refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" compoundref="UartInterface_8cpp" startline="230" endline="239">TryStartSerialReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::HandleSerialSend</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, const unsigned int consumeIndex)</argsstring>
+        <name>HandleSerialSend</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>consumeIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="84" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="387" bodyend="410"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" compoundref="UartInterface_8cpp" startline="412" endline="422">EmptySendQueueOnFailure</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUartInterface_1a3da566b0a592a59ccee4817b967d4ec4" compoundref="UartInterface_8h" startline="113">m_localConditionVariableAckReceived</references>
+        <references refid="classUartInterface_1a4e7b8a4f83e9658a411f30335077e5dc" compoundref="UartInterface_8h" startline="123">m_onSuccessfulBundleSendCallback</references>
+        <references refid="classUartInterface_1a456f773e56a56e01d3b30c04083ee457" compoundref="UartInterface_8h" startline="98">m_sendErrorOccurred</references>
+        <references refid="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" compoundref="UartInterface_8h" startline="133">m_totalBundleBytesAcked</references>
+        <references refid="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" compoundref="UartInterface_8h" startline="132">m_totalBundlesAcked</references>
+        <references refid="classUartInterface_1ac370880ed8dd657a77f659f59958e162" compoundref="UartInterface_8h" startline="116">m_txBundlesCb</references>
+        <references refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" compoundref="UartInterface_8h" startline="117">m_txBundlesCbVec</references>
+        <references refid="structSerialSendElement_1a1f484e53e49f222927eb58684baea522" compoundref="UartInterface_8h" startline="40">SerialSendElement::m_underlyingDataVecBundle</references>
+        <references refid="structSerialSendElement_1a4bf0eea92eb5f2eaa85232dda7531482" compoundref="UartInterface_8h" startline="41">SerialSendElement::m_underlyingDataZmqBundle</references>
+        <references refid="classUartInterface_1a185a4983ee569d4447cfe2e892ce2dd1" compoundref="UartInterface_8h" startline="92">m_useLocalConditionVariableAckReceived</references>
+        <references refid="classUartInterface_1a2c4555f69ff9ed18294e0f81b3a5b929" compoundref="UartInterface_8h" startline="125">m_userAssignedUuid</references>
+        <references refid="structSerialSendElement_1a720459888544a1156c3e2e2517e97e51" compoundref="UartInterface_8h" startline="38">SerialSendElement::m_userData</references>
+        <references refid="classUartInterface_1af5e5d62c7b7bc7f882bd8d345c7d317b" compoundref="UartInterface_8h" startline="97">m_writeInProgress</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="UartInterface_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UartInterface_8cpp" startline="22">subprocess</references>
+        <references refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</references>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::DoFailedBundleCallback</definition>
+        <argsstring>(SerialSendElement &amp;el)</argsstring>
+        <name>DoFailedBundleCallback</name>
+        <param>
+          <type><ref refid="structSerialSendElement" kindref="compound">SerialSendElement</ref> &amp;</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="85" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="522" bodyend="530"/>
+        <references refid="classUartInterface_1ac205868af9f2d15b1728d4978898ed15" compoundref="UartInterface_8h" startline="121">m_onFailedBundleVecSendCallback</references>
+        <references refid="classUartInterface_1a9f1132742813ff9670cd2fc296d61cb0" compoundref="UartInterface_8h" startline="122">m_onFailedBundleZmqSendCallback</references>
+        <references refid="classUartInterface_1a177dd3cc9d2d159f538a2db522df9592" compoundref="UartInterface_8h" startline="134">m_totalBundlesFailedToSend</references>
+        <references refid="structSerialSendElement_1a1f484e53e49f222927eb58684baea522" compoundref="UartInterface_8h" startline="40">SerialSendElement::m_underlyingDataVecBundle</references>
+        <references refid="structSerialSendElement_1a4bf0eea92eb5f2eaa85232dda7531482" compoundref="UartInterface_8h" startline="41">SerialSendElement::m_underlyingDataZmqBundle</references>
+        <references refid="classUartInterface_1a2c4555f69ff9ed18294e0f81b3a5b929" compoundref="UartInterface_8h" startline="125">m_userAssignedUuid</references>
+        <references refid="structSerialSendElement_1a720459888544a1156c3e2e2517e97e51" compoundref="UartInterface_8h" startline="38">SerialSendElement::m_userData</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <referencedby refid="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" compoundref="UartInterface_8cpp" startline="412" endline="422">EmptySendQueueOnFailure</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SLIP_OVER_UART_LIB_NO_EXPORT void</type>
+        <definition>void UartInterface::EmptySendQueueOnFailure</definition>
+        <argsstring>()</argsstring>
+        <name>EmptySendQueueOnFailure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/slip_over_uart/include/UartInterface.h" line="86" column="39" bodyfile="common/slip_over_uart/src/UartInterface.cpp" bodystart="412" bodyend="422"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" compoundref="UartInterface_8cpp" startline="522" endline="530">DoFailedBundleCallback</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="classUartInterface_1ac370880ed8dd657a77f659f59958e162" compoundref="UartInterface_8h" startline="116">m_txBundlesCb</references>
+        <references refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" compoundref="UartInterface_8h" startline="117">m_txBundlesCbVec</references>
+        <referencedby refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" compoundref="UartInterface_8cpp" startline="387" endline="410">HandleSerialSend</referencedby>
+        <referencedby refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" compoundref="UartInterface_8cpp" startline="360" endline="381">TrySendBundleIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>SlipOverUartInductConnectionTelemetry_t</label>
+        <link refid="structSlipOverUartInductConnectionTelemetry__t"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SlipOverUartOutductTelemetry_t</label>
+        <link refid="structSlipOverUartOutductTelemetry__t"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JsonSerializable</label>
+        <link refid="classJsonSerializable"/>
+      </node>
+      <node id="6">
+        <label>InductConnectionTelemetry_t</label>
+        <link refid="structInductConnectionTelemetry__t"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>SlipDecodeState_t</label>
+        <link refid="structSlipDecodeState__t"/>
+      </node>
+      <node id="1">
+        <label>UartInterface</label>
+        <link refid="classUartInterface"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_outductTelemetry</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_inductTelemetry</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+          <edgelabel>m_txBundlesCb</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_slipDecodeState</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OutductTelemetry_t</label>
+        <link refid="structOutductTelemetry__t"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/slip_over_uart/include/UartInterface.h" line="44" column="1" bodyfile="common/slip_over_uart/include/UartInterface.h" bodystart="44" bodyend="142"/>
+    <listofallmembers>
+      <member refid="classUartInterface_1a2d06a6ed242c9a153ef7daddc1fdf963" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>DoFailedBundleCallback</name></member>
+      <member refid="classUartInterface_1a77fcf50857f38e10cc91e596b6b6f728" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>EmptySendQueueOnFailure</name></member>
+      <member refid="classUartInterface_1a7ce5d47d844738adca57ad4485bba1f2" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>Forward</name></member>
+      <member refid="classUartInterface_1a16b1b423840b9976cd66ad7a4bcfac62" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>Forward</name></member>
+      <member refid="classUartInterface_1ae02a4effb535c163ef8d3eeca1be41c9" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>Forward</name></member>
+      <member refid="classUartInterface_1a884be027f514531cd2177416384dba5c" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetIoServiceRef</name></member>
+      <member refid="classUartInterface_1a403c05c513e185327862f7181bd7fe28" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetTotalBundleBytesAcked</name></member>
+      <member refid="classUartInterface_1a4676d06809578babbdb75ad1f2ee4a19" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetTotalBundleBytesSent</name></member>
+      <member refid="classUartInterface_1a6df0042c89d15d5e178f42e187ae975f" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetTotalBundleBytesUnacked</name></member>
+      <member refid="classUartInterface_1a47dff3d95c0f2fe933f9b018e3605a26" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetTotalBundlesAcked</name></member>
+      <member refid="classUartInterface_1a860cd60f241c3dad9ea7b289e4040046" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetTotalBundlesSent</name></member>
+      <member refid="classUartInterface_1a0ac1565063fca8ae8da84b62641ce351" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>GetTotalBundlesUnacked</name></member>
+      <member refid="classUartInterface_1a47cf33396b44df306ac4fbc9c9a63437" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>HandleSerialSend</name></member>
+      <member refid="classUartInterface_1a615d0e458540190261b51af7b6b2ad68" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>IsRunningNormally</name></member>
+      <member refid="classUartInterface_1a9ce4d7441639ddc6282411ef4a61ae06" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_bundleRxBuffersCbVec</name></member>
+      <member refid="classUartInterface_1a0661681013c902fab7528cd31709b5d3" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_circularIndexBuffer</name></member>
+      <member refid="classUartInterface_1a0dce8ca52647a663e9d2b21cf9d34d60" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_comPortName</name></member>
+      <member refid="classUartInterface_1adc38923ba7002539b51084ffbb3c561e" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_conditionVariableCb</name></member>
+      <member refid="classUartInterface_1a84045fbb36317312feafbb21f4ebf43d" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_currentRxBundlePtr</name></member>
+      <member refid="classUartInterface_1ae702679c0ce2fe311b39418ad4a82ad8" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>m_inductTelemetry</name></member>
+      <member refid="classUartInterface_1affb5b069d9bdf3458d2f6613550cc040" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_ioService</name></member>
+      <member refid="classUartInterface_1adc5e7534a256527479701d30504c7917" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classUartInterface_1af334dc28aa9eff0c4aca0b1b6035ff63" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_largestReceivedBytesPerChunk</name></member>
+      <member refid="classUartInterface_1a3da566b0a592a59ccee4817b967d4ec4" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_localConditionVariableAckReceived</name></member>
+      <member refid="classUartInterface_1a3025a3e609ad2af47509361934098750" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_maxRxBundleSizeBytes</name></member>
+      <member refid="classUartInterface_1a9084c9b6eeda65b19751d6a5f3eceb70" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_mutexCb</name></member>
+      <member refid="classUartInterface_1adde824fe7aab96f6318bd5c0b551241f" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>M_NUM_RX_CIRCULAR_BUFFER_VECTORS</name></member>
+      <member refid="classUartInterface_1ac205868af9f2d15b1728d4978898ed15" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_onFailedBundleVecSendCallback</name></member>
+      <member refid="classUartInterface_1a9f1132742813ff9670cd2fc296d61cb0" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classUartInterface_1a592e8fd87acd335b5b515da871d762b6" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_onOutductLinkStatusChangedCallback</name></member>
+      <member refid="classUartInterface_1a4e7b8a4f83e9658a411f30335077e5dc" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_onSuccessfulBundleSendCallback</name></member>
+      <member refid="classUartInterface_1a7249b1da63a014d81b931a8258a733ec" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>m_outductTelemetry</name></member>
+      <member refid="classUartInterface_1a87882392f34e6727f03aecc38ab9e754" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_readSomeBuffer</name></member>
+      <member refid="classUartInterface_1a7a51683cd3d762c9ee5ed938f9c2a855" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_running</name></member>
+      <member refid="classUartInterface_1a44af129255508aeb2aa7c2f2a3236377" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_runningNormally</name></member>
+      <member refid="classUartInterface_1aaad67037f31e09371b40c04b8cc743b7" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_rxBundleOverran</name></member>
+      <member refid="classUartInterface_1a456f773e56a56e01d3b30c04083ee457" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_sendErrorOccurred</name></member>
+      <member refid="classUartInterface_1a87fdba4dfed8f3ade95ea057faa7187e" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_serialPort</name></member>
+      <member refid="classUartInterface_1acb0b075a3f8f6960bb3b15ebc2adc80a" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_slipDecodeState</name></member>
+      <member refid="classUartInterface_1a233478d831d5818ef0aae2ad48c1d87f" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_stateSerialReadActive</name></member>
+      <member refid="classUartInterface_1aa63284ce4af099e82779004486f4c7c3" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_threadCbReaderPtr</name></member>
+      <member refid="classUartInterface_1ae7692efa7f9ad2417f9797bc91a204fd" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundleBytesAcked</name></member>
+      <member refid="classUartInterface_1a757e7dfc9946d2052dae8316cbb84f8b" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundleBytesReceived</name></member>
+      <member refid="classUartInterface_1ac8d7e61a6742321e8fd7b124111e4d06" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundleBytesSent</name></member>
+      <member refid="classUartInterface_1ae9c544fd55634e5222d125bc8967388b" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundlesAcked</name></member>
+      <member refid="classUartInterface_1a177dd3cc9d2d159f538a2db522df9592" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundlesFailedToSend</name></member>
+      <member refid="classUartInterface_1a74dd3891d65396b8b640a717400ef6aa" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundlesReceived</name></member>
+      <member refid="classUartInterface_1aff3978c567a490f4578989d0f4b81d0e" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalBundlesSent</name></member>
+      <member refid="classUartInterface_1a21a5dd1434c2e44ece8caca010ccd55f" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalReceivedChunks</name></member>
+      <member refid="classUartInterface_1a992967064f79ec5a51feb583e164650d" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalSlipBytesReceived</name></member>
+      <member refid="classUartInterface_1a10126ab461048a7b718b1d1a02be2083" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_totalSlipBytesSent</name></member>
+      <member refid="classUartInterface_1ac370880ed8dd657a77f659f59958e162" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_txBundlesCb</name></member>
+      <member refid="classUartInterface_1af145ecb8ea62608fc28fe3d3bc256bb3" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_txBundlesCbVec</name></member>
+      <member refid="classUartInterface_1a185a4983ee569d4447cfe2e892ce2dd1" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_useLocalConditionVariableAckReceived</name></member>
+      <member refid="classUartInterface_1a2c4555f69ff9ed18294e0f81b3a5b929" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_userAssignedUuid</name></member>
+      <member refid="classUartInterface_1ac60e33b31b7ffe06d5b96da23e196f41" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_wholeBundleReadyCallback</name></member>
+      <member refid="classUartInterface_1af5e5d62c7b7bc7f882bd8d345c7d317b" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>m_writeInProgress</name></member>
+      <member refid="classUartInterface_1aa55d54452280886eb170255910944e5b" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>MAX_TX_BUNDLES_IN_FLIGHT</name></member>
+      <member refid="classUartInterface_1afd596ce1e25037dc55f0732d58d8bcbb" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>PopCbThreadFunc</name></member>
+      <member refid="classUartInterface_1a721b10a5479c3265a2113d196fc4a7f7" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>ReadyToForward</name></member>
+      <member refid="classUartInterface_1a4b658baee4f6b034168b499e5e87bb6f" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>ResetRxStates</name></member>
+      <member refid="classUartInterface_1aae81d289f5790d5510412ebfa7a17506" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>SerialReceiveSomeHandler</name></member>
+      <member refid="classUartInterface_1a7ada8c2226109fd7c8cfcbcec71d5767" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classUartInterface_1a7419623d62cabe088eb12f3c5640a26d" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classUartInterface_1a89d9445caec0543dac96aa13f3021727" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classUartInterface_1a692250e3959dd9c291f075081002a1fc" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classUartInterface_1aec3d7a3c4b7d924be4efa4e98e0742c9" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classUartInterface_1a852aab6112bc2c469971a599b006ac70" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>Stop</name></member>
+      <member refid="classUartInterface_1aa483b864583695244cee00acef53106d" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>SyncTelemetry</name></member>
+      <member refid="classUartInterface_1ae7e19c1d90b47eff1c287b304c89eb58" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>TrySendBundleIfAvailable_NotThreadSafe</name></member>
+      <member refid="classUartInterface_1ae2b04d4987866485ba08b6857d43621a" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>TrySendBundleIfAvailable_ThreadSafe</name></member>
+      <member refid="classUartInterface_1ab1a790468b7ac60dd9ae407ee3ec32c1" prot="private" virt="non-virtual"><scope>UartInterface</scope><name>TryStartSerialReceive</name></member>
+      <member refid="classUartInterface_1af18898a1ac62969f66ae10e14987dd01" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>UartInterface</name></member>
+      <member refid="classUartInterface_1a2ffc6bee236bd56ce2f1b2ac4c760247" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>WholeBundleReadyCallback_t</name></member>
+      <member refid="classUartInterface_1a0a15e66cf6ffca1143fa990224b43c60" prot="public" virt="non-virtual"><scope>UartInterface</scope><name>~UartInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

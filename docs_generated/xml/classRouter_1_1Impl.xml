@@ -1,0 +1,1754 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classRouter_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>Router::Impl</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classRouter_1_1Impl_1a4f021728c8ae0aba26b782fa78352c79" prot="private" static="no">
+        <type>std::pair&lt; boost::posix_time::ptime, uint64_t &gt;</type>
+        <definition>typedef std::pair&lt;boost::posix_time::ptime, uint64_t&gt; Router::Impl::ptime_index_pair_t</definition>
+        <argsstring></argsstring>
+        <name>ptime_index_pair_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="253" column="23" bodyfile="module/router/src/router.cpp" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classRouter_1_1Impl_1a52a72aa37743db887ce43ab21aa656cb" prot="private" static="no">
+        <type>boost::bimap&lt; <ref refid="classRouter_1_1Impl_1a4f021728c8ae0aba26b782fa78352c79" kindref="member">ptime_index_pair_t</ref>, <ref refid="structcontactPlan__t" kindref="compound">contactPlan_t</ref> &gt;</type>
+        <definition>typedef boost::bimap&lt;ptime_index_pair_t, contactPlan_t&gt; Router::Impl::ptime_to_contactplan_bimap_t</definition>
+        <argsstring></argsstring>
+        <name>ptime_to_contactplan_bimap_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="254" column="26" bodyfile="module/router/src/router.cpp" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classRouter_1_1Impl_1aa94ec22bab788f7edd8f10de5abc2531" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; Router::Impl::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="256" column="17" bodyfile="module/router/src/router.cpp" bodystart="256" bodyend="-1"/>
+        <referencedby refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" compoundref="router_8cpp" startline="377" endline="415">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a1161e20246e026bd4aed4ef4cbc0586f" prot="private" static="no" mutable="no">
+        <type><ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref></type>
+        <definition>HdtnConfig Router::Impl::m_hdtnConfig</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="257" column="16" bodyfile="module/router/src/router.cpp" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ab8d3dad5d0b089e0f536a9096e113720" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; Router::Impl::m_threadZmqAckReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadZmqAckReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="258" column="21" bodyfile="module/router/src/router.cpp" bodystart="258" bodyend="-1"/>
+        <referencedby refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" compoundref="router_8cpp" startline="377" endline="415">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a09e3a3234427e8845a9408f1a821803c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::context_t&gt; Router::Impl::m_zmqCtxPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqCtxPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="261" column="21" bodyfile="module/router/src/router.cpp" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a81aa314a8ea86aa7920540e22762be7d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; Router::Impl::m_zmqPullSock_boundEgressToConnectingRouterPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_boundEgressToConnectingRouterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="262" column="21" bodyfile="module/router/src/router.cpp" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1abb56ca1b4b298af1d2f26684763bef62" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; Router::Impl::m_zmqPushSock_connectingRouterToBoundEgressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPushSock_connectingRouterToBoundEgressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="263" column="21" bodyfile="module/router/src/router.cpp" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1afbe1f36484544678ad92cbcbe5974443" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; Router::Impl::m_zmqXPubSock_boundRouterToConnectingSubsPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqXPubSock_boundRouterToConnectingSubsPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="264" column="21" bodyfile="module/router/src/router.cpp" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a28db676b7a7fb7f79f71b1c8e94d8585" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; Router::Impl::m_zmqRepSock_connectingTelemToFromBoundRouterPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqRepSock_connectingTelemToFromBoundRouterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="265" column="21" bodyfile="module/router/src/router.cpp" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a728b75cd2091dc629778781e37b07ae7" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; Router::Impl::m_zmqPullSock_connectingStorageToBoundRouterPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_connectingStorageToBoundRouterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="266" column="21" bodyfile="module/router/src/router.cpp" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ad40228da7ab7718b08b9c04d6afa4f90" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex Router::Impl::m_mutexZmqPubSock</definition>
+        <argsstring></argsstring>
+        <name>m_mutexZmqPubSock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="267" column="18" bodyfile="module/router/src/router.cpp" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a485839f161083befb80b608be7109c71" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="classOutductInfo__t" kindref="compound">OutductInfo_t</ref> &gt;</type>
+        <definition>std::map&lt;uint64_t, OutductInfo_t&gt; Router::Impl::m_mapOutductArrayIndexToOutductInfo</definition>
+        <argsstring></argsstring>
+        <name>m_mapOutductArrayIndexToOutductInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="271" column="14" bodyfile="module/router/src/router.cpp" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a40a222540862baa66f10005d5923f90d" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, uint64_t &gt;</type>
+        <definition>std::map&lt;uint64_t, uint64_t&gt; Router::Impl::m_mapNextHopNodeIdToOutductArrayIndex</definition>
+        <argsstring></argsstring>
+        <name>m_mapNextHopNodeIdToOutductArrayIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="272" column="14" bodyfile="module/router/src/router.cpp" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a7a8c91f411bd224d213aa0b07ec4d666" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path Router::Impl::m_contactPlanFilePath</definition>
+        <argsstring></argsstring>
+        <name>m_contactPlanFilePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="275" column="29" bodyfile="module/router/src/router.cpp" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a0a8d15b610a650462cfaa56876550ec0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Router::Impl::m_usingUnixTimestamp</definition>
+        <argsstring></argsstring>
+        <name>m_usingUnixTimestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="276" column="10" bodyfile="module/router/src/router.cpp" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ab4a8f24ad7107abef079aad927515cd1" prot="private" static="no" mutable="no">
+        <type><ref refid="classRouter_1_1Impl_1a52a72aa37743db887ce43ab21aa656cb" kindref="member">ptime_to_contactplan_bimap_t</ref></type>
+        <definition>ptime_to_contactplan_bimap_t Router::Impl::m_ptimeToContactPlanBimap</definition>
+        <argsstring></argsstring>
+        <name>m_ptimeToContactPlanBimap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="278" column="34" bodyfile="module/router/src/router.cpp" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a60ef8891bd499e1727bd96e500f55add" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service Router::Impl::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="279" column="29" bodyfile="module/router/src/router.cpp" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a5fc92b8e5577fa7e3b09591961a04463" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer Router::Impl::m_contactPlanTimer</definition>
+        <argsstring></argsstring>
+        <name>m_contactPlanTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="280" column="33" bodyfile="module/router/src/router.cpp" bodystart="280" bodyend="-1"/>
+        <referencedby refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" compoundref="router_8cpp" startline="377" endline="415">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ab65fceea2225038d16ba914ef23eac1b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::asio::io_service::work &gt;</type>
+        <definition>std::unique_ptr&lt;boost::asio::io_service::work&gt; Router::Impl::m_workPtr</definition>
+        <argsstring></argsstring>
+        <name>m_workPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="281" column="21" bodyfile="module/router/src/router.cpp" bodystart="281" bodyend="-1"/>
+        <referencedby refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" compoundref="router_8cpp" startline="377" endline="415">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a8fc3c7a243f58d30cd32d396a6cee562" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; Router::Impl::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="282" column="21" bodyfile="module/router/src/router.cpp" bodystart="282" bodyend="-1"/>
+        <referencedby refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" compoundref="router_8cpp" startline="377" endline="415">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a037b038705bd0eebf7cc20ab2b8dfef1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Router::Impl::m_contactPlanTimerIsRunning</definition>
+        <argsstring></argsstring>
+        <name>m_contactPlanTimerIsRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="283" column="10" bodyfile="module/router/src/router.cpp" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a0306a83853c696e8c1905f81ebd9e6a0" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::ptime</type>
+        <definition>boost::posix_time::ptime Router::Impl::m_epoch</definition>
+        <argsstring></argsstring>
+        <name>m_epoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="284" column="30" bodyfile="module/router/src/router.cpp" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a83fe0cbcbe37b4f6cf5f35957d974e02" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Router::Impl::m_subtractMeFromUnixTimeSecondsToConvertToRouterTimeSeconds</definition>
+        <argsstring></argsstring>
+        <name>m_subtractMeFromUnixTimeSecondsToConvertToRouterTimeSeconds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="285" column="14" bodyfile="module/router/src/router.cpp" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ae483daa5501e136b4a846ad1479c6da6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Router::Impl::m_outductInfoInitialized</definition>
+        <argsstring></argsstring>
+        <name>m_outductInfoInitialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="288" column="10" bodyfile="module/router/src/router.cpp" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a958c80088ca4caaddc0809e86703f4a0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Router::Impl::m_receivedInitialOutductTelem</definition>
+        <argsstring></argsstring>
+        <name>m_receivedInitialOutductTelem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="290" column="10" bodyfile="module/router/src/router.cpp" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a0326ce95776168d92998c77889ba5be4" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; Router::Impl::m_workerThreadStartupInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="293" column="17" bodyfile="module/router/src/router.cpp" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a325248d00034e89455cf0e9e7f70cbd4" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex Router::Impl::m_workerThreadStartupMutex</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="294" column="18" bodyfile="module/router/src/router.cpp" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a6f54c698cf80ed519720b24359c41412" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable Router::Impl::m_workerThreadStartupConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="295" column="31" bodyfile="module/router/src/router.cpp" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ad6f534886270c0f4a89fce1e428cfaa6" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex Router::Impl::m_bundleCreationMutex</definition>
+        <argsstring></argsstring>
+        <name>m_bundleCreationMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="298" column="18" bodyfile="module/router/src/router.cpp" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ab6677fd50be250ed827190239c61e89a" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Router::Impl::m_lastMillisecondsSinceStartOfYear2000</definition>
+        <argsstring></argsstring>
+        <name>m_lastMillisecondsSinceStartOfYear2000</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="299" column="14" bodyfile="module/router/src/router.cpp" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a0ca126da42589b70ecd595faed518d84" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Router::Impl::m_bundleSequence</definition>
+        <argsstring></argsstring>
+        <name>m_bundleSequence</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="300" column="14" bodyfile="module/router/src/router.cpp" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ae84102d97dc316dfc2869a30d28ad621" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Router::Impl::m_usingMGR</definition>
+        <argsstring></argsstring>
+        <name>m_usingMGR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="303" column="10" bodyfile="module/router/src/router.cpp" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a99156f534dfef0c8b1adb0bf789428f0" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Router::Impl::m_latestTime</definition>
+        <argsstring></argsstring>
+        <name>m_latestTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="304" column="14" bodyfile="module/router/src/router.cpp" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a0d12992da1194cd93e81a4e32ad7bf85" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classcgr_1_1Contact" kindref="compound">cgr::Contact</ref> &gt;</type>
+        <definition>std::vector&lt;cgr::Contact&gt; Router::Impl::m_cgrContacts</definition>
+        <argsstring></argsstring>
+        <name>m_cgrContacts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="305" column="17" bodyfile="module/router/src/router.cpp" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ad05fa1220b52542189c195051f78a32d" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; uint64_t, uint64_t &gt;</type>
+        <definition>std::unordered_map&lt;uint64_t, uint64_t&gt; Router::Impl::m_routes</definition>
+        <argsstring></argsstring>
+        <name>m_routes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="307" column="24" bodyfile="module/router/src/router.cpp" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ad2d49f4e2701b3cf732eabdd6bd0d5c1" prot="private" static="no" mutable="no">
+        <type>boost::bimap&lt; <ref refid="classRouter_1_1Impl_1a4f021728c8ae0aba26b782fa78352c79" kindref="member">ptime_index_pair_t</ref>, uint64_t &gt;</type>
+        <definition>boost::bimap&lt;ptime_index_pair_t, uint64_t&gt; Router::Impl::m_storageExpirationTimes</definition>
+        <argsstring></argsstring>
+        <name>m_storageExpirationTimes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="310" column="19" bodyfile="module/router/src/router.cpp" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a1a462f50e9924ce6d421187ed723efaf" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer Router::Impl::m_storageFullTimer</definition>
+        <argsstring></argsstring>
+        <name>m_storageFullTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="311" column="33" bodyfile="module/router/src/router.cpp" bodystart="311" bodyend="-1"/>
+        <referencedby refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" compoundref="router_8cpp" startline="377" endline="415">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1a0fd16cc88940946ff6e5a20c20e924f5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Router::Impl::m_storageFullTimerIsRunning</definition>
+        <argsstring></argsstring>
+        <name>m_storageFullTimerIsRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="312" column="10" bodyfile="module/router/src/router.cpp" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classRouter_1_1Impl_1ade2c2e09c26095db886eebc034f6b568" prot="private" static="no" mutable="no">
+        <type><ref refid="classTelemetryServer" kindref="compound">TelemetryServer</ref></type>
+        <definition>TelemetryServer Router::Impl::m_telemServer</definition>
+        <argsstring></argsstring>
+        <name>m_telemServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="314" column="21" bodyfile="module/router/src/router.cpp" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classRouter_1_1Impl_1adff9e589e6e6943cd0f7753c57ce2b53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Router::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="197" column="5" bodyfile="module/router/src/router.cpp" bodystart="338" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1aa8c824781e4491284153a102163bf8c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Router::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="198" column="5" bodyfile="module/router/src/router.cpp" bodystart="354" bodyend="356"/>
+        <references refid="classRouter_1ab71353ee88608f83ec09290b84244ae5" compoundref="router_8cpp" startline="373" endline="375">Router::Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="199" column="10" bodyfile="module/router/src/router.cpp" bodystart="377" bodyend="415"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classRouter_1_1Impl_1a5fc92b8e5577fa7e3b09591961a04463" compoundref="router_8cpp" startline="280">m_contactPlanTimer</references>
+        <references refid="classRouter_1_1Impl_1a8fc3c7a243f58d30cd32d396a6cee562" compoundref="router_8cpp" startline="282">m_ioServiceThreadPtr</references>
+        <references refid="classRouter_1_1Impl_1aa94ec22bab788f7edd8f10de5abc2531" compoundref="router_8cpp" startline="256">m_running</references>
+        <references refid="classRouter_1_1Impl_1a1a462f50e9924ce6d421187ed723efaf" compoundref="router_8cpp" startline="311">m_storageFullTimer</references>
+        <references refid="classRouter_1_1Impl_1ab8d3dad5d0b089e0f536a9096e113720" compoundref="router_8cpp" startline="258">m_threadZmqAckReaderPtr</references>
+        <references refid="classRouter_1_1Impl_1ab65fceea2225038d16ba914ef23eac1b" compoundref="router_8cpp" startline="281">m_workPtr</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1aebd1af07f06400b896fbebbb8e542634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::Init</definition>
+        <argsstring>(const HdtnConfig &amp;hdtnConfig, const HdtnDistributedConfig &amp;hdtnDistributedConfig, const boost::filesystem::path &amp;contactPlanFilePath, bool usingUnixTimestamp, bool useMgr, zmq::context_t *hdtnOneProcessZmqInprocContextPtr)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref> &amp;</type>
+          <declname>hdtnConfig</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classHdtnDistributedConfig" kindref="compound">HdtnDistributedConfig</ref> &amp;</type>
+          <declname>hdtnDistributedConfig</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>contactPlanFilePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>usingUnixTimestamp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+          <declname>hdtnOneProcessZmqInprocContextPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="200" column="10" bodyfile="module/router/src/router.cpp" bodystart="417" bodyend="573"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classHdtnDistributedConfig_1a41420074fb084478ccfd9adae1c68686" compoundref="HdtnDistributedConfig_8h" startline="78">HdtnDistributedConfig::m_zmqBoundEgressToConnectingRouterPortPath</references>
+        <references refid="classHdtnDistributedConfig_1a65c04e8774d5a46cc376cfa9d1c8c623" compoundref="HdtnDistributedConfig_8h" startline="98">HdtnDistributedConfig::m_zmqConnectingRouterToBoundEgressPortPath</references>
+        <references refid="classHdtnDistributedConfig_1a088b682aeb04da436a6168939e6e931a" compoundref="HdtnDistributedConfig_8h" startline="92">HdtnDistributedConfig::m_zmqConnectingStorageToBoundRouterPortPath</references>
+        <references refid="classHdtnDistributedConfig_1a8d753fd2218d5287fa6965762e73e086" compoundref="HdtnDistributedConfig_8h" startline="104">HdtnDistributedConfig::m_zmqConnectingTelemToFromBoundRouterPortPath</references>
+        <references refid="classHdtnDistributedConfig_1ae1b96f84b476e2cb11b8d9d8737f9d42" compoundref="HdtnDistributedConfig_8h" startline="69">HdtnDistributedConfig::m_zmqEgressAddress</references>
+        <references refid="classRouter_1_1Impl_1a81f57d4d9089d07733b192656fc1ca94" compoundref="router_8cpp" startline="1032" endline="1140">ReadZmqAcksThreadFunc</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classRouter_1_1Impl_1a8e7f56493f5bdf1cd979b6b807cca46e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::property_tree::ptree</type>
+        <definition>boost::property_tree::ptree Router::Impl::FilterContactsPropertyTree</definition>
+        <argsstring>(const boost::property_tree::ptree &amp;contactPlanPt)</argsstring>
+        <name>FilterContactsPropertyTree</name>
+        <param>
+          <type>const boost::property_tree::ptree &amp;</type>
+          <declname>contactPlanPt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="208" column="33" bodyfile="module/router/src/router.cpp" bodystart="1186" bodyend="1208"/>
+        <references refid="BpSecConfig_8cpp_1a715ef40ca308d3471d28a49f7d3072c8" compoundref="BpSecConfig_8cpp" startline="32">EMPTY_PTREE</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1adf3d299d4b1f588e0117bebe78ded5d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::ProcessContacts</definition>
+        <argsstring>(const boost::property_tree::ptree &amp;pt)</argsstring>
+        <name>ProcessContacts</name>
+        <param>
+          <type>const boost::property_tree::ptree &amp;</type>
+          <declname>pt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="209" column="10" bodyfile="module/router/src/router.cpp" bodystart="1211" bodyend="1310"/>
+        <references refid="structcontactPlan__t_1a947669bf684498c8da22735e7076e040" compoundref="router_8cpp" startline="127">contactPlan_t::contact</references>
+        <references refid="namespacecgr_1a90102101ff23f67d01123e0fb71aa7e2" compoundref="libcgr_8cpp" startline="354" endline="365">cgr::cp_load</references>
+        <references refid="structcontactPlan__t_1acac96365e01f599c5432bc45517c470d" compoundref="router_8cpp" startline="129">contactPlan_t::dest</references>
+        <references refid="BpSecConfig_8cpp_1a715ef40ca308d3471d28a49f7d3072c8" compoundref="BpSecConfig_8cpp" startline="32">EMPTY_PTREE</references>
+        <references refid="structcontactPlan__t_1affee98c0834ec830e850f4bedbd66444" compoundref="router_8cpp" startline="131">contactPlan_t::end</references>
+        <references refid="classOutductInfo__t_1a8adc79b65d1566006f7c7b5179d1868e" compoundref="router_8cpp" startline="184">OutductInfo_t::finalDestNodeIds</references>
+        <references refid="classRouter_1afa7d5ea074f3559daa708d52a9fabc28" compoundref="router_8cpp" startline="1164" endline="1184">Router::GetRateBpsFromPtree</references>
+        <references refid="classTimestampUtil_1ae425a71c2c839c5a65268665b79cad2d" compoundref="TimestampUtil_8cpp" startline="32" endline="34">TimestampUtil::GetUnixEpoch</references>
+        <references refid="message_8hpp_1a6eb37e57a2db51080df432eb85f8711c" compoundref="message_8hpp" startline="79">HDTN_NOROUTE</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classOutductInfo__t_1af042ab20a84847b090f5be9e7d8b8d76" compoundref="router_8cpp" startline="181">OutductInfo_t::nextHopNodeId</references>
+        <references refid="structcontactPlan__t_1a3362bdf5031fb5724b3277306b74f35e" compoundref="router_8cpp" startline="134">contactPlan_t::outductArrayIndex</references>
+        <references refid="classOutductInfo__t_1a0d173521e77bf81d20a722b17b57ec91" compoundref="router_8cpp" startline="180">OutductInfo_t::outductIndex</references>
+        <references refid="structcontactPlan__t_1a33f9d8f02170939f7ab28b2ce721fff0" compoundref="router_8cpp" startline="132">contactPlan_t::rateBps</references>
+        <references refid="structcontactPlan__t_1a1d0c5ed87950424cc348429ee0797931" compoundref="router_8cpp" startline="128">contactPlan_t::source</references>
+        <references refid="structcontactPlan__t_1ae87aa8db2fbd3eb696c267e5e1cf315e" compoundref="router_8cpp" startline="130">contactPlan_t::start</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classOutductInfo__t_1a4e5aae982bbe0d1361e9a1d3b40f742f" compoundref="router_8cpp" startline="150" endline="154">OutductInfo_t::updateLinkStateTimeBased</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a826ad2c31a0fc8ba8f1fe0416b3ab07c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::ProcessContactsJsonText</definition>
+        <argsstring>(char *jsonText)</argsstring>
+        <name>ProcessContactsJsonText</name>
+        <param>
+          <type>char *</type>
+          <declname>jsonText</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="210" column="10" bodyfile="module/router/src/router.cpp" bodystart="1142" bodyend="1148"/>
+        <references refid="classJsonSerializable_1a571a9ee2657f4cf0a9f3835ebcac2890" compoundref="JsonSerializable_8cpp" startline="141" endline="152">JsonSerializable::GetPropertyTreeFromJsonCharArray</references>
+        <referencedby refid="classRouter_1_1Impl_1a8cd9fafcf31c02d1267ad442eb65c5e4" compoundref="router_8cpp" startline="982" endline="1029">TelemEventsHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a1b6473f8aae3fc321e9087b3b1c37cdd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::ProcessContactsJsonText</definition>
+        <argsstring>(const std::string &amp;jsonText)</argsstring>
+        <name>ProcessContactsJsonText</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>jsonText</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="211" column="10" bodyfile="module/router/src/router.cpp" bodystart="1149" bodyend="1155"/>
+        <references refid="classJsonSerializable_1a10d2706e6272b11b4eb69526457fa4d4" compoundref="JsonSerializable_8cpp" startline="165" endline="168">JsonSerializable::GetPropertyTreeFromJsonString</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1af8c19d26a959e696a1bc7c0733737dbc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::ProcessContactsFile</definition>
+        <argsstring>(const boost::filesystem::path &amp;jsonEventFilePath)</argsstring>
+        <name>ProcessContactsFile</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>jsonEventFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="212" column="10" bodyfile="module/router/src/router.cpp" bodystart="1156" bodyend="1162"/>
+        <references refid="classJsonSerializable_1a316f4084f79841c5ef63d2df58d8a909" compoundref="JsonSerializable_8cpp" startline="170" endline="179">JsonSerializable::GetPropertyTreeFromJsonFilePath</references>
+        <referencedby refid="classRouter_1_1Impl_1a81f57d4d9089d07733b192656fc1ca94" compoundref="router_8cpp" startline="1032" endline="1140">ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a9bd8c9b95aa2c2118e1155d741127d7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::PopulateMapsFromAllOutductCapabilitiesTelemetry</definition>
+        <argsstring>(const AllOutductCapabilitiesTelemetry_t &amp;aoct)</argsstring>
+        <name>PopulateMapsFromAllOutductCapabilitiesTelemetry</name>
+        <param>
+          <type>const <ref refid="structAllOutductCapabilitiesTelemetry__t" kindref="compound">AllOutductCapabilitiesTelemetry_t</ref> &amp;</type>
+          <declname>aoct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build OutductInfo data structures </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="214" column="10" bodyfile="module/router/src/router.cpp" bodystart="1403" bodyend="1420"/>
+        <references refid="structOutductCapabilityTelemetry__t_1abb2e38a045785ebcd23fa969a4b76a6c" compoundref="TelemetryDefinitions_8h" startline="103">OutductCapabilityTelemetry_t::assumedInitiallyDown</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a04672bcc8ebd6c638b95bef030ce65b9" compoundref="TelemetryDefinitions_8h" startline="102">OutductCapabilityTelemetry_t::nextHopNodeId</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a33cd295442b76ca142d75a8e000fb0aa" compoundref="TelemetryDefinitions_8h" startline="99">OutductCapabilityTelemetry_t::outductArrayIndex</references>
+        <references refid="structAllOutductCapabilitiesTelemetry__t_1af2bec1ba32e7338608ec6793360ae09a" compoundref="TelemetryDefinitions_8h" startline="121">AllOutductCapabilitiesTelemetry_t::outductCapabilityTelemetryList</references>
+        <referencedby refid="classRouter_1_1Impl_1ac33fcb6ff75d6ca681f345562381afcc" compoundref="router_8cpp" startline="652" endline="748">EgressEventsHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a99c01563515615e7cda0554e17029b3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::HandlePhysicalLinkStatusChange</definition>
+        <argsstring>(const hdtn::LinkStatusHdr &amp;linkStatusHdr)</argsstring>
+        <name>HandlePhysicalLinkStatusChange</name>
+        <param>
+          <type>const <ref refid="structhdtn_1_1LinkStatusHdr" kindref="compound">hdtn::LinkStatusHdr</ref> &amp;</type>
+          <declname>linkStatusHdr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Respond to physical link status change from egress</para>
+<para>Update state tracking in outduct info</para>
+<para>If link went up physically and there&apos;s an active contact for the link, then send out a link up message If the link wend down physically and there&apos;s an active contact for the link, then send out a link down message </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="215" column="10" bodyfile="module/router/src/router.cpp" bodystart="1431" bodyend="1461"/>
+        <references refid="structhdtn_1_1LinkStatusHdr_1ac818e784803bd31d50ed82da48fdcf22" compoundref="message_8hpp" startline="206">hdtn::LinkStatusHdr::event</references>
+        <references refid="classOutductInfo__t_1a02067939b42e16c44a1d71ff472bc9ad" compoundref="router_8cpp" startline="168" endline="174">OutductInfo_t::getLinkStateString</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classOutductInfo__t_1ad63e99e678ac6c561144fc9f687446a3" compoundref="router_8cpp" startline="156" endline="160">OutductInfo_t::updateLinkStatePhysical</references>
+        <references refid="structhdtn_1_1LinkStatusHdr_1a2168e9ec747a1518ed4013fd9afb4b81" compoundref="message_8hpp" startline="207">hdtn::LinkStatusHdr::uuid</references>
+        <referencedby refid="classRouter_1_1Impl_1ac33fcb6ff75d6ca681f345562381afcc" compoundref="router_8cpp" startline="652" endline="748">EgressEventsHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1af9d7b79cc7000affd2d36f9af7a2f53f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::NotifyEgressOfTimeBasedLinkChange</definition>
+        <argsstring>(uint64_t outductArrayIndex, uint64_t rateBps, bool linkIsUpTimeBased)</argsstring>
+        <name>NotifyEgressOfTimeBasedLinkChange</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductArrayIndex</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>rateBps</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>linkIsUpTimeBased</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notify egress of time based link change</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>outductArrayIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of outduct </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rateBps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rate for link </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>linkIsUpTimeBased</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether this is a link up/down event</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Egress needs to know whether the link has gone up/down regardless of physical state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="217" column="10" bodyfile="module/router/src/router.cpp" bodystart="609" bodyend="624"/>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a2122c84b482c39b5f8b1477a1a366950" compoundref="message_8hpp" startline="167">hdtn::IreleaseChangeHdr::base</references>
+        <references refid="message_8hpp_1a7a64cc14f371950b5da8bdc1b98d12c5" compoundref="message_8hpp" startline="62">HDTN_MSGTYPE_ILINKDOWN</references>
+        <references refid="message_8hpp_1a1b542b822d0fdbb0ccb2846c418ba8e8" compoundref="message_8hpp" startline="61">HDTN_MSGTYPE_ILINKUP</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1aadfa61cfabb015ceba309733ae0e4ea4" compoundref="message_8hpp" startline="169">hdtn::IreleaseChangeHdr::outductArrayIndex</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a8eb2cebca81bbac28e8b5642cd7322ed" compoundref="message_8hpp" startline="170">hdtn::IreleaseChangeHdr::rateBps</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a7e1c2f68c6268c88d8a7f6b9405ab509" compoundref="message_8hpp" startline="190" endline="193">hdtn::IreleaseChangeHdr::SetSubscribeEgressOnly</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a5ee204cf319b72ac32917c52f0f6f1c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::SendLinkUp</definition>
+        <argsstring>(uint64_t outductArrayIndex)</argsstring>
+        <name>SendLinkUp</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductArrayIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Send link up message to ingress and storage</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>outductArrayIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the outduct which is now up </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="218" column="10" bodyfile="module/router/src/router.cpp" bodystart="630" bodyend="650"/>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a2122c84b482c39b5f8b1477a1a366950" compoundref="message_8hpp" startline="167">hdtn::IreleaseChangeHdr::base</references>
+        <references refid="message_8hpp_1a1b542b822d0fdbb0ccb2846c418ba8e8" compoundref="message_8hpp" startline="61">HDTN_MSGTYPE_ILINKUP</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1aadfa61cfabb015ceba309733ae0e4ea4" compoundref="message_8hpp" startline="169">hdtn::IreleaseChangeHdr::outductArrayIndex</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1ac42cfe437cf21b069e7d01256e944d9f" compoundref="message_8hpp" startline="179" endline="181">hdtn::IreleaseChangeHdr::SetSubscribeAll</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a5af322774cfb8aa9df61d2c6331f4bab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::SendLinkDown</definition>
+        <argsstring>(uint64_t outductArrayIndex)</argsstring>
+        <name>SendLinkDown</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductArrayIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends link down message to Ingress and Storage</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>outductArrayIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The outduct array index for the link </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="219" column="10" bodyfile="module/router/src/router.cpp" bodystart="579" bodyend="599"/>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a2122c84b482c39b5f8b1477a1a366950" compoundref="message_8hpp" startline="167">hdtn::IreleaseChangeHdr::base</references>
+        <references refid="message_8hpp_1a7a64cc14f371950b5da8bdc1b98d12c5" compoundref="message_8hpp" startline="62">HDTN_MSGTYPE_ILINKDOWN</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1aadfa61cfabb015ceba309733ae0e4ea4" compoundref="message_8hpp" startline="169">hdtn::IreleaseChangeHdr::outductArrayIndex</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1ac42cfe437cf21b069e7d01256e944d9f" compoundref="message_8hpp" startline="179" endline="181">hdtn::IreleaseChangeHdr::SetSubscribeAll</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1ac33fcb6ff75d6ca681f345562381afcc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::EgressEventsHandler</definition>
+        <argsstring>()</argsstring>
+        <name>EgressEventsHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="221" column="10" bodyfile="module/router/src/router.cpp" bodystart="652" bodyend="748"/>
+        <references refid="structhdtn_1_1LinkStatusHdr_1a2d8fcbeb22b541ce6ec68767d95a5818" compoundref="message_8hpp" startline="205">hdtn::LinkStatusHdr::base</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="classBundleViewV6_1a86fd81cd00106f56c5f068e091b8fbe6" compoundref="BundleViewV6_8cpp" startline="243" endline="250">BundleViewV6::GetCanonicalBlocksByType</references>
+        <references refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" compoundref="BundleViewV7_8cpp" startline="413" endline="420">BundleViewV7::GetCanonicalBlocksByType</references>
+        <references refid="classRouter_1_1Impl_1a99c01563515615e7cda0554e17029b3d" compoundref="router_8cpp" startline="1431" endline="1461">HandlePhysicalLinkStatusChange</references>
+        <references refid="message_8hpp_1a1abe3d15fda4f4d2e56738eee4d291e1" compoundref="message_8hpp" startline="76">HDTN_MSGTYPE_ALL_OUTDUCT_CAPABILITIES_TELEMETRY</references>
+        <references refid="message_8hpp_1a7c3837c067a85e203862b74d52416209" compoundref="message_8hpp" startline="40">HDTN_MSGTYPE_BUNDLES_TO_ROUTER</references>
+        <references refid="message_8hpp_1ab575652d92edf71d7d14ef62219fa496" compoundref="message_8hpp" startline="68">HDTN_MSGTYPE_LINKSTATUS</references>
+        <references refid="classBundleViewV6_1ab6d45ef3d2e2ce6a23e6b7eab2d3071a" compoundref="BundleViewV6_8cpp" startline="271" endline="275">BundleViewV6::LoadBundle</references>
+        <references refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">BundleViewV7::LoadBundle</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structBpv6CanonicalBlock_1ae30c6e82cb623bd6f77d97fa8cfcb171" compoundref="bpv6_8h" startline="187">Bpv6CanonicalBlock::m_blockTypeSpecificDataLength</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structAllOutductCapabilitiesTelemetry__t_1af2bec1ba32e7338608ec6793360ae09a" compoundref="TelemetryDefinitions_8h" startline="121">AllOutductCapabilitiesTelemetry_t::outductCapabilityTelemetryList</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="classRouter_1_1Impl_1a9bd8c9b95aa2c2118e1155d741127d7e" compoundref="router_8cpp" startline="1403" endline="1420">PopulateMapsFromAllOutductCapabilitiesTelemetry</references>
+        <references refid="classJsonSerializable_1a1adb23c7bad19b506530ddb773cc64be" compoundref="JsonSerializable_8cpp" startline="225" endline="231">JsonSerializable::SetValuesFromJsonCharArray</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a7c80ad121a2b44f9b3023fd6c84006a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::StorageEventsHandler</definition>
+        <argsstring>()</argsstring>
+        <name>StorageEventsHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="222" column="10" bodyfile="module/router/src/router.cpp" bodystart="859" bodyend="891"/>
+        <references refid="structhdtn_1_1DepletedStorageReportHdr_1a5a062756558e781022e0b0032b37e3bd" compoundref="message_8hpp" startline="217">hdtn::DepletedStorageReportHdr::base</references>
+        <references refid="classRouter_1_1Impl_1ae55cea192095212562c5870fcb291ed8" compoundref="router_8cpp" startline="830" endline="857">HandleNodeWithDepletedStorage</references>
+        <references refid="message_8hpp_1a1f90a5f8ab011694af1a3be52b8c2439" compoundref="message_8hpp" startline="77">HDTN_MSGTYPE_DEPLETED_STORAGE_REPORT</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structhdtn_1_1DepletedStorageReportHdr_1a2053a69a56c06c767d88fc01cd5b8f4d" compoundref="message_8hpp" startline="218">hdtn::DepletedStorageReportHdr::nodeId</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1ae55cea192095212562c5870fcb291ed8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::HandleNodeWithDepletedStorage</definition>
+        <argsstring>(uint64_t nodeId)</argsstring>
+        <name>HandleNodeWithDepletedStorage</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>nodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="223" column="10" bodyfile="module/router/src/router.cpp" bodystart="830" bodyend="857"/>
+        <references refid="classOutductInfo__t_1a02067939b42e16c44a1d71ff472bc9ad" compoundref="router_8cpp" startline="168" endline="174">OutductInfo_t::getLinkStateString</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classOutductInfo__t_1a3c4650ec2644145751ca262b86daa8fe" compoundref="router_8cpp" startline="161" endline="165">OutductInfo_t::updateLinkStateStorage</references>
+        <referencedby refid="classRouter_1_1Impl_1a7c80ad121a2b44f9b3023fd6c84006a3" compoundref="router_8cpp" startline="859" endline="891">StorageEventsHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::SendBundle</definition>
+        <argsstring>(const uint8_t *payloadData, const uint64_t payloadSizeBytes, const cbhe_eid_t &amp;finalDestEid)</argsstring>
+        <name>SendBundle</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>payloadData</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>payloadSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>finalDestEid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="224" column="10" bodyfile="module/router/src/router.cpp" bodystart="898" bodyend="979"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" compoundref="BundleViewV7_8cpp" startline="360" endline="367">BundleViewV7::AppendMoveCanonicalBlock</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a2122c84b482c39b5f8b1477a1a366950" compoundref="message_8hpp" startline="167">hdtn::IreleaseChangeHdr::base</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="router_8cpp_1a802d8b37030cb78afb58dfbb24edaa10" compoundref="router_8cpp" startline="893" endline="896">CustomCleanupPaddedVecUint8</references>
+        <references refid="message_8hpp_1a4c334bcce76be3aa69c1d470d4ddeeeb" compoundref="message_8hpp" startline="41">HDTN_MSGTYPE_BUNDLES_FROM_ROUTER</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1ae440c38f8ace47da7b0b059c1b074fc4" compoundref="bpv7_8h" startline="392">Bpv7CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a4c11e7204e22c9af2d42b8ba71579717" compoundref="bpv7_8h" startline="335">Bpv7CbhePrimaryBlock::m_crcType</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="structBpv7CbhePrimaryBlock_1ab902c583d6948751e2a66dd00c0b675e" compoundref="bpv7_8h" startline="329">Bpv7CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" compoundref="BundleViewV7_8h" startline="148">BundleViewV7::m_frontBuffer</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a51c35115cb162d7b723948c8457469ee" compoundref="bpv7_8h" startline="330">Bpv7CbhePrimaryBlock::m_lifetimeMilliseconds</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">BundleViewV7::m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a065c785975a707ba0507eb2eb0d5bd71" compoundref="bpv7_8h" startline="328">Bpv7CbhePrimaryBlock::m_reportToEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a8395a03fca28c59b45a44b1067a39ff7" compoundref="TimestampUtil_8h" startline="140">TimestampUtil::bpv7_creation_timestamp_t::millisecondsSinceStartOfYear2000</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">BundleViewV7::Render</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a935711417d49e0da59df30409105a926" compoundref="TimestampUtil_8h" startline="141">TimestampUtil::bpv7_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structcbhe__eid__t_1a55b06071bd9a90713bdc90e42d5bc4b0" compoundref="Cbhe_8cpp" startline="55" endline="58">cbhe_eid_t::Set</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a21638f71a78fe7ba9e4f3342adb756b0" compoundref="BundleViewV7_8cpp" startline="45" endline="47">BundleViewV7::Bpv7PrimaryBlockView::SetManuallyModified</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a3eb88de5217a82f6f8f938d7c012c220" compoundref="message_8hpp" startline="186" endline="189">hdtn::IreleaseChangeHdr::SetSubscribeRouterAndIngressOnly</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a0f624721074822f2cd6deb387fc24d4e" compoundref="TimestampUtil_8cpp" startline="422" endline="424">TimestampUtil::bpv7_creation_timestamp_t::SetTimeFromNow</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a8cd9fafcf31c02d1267ad442eb65c5e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::TelemEventsHandler</definition>
+        <argsstring>()</argsstring>
+        <name>TelemEventsHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle events from telemetry. Receives new contact plan and updates router to use that contact plan </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="225" column="10" bodyfile="module/router/src/router.cpp" bodystart="982" bodyend="1029"/>
+        <references refid="classTelemetryRequest_1ae1a036d26e21680efb742ce430913b5a" compoundref="TelemetryServer_8cpp" startline="112" endline="114">TelemetryRequest::Command</references>
+        <references refid="classTelemetryRequest_1adcd760e1058fa0f1bcb6a273f9ed0eda" compoundref="TelemetryServer_8cpp" startline="108" endline="110">TelemetryRequest::Error</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classTelemetryRequest_1a49fe8aa3043876da68acb6af2261bca4" compoundref="TelemetryServer_8cpp" startline="104" endline="106">TelemetryRequest::More</references>
+        <references refid="classRouter_1_1Impl_1a826ad2c31a0fc8ba8f1fe0416b3ab07c" compoundref="router_8cpp" startline="1142" endline="1148">ProcessContactsJsonText</references>
+        <references refid="classTelemetryRequest_1abe6c5bd66d2a5df3b91cdd725b246f1b" compoundref="TelemetryServer_8cpp" startline="96" endline="102">TelemetryRequest::SendResponseError</references>
+        <references refid="classTelemetryRequest_1a8ced8d3c0d35077f366ad11fa6802a75" compoundref="TelemetryServer_8cpp" startline="81" endline="86">TelemetryRequest::SendResponseSuccess</references>
+        <references refid="classTelemetryRequest_1a467fe557d5d7626bdbd8325b7730ec97" compoundref="TelemetryServer_8cpp" startline="88" endline="94">TelemetryRequest::SendResponseSuccessWithCustomMsg</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classOutductInfo__t_1a4e5aae982bbe0d1361e9a1d3b40f742f" compoundref="router_8cpp" startline="150" endline="154">OutductInfo_t::updateLinkStateTimeBased</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a81f57d4d9089d07733b192656fc1ca94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::ReadZmqAcksThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>ReadZmqAcksThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event thread loop </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="226" column="10" bodyfile="module/router/src/router.cpp" bodystart="1032" bodyend="1140"/>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" compoundref="zmq_8hpp" startline="289" endline="295">zmq::poll</references>
+        <references refid="classRouter_1_1Impl_1af8c19d26a959e696a1bc7c0733737dbc" compoundref="router_8cpp" startline="1156" endline="1162">ProcessContactsFile</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+        <referencedby refid="classRouter_1_1Impl_1aebd1af07f06400b896fbebbb8e542634" compoundref="router_8cpp" startline="417" endline="573">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a509794aaec2f58061ab1818d884e0d7a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::TryRestartContactPlanTimer</definition>
+        <argsstring>()</argsstring>
+        <name>TryRestartContactPlanTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="227" column="10" bodyfile="module/router/src/router.cpp" bodystart="1314" bodyend="1327"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classRouter_1_1Impl_1a56749a173bf34850bbebb8960c8eedb9" compoundref="router_8cpp" startline="1329" endline="1375">OnContactPlan_TimerExpired</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a56749a173bf34850bbebb8960c8eedb9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::OnContactPlan_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnContactPlan_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="228" column="10" bodyfile="module/router/src/router.cpp" bodystart="1329" bodyend="1375"/>
+        <references refid="TestDijkstra_8cpp_1aedd6a24d1e72da4c4761ba428d6445f8" compoundref="TestDijkstra_8cpp" startline="465">contactPlan</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classOutductInfo__t_1a4e5aae982bbe0d1361e9a1d3b40f742f" compoundref="router_8cpp" startline="150" endline="154">OutductInfo_t::updateLinkStateTimeBased</references>
+        <referencedby refid="classRouter_1_1Impl_1a509794aaec2f58061ab1818d884e0d7a" compoundref="router_8cpp" startline="1314" endline="1327">TryRestartContactPlanTimer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a578e136cd944656ed5ff9582815f5a86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Router::Impl::AddContact_NotThreadSafe</definition>
+        <argsstring>(contactPlan_t &amp;contact)</argsstring>
+        <name>AddContact_NotThreadSafe</name>
+        <param>
+          <type><ref refid="structcontactPlan__t" kindref="compound">contactPlan_t</ref> &amp;</type>
+          <declname>contact</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add contact to bimap for use with timer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="229" column="10" bodyfile="module/router/src/router.cpp" bodystart="1378" bodyend="1400"/>
+        <references refid="structcontactPlan__t_1affee98c0834ec830e850f4bedbd66444" compoundref="router_8cpp" startline="131">contactPlan_t::end</references>
+        <references refid="structcontactPlan__t_1a97e255fc1d35fa0af4de9c83ec1a4421" compoundref="router_8cpp" startline="135">contactPlan_t::isLinkUp</references>
+        <references refid="structcontactPlan__t_1ae87aa8db2fbd3eb696c267e5e1cf315e" compoundref="router_8cpp" startline="130">contactPlan_t::start</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1aa881f77b46cb80a0a2a73c54efe60cd9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::RerouteOnLinkDown</definition>
+        <argsstring>(uint64_t prevHopNodeId, uint64_t outductArrayIndex)</argsstring>
+        <name>RerouteOnLinkDown</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>prevHopNodeId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductArrayIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="232" column="10" bodyfile="module/router/src/router.cpp" bodystart="1493" bodyend="1500"/>
+        <references refid="classTimestampUtil_1abb07701a86d3248b38723cd0eeaea165" compoundref="TimestampUtil_8cpp" startline="55" endline="57">TimestampUtil::GetSecondsSinceEpochUnix</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a0bd144d34243b101bf8bfcf284d423a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::RerouteOnLinkUp</definition>
+        <argsstring>(uint64_t prevHopNodeId)</argsstring>
+        <name>RerouteOnLinkUp</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>prevHopNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="233" column="10" bodyfile="module/router/src/router.cpp" bodystart="1502" bodyend="1509"/>
+        <references refid="classTimestampUtil_1abb07701a86d3248b38723cd0eeaea165" compoundref="TimestampUtil_8cpp" startline="55" endline="57">TimestampUtil::GetSecondsSinceEpochUnix</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1ac2f9e92a80b2eeccbcd5a733fb9edad3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::HandleBundle</definition>
+        <argsstring>()</argsstring>
+        <name>HandleBundle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Placeholder </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="234" column="10" bodyfile="module/router/src/router.cpp" bodystart="1512" bodyend="1513"/>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1ae6aec150ffa65434434a65e6d044d680" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::SendRouteUpdate</definition>
+        <argsstring>(uint64_t nextHopNodeId, uint64_t finalDestNodeId)</argsstring>
+        <name>SendRouteUpdate</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>nextHopNodeId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>finalDestNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Send route update to egress</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nextHopNodeId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The next hop node ID for the route </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>finalDestNodeId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The final destination ode ID for the route </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="236" column="10" bodyfile="module/router/src/router.cpp" bodystart="1468" bodyend="1489"/>
+        <references refid="structhdtn_1_1RouteUpdateHdr_1ae6c5ee8fb38e6e4adb674f5dbe9672b9" compoundref="message_8hpp" startline="197">hdtn::RouteUpdateHdr::base</references>
+        <references refid="structhdtn_1_1RouteUpdateHdr_1a89b4907c6b1ff91effde8dce72d48701" compoundref="message_8hpp" startline="201">hdtn::RouteUpdateHdr::finalDestNodeId</references>
+        <references refid="message_8hpp_1a9d45ca90d2d49d7532a029c07c7e9299" compoundref="message_8hpp" startline="66">HDTN_MSGTYPE_ROUTEUPDATE</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aa9673ea2e11f7b4e457be1731099ccf3">memset</references>
+        <references refid="structhdtn_1_1RouteUpdateHdr_1a027bfd8e55f0d5f1906fa798e2d35715" compoundref="message_8hpp" startline="200">hdtn::RouteUpdateHdr::nextHopNodeId</references>
+        <references refid="router_8cpp_1a606209098755623edfd99416bff8566e" compoundref="router_8cpp" startline="121" endline="123">routeToStr</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1aef132ec396a7615e112003596c4f3f28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::UpdateRouteState</definition>
+        <argsstring>(uint64_t oldNextHop, uint64_t newNextHop, uint64_t finalDest)</argsstring>
+        <name>UpdateRouteState</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>oldNextHop</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>newNextHop</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>finalDest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update data structures that track routes <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>oldNextHop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the original next hop node ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newNextHop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new next hop node ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>finalDest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the final destination node ID</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Updates the route map to point to the new next hop. If the old next hop was not unroutable, removes the final destination from the associated outduct If the new next hop is not unroutable, adds the final destination to the assoicated outduct </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="238" column="10" bodyfile="module/router/src/router.cpp" bodystart="1572" bodyend="1597"/>
+        <references refid="classOutductInfo__t_1a8adc79b65d1566006f7c7b5179d1868e" compoundref="router_8cpp" startline="184">OutductInfo_t::finalDestNodeIds</references>
+        <references refid="message_8hpp_1a6eb37e57a2db51080df432eb85f8711c" compoundref="message_8hpp" startline="79">HDTN_NOROUTE</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classOutductInfo__t_1a0d173521e77bf81d20a722b17b57ec91" compoundref="router_8cpp" startline="180">OutductInfo_t::outductIndex</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a4bd93ee1da598dc3174bdb8f29638c47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::FilterContactPlan</definition>
+        <argsstring>(uint64_t sourceNode, std::vector&lt; cgr::Contact &gt; &amp;contact_plan)</argsstring>
+        <name>FilterContactPlan</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>sourceNode</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classcgr_1_1Contact" kindref="compound">cgr::Contact</ref> &gt; &amp;</type>
+          <declname>contact_plan</declname>
+          <defname>contactPlan</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Filter &quot;failed&quot; contacts</para>
+<para>Remove from the contact plan contacts which are active (i.e. happening now), have this node as the source, and for which the link to the neighbor node is down</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>contactPlan</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the contact plan to modify in-place </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="239" column="10" bodyfile="module/router/src/router.cpp" bodystart="1523" bodyend="1561"/>
+        <references refid="TestDijkstra_8cpp_1aedd6a24d1e72da4c4761ba428d6445f8" compoundref="TestDijkstra_8cpp" startline="465">contactPlan</references>
+        <references refid="classcgr_1_1Contact_1aad957c51aea936345c363e950a157849" compoundref="libcgr_8h" startline="25">cgr::Contact::end</references>
+        <references refid="classcgr_1_1Contact_1a084a3ccfd88e3364063e3131672859b9" compoundref="libcgr_8h" startline="24">cgr::Contact::frm</references>
+        <references refid="classOutductInfo__t_1aff9ad286ea275271cd99064515e3e191" compoundref="router_8cpp" startline="176" endline="178">OutductInfo_t::IsUp</references>
+        <references refid="classcgr_1_1Contact_1a8c1ffab04e7e9ced9af5a3b455800452" compoundref="libcgr_8h" startline="25">cgr::Contact::start</references>
+        <references refid="classcgr_1_1Contact_1a5fb1ebfec5a97329849fa6c02643ca97" compoundref="libcgr_8h" startline="24">cgr::Contact::to</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1af54363767903517d8fe14778e3fbd8c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::ComputeAllRoutes</definition>
+        <argsstring>(uint64_t sourceNode)</argsstring>
+        <name>ComputeAllRoutes</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>sourceNode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recompute all routes</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sourceNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the source node ID for the routes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Sends updated routes to egress </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="240" column="10" bodyfile="module/router/src/router.cpp" bodystart="1605" bodyend="1627"/>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="router_8cpp_1a606209098755623edfd99416bff8566e" compoundref="router_8cpp" startline="121" endline="123">routeToStr</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a49b50528df69723f736931f340218645" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t Router::Impl::ComputeOptimalRoute</definition>
+        <argsstring>(uint64_t sourceNode, uint64_t finalDestNodeId)</argsstring>
+        <name>ComputeOptimalRoute</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>sourceNode</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>finalDestNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute optimal route to destination</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sourceNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the starting node for the route </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>final destination node ID</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next hop node ID or HDTN_NOROUTE if no route found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="241" column="14" bodyfile="module/router/src/router.cpp" bodystart="1675" bodyend="1706"/>
+        <references refid="classcgr_1_1Contact_1a7c19260750316df2a42775954e9d918f" compoundref="libcgr_8h" startline="34">cgr::Contact::arrival_time</references>
+        <references refid="namespacecgr_1a4f765fd72cfe8ffa34dd1a60bacfbef9" compoundref="libcgr_8cpp" startline="598" endline="766">cgr::cmr_dijkstra</references>
+        <references refid="TestDijkstra_8cpp_1aedd6a24d1e72da4c4761ba428d6445f8" compoundref="TestDijkstra_8cpp" startline="465">contactPlan</references>
+        <references refid="namespacecgr_1a3e5be09f6219e5d17dc05698d3e3bada" compoundref="libcgr_8cpp" startline="367" endline="491">cgr::dijkstra</references>
+        <references refid="message_8hpp_1a6eb37e57a2db51080df432eb85f8711c" compoundref="message_8hpp" startline="79">HDTN_NOROUTE</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="namespacecgr_1a1269e37da208d893c685505c652b6e12" compoundref="libcgr_8h" startline="16">cgr::MAX_TIME_T</references>
+        <references refid="classcgr_1_1Route_1aa3ccb04d851bda536335d320beb9101a" compoundref="libcgr_8h" startline="56">cgr::Route::next_node</references>
+        <references refid="TestDijkstra_8cpp_1a01d56e1b9cf54a999c2ae985898dd580" compoundref="TestDijkstra_8cpp" startline="466">rootContact</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classcgr_1_1Route_1afa27ec512317589cfde729dbb99796be" compoundref="libcgr_8cpp" startline="123" endline="126">cgr::Route::valid</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1acf5a83bf0c9ac69874244276cb6861d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::ComputeOptimalRoutesForOutductIndex</definition>
+        <argsstring>(uint64_t sourceNode, uint64_t outductIndex)</argsstring>
+        <name>ComputeOptimalRoutesForOutductIndex</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>sourceNode</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recompute routes for destination eids associated with an outduct</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sourceNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the source node ID for the routes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outductIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the outduct index</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Sends updated routes to egress </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="242" column="10" bodyfile="module/router/src/router.cpp" bodystart="1636" bodyend="1666"/>
+        <references refid="classOutductInfo__t_1a8adc79b65d1566006f7c7b5179d1868e" compoundref="router_8cpp" startline="184">OutductInfo_t::finalDestNodeIds</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classOutductInfo__t_1af042ab20a84847b090f5be9e7d8b8d76" compoundref="router_8cpp" startline="181">OutductInfo_t::nextHopNodeId</references>
+        <references refid="router_8cpp_1a606209098755623edfd99416bff8566e" compoundref="router_8cpp" startline="121" endline="123">routeToStr</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a39ba9b5c32afe3e61582583c5ff1e505" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classOutductInfo__t" kindref="compound">OutductInfo_t</ref> *</type>
+        <definition>OutductInfo_t * Router::Impl::GetOutductInfo</definition>
+        <argsstring>(uint64_t outductArrayIndex)</argsstring>
+        <name>GetOutductInfo</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>outductArrayIndex</declname>
+          <defname>outductIndex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the <ref refid="classOutductInfo__t" kindref="compound">OutductInfo_t</ref> for the given outduct index</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>outductIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The outduct index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classOutductInfo__t" kindref="compound">OutductInfo_t</ref> or nullptr if not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="243" column="19" bodyfile="module/router/src/router.cpp" bodystart="1714" bodyend="1720"/>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a591725aa856e724582abcf74b224a0fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::TryRestartStorageTimer</definition>
+        <argsstring>()</argsstring>
+        <name>TryRestartStorageTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="247" column="10" bodyfile="module/router/src/router.cpp" bodystart="789" bodyend="802"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classRouter_1_1Impl_1a1a8106ba867e63cf2aea511ee58ed0ad" compoundref="router_8cpp" startline="750" endline="787">OnStorageFull_TimerExpired</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1a1a8106ba867e63cf2aea511ee58ed0ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::OnStorageFull_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnStorageFull_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="248" column="10" bodyfile="module/router/src/router.cpp" bodystart="750" bodyend="787"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classOutductInfo__t_1af042ab20a84847b090f5be9e7d8b8d76" compoundref="router_8cpp" startline="181">OutductInfo_t::nextHopNodeId</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+        <references refid="classOutductInfo__t_1a3c4650ec2644145751ca262b86daa8fe" compoundref="router_8cpp" startline="161" endline="165">OutductInfo_t::updateLinkStateStorage</references>
+        <referencedby refid="classRouter_1_1Impl_1a591725aa856e724582abcf74b224a0fe" compoundref="router_8cpp" startline="789" endline="802">TryRestartStorageTimer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRouter_1_1Impl_1aa207c31b7567cf2729eb4f2f1f8bb5c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Router::Impl::AddStorageExpirationTime</definition>
+        <argsstring>(uint64_t index, boost::posix_time::ptime expiry)</argsstring>
+        <name>AddStorageExpirationTime</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>boost::posix_time::ptime</type>
+          <declname>expiry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/router/src/router.cpp" line="249" column="10" bodyfile="module/router/src/router.cpp" bodystart="804" bodyend="828"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="router_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="router_8cpp" startline="118">subprocess</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classRouter" kindref="compound">Router</ref> private implementation class </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>OutductsConfig</label>
+        <link refid="classOutductsConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JsonSerializable</label>
+        <link refid="classJsonSerializable"/>
+      </node>
+      <node id="1">
+        <label>Router::Impl</label>
+        <link refid="classRouter_1_1Impl"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_telemServer</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_hdtnConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TelemetryServer</label>
+        <link refid="classTelemetryServer"/>
+      </node>
+      <node id="3">
+        <label>HdtnConfig</label>
+        <link refid="classHdtnConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_storageConfig</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_inductsConfig</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_outductsConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>StorageConfig</label>
+        <link refid="classStorageConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>InductsConfig</label>
+        <link refid="classInductsConfig"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/router/src/router.cpp" line="195" column="1" bodyfile="module/router/src/router.cpp" bodystart="195" bodyend="315"/>
+    <listofallmembers>
+      <member refid="classRouter_1_1Impl_1a578e136cd944656ed5ff9582815f5a86" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>AddContact_NotThreadSafe</name></member>
+      <member refid="classRouter_1_1Impl_1aa207c31b7567cf2729eb4f2f1f8bb5c3" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>AddStorageExpirationTime</name></member>
+      <member refid="classRouter_1_1Impl_1af54363767903517d8fe14778e3fbd8c3" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ComputeAllRoutes</name></member>
+      <member refid="classRouter_1_1Impl_1a49b50528df69723f736931f340218645" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ComputeOptimalRoute</name></member>
+      <member refid="classRouter_1_1Impl_1acf5a83bf0c9ac69874244276cb6861d4" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ComputeOptimalRoutesForOutductIndex</name></member>
+      <member refid="classRouter_1_1Impl_1ac33fcb6ff75d6ca681f345562381afcc" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>EgressEventsHandler</name></member>
+      <member refid="classRouter_1_1Impl_1a4bd93ee1da598dc3174bdb8f29638c47" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>FilterContactPlan</name></member>
+      <member refid="classRouter_1_1Impl_1a8e7f56493f5bdf1cd979b6b807cca46e" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>FilterContactsPropertyTree</name></member>
+      <member refid="classRouter_1_1Impl_1a39ba9b5c32afe3e61582583c5ff1e505" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>GetOutductInfo</name></member>
+      <member refid="classRouter_1_1Impl_1ac2f9e92a80b2eeccbcd5a733fb9edad3" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>HandleBundle</name></member>
+      <member refid="classRouter_1_1Impl_1ae55cea192095212562c5870fcb291ed8" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>HandleNodeWithDepletedStorage</name></member>
+      <member refid="classRouter_1_1Impl_1a99c01563515615e7cda0554e17029b3d" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>HandlePhysicalLinkStatusChange</name></member>
+      <member refid="classRouter_1_1Impl_1adff9e589e6e6943cd0f7753c57ce2b53" prot="public" virt="non-virtual"><scope>Router::Impl</scope><name>Impl</name></member>
+      <member refid="classRouter_1_1Impl_1aebd1af07f06400b896fbebbb8e542634" prot="public" virt="non-virtual"><scope>Router::Impl</scope><name>Init</name></member>
+      <member refid="classRouter_1_1Impl_1ad6f534886270c0f4a89fce1e428cfaa6" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_bundleCreationMutex</name></member>
+      <member refid="classRouter_1_1Impl_1a0ca126da42589b70ecd595faed518d84" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_bundleSequence</name></member>
+      <member refid="classRouter_1_1Impl_1a0d12992da1194cd93e81a4e32ad7bf85" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_cgrContacts</name></member>
+      <member refid="classRouter_1_1Impl_1a7a8c91f411bd224d213aa0b07ec4d666" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_contactPlanFilePath</name></member>
+      <member refid="classRouter_1_1Impl_1a5fc92b8e5577fa7e3b09591961a04463" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_contactPlanTimer</name></member>
+      <member refid="classRouter_1_1Impl_1a037b038705bd0eebf7cc20ab2b8dfef1" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_contactPlanTimerIsRunning</name></member>
+      <member refid="classRouter_1_1Impl_1a0306a83853c696e8c1905f81ebd9e6a0" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_epoch</name></member>
+      <member refid="classRouter_1_1Impl_1a1161e20246e026bd4aed4ef4cbc0586f" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_hdtnConfig</name></member>
+      <member refid="classRouter_1_1Impl_1a60ef8891bd499e1727bd96e500f55add" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_ioService</name></member>
+      <member refid="classRouter_1_1Impl_1a8fc3c7a243f58d30cd32d396a6cee562" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classRouter_1_1Impl_1ab6677fd50be250ed827190239c61e89a" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_lastMillisecondsSinceStartOfYear2000</name></member>
+      <member refid="classRouter_1_1Impl_1a99156f534dfef0c8b1adb0bf789428f0" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_latestTime</name></member>
+      <member refid="classRouter_1_1Impl_1a40a222540862baa66f10005d5923f90d" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_mapNextHopNodeIdToOutductArrayIndex</name></member>
+      <member refid="classRouter_1_1Impl_1a485839f161083befb80b608be7109c71" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_mapOutductArrayIndexToOutductInfo</name></member>
+      <member refid="classRouter_1_1Impl_1ad40228da7ab7718b08b9c04d6afa4f90" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_mutexZmqPubSock</name></member>
+      <member refid="classRouter_1_1Impl_1ae483daa5501e136b4a846ad1479c6da6" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_outductInfoInitialized</name></member>
+      <member refid="classRouter_1_1Impl_1ab4a8f24ad7107abef079aad927515cd1" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_ptimeToContactPlanBimap</name></member>
+      <member refid="classRouter_1_1Impl_1a958c80088ca4caaddc0809e86703f4a0" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_receivedInitialOutductTelem</name></member>
+      <member refid="classRouter_1_1Impl_1ad05fa1220b52542189c195051f78a32d" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_routes</name></member>
+      <member refid="classRouter_1_1Impl_1aa94ec22bab788f7edd8f10de5abc2531" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_running</name></member>
+      <member refid="classRouter_1_1Impl_1ad2d49f4e2701b3cf732eabdd6bd0d5c1" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_storageExpirationTimes</name></member>
+      <member refid="classRouter_1_1Impl_1a1a462f50e9924ce6d421187ed723efaf" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_storageFullTimer</name></member>
+      <member refid="classRouter_1_1Impl_1a0fd16cc88940946ff6e5a20c20e924f5" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_storageFullTimerIsRunning</name></member>
+      <member refid="classRouter_1_1Impl_1a83fe0cbcbe37b4f6cf5f35957d974e02" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_subtractMeFromUnixTimeSecondsToConvertToRouterTimeSeconds</name></member>
+      <member refid="classRouter_1_1Impl_1ade2c2e09c26095db886eebc034f6b568" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_telemServer</name></member>
+      <member refid="classRouter_1_1Impl_1ab8d3dad5d0b089e0f536a9096e113720" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_threadZmqAckReaderPtr</name></member>
+      <member refid="classRouter_1_1Impl_1ae84102d97dc316dfc2869a30d28ad621" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_usingMGR</name></member>
+      <member refid="classRouter_1_1Impl_1a0a8d15b610a650462cfaa56876550ec0" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_usingUnixTimestamp</name></member>
+      <member refid="classRouter_1_1Impl_1a6f54c698cf80ed519720b24359c41412" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_workerThreadStartupConditionVariable</name></member>
+      <member refid="classRouter_1_1Impl_1a0326ce95776168d92998c77889ba5be4" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_workerThreadStartupInProgress</name></member>
+      <member refid="classRouter_1_1Impl_1a325248d00034e89455cf0e9e7f70cbd4" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_workerThreadStartupMutex</name></member>
+      <member refid="classRouter_1_1Impl_1ab65fceea2225038d16ba914ef23eac1b" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_workPtr</name></member>
+      <member refid="classRouter_1_1Impl_1a09e3a3234427e8845a9408f1a821803c" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_zmqCtxPtr</name></member>
+      <member refid="classRouter_1_1Impl_1a81aa314a8ea86aa7920540e22762be7d" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_zmqPullSock_boundEgressToConnectingRouterPtr</name></member>
+      <member refid="classRouter_1_1Impl_1a728b75cd2091dc629778781e37b07ae7" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_zmqPullSock_connectingStorageToBoundRouterPtr</name></member>
+      <member refid="classRouter_1_1Impl_1abb56ca1b4b298af1d2f26684763bef62" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_zmqPushSock_connectingRouterToBoundEgressPtr</name></member>
+      <member refid="classRouter_1_1Impl_1a28db676b7a7fb7f79f71b1c8e94d8585" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_zmqRepSock_connectingTelemToFromBoundRouterPtr</name></member>
+      <member refid="classRouter_1_1Impl_1afbe1f36484544678ad92cbcbe5974443" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>m_zmqXPubSock_boundRouterToConnectingSubsPtr</name></member>
+      <member refid="classRouter_1_1Impl_1af9d7b79cc7000affd2d36f9af7a2f53f" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>NotifyEgressOfTimeBasedLinkChange</name></member>
+      <member refid="classRouter_1_1Impl_1a56749a173bf34850bbebb8960c8eedb9" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>OnContactPlan_TimerExpired</name></member>
+      <member refid="classRouter_1_1Impl_1a1a8106ba867e63cf2aea511ee58ed0ad" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>OnStorageFull_TimerExpired</name></member>
+      <member refid="classRouter_1_1Impl_1a9bd8c9b95aa2c2118e1155d741127d7e" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>PopulateMapsFromAllOutductCapabilitiesTelemetry</name></member>
+      <member refid="classRouter_1_1Impl_1adf3d299d4b1f588e0117bebe78ded5d5" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ProcessContacts</name></member>
+      <member refid="classRouter_1_1Impl_1af8c19d26a959e696a1bc7c0733737dbc" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ProcessContactsFile</name></member>
+      <member refid="classRouter_1_1Impl_1a826ad2c31a0fc8ba8f1fe0416b3ab07c" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ProcessContactsJsonText</name></member>
+      <member refid="classRouter_1_1Impl_1a1b6473f8aae3fc321e9087b3b1c37cdd" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ProcessContactsJsonText</name></member>
+      <member refid="classRouter_1_1Impl_1a4f021728c8ae0aba26b782fa78352c79" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ptime_index_pair_t</name></member>
+      <member refid="classRouter_1_1Impl_1a52a72aa37743db887ce43ab21aa656cb" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ptime_to_contactplan_bimap_t</name></member>
+      <member refid="classRouter_1_1Impl_1a81f57d4d9089d07733b192656fc1ca94" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>ReadZmqAcksThreadFunc</name></member>
+      <member refid="classRouter_1_1Impl_1aa881f77b46cb80a0a2a73c54efe60cd9" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>RerouteOnLinkDown</name></member>
+      <member refid="classRouter_1_1Impl_1a0bd144d34243b101bf8bfcf284d423a3" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>RerouteOnLinkUp</name></member>
+      <member refid="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>SendBundle</name></member>
+      <member refid="classRouter_1_1Impl_1a5af322774cfb8aa9df61d2c6331f4bab" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>SendLinkDown</name></member>
+      <member refid="classRouter_1_1Impl_1a5ee204cf319b72ac32917c52f0f6f1c9" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>SendLinkUp</name></member>
+      <member refid="classRouter_1_1Impl_1ae6aec150ffa65434434a65e6d044d680" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>SendRouteUpdate</name></member>
+      <member refid="classRouter_1_1Impl_1a08743d13f8382b960d8fb99235e73ae4" prot="public" virt="non-virtual"><scope>Router::Impl</scope><name>Stop</name></member>
+      <member refid="classRouter_1_1Impl_1a7c80ad121a2b44f9b3023fd6c84006a3" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>StorageEventsHandler</name></member>
+      <member refid="classRouter_1_1Impl_1a8cd9fafcf31c02d1267ad442eb65c5e4" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>TelemEventsHandler</name></member>
+      <member refid="classRouter_1_1Impl_1a509794aaec2f58061ab1818d884e0d7a" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>TryRestartContactPlanTimer</name></member>
+      <member refid="classRouter_1_1Impl_1a591725aa856e724582abcf74b224a0fe" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>TryRestartStorageTimer</name></member>
+      <member refid="classRouter_1_1Impl_1aef132ec396a7615e112003596c4f3f28" prot="private" virt="non-virtual"><scope>Router::Impl</scope><name>UpdateRouteState</name></member>
+      <member refid="classRouter_1_1Impl_1aa8c824781e4491284153a102163bf8c3" prot="public" virt="non-virtual"><scope>Router::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

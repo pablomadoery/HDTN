@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structServerState" kind="struct" language="C++" prot="public">
+    <compoundname>ServerState</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structServerState_1a7840d789325bc814b308274f79b5dd41" prot="public" static="no">
+        <type>std::map&lt; uint32_t, std::shared_ptr&lt; <ref refid="classWebsocketSessionPublicBase" kindref="compound">WebsocketSessionPublicBase</ref> &gt; &gt;</type>
+        <definition>typedef std::map&lt;uint32_t, std::shared_ptr&lt;WebsocketSessionPublicBase&gt; &gt; ServerState::active_connections_map_t</definition>
+        <argsstring></argsstring>
+        <name>active_connections_map_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="95" column="22" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structServerState_1a73a43adc6198617c172f9112a299a0a8" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ServerState::m_docRoot</definition>
+        <argsstring></argsstring>
+        <name>m_docRoot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="89" column="23" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structServerState_1a3f84f301216a1978ad7431985b5a94da" prot="public" static="no" mutable="no">
+        <type>const <ref refid="BeastWebsocketServer_8h_1a0766d4c579726ae0a54d37b68fa57be1" kindref="member">OnNewBeastWebsocketConnectionCallback_t</ref></type>
+        <definition>const OnNewBeastWebsocketConnectionCallback_t ServerState::m_onNewWebsocketConnectionCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onNewWebsocketConnectionCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="90" column="51" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structServerState_1a18991a37d463db7e4cdb11a3acb2d0e1" prot="public" static="no" mutable="no">
+        <type>const <ref refid="BeastWebsocketServer_8h_1a30d025ee81b6c73fe071ad79e1a001de" kindref="member">OnNewBeastWebsocketDataReceivedCallback_t</ref></type>
+        <definition>const OnNewBeastWebsocketDataReceivedCallback_t ServerState::m_onNewWebsocketDataReceivedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onNewWebsocketDataReceivedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="91" column="53" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structServerState_1a57b21be4082b83d2f3d7392d3af22258" prot="public" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex ServerState::m_activeConnectionsMutex</definition>
+        <argsstring></argsstring>
+        <name>m_activeConnectionsMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="92" column="18" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structServerState_1a66a98d82a4a117700561ee8b6e70722f" prot="public" static="no" mutable="no">
+        <type><ref refid="BeastWebsocketServer_8cpp_1a52ede2e33a6070e5e590d02fe2b1f455" kindref="member">shared_mutex_t</ref></type>
+        <definition>shared_mutex_t ServerState::m_unclosedConnectionsSharedMutex</definition>
+        <argsstring></argsstring>
+        <name>m_unclosedConnectionsSharedMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="93" column="20" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structServerState_1a29dfc35fce6b9867db445c7066a2bd32" prot="public" static="no" mutable="no">
+        <type>std::atomic_uint32_t</type>
+        <definition>std::atomic_uint32_t ServerState::m_nextWebsocketConnectionIdAtomic</definition>
+        <argsstring></argsstring>
+        <name>m_nextWebsocketConnectionIdAtomic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="94" column="26" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structServerState_1a186ec6d0efcbc29b0726f3bb8fdaf9c9" prot="public" static="no" mutable="no">
+        <type><ref refid="structServerState_1a7840d789325bc814b308274f79b5dd41" kindref="member">active_connections_map_t</ref></type>
+        <definition>active_connections_map_t ServerState::m_activeConnections</definition>
+        <argsstring></argsstring>
+        <name>m_activeConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="96" column="30" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structServerState_1a3e7ba3c6f2a7161b75bc5e76f70e690d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ServerState::ServerState</definition>
+        <argsstring>()=delete</argsstring>
+        <name>ServerState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="80" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structServerState_1a2d2b335fe346fc298af16164553d3079" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ServerState::ServerState</definition>
+        <argsstring>(const std::string &amp;docRoot, const OnNewBeastWebsocketConnectionCallback_t &amp;connectionCallback, const OnNewBeastWebsocketDataReceivedCallback_t &amp;dataCallback)</argsstring>
+        <name>ServerState</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>docRoot</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BeastWebsocketServer_8h_1a0766d4c579726ae0a54d37b68fa57be1" kindref="member">OnNewBeastWebsocketConnectionCallback_t</ref> &amp;</type>
+          <declname>connectionCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BeastWebsocketServer_8h_1a30d025ee81b6c73fe071ad79e1a001de" kindref="member">OnNewBeastWebsocketDataReceivedCallback_t</ref> &amp;</type>
+          <declname>dataCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="81" column="5" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="81" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>ServerState</label>
+        <link refid="structServerState"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>ServerState</label>
+        <link refid="structServerState"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="79" column="1" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="79" bodyend="97"/>
+    <listofallmembers>
+      <member refid="structServerState_1a7840d789325bc814b308274f79b5dd41" prot="public" virt="non-virtual"><scope>ServerState</scope><name>active_connections_map_t</name></member>
+      <member refid="structServerState_1a186ec6d0efcbc29b0726f3bb8fdaf9c9" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_activeConnections</name></member>
+      <member refid="structServerState_1a57b21be4082b83d2f3d7392d3af22258" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_activeConnectionsMutex</name></member>
+      <member refid="structServerState_1a73a43adc6198617c172f9112a299a0a8" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_docRoot</name></member>
+      <member refid="structServerState_1a29dfc35fce6b9867db445c7066a2bd32" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_nextWebsocketConnectionIdAtomic</name></member>
+      <member refid="structServerState_1a3f84f301216a1978ad7431985b5a94da" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_onNewWebsocketConnectionCallback</name></member>
+      <member refid="structServerState_1a18991a37d463db7e4cdb11a3acb2d0e1" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_onNewWebsocketDataReceivedCallback</name></member>
+      <member refid="structServerState_1a66a98d82a4a117700561ee8b6e70722f" prot="public" virt="non-virtual"><scope>ServerState</scope><name>m_unclosedConnectionsSharedMutex</name></member>
+      <member refid="structServerState_1a3e7ba3c6f2a7161b75bc5e76f70e690d" prot="public" virt="non-virtual"><scope>ServerState</scope><name>ServerState</name></member>
+      <member refid="structServerState_1a2d2b335fe346fc298af16164553d3079" prot="public" virt="non-virtual"><scope>ServerState</scope><name>ServerState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

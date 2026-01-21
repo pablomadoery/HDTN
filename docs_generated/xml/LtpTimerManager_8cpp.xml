@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="LtpTimerManager_8cpp" kind="file" language="C++">
+    <compoundname>LtpTimerManager.cpp</compoundname>
+    <includes refid="LtpTimerManager_8h" local="yes">LtpTimerManager.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">boost/bind/bind.hpp</includes>
+    <includes refid="Ltp_8h" local="yes">Ltp.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>list</label>
+      </node>
+      <node id="1">
+        <label>common/ltp/src/LtpTimerManager.cpp</label>
+        <link refid="LtpTimerManager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="19">
+        <label>Ltp.h</label>
+        <link refid="Ltp_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>LtpTimerManager.h</label>
+        <link refid="LtpTimerManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>boost/bind/bind.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="13">
+        <label>UserDataRecycler.h</label>
+        <link refid="UserDataRecycler_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>vector</label>
+      </node>
+      <node id="12">
+        <label>utility</label>
+      </node>
+      <node id="7">
+        <label>FreeListAllocator.h</label>
+        <link refid="FreeListAllocator_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="16">
+        <label>ltp_lib_export.h</label>
+      </node>
+      <node id="3">
+        <label>unordered_map</label>
+      </node>
+      <node id="11">
+        <label>type_traits</label>
+      </node>
+      <node id="14">
+        <label>forward_list</label>
+      </node>
+      <node id="8">
+        <label>algorithm</label>
+      </node>
+      <node id="17">
+        <label>boost/core/noncopyable.hpp</label>
+      </node>
+      <node id="10">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LtpTimerManager_8h" kindref="compound">LtpTimerManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/bind/bind.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Ltp_8h" kindref="compound">Ltp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="21" refid="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" refkind="member"><highlight class="normal"><ref refid="classLtpTimerManager_1a7857f141b384405b4ec45ede1ce0b226" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::LtpTimerManager</ref>(boost::asio::deadline_timer&amp;<sp/>deadlineTimerRef,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::posix_time::time_duration&amp;<sp/>transmissionToAckReceivedTimeRef,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>hashMapNumBuckets)<sp/>:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>m_userDataRecycler(hashMapNumBuckets),</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>m_deadlineTimerRef(deadlineTimerRef),</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>m_transmissionToAckReceivedTimeRef(transmissionToAckReceivedTimeRef),</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>m_timerIsDeletedPtr(new<sp/>bool(false))</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpTimerManager_1a33aa97aee8e2460108605b9026615671" kindref="member">m_mapIdToTimerData</ref>.reserve(hashMapNumBuckets);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>max<sp/>number<sp/>of<sp/>recyclable<sp/>allocated<sp/>max<sp/>elements<sp/>for<sp/>the<sp/>map<sp/>and<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>once<sp/>hashMapNumBuckets<sp/>has<sp/>been<sp/>reached,<sp/>operater<sp/>new<sp/>ops<sp/>will<sp/>cease</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>if<sp/>hashMapNumBuckets<sp/>is<sp/>never<sp/>exceeded,<sp/>operator<sp/>delete<sp/>will<sp/>never<sp/>occur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>+<sp/>2<sp/>=&gt;<sp/>to<sp/>add<sp/>slight<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpTimerManager_1a4f0afc4cabd7586485a8fb627fc0b857" kindref="member">m_listTimerData</ref>.get_allocator().SetMaxListSizeFromGetAllocatorCopy(hashMapNumBuckets<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpTimerManager_1a33aa97aee8e2460108605b9026615671" kindref="member">m_mapIdToTimerData</ref>.get_allocator().SetMaxListSizeFromGetAllocatorCopy(hashMapNumBuckets<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="42" refid="classLtpTimerManager_1a876a7da9864194cff2f7041f3363e602" refkind="member"><highlight class="normal"><ref refid="classLtpTimerManager_1a876a7da9864194cff2f7041f3363e602" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::~LtpTimerManager</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this<sp/>destructor<sp/>is<sp/>single<sp/>threaded</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_isTimerActive)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_timerIsDeletedPtr;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_timerIsDeletedPtr<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//timer<sp/>is<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*m_timerIsDeletedPtr<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__async_8cpp_1a77ad624cc83a2a71aa4d5ad991d811d7" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="55" refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="56" refid="classLtpTimerManager_1a1b3ee800f5d3e10a4cf5bdb3c8a202ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>m_listTimerData.clear();<sp/></highlight><highlight class="comment">//clear<sp/>first<sp/>so<sp/>cancel<sp/>doesn&apos;t<sp/>restart<sp/>the<sp/>next<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mapIdToTimerData.clear();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>m_deadlineTimerRef.cancel();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>m_activeSerialNumberBeingTimed<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>m_isTimerActive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="65" refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::StartTimer</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>classPtr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>idType<sp/>serialNumber,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref>*<sp/>callbackPtr,<sp/>std::vector&lt;uint8_t&gt;&amp;&amp;<sp/>userData)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//expiry<sp/>will<sp/>always<sp/>be<sp/>appended<sp/>to<sp/>list<sp/>(always<sp/>greater<sp/>than<sp/>previous)<sp/>(duplicate<sp/>expiries<sp/>ok)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classLtpTimerManager_1a876a7da9864194cff2f7041f3363e602" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::ptime<sp/>expiry<sp/>=<sp/>boost::posix_time::microsec_clock::universal_time()<sp/>+<sp/>m_transmissionToAckReceivedTimeRef;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;typename<sp/>id_to_data_map_t::iterator,<sp/>bool&gt;<sp/>retVal<sp/>=<sp/>m_mapIdToTimerData.emplace(serialNumber,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>timer_data_list_t::iterator());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(retVal.second)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//value<sp/>was<sp/>inserted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_listTimerData.emplace_back(classPtr,<sp/>serialNumber,<sp/>expiry,<sp/>callbackPtr,<sp/>std::move(userData));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal.first-&gt;second<sp/>=<sp/>std::prev(m_listTimerData.end());<sp/></highlight><highlight class="comment">//For<sp/>a<sp/>non-empty<sp/>container<sp/>c,<sp/>the<sp/>expression<sp/>c.back()<sp/>is<sp/>equivalent<sp/>to<sp/>*std::prev(c.end())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classLtpTimerManager_1a7ac0478a95e68a181e939c0a001b9aa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_isTimerActive)<sp/>{<sp/></highlight><highlight class="comment">//timer<sp/>is<sp/>not<sp/>running</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_activeSerialNumberBeingTimed<sp/>=<sp/>serialNumber;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_deadlineTimerRef.expires_at(expiry);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_deadlineTimerRef.async_wait(boost::bind(&amp;<ref refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" kindref="member">LtpTimerManager::OnTimerExpired</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>boost::asio::placeholders::error,<sp/>m_timerIsDeletedPtr));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_isTimerActive<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="86" refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::DeleteTimer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>idType<sp/>serialNumber)<sp/>{</highlight></codeline>
+<codeline lineno="87" refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>userDataToAutomaticallyRecycle;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref>*<sp/>callbackPtrToDiscard;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>classPtrToDiscard;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>retVal<sp/>=<sp/>DeleteTimer(serialNumber,<sp/>userDataToAutomaticallyRecycle,<sp/>callbackPtrToDiscard,<sp/>classPtrToDiscard);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>m_userDataRecycler.ReturnUserData(std::move(userDataToAutomaticallyRecycle));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retVal;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="96" refid="classLtpTimerManager_1af7c8ee07a7e2f142cedc5c7e2f18a4fd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::DeleteTimer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>idType<sp/>serialNumber,<sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;<sp/>userDataReturned)<sp/>{</highlight></codeline>
+<codeline lineno="97" refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref>*<sp/>callbackPtrToDiscard;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>classPtrToDiscard;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DeleteTimer(serialNumber,<sp/>userDataReturned,<sp/>callbackPtrToDiscard,<sp/>classPtrToDiscard);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="103" refid="classLtpTimerManager_1ad020dae53b3d2a303dc6741297130e17" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::DeleteTimer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>idType<sp/>serialNumber,<sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;<sp/>userDataReturned,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref><sp/>*&amp;<sp/>callbackPtrReturned,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*&amp;<sp/>classPtrReturned)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>id_to_data_map_t::iterator<sp/>mapIt<sp/>=<sp/>m_mapIdToTimerData.find(serialNumber);</highlight></codeline>
+<codeline lineno="107" refid="classLtpTimerManager_1af7c8ee07a7e2f142cedc5c7e2f18a4fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mapIt<sp/>!=<sp/>m_mapIdToTimerData.end())<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>timer_data_list_t::iterator&amp;<sp/>timerDataListIt<sp/>=<sp/>mapIt-&gt;second;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer_data_t&amp;<sp/>timerDataRef<sp/>=<sp/>*timerDataListIt;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>userDataReturned<sp/>=<sp/>std::move(timerDataRef.m_userData);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callbackPtrReturned<sp/>=<sp/>timerDataRef.m_callbackPtr;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>classPtrReturned<sp/>=<sp/>timerDataRef.m_classPtr;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_listTimerData.erase(timerDataListIt);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mapIdToTimerData.erase(mapIt);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_isTimerActive<sp/>&amp;&amp;<sp/>(m_activeSerialNumberBeingTimed<sp/>==<sp/>serialNumber))<sp/>{<sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>this<sp/>is<sp/>the<sp/>one<sp/>running,<sp/>DO<sp/>NOT<sp/>cancel<sp/>it,<sp/>let<sp/>it<sp/>expire<sp/>to<sp/>allow<sp/>timer<sp/>deletions<sp/>before<sp/>they<sp/>become<sp/>active,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reducing<sp/>the<sp/>number<sp/>of<sp/>async_wait<sp/>calls.<sp/><sp/>Then<sp/>expiration<sp/>will<sp/>automatically<sp/>start<sp/>the<sp/>next<sp/>non-deleted<sp/>timer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_activeSerialNumberBeingTimed<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//prevent<sp/>double<sp/>delete<sp/>and<sp/>callback<sp/>when<sp/>cancelled<sp/>externally<sp/>after<sp/>expiration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_deadlineTimerRef.cancel();<sp/>//do<sp/>not<sp/>cancel<sp/>for<sp/>performance<sp/>reasons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121" refid="classLtpTimerManager_1ad020dae53b3d2a303dc6741297130e17" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="127" refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::OnTimerExpired</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::system::error_code&amp;<sp/>e,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*<sp/>isTimerDeleted)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>that<sp/>timer<sp/>that<sp/>got<sp/>cancelled<sp/>by<sp/>the<sp/>destructor,<sp/>it&apos;s<sp/>still<sp/>going<sp/>to<sp/>enter<sp/>this<sp/>function.<sp/>prevent<sp/>it<sp/>from<sp/>using<sp/>the<sp/>deleted<sp/>member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classLtpTimerManager_1a70f5efbc69ef57484eeba2a42a36937e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*isTimerDeleted)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>isTimerDeleted;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e<sp/>!=<sp/>boost::asio::error::operation_aborted)<sp/>{</highlight></codeline>
+<codeline lineno="136" refid="classLtpTimerManager_1ab1df8c56b45edc2f979c83c662cb87c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Timer<sp/>was<sp/>not<sp/>cancelled,<sp/>take<sp/>necessary<sp/>action.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>idType<sp/>serialNumberThatExpired<sp/>=<sp/>m_activeSerialNumberBeingTimed;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(serialNumberThatExpired<sp/>==<sp/>0))<sp/>{<sp/></highlight><highlight class="comment">//if<sp/>not<sp/>deleted<sp/>externally<sp/>when<sp/>active<sp/>after<sp/>expiration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>userData;<sp/></highlight><highlight class="comment">//grab<sp/>any<sp/>user<sp/>data<sp/>before<sp/>DeleteTimer<sp/>deletes<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref><sp/>*<sp/>callbackPtr;<sp/></highlight><highlight class="comment">//grab<sp/>before<sp/>DeleteTimer<sp/>deletes<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>classPtr;</highlight></codeline>
+<codeline lineno="142" refid="classLtpTimerManager_1a90963557aaea25ae44adccd1025d9316" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_activeSerialNumberBeingTimed<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//so<sp/>DeleteTimer<sp/>does<sp/>not<sp/>try<sp/>to<sp/>cancel<sp/>timer<sp/>that<sp/>already<sp/>expired</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DeleteTimer(serialNumberThatExpired,<sp/>userData,<sp/>callbackPtr,<sp/>classPtr);<sp/></highlight><highlight class="comment">//callback<sp/>function<sp/>can<sp/>choose<sp/>to<sp/>read<sp/>it<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1abfb1b7e1ff33ba507d6ae0f5cb7acffc" kindref="member">LtpTimerExpiredCallback_t</ref>&amp;<sp/>callbackRef<sp/>=<sp/>*callbackPtr;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callbackRef(classPtr,<sp/>serialNumberThatExpired,<sp/>userData);<sp/></highlight><highlight class="comment">//called<sp/>after<sp/>DeleteTimer<sp/>in<sp/>case<sp/>callback<sp/>reads<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_userDataRecycler.ReturnUserData(std::move(userData));<sp/></highlight><highlight class="comment">//auto-recycle<sp/>user<sp/>data<sp/>if<sp/>it<sp/>has<sp/>any<sp/>allocation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//regardless<sp/>of<sp/>cancelled<sp/>or<sp/>expired:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//start<sp/>the<sp/>next<sp/>timer<sp/>(if<sp/>most<sp/>recent<sp/>ptime<sp/>exists)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>timer_data_list_t::iterator<sp/>it<sp/>=<sp/>m_listTimerData.begin();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>m_listTimerData.end())<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//most<sp/>recent<sp/>ptime<sp/>exists</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_activeSerialNumberBeingTimed<sp/>=<sp/>it-&gt;m_id;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_deadlineTimerRef.expires_at(it-&gt;m_expiry);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_deadlineTimerRef.async_wait(boost::bind(&amp;<ref refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" kindref="member">LtpTimerManager::OnTimerExpired</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>boost::asio::placeholders::error,<sp/>m_timerIsDeletedPtr));</highlight></codeline>
+<codeline lineno="160" refid="classLtpTimerManager_1a9c384792e4d0ca583406cc084ba42608" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_isTimerActive<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_isTimerActive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="168" refid="classLtpTimerManager_1a70f5efbc69ef57484eeba2a42a36937e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1a70f5efbc69ef57484eeba2a42a36937e" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::AdjustRunningTimers</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::time_duration&amp;<sp/>diffNewMinusOld)<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_isTimerActive)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>timer_data_list_t::iterator<sp/>it<sp/>=<sp/>m_listTimerData.begin();<sp/>it<sp/>!=<sp/>m_listTimerData.end();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;m_expiry<sp/>+=<sp/>diffNewMinusOld;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_deadlineTimerRef.cancel();<sp/></highlight><highlight class="comment">//skips<sp/>over<sp/>any<sp/>DeleteTimer<sp/>calls<sp/>within<sp/>OnTimerExpired<sp/>and<sp/>reads<sp/>the<sp/>timer<sp/>from<sp/>m_listTimerData.begin()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="178" refid="classLtpTimerManager_1ab1df8c56b45edc2f979c83c662cb87c6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLtpTimerManager_1ab1df8c56b45edc2f979c83c662cb87c6" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::Empty</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_listTimerData.empty();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">Type,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>hashType&gt;</highlight></codeline>
+<codeline lineno="183" refid="classLtpTimerManager_1a90963557aaea25ae44adccd1025d9316" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::posix_time::time_duration&amp;<sp/><ref refid="classLtpTimerManager_1a90963557aaea25ae44adccd1025d9316" kindref="member">LtpTimerManager&lt;idType, hashType&gt;::GetTimeDurationRef</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_transmissionToAckReceivedTimeRef;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Explicit<sp/>template<sp/>instantiation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLtpTimerManager" kindref="compound">LtpTimerManager&lt;uint64_t, std::hash&lt;uint64_t&gt;</ref><sp/>&gt;;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="comment">//template&lt;&gt;<sp/>struct<sp/>std::hash&lt;Ltp::session_id_t&gt;<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>std::size_t<sp/>operator()(const<sp/>Ltp::session_id_t&amp;<sp/>o)<sp/>const<sp/>noexcept<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>static_cast&lt;std::size_t&gt;(o.sessionOriginatorEngineId<sp/>^<sp/>o.sessionNumber);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">//};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLtpTimerManager" kindref="compound">LtpTimerManager&lt;Ltp::session_id_t, Ltp::hash_session_id_t&gt;</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="common/ltp/src/LtpTimerManager.cpp"/>
+  </compounddef>
+</doxygen>

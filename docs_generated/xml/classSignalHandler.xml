@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classSignalHandler" kind="class" language="C++" prot="public">
+    <compoundname>SignalHandler</compoundname>
+    <includes refid="SignalHandler_8h" local="no">SignalHandler.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSignalHandler_1a0578b08addde7bfd390d7cfa2e89c415" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service SignalHandler::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+<para>I/O execution context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="64" column="29" bodyfile="common/util/include/SignalHandler.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classSignalHandler_1a986d4471e779baf304f0f77978d6fa89" compoundref="SignalHandler_8cpp" startline="68" endline="70">PollOnce</referencedby>
+        <referencedby refid="classSignalHandler_1a4f464b7c0b64cba591d1c97751b6bc9f" compoundref="SignalHandler_8cpp" startline="60" endline="66">Start</referencedby>
+        <referencedby refid="classSignalHandler_1addc8b5b0b969eb405376a77a369de007" compoundref="SignalHandler_8cpp" startline="47" endline="58">~SignalHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSignalHandler_1a8556c26bb78d28a3a7d6427a4a00386a" prot="private" static="no" mutable="no">
+        <type>boost::asio::signal_set</type>
+        <definition>boost::asio::signal_set SignalHandler::m_signals</definition>
+        <argsstring></argsstring>
+        <name>m_signals</name>
+        <briefdescription>
+<para>Signal event listener. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="66" column="29" bodyfile="common/util/include/SignalHandler.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classSignalHandler_1a65d4797acc54cfd6467e44bd05bd8a54" compoundref="SignalHandler_8cpp" startline="24" endline="45">SignalHandler</referencedby>
+        <referencedby refid="classSignalHandler_1a4f464b7c0b64cba591d1c97751b6bc9f" compoundref="SignalHandler_8cpp" startline="60" endline="66">Start</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSignalHandler_1a25aae440ccd97db452e2140dec4984be" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; SignalHandler::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+<para>Thread that invokes m_ioService.run() (if using dedicated I/O thread) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="68" column="21" bodyfile="common/util/include/SignalHandler.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classSignalHandler_1a4f464b7c0b64cba591d1c97751b6bc9f" compoundref="SignalHandler_8cpp" startline="60" endline="66">Start</referencedby>
+        <referencedby refid="classSignalHandler_1addc8b5b0b969eb405376a77a369de007" compoundref="SignalHandler_8cpp" startline="47" endline="58">~SignalHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSignalHandler_1acff047a234d3478c9d569874d7d733e9" prot="private" static="no" mutable="no">
+        <type>boost::function&lt; void() &gt;</type>
+        <definition>boost::function&lt;void() &gt; SignalHandler::m_handleSignalFunction</definition>
+        <argsstring></argsstring>
+        <name>m_handleSignalFunction</name>
+        <briefdescription>
+<para>Callback to invoke after a signal is received. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="70" column="21" bodyfile="common/util/include/SignalHandler.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classSignalHandler_1a287995d490d078ac380076640f9f7600" compoundref="SignalHandler_8cpp" startline="72" endline="74">HandleSignal</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSignalHandler_1a3149ab1b5e1c8940d11b182f8059d916" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SignalHandler::SignalHandler</definition>
+        <argsstring>()</argsstring>
+        <name>SignalHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="30" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classSignalHandler_1a287995d490d078ac380076640f9f7600" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void SignalHandler::HandleSignal</definition>
+        <argsstring>()</argsstring>
+        <name>HandleSignal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle signal event.</para>
+<para>Invokes the signal event handler callback. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="60" column="27" bodyfile="common/util/src/SignalHandler.cpp" bodystart="72" bodyend="74"/>
+        <references refid="classSignalHandler_1acff047a234d3478c9d569874d7d733e9" compoundref="SignalHandler_8h" startline="70">m_handleSignalFunction</references>
+        <referencedby refid="classSignalHandler_1a4f464b7c0b64cba591d1c97751b6bc9f" compoundref="SignalHandler_8cpp" startline="60" endline="66">Start</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSignalHandler_1a65d4797acc54cfd6467e44bd05bd8a54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>SignalHandler::SignalHandler</definition>
+        <argsstring>(boost::function&lt; void() &gt; handleSignalFunction)</argsstring>
+        <name>SignalHandler</name>
+        <param>
+          <type>boost::function&lt; void() &gt;</type>
+          <declname>handleSignalFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the signal handler callback. Register keyboard interrupt signals to listen for. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handleSignalFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signal handler callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="37" column="22" bodyfile="common/util/src/SignalHandler.cpp" bodystart="24" bodyend="45"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classSignalHandler_1a8556c26bb78d28a3a7d6427a4a00386a" compoundref="SignalHandler_8h" startline="66">m_signals</references>
+        <references refid="SignalHandler_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="SignalHandler_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classSignalHandler_1addc8b5b0b969eb405376a77a369de007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>SignalHandler::~SignalHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~SignalHandler</name>
+        <briefdescription>
+<para>Release all underlying I/O resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="40" column="22" bodyfile="common/util/src/SignalHandler.cpp" bodystart="47" bodyend="58"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classSignalHandler_1a0578b08addde7bfd390d7cfa2e89c415" compoundref="SignalHandler_8h" startline="64">m_ioService</references>
+        <references refid="classSignalHandler_1a25aae440ccd97db452e2140dec4984be" compoundref="SignalHandler_8h" startline="68">m_ioServiceThreadPtr</references>
+        <references refid="SignalHandler_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="SignalHandler_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classSignalHandler_1a4f464b7c0b64cba591d1c97751b6bc9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void SignalHandler::Start</definition>
+        <argsstring>(bool useDedicatedThread=true)</argsstring>
+        <name>Start</name>
+        <param>
+          <type>bool</type>
+          <declname>useDedicatedThread</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the signal event listener.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useDedicatedThread</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to spawn a separate thread for the I/O. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="46" column="27" bodyfile="common/util/src/SignalHandler.cpp" bodystart="60" bodyend="66"/>
+        <references refid="classSignalHandler_1a287995d490d078ac380076640f9f7600" compoundref="SignalHandler_8cpp" startline="72" endline="74">HandleSignal</references>
+        <references refid="classSignalHandler_1a0578b08addde7bfd390d7cfa2e89c415" compoundref="SignalHandler_8h" startline="64">m_ioService</references>
+        <references refid="classSignalHandler_1a25aae440ccd97db452e2140dec4984be" compoundref="SignalHandler_8h" startline="68">m_ioServiceThreadPtr</references>
+        <references refid="classSignalHandler_1a8556c26bb78d28a3a7d6427a4a00386a" compoundref="SignalHandler_8h" startline="66">m_signals</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <referencedby refid="classTelemetry_1a790efd4576a552d29a5ea331e6440e33" compoundref="Telemetry_8cpp" startline="30" endline="92">Telemetry::Run</referencedby>
+        <referencedby refid="classBpFileTransferRunner_1ae1b49fd499a5ea1002ecf2147e5732f1" compoundref="BpFileTransferRunner_8cpp" startline="36" endline="245">BpFileTransferRunner::Run</referencedby>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBPingRunner_1a8be633ba1023406de9ff2b6ec8f4f435" compoundref="BPingRunner_8cpp" startline="47" endline="223">BPingRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveFileRunner_1a34b60ac4f5e38a40cd9a84b234d921d0" compoundref="BpReceiveFileRunner_8cpp" startline="36" endline="160">BpReceiveFileRunner::Run</referencedby>
+        <referencedby refid="classBpReceivePacketRunner_1ace08c26f6087f3ff96e73b59460c9ae4" compoundref="BpReceivePacketRunner_8cpp" startline="35" endline="171">BpReceivePacketRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveStreamRunner_1a00f217ba4852ddc313cef3b8f6c35888" compoundref="BpReceiveStreamRunner_8cpp" startline="37" endline="204">BpReceiveStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+        <referencedby refid="classBpSendPacketRunner_1adc6162ffe982199818075141d38954ec" compoundref="BpSendPacketRunner_8cpp" startline="19" endline="201">BpSendPacketRunner::Run</referencedby>
+        <referencedby refid="classBpSendStreamRunner_1a1e55c6a360885c530b24b5f806d11e23" compoundref="BpSendStreamRunner_8cpp" startline="37" endline="250">BpSendStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSinkAsyncRunner_1a86b9be61c1fec7349358e6d68d1eec98" compoundref="BpSinkAsyncRunner_8cpp" startline="36" endline="164">BpSinkAsyncRunner::Run</referencedby>
+        <referencedby refid="classLtpFileTransferRunner_1aa57b7f8ec05958f79a239ae640203cd7" compoundref="LtpFileTransferRunner_8cpp" startline="62" endline="400">LtpFileTransferRunner::Run</referencedby>
+        <referencedby refid="classEgressAsyncRunner_1a32da584f5b6172184f990a40cedfdb8b" compoundref="EgressAsyncRunner_8cpp" startline="38" endline="118">EgressAsyncRunner::Run</referencedby>
+        <referencedby refid="classHdtnOneProcessRunner_1addbde9e260c141315189628fd568c59b" compoundref="HdtnOneProcessRunner_8cpp" startline="66" endline="272">HdtnOneProcessRunner::Run</referencedby>
+        <referencedby refid="classIngressAsyncRunner_1a8ce0bf3063572ee1a9ba212d7cdaa06d" compoundref="IngressAsyncRunner_8cpp" startline="46" endline="144">IngressAsyncRunner::Run</referencedby>
+        <referencedby refid="classRouterRunner_1ae2a587ce047a44e0b9220cf1398c53dc" compoundref="RouterRunner_8cpp" startline="38" endline="143">RouterRunner::Run</referencedby>
+        <referencedby refid="classStorageRunner_1acc767c35a7dd33fee10033bc9aae4395" compoundref="StorageRunner_8cpp" startline="45" endline="149">StorageRunner::Run</referencedby>
+        <referencedby refid="classUdpDelaySimRunner_1ac6e5c839ddb47af9a15b7c5d19b7d7e0" compoundref="UdpDelaySimRunner_8cpp" startline="48" endline="149">UdpDelaySimRunner::Run</referencedby>
+        <referencedby refid="StorageSpeedTestMain_8cpp_1a5dfbfd468693fc8e88505fc83598f2bc" compoundref="StorageSpeedTestMain_8cpp" startline="61" endline="230">TestSpeed</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSignalHandler_1a986d4471e779baf304f0f77978d6fa89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool SignalHandler::PollOnce</definition>
+        <argsstring>()</argsstring>
+        <name>PollOnce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Poll signal event listener.</para>
+<para>Only call when NOT using a dedicated I/O thread. <simplesect kind="return"><para>True if any signal events have occurred since last checked, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/SignalHandler.h" line="53" column="27" bodyfile="common/util/src/SignalHandler.cpp" bodystart="68" bodyend="70"/>
+        <references refid="classSignalHandler_1a0578b08addde7bfd390d7cfa2e89c415" compoundref="SignalHandler_8h" startline="64">m_ioService</references>
+        <referencedby refid="classTelemetry_1a790efd4576a552d29a5ea331e6440e33" compoundref="Telemetry_8cpp" startline="30" endline="92">Telemetry::Run</referencedby>
+        <referencedby refid="classBpFileTransferRunner_1ae1b49fd499a5ea1002ecf2147e5732f1" compoundref="BpFileTransferRunner_8cpp" startline="36" endline="245">BpFileTransferRunner::Run</referencedby>
+        <referencedby refid="classBpGenAsyncRunner_1a764e461d7f88c0fd46a285e19ba29971" compoundref="BpGenAsyncRunner_8cpp" startline="45" endline="241">BpGenAsyncRunner::Run</referencedby>
+        <referencedby refid="classBPingRunner_1a8be633ba1023406de9ff2b6ec8f4f435" compoundref="BPingRunner_8cpp" startline="47" endline="223">BPingRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveFileRunner_1a34b60ac4f5e38a40cd9a84b234d921d0" compoundref="BpReceiveFileRunner_8cpp" startline="36" endline="160">BpReceiveFileRunner::Run</referencedby>
+        <referencedby refid="classBpReceivePacketRunner_1ace08c26f6087f3ff96e73b59460c9ae4" compoundref="BpReceivePacketRunner_8cpp" startline="35" endline="171">BpReceivePacketRunner::Run</referencedby>
+        <referencedby refid="classBpReceiveStreamRunner_1a00f217ba4852ddc313cef3b8f6c35888" compoundref="BpReceiveStreamRunner_8cpp" startline="37" endline="204">BpReceiveStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+        <referencedby refid="classBpSendPacketRunner_1adc6162ffe982199818075141d38954ec" compoundref="BpSendPacketRunner_8cpp" startline="19" endline="201">BpSendPacketRunner::Run</referencedby>
+        <referencedby refid="classBpSendStreamRunner_1a1e55c6a360885c530b24b5f806d11e23" compoundref="BpSendStreamRunner_8cpp" startline="37" endline="250">BpSendStreamRunner::Run</referencedby>
+        <referencedby refid="classBpSinkAsyncRunner_1a86b9be61c1fec7349358e6d68d1eec98" compoundref="BpSinkAsyncRunner_8cpp" startline="36" endline="164">BpSinkAsyncRunner::Run</referencedby>
+        <referencedby refid="classLtpFileTransferRunner_1aa57b7f8ec05958f79a239ae640203cd7" compoundref="LtpFileTransferRunner_8cpp" startline="62" endline="400">LtpFileTransferRunner::Run</referencedby>
+        <referencedby refid="classEgressAsyncRunner_1a32da584f5b6172184f990a40cedfdb8b" compoundref="EgressAsyncRunner_8cpp" startline="38" endline="118">EgressAsyncRunner::Run</referencedby>
+        <referencedby refid="classHdtnOneProcessRunner_1addbde9e260c141315189628fd568c59b" compoundref="HdtnOneProcessRunner_8cpp" startline="66" endline="272">HdtnOneProcessRunner::Run</referencedby>
+        <referencedby refid="classIngressAsyncRunner_1a8ce0bf3063572ee1a9ba212d7cdaa06d" compoundref="IngressAsyncRunner_8cpp" startline="46" endline="144">IngressAsyncRunner::Run</referencedby>
+        <referencedby refid="classRouterRunner_1ae2a587ce047a44e0b9220cf1398c53dc" compoundref="RouterRunner_8cpp" startline="38" endline="143">RouterRunner::Run</referencedby>
+        <referencedby refid="classStorageRunner_1acc767c35a7dd33fee10033bc9aae4395" compoundref="StorageRunner_8cpp" startline="45" endline="149">StorageRunner::Run</referencedby>
+        <referencedby refid="classUdpDelaySimRunner_1ac6e5c839ddb47af9a15b7c5d19b7d7e0" compoundref="UdpDelaySimRunner_8cpp" startline="48" endline="149">UdpDelaySimRunner::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/util/include/SignalHandler.h" line="28" column="1" bodyfile="common/util/include/SignalHandler.h" bodystart="28" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classSignalHandler_1a287995d490d078ac380076640f9f7600" prot="private" virt="non-virtual"><scope>SignalHandler</scope><name>HandleSignal</name></member>
+      <member refid="classSignalHandler_1acff047a234d3478c9d569874d7d733e9" prot="private" virt="non-virtual"><scope>SignalHandler</scope><name>m_handleSignalFunction</name></member>
+      <member refid="classSignalHandler_1a0578b08addde7bfd390d7cfa2e89c415" prot="private" virt="non-virtual"><scope>SignalHandler</scope><name>m_ioService</name></member>
+      <member refid="classSignalHandler_1a25aae440ccd97db452e2140dec4984be" prot="private" virt="non-virtual"><scope>SignalHandler</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classSignalHandler_1a8556c26bb78d28a3a7d6427a4a00386a" prot="private" virt="non-virtual"><scope>SignalHandler</scope><name>m_signals</name></member>
+      <member refid="classSignalHandler_1a986d4471e779baf304f0f77978d6fa89" prot="public" virt="non-virtual"><scope>SignalHandler</scope><name>PollOnce</name></member>
+      <member refid="classSignalHandler_1a3149ab1b5e1c8940d11b182f8059d916" prot="private" virt="non-virtual"><scope>SignalHandler</scope><name>SignalHandler</name></member>
+      <member refid="classSignalHandler_1a65d4797acc54cfd6467e44bd05bd8a54" prot="public" virt="non-virtual"><scope>SignalHandler</scope><name>SignalHandler</name></member>
+      <member refid="classSignalHandler_1a4f464b7c0b64cba591d1c97751b6bc9f" prot="public" virt="non-virtual"><scope>SignalHandler</scope><name>Start</name></member>
+      <member refid="classSignalHandler_1addc8b5b0b969eb405376a77a369de007" prot="public" virt="non-virtual"><scope>SignalHandler</scope><name>~SignalHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

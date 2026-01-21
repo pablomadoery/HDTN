@@ -1,0 +1,974 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpSessionSender" kind="class" language="C++" prot="public">
+    <compoundname>LtpSessionSender</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="LtpSessionSender_8h" local="no">LtpSessionSender.h</includes>
+    <innerclass refid="structLtpSessionSender_1_1csntimer__userdata__t" prot="private">LtpSessionSender::csntimer_userdata_t</innerclass>
+    <innerclass refid="structLtpSessionSender_1_1LtpSessionSenderCommonData" prot="public">LtpSessionSender::LtpSessionSenderCommonData</innerclass>
+    <innerclass refid="structLtpSessionSender_1_1LtpSessionSenderRecycledData" prot="public">LtpSessionSender::LtpSessionSenderRecycledData</innerclass>
+    <innerclass refid="structLtpSessionSender_1_1resend__fragment__t" prot="public">LtpSessionSender::resend_fragment_t</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classLtpSessionSender_1a79b64e98f2cdf70834f8a9da9f81e7da" prot="public" static="no">
+        <type>std::set&lt; uint64_t, std::less&lt; uint64_t &gt;, <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; uint64_t &gt; &gt;</type>
+        <definition>typedef std::set&lt;uint64_t, std::less&lt;uint64_t&gt;, FreeListAllocator&lt;uint64_t&gt; &gt; LtpSessionSender::report_segment_serial_numbers_received_set_t</definition>
+        <argsstring></argsstring>
+        <name>report_segment_serial_numbers_received_set_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="72" column="2" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtpSessionSender_1a50d5066f983ee0cb3745006b7df1815c" prot="public" static="no">
+        <type>std::list&lt; uint64_t, <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; uint64_t &gt; &gt;</type>
+        <definition>typedef std::list&lt;uint64_t, FreeListAllocator&lt;uint64_t&gt; &gt; LtpSessionSender::checkpoint_serial_number_active_timers_list_t</definition>
+        <argsstring></argsstring>
+        <name>checkpoint_serial_number_active_timers_list_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="74" column="23" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtpSessionSender_1aea9ff7d8eb6d39d4a1a2d565256ecb92" prot="public" static="no">
+        <type>std::unique_ptr&lt; <ref refid="structLtpSessionSender_1_1LtpSessionSenderRecycledData" kindref="compound">LtpSessionSenderRecycledData</ref> &gt;</type>
+        <definition>typedef std::unique_ptr&lt;LtpSessionSenderRecycledData&gt; LtpSessionSender::LtpSessionSenderRecycledDataUniquePtr</definition>
+        <argsstring></argsstring>
+        <name>LtpSessionSenderRecycledDataUniquePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="107" column="29" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classLtpSessionSender_1a25dab820839d1c094c1061b8d79c0eb3" prot="public" static="no">
+        <type><ref refid="classUserDataRecycler" kindref="compound">UserDataRecycler</ref>&lt; <ref refid="classLtpSessionSender_1aea9ff7d8eb6d39d4a1a2d565256ecb92" kindref="member">LtpSessionSenderRecycledDataUniquePtr</ref> &gt;</type>
+        <definition>typedef UserDataRecycler&lt;LtpSessionSenderRecycledDataUniquePtr&gt; LtpSessionSender::LtpSessionSenderRecycler</definition>
+        <argsstring></argsstring>
+        <name>LtpSessionSenderRecycler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="108" column="30" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpSessionSender_1ab1bab07ec21b07176437805e6d6b5a73" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpSessionSender::m_largestEndIndexPendingGeneration</definition>
+        <argsstring></argsstring>
+        <name>m_largestEndIndexPendingGeneration</name>
+        <briefdescription>
+<para>Upper bound of received report with the largest scope span, used to recalculate gaps in reception claims for data segment retransmission. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="316" column="14" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="316" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1aff1406a3725f2519337119851c20d3ad" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpSessionSender::m_nextCheckpointSerialNumber</definition>
+        <argsstring></argsstring>
+        <name>m_nextCheckpointSerialNumber</name>
+        <briefdescription>
+<para>Next checkpoint serial number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="319" column="14" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="319" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a8e8d86777008ec49ad3254c6979e28e7" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpSessionSender::m_dataIndexFirstPass</definition>
+        <argsstring></argsstring>
+        <name>m_dataIndexFirstPass</name>
+        <briefdescription>
+<para>Next first pass data offset, used for initial transmission, when (m_dataIndexFirstPass &gt;= M_LENGTH_OF_RED_PART) the rest of the data pending initial transmission are all green data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="329" column="14" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="329" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" prot="private" static="no" mutable="no">
+        <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref></type>
+        <definition>const Ltp::session_id_t LtpSessionSender::M_SESSION_ID</definition>
+        <argsstring></argsstring>
+        <name>M_SESSION_ID</name>
+        <briefdescription>
+<para>Our session ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="331" column="29" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="331" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" compoundref="LtpSessionSender_8cpp" startline="130" endline="193">LtpCheckpointTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" compoundref="LtpSessionSender_8cpp" startline="195" endline="215">LtpDelaySendDataSegmentsTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" compoundref="LtpSessionSender_8cpp" startline="98" endline="128">~LtpSessionSender</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1ae942d83784ba9b1b2fff96ea6d3763d9" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpSessionSender::M_CLIENT_SERVICE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_CLIENT_SERVICE_ID</name>
+        <briefdescription>
+<para>Remote client service ID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="333" column="20" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="333" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a45da9e8cc16ea50acb0f4919fbb7c360" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpSessionSender::m_checkpointEveryNthDataPacketCounter</definition>
+        <argsstring></argsstring>
+        <name>m_checkpointEveryNthDataPacketCounter</name>
+        <briefdescription>
+<para>Periodic checkpoint counter, if using periodic checkpoints for every Nth packet, when the counter reaches zero the next packet MUST be a checkpoint and the counter reset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="335" column="14" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="335" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" prot="private" static="no" mutable="no">
+        <type><ref refid="classLtpSessionSender_1aea9ff7d8eb6d39d4a1a2d565256ecb92" kindref="member">LtpSessionSenderRecycledDataUniquePtr</ref></type>
+        <definition>LtpSessionSenderRecycledDataUniquePtr LtpSessionSender::m_ltpSessionSenderRecycledDataUniquePtr</definition>
+        <argsstring></argsstring>
+        <name>m_ltpSessionSenderRecycledDataUniquePtr</name>
+        <briefdescription>
+<para>Recycled data structures for this session. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="341" column="43" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="341" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" compoundref="LtpSessionSender_8cpp" startline="130" endline="193">LtpCheckpointTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" compoundref="LtpSessionSender_8cpp" startline="195" endline="215">LtpDelaySendDataSegmentsTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af9993b9765f62c79f020a3332172dadd" compoundref="LtpSessionSender_8cpp" startline="63" endline="96">LtpSessionSender</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</referencedby>
+        <referencedby refid="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" compoundref="LtpSessionSender_8cpp" startline="98" endline="128">~LtpSessionSender</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" prot="private" static="no" mutable="no">
+        <type><ref refid="structLtpSessionSender_1_1LtpSessionSenderCommonData" kindref="compound">LtpSessionSenderCommonData</ref> &amp;</type>
+        <definition>LtpSessionSenderCommonData&amp; LtpSessionSender::m_ltpSessionSenderCommonDataRef</definition>
+        <argsstring></argsstring>
+        <name>m_ltpSessionSenderCommonDataRef</name>
+        <briefdescription>
+<para>Sender common data reference, the data shared by all senders of the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="343" column="32" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="343" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" compoundref="LtpSessionSender_8cpp" startline="130" endline="193">LtpCheckpointTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" compoundref="LtpSessionSender_8cpp" startline="195" endline="215">LtpDelaySendDataSegmentsTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af9993b9765f62c79f020a3332172dadd" compoundref="LtpSessionSender_8cpp" startline="63" endline="96">LtpSessionSender</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</referencedby>
+        <referencedby refid="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" compoundref="LtpSessionSender_8cpp" startline="98" endline="128">~LtpSessionSender</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a64bdc2e270b09724ba1a320acbcfd7f9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LtpSessionSender::m_didNotifyForDeletion</definition>
+        <argsstring></argsstring>
+        <name>m_didNotifyForDeletion</name>
+        <briefdescription>
+<para>Whether deferred deletion of this sender has been requested (typically on session completed), used to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="345" column="10" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="345" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" compoundref="LtpSessionSender_8cpp" startline="130" endline="193">LtpCheckpointTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" compoundref="LtpSessionSender_8cpp" startline="195" endline="215">LtpDelaySendDataSegmentsTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1af3eeca92fe2ee5d54a7d81c3af41c3c3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LtpSessionSender::m_allRedDataReceivedByRemote</definition>
+        <argsstring></argsstring>
+        <name>m_allRedDataReceivedByRemote</name>
+        <briefdescription>
+<para>Whether the receiver has received all the red data, if True we can safely delete all the currently stored red data segments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="347" column="10" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="347" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classLtpSessionSender_1a28cd17a64d47619db3b1e855659a42cc" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classLtpClientServiceDataToSend" kindref="compound">LtpClientServiceDataToSend</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LtpClientServiceDataToSend&gt; LtpSessionSender::m_dataToSendSharedPtr</definition>
+        <argsstring></argsstring>
+        <name>m_dataToSendSharedPtr</name>
+        <briefdescription>
+<para>Client service data to send (red prefix and green suffix), when (m_dataToSendSharedPtr-&gt;data() == NULL) we MUST read the data from disk instead. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="322" column="21" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="322" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1aa46bd5858bd2e4dcc1bfa5daa4f55a1d" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structLtpTransmissionRequestUserData" kindref="compound">LtpTransmissionRequestUserData</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LtpTransmissionRequestUserData&gt; LtpSessionSender::m_userDataPtr</definition>
+        <argsstring></argsstring>
+        <name>m_userDataPtr</name>
+        <briefdescription>
+<para>Session attached client service data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="324" column="21" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="324" bodyend="-1"/>
+        <referencedby refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" compoundref="LtpSessionSender_8cpp" startline="130" endline="193">LtpCheckpointTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a81705637371d7f0e10bf88411ae96a64" prot="public" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpSessionSender::M_LENGTH_OF_RED_PART</definition>
+        <argsstring></argsstring>
+        <name>M_LENGTH_OF_RED_PART</name>
+        <briefdescription>
+<para>Red part data length in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="326" column="20" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="326" bodyend="-1"/>
+        <referencedby refid="classLtpEngine_1a9f531b186c99e7e73133e6d81363443b" compoundref="LtpEngine_8cpp" startline="1784" endline="1797">LtpEngine::EraseTxSession</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a7da375eb9956a4d49773f19839c57f19" prot="public" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpSessionSender::MEMORY_BLOCK_ID</definition>
+        <argsstring></argsstring>
+        <name>MEMORY_BLOCK_ID</name>
+        <briefdescription>
+<para>Our memory block ID, if using the disk for intermediate storage the ID MUST be non-zero, the lifetime of the memory block is managed by the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="338" column="20" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="338" bodyend="-1"/>
+        <referencedby refid="classLtpEngine_1a9f531b186c99e7e73133e6d81363443b" compoundref="LtpEngine_8cpp" startline="1784" endline="1797">LtpEngine::EraseTxSession</referencedby>
+        <referencedby refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" compoundref="LtpSessionSender_8cpp" startline="330" endline="486">NextFirstPassDataToSend</referencedby>
+        <referencedby refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" compoundref="LtpSessionSender_8cpp" startline="217" endline="328">NextTimeCriticalDataToSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a3b6dfb611dfdcaecb007c86a72835d91" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LtpSessionSender::m_isFailedSession</definition>
+        <argsstring></argsstring>
+        <name>m_isFailedSession</name>
+        <briefdescription>
+<para>Whether the send session has been completed due to a fatal error, currently only used on RLEXC triggered by checkpoint retransmission limit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="351" column="10" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="351" bodyend="-1"/>
+        <referencedby refid="classLtpEngine_1a9f531b186c99e7e73133e6d81363443b" compoundref="LtpEngine_8cpp" startline="1784" endline="1797">LtpEngine::EraseTxSession</referencedby>
+        <referencedby refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" compoundref="LtpSessionSender_8cpp" startline="130" endline="193">LtpCheckpointTimerExpiredCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionSender_1a6b66a6efd6da15eb4051d6e70dd7f485" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LtpSessionSender::m_calledCancelledOrCompletedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_calledCancelledOrCompletedCallback</name>
+        <briefdescription>
+<para>Whether the send session has been completed, used to prevent against multiple executions of the session completion procedure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="353" column="10" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpSessionSender_1a4017e07b03a5e09ac696a139bcbb80fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpSessionSender::LtpSessionSender</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpSessionSender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="47" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpSessionSender::ResendDataFromReport</definition>
+        <argsstring>(const LtpFragmentSet::data_fragment_set_t &amp;fragmentsNeedingResent, const uint64_t reportSerialNumber)</argsstring>
+        <name>ResendDataFromReport</name>
+        <param>
+          <type>const <ref refid="classFragmentSet_1ab9205d52d6ea62686899e767129fadbc" kindref="member">LtpFragmentSet::data_fragment_set_t</ref> &amp;</type>
+          <declname>fragmentsNeedingResent</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>reportSerialNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Queue for retransmission data fragments needing-retransmitted for the given report.</para>
+<para>Queue each data fragment for retransmission in the data fragments needing-retransmitted queue, setting only the last data fragment as a checkpoint and setting EORP and EOB appropriately. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fragmentsNeedingResent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data fragments needing-retransmitted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reportSerialNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report serial number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="302" column="28" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="677" bodyend="709"/>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classLtpSessionSender_1a28cd17a64d47619db3b1e855659a42cc" compoundref="LtpSessionSender_8h" startline="322">m_dataToSendSharedPtr</references>
+        <references refid="classLtpSessionSender_1a81705637371d7f0e10bf88411ae96a64" compoundref="LtpSessionSender_8h" startline="326">M_LENGTH_OF_RED_PART</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1acb5eb01e1a7cac28de56812405a2750d" compoundref="LtpSessionSender_8h" startline="128">LtpSessionSender::LtpSessionSenderCommonData::m_mtuClientServiceData</references>
+        <references refid="classLtpSessionSender_1aff1406a3725f2519337119851c20d3ad" compoundref="LtpSessionSender_8h" startline="319">m_nextCheckpointSerialNumber</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48a2b0e9679fd255ebce77eb08f1b875309">REDDATA</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48aeb34ba39a7c9b1e7329390af570dbd28">REDDATA_CHECKPOINT</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48a79eaf6bb9184760388df824111465927">REDDATA_CHECKPOINT_ENDOFREDPART</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48aa43abc107ecde61174884294c8634ce5">REDDATA_CHECKPOINT_ENDOFREDPART_ENDOFBLOCK</references>
+        <references refid="LtpSessionSender_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpSessionSender_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" compoundref="LtpSessionSender_8cpp" startline="195" endline="215">LtpDelaySendDataSegmentsTimerExpiredCallback</referencedby>
+        <referencedby refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" compoundref="LtpSessionSender_8cpp" startline="489" endline="675">ReportSegmentReceivedCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpSessionSender::~LtpSessionSender</definition>
+        <argsstring>()</argsstring>
+        <name>~LtpSessionSender</name>
+        <briefdescription>
+<para>Clean up active checkpoint and data segment retransmission timers from the shared timer manager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="162" column="20" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="98" bodyend="128"/>
+        <references refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" compoundref="LtpTimerManager_8cpp" startline="86" endline="93">LtpTimerManager&lt; idType, hashType &gt;::DeleteTimer</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1ac2e5f132be3a836f88e950cfa0e06ba3" compoundref="LtpSessionSender_8h" startline="149">LtpSessionSender::LtpSessionSenderCommonData::m_ltpSessionSenderRecyclerRef</references>
+        <references refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" compoundref="LtpSessionSender_8h" startline="331">M_SESSION_ID</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a838cb7a149fc6a2b942fb5f282ff35d7" compoundref="LtpSessionSender_8h" startline="134">LtpSessionSender::LtpSessionSenderCommonData::m_timeManagerOfCheckpointSerialNumbersRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a331e697aa15c5d77f5a4adbebd2ffd33" compoundref="LtpSessionSender_8h" startline="138">LtpSessionSender::LtpSessionSenderCommonData::m_timeManagerOfSendingDelayedDataSegmentsRef</references>
+        <references refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" compoundref="UserDataRecycler_8h" startline="59" endline="68">UserDataRecycler&lt; userDataType &gt;::ReturnUserData</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="LtpSessionSender_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpSessionSender_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1af9993b9765f62c79f020a3332172dadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpSessionSender::LtpSessionSender</definition>
+        <argsstring>(uint64_t randomInitialSenderCheckpointSerialNumber, LtpClientServiceDataToSend &amp;&amp;dataToSend, std::shared_ptr&lt; LtpTransmissionRequestUserData &gt; &amp;&amp;userDataPtrToTake, uint64_t lengthOfRedPart, const Ltp::session_id_t &amp;sessionId, const uint64_t clientServiceId, const uint64_t memoryBlockId, LtpSessionSenderCommonData &amp;ltpSessionSenderCommonDataRef)</argsstring>
+        <name>LtpSessionSender</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>randomInitialSenderCheckpointSerialNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classLtpClientServiceDataToSend" kindref="compound">LtpClientServiceDataToSend</ref> &amp;&amp;</type>
+          <declname>dataToSend</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structLtpTransmissionRequestUserData" kindref="compound">LtpTransmissionRequestUserData</ref> &gt; &amp;&amp;</type>
+          <declname>userDataPtrToTake</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>lengthOfRedPart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>clientServiceId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>memoryBlockId</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtpSessionSender_1_1LtpSessionSenderCommonData" kindref="compound">LtpSessionSenderCommonData</ref> &amp;</type>
+          <declname>ltpSessionSenderCommonDataRef</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start counters from 0 and initialize flags. <simplesect kind="post"><para>The arguments to dataToSend and userDataPtrToTake are left in a moved-from state. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="168" column="20" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="63" bodyend="96"/>
+        <references refid="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" compoundref="UserDataRecycler_8h" startline="84" endline="90">UserDataRecycler&lt; userDataType &gt;::GetRecycledOrCreateNewUserData</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1ac2e5f132be3a836f88e950cfa0e06ba3" compoundref="LtpSessionSender_8h" startline="149">LtpSessionSender::LtpSessionSenderCommonData::m_ltpSessionSenderRecyclerRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpSessionSender::NextTimeCriticalDataToSend</definition>
+        <argsstring>(UdpSendPacketInfo &amp;udpSendPacketInfo)</argsstring>
+        <name>NextTimeCriticalDataToSend</name>
+        <param>
+          <type><ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref> &amp;</type>
+          <declname>udpSendPacketInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load next critical data segment to send.</para>
+<para>Critical data priority (in descending order, 1 is highest priority):<orderedlist>
+<listitem><para>Internal operation queue segments (includes report acknowledgment segments): If the queue is NOT empty, the first queued segment is popped from the queue and loaded into the send operation data context.</para>
+</listitem><listitem><para>Data fragments needing-retransmitted queue segments: If the red data part of this session has already been reported received, clears the data fragment needing-retransmitted queue and returns with a value of False. Else, if the queue is NOT empty, the first queued segment is popped from the queue and the send operation context data are modified accordingly: A. If the segment is a checkpoint: A checkpoint retransmission timer is attempted to be started. B. If the data need to be read from disk: The deferred disk read context data are updated for an eventual deferred read NOT initiated from this function, the data are NOT loaded in-memory. C. If the data need to be read from memory: The data are loaded from the in-memory client service data to send, then the send operation data context is updated to hold a copy of the shared pointer to the in-memory client service data to send, so the data are not deleted before the send operation is completed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>udpSendPacketInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The send operation context data to modify. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if there is a segment to send and it could be loaded successfully (and thus the send operation context data are modified), or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the argument to udpSendPacketInfo is modified accordingly (see above for details). </para>
+</simplesect>
+</para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="193" column="25" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="217" bodyend="328"/>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ad12ffecbc698619e863ca80e83926d87" compoundref="Ltp_8h" startline="243">Ltp::data_segment_metadata_t::checkpointSerialNumber</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1af0eced7924e811115b604363153ab5fa" compoundref="LtpSessionSender_8h" startline="61">LtpSessionSender::resend_fragment_t::checkpointSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a129a03feee19c6966245d6ddde940f1c" compoundref="Ltp_8h" startline="238">Ltp::data_segment_metadata_t::clientServiceId</references>
+        <references refid="structUdpSendPacketInfo_1a3ebafb6cbd359961e841ca92c41d240e" compoundref="LtpClientServiceDataToSend_8h" startline="170">UdpSendPacketInfo::constBufferVec</references>
+        <references refid="structUdpSendPacketInfo_1a601ec851fb39828ab25cb68e24541867" compoundref="LtpClientServiceDataToSend_8h" startline="177">UdpSendPacketInfo::deferredRead</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1ab89f2cdc59558e1489f7ca0c5972bd35" compoundref="LtpSessionSender_8h" startline="65">LtpSessionSender::resend_fragment_t::flags</references>
+        <references refid="classLtp_1a81f9acd027db5140d5190a22fac4f2f4" compoundref="Ltp_8cpp" startline="1496" endline="1519">Ltp::GenerateLtpHeaderPlusDataSegmentMetadata</references>
+        <references refid="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" compoundref="UserDataRecycler_8h" startline="84" endline="90">UserDataRecycler&lt; userDataType &gt;::GetRecycledOrCreateNewUserData</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a5168932e10f42bfdf0d92d73281722f8" compoundref="LtpSessionSender_8h" startline="309">LtpSessionSender::csntimer_userdata_t::itCheckpointSerialNumberActiveTimersList</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a735e043bde5826a9e38abe31751716ac" compoundref="Ltp_8h" startline="240">Ltp::data_segment_metadata_t::length</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1a56896c8460257c36b8439de9924e989c" compoundref="LtpSessionSender_8h" startline="59">LtpSessionSender::resend_fragment_t::length</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1a27e0c2850ab680d37bf24f38a0b03f05" compoundref="MemoryInFiles_8h" startline="60">MemoryInFiles::deferred_read_t::length</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpSessionSender_1af3eeca92fe2ee5d54a7d81c3af41c3c3" compoundref="LtpSessionSender_8h" startline="347">m_allRedDataReceivedByRemote</references>
+        <references refid="classLtpSessionSender_1ae942d83784ba9b1b2fff96ea6d3763d9" compoundref="LtpSessionSender_8h" startline="333">M_CLIENT_SERVICE_ID</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a6205c93afc2d00affec09aaf17e0f879" compoundref="LtpSessionSender_8h" startline="136">LtpSessionSender::LtpSessionSenderCommonData::m_csnTimerExpiredCallbackRef</references>
+        <references refid="classLtpSessionSender_1a28cd17a64d47619db3b1e855659a42cc" compoundref="LtpSessionSender_8h" startline="322">m_dataToSendSharedPtr</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" compoundref="LtpSessionSender_8h" startline="331">M_SESSION_ID</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a838cb7a149fc6a2b942fb5f282ff35d7" compoundref="LtpSessionSender_8h" startline="134">LtpSessionSender::LtpSessionSenderCommonData::m_timeManagerOfCheckpointSerialNumbersRef</references>
+        <references refid="classLtpTimerManager_1a5030dd35df0f6746618f45601ebb4989" compoundref="LtpTimerManager_8h" startline="163">LtpTimerManager&lt; idType, hashType &gt;::m_userDataRecycler</references>
+        <references refid="classLtpSessionSender_1a7da375eb9956a4d49773f19839c57f19" compoundref="LtpSessionSender_8h" startline="338">MEMORY_BLOCK_ID</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1ae289dec541bff2353051085955e54efd" compoundref="MemoryInFiles_8h" startline="56">MemoryInFiles::deferred_read_t::memoryBlockId</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ac5fc5a67ca76ebec9818a4c0184b44fc" compoundref="Ltp_8h" startline="239">Ltp::data_segment_metadata_t::offset</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1ab2134c8c01bb98ecdaf6c703ae1c630e" compoundref="LtpSessionSender_8h" startline="57">LtpSessionSender::resend_fragment_t::offset</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1aaabb1817ece07b04d2aad8a82589512e" compoundref="MemoryInFiles_8h" startline="58">MemoryInFiles::deferred_read_t::offset</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1a4b63ec4cf92aa329419e06d53b7c8534" compoundref="MemoryInFiles_8h" startline="62">MemoryInFiles::deferred_read_t::readToThisLocationPtr</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48a2b0e9679fd255ebce77eb08f1b875309">REDDATA</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a3102b193618b4d942875e6b227f57bab" compoundref="Ltp_8h" startline="244">Ltp::data_segment_metadata_t::reportSerialNumber</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1a364ce373fe1b965dbd242c6a67a99d19" compoundref="LtpSessionSender_8h" startline="63">LtpSessionSender::resend_fragment_t::reportSerialNumber</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a6785e52cd95af7be259c33f12b8a00e8" compoundref="LtpSessionSender_8h" startline="311">LtpSessionSender::csntimer_userdata_t::resendFragment</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" compoundref="LtpTimerManager_8cpp" startline="65" endline="83">LtpTimerManager&lt; idType, hashType &gt;::StartTimer</references>
+        <references refid="LtpSessionSender_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpSessionSender_8cpp" startline="22">subprocess</references>
+        <references refid="structUdpSendPacketInfo_1ab3071ed8c962fd90d9b511c0dd27b75c" compoundref="LtpClientServiceDataToSend_8h" startline="175">UdpSendPacketInfo::underlyingCsDataToDeleteOnSentCallback</references>
+        <references refid="structUdpSendPacketInfo_1aed063b83aa26edd49598c2984076ed78" compoundref="LtpClientServiceDataToSend_8h" startline="172">UdpSendPacketInfo::underlyingDataToDeleteOnSentCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpSessionSender::NextFirstPassDataToSend</definition>
+        <argsstring>(UdpSendPacketInfo &amp;udpSendPacketInfo)</argsstring>
+        <name>NextFirstPassDataToSend</name>
+        <param>
+          <type><ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref> &amp;</type>
+          <declname>udpSendPacketInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load next first-pass data segment to send.</para>
+<para>If there are no first-pass data left to send, returns immediately with a value of False. Else, the send operation context data are modified accordingly:<orderedlist>
+<listitem><para>If we are sending red data: A. If the segment is a checkpoint (periodic, EORP or EOB): The segment checkpoint type is updated appropriately, then a checkpoint retransmission timer is attempted to be started. B. If the data need to be read from disk: The deferred disk read context data are updated for an eventual deferred read NOT initiated from this function, the data are NOT loaded in-memory. C. If the data need to be read from memory: The data are loaded from the in-memory client service data to send. D. Finally: Advances the next first-pass data offset.</para>
+</listitem><listitem><para>If we are sending green data: A. If the segment is a checkpoint (EOB): The segment checkpoint type is updated appropriately, green data do NOT use checkpoint retransmission timers. B. If the data need to be read from disk: The deferred disk read context data are updated for an eventual deferred read NOT initiated from this function, the data are NOT loaded in-memory. C. If the data need to be read from memory: The data are loaded from the in-memory client service data to send. D. Finally: Advances the next first-pass data offset.</para>
+</listitem><listitem><para>Finally: A. If the data were loaded from memory: The send operation data context is updated to hold a copy of the shared pointer to the in-memory client service data to send, so the data are not deleted before the send operation is completed. B. [SYSTEM]: If execution reaches this point: Calls m_initialTransmissionCompletedCallbackRef() to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> that initial data transmission (first pass) has been completed. C. If this is a fully green send session OR if all the red data have already been reported-received: If not already marked, marks the sender for deferred deletion then calls m_notifyEngineThatThisSenderNeedsDeletedCallbackRef() with a cancel code of RESERVED to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> for sender deletion. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>udpSendPacketInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The send operation context data to modify. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if there is a segment to send and it could be loaded successfully (and thus the send operation context data are modified), or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returns True, the argument to udpSendPacketInfo is modified accordingly (see above for details). </para>
+</simplesect>
+</para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="230" column="25" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="330" bodyend="486"/>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ad12ffecbc698619e863ca80e83926d87" compoundref="Ltp_8h" startline="243">Ltp::data_segment_metadata_t::checkpointSerialNumber</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a129a03feee19c6966245d6ddde940f1c" compoundref="Ltp_8h" startline="238">Ltp::data_segment_metadata_t::clientServiceId</references>
+        <references refid="structUdpSendPacketInfo_1a3ebafb6cbd359961e841ca92c41d240e" compoundref="LtpClientServiceDataToSend_8h" startline="170">UdpSendPacketInfo::constBufferVec</references>
+        <references refid="structUdpSendPacketInfo_1a601ec851fb39828ab25cb68e24541867" compoundref="LtpClientServiceDataToSend_8h" startline="177">UdpSendPacketInfo::deferredRead</references>
+        <references refid="classLtp_1a81f9acd027db5140d5190a22fac4f2f4" compoundref="Ltp_8cpp" startline="1496" endline="1519">Ltp::GenerateLtpHeaderPlusDataSegmentMetadata</references>
+        <references refid="classUserDataRecycler_1acff17dc6716a17522e7ba8edc8e0f1cf" compoundref="UserDataRecycler_8h" startline="84" endline="90">UserDataRecycler&lt; userDataType &gt;::GetRecycledOrCreateNewUserData</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48a213fc8a346baa3254951ef6c4406560f">GREENDATA</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48aaff48cb7d510f000f7b0d5d45dca68e3">GREENDATA_ENDOFBLOCK</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a5168932e10f42bfdf0d92d73281722f8" compoundref="LtpSessionSender_8h" startline="309">LtpSessionSender::csntimer_userdata_t::itCheckpointSerialNumberActiveTimersList</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a735e043bde5826a9e38abe31751716ac" compoundref="Ltp_8h" startline="240">Ltp::data_segment_metadata_t::length</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1a27e0c2850ab680d37bf24f38a0b03f05" compoundref="MemoryInFiles_8h" startline="60">MemoryInFiles::deferred_read_t::length</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a3581acb8a2458cd13aecb963e403b228" compoundref="LtpSessionSender_8h" startline="130">LtpSessionSender::LtpSessionSenderCommonData::m_checkpointEveryNthDataPacket</references>
+        <references refid="classLtpSessionSender_1a45da9e8cc16ea50acb0f4919fbb7c360" compoundref="LtpSessionSender_8h" startline="335">m_checkpointEveryNthDataPacketCounter</references>
+        <references refid="classLtpSessionSender_1ae942d83784ba9b1b2fff96ea6d3763d9" compoundref="LtpSessionSender_8h" startline="333">M_CLIENT_SERVICE_ID</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a6205c93afc2d00affec09aaf17e0f879" compoundref="LtpSessionSender_8h" startline="136">LtpSessionSender::LtpSessionSenderCommonData::m_csnTimerExpiredCallbackRef</references>
+        <references refid="classLtpSessionSender_1a8e8d86777008ec49ad3254c6979e28e7" compoundref="LtpSessionSender_8h" startline="329">m_dataIndexFirstPass</references>
+        <references refid="classLtpSessionSender_1a28cd17a64d47619db3b1e855659a42cc" compoundref="LtpSessionSender_8h" startline="322">m_dataToSendSharedPtr</references>
+        <references refid="classLtpSessionSender_1a64bdc2e270b09724ba1a320acbcfd7f9" compoundref="LtpSessionSender_8h" startline="345">m_didNotifyForDeletion</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a87c25e9c63e1b296bf1f7517d53e8461" compoundref="LtpSessionSender_8h" startline="147">LtpSessionSender::LtpSessionSenderCommonData::m_initialTransmissionCompletedCallbackRef</references>
+        <references refid="classLtpSessionSender_1a81705637371d7f0e10bf88411ae96a64" compoundref="LtpSessionSender_8h" startline="326">M_LENGTH_OF_RED_PART</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1acb5eb01e1a7cac28de56812405a2750d" compoundref="LtpSessionSender_8h" startline="128">LtpSessionSender::LtpSessionSenderCommonData::m_mtuClientServiceData</references>
+        <references refid="classLtpSessionSender_1aff1406a3725f2519337119851c20d3ad" compoundref="LtpSessionSender_8h" startline="319">m_nextCheckpointSerialNumber</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a3159de745a23c1682feaf4985aab91e2" compoundref="LtpSessionSender_8h" startline="143">LtpSessionSender::LtpSessionSenderCommonData::m_notifyEngineThatThisSenderNeedsDeletedCallbackRef</references>
+        <references refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" compoundref="LtpSessionSender_8h" startline="331">M_SESSION_ID</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a838cb7a149fc6a2b942fb5f282ff35d7" compoundref="LtpSessionSender_8h" startline="134">LtpSessionSender::LtpSessionSenderCommonData::m_timeManagerOfCheckpointSerialNumbersRef</references>
+        <references refid="classLtpSessionSender_1aa46bd5858bd2e4dcc1bfa5daa4f55a1d" compoundref="LtpSessionSender_8h" startline="324">m_userDataPtr</references>
+        <references refid="classLtpTimerManager_1a5030dd35df0f6746618f45601ebb4989" compoundref="LtpTimerManager_8h" startline="163">LtpTimerManager&lt; idType, hashType &gt;::m_userDataRecycler</references>
+        <references refid="classLtpSessionSender_1a7da375eb9956a4d49773f19839c57f19" compoundref="LtpSessionSender_8h" startline="338">MEMORY_BLOCK_ID</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1ae289dec541bff2353051085955e54efd" compoundref="MemoryInFiles_8h" startline="56">MemoryInFiles::deferred_read_t::memoryBlockId</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1ac5fc5a67ca76ebec9818a4c0184b44fc" compoundref="Ltp_8h" startline="239">Ltp::data_segment_metadata_t::offset</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1aaabb1817ece07b04d2aad8a82589512e" compoundref="MemoryInFiles_8h" startline="58">MemoryInFiles::deferred_read_t::offset</references>
+        <references refid="structMemoryInFiles_1_1deferred__read__t_1a4b63ec4cf92aa329419e06d53b7c8534" compoundref="MemoryInFiles_8h" startline="62">MemoryInFiles::deferred_read_t::readToThisLocationPtr</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48a2b0e9679fd255ebce77eb08f1b875309">REDDATA</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48aeb34ba39a7c9b1e7329390af570dbd28">REDDATA_CHECKPOINT</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48a79eaf6bb9184760388df824111465927">REDDATA_CHECKPOINT_ENDOFREDPART</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48aa43abc107ecde61174884294c8634ce5">REDDATA_CHECKPOINT_ENDOFREDPART_ENDOFBLOCK</references>
+        <references refid="structLtp_1_1data__segment__metadata__t_1a3102b193618b4d942875e6b227f57bab" compoundref="Ltp_8h" startline="244">Ltp::data_segment_metadata_t::reportSerialNumber</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a6785e52cd95af7be259c33f12b8a00e8" compoundref="LtpSessionSender_8h" startline="311">LtpSessionSender::csntimer_userdata_t::resendFragment</references>
+        <references refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743ca83c7f2aa8c3ac10ed8beb75cad162827">RESERVED</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" compoundref="LtpTimerManager_8cpp" startline="65" endline="83">LtpTimerManager&lt; idType, hashType &gt;::StartTimer</references>
+        <references refid="LtpSessionSender_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpSessionSender_8cpp" startline="22">subprocess</references>
+        <references refid="structUdpSendPacketInfo_1ab3071ed8c962fd90d9b511c0dd27b75c" compoundref="LtpClientServiceDataToSend_8h" startline="175">UdpSendPacketInfo::underlyingCsDataToDeleteOnSentCallback</references>
+        <references refid="structUdpSendPacketInfo_1aed063b83aa26edd49598c2984076ed78" compoundref="LtpClientServiceDataToSend_8h" startline="172">UdpSendPacketInfo::underlyingDataToDeleteOnSentCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpSessionSender::ReportSegmentReceivedCallback</definition>
+        <argsstring>(const Ltp::report_segment_t &amp;reportSegment, Ltp::ltp_extensions_t &amp;headerExtensions, Ltp::ltp_extensions_t &amp;trailerExtensions)</argsstring>
+        <name>ReportSegmentReceivedCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1report__segment__t" kindref="compound">Ltp::report_segment_t</ref> &amp;</type>
+          <declname>reportSegment</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;</type>
+          <declname>headerExtensions</declname>
+        </param>
+        <param>
+          <type><ref refid="structLtp_1_1ltp__extensions__t" kindref="compound">Ltp::ltp_extensions_t</ref> &amp;</type>
+          <declname>trailerExtensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle report segment reception.</para>
+<para>Appends a report acknowledgment segment with the same serial number as the report segment to the internal operations queue. Regardless of processing (if any) of the segment, if the sender is not marked for deletion, calls m_notifyEngineThatThisSenderHasProducibleDataFunctionRef() to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> that there is data to send. If the report segment is redundant, no processing is required. Else, processing goes through the following steps:<orderedlist>
+<listitem><para>If the report segment has a non-zero checkpoint serial number. The active checkpoint timer associated with the report is deleted.</para>
+</listitem><listitem><para>If scope of the report segment has already been processed by earlier reports: No further processing is required.</para>
+</listitem><listitem><para>If this report covers still pending data segments: A. If all red data have JUST NOW been reported received by the addition of this report (first time only): Set the all red data reported received flag. B. If all red and green data have already been sent AND all red data have been reported received: If not already marked, marks the sender for deferred deletion then calls m_notifyEngineThatThisSenderNeedsDeletedCallbackRef() with a cancel code of RESERVED to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> for sender deletion. C. [UNIT TESTING]: If we are NOT handling possibly out-of-order reception of report segments: Calls <ref refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" kindref="member">LtpSessionSender::ResendDataFromReport()</ref> to begin retransmission for the unaccounted-for needing-retransmitted data fragments with only the last fragment marked as a checkpoint. C. If we are handling possibly out-of-order reception of report segments: If the data segment retransmission timer is NOT currently running AND there are data fragments needing-retransmitted, the data segment retransmission timer is attempted to be started. If the data segment retransmission timer is currently running AND this report JUST NOW filled all reception claim gaps for the data fragments needing-retransmitted, the timer is stopped and the data fragments needing-retransmitted are cleared. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reportSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The report segment. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>headerExtensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The LTP header extensions. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>trailerExtensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The LTP trailer extensions. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="262" column="25" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="489" bodyend="675"/>
+        <references refid="classLtpFragmentSet_1a661a3f731e35df11c59c8e85cbd9c8bf" compoundref="LtpFragmentSet_8cpp" startline="121" endline="129">LtpFragmentSet::AddReportSegmentToFragmentSet</references>
+        <references refid="classLtpFragmentSet_1ada2811b07ce34a1502a2233d04d19364" compoundref="LtpFragmentSet_8cpp" startline="131" endline="158">LtpFragmentSet::AddReportSegmentToFragmentSetNeedingResent</references>
+        <references refid="structLtp_1_1report__segment__t_1af650c565b23b4a34279776baa56e7d34" compoundref="Ltp_8h" startline="175">Ltp::report_segment_t::checkpointSerialNumber</references>
+        <references refid="classFragmentSet_1a4dd6e763629fc8c384a396b2084665b0" compoundref="FragmentSet_8cpp" startline="110" endline="118">FragmentSet::ContainsFragmentEntirely</references>
+        <references refid="classLtpTimerManager_1a1646d1d7c224b741c221b27c983cc483" compoundref="LtpTimerManager_8cpp" startline="86" endline="93">LtpTimerManager&lt; idType, hashType &gt;::DeleteTimer</references>
+        <references refid="structFragmentSet_1_1data__fragment__t_1adaeafa9aeaa6871cb34cc13c430fb292" compoundref="FragmentSet_8h" startline="49">FragmentSet::data_fragment_t::endIndex</references>
+        <references refid="classLtp_1adeeef45525fcee31ce0b18f0a03c2129" compoundref="Ltp_8cpp" startline="1554" endline="1584">Ltp::GenerateReportAcknowledgementSegmentLtpPacket</references>
+        <references refid="classFragmentSet_1af37dd3f38fb2d8ce7ec5de9c2ecd3622" compoundref="FragmentSet_8cpp" startline="246" endline="252">FragmentSet::GetBoundsMinusFragments</references>
+        <references refid="classLtpTimerManager_1a90963557aaea25ae44adccd1025d9316" compoundref="LtpTimerManager_8cpp" startline="183" endline="185">LtpTimerManager&lt; idType, hashType &gt;::GetTimeDurationRef</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a5168932e10f42bfdf0d92d73281722f8" compoundref="LtpSessionSender_8h" startline="309">LtpSessionSender::csntimer_userdata_t::itCheckpointSerialNumberActiveTimersList</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structLtp_1_1report__segment__t_1a8cf975470bbecc4eaf81dc2d52ebe4b2" compoundref="Ltp_8h" startline="177">Ltp::report_segment_t::lowerBound</references>
+        <references refid="classLtpSessionSender_1af3eeca92fe2ee5d54a7d81c3af41c3c3" compoundref="LtpSessionSender_8h" startline="347">m_allRedDataReceivedByRemote</references>
+        <references refid="classLtpSessionSender_1a8e8d86777008ec49ad3254c6979e28e7" compoundref="LtpSessionSender_8h" startline="329">m_dataIndexFirstPass</references>
+        <references refid="classLtpSessionSender_1a28cd17a64d47619db3b1e855659a42cc" compoundref="LtpSessionSender_8h" startline="322">m_dataToSendSharedPtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a1c1a4f6875a400d32407e41598a49fea" compoundref="LtpSessionSender_8h" startline="140">LtpSessionSender::LtpSessionSenderCommonData::m_delayedDataSegmentsTimerExpiredCallbackRef</references>
+        <references refid="classLtpSessionSender_1a64bdc2e270b09724ba1a320acbcfd7f9" compoundref="LtpSessionSender_8h" startline="345">m_didNotifyForDeletion</references>
+        <references refid="classLtpSessionSender_1ab1bab07ec21b07176437805e6d6b5a73" compoundref="LtpSessionSender_8h" startline="316">m_largestEndIndexPendingGeneration</references>
+        <references refid="classLtpSessionSender_1a81705637371d7f0e10bf88411ae96a64" compoundref="LtpSessionSender_8h" startline="326">M_LENGTH_OF_RED_PART</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1aada0034af4fc03a7d8b7180119eafcc3" compoundref="LtpSessionSender_8h" startline="145">LtpSessionSender::LtpSessionSenderCommonData::m_notifyEngineThatThisSenderHasProducibleDataFunctionRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a3159de745a23c1682feaf4985aab91e2" compoundref="LtpSessionSender_8h" startline="143">LtpSessionSender::LtpSessionSenderCommonData::m_notifyEngineThatThisSenderNeedsDeletedCallbackRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1afab6c69ab4010165f1a50be7c047551a" compoundref="LtpSessionSender_8h" startline="157">LtpSessionSender::LtpSessionSenderCommonData::m_numDeletedFullyClaimedPendingReports</references>
+        <references refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" compoundref="LtpSessionSender_8h" startline="331">M_SESSION_ID</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a838cb7a149fc6a2b942fb5f282ff35d7" compoundref="LtpSessionSender_8h" startline="134">LtpSessionSender::LtpSessionSenderCommonData::m_timeManagerOfCheckpointSerialNumbersRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a331e697aa15c5d77f5a4adbebd2ffd33" compoundref="LtpSessionSender_8h" startline="138">LtpSessionSender::LtpSessionSenderCommonData::m_timeManagerOfSendingDelayedDataSegmentsRef</references>
+        <references refid="classLtpSessionSender_1aa46bd5858bd2e4dcc1bfa5daa4f55a1d" compoundref="LtpSessionSender_8h" startline="324">m_userDataPtr</references>
+        <references refid="classLtpTimerManager_1a5030dd35df0f6746618f45601ebb4989" compoundref="LtpTimerManager_8h" startline="163">LtpTimerManager&lt; idType, hashType &gt;::m_userDataRecycler</references>
+        <references refid="structLtp_1_1report__segment__t_1a90038772c82de1f0226ef138b5b8521e" compoundref="Ltp_8h" startline="174">Ltp::report_segment_t::reportSerialNumber</references>
+        <references refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</references>
+        <references refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743ca83c7f2aa8c3ac10ed8beb75cad162827">RESERVED</references>
+        <references refid="classUserDataRecycler_1a84aa1e5a59082d7c8dc15a49d79276ad" compoundref="UserDataRecycler_8h" startline="59" endline="68">UserDataRecycler&lt; userDataType &gt;::ReturnUserData</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="classLtpTimerManager_1aa997a1b566354e7ddd5fceb139178042" compoundref="LtpTimerManager_8cpp" startline="65" endline="83">LtpTimerManager&lt; idType, hashType &gt;::StartTimer</references>
+        <references refid="LtpSessionSender_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpSessionSender_8cpp" startline="22">subprocess</references>
+        <references refid="structLtp_1_1report__segment__t_1af504db1308322137aa123529c1643586" compoundref="Ltp_8h" startline="176">Ltp::report_segment_t::upperBound</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpSessionSender::LtpCheckpointTimerExpiredCallback</definition>
+        <argsstring>(const Ltp::session_id_t &amp;checkpointSerialNumberPlusSessionNumber, std::vector&lt; uint8_t &gt; &amp;userData)</argsstring>
+        <name>LtpCheckpointTimerExpiredCallback</name>
+        <param>
+          <type>const <ref refid="structLtp_1_1session__id__t" kindref="compound">Ltp::session_id_t</ref> &amp;</type>
+          <declname>checkpointSerialNumberPlusSessionNumber</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle checkpoint retransmission timer expiry.</para>
+<para>Deletes the active checkpoint retransmission timer.<orderedlist>
+<listitem><para>If the transmission retry count is within the checkpoint retransmission limit: If this is a discretionary checkpoint, the checkpoint is NOT retransmitted and is thus dropped. Else, the checkpoint is queued back for retransmission, the retry count is incremented, then calls m_notifyEngineThatThisSenderHasProducibleDataFunctionRef() to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> that there is data to send.</para>
+</listitem><listitem><para>If the checkpoint retransmission limit has been reached: If not already marked, marks the sender for deferred deletion then calls m_notifyEngineThatThisSenderNeedsDeletedCallbackRef() with a cancel code of RLEXC to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> for sender deletion, also marks this session as failed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>checkpointSerialNumberPlusSessionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The checkpoint session ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The checkpoint retransmission timer context data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="279" column="25" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="130" bodyend="193"/>
+        <references refid="classFragmentSet_1a4dd6e763629fc8c384a396b2084665b0" compoundref="FragmentSet_8cpp" startline="110" endline="118">FragmentSet::ContainsFragmentEntirely</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1ab89f2cdc59558e1489f7ca0c5972bd35" compoundref="LtpSessionSender_8h" startline="65">LtpSessionSender::resend_fragment_t::flags</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a5168932e10f42bfdf0d92d73281722f8" compoundref="LtpSessionSender_8h" startline="309">LtpSessionSender::csntimer_userdata_t::itCheckpointSerialNumberActiveTimersList</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1a56896c8460257c36b8439de9924e989c" compoundref="LtpSessionSender_8h" startline="59">LtpSessionSender::resend_fragment_t::length</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpSessionSender_1a64bdc2e270b09724ba1a320acbcfd7f9" compoundref="LtpSessionSender_8h" startline="345">m_didNotifyForDeletion</references>
+        <references refid="classLtpSessionSender_1a3b6dfb611dfdcaecb007c86a72835d91" compoundref="LtpSessionSender_8h" startline="351">m_isFailedSession</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1aaca24072023df376f91868216cfd2e20" compoundref="LtpSessionSender_8h" startline="132">LtpSessionSender::LtpSessionSenderCommonData::m_maxRetriesPerSerialNumberRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1aada0034af4fc03a7d8b7180119eafcc3" compoundref="LtpSessionSender_8h" startline="145">LtpSessionSender::LtpSessionSenderCommonData::m_notifyEngineThatThisSenderHasProducibleDataFunctionRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a3159de745a23c1682feaf4985aab91e2" compoundref="LtpSessionSender_8h" startline="143">LtpSessionSender::LtpSessionSenderCommonData::m_notifyEngineThatThisSenderNeedsDeletedCallbackRef</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a78beafd7e3ca4bd845bf86c89b00f9db" compoundref="LtpSessionSender_8h" startline="153">LtpSessionSender::LtpSessionSenderCommonData::m_numCheckpointTimerExpiredCallbacks</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1a1e6cff19c3074d2a58f335fb84bd25a3" compoundref="LtpSessionSender_8h" startline="155">LtpSessionSender::LtpSessionSenderCommonData::m_numDiscretionaryCheckpointsNotResent</references>
+        <references refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" compoundref="LtpSessionSender_8h" startline="331">M_SESSION_ID</references>
+        <references refid="classLtpSessionSender_1aa46bd5858bd2e4dcc1bfa5daa4f55a1d" compoundref="LtpSessionSender_8h" startline="324">m_userDataPtr</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1ab2134c8c01bb98ecdaf6c703ae1c630e" compoundref="LtpSessionSender_8h" startline="57">LtpSessionSender::resend_fragment_t::offset</references>
+        <references refid="Ltp_8h_1a4a775468b3fbb27b80d04f3e10f66f48aeb34ba39a7c9b1e7329390af570dbd28">REDDATA_CHECKPOINT</references>
+        <references refid="structLtpSessionSender_1_1csntimer__userdata__t_1a6785e52cd95af7be259c33f12b8a00e8" compoundref="LtpSessionSender_8h" startline="311">LtpSessionSender::csntimer_userdata_t::resendFragment</references>
+        <references refid="structLtpSessionSender_1_1resend__fragment__t_1a4e9bd4a33360081f3ba369e73f6d12fa" compoundref="LtpSessionSender_8h" startline="67">LtpSessionSender::resend_fragment_t::retryCount</references>
+        <references refid="Ltp_8h_1a1d6a60e8a202ae512058fb641ac8743ca36f07b407e207d4f23c0f9e5a02cd04c">RLEXC</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+        <references refid="LtpSessionSender_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpSessionSender_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpSessionSender::LtpDelaySendDataSegmentsTimerExpiredCallback</definition>
+        <argsstring>(const uint64_t &amp;sessionNumber, std::vector&lt; uint8_t &gt; &amp;userData)</argsstring>
+        <name>LtpDelaySendDataSegmentsTimerExpiredCallback</name>
+        <param>
+          <type>const uint64_t &amp;</type>
+          <declname>sessionNumber</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle data segment retransmission timer expiry.</para>
+<para>Calculates the data fragments needing-retransmitted, then on each resulting data fragment calls <ref refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" kindref="member">LtpSessionSender::ResendDataFromReport()</ref> to begin retransmission, Clears the pending report serial numbers. If the sender is not marked for deletion, calls m_notifyEngineThatThisSenderHasProducibleDataFunctionRef() to notify the associated <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref> that there is data to send. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sessionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Our session number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data segment retransmission timer context data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionSender.h" line="292" column="25" bodyfile="common/ltp/src/LtpSessionSender.cpp" bodystart="195" bodyend="215"/>
+        <references refid="classLtpSessionSender_1a64bdc2e270b09724ba1a320acbcfd7f9" compoundref="LtpSessionSender_8h" startline="345">m_didNotifyForDeletion</references>
+        <references refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" compoundref="LtpSessionSender_8h" startline="343">m_ltpSessionSenderCommonDataRef</references>
+        <references refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" compoundref="LtpSessionSender_8h" startline="341">m_ltpSessionSenderRecycledDataUniquePtr</references>
+        <references refid="structLtpSessionSender_1_1LtpSessionSenderCommonData_1aada0034af4fc03a7d8b7180119eafcc3" compoundref="LtpSessionSender_8h" startline="145">LtpSessionSender::LtpSessionSenderCommonData::m_notifyEngineThatThisSenderHasProducibleDataFunctionRef</references>
+        <references refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" compoundref="LtpSessionSender_8h" startline="331">M_SESSION_ID</references>
+        <references refid="classLtpFragmentSet_1a816c55dfe548114c7e0531068456432c" compoundref="LtpFragmentSet_8cpp" startline="160" endline="178">LtpFragmentSet::ReduceReportSegments</references>
+        <references refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" compoundref="LtpSessionSender_8cpp" startline="677" endline="709">ResendDataFromReport</references>
+        <references refid="structLtp_1_1session__id__t_1aeade376fbef281ba5aca42b4b35d64cb" compoundref="Ltp_8h" startline="137">Ltp::session_id_t::sessionNumber</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>LtpSessionSender</label>
+        <link refid="classLtpSessionSender"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>LtpTimerManager&lt; Ltp::session_id_t, Ltp::hash_session_id_t &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_activeSerialNumberBeingTimed</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>UserDataRecycler&lt; LtpSessionSenderRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="4">
+        <label>LtpSessionSender::LtpSessionSenderCommonData</label>
+        <link refid="structLtpSessionSender_1_1LtpSessionSenderCommonData"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_csnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbersRef</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegmentsRef</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecyclerRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LtpSessionSender</label>
+        <link refid="classLtpSessionSender"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>M_SESSION_ID</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_ltpSessionSenderCommonDataRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LtpTimerManager&lt; uint64_t, std::hash&lt; uint64_t &gt; &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Ltp::session_id_t</label>
+        <link refid="structLtp_1_1session__id__t"/>
+      </node>
+      <node id="6">
+        <label>UserDataRecycler&lt; std::vector&lt; uint8_t &gt; &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpSessionSender.h" line="45" column="1" bodyfile="common/ltp/include/LtpSessionSender.h" bodystart="45" bodyend="354"/>
+    <listofallmembers>
+      <member refid="classLtpSessionSender_1a50d5066f983ee0cb3745006b7df1815c" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>checkpoint_serial_number_active_timers_list_t</name></member>
+      <member refid="classLtpSessionSender_1add5f892e1130ac76bf2df254482de107" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>LtpCheckpointTimerExpiredCallback</name></member>
+      <member refid="classLtpSessionSender_1a5fac7961e1be54e214206aace7f97c29" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>LtpDelaySendDataSegmentsTimerExpiredCallback</name></member>
+      <member refid="classLtpSessionSender_1a4017e07b03a5e09ac696a139bcbb80fe" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>LtpSessionSender</name></member>
+      <member refid="classLtpSessionSender_1af9993b9765f62c79f020a3332172dadd" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>LtpSessionSender</name></member>
+      <member refid="classLtpSessionSender_1aea9ff7d8eb6d39d4a1a2d565256ecb92" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>LtpSessionSenderRecycledDataUniquePtr</name></member>
+      <member refid="classLtpSessionSender_1a25dab820839d1c094c1061b8d79c0eb3" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>LtpSessionSenderRecycler</name></member>
+      <member refid="classLtpSessionSender_1af3eeca92fe2ee5d54a7d81c3af41c3c3" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_allRedDataReceivedByRemote</name></member>
+      <member refid="classLtpSessionSender_1a6b66a6efd6da15eb4051d6e70dd7f485" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_calledCancelledOrCompletedCallback</name></member>
+      <member refid="classLtpSessionSender_1a45da9e8cc16ea50acb0f4919fbb7c360" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_checkpointEveryNthDataPacketCounter</name></member>
+      <member refid="classLtpSessionSender_1ae942d83784ba9b1b2fff96ea6d3763d9" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>M_CLIENT_SERVICE_ID</name></member>
+      <member refid="classLtpSessionSender_1a8e8d86777008ec49ad3254c6979e28e7" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_dataIndexFirstPass</name></member>
+      <member refid="classLtpSessionSender_1a28cd17a64d47619db3b1e855659a42cc" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_dataToSendSharedPtr</name></member>
+      <member refid="classLtpSessionSender_1a64bdc2e270b09724ba1a320acbcfd7f9" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_didNotifyForDeletion</name></member>
+      <member refid="classLtpSessionSender_1a3b6dfb611dfdcaecb007c86a72835d91" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_isFailedSession</name></member>
+      <member refid="classLtpSessionSender_1ab1bab07ec21b07176437805e6d6b5a73" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_largestEndIndexPendingGeneration</name></member>
+      <member refid="classLtpSessionSender_1a81705637371d7f0e10bf88411ae96a64" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>M_LENGTH_OF_RED_PART</name></member>
+      <member refid="classLtpSessionSender_1a9afd86725d23227a9cf211cb832e4aba" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_ltpSessionSenderCommonDataRef</name></member>
+      <member refid="classLtpSessionSender_1a65d2528495e1ebd3d63d6a759e98dba3" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_ltpSessionSenderRecycledDataUniquePtr</name></member>
+      <member refid="classLtpSessionSender_1aff1406a3725f2519337119851c20d3ad" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_nextCheckpointSerialNumber</name></member>
+      <member refid="classLtpSessionSender_1af7a391aee255b3ccadb58407db10b3a6" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>M_SESSION_ID</name></member>
+      <member refid="classLtpSessionSender_1aa46bd5858bd2e4dcc1bfa5daa4f55a1d" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>m_userDataPtr</name></member>
+      <member refid="classLtpSessionSender_1a7da375eb9956a4d49773f19839c57f19" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>MEMORY_BLOCK_ID</name></member>
+      <member refid="classLtpSessionSender_1a335b6488bf7388ab9b5ea1e0742462d1" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>NextFirstPassDataToSend</name></member>
+      <member refid="classLtpSessionSender_1ad1d9f6a2c23f3f46dcf54b6e4bfe1f54" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>NextTimeCriticalDataToSend</name></member>
+      <member refid="classLtpSessionSender_1a79b64e98f2cdf70834f8a9da9f81e7da" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>report_segment_serial_numbers_received_set_t</name></member>
+      <member refid="classLtpSessionSender_1af663dbe0e804ea972dbd29bf1680b281" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>ReportSegmentReceivedCallback</name></member>
+      <member refid="classLtpSessionSender_1ae723d8cdc3f23b833a879793b8c80aef" prot="private" virt="non-virtual"><scope>LtpSessionSender</scope><name>ResendDataFromReport</name></member>
+      <member refid="classLtpSessionSender_1a44d704aa853574e042a2b200f2cfbcef" prot="public" virt="non-virtual"><scope>LtpSessionSender</scope><name>~LtpSessionSender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

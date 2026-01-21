@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpSessionRecreationPreventer" kind="class" language="C++" prot="public">
+    <compoundname>LtpSessionRecreationPreventer</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <includes refid="LtpSessionRecreationPreventer_8h" local="no">LtpSessionRecreationPreventer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpSessionRecreationPreventer_1afa8ff16672108e3ab512950068aed257" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpSessionRecreationPreventer::M_NUM_RECEIVED_SESSION_NUMBERS_TO_REMEMBER</definition>
+        <argsstring></argsstring>
+        <name>M_NUM_RECEIVED_SESSION_NUMBERS_TO_REMEMBER</name>
+        <briefdescription>
+<para>Maximum number of session numbers to remember. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="64" column="20" bodyfile="common/ltp/include/LtpSessionRecreationPreventer.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" compoundref="LtpSessionRecreationPreventer_8cpp" startline="30" endline="47">AddSession</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionRecreationPreventer_1a1616be7ffdcab6157fb20e127b779119" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; uint64_t &gt;</type>
+        <definition>std::unordered_set&lt;uint64_t&gt; LtpSessionRecreationPreventer::m_previouslyReceivedSessionNumbersUnorderedSet</definition>
+        <argsstring></argsstring>
+        <name>m_previouslyReceivedSessionNumbersUnorderedSet</name>
+        <briefdescription>
+<para>Session number quarantine set, for fast lookup. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="66" column="24" bodyfile="common/ltp/include/LtpSessionRecreationPreventer.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" compoundref="LtpSessionRecreationPreventer_8cpp" startline="30" endline="47">AddSession</referencedby>
+        <referencedby refid="classLtpSessionRecreationPreventer_1a38329dc71b7a451de573bdaba8255754" compoundref="LtpSessionRecreationPreventer_8cpp" startline="48" endline="50">ContainsSession</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionRecreationPreventer_1a911b1cbc0420b77ffbdaed8a54cb69fe" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint64_t &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; LtpSessionRecreationPreventer::m_previouslyReceivedSessionNumbersQueueVector</definition>
+        <argsstring></argsstring>
+        <name>m_previouslyReceivedSessionNumbersQueueVector</name>
+        <briefdescription>
+<para>Session number quarantine queue, evicts oldest -&gt; newest on push when full. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="68" column="17" bodyfile="common/ltp/include/LtpSessionRecreationPreventer.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" compoundref="LtpSessionRecreationPreventer_8cpp" startline="30" endline="47">AddSession</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionRecreationPreventer_1a8d1cb9bc4544c415adca0043f1c0a1eb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LtpSessionRecreationPreventer::m_queueIsFull</definition>
+        <argsstring></argsstring>
+        <name>m_queueIsFull</name>
+        <briefdescription>
+<para>Whether m_previouslyReceivedSessionNumbersQueueVector is currently full. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="70" column="10" bodyfile="common/ltp/include/LtpSessionRecreationPreventer.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" compoundref="LtpSessionRecreationPreventer_8cpp" startline="30" endline="47">AddSession</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpSessionRecreationPreventer_1abf0fddb0b49552a67d3db1b58efe532c" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpSessionRecreationPreventer::m_nextQueueIndex</definition>
+        <argsstring></argsstring>
+        <name>m_nextQueueIndex</name>
+        <briefdescription>
+<para>Circular write index, used by m_previouslyReceivedSessionNumbersQueueVector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="72" column="14" bodyfile="common/ltp/include/LtpSessionRecreationPreventer.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" compoundref="LtpSessionRecreationPreventer_8cpp" startline="30" endline="47">AddSession</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpSessionRecreationPreventer_1a5cef50fa158e0142da31f25ecd11d65b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpSessionRecreationPreventer::LtpSessionRecreationPreventer</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpSessionRecreationPreventer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="34" column="5"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpSessionRecreationPreventer_1a27b9af3a98f6f795b35a48239964606e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpSessionRecreationPreventer::LtpSessionRecreationPreventer</definition>
+        <argsstring>(const uint64_t numReceivedSessionsToRemember)</argsstring>
+        <name>LtpSessionRecreationPreventer</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>numReceivedSessionsToRemember</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Preallocate M_NUM_RECEIVED_SESSION_NUMBERS_TO_REMEMBER number of elements for quarantine set and queue. Start circular write index from 0. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numReceivedSessionsToRemember</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of session numbers to remember. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="42" column="20" bodyfile="common/ltp/src/LtpSessionRecreationPreventer.cpp" bodystart="18" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionRecreationPreventer_1a0cf4ef2196fcdf00d8631410ed83f740" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpSessionRecreationPreventer::~LtpSessionRecreationPreventer</definition>
+        <argsstring>()</argsstring>
+        <name>~LtpSessionRecreationPreventer</name>
+        <briefdescription>
+<para>Default destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="45" column="20" bodyfile="common/ltp/src/LtpSessionRecreationPreventer.cpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpSessionRecreationPreventer::AddSession</definition>
+        <argsstring>(const uint64_t newSessionNumber)</argsstring>
+        <name>AddSession</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newSessionNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add session number to quarantine.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newSessionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The session number to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the session number was added successfully, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If returning True and max capacity would have been exceeded, the session number is added to quarantine and the oldest session number is evicted. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="53" column="25" bodyfile="common/ltp/src/LtpSessionRecreationPreventer.cpp" bodystart="30" bodyend="47"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpSessionRecreationPreventer_1abf0fddb0b49552a67d3db1b58efe532c" compoundref="LtpSessionRecreationPreventer_8h" startline="72">m_nextQueueIndex</references>
+        <references refid="classLtpSessionRecreationPreventer_1afa8ff16672108e3ab512950068aed257" compoundref="LtpSessionRecreationPreventer_8h" startline="64">M_NUM_RECEIVED_SESSION_NUMBERS_TO_REMEMBER</references>
+        <references refid="classLtpSessionRecreationPreventer_1a911b1cbc0420b77ffbdaed8a54cb69fe" compoundref="LtpSessionRecreationPreventer_8h" startline="68">m_previouslyReceivedSessionNumbersQueueVector</references>
+        <references refid="classLtpSessionRecreationPreventer_1a1616be7ffdcab6157fb20e127b779119" compoundref="LtpSessionRecreationPreventer_8h" startline="66">m_previouslyReceivedSessionNumbersUnorderedSet</references>
+        <references refid="classLtpSessionRecreationPreventer_1a8d1cb9bc4544c415adca0043f1c0a1eb" compoundref="LtpSessionRecreationPreventer_8h" startline="70">m_queueIsFull</references>
+        <references refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a334c4a4c42fdb79d7ebc3e73b517e6f8">hdtn::Logger::none</references>
+        <referencedby refid="TestLtpSessionRecreationPreventer_8cpp_1a571e183a06dabbd251c5eaff86fcf4fa" compoundref="TestLtpSessionRecreationPreventer_8cpp" startline="18" endline="53">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpSessionRecreationPreventer_1a38329dc71b7a451de573bdaba8255754" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpSessionRecreationPreventer::ContainsSession</definition>
+        <argsstring>(const uint64_t newSessionNumber) const</argsstring>
+        <name>ContainsSession</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>newSessionNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query whether quarantine contains session number.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newSessionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The session number to query. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if quarantine contains session number, or False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="60" column="25" bodyfile="common/ltp/src/LtpSessionRecreationPreventer.cpp" bodystart="48" bodyend="50"/>
+        <references refid="classLtpSessionRecreationPreventer_1a1616be7ffdcab6157fb20e127b779119" compoundref="LtpSessionRecreationPreventer_8h" startline="66">m_previouslyReceivedSessionNumbersUnorderedSet</references>
+        <referencedby refid="TestLtpSessionRecreationPreventer_8cpp_1a571e183a06dabbd251c5eaff86fcf4fa" compoundref="TestLtpSessionRecreationPreventer_8cpp" startline="18" endline="53">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>LtpSessionRecreationPreventer</label>
+        <link refid="classLtpSessionRecreationPreventer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>LtpSessionRecreationPreventer</label>
+        <link refid="classLtpSessionRecreationPreventer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpSessionRecreationPreventer.h" line="32" column="1" bodyfile="common/ltp/include/LtpSessionRecreationPreventer.h" bodystart="32" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classLtpSessionRecreationPreventer_1a2e4fb8901f9962a9c23d4e4bc166ee9a" prot="public" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>AddSession</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a38329dc71b7a451de573bdaba8255754" prot="public" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>ContainsSession</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a5cef50fa158e0142da31f25ecd11d65b" prot="private" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>LtpSessionRecreationPreventer</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a27b9af3a98f6f795b35a48239964606e" prot="public" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>LtpSessionRecreationPreventer</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1abf0fddb0b49552a67d3db1b58efe532c" prot="private" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>m_nextQueueIndex</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1afa8ff16672108e3ab512950068aed257" prot="private" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>M_NUM_RECEIVED_SESSION_NUMBERS_TO_REMEMBER</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a911b1cbc0420b77ffbdaed8a54cb69fe" prot="private" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>m_previouslyReceivedSessionNumbersQueueVector</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a1616be7ffdcab6157fb20e127b779119" prot="private" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>m_previouslyReceivedSessionNumbersUnorderedSet</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a8d1cb9bc4544c415adca0043f1c0a1eb" prot="private" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>m_queueIsFull</name></member>
+      <member refid="classLtpSessionRecreationPreventer_1a0cf4ef2196fcdf00d8631410ed83f740" prot="public" virt="non-virtual"><scope>LtpSessionRecreationPreventer</scope><name>~LtpSessionRecreationPreventer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

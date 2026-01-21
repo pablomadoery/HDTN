@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="common_2streaming_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>HDTN<sp/>Media<sp/>Streaming</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>repository<sp/>contains<sp/>media<sp/>streaming<sp/>plugin<sp/>applications<sp/>for<sp/>the<sp/>High-Rate<sp/>Delay<sp/>Tolerant<sp/>Network<sp/>(HDTN)<sp/>software.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>built,<sp/>the<sp/>`bpsend_stream`<sp/>executable<sp/>can<sp/>be<sp/>used<sp/>to<sp/>ingest<sp/>media<sp/>such<sp/>as<sp/>RTP<sp/>packets<sp/>and<sp/>mp4<sp/>files,<sp/>and<sp/>send<sp/>them<sp/>to<sp/>a<sp/>Delay<sp/>Tolerant<sp/>Network<sp/>(DTN)<sp/>as<sp/>bundles<sp/>over<sp/>any<sp/>supported<sp/>convergence<sp/>layer.<sp/>Similarly,<sp/>the<sp/>`bprecv_stream`<sp/>executable<sp/>can<sp/>be<sp/>used<sp/>to<sp/>receive<sp/>bundles<sp/>from<sp/>a<sp/>DTN<sp/>and<sp/>reassemble<sp/>the<sp/>media.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation<sp/>using<sp/>Docker</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>applications<sp/>depend<sp/>on<sp/>HDTN<sp/>and<sp/>Gstreamer<sp/>libraries.<sp/>So<sp/>far,<sp/>they<sp/>have<sp/>only<sp/>been<sp/>tested<sp/>on<sp/>Debian-based<sp/>Linux<sp/>distributions.<sp/>The<sp/>easiest<sp/>way<sp/>to<sp/>get<sp/>started<sp/>is<sp/>by<sp/>building<sp/>`Dockerfile`<sp/>in<sp/>the<sp/>root<sp/>directory:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">docker<sp/>build<sp/>-t<sp/>hdtn-streaming<sp/>.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>then<sp/>running<sp/>a<sp/>container<sp/>with<sp/>the<sp/>host<sp/>network<sp/>attached,<sp/>like:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">docker<sp/>run<sp/>-it<sp/>-u<sp/>root<sp/>--network<sp/>host<sp/>--name<sp/>hdtn-streaming<sp/>hdtn-streaming:latest<sp/>/bin/bash</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">However,<sp/>if<sp/>you<sp/>would<sp/>like<sp/>to<sp/>run<sp/>`bpsend_stream`<sp/>and<sp/>`bprecv_stream`<sp/>natively,<sp/>you<sp/>can<sp/>follow<sp/>the<sp/>instructions<sp/>below.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation<sp/>on<sp/>native<sp/>machine<sp/>and<sp/>Build<sp/>Dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>HDTN</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Build<sp/>and<sp/>install<sp/>HDTN<sp/>using<sp/>the<sp/>instructions<sp/>located<sp/>[in<sp/>GitHub](https://gitlab.grc.nasa.gov/hdtn-v4/hdtn)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/nasa/HDTN</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>HDTN<sp/>&amp;&amp;<sp/>git<sp/>checkout<sp/>development<sp/>&amp;&amp;<sp/>mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build<sp/>&amp;&amp;<sp/>cmake<sp/>..<sp/>&amp;&amp;<sp/>make<sp/>-j6<sp/>&amp;&amp;<sp/>sudo<sp/>make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Gstreamer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Install<sp/>OS<sp/>dependencies</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>update<sp/>-y<sp/>&amp;&amp;<sp/>sudo<sp/>apt-get<sp/>install<sp/>-y<sp/>pkg-config<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>flex<sp/>bison<sp/>git<sp/>python3-pip<sp/>ninja-build<sp/>libx264-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>build-essential<sp/>libzmq3-dev<sp/>libboost-dev<sp/>libboost-all-dev<sp/>openssl<sp/>libssl-dev</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Install<sp/>meson<sp/>and<sp/>the<sp/>directory<sp/>where<sp/>it<sp/>was<sp/>installed<sp/>to<sp/>PATH<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>pip3<sp/>install<sp/>meson</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Clone,<sp/>build,<sp/>and<sp/>install<sp/>Gstreamer</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/GStreamer/gstreamer.git<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>gstreamer<sp/>&amp;&amp;<sp/>meson<sp/>setup<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">meson<sp/>configure<sp/>build<sp/>&amp;&amp;<sp/>meson<sp/>compile<sp/>-C<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">ninja<sp/>-C<sp/>build<sp/>install<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Build<sp/>Media<sp/>Streaming</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Clone<sp/>this<sp/>repository,<sp/>and<sp/>build<sp/>using<sp/>CMake</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>TDB</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>HDTN-Streaming<sp/>&amp;&amp;<sp/>mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>cmake<sp/>..<sp/>&amp;&amp;<sp/>sudo<sp/>make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Example<sp/>usage<sp/>with<sp/>Docker</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Tests<sp/>scripts<sp/>are<sp/>located<sp/>at<sp/>`tests/test_scripts_linux`.<sp/>After<sp/>cloning<sp/>this<sp/>repository,<sp/>and<sp/>before<sp/>running<sp/>any<sp/>test,<sp/>set<sp/>`HDTN_STREAMING_DIR`<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>root<sp/>of<sp/>the<sp/>repository,<sp/>e.g.:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>HDTN_STREAMING_DIR=/home/user/HDTN-Streaming</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>quickly<sp/>get<sp/>started<sp/>using<sp/>Docker:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Install<sp/>Docker<sp/>(https://docs.docker.com/engine/install/ubuntu/)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Download<sp/>VLC</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>vlc</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Run<sp/>the<sp/>`one_node_ltp`<sp/>test,<sp/>to<sp/>stream<sp/>a<sp/>video<sp/>file<sp/>using<sp/>`bpsend_stream`,<sp/>`bprecv_stream`,<sp/>and<sp/>HDTN:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./tests/test_scripts_linux/one_node_ltp/docker/run.sh</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="common/streaming/README.md"/>
+  </compounddef>
+</doxygen>

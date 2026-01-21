@@ -1,0 +1,1435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUdpDelaySim" kind="class" language="C++" prot="public">
+    <compoundname>UdpDelaySim</compoundname>
+    <includes refid="UdpDelaySim_8h" local="no">UdpDelaySim.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" prot="public" static="no">
+        <type>boost::function&lt; bool(const std::vector&lt; uint8_t &gt; &amp;udpPacketReceived, std::size_t bytesTransferred)&gt;</type>
+        <definition>typedef boost::function&lt;bool(const std::vector&lt;uint8_t&gt; &amp; udpPacketReceived, std::size_t bytesTransferred)&gt; UdpDelaySim::UdpDropSimulatorFunction_t</definition>
+        <argsstring></argsstring>
+        <name>UdpDropSimulatorFunction_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="45" column="29" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUdpDelaySim_1a3e635efa918f8673cb293a73016b46b4" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service UdpDelaySim::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+<para>I/O execution context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="196" column="29" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="196" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" compoundref="UdpDelaySim_8cpp" startline="349" endline="356">SetUdpDropSimulatorFunction_ThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a4adc4e02f80e18ec6df35923763f268e" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::resolver</type>
+        <definition>boost::asio::ip::udp::resolver UdpDelaySim::m_resolver</definition>
+        <argsstring></argsstring>
+        <name>m_resolver</name>
+        <briefdescription>
+<para>UDP endpoint resolver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="198" column="36" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="198" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ad20c5abf95e506edb05965259b6dab0e" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer UdpDelaySim::m_udpPacketSendDelayTimer</definition>
+        <argsstring></argsstring>
+        <name>m_udpPacketSendDelayTimer</name>
+        <briefdescription>
+<para>Forwarding delay timer, on expiry forward kept packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="200" column="33" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="200" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</referencedby>
+        <referencedby refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer UdpDelaySim::m_timerTransferRateStats</definition>
+        <argsstring></argsstring>
+        <name>m_timerTransferRateStats</name>
+        <briefdescription>
+<para>Stat tracking timer, on expiry update stats and restart interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="202" column="33" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="202" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</referencedby>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer UdpDelaySim::m_timerLossOfSignal</definition>
+        <argsstring></argsstring>
+        <name>m_timerLossOfSignal</name>
+        <briefdescription>
+<para>Loss of signal timer, sets bool m_isStateLossOfSignal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="204" column="33" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="204" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</referencedby>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" compoundref="UdpDelaySim_8cpp" startline="328" endline="347">LossOfSignal_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::socket</type>
+        <definition>boost::asio::ip::udp::socket UdpDelaySim::m_udpSocket</definition>
+        <argsstring></argsstring>
+        <name>m_udpSocket</name>
+        <briefdescription>
+<para>UDP server socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="206" column="34" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="206" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</referencedby>
+        <referencedby refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" compoundref="UdpDelaySim_8cpp" startline="264" endline="276">OnSendDelay_TimerExpired</referencedby>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" compoundref="UdpDelaySim_8cpp" startline="160" endline="167">StartUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" compoundref="UdpDelaySim_8cpp" startline="124" endline="147">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ab4f135765d62ed988aaf78e6c5fa79c8" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::ptime</type>
+        <definition>boost::posix_time::ptime UdpDelaySim::m_lastPtime</definition>
+        <argsstring></argsstring>
+        <name>m_lastPtime</name>
+        <briefdescription>
+<para>Time point, used by the stat tracking mechanism to calculate delta time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="209" column="30" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="209" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a09c4a8fbe24ad57acbaca6da61a1240e" prot="private" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t UdpDelaySim::M_MY_BOUND_UDP_PORT</definition>
+        <argsstring></argsstring>
+        <name>M_MY_BOUND_UDP_PORT</name>
+        <briefdescription>
+<para>Our UDP server port, if the port number 0 the server socket is bound to a random ephemeral port. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="212" column="20" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="212" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a7b93b346d3847d46aa7f834fba869daf" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string UdpDelaySim::M_REMOTE_HOSTNAME_TO_FORWARD_PACKETS_TO</definition>
+        <argsstring></argsstring>
+        <name>M_REMOTE_HOSTNAME_TO_FORWARD_PACKETS_TO</name>
+        <briefdescription>
+<para>Forwarding destination host. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="214" column="23" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="214" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a454053fba5e3ef2ed2233e6ddbaca455" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string UdpDelaySim::M_REMOTE_PORT_TO_FORWARD_PACKETS_TO</definition>
+        <argsstring></argsstring>
+        <name>M_REMOTE_PORT_TO_FORWARD_PACKETS_TO</name>
+        <briefdescription>
+<para>Forwarding destination port. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="216" column="23" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="216" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ad44bc8234863ddb44e7e7486589ca109" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int UdpDelaySim::M_NUM_CIRCULAR_BUFFER_VECTORS</definition>
+        <argsstring></argsstring>
+        <name>M_NUM_CIRCULAR_BUFFER_VECTORS</name>
+        <briefdescription>
+<para>Number of transmission buffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="218" column="24" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="218" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1af431350621ec422db6476b19296da55d" compoundref="UdpDelaySim_8cpp" startline="24" endline="75">UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1acd4b89a5e03d2b3a5936c6591906fb61" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int UdpDelaySim::M_MAX_UDP_PACKET_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_UDP_PACKET_SIZE_BYTES</name>
+        <briefdescription>
+<para>Maximum size of a UDP packet in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="220" column="24" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="220" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1af431350621ec422db6476b19296da55d" compoundref="UdpDelaySim_8cpp" startline="24" endline="75">UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a5df1f4f0a7ff65f4f0916a4da4d9873d" prot="private" static="no" mutable="no">
+        <type>const boost::posix_time::time_duration</type>
+        <definition>const boost::posix_time::time_duration UdpDelaySim::M_SEND_DELAY</definition>
+        <argsstring></argsstring>
+        <name>M_SEND_DELAY</name>
+        <briefdescription>
+<para>Forwarding delay duration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="222" column="44" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="222" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a849379192bb104e03ff1f0dd3987c38c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; UdpDelaySim::m_udpReceiveBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBuffer</name>
+        <briefdescription>
+<para>Packet receive buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="224" column="17" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="224" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" compoundref="UdpDelaySim_8cpp" startline="160" endline="167">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1aaff74fd332f5c27d7f538aed4dd36064" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint UdpDelaySim::m_remoteEndpointReceived</definition>
+        <argsstring></argsstring>
+        <name>m_remoteEndpointReceived</name>
+        <briefdescription>
+<para>Packet origin UDP endpoint. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="226" column="36" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="226" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" compoundref="UdpDelaySim_8cpp" startline="160" endline="167">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1aa69d2f25133e512ee9437d25d6974c47" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::udp::endpoint</type>
+        <definition>boost::asio::ip::udp::endpoint UdpDelaySim::m_udpDestinationEndpoint</definition>
+        <argsstring></argsstring>
+        <name>m_udpDestinationEndpoint</name>
+        <briefdescription>
+<para>Forwarding destination UDP endpoint. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="228" column="36" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="228" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" compoundref="UdpDelaySim_8cpp" startline="149" endline="158">OnResolve</referencedby>
+        <referencedby refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" compoundref="UdpDelaySim_8cpp" startline="264" endline="276">OnSendDelay_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable UdpDelaySim::m_circularIndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_circularIndexBuffer</name>
+        <briefdescription>
+<para>Circular index buffer, used to index the circular vector holding packet metadata necessary for transmission. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="230" column="65" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="230" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</referencedby>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+        <referencedby refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;uint8_t&gt; &gt; UdpDelaySim::m_udpReceiveBuffersCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBuffersCbVec</name>
+        <briefdescription>
+<para>Circular vector of receive buffers, each receive buffer holds the entire m_udpReceiveBuffer, NOT just the bytes of the received packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="232" column="17" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="232" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" compoundref="UdpDelaySim_8cpp" startline="264" endline="276">OnSendDelay_TimerExpired</referencedby>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1af431350621ec422db6476b19296da55d" compoundref="UdpDelaySim_8cpp" startline="24" endline="75">UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a2a227721231326abac02149d17cdb1ca" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint64_t &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; UdpDelaySim::m_udpReceiveBytesTransferredCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_udpReceiveBytesTransferredCbVec</name>
+        <briefdescription>
+<para>Circular vector of packet size per receive buffer, the actual size of the received packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="234" column="17" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="234" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" compoundref="UdpDelaySim_8cpp" startline="264" endline="276">OnSendDelay_TimerExpired</referencedby>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a69e610a6d1ab3e6c6650fb94ea1dc764" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; boost::posix_time::ptime &gt;</type>
+        <definition>std::vector&lt;boost::posix_time::ptime&gt; UdpDelaySim::m_expiriesCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_expiriesCbVec</name>
+        <briefdescription>
+<para>Circular vector of expiry time point per packet, the absolute time when the packet receives clearance for transmission. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="236" column="17" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="236" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ac2f780c4c616e9e6c38d4e15ff2af620" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; UdpDelaySim::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+<para>Thread that invokes m_ioService.run() </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="238" column="21" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="238" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+        <referencedby refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" compoundref="UdpDelaySim_8cpp" startline="124" endline="147">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1aca9484cc62e03e79542f285f9a6a2e9f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UdpDelaySim::m_printedCbTooSmallNotice</definition>
+        <argsstring></argsstring>
+        <name>m_printedCbTooSmallNotice</name>
+        <briefdescription>
+<para>Logger flag, set to False to log a notice on the SINGLE next increment of m_countCircularBufferOverruns. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="240" column="10" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="240" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a43bbe08ad3c544411ce78f0237bc9021" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UdpDelaySim::m_sendDelayTimerIsRunning</definition>
+        <argsstring></argsstring>
+        <name>m_sendDelayTimerIsRunning</name>
+        <briefdescription>
+<para>Whether m_udpPacketSendDelayTimer is currently active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="242" column="10" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="242" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</referencedby>
+        <referencedby refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1adfb6a00eedb352f0a86e8b264b855d76" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UdpDelaySim::m_isStateLossOfSignal</definition>
+        <argsstring></argsstring>
+        <name>m_isStateLossOfSignal</name>
+        <briefdescription>
+<para>Whether currently simulating LOS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="244" column="10" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="244" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" compoundref="UdpDelaySim_8cpp" startline="328" endline="347">LossOfSignal_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ac829132afa4b0e23227ff3b60b022ee3" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; UdpDelaySim::m_setUdpDropSimulatorFunctionInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_setUdpDropSimulatorFunctionInProgress</name>
+        <briefdescription>
+<para>Packet drop simulation state update flag, whether a state update operation is currently active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="246" column="17" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="246" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" compoundref="UdpDelaySim_8cpp" startline="357" endline="363">SetUdpDropSimulatorFunction</referencedby>
+        <referencedby refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" compoundref="UdpDelaySim_8cpp" startline="349" endline="356">SetUdpDropSimulatorFunction_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a69b02e1ac4b220b2b3e2706af6b7c19e" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t UdpDelaySim::m_lossOfSignalStartMs</definition>
+        <argsstring></argsstring>
+        <name>m_lossOfSignalStartMs</name>
+        <briefdescription>
+<para>Start of LOS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="248" column="20" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="248" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a901f48e6fc034fec88bf173dc5192466" prot="private" static="no" mutable="no">
+        <type>const boost::posix_time::time_duration</type>
+        <definition>const boost::posix_time::time_duration UdpDelaySim::m_lossOfSignalDuration</definition>
+        <argsstring></argsstring>
+        <name>m_lossOfSignalDuration</name>
+        <briefdescription>
+<para>Duration of LOS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="250" column="44" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="250" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" compoundref="UdpDelaySim_8cpp" startline="328" endline="347">LossOfSignal_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ab2a27ae5dc4d122f0586739cd186564a" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int UdpDelaySim::m_countLossOfSignalTimerStarts</definition>
+        <argsstring></argsstring>
+        <name>m_countLossOfSignalTimerStarts</name>
+        <briefdescription>
+<para>count of LOS timer starts (for making sure LOS only occurs once) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="252" column="18" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="252" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ace6a5807668d49c5657c508ca6aa3bcd" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable UdpDelaySim::m_cvSetUdpDropSimulatorFunction</definition>
+        <argsstring></argsstring>
+        <name>m_cvSetUdpDropSimulatorFunction</name>
+        <briefdescription>
+<para>Packet drop simulation state update condition variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="254" column="31" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="254" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" compoundref="UdpDelaySim_8cpp" startline="357" endline="363">SetUdpDropSimulatorFunction</referencedby>
+        <referencedby refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" compoundref="UdpDelaySim_8cpp" startline="349" endline="356">SetUdpDropSimulatorFunction_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1af6d04b84d48792c1be5a10c911e9b593" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex UdpDelaySim::m_mutexSetUdpDropSimulatorFunction</definition>
+        <argsstring></argsstring>
+        <name>m_mutexSetUdpDropSimulatorFunction</name>
+        <briefdescription>
+<para>Packet drop simulation state update mutex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="256" column="18" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="256" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" compoundref="UdpDelaySim_8cpp" startline="357" endline="363">SetUdpDropSimulatorFunction</referencedby>
+        <referencedby refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" compoundref="UdpDelaySim_8cpp" startline="349" endline="356">SetUdpDropSimulatorFunction_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a6207987e379920ac591a9fb2d0cdda13" prot="private" static="no" mutable="no">
+        <type><ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref></type>
+        <definition>UdpDropSimulatorFunction_t UdpDelaySim::m_udpDropSimulatorFunction</definition>
+        <argsstring></argsstring>
+        <name>m_udpDropSimulatorFunction</name>
+        <briefdescription>
+<para>Packet drop simulation function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="258" column="32" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="258" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" compoundref="UdpDelaySim_8cpp" startline="357" endline="363">SetUdpDropSimulatorFunction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a00fcfa848bb918ca3124a2140aa3e751" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_lastTotalUdpPacketsReceived</definition>
+        <argsstring></argsstring>
+        <name>m_lastTotalUdpPacketsReceived</name>
+        <briefdescription>
+<para>The value of m_countTotalUdpPacketsReceived frozen for next stat tracking window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="262" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="262" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a2256e11f0aa16654557f5eccfd983498" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_lastTotalUdpBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_lastTotalUdpBytesReceived</name>
+        <briefdescription>
+<para>The value of m_countTotalUdpBytesReceived frozen for next stat tracking window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="264" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="264" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1af2be6121827b9d9777e237a6388a15ec" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_lastTotalUdpPacketsSent</definition>
+        <argsstring></argsstring>
+        <name>m_lastTotalUdpPacketsSent</name>
+        <briefdescription>
+<para>The value of m_countTotalUdpPacketsSent frozen for next stat tracking window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="266" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="266" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1ad718b3a2849448ae27dfc279f3b48b0a" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_lastTotalUdpBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_lastTotalUdpBytesSent</name>
+        <briefdescription>
+<para>The value of m_countTotalUdpBytesSent frozen for next stat tracking window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="268" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="268" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUdpDelaySim_1a83264e3e3cc58c4f9f733717ccc62717" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_countCircularBufferOverruns</definition>
+        <argsstring></argsstring>
+        <name>m_countCircularBufferOverruns</name>
+        <briefdescription>
+<para>Total number of requests attempted to queue a packet for transmission while transmission buffers were full. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="271" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="271" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" compoundref="UdpDelaySim_8cpp" startline="115" endline="122">~UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a698ba287d96a7e76d27f463e86d6a117" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_countMaxCircularBufferSize</definition>
+        <argsstring></argsstring>
+        <name>m_countMaxCircularBufferSize</name>
+        <briefdescription>
+<para>Maximum recorded number of packets queued for transmission at a single point in time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="273" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="273" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" compoundref="UdpDelaySim_8cpp" startline="115" endline="122">~UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_countTotalUdpPacketsReceived</definition>
+        <argsstring></argsstring>
+        <name>m_countTotalUdpPacketsReceived</name>
+        <briefdescription>
+<para>Total number of UDP packets received from origin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="275" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="275" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+        <referencedby refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" compoundref="UdpDelaySim_8cpp" startline="115" endline="122">~UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a447a9fa020cd6eec4a6c6ceb449224cc" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_countTotalUdpBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_countTotalUdpBytesReceived</name>
+        <briefdescription>
+<para>Total number of UDP bytes received from origin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="277" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="277" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_countTotalUdpPacketsSent</definition>
+        <argsstring></argsstring>
+        <name>m_countTotalUdpPacketsSent</name>
+        <briefdescription>
+<para>Total number of UDP packets forwarded to destination. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="279" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="279" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+        <referencedby refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" compoundref="UdpDelaySim_8cpp" startline="115" endline="122">~UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpDelaySim_1a7b45916f88b93cdf50696dbfa6ff496e" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t UdpDelaySim::m_countTotalUdpBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_countTotalUdpBytesSent</name>
+        <briefdescription>
+<para>Total number of UDP bytes forwarded to destination. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="281" column="14" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="281" bodyend="-1"/>
+        <referencedby refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</referencedby>
+        <referencedby refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUdpDelaySim_1a8ed38eba750b4451916307d202c85b6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UdpDelaySim::UdpDelaySim</definition>
+        <argsstring>()</argsstring>
+        <name>UdpDelaySim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="39" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::SetUdpDropSimulatorFunction</definition>
+        <argsstring>(const UdpDropSimulatorFunction_t &amp;udpDropSimulatorFunction)</argsstring>
+        <name>SetUdpDropSimulatorFunction</name>
+        <param>
+          <type>const <ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref> &amp;</type>
+          <declname>udpDropSimulatorFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the udpDropSimulator function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>udpDropSimulatorFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="121" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="357" bodyend="363"/>
+        <references refid="classUdpDelaySim_1ace6a5807668d49c5657c508ca6aa3bcd" compoundref="UdpDelaySim_8h" startline="254">m_cvSetUdpDropSimulatorFunction</references>
+        <references refid="classUdpDelaySim_1af6d04b84d48792c1be5a10c911e9b593" compoundref="UdpDelaySim_8h" startline="256">m_mutexSetUdpDropSimulatorFunction</references>
+        <references refid="classUdpDelaySim_1ac829132afa4b0e23227ff3b60b022ee3" compoundref="UdpDelaySim_8h" startline="246">m_setUdpDropSimulatorFunctionInProgress</references>
+        <references refid="classUdpDelaySim_1a6207987e379920ac591a9fb2d0cdda13" compoundref="UdpDelaySim_8h" startline="258">m_udpDropSimulatorFunction</references>
+        <referencedby refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" compoundref="UdpDelaySim_8cpp" startline="349" endline="356">SetUdpDropSimulatorFunction_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::OnResolve</definition>
+        <argsstring>(const boost::system::error_code &amp;ec, boost::asio::ip::udp::resolver::results_type results)</argsstring>
+        <name>OnResolve</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>boost::asio::ip::udp::resolver::results_type</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cache resolved forwarding destination UDP endpoint and start the receive loop for the packet origin.</para>
+<para>If an error occurred during the resolve operation, returns immediately letting m_ioService run out of work and leaving the server in an idle state, to retry a server restart would be necessary, achieved by a call to <ref refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" kindref="member">UdpDelaySim::Stop()</ref> followed by a successful call to <ref refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" kindref="member">UdpDelaySim::StartIfNotAlreadyRunning()</ref>. Else, calls <ref refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" kindref="member">UdpDelaySim::StartUdpReceive()</ref> to start the receive loop. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resolved UDP endpoint. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="131" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="149" bodyend="158"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpDelaySim_1aa69d2f25133e512ee9437d25d6974c47" compoundref="UdpDelaySim_8h" startline="228">m_udpDestinationEndpoint</references>
+        <references refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" compoundref="UdpDelaySim_8cpp" startline="160" endline="167">StartUdpReceive</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::StartUdpReceive</definition>
+        <argsstring>()</argsstring>
+        <name>StartUdpReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the receive loop for the packet origin.</para>
+<para>Initiates an asynchronous receive operation with <ref refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" kindref="member">UdpDelaySim::HandleUdpReceive()</ref> as a completion handler. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="137" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="160" bodyend="167"/>
+        <references refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</references>
+        <references refid="classUdpDelaySim_1aaff74fd332f5c27d7f538aed4dd36064" compoundref="UdpDelaySim_8h" startline="226">m_remoteEndpointReceived</references>
+        <references refid="classUdpDelaySim_1a849379192bb104e03ff1f0dd3987c38c" compoundref="UdpDelaySim_8h" startline="224">m_udpReceiveBuffer</references>
+        <references refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" compoundref="UdpDelaySim_8h" startline="206">m_udpSocket</references>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" compoundref="UdpDelaySim_8cpp" startline="149" endline="158">OnResolve</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::HandleUdpReceive</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>HandleUdpReceive</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle a UDP receive operation.</para>
+<para>If a fatal error occurred during the receive operation, calls <ref refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" kindref="member">UdpDelaySim::DoUdpShutdown()</ref>. If a packet is not to be dropped by the drop simulation utility (if/when active), queues packet for delayed transmission. On successful processing, initiates an asynchronous receive operation with itself as a completion handler to achieve a receive loop. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytesTransferred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes received. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="147" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="170" bodyend="196"/>
+        <references refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" compoundref="UdpDelaySim_8cpp" startline="328" endline="347">LossOfSignal_TimerExpired</references>
+        <references refid="classUdpDelaySim_1ab2a27ae5dc4d122f0586739cd186564a" compoundref="UdpDelaySim_8h" startline="252">m_countLossOfSignalTimerStarts</references>
+        <references refid="classUdpDelaySim_1adfb6a00eedb352f0a86e8b264b855d76" compoundref="UdpDelaySim_8h" startline="244">m_isStateLossOfSignal</references>
+        <references refid="classUdpDelaySim_1a69b02e1ac4b220b2b3e2706af6b7c19e" compoundref="UdpDelaySim_8h" startline="248">m_lossOfSignalStartMs</references>
+        <references refid="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" compoundref="UdpDelaySim_8h" startline="204">m_timerLossOfSignal</references>
+        <references refid="classUdpDelaySim_1a6207987e379920ac591a9fb2d0cdda13" compoundref="UdpDelaySim_8h" startline="258">m_udpDropSimulatorFunction</references>
+        <references refid="classUdpDelaySim_1a849379192bb104e03ff1f0dd3987c38c" compoundref="UdpDelaySim_8h" startline="224">m_udpReceiveBuffer</references>
+        <references refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</references>
+        <references refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" compoundref="UdpDelaySim_8cpp" startline="160" endline="167">StartUdpReceive</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" compoundref="UdpDelaySim_8cpp" startline="160" endline="167">StartUdpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::HandleUdpSend</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred)</argsstring>
+        <name>HandleUdpSend</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle a UDP send operation.</para>
+<para>If an error occurred during the send operation, calls <ref refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" kindref="member">UdpDelaySim::DoUdpShutdown()</ref>. Else, calls <ref refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" kindref="member">UdpDelaySim::TryRestartSendDelayTimer()</ref> to queue the next packet for transmission. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytes_transferred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes sent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="156" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="278" bodyend="290"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" compoundref="UdpDelaySim_8h" startline="230">m_circularIndexBuffer</references>
+        <references refid="classUdpDelaySim_1a7b45916f88b93cdf50696dbfa6ff496e" compoundref="UdpDelaySim_8h" startline="281">m_countTotalUdpBytesSent</references>
+        <references refid="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" compoundref="UdpDelaySim_8h" startline="279">m_countTotalUdpPacketsSent</references>
+        <references refid="classUdpDelaySim_1a43bbe08ad3c544411ce78f0237bc9021" compoundref="UdpDelaySim_8h" startline="242">m_sendDelayTimerIsRunning</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <references refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</references>
+        <referencedby refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" compoundref="UdpDelaySim_8cpp" startline="264" endline="276">OnSendDelay_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::TryRestartSendDelayTimer</definition>
+        <argsstring>()</argsstring>
+        <name>TryRestartSendDelayTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the delay timer for the next packet in the transmission queue.</para>
+<para>If the timer is already running or there are no packets available in the transmission queue, returns immediately. Else, starts the transmission delay timer asynchronously for the next packet in the transmission queue with <ref refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" kindref="member">OnSendDelay_TimerExpired()</ref> as a completion handler. The timer runs for the remaining delay duration (if any left) from the time the packet was enqueued for transmission. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="164" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="253" bodyend="262"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" compoundref="UdpDelaySim_8h" startline="230">m_circularIndexBuffer</references>
+        <references refid="classUdpDelaySim_1a69e610a6d1ab3e6c6650fb94ea1dc764" compoundref="UdpDelaySim_8h" startline="236">m_expiriesCbVec</references>
+        <references refid="classUdpDelaySim_1a43bbe08ad3c544411ce78f0237bc9021" compoundref="UdpDelaySim_8h" startline="242">m_sendDelayTimerIsRunning</references>
+        <references refid="classUdpDelaySim_1ad20c5abf95e506edb05965259b6dab0e" compoundref="UdpDelaySim_8h" startline="200">m_udpPacketSendDelayTimer</references>
+        <references refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" compoundref="UdpDelaySim_8cpp" startline="264" endline="276">OnSendDelay_TimerExpired</references>
+        <referencedby refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</referencedby>
+        <referencedby refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" compoundref="UdpDelaySim_8cpp" startline="199" endline="219">QueuePacketForDelayedSend_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::OnSendDelay_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e, const unsigned int consumeIndex)</argsstring>
+        <name>OnSendDelay_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>consumeIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle transmission delay timer expiry.</para>
+<para>If the expiry occurred due to the timer being manually cancelled, returns immediately. Else, initiates an asynchronous send operation to forward the packet associated with consumeIndex to the forwarding destination, with <ref refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" kindref="member">UdpDelaySim::HandleUdpSend()</ref> as a completion handler. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>consumeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the associated packet. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="174" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="264" bodyend="276"/>
+        <references refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</references>
+        <references refid="classUdpDelaySim_1aa69d2f25133e512ee9437d25d6974c47" compoundref="UdpDelaySim_8h" startline="228">m_udpDestinationEndpoint</references>
+        <references refid="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" compoundref="UdpDelaySim_8h" startline="232">m_udpReceiveBuffersCbVec</references>
+        <references refid="classUdpDelaySim_1a2a227721231326abac02149d17cdb1ca" compoundref="UdpDelaySim_8h" startline="234">m_udpReceiveBytesTransferredCbVec</references>
+        <references refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" compoundref="UdpDelaySim_8h" startline="206">m_udpSocket</references>
+        <referencedby refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::TransferRate_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>TransferRate_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle stat tracking timer expiry.</para>
+<para>If the expiry occurred due to the timer being manually cancelled, returns immediately. Else, updates tracked stats and starts the stat tracking timer asynchronously with itself as a completion handler to achieve a stat tracking loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="181" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="292" bodyend="326"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" compoundref="UdpDelaySim_8h" startline="230">m_circularIndexBuffer</references>
+        <references refid="classUdpDelaySim_1a447a9fa020cd6eec4a6c6ceb449224cc" compoundref="UdpDelaySim_8h" startline="277">m_countTotalUdpBytesReceived</references>
+        <references refid="classUdpDelaySim_1a7b45916f88b93cdf50696dbfa6ff496e" compoundref="UdpDelaySim_8h" startline="281">m_countTotalUdpBytesSent</references>
+        <references refid="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" compoundref="UdpDelaySim_8h" startline="275">m_countTotalUdpPacketsReceived</references>
+        <references refid="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" compoundref="UdpDelaySim_8h" startline="279">m_countTotalUdpPacketsSent</references>
+        <references refid="classUdpDelaySim_1ab4f135765d62ed988aaf78e6c5fa79c8" compoundref="UdpDelaySim_8h" startline="209">m_lastPtime</references>
+        <references refid="classUdpDelaySim_1a2256e11f0aa16654557f5eccfd983498" compoundref="UdpDelaySim_8h" startline="264">m_lastTotalUdpBytesReceived</references>
+        <references refid="classUdpDelaySim_1ad718b3a2849448ae27dfc279f3b48b0a" compoundref="UdpDelaySim_8h" startline="268">m_lastTotalUdpBytesSent</references>
+        <references refid="classUdpDelaySim_1a00fcfa848bb918ca3124a2140aa3e751" compoundref="UdpDelaySim_8h" startline="262">m_lastTotalUdpPacketsReceived</references>
+        <references refid="classUdpDelaySim_1af2be6121827b9d9777e237a6388a15ec" compoundref="UdpDelaySim_8h" startline="266">m_lastTotalUdpPacketsSent</references>
+        <references refid="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" compoundref="UdpDelaySim_8h" startline="202">m_timerTransferRateStats</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a3246598730dc306b46045e9fa0a7ae84" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="96" endline="103">CircularIndexBufferSingleProducerSingleConsumerConfigurable::NumInBuffer</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_NO_EXPORT void</type>
+        <definition>void UdpDelaySim::LossOfSignal_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e, bool isStartOfLos)</argsstring>
+        <name>LossOfSignal_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isStartOfLos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle LOS simulation.</para>
+<para>If the expiry occurred due to the timer being manually cancelled, returns immediately. Else, updates boolean m_isStateLossOfSignal to determine if packets are being dropped to simulate an LOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="188" column="38" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="328" bodyend="347"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpDelaySim_1adfb6a00eedb352f0a86e8b264b855d76" compoundref="UdpDelaySim_8h" startline="244">m_isStateLossOfSignal</references>
+        <references refid="classUdpDelaySim_1a901f48e6fc034fec88bf173dc5192466" compoundref="UdpDelaySim_8h" startline="250">m_lossOfSignalDuration</references>
+        <references refid="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" compoundref="UdpDelaySim_8h" startline="204">m_timerLossOfSignal</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUdpDelaySim_1af431350621ec422db6476b19296da55d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT</type>
+        <definition>UdpDelaySim::UdpDelaySim</definition>
+        <argsstring>(uint16_t myBoundUdpPort, const std::string &amp;remoteHostnameToForwardPacketsTo, const std::string &amp;remotePortToForwardPacketsTo, const unsigned int numCircularBufferVectors, const unsigned int maxUdpPacketSizeBytes, const boost::posix_time::time_duration &amp;sendDelay, uint64_t lossOfSignalStartMs, uint64_t lossOfSignalDurationMs, const bool autoStart)</argsstring>
+        <name>UdpDelaySim</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>myBoundUdpPort</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>remoteHostnameToForwardPacketsTo</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>remotePortToForwardPacketsTo</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>numCircularBufferVectors</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>maxUdpPacketSizeBytes</declname>
+        </param>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>sendDelay</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>lossOfSignalStartMs</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>lossOfSignalDurationMs</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>autoStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bind I/O components to m_ioService. Preallocate transmission buffers. If autoStart is set to True, call <ref refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" kindref="member">UdpDelaySim::StartIfNotAlreadyRunning()</ref> to start the server. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>myBoundUdpPort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The port to bind the UDP server on. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remoteHostnameToForwardPacketsTo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forwarding destination host. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remotePortToForwardPacketsTo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forwarding destination port. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numCircularBufferVectors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the transmission buffers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxUdpPacketSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum size of a UDP packet in bytes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sendDelay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delay duration for packet forwarding. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>autoStart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the server should start automatically on construction. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="59" column="30" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="24" bodyend="75"/>
+        <references refid="classUdpDelaySim_1acd4b89a5e03d2b3a5936c6591906fb61" compoundref="UdpDelaySim_8h" startline="220">M_MAX_UDP_PACKET_SIZE_BYTES</references>
+        <references refid="classUdpDelaySim_1ad44bc8234863ddb44e7e7486589ca109" compoundref="UdpDelaySim_8h" startline="218">M_NUM_CIRCULAR_BUFFER_VECTORS</references>
+        <references refid="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" compoundref="UdpDelaySim_8h" startline="232">m_udpReceiveBuffersCbVec</references>
+        <references refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" compoundref="UdpDelaySim_8cpp" startline="77" endline="113">StartIfNotAlreadyRunning</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT</type>
+        <definition>UdpDelaySim::~UdpDelaySim</definition>
+        <argsstring>()</argsstring>
+        <name>~UdpDelaySim</name>
+        <briefdescription>
+<para>Call <ref refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" kindref="member">UdpDelaySim::Stop()</ref> to release managed resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="70" column="30" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="115" bodyend="122"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpDelaySim_1a83264e3e3cc58c4f9f733717ccc62717" compoundref="UdpDelaySim_8h" startline="271">m_countCircularBufferOverruns</references>
+        <references refid="classUdpDelaySim_1a698ba287d96a7e76d27f463e86d6a117" compoundref="UdpDelaySim_8h" startline="273">m_countMaxCircularBufferSize</references>
+        <references refid="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" compoundref="UdpDelaySim_8h" startline="275">m_countTotalUdpPacketsReceived</references>
+        <references refid="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" compoundref="UdpDelaySim_8h" startline="279">m_countTotalUdpPacketsSent</references>
+        <references refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" compoundref="UdpDelaySim_8cpp" startline="124" endline="147">Stop</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT void</type>
+        <definition>void UdpDelaySim::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform server shutdown.</para>
+<para>Calls <ref refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" kindref="member">UdpDelaySim::DoUdpShutdown()</ref> to release UDP resources, then releases all underlying I/O resources. <simplesect kind="post"><para>The object is ready to be reused after the next successful call to <ref refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" kindref="member">UdpDelaySim::StartIfNotAlreadyRunning()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="77" column="35" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="124" bodyend="147"/>
+        <references refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" compoundref="UdpDelaySim_8cpp" startline="221" endline="251">DoUdpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpDelaySim_1ac2f780c4c616e9e6c38d4e15ff2af620" compoundref="UdpDelaySim_8h" startline="238">m_ioServiceThreadPtr</references>
+        <references refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" compoundref="UdpDelaySim_8h" startline="206">m_udpSocket</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" compoundref="UdpDelaySim_8cpp" startline="115" endline="122">~UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT bool</type>
+        <definition>bool UdpDelaySim::StartIfNotAlreadyRunning</definition>
+        <argsstring>()</argsstring>
+        <name>StartIfNotAlreadyRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the UDP server and initiate resolving of the forwarding destination endpoint.</para>
+<para>If the server is already running, returns immediately. Starts the stat tracking interval loop, then starts the server. Initiates an asynchronous resolve operation to resolve the forwarding destination endpoint with <ref refid="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" kindref="member">UdpDelaySim::OnResolve()</ref> as a completion handler. <simplesect kind="return"><para>True if the server could be started successfully or is already running, or False otherwise. </para>
+</simplesect>
+<simplesect kind="post"><para>If the server was not already running, the server will NOT be listening for packets yet. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="87" column="35" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="77" bodyend="113"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classUdpDelaySim_1a3e635efa918f8673cb293a73016b46b4" compoundref="UdpDelaySim_8h" startline="196">m_ioService</references>
+        <references refid="classUdpDelaySim_1ac2f780c4c616e9e6c38d4e15ff2af620" compoundref="UdpDelaySim_8h" startline="238">m_ioServiceThreadPtr</references>
+        <references refid="classUdpDelaySim_1ab4f135765d62ed988aaf78e6c5fa79c8" compoundref="UdpDelaySim_8h" startline="209">m_lastPtime</references>
+        <references refid="classUdpDelaySim_1a09c4a8fbe24ad57acbaca6da61a1240e" compoundref="UdpDelaySim_8h" startline="212">M_MY_BOUND_UDP_PORT</references>
+        <references refid="classUdpDelaySim_1a7b93b346d3847d46aa7f834fba869daf" compoundref="UdpDelaySim_8h" startline="214">M_REMOTE_HOSTNAME_TO_FORWARD_PACKETS_TO</references>
+        <references refid="classUdpDelaySim_1a454053fba5e3ef2ed2233e6ddbaca455" compoundref="UdpDelaySim_8h" startline="216">M_REMOTE_PORT_TO_FORWARD_PACKETS_TO</references>
+        <references refid="classUdpDelaySim_1a4adc4e02f80e18ec6df35923763f268e" compoundref="UdpDelaySim_8h" startline="198">m_resolver</references>
+        <references refid="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" compoundref="UdpDelaySim_8h" startline="202">m_timerTransferRateStats</references>
+        <references refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" compoundref="UdpDelaySim_8h" startline="206">m_udpSocket</references>
+        <references refid="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" compoundref="UdpDelaySim_8cpp" startline="149" endline="158">OnResolve</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <references refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" compoundref="UdpDelaySim_8cpp" startline="292" endline="326">TransferRate_TimerExpired</references>
+        <referencedby refid="classUdpDelaySim_1af431350621ec422db6476b19296da55d" compoundref="UdpDelaySim_8cpp" startline="24" endline="75">UdpDelaySim</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT void</type>
+        <definition>void UdpDelaySim::DoUdpShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>DoUdpShutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop timers and close listening socket.</para>
+<para>Stops transmission and stat tracking timers, then closes the listening socket. <simplesect kind="post"><para>The UDP resources are ready to be reused, but the server will remain in the running state until the next call to <ref refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" kindref="member">UdpDelaySim::Stop()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="94" column="35" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="221" bodyend="251"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" compoundref="UdpDelaySim_8h" startline="204">m_timerLossOfSignal</references>
+        <references refid="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" compoundref="UdpDelaySim_8h" startline="202">m_timerTransferRateStats</references>
+        <references refid="classUdpDelaySim_1ad20c5abf95e506edb05965259b6dab0e" compoundref="UdpDelaySim_8h" startline="200">m_udpPacketSendDelayTimer</references>
+        <references refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" compoundref="UdpDelaySim_8h" startline="206">m_udpSocket</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+        <referencedby refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" compoundref="UdpDelaySim_8cpp" startline="278" endline="290">HandleUdpSend</referencedby>
+        <referencedby refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" compoundref="UdpDelaySim_8cpp" startline="124" endline="147">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT void</type>
+        <definition>void UdpDelaySim::SetUdpDropSimulatorFunction_ThreadSafe</definition>
+        <argsstring>(const UdpDropSimulatorFunction_t &amp;udpDropSimulatorFunction)</argsstring>
+        <name>SetUdpDropSimulatorFunction_ThreadSafe</name>
+        <param>
+          <type>const <ref refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" kindref="member">UdpDropSimulatorFunction_t</ref> &amp;</type>
+          <declname>udpDropSimulatorFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a request to set the udpDropSimulator function (thread-safe).</para>
+<para>Initiates an asynchronous request to <ref refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" kindref="member">UdpDelaySim::SetUdpDropSimulatorFunction()</ref>. The calling thread blocks until the request is resolved. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>udpDropSimulatorFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="102" column="35" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="349" bodyend="356"/>
+        <references refid="classUdpDelaySim_1ace6a5807668d49c5657c508ca6aa3bcd" compoundref="UdpDelaySim_8h" startline="254">m_cvSetUdpDropSimulatorFunction</references>
+        <references refid="classUdpDelaySim_1a3e635efa918f8673cb293a73016b46b4" compoundref="UdpDelaySim_8h" startline="196">m_ioService</references>
+        <references refid="classUdpDelaySim_1af6d04b84d48792c1be5a10c911e9b593" compoundref="UdpDelaySim_8h" startline="256">m_mutexSetUdpDropSimulatorFunction</references>
+        <references refid="classUdpDelaySim_1ac829132afa4b0e23227ff3b60b022ee3" compoundref="UdpDelaySim_8h" startline="246">m_setUdpDropSimulatorFunctionInProgress</references>
+        <references refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" compoundref="UdpDelaySim_8cpp" startline="357" endline="363">SetUdpDropSimulatorFunction</references>
+        <referencedby refid="structTest_1a1d6912e397688b01659577a5238b72b0" compoundref="TestLtpUdpEngine_8cpp" startline="1041" endline="1100">Test::DoTestDropEOBAlwaysCheckpointDataSegmentSrcToDest</referencedby>
+        <referencedby refid="structTest_1a5b3f83d4b8d9a092280d709752410010" compoundref="TestLtpUdpEngine_8cpp" startline="820" endline="893">Test::DoTestDropEOBCheckpointDataSegmentSrcToDest</referencedby>
+        <referencedby refid="structTest_1a8f1b07abcfea16b038ec46715fe9cd1b" compoundref="TestLtpUdpEngine_8cpp" startline="1415" endline="1482">Test::DoTestDropGreenEobSrcToDest</referencedby>
+        <referencedby refid="structTest_1ac30b03e859f4e6ff867ba41ae9eb27d0" compoundref="TestLtpUdpEngine_8cpp" startline="1342" endline="1412">Test::DoTestDropOddDataSegmentWithRsMtu</referencedby>
+        <referencedby refid="structTest_1a580a4ccdb4c6159c317343ce26f3a590" compoundref="TestLtpUdpEngine_8cpp" startline="736" endline="818">Test::DoTestDropOneCheckpointDataSegmentSrcToDest</referencedby>
+        <referencedby refid="structTest_1ac6a060368a10c7f1d3e96c4b42facbb4" compoundref="TestLtpUdpEngine_8cpp" startline="1103" endline="1162">Test::DoTestDropRaAlwaysSrcToDest</referencedby>
+        <referencedby refid="structTest_1af6d7856c9ea2fea5d66fd9d42891f8e1" compoundref="TestLtpUdpEngine_8cpp" startline="895" endline="964">Test::DoTestDropRaSrcToDest</referencedby>
+        <referencedby refid="structTest_1aedbc1685d2ad51dc1b877963f5bb690c" compoundref="TestLtpUdpEngine_8cpp" startline="507" endline="575">Test::DoTestOneDropDataSegmentSrcToDest</referencedby>
+        <referencedby refid="structTest_1aa9c9b541d8e1a08ad33fd6eee14123dc" compoundref="TestLtpUdpEngine_8cpp" startline="1165" endline="1226">Test::DoTestReceiverCancelSession</referencedby>
+        <referencedby refid="structTest_1ab027795c4a6ce413457ec84a195e3b0d" compoundref="TestLtpUdpEngine_8cpp" startline="1484" endline="1678">Test::DoTestReverseStartToCpSrcToDest</referencedby>
+        <referencedby refid="structTest_1a2db2ef65fd25a5bc30b7ab5b501e8786" compoundref="TestLtpUdpEngine_8cpp" startline="1280" endline="1340">Test::DoTestSenderCancelSession</referencedby>
+        <referencedby refid="structTest_1a7eabe73e42c51208dfba50b6e2da3afa" compoundref="TestLtpUdpEngine_8cpp" startline="579" endline="648">Test::DoTestTwoDropDataSegmentSrcToDest</referencedby>
+        <referencedby refid="structTest_1af9972dce25f0b8079c2e3edb7ff14c65" compoundref="TestLtpUdpEngine_8cpp" startline="650" endline="732">Test::DoTestTwoDropDataSegmentSrcToDestRegularCheckpoints</referencedby>
+        <referencedby refid="structTest_1a7aa845bd3d19a496483f945d303b594d" compoundref="TestLtpUdpEngine_8cpp" startline="299" endline="326">Test::Reset</referencedby>
+        <referencedby refid="classUdpDelaySimRunner_1ac6e5c839ddb47af9a15b7c5d19b7d7e0" compoundref="UdpDelaySimRunner_8cpp" startline="48" endline="149">UdpDelaySimRunner::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>UDP_DELAY_SIM_LIB_EXPORT void</type>
+        <definition>void UdpDelaySim::QueuePacketForDelayedSend_NotThreadSafe</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;udpPacketToSwapIn, std::size_t bytesTransferred)</argsstring>
+        <name>QueuePacketForDelayedSend_NotThreadSafe</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>udpPacketToSwapIn</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Queue packet for delayed transmission.</para>
+<para>Timestamps the packet for transmission clearance using the configured transmission delay duration, then places the packet in the transmission queue. udpPacketToSwapIn holds the entire receive buffer with a size of M_MAX_UDP_PACKET_SIZE_BYTES, only the first bytesTransferred bytes belong in the current packet and are therefore safe to read, any bytes that follow may contain partial data from previously processed packets and should be treated as garbage values. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>udpPacketToSwapIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packet to transmit. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytesTransferred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the packet. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The argument to udpPacketToSwapIn is swapped with a potentially dirty buffer of an already-processed packet and is ready to be reused as the receive buffer for the next read operation (see above how to handle dirty buffers). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="115" column="35" bodyfile="module/udp_delay_sim/src/UdpDelaySim.cpp" bodystart="199" bodyend="219"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" compoundref="UdpDelaySim_8h" startline="230">m_circularIndexBuffer</references>
+        <references refid="classUdpDelaySim_1a83264e3e3cc58c4f9f733717ccc62717" compoundref="UdpDelaySim_8h" startline="271">m_countCircularBufferOverruns</references>
+        <references refid="classUdpDelaySim_1a698ba287d96a7e76d27f463e86d6a117" compoundref="UdpDelaySim_8h" startline="273">m_countMaxCircularBufferSize</references>
+        <references refid="classUdpDelaySim_1a447a9fa020cd6eec4a6c6ceb449224cc" compoundref="UdpDelaySim_8h" startline="277">m_countTotalUdpBytesReceived</references>
+        <references refid="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" compoundref="UdpDelaySim_8h" startline="275">m_countTotalUdpPacketsReceived</references>
+        <references refid="classUdpDelaySim_1a69e610a6d1ab3e6c6650fb94ea1dc764" compoundref="UdpDelaySim_8h" startline="236">m_expiriesCbVec</references>
+        <references refid="classUdpDelaySim_1aca9484cc62e03e79542f285f9a6a2e9f" compoundref="UdpDelaySim_8h" startline="240">m_printedCbTooSmallNotice</references>
+        <references refid="classUdpDelaySim_1a5df1f4f0a7ff65f4f0916a4da4d9873d" compoundref="UdpDelaySim_8h" startline="222">M_SEND_DELAY</references>
+        <references refid="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" compoundref="UdpDelaySim_8h" startline="232">m_udpReceiveBuffersCbVec</references>
+        <references refid="classUdpDelaySim_1a2a227721231326abac02149d17cdb1ca" compoundref="UdpDelaySim_8h" startline="234">m_udpReceiveBytesTransferredCbVec</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a3246598730dc306b46045e9fa0a7ae84" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="96" endline="103">CircularIndexBufferSingleProducerSingleConsumerConfigurable::NumInBuffer</references>
+        <references refid="UdpDelaySim_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpDelaySim_8cpp" startline="22">subprocess</references>
+        <references refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" compoundref="UdpDelaySim_8cpp" startline="253" endline="262">TryRestartSendDelayTimer</references>
+        <referencedby refid="structTest_1ab027795c4a6ce413457ec84a195e3b0d" compoundref="TestLtpUdpEngine_8cpp" startline="1484" endline="1678">Test::DoTestReverseStartToCpSrcToDest</referencedby>
+        <referencedby refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" compoundref="UdpDelaySim_8cpp" startline="170" endline="196">HandleUdpReceive</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>UdpDelaySim</label>
+        <link refid="classUdpDelaySim"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="module/udp_delay_sim/include/UdpDelaySim.h" line="37" column="1" bodyfile="module/udp_delay_sim/include/UdpDelaySim.h" bodystart="37" bodyend="282"/>
+    <listofallmembers>
+      <member refid="classUdpDelaySim_1a71eb1ff57bf01aace49324fd458f770d" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>DoUdpShutdown</name></member>
+      <member refid="classUdpDelaySim_1a1c49ce9487f24a4017ce2127e246928f" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>HandleUdpReceive</name></member>
+      <member refid="classUdpDelaySim_1a6a546f0735fd7990e53177b169782903" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>HandleUdpSend</name></member>
+      <member refid="classUdpDelaySim_1a400b7fbd2dec4302059d9ceb08effcba" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>LossOfSignal_TimerExpired</name></member>
+      <member refid="classUdpDelaySim_1a4b2826c12eaf4a7c014379032537545a" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_circularIndexBuffer</name></member>
+      <member refid="classUdpDelaySim_1a83264e3e3cc58c4f9f733717ccc62717" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countCircularBufferOverruns</name></member>
+      <member refid="classUdpDelaySim_1ab2a27ae5dc4d122f0586739cd186564a" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countLossOfSignalTimerStarts</name></member>
+      <member refid="classUdpDelaySim_1a698ba287d96a7e76d27f463e86d6a117" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countMaxCircularBufferSize</name></member>
+      <member refid="classUdpDelaySim_1a447a9fa020cd6eec4a6c6ceb449224cc" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countTotalUdpBytesReceived</name></member>
+      <member refid="classUdpDelaySim_1a7b45916f88b93cdf50696dbfa6ff496e" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countTotalUdpBytesSent</name></member>
+      <member refid="classUdpDelaySim_1a0a6c09d0f3a08f943a5dfbd5c371bd2d" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countTotalUdpPacketsReceived</name></member>
+      <member refid="classUdpDelaySim_1a509deb227c80a15789b31695614405a7" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_countTotalUdpPacketsSent</name></member>
+      <member refid="classUdpDelaySim_1ace6a5807668d49c5657c508ca6aa3bcd" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_cvSetUdpDropSimulatorFunction</name></member>
+      <member refid="classUdpDelaySim_1a69e610a6d1ab3e6c6650fb94ea1dc764" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_expiriesCbVec</name></member>
+      <member refid="classUdpDelaySim_1a3e635efa918f8673cb293a73016b46b4" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_ioService</name></member>
+      <member refid="classUdpDelaySim_1ac2f780c4c616e9e6c38d4e15ff2af620" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classUdpDelaySim_1adfb6a00eedb352f0a86e8b264b855d76" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_isStateLossOfSignal</name></member>
+      <member refid="classUdpDelaySim_1ab4f135765d62ed988aaf78e6c5fa79c8" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lastPtime</name></member>
+      <member refid="classUdpDelaySim_1a2256e11f0aa16654557f5eccfd983498" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lastTotalUdpBytesReceived</name></member>
+      <member refid="classUdpDelaySim_1ad718b3a2849448ae27dfc279f3b48b0a" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lastTotalUdpBytesSent</name></member>
+      <member refid="classUdpDelaySim_1a00fcfa848bb918ca3124a2140aa3e751" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lastTotalUdpPacketsReceived</name></member>
+      <member refid="classUdpDelaySim_1af2be6121827b9d9777e237a6388a15ec" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lastTotalUdpPacketsSent</name></member>
+      <member refid="classUdpDelaySim_1a901f48e6fc034fec88bf173dc5192466" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lossOfSignalDuration</name></member>
+      <member refid="classUdpDelaySim_1a69b02e1ac4b220b2b3e2706af6b7c19e" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_lossOfSignalStartMs</name></member>
+      <member refid="classUdpDelaySim_1acd4b89a5e03d2b3a5936c6591906fb61" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>M_MAX_UDP_PACKET_SIZE_BYTES</name></member>
+      <member refid="classUdpDelaySim_1af6d04b84d48792c1be5a10c911e9b593" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_mutexSetUdpDropSimulatorFunction</name></member>
+      <member refid="classUdpDelaySim_1a09c4a8fbe24ad57acbaca6da61a1240e" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>M_MY_BOUND_UDP_PORT</name></member>
+      <member refid="classUdpDelaySim_1ad44bc8234863ddb44e7e7486589ca109" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>M_NUM_CIRCULAR_BUFFER_VECTORS</name></member>
+      <member refid="classUdpDelaySim_1aca9484cc62e03e79542f285f9a6a2e9f" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_printedCbTooSmallNotice</name></member>
+      <member refid="classUdpDelaySim_1a7b93b346d3847d46aa7f834fba869daf" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>M_REMOTE_HOSTNAME_TO_FORWARD_PACKETS_TO</name></member>
+      <member refid="classUdpDelaySim_1a454053fba5e3ef2ed2233e6ddbaca455" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>M_REMOTE_PORT_TO_FORWARD_PACKETS_TO</name></member>
+      <member refid="classUdpDelaySim_1aaff74fd332f5c27d7f538aed4dd36064" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_remoteEndpointReceived</name></member>
+      <member refid="classUdpDelaySim_1a4adc4e02f80e18ec6df35923763f268e" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_resolver</name></member>
+      <member refid="classUdpDelaySim_1a5df1f4f0a7ff65f4f0916a4da4d9873d" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>M_SEND_DELAY</name></member>
+      <member refid="classUdpDelaySim_1a43bbe08ad3c544411ce78f0237bc9021" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_sendDelayTimerIsRunning</name></member>
+      <member refid="classUdpDelaySim_1ac829132afa4b0e23227ff3b60b022ee3" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_setUdpDropSimulatorFunctionInProgress</name></member>
+      <member refid="classUdpDelaySim_1acc24ff6a031e97f73995a4c8ca052ccc" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_timerLossOfSignal</name></member>
+      <member refid="classUdpDelaySim_1a955564d42105a9ef0b7f77ff2c63215d" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_timerTransferRateStats</name></member>
+      <member refid="classUdpDelaySim_1aa69d2f25133e512ee9437d25d6974c47" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpDestinationEndpoint</name></member>
+      <member refid="classUdpDelaySim_1a6207987e379920ac591a9fb2d0cdda13" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpDropSimulatorFunction</name></member>
+      <member refid="classUdpDelaySim_1ad20c5abf95e506edb05965259b6dab0e" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpPacketSendDelayTimer</name></member>
+      <member refid="classUdpDelaySim_1a849379192bb104e03ff1f0dd3987c38c" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpReceiveBuffer</name></member>
+      <member refid="classUdpDelaySim_1a1ba6e8b824d37a8c387049d535c4cefe" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpReceiveBuffersCbVec</name></member>
+      <member refid="classUdpDelaySim_1a2a227721231326abac02149d17cdb1ca" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpReceiveBytesTransferredCbVec</name></member>
+      <member refid="classUdpDelaySim_1a06ffe38ed9d20d8c7c9ff7f4c89f08b9" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>m_udpSocket</name></member>
+      <member refid="classUdpDelaySim_1aa18c5cc6506e48cc7b24ddae0cb5b9ad" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>OnResolve</name></member>
+      <member refid="classUdpDelaySim_1a207bbc040babd590dfada44cd8a5d5c1" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>OnSendDelay_TimerExpired</name></member>
+      <member refid="classUdpDelaySim_1a6bed02c05da59ed9421703a06576726c" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>QueuePacketForDelayedSend_NotThreadSafe</name></member>
+      <member refid="classUdpDelaySim_1a27a76cc32eb8a79dcea6412dd4282073" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>SetUdpDropSimulatorFunction</name></member>
+      <member refid="classUdpDelaySim_1a94bf505773987a2b456b30cfa4d64021" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>SetUdpDropSimulatorFunction_ThreadSafe</name></member>
+      <member refid="classUdpDelaySim_1ae9f8c58761dea2dbe1175e355e243f38" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>StartIfNotAlreadyRunning</name></member>
+      <member refid="classUdpDelaySim_1a5ed77e383e1c56dad3823ce7fdf82a9a" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>StartUdpReceive</name></member>
+      <member refid="classUdpDelaySim_1ad14d0b49d5772738b470400c94babe83" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>Stop</name></member>
+      <member refid="classUdpDelaySim_1a11d58adc771853451a9b10746f594189" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>TransferRate_TimerExpired</name></member>
+      <member refid="classUdpDelaySim_1a8b159cd21222f3b7609d78ec0f358430" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>TryRestartSendDelayTimer</name></member>
+      <member refid="classUdpDelaySim_1a8ed38eba750b4451916307d202c85b6c" prot="private" virt="non-virtual"><scope>UdpDelaySim</scope><name>UdpDelaySim</name></member>
+      <member refid="classUdpDelaySim_1af431350621ec422db6476b19296da55d" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>UdpDelaySim</name></member>
+      <member refid="classUdpDelaySim_1ac720265d33e0e6eddb911e4c9a0deb8a" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>UdpDropSimulatorFunction_t</name></member>
+      <member refid="classUdpDelaySim_1a9f7c73b2e286e01050885b76385dc25d" prot="public" virt="non-virtual"><scope>UdpDelaySim</scope><name>~UdpDelaySim</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

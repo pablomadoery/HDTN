@@ -1,0 +1,776 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTelemetryRunner_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>TelemetryRunner::Impl</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classTelemetryRunner_1_1Impl_1a911d3c7ce396e198cdf4c9ea1b65efc0" prot="private" static="no">
+        <type>boost::function&lt; bool(std::string &amp;movablePayload, <ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;connectionID)&gt;</type>
+        <definition>typedef boost::function&lt;bool(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)&gt; TelemetryRunner::Impl::ApiCommandFunction_t</definition>
+        <argsstring></argsstring>
+        <name>ApiCommandFunction_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="116" column="7" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classTelemetryRunner_1_1Impl_1a9d69242172f048f0424bf560fbf56853" prot="private" static="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="classTelemetryRunner_1_1Impl_1a911d3c7ce396e198cdf4c9ea1b65efc0" kindref="member">ApiCommandFunction_t</ref> &gt;</type>
+        <definition>typedef std::unordered_map&lt;std::string, ApiCommandFunction_t&gt; TelemetryRunner::Impl::ApiCommandFunctionMap_t</definition>
+        <argsstring></argsstring>
+        <name>ApiCommandFunctionMap_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="118" column="7" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a635b90dbe7188e8c90f3673ced12dfdc" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; TelemetryRunner::Impl::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="96" column="15" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a20158d3cecaabf786861e5e4e0113f20" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; TelemetryRunner::Impl::m_threadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="97" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a9cbef60246ff53037c18a0e7279e8f29" prot="private" static="no" mutable="no">
+        <type><ref refid="classWebsocketServer" kindref="compound">WebsocketServer</ref></type>
+        <definition>WebsocketServer TelemetryRunner::Impl::m_websocketServer</definition>
+        <argsstring></argsstring>
+        <name>m_websocketServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="98" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a792e6c6d213112aa01b292ef4ba5e835" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTelemetryLogger" kindref="compound">TelemetryLogger</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TelemetryLogger&gt; TelemetryRunner::Impl::m_telemetryLoggerPtr</definition>
+        <argsstring></argsstring>
+        <name>m_telemetryLoggerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="99" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a3e0d8c1134e3c389b1c287846d45dfc2" prot="private" static="no" mutable="no">
+        <type><ref refid="classDeadlineTimer" kindref="compound">DeadlineTimer</ref></type>
+        <definition>DeadlineTimer TelemetryRunner::Impl::m_deadlineTimer</definition>
+        <argsstring></argsstring>
+        <name>m_deadlineTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="100" column="17" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a9c095e6bc84db2bf9ecfd8db72736ded" prot="private" static="no" mutable="no">
+        <type><ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref></type>
+        <definition>HdtnConfig TelemetryRunner::Impl::m_hdtnConfig</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="101" column="14" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a3dc42290ef5f805e0cfe6ec1f892368a" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::string &gt;</type>
+        <definition>std::shared_ptr&lt;std::string&gt; TelemetryRunner::Impl::m_hdtnConfigJsonPtr</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnConfigJsonPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="102" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a6f01370d39bc76ceb3f1d3b23b4eff7f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::string &gt;</type>
+        <definition>std::shared_ptr&lt;std::string&gt; TelemetryRunner::Impl::m_hdtnConfigWithVersionJsonPtr</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnConfigWithVersionJsonPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="103" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a4266ed7e3201ccebf6a5adc7b6cb9a18" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex TelemetryRunner::Impl::m_lastSerializedAllOutductCapabilitiesMutex</definition>
+        <argsstring></argsstring>
+        <name>m_lastSerializedAllOutductCapabilitiesMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="105" column="16" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1afd44384b0dd03a5fcac429ace9a253ba" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::string &gt;</type>
+        <definition>std::shared_ptr&lt;std::string&gt; TelemetryRunner::Impl::m_lastJsonSerializedAllOutductCapabilitiesPtr</definition>
+        <argsstring></argsstring>
+        <name>m_lastJsonSerializedAllOutductCapabilitiesPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="106" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a98f9f67560059516d2a1633e06b1a3a6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TelemetryConnection&gt; TelemetryRunner::Impl::m_ingressConnection</definition>
+        <argsstring></argsstring>
+        <name>m_ingressConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="108" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a1adc807cdc47904754d1ed5d26fcdbea" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TelemetryConnection&gt; TelemetryRunner::Impl::m_egressConnection</definition>
+        <argsstring></argsstring>
+        <name>m_egressConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="109" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a730dba56ac1096c7747f5c9dedd882cd" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TelemetryConnection&gt; TelemetryRunner::Impl::m_storageConnection</definition>
+        <argsstring></argsstring>
+        <name>m_storageConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="110" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a0809d1d87ec2757a29b0d1cb944ef54e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TelemetryConnection&gt; TelemetryRunner::Impl::m_routerConnection</definition>
+        <argsstring></argsstring>
+        <name>m_routerConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="111" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a9537edeebf281f9a49e7f89706706c23" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TelemetryConnection&gt; TelemetryRunner::Impl::m_apiConnection</definition>
+        <argsstring></argsstring>
+        <name>m_apiConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="112" column="19" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTelemetryRunner_1_1Impl_1a288a2377824a32615602e4109b170886" prot="private" static="no" mutable="no">
+        <type><ref refid="classTelemetryRunner_1_1Impl_1a9d69242172f048f0424bf560fbf56853" kindref="member">ApiCommandFunctionMap_t</ref></type>
+        <definition>ApiCommandFunctionMap_t TelemetryRunner::Impl::m_apiCmdMap</definition>
+        <argsstring></argsstring>
+        <name>m_apiCmdMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="119" column="27" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TelemetryRunner::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classTelemetryRunner" kindref="compound">TelemetryRunner</ref> implementation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="64" column="3" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="161" bodyend="208"/>
+        <references refid="classTelemetryRunner_1_1Impl_1aca8693f73e058e416f3be31a3e61902a" compoundref="TelemetryRunner_8cpp" startline="297" endline="301">HandleEgressCommand</references>
+        <references refid="classTelemetryRunner_1_1Impl_1ae5f5c870457904b35c83e75db169773d" compoundref="TelemetryRunner_8cpp" startline="279" endline="283">HandleIngressCommand</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a69aecdc169c69bb6a02b19e0a0e2d3c6" compoundref="TelemetryRunner_8cpp" startline="285" endline="289">HandleRouterCommand</references>
+        <references refid="classTelemetryRunner_1_1Impl_1ab4803633a07f251f9cb2184102ea6951" compoundref="TelemetryRunner_8cpp" startline="291" endline="295">HandleStorageCommand</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a288a2377824a32615602e4109b170886" compoundref="TelemetryRunner_8cpp" startline="119">m_apiCmdMap</references>
+        <references refid="structGetStorageApiCommand__t_1a9a9681d2e45a33049337f6c720911ac0" compoundref="TelemetryDefinitions_8h" startline="511">GetStorageApiCommand_t::name</references>
+        <references refid="structGetOutductsApiCommand__t_1a29f66e51de9f5151ddbb037fba3a9b37" compoundref="TelemetryDefinitions_8h" startline="517">GetOutductsApiCommand_t::name</references>
+        <references refid="structGetOutductCapabilitiesApiCommand__t_1ae4d5cac457c35f7948c08bc73fa2c82c" compoundref="TelemetryDefinitions_8h" startline="523">GetOutductCapabilitiesApiCommand_t::name</references>
+        <references refid="structGetInductsApiCommand__t_1aa600ac89b89470ca7db27fda70c7b376" compoundref="TelemetryDefinitions_8h" startline="529">GetInductsApiCommand_t::name</references>
+        <references refid="structPingApiCommand__t_1a34088cdd24cb7ae42dcc5662bb02953a" compoundref="TelemetryDefinitions_8h" startline="545">PingApiCommand_t::name</references>
+        <references refid="structUploadContactPlanApiCommand__t_1aaa99690901acb1cd458b14118985c296" compoundref="TelemetryDefinitions_8h" startline="560">UploadContactPlanApiCommand_t::name</references>
+        <references refid="structGetExpiringStorageApiCommand__t_1af8aa4ac2e8b40cc4f9395ce561c5d8ac" compoundref="TelemetryDefinitions_8h" startline="576">GetExpiringStorageApiCommand_t::name</references>
+        <references refid="structUpdateBpSecApiCommand__t_1a08924fe13badea63e04e170e3c357a59" compoundref="TelemetryDefinitions_8h" startline="591">UpdateBpSecApiCommand_t::name</references>
+        <references refid="structGetBpSecApiCommand__t_1abba9bd70b8931a51204cc1a6c00eb010" compoundref="TelemetryDefinitions_8h" startline="598">GetBpSecApiCommand_t::name</references>
+        <references refid="structSetMaxSendRateApiCommand__t_1a08be61a8d8b2f333a2c5ccc3b179d0f3" compoundref="TelemetryDefinitions_8h" startline="613">SetMaxSendRateApiCommand_t::name</references>
+        <references refid="structGetHdtnConfigApiCommand__t_1a9d46f9b7ca75259e062b79c6c1681241" compoundref="TelemetryDefinitions_8h" startline="618">GetHdtnConfigApiCommand_t::name</references>
+        <references refid="structGetHdtnVersionApiCommand__t_1adb4879863c549992a54423fde6414536" compoundref="TelemetryDefinitions_8h" startline="624">GetHdtnVersionApiCommand_t::name</references>
+        <references refid="structGenerateBundleApiCommand__t_1ab5f6b75e675e489acb6f7f62c1afb80d" compoundref="TelemetryDefinitions_8h" startline="641">GenerateBundleApiCommand_t::name</references>
+        <references refid="structSetLinkDownApiCommand__t_1a1879878dedde3a27577ff4d1416e8b8b" compoundref="TelemetryDefinitions_8h" startline="656">SetLinkDownApiCommand_t::name</references>
+        <references refid="structSetLinkUpApiCommand__t_1ad6fdff6be70adacb3a72c5a88098804e" compoundref="TelemetryDefinitions_8h" startline="671">SetLinkUpApiCommand_t::name</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a7cd517ec38dabbd941dbca8db718ed4b" compoundref="TelemetryRunner_8cpp" startline="325" endline="340">ProcessHdtnConfigRequest</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a95718ce9166c7d0823dee85dbe9edc7e" compoundref="TelemetryRunner_8cpp" startline="342" endline="362">ProcessHdtnVersionRequest</references>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a035c5600efc4355084be1e44d9267583" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::Init</definition>
+        <argsstring>(const HdtnConfig &amp;hdtnConfig, zmq::context_t *inprocContextPtr, TelemetryRunnerProgramOptions &amp;options)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref> &amp;</type>
+          <declname>hdtnConfig</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+          <declname>inprocContextPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="classTelemetryRunnerProgramOptions" kindref="compound">TelemetryRunnerProgramOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="65" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="210" bodyend="251"/>
+        <references refid="classhdtn_1_1Logger_1afa0b8c7e58abd579ed5d87499440dfc2" compoundref="Logger_8cpp" startline="131" endline="134">hdtn::Logger::GetHdtnVersionAsString</references>
+        <references refid="classHdtnConfig_1ae2660007b111d9ae481d3fcc0906dc36" compoundref="HdtnConfig_8cpp" startline="304" endline="334">HdtnConfig::GetNewPropertyTree</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classTelemetryRunnerProgramOptions_1ac3dc4d8dc67ddf896220e9a6333d3f6e" compoundref="TelemetryRunnerProgramOptions_8h" startline="47">TelemetryRunnerProgramOptions::m_hdtnDistributedConfigPtr</references>
+        <references refid="classTelemetryRunnerProgramOptions_1a094d60a1082e113be1bbdd44c9fe2f62" compoundref="TelemetryRunnerProgramOptions_8h" startline="48">TelemetryRunnerProgramOptions::m_websocketServerProgramOptions</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a78ad5a3eb380c546543e8a7f7da397b3" compoundref="TelemetryRunner_8cpp" startline="253" endline="268">OnNewWebsocketConnectionCallback</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a4510765ef171c314330b558297d7f262" compoundref="TelemetryRunner_8cpp" startline="270" endline="277">OnNewWebsocketTextDataReceivedCallback</references>
+        <references refid="classJsonSerializable_1af6ea55a68c508e3b2eb3da2aa5f6feb8" compoundref="JsonSerializable_8cpp" startline="118" endline="122">JsonSerializable::PtToJsonString</references>
+        <references refid="TelemetryRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TelemetryRunner_8cpp" startline="40">subprocess</references>
+        <references refid="classTelemetryRunner_1_1Impl_1a144ec3f8a380e5ae5bde753e4a1011bd" compoundref="TelemetryRunner_8cpp" startline="374" endline="535">ThreadFunc</references>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a9bb852fb8b035a4803297b03d53054c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TelemetryRunner::Impl::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="67" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="610" bodyend="623"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TelemetryRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TelemetryRunner_8cpp" startline="40">subprocess</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a144ec3f8a380e5ae5bde753e4a1011bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TelemetryRunner::Impl::ThreadFunc</definition>
+        <argsstring>(const HdtnDistributedConfig_ptr &amp;hdtnDistributedConfigPtr, zmq::context_t *inprocContextPtr)</argsstring>
+        <name>ThreadFunc</name>
+        <param>
+          <type>const <ref refid="HdtnDistributedConfig_8h_1ad72287894b75b8750383bb768fea3a1f" kindref="member">HdtnDistributedConfig_ptr</ref> &amp;</type>
+          <declname>hdtnDistributedConfigPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+          <declname>inprocContextPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="70" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="374" bodyend="535"/>
+        <references refid="classTelemetryConnectionPoller_1a2c71fae286a8f6acd9e362ffdd6476aa" compoundref="TelemetryConnectionPoller_8cpp" startline="25" endline="30">TelemetryConnectionPoller::AddConnection</references>
+        <references refid="TelemetryRunner_8cpp_1a3fd5bcec0595e7bcded6f36886034f1c" compoundref="TelemetryRunner_8cpp" startline="50">API_NUM_POLL_ATTEMPTS</references>
+        <references refid="TelemetryRunner_8cpp_1aadd9240026354314f436711fbf082d93" compoundref="TelemetryRunner_8cpp" startline="49">API_TIMEOUT_POLL_MS</references>
+        <references refid="classTelemetryConnectionPoller_1a77f66ef8a303322d9d8bf3dc3274a05b" compoundref="TelemetryConnectionPoller_8cpp" startline="44" endline="51">TelemetryConnectionPoller::HasNewMessage</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="classTelemetryConnectionPoller_1a9d5c3f3845620623829c99c64fc61819" compoundref="TelemetryConnectionPoller_8cpp" startline="32" endline="42">TelemetryConnectionPoller::PollConnections</references>
+        <references refid="TelemetryRunner_8cpp_1a7e6ba5c152b9d774807690947da72b3c" compoundref="TelemetryRunner_8cpp" startline="56">REC_EGRESS</references>
+        <references refid="TelemetryRunner_8cpp_1a4ef84120ef66516ff9c25ac33e88cf3f" compoundref="TelemetryRunner_8cpp" startline="55">REC_INGRESS</references>
+        <references refid="TelemetryRunner_8cpp_1a7cf9a3def9e8e92c5b81e3b0e12ee6ed" compoundref="TelemetryRunner_8cpp" startline="57">REC_STORAGE</references>
+        <references refid="TelemetryRunner_8cpp_1a8be61ecf7405767cb3791d17843c0fa3" compoundref="TelemetryRunner_8cpp" startline="370" endline="372">ReceivedAllRequired</references>
+        <references refid="TelemetryRunner_8cpp_1afaa3be48788ef971ca00806c67227ee0" compoundref="TelemetryRunner_8cpp" startline="366" endline="366">ReceivedEgress</references>
+        <references refid="TelemetryRunner_8cpp_1a0c12fd93e04da5291362f89428ab8a1a" compoundref="TelemetryRunner_8cpp" startline="364" endline="364">ReceivedIngress</references>
+        <references refid="TelemetryRunner_8cpp_1a160ffef7b3b67b90b44fedea30283614" compoundref="TelemetryRunner_8cpp" startline="368" endline="368">ReceivedStorage</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="TelemetryRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TelemetryRunner_8cpp" startline="40">subprocess</references>
+        <references refid="TelemetryRunner_8cpp_1a35570f4ee0618a83b8b153f75c04202a" compoundref="TelemetryRunner_8cpp" startline="47">TELEM_NUM_POLL_ATTEMPTS</references>
+        <references refid="TelemetryRunner_8cpp_1a408f0a262bb0d6a562a63c65d9aadfcf" compoundref="TelemetryRunner_8cpp" startline="48">TELEM_TIMEOUT_POLL_MS</references>
+        <references refid="classzmq_1_1message__t_1ac92cae0e9b979bdb7ebe127d90887a3f" compoundref="zmq_8hpp" startline="643" endline="646">zmq::message_t::to_string</references>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a035c5600efc4355084be1e44d9267583" compoundref="TelemetryRunner_8cpp" startline="210" endline="251">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a5cc9aa0fb1e2024588a68fe0f71b12c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TelemetryRunner::Impl::OnNewJsonTelemetry</definition>
+        <argsstring>(const char *buffer, uint64_t bufferSize)</argsstring>
+        <name>OnNewJsonTelemetry</name>
+        <param>
+          <type>const char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="72" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="603" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a78ad5a3eb380c546543e8a7f7da397b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TelemetryRunner::Impl::OnNewWebsocketConnectionCallback</definition>
+        <argsstring>(WebsocketServer::Connection &amp;conn)</argsstring>
+        <name>OnNewWebsocketConnectionCallback</name>
+        <param>
+          <type><ref refid="classWebsocketServer_1_1Connection" kindref="compound">WebsocketServer::Connection</ref> &amp;</type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="73" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="253" bodyend="268"/>
+        <references refid="classWebsocketServer_1_1Connection_1a406a9751d9cbbd3eb67c76ef8e733a84" compoundref="WebsocketServer_8cpp" startline="147" endline="157">WebsocketServer::Connection::SendTextDataToThisConnection</references>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a035c5600efc4355084be1e44d9267583" compoundref="TelemetryRunner_8cpp" startline="210" endline="251">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a4510765ef171c314330b558297d7f262" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::OnNewWebsocketTextDataReceivedCallback</definition>
+        <argsstring>(WebsocketServer::Connection &amp;conn, std::string &amp;receivedString)</argsstring>
+        <name>OnNewWebsocketTextDataReceivedCallback</name>
+        <param>
+          <type><ref refid="classWebsocketServer_1_1Connection" kindref="compound">WebsocketServer::Connection</ref> &amp;</type>
+          <declname>conn</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>receivedString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="74" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="270" bodyend="277"/>
+        <references refid="TelemetryDefinitions_8h_1a94f8c7752209631f7df372f67fb71424" compoundref="TelemetryDefinitions_8h" startline="718">GUI_REQ_CONN_ID</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classZmqConnectionId__t_1a5ff0a275599d32c243f8d50181c0abd2" compoundref="TelemetryDefinitions_8cpp" startline="1829" endline="1831">ZmqConnectionId_t::Msg</references>
+        <references refid="TelemetryRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TelemetryRunner_8cpp" startline="40">subprocess</references>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a035c5600efc4355084be1e44d9267583" compoundref="TelemetryRunner_8cpp" startline="210" endline="251">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a053757f2cd7f3d94ed3a91551adead11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::OnApiRequest</definition>
+        <argsstring>(std::string &amp;&amp;msgJson, zmq::message_t &amp;&amp;connectionID)</argsstring>
+        <name>OnApiRequest</name>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>msgJson</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;&amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="76" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="303" bodyend="323"/>
+        <references refid="structApiCommand__t_1a2092b9204a2c54f01f56dc3cf7f29171" compoundref="TelemetryDefinitions_8cpp" startline="1902" endline="1950">ApiCommand_t::CreateFromJson</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TelemetryRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TelemetryRunner_8cpp" startline="40">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1ae5f5c870457904b35c83e75db169773d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::HandleIngressCommand</definition>
+        <argsstring>(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)</argsstring>
+        <name>HandleIngressCommand</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>movablePayload</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="77" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="279" bodyend="283"/>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1ab4803633a07f251f9cb2184102ea6951" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::HandleStorageCommand</definition>
+        <argsstring>(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)</argsstring>
+        <name>HandleStorageCommand</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>movablePayload</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="79" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="291" bodyend="295"/>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a69aecdc169c69bb6a02b19e0a0e2d3c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::HandleRouterCommand</definition>
+        <argsstring>(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)</argsstring>
+        <name>HandleRouterCommand</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>movablePayload</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="81" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="285" bodyend="289"/>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1aca8693f73e058e416f3be31a3e61902a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::HandleEgressCommand</definition>
+        <argsstring>(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)</argsstring>
+        <name>HandleEgressCommand</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>movablePayload</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="83" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="297" bodyend="301"/>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1ae0f10ae7b9a043bfe1a83f0b229d33e7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TelemetryRunner::Impl::QueueTelemRequests</definition>
+        <argsstring>()</argsstring>
+        <name>QueueTelemRequests</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="85" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="585" bodyend="601"/>
+        <references refid="classZmqConnectionId__t_1a5ff0a275599d32c243f8d50181c0abd2" compoundref="TelemetryDefinitions_8cpp" startline="1829" endline="1831">ZmqConnectionId_t::Msg</references>
+        <references refid="TelemetryDefinitions_8h_1a037830a8a2cb0a659abcfecf5f685ac7" compoundref="TelemetryDefinitions_8h" startline="717">TELEM_REQ_CONN_ID</references>
+        <references refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" compoundref="JsonSerializable_8cpp" startline="124" endline="126">JsonSerializable::ToJson</references>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a1faab613865d282af9ab9e7f567a0279" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TelemetryType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void TelemetryRunner::Impl::ProcessConnectionResponse</definition>
+        <argsstring>(const std::unique_ptr&lt; TelemetryConnection &gt; &amp;connection, TelemetryType &amp;telemetry)</argsstring>
+        <name>ProcessConnectionResponse</name>
+        <param>
+          <type>const std::unique_ptr&lt; <ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &gt; &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>TelemetryType &amp;</type>
+          <declname>telemetry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Template declarations </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="88" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="538" bodyend="583"/>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="TelemetryDefinitions_8h_1a94f8c7752209631f7df372f67fb71424" compoundref="TelemetryDefinitions_8h" startline="718">GUI_REQ_CONN_ID</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structApiResp__t_1a3c0551ef27d9d6da5a059133fff3fdf7" compoundref="TelemetryDefinitions_8h" startline="675">ApiResp_t::m_success</references>
+        <references refid="classzmq_1_1message__t_1a0b84ec573d15894e1e31becf9ea42e6c" compoundref="zmq_8hpp" startline="555" endline="559">zmq::message_t::more</references>
+        <references refid="structGetOutductCapabilitiesApiCommand__t_1ae4d5cac457c35f7948c08bc73fa2c82c" compoundref="TelemetryDefinitions_8h" startline="523">GetOutductCapabilitiesApiCommand_t::name</references>
+        <references refid="classJsonSerializable_1a3148d4262386d8617f82f4f8b0f1931d" compoundref="JsonSerializable_8cpp" startline="217" endline="223">JsonSerializable::SetValuesFromJson</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="TelemetryRunner_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="TelemetryRunner_8cpp" startline="40">subprocess</references>
+        <references refid="TelemetryDefinitions_8h_1a037830a8a2cb0a659abcfecf5f685ac7" compoundref="TelemetryDefinitions_8h" startline="717">TELEM_REQ_CONN_ID</references>
+        <references refid="classzmq_1_1message__t_1ac92cae0e9b979bdb7ebe127d90887a3f" compoundref="zmq_8hpp" startline="643" endline="646">zmq::message_t::to_string</references>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a7cd517ec38dabbd941dbca8db718ed4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::ProcessHdtnConfigRequest</definition>
+        <argsstring>(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)</argsstring>
+        <name>ProcessHdtnConfigRequest</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>movablePayload</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="91" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="325" bodyend="340"/>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryRunner_1_1Impl_1a95718ce9166c7d0823dee85dbe9edc7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TelemetryRunner::Impl::ProcessHdtnVersionRequest</definition>
+        <argsstring>(std::string &amp;movablePayload, zmq::message_t &amp;connectionID)</argsstring>
+        <name>ProcessHdtnVersionRequest</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>movablePayload</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>connectionID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="93" column="8" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="342" bodyend="362"/>
+        <references refid="classhdtn_1_1Logger_1afa0b8c7e58abd579ed5d87499440dfc2" compoundref="Logger_8cpp" startline="131" endline="134">hdtn::Logger::GetHdtnVersionAsString</references>
+        <references refid="classJsonSerializable_1af6ea55a68c508e3b2eb3da2aa5f6feb8" compoundref="JsonSerializable_8cpp" startline="118" endline="122">JsonSerializable::PtToJsonString</references>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" compoundref="TelemetryRunner_8cpp" startline="161" endline="208">Impl</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classTelemetryRunner" kindref="compound">TelemetryRunner</ref> implementation class </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>TelemetryRunner::Impl</label>
+        <link refid="classTelemetryRunner_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>DeadlineTimer</label>
+        <link refid="classDeadlineTimer"/>
+      </node>
+      <node id="9">
+        <label>OutductsConfig</label>
+        <link refid="classOutductsConfig"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>TelemetryRunner::Impl</label>
+        <link refid="classTelemetryRunner_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_deadlineTimer</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_websocketServer</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_hdtnConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>JsonSerializable</label>
+        <link refid="classJsonSerializable"/>
+      </node>
+      <node id="4">
+        <label>WebsocketServer</label>
+        <link refid="classWebsocketServer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>HdtnConfig</label>
+        <link refid="classHdtnConfig"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_storageConfig</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_inductsConfig</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_outductsConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>StorageConfig</label>
+        <link refid="classStorageConfig"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>InductsConfig</label>
+        <link refid="classInductsConfig"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/telem_cmd_interface/src/TelemetryRunner.cpp" line="62" column="1" bodyfile="module/telem_cmd_interface/src/TelemetryRunner.cpp" bodystart="62" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classTelemetryRunner_1_1Impl_1a911d3c7ce396e198cdf4c9ea1b65efc0" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>ApiCommandFunction_t</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a9d69242172f048f0424bf560fbf56853" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>ApiCommandFunctionMap_t</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1aca8693f73e058e416f3be31a3e61902a" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>HandleEgressCommand</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1ae5f5c870457904b35c83e75db169773d" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>HandleIngressCommand</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a69aecdc169c69bb6a02b19e0a0e2d3c6" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>HandleRouterCommand</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1ab4803633a07f251f9cb2184102ea6951" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>HandleStorageCommand</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a13f6ab2cde1c92c7022f8e95c6ec5e67" prot="public" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>Impl</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a035c5600efc4355084be1e44d9267583" prot="public" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>Init</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a288a2377824a32615602e4109b170886" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_apiCmdMap</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a9537edeebf281f9a49e7f89706706c23" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_apiConnection</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a3e0d8c1134e3c389b1c287846d45dfc2" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_deadlineTimer</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a1adc807cdc47904754d1ed5d26fcdbea" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_egressConnection</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a9c095e6bc84db2bf9ecfd8db72736ded" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_hdtnConfig</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a3dc42290ef5f805e0cfe6ec1f892368a" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_hdtnConfigJsonPtr</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a6f01370d39bc76ceb3f1d3b23b4eff7f" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_hdtnConfigWithVersionJsonPtr</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a98f9f67560059516d2a1633e06b1a3a6" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_ingressConnection</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1afd44384b0dd03a5fcac429ace9a253ba" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_lastJsonSerializedAllOutductCapabilitiesPtr</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a4266ed7e3201ccebf6a5adc7b6cb9a18" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_lastSerializedAllOutductCapabilitiesMutex</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a0809d1d87ec2757a29b0d1cb944ef54e" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_routerConnection</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a635b90dbe7188e8c90f3673ced12dfdc" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_running</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a730dba56ac1096c7747f5c9dedd882cd" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_storageConnection</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a792e6c6d213112aa01b292ef4ba5e835" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_telemetryLoggerPtr</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a20158d3cecaabf786861e5e4e0113f20" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_threadPtr</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a9cbef60246ff53037c18a0e7279e8f29" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>m_websocketServer</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a053757f2cd7f3d94ed3a91551adead11" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>OnApiRequest</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a5cc9aa0fb1e2024588a68fe0f71b12c4" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>OnNewJsonTelemetry</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a78ad5a3eb380c546543e8a7f7da397b3" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>OnNewWebsocketConnectionCallback</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a4510765ef171c314330b558297d7f262" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>OnNewWebsocketTextDataReceivedCallback</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a1faab613865d282af9ab9e7f567a0279" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>ProcessConnectionResponse</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a7cd517ec38dabbd941dbca8db718ed4b" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>ProcessHdtnConfigRequest</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a95718ce9166c7d0823dee85dbe9edc7e" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>ProcessHdtnVersionRequest</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1ae0f10ae7b9a043bfe1a83f0b229d33e7" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>QueueTelemRequests</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a9bb852fb8b035a4803297b03d53054c7" prot="public" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>Stop</name></member>
+      <member refid="classTelemetryRunner_1_1Impl_1a144ec3f8a380e5ae5bde753e4a1011bd" prot="private" virt="non-virtual"><scope>TelemetryRunner::Impl</scope><name>ThreadFunc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

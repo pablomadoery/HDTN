@@ -1,0 +1,494 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classDtnRtp" kind="class" language="C++" prot="public">
+    <compoundname>DtnRtp</compoundname>
+    <includes refid="DtnRtp_8h" local="no">DtnRtp.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDtnRtp_1acfb25f21615b5ea541f6469ab955fab8" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::atomic&lt; uint32_t &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;std::atomic&lt;uint32_t&gt; &gt; DtnRtp::m_ssrc</definition>
+        <argsstring></argsstring>
+        <name>m_ssrc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="42" column="21" bodyfile="common/streaming/include/DtnRtp.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classDtnRtp_1a0b659471aeca6e0c2b9b5f1d4a12def0" compoundref="DtnRtp_8cpp" startline="44" endline="47">GetSsrc</referencedby>
+        <referencedby refid="classDtnRtp_1a31c4b9fc5c3af0e90a5cc7031141098b" compoundref="DtnRtp_8cpp" startline="132" endline="172">PacketHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" prot="private" static="no" mutable="no">
+        <type>rtp_header</type>
+        <definition>rtp_header DtnRtp::m_prevHeader</definition>
+        <argsstring></argsstring>
+        <name>m_prevHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="45" column="16" bodyfile="common/streaming/include/DtnRtp.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classDtnRtp_1ab74cd25f1e70c974324ec6e4939bee15" compoundref="DtnRtp_8cpp" startline="29" endline="37">DtnRtp</referencedby>
+        <referencedby refid="classDtnRtp_1aab4cdc5811ece7a1874a03fcf3b338d7" compoundref="DtnRtp_8cpp" startline="65" endline="67">GetHeader</referencedby>
+        <referencedby refid="classDtnRtp_1a0dd9e419eb30ef9dd9aa9e81fe79ea41" compoundref="DtnRtp_8cpp" startline="50" endline="53">GetSequence</referencedby>
+        <referencedby refid="classDtnRtp_1a9a0547c6fe0b926833a6bdcaecb71981" compoundref="DtnRtp_8cpp" startline="55" endline="58">GetTimestamp</referencedby>
+        <referencedby refid="classDtnRtp_1a1be306189f8293dd8491376e65301a29" compoundref="DtnRtp_8cpp" startline="85" endline="88">IncSequence</referencedby>
+        <referencedby refid="classDtnRtp_1ae7b7bf20dd3a71a195dfc9a7b494b35c" compoundref="DtnRtp_8cpp" startline="100" endline="103">SetSequence</referencedby>
+        <referencedby refid="classDtnRtp_1a0bf51717cfd27996dfb5ac99d2ae8157" compoundref="DtnRtp_8cpp" startline="126" endline="129">SetTimestamp</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnRtp_1a37878cd36b1813ed63257242aaa34fcf" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t DtnRtp::m_clockRate</definition>
+        <argsstring></argsstring>
+        <name>m_clockRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="46" column="14" bodyfile="common/streaming/include/DtnRtp.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classDtnRtp_1a537bb86eac1ce7f2fceab8e2b7bb8001" compoundref="DtnRtp_8cpp" startline="60" endline="63">GetClockRate</referencedby>
+        <referencedby refid="classDtnRtp_1a244cb6f5e0a494b4f04c31b536b238ba" compoundref="DtnRtp_8cpp" startline="111" endline="124">SetClockRate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnRtp_1ab9856f8bbb3a0ab04135915ecb008ecd" prot="private" static="no" mutable="no">
+        <type>std::chrono::time_point&lt; std::chrono::high_resolution_clock &gt;</type>
+        <definition>std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; DtnRtp::m_wallClockStart</definition>
+        <argsstring></argsstring>
+        <name>m_wallClockStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="47" column="29" bodyfile="common/streaming/include/DtnRtp.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnRtp_1ab91fdf13bae841de28908427f511fd54" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t DtnRtp::m_sentPackets</definition>
+        <argsstring></argsstring>
+        <name>m_sentPackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="49" column="12" bodyfile="common/streaming/include/DtnRtp.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classDtnRtp_1a765ec0c824e26bc72d50472b0d248636" compoundref="DtnRtp_8cpp" startline="81" endline="84">IncSentPkts</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnRtp_1ab703985abce50416ae57e47674b20ac1" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t DtnRtp::m_maximumTransmissionUnit</definition>
+        <argsstring></argsstring>
+        <name>m_maximumTransmissionUnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="50" column="12" bodyfile="common/streaming/include/DtnRtp.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDtnRtp_1a75238ff7c13c7c6b9a17d83e98439f86" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t DtnRtp::m_numConcatenated</definition>
+        <argsstring></argsstring>
+        <name>m_numConcatenated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="52" column="14" bodyfile="common/streaming/include/DtnRtp.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classDtnRtp_1a5555453d2b96511cb9073bb4fe01b19f" compoundref="DtnRtp_8cpp" startline="74" endline="77">GetNumConcatenated</referencedby>
+        <referencedby refid="classDtnRtp_1a5b7691e7f58bd46d48c9900420ad9971" compoundref="DtnRtp_8cpp" startline="90" endline="93">IncNumConcatenated</referencedby>
+        <referencedby refid="classDtnRtp_1ab61cff1f4424acc67f27bb2cde2e5235" compoundref="DtnRtp_8cpp" startline="95" endline="98">ResetNumConcatenated</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDtnRtp_1ab74cd25f1e70c974324ec6e4939bee15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT</type>
+        <definition>DtnRtp::DtnRtp</definition>
+        <argsstring>(size_t maximumTransmissionUnit)</argsstring>
+        <name>DtnRtp</name>
+        <param>
+          <type>size_t</type>
+          <declname>maximumTransmissionUnit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="56" column="26" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="29" bodyend="37"/>
+        <references refid="DtnRtp_8cpp_1afa07e362d5fa76ba7fd8393b967b54a6" compoundref="DtnRtp_8cpp" startline="22">INVALID_SEQ</references>
+        <references refid="DtnRtp_8cpp_1a6d9bb71a2b18c8a5cb4e6c57f8d5e686" compoundref="DtnRtp_8cpp" startline="21">INVALID_TS</references>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1ad4477d60e29e61a3e8c24093e15298b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT</type>
+        <definition>DtnRtp::~DtnRtp</definition>
+        <argsstring>()</argsstring>
+        <name>~DtnRtp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="57" column="26" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a0b659471aeca6e0c2b9b5f1d4a12def0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT uint32_t</type>
+        <definition>uint32_t DtnRtp::GetSsrc</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSsrc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="60" column="39" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="44" bodyend="47"/>
+        <references refid="classDtnRtp_1acfb25f21615b5ea541f6469ab955fab8" compoundref="DtnRtp_8h" startline="42">m_ssrc</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a0dd9e419eb30ef9dd9aa9e81fe79ea41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT uint16_t</type>
+        <definition>uint16_t DtnRtp::GetSequence</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSequence</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="61" column="39" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="50" bodyend="53"/>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a9a0547c6fe0b926833a6bdcaecb71981" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT uint32_t</type>
+        <definition>uint32_t DtnRtp::GetTimestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTimestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="62" column="39" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="55" bodyend="58"/>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a537bb86eac1ce7f2fceab8e2b7bb8001" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT uint32_t</type>
+        <definition>uint32_t DtnRtp::GetClockRate</definition>
+        <argsstring>() const</argsstring>
+        <name>GetClockRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="63" column="39" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="60" bodyend="63"/>
+        <references refid="classDtnRtp_1a37878cd36b1813ed63257242aaa34fcf" compoundref="DtnRtp_8h" startline="46">m_clockRate</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1aab4cdc5811ece7a1874a03fcf3b338d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT rtp_header *</type>
+        <definition>rtp_header * DtnRtp::GetHeader</definition>
+        <argsstring>()</argsstring>
+        <name>GetHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="64" column="38" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="65" bodyend="67"/>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a5555453d2b96511cb9073bb4fe01b19f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT uint16_t</type>
+        <definition>uint16_t DtnRtp::GetNumConcatenated</definition>
+        <argsstring>()</argsstring>
+        <name>GetNumConcatenated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns the number of times the current frame has been added to. A frame with no data is zero. A frame that has been added to once is 1. A frame that has been added two twice is 2. and so on. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="65" column="39" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="74" bodyend="77"/>
+        <references refid="classDtnRtp_1a75238ff7c13c7c6b9a17d83e98439f86" compoundref="DtnRtp_8h" startline="52">m_numConcatenated</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a765ec0c824e26bc72d50472b0d248636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::IncSentPkts</definition>
+        <argsstring>()</argsstring>
+        <name>IncSentPkts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="68" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="81" bodyend="84"/>
+        <references refid="classDtnRtp_1ab91fdf13bae841de28908427f511fd54" compoundref="DtnRtp_8h" startline="49">m_sentPackets</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a1be306189f8293dd8491376e65301a29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::IncSequence</definition>
+        <argsstring>()</argsstring>
+        <name>IncSequence</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="69" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="85" bodyend="88"/>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a5b7691e7f58bd46d48c9900420ad9971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::IncNumConcatenated</definition>
+        <argsstring>()</argsstring>
+        <name>IncNumConcatenated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="70" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="90" bodyend="93"/>
+        <references refid="classDtnRtp_1a75238ff7c13c7c6b9a17d83e98439f86" compoundref="DtnRtp_8h" startline="52">m_numConcatenated</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1ab61cff1f4424acc67f27bb2cde2e5235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::ResetNumConcatenated</definition>
+        <argsstring>()</argsstring>
+        <name>ResetNumConcatenated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="71" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="95" bodyend="98"/>
+        <references refid="classDtnRtp_1a75238ff7c13c7c6b9a17d83e98439f86" compoundref="DtnRtp_8h" startline="52">m_numConcatenated</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1ae7b7bf20dd3a71a195dfc9a7b494b35c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::SetSequence</definition>
+        <argsstring>(uint16_t host_sequence)</argsstring>
+        <name>SetSequence</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>host_sequence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="74" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="100" bodyend="103"/>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a9509f35b78f333850c82ae92c6a82d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>STREAMING_LIB_EXPORT void DtnRtp::SetFormat</definition>
+        <argsstring>(rtp_format_t fmt)</argsstring>
+        <name>SetFormat</name>
+        <param>
+          <type><ref refid="DtnUtil_8h_1a4ed499c47ac1c121bd8ff3cd69eff93c" kindref="member">rtp_format_t</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="76" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a244cb6f5e0a494b4f04c31b536b238ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::SetClockRate</definition>
+        <argsstring>(rtp_format_t fmt)</argsstring>
+        <name>SetClockRate</name>
+        <param>
+          <type><ref refid="DtnUtil_8h_1a4ed499c47ac1c121bd8ff3cd69eff93c" kindref="member">rtp_format_t</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="77" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="111" bodyend="124"/>
+        <references refid="classDtnRtp_1a37878cd36b1813ed63257242aaa34fcf" compoundref="DtnRtp_8h" startline="46">m_clockRate</references>
+        <references refid="DtnUtil_8h_1a313c6640ac5ed9384184a94ec57a9a96a509501f2313a1d18cc3dd97db07c6331" compoundref="DtnUtil_8h" startline="109">RTP_FORMAT_DYNAMICRTP</references>
+        <references refid="DtnUtil_8h_1a313c6640ac5ed9384184a94ec57a9a96ad785025a8de9a53f17dc84ec3eed85bd" compoundref="DtnUtil_8h" startline="122">RTP_FORMAT_H264</references>
+        <references refid="DtnUtil_8h_1a313c6640ac5ed9384184a94ec57a9a96a4ee0ab7d51bf50f8f5a5cb995ecc407b" compoundref="DtnUtil_8h" startline="123">RTP_FORMAT_H265</references>
+        <referencedby refid="classDtnRtp_1a31c4b9fc5c3af0e90a5cc7031141098b" compoundref="DtnRtp_8cpp" startline="132" endline="172">PacketHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a0bf51717cfd27996dfb5ac99d2ae8157" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>void DtnRtp::SetTimestamp</definition>
+        <argsstring>(uint32_t timestamp)</argsstring>
+        <name>SetTimestamp</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="78" column="31" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="126" bodyend="129"/>
+        <references refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" compoundref="DtnRtp_8h" startline="45">m_prevHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1ad76baa6fb70581e6779229228f5792c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>STREAMING_LIB_EXPORT void DtnRtp::FillHeader</definition>
+        <argsstring>(rtp_frame *frame)</argsstring>
+        <name>FillHeader</name>
+        <param>
+          <type><ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="80" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a41141d4a0ad0b8b4f30c477b66c8de69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT int</type>
+        <definition>STREAMING_LIB_EXPORT int DtnRtp::PacketHandler</definition>
+        <argsstring>(ssize_t size, void *packet, int rce_flags, std::shared_ptr&lt; DtnFrameQueue &gt; incomingFrameQueue)</argsstring>
+        <name>PacketHandler</name>
+        <param>
+          <type>ssize_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rce_flags</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classDtnFrameQueue" kindref="compound">DtnFrameQueue</ref> &gt;</type>
+          <declname>incomingFrameQueue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="81" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a31c4b9fc5c3af0e90a5cc7031141098b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT <ref refid="DtnRtpFrame_8h_1a45cda584535dc7733645f076307d0d80" kindref="member">rtp_packet_status_t</ref></type>
+        <definition>rtp_packet_status_t DtnRtp::PacketHandler</definition>
+        <argsstring>(padded_vector_uint8_t &amp;wholeBundleVec)</argsstring>
+        <name>PacketHandler</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>wholeBundleVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="82" column="46" bodyfile="common/streaming/src/DtnRtp.cpp" bodystart="132" bodyend="172"/>
+        <references refid="unionrtp__header__union_1adf131d87baab96aa525dc473ad41f625" compoundref="DtnRtpFrame_8h" startline="83">rtp_header_union::flags</references>
+        <references refid="structrtp__frame_1a65b5aab1965baeb0f6546e6f36a84eae" compoundref="DtnRtpFrame_8h" startline="97">rtp_frame::header</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classDtnRtp_1acfb25f21615b5ea541f6469ab955fab8" compoundref="DtnRtp_8h" startline="42">m_ssrc</references>
+        <references refid="DtnRtpFrame_8h_1a83afe9feb008f01fdfcdb60daec04c03a1097aee437e8c6cb09c95c2bd0734478" compoundref="DtnRtpFrame_8h" startline="45">RTP_FIRST_FRAME</references>
+        <references refid="DtnRtpFrame_8h_1a83afe9feb008f01fdfcdb60daec04c03ad7079f90ef41d8806aea14307e6e22fa" compoundref="DtnRtpFrame_8h" startline="40">RTP_INVALID_HEADER</references>
+        <references refid="DtnRtpFrame_8h_1a83afe9feb008f01fdfcdb60daec04c03a90bdae3081c926299810c4fb5e35558c" compoundref="DtnRtpFrame_8h" startline="42">RTP_INVALID_VERSION</references>
+        <references refid="DtnRtpFrame_8h_1a7ef031428f9f26b435fc20a5d998b5be" compoundref="DtnRtpFrame_8h" startline="60">RTP_PAYLOAD_MASK</references>
+        <references refid="DtnRtpFrame_8h_1a83afe9feb008f01fdfcdb60daec04c03a88088a9353e1c1b67292c4e0c7019e2b" compoundref="DtnRtpFrame_8h" startline="43">RTP_PUSH_PREVIOUS_FRAME</references>
+        <references refid="DtnRtpFrame_8h_1a740dcdbc3c09c205707c299fc7a4dfd9" compoundref="DtnRtpFrame_8h" startline="55">RTP_VERSION_TWO_FLAG</references>
+        <references refid="classDtnRtp_1a244cb6f5e0a494b4f04c31b536b238ba" compoundref="DtnRtp_8cpp" startline="111" endline="124">SetClockRate</references>
+        <references refid="DtnRtp_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="DtnRtp_8cpp" startline="27">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classDtnRtp_1a81cd75944191de3fc1bae09d350342c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STREAMING_LIB_EXPORT void</type>
+        <definition>STREAMING_LIB_EXPORT void DtnRtp::UpdateSequence</definition>
+        <argsstring>(rtp_frame *frame)</argsstring>
+        <name>UpdateSequence</name>
+        <param>
+          <type><ref refid="structrtp__frame" kindref="compound">rtp_frame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/streaming/include/DtnRtp.h" line="84" column="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This class effectively acts as a tracker for all the pertinent RTP frame information such as timestamp, ssrc, number of packets sent, clock rate etc </para>
+    </detaileddescription>
+    <location file="common/streaming/include/DtnRtp.h" line="39" column="1" bodyfile="common/streaming/include/DtnRtp.h" bodystart="40" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classDtnRtp_1ab74cd25f1e70c974324ec6e4939bee15" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>DtnRtp</name></member>
+      <member refid="classDtnRtp_1ad76baa6fb70581e6779229228f5792c2" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>FillHeader</name></member>
+      <member refid="classDtnRtp_1a537bb86eac1ce7f2fceab8e2b7bb8001" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>GetClockRate</name></member>
+      <member refid="classDtnRtp_1aab4cdc5811ece7a1874a03fcf3b338d7" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>GetHeader</name></member>
+      <member refid="classDtnRtp_1a5555453d2b96511cb9073bb4fe01b19f" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>GetNumConcatenated</name></member>
+      <member refid="classDtnRtp_1a0dd9e419eb30ef9dd9aa9e81fe79ea41" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>GetSequence</name></member>
+      <member refid="classDtnRtp_1a0b659471aeca6e0c2b9b5f1d4a12def0" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>GetSsrc</name></member>
+      <member refid="classDtnRtp_1a9a0547c6fe0b926833a6bdcaecb71981" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>GetTimestamp</name></member>
+      <member refid="classDtnRtp_1a5b7691e7f58bd46d48c9900420ad9971" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>IncNumConcatenated</name></member>
+      <member refid="classDtnRtp_1a765ec0c824e26bc72d50472b0d248636" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>IncSentPkts</name></member>
+      <member refid="classDtnRtp_1a1be306189f8293dd8491376e65301a29" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>IncSequence</name></member>
+      <member refid="classDtnRtp_1a37878cd36b1813ed63257242aaa34fcf" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_clockRate</name></member>
+      <member refid="classDtnRtp_1ab703985abce50416ae57e47674b20ac1" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_maximumTransmissionUnit</name></member>
+      <member refid="classDtnRtp_1a75238ff7c13c7c6b9a17d83e98439f86" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_numConcatenated</name></member>
+      <member refid="classDtnRtp_1a185ba0a7fba0b797143795796eddc238" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_prevHeader</name></member>
+      <member refid="classDtnRtp_1ab91fdf13bae841de28908427f511fd54" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_sentPackets</name></member>
+      <member refid="classDtnRtp_1acfb25f21615b5ea541f6469ab955fab8" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_ssrc</name></member>
+      <member refid="classDtnRtp_1ab9856f8bbb3a0ab04135915ecb008ecd" prot="private" virt="non-virtual"><scope>DtnRtp</scope><name>m_wallClockStart</name></member>
+      <member refid="classDtnRtp_1a41141d4a0ad0b8b4f30c477b66c8de69" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>PacketHandler</name></member>
+      <member refid="classDtnRtp_1a31c4b9fc5c3af0e90a5cc7031141098b" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>PacketHandler</name></member>
+      <member refid="classDtnRtp_1ab61cff1f4424acc67f27bb2cde2e5235" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>ResetNumConcatenated</name></member>
+      <member refid="classDtnRtp_1a244cb6f5e0a494b4f04c31b536b238ba" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>SetClockRate</name></member>
+      <member refid="classDtnRtp_1a9509f35b78f333850c82ae92c6a82d0b" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>SetFormat</name></member>
+      <member refid="classDtnRtp_1ae7b7bf20dd3a71a195dfc9a7b494b35c" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>SetSequence</name></member>
+      <member refid="classDtnRtp_1a0bf51717cfd27996dfb5ac99d2ae8157" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>SetTimestamp</name></member>
+      <member refid="classDtnRtp_1a81cd75944191de3fc1bae09d350342c0" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>UpdateSequence</name></member>
+      <member refid="classDtnRtp_1ad4477d60e29e61a3e8c24093e15298b3" prot="public" virt="non-virtual"><scope>DtnRtp</scope><name>~DtnRtp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

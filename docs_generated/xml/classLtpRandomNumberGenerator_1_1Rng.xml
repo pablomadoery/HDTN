@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpRandomNumberGenerator_1_1Rng" kind="class" language="C++" prot="public">
+    <compoundname>LtpRandomNumberGenerator::Rng</compoundname>
+    <includes refid="LtpRandomNumberGenerator_8h" local="no">LtpRandomNumberGenerator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1_1Rng_1a49303bf564404cea8d462aa8e4db9877" prot="private" static="no" mutable="no">
+        <type>boost::random_device</type>
+        <definition>boost::random_device LtpRandomNumberGenerator::Rng::m_randomDevice</definition>
+        <argsstring></argsstring>
+        <name>m_randomDevice</name>
+        <briefdescription>
+<para>OS hardware random number generator for seeding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="46" column="30" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1_1Rng_1aa98331cfdfe9668c7bf70dffad6d81c1" prot="private" static="no" mutable="no">
+        <type>boost::mt19937_64</type>
+        <definition>boost::mt19937_64 LtpRandomNumberGenerator::Rng::m_prng</definition>
+        <argsstring></argsstring>
+        <name>m_prng</name>
+        <briefdescription>
+<para>Pseudo random number generator that will reseed every 255 tmes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="48" column="27" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1_1Rng_1ae3d1a4d554c009a0778dc140bc930376" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::m_additionalEntropy</definition>
+        <argsstring></argsstring>
+        <name>m_additionalEntropy</name>
+        <briefdescription>
+<para>Value to xor prng random number before returning the random number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="50" column="18" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1_1Rng_1a2e7365ef8a89c3a968fb5d88bc9c3743" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::m_reseedPrngCount</definition>
+        <argsstring></argsstring>
+        <name>m_reseedPrngCount</name>
+        <briefdescription>
+<para>Reseed PRNG count for stats. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="52" column="18" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1_1Rng_1af8ebf9b718e675364e4e1fe4a8213e28" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::m_reseedAdditionalEntropyCount</definition>
+        <argsstring></argsstring>
+        <name>m_reseedAdditionalEntropyCount</name>
+        <briefdescription>
+<para>Reseed additional entropy count for stats. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="54" column="18" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpRandomNumberGenerator_1_1Rng_1a30bb41379a386a59e647c23bf67dd6b4" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t LtpRandomNumberGenerator::Rng::m_prngUseCounter</definition>
+        <argsstring></argsstring>
+        <name>m_prngUseCounter</name>
+        <briefdescription>
+<para>Addition overflow counter to reseed m_prng when ++255 goes back to 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="56" column="17" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1a5a6df6ed9bafeb3a294cab5ba06561e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpRandomNumberGenerator::Rng::Rng</definition>
+        <argsstring>()</argsstring>
+        <name>Rng</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="36" column="24" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="46" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1a81de1d403677021bcc801909ac14c45e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="37" column="33" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="55" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1a8ad6f7fee23a6917dbc6a054480ef8bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpRandomNumberGenerator::Rng::AddHardwareEntropy</definition>
+        <argsstring>()</argsstring>
+        <name>AddHardwareEntropy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="38" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1a155ea1fc2e1386723ec41832bc23294f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpRandomNumberGenerator::Rng::AddCustomEntropy</definition>
+        <argsstring>(const uint64_t entropy)</argsstring>
+        <name>AddCustomEntropy</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>entropy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="39" column="29" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1a44288e237b76e2f744d650db7d7da5b0" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::GetReseedPrngCount</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetReseedPrngCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="40" column="33" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="91" bodyend="93"/>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1adecc865011a2c67bd017228205105139" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::GetReseedAdditionalEntropyCount</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetReseedAdditionalEntropyCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="41" column="33" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="94" bodyend="96"/>
+        <referencedby refid="TestLtpRandomNumberGenerator_8cpp_1a1e328c063bac6b6cd5827e2cc0b3d3e5" compoundref="TestLtpRandomNumberGenerator_8cpp" startline="20" endline="174">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpRandomNumberGenerator_1_1Rng_1a291c8d605b0475089ecd1b24d3aeb39c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT uint64_t</type>
+        <definition>uint64_t LtpRandomNumberGenerator::Rng::GetHardwareRandomSeed</definition>
+        <argsstring>()</argsstring>
+        <name>GetHardwareRandomSeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="43" column="36" bodyfile="common/ltp/src/LtpRandomNumberGenerator.cpp" bodystart="77" bodyend="90"/>
+        <references refid="classTimestampUtil_1afbf432a5669a70c32b264ee8f368d6b8" compoundref="TimestampUtil_8cpp" startline="82" endline="84">TimestampUtil::GetMicrosecondsSinceEpochRfc5050</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classhdtn_1_1Logger_1a513128f16944ed8169d3c4d4abb0d499a334c4a4c42fdb79d7ebc3e73b517e6f8">hdtn::Logger::none</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/ltp/include/LtpRandomNumberGenerator.h" line="34" column="5" bodyfile="common/ltp/include/LtpRandomNumberGenerator.h" bodystart="34" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a155ea1fc2e1386723ec41832bc23294f" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>AddCustomEntropy</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a8ad6f7fee23a6917dbc6a054480ef8bd" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>AddHardwareEntropy</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a291c8d605b0475089ecd1b24d3aeb39c" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>GetHardwareRandomSeed</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1adecc865011a2c67bd017228205105139" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>GetReseedAdditionalEntropyCount</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a44288e237b76e2f744d650db7d7da5b0" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>GetReseedPrngCount</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1ae3d1a4d554c009a0778dc140bc930376" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>m_additionalEntropy</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1aa98331cfdfe9668c7bf70dffad6d81c1" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>m_prng</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a30bb41379a386a59e647c23bf67dd6b4" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>m_prngUseCounter</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a49303bf564404cea8d462aa8e4db9877" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>m_randomDevice</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1af8ebf9b718e675364e4e1fe4a8213e28" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>m_reseedAdditionalEntropyCount</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a2e7365ef8a89c3a968fb5d88bc9c3743" prot="private" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>m_reseedPrngCount</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a81de1d403677021bcc801909ac14c45e" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>operator()</name></member>
+      <member refid="classLtpRandomNumberGenerator_1_1Rng_1a5a6df6ed9bafeb3a294cab5ba06561e7" prot="public" virt="non-virtual"><scope>LtpRandomNumberGenerator::Rng</scope><name>Rng</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,517 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpSendFile" kind="class" language="C++" prot="public">
+    <compoundname>BpSendFile</compoundname>
+    <basecompoundref refid="classBpSourcePattern" prot="public" virt="non-virtual">BpSourcePattern</basecompoundref>
+    <includes refid="BpSendFile_8h" local="no">BpSendFile.h</includes>
+    <innerclass refid="structBpSendFile_1_1SendFileMetadata" prot="public">BpSendFile::SendFileMetadata</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpSendFile_1a64ae6450d90312ea4d34cb2d277a69d1" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t BpSendFile::M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="61" column="20" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1a93cd14b461c56c03c4e60a7b6ab88279" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::filesystem::ifstream &gt;</type>
+        <definition>std::unique_ptr&lt;boost::filesystem::ifstream&gt; BpSendFile::m_currentIfstreamPtr</definition>
+        <argsstring></argsstring>
+        <name>m_currentIfstreamPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="64" column="21" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" compoundref="BpSendFile_8cpp" startline="116" endline="142">CopyPayload_Step2</referencedby>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1adf2b3915b54c64d6b18232b35fbaf86f" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path BpSendFile::m_currentFilePathAbsolute</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathAbsolute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="65" column="29" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" compoundref="BpSendFile_8cpp" startline="116" endline="142">CopyPayload_Step2</referencedby>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+        <referencedby refid="classBpSendFile_1a4d7666c6eb85380fc3a9db4d58bad5bb" compoundref="BpSendFile_8cpp" startline="144" endline="149">TryWaitForDataAvailable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1ad16365d054ff7c8642e6e6909e23d91d" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path BpSendFile::m_currentFilePathRelative</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathRelative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="66" column="29" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" compoundref="BpSendFile_8cpp" startline="116" endline="142">CopyPayload_Step2</referencedby>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+        <referencedby refid="classBpSendFile_1a4d7666c6eb85380fc3a9db4d58bad5bb" compoundref="BpSendFile_8cpp" startline="144" endline="149">TryWaitForDataAvailable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1a329a196e5b1a6f6d521c2887e089afa9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpSendFile::m_currentFilePathRelativeAsUtf8String</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathRelativeAsUtf8String</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="67" column="17" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" compoundref="BpSendFile_8cpp" startline="116" endline="142">CopyPayload_Step2</referencedby>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1a90ae92599ad7cf34e956f484413fbe30" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BpSendFile::m_currentFilePathRelativeAsPrintableString</definition>
+        <argsstring></argsstring>
+        <name>m_currentFilePathRelativeAsPrintableString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="68" column="17" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1a8349a63c08b953e1e37472d25a72f94c" prot="private" static="no" mutable="no">
+        <type><ref refid="structBpSendFile_1_1SendFileMetadata" kindref="compound">SendFileMetadata</ref></type>
+        <definition>SendFileMetadata BpSendFile::m_currentSendFileMetadata</definition>
+        <argsstring></argsstring>
+        <name>m_currentSendFileMetadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="69" column="22" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" compoundref="BpSendFile_8cpp" startline="116" endline="142">CopyPayload_Step2</referencedby>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1ab678fbf53928843f86a13a91deb6d748" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service BpSendFile::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="70" column="29" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a5e93f071fe22596b22fd5ff25cdad1fa" compoundref="BpSendFile_8cpp" startline="40" endline="59">BpSendFile</referencedby>
+        <referencedby refid="classBpSendFile_1af4cc6465af259c9821fefdd5db581c5f" compoundref="BpSendFile_8cpp" startline="61" endline="68">~BpSendFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1a3a484bc01376d223bc51520b8ed1b5b8" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpSendFile::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="71" column="21" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a5e93f071fe22596b22fd5ff25cdad1fa" compoundref="BpSendFile_8cpp" startline="40" endline="59">BpSendFile</referencedby>
+        <referencedby refid="classBpSendFile_1af4cc6465af259c9821fefdd5db581c5f" compoundref="BpSendFile_8cpp" startline="61" endline="68">~BpSendFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classDirectoryScanner" kindref="compound">DirectoryScanner</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DirectoryScanner&gt; BpSendFile::m_directoryScannerPtr</definition>
+        <argsstring></argsstring>
+        <name>m_directoryScannerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="72" column="21" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classBpSendFile_1a5e93f071fe22596b22fd5ff25cdad1fa" compoundref="BpSendFile_8cpp" startline="40" endline="59">BpSendFile</referencedby>
+        <referencedby refid="classBpSendFile_1ad8219947563d5417842724660da988b7" compoundref="BpSendFile_8cpp" startline="77" endline="115">GetNextPayloadLength_Step1</referencedby>
+        <referencedby refid="classBpSendFile_1afd3722432c9d91550f0eefe688709a4f" compoundref="BpSendFile_8cpp" startline="73" endline="75">GetNumberOfFilesToSend</referencedby>
+        <referencedby refid="classBpSendFile_1a5808d9db07dcc1e0af20f83254ba45ca" compoundref="BpSendFile_8cpp" startline="69" endline="71">Shutdown_NotThreadSafe</referencedby>
+        <referencedby refid="classBpSendFile_1a4d7666c6eb85380fc3a9db4d58bad5bb" compoundref="BpSendFile_8cpp" startline="144" endline="149">TryWaitForDataAvailable</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpSendFile_1a567d5e29df13e4942c81d9c553e4ed12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BpSendFile::BpSendFile</definition>
+        <argsstring>()</argsstring>
+        <name>BpSendFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="36" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classBpSendFile_1a5808d9db07dcc1e0af20f83254ba45ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BpSendFile::Shutdown_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="59" column="10" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="69" bodyend="71"/>
+        <references refid="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" compoundref="BpSendFile_8h" startline="72">m_directoryScannerPtr</references>
+        <referencedby refid="classBpSendFile_1af4cc6465af259c9821fefdd5db581c5f" compoundref="BpSendFile_8cpp" startline="61" endline="68">~BpSendFile</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpSendFile_1a5e93f071fe22596b22fd5ff25cdad1fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BpSendFile::BpSendFile</definition>
+        <argsstring>(const boost::filesystem::path &amp;fileOrFolderPath, uint64_t maxBundleSizeBytes, bool uploadExistingFiles, bool uploadNewFiles, unsigned int recurseDirectoriesDepth)</argsstring>
+        <name>BpSendFile</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>fileOrFolderPath</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>uploadExistingFiles</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>uploadNewFiles</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>recurseDirectoriesDepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="50" column="5" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="40" bodyend="59"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" compoundref="BpSendFile_8h" startline="72">m_directoryScannerPtr</references>
+        <references refid="classBpSendFile_1ab678fbf53928843f86a13a91deb6d748" compoundref="BpSendFile_8h" startline="70">m_ioService</references>
+        <references refid="classBpSendFile_1a3a484bc01376d223bc51520b8ed1b5b8" compoundref="BpSendFile_8h" startline="71">m_ioServiceThreadPtr</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+        <references refid="BpSendFile_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSendFile_8cpp" startline="26">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSendFile_1af4cc6465af259c9821fefdd5db581c5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BpSendFile::~BpSendFile</definition>
+        <argsstring>() override</argsstring>
+        <name>~BpSendFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="51" column="13" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="61" bodyend="68"/>
+        <references refid="classBpSendFile_1ab678fbf53928843f86a13a91deb6d748" compoundref="BpSendFile_8h" startline="70">m_ioService</references>
+        <references refid="classBpSendFile_1a3a484bc01376d223bc51520b8ed1b5b8" compoundref="BpSendFile_8h" startline="71">m_ioServiceThreadPtr</references>
+        <references refid="classBpSendFile_1a5808d9db07dcc1e0af20f83254ba45ca" compoundref="BpSendFile_8cpp" startline="69" endline="71">Shutdown_NotThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSendFile_1afd3722432c9d91550f0eefe688709a4f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t BpSendFile::GetNumberOfFilesToSend</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumberOfFilesToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="52" column="17" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="73" bodyend="75"/>
+        <references refid="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" compoundref="BpSendFile_8h" startline="72">m_directoryScannerPtr</references>
+        <referencedby refid="classBpSendFileRunner_1ab92790417416a5d558952ef1f2708693" compoundref="BpSendFileRunner_8cpp" startline="35" endline="229">BpSendFileRunner::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classBpSendFile_1a4d7666c6eb85380fc3a9db4d58bad5bb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BpSendFile::TryWaitForDataAvailable</definition>
+        <argsstring>(const boost::posix_time::time_duration &amp;timeout) override</argsstring>
+        <name>TryWaitForDataAvailable</name>
+        <reimplements refid="classBpSourcePattern_1a4192a857f6af7cb64a60618c6ea44f50">TryWaitForDataAvailable</reimplements>
+        <param>
+          <type>const boost::posix_time::time_duration &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="55" column="18" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="144" bodyend="149"/>
+        <references refid="classBpSendFile_1adf2b3915b54c64d6b18232b35fbaf86f" compoundref="BpSendFile_8h" startline="65">m_currentFilePathAbsolute</references>
+        <references refid="classBpSendFile_1ad16365d054ff7c8642e6e6909e23d91d" compoundref="BpSendFile_8h" startline="66">m_currentFilePathRelative</references>
+        <references refid="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" compoundref="BpSendFile_8h" startline="72">m_directoryScannerPtr</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSendFile_1ad8219947563d5417842724660da988b7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t BpSendFile::GetNextPayloadLength_Step1</definition>
+        <argsstring>() override</argsstring>
+        <name>GetNextPayloadLength_Step1</name>
+        <reimplements refid="classBpSourcePattern_1a65736f8cce8b64a42be757a1b6f334e4">GetNextPayloadLength_Step1</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="56" column="22" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="77" bodyend="115"/>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1ace044d27d1ce160d96575533fa9b24ea" compoundref="BpSendFile_8h" startline="44">BpSendFile::SendFileMetadata::fragmentLength</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a36f042e2533673aa15d9c30f12ebcc3e" compoundref="BpSendFile_8h" startline="43">BpSendFile::SendFileMetadata::fragmentOffset</references>
+        <references refid="classUtf8Paths_1a991286103ad4c49e8e1ddc31a09c5b98" compoundref="Utf8Paths_8cpp" startline="73" endline="75">Utf8Paths::IsAscii</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpSendFile_1adf2b3915b54c64d6b18232b35fbaf86f" compoundref="BpSendFile_8h" startline="65">m_currentFilePathAbsolute</references>
+        <references refid="classBpSendFile_1ad16365d054ff7c8642e6e6909e23d91d" compoundref="BpSendFile_8h" startline="66">m_currentFilePathRelative</references>
+        <references refid="classBpSendFile_1a90ae92599ad7cf34e956f484413fbe30" compoundref="BpSendFile_8h" startline="68">m_currentFilePathRelativeAsPrintableString</references>
+        <references refid="classBpSendFile_1a329a196e5b1a6f6d521c2887e089afa9" compoundref="BpSendFile_8h" startline="67">m_currentFilePathRelativeAsUtf8String</references>
+        <references refid="classBpSendFile_1a93cd14b461c56c03c4e60a7b6ab88279" compoundref="BpSendFile_8h" startline="64">m_currentIfstreamPtr</references>
+        <references refid="classBpSendFile_1a8349a63c08b953e1e37472d25a72f94c" compoundref="BpSendFile_8h" startline="69">m_currentSendFileMetadata</references>
+        <references refid="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" compoundref="BpSendFile_8h" startline="72">m_directoryScannerPtr</references>
+        <references refid="classBpSendFile_1a64ae6450d90312ea4d34cb2d277a69d1" compoundref="BpSendFile_8h" startline="61">M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a94d18e186fe867801ca0d5e3bce7631c" compoundref="BpSendFile_8h" startline="45">BpSendFile::SendFileMetadata::pathLen</references>
+        <references refid="classUtf8Paths_1a9dafbe18f982218b164eb3f853a03b38" compoundref="Utf8Paths_8cpp" startline="66" endline="68">Utf8Paths::PathToUtf8String</references>
+        <references refid="BpSendFile_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSendFile_8cpp" startline="26">subprocess</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a69526b8b8701d18278b907196407da87" compoundref="BpSendFile_8h" startline="42">BpSendFile::SendFileMetadata::totalFileSize</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BpSendFile::CopyPayload_Step2</definition>
+        <argsstring>(uint8_t *destinationBuffer) override</argsstring>
+        <name>CopyPayload_Step2</name>
+        <reimplements refid="classBpSourcePattern_1ab65db72649664027f585d3b2ce45e9f5">CopyPayload_Step2</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destinationBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="57" column="18" bodyfile="common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp" bodystart="116" bodyend="142"/>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1ace044d27d1ce160d96575533fa9b24ea" compoundref="BpSendFile_8h" startline="44">BpSendFile::SendFileMetadata::fragmentLength</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a36f042e2533673aa15d9c30f12ebcc3e" compoundref="BpSendFile_8h" startline="43">BpSendFile::SendFileMetadata::fragmentOffset</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBpSendFile_1adf2b3915b54c64d6b18232b35fbaf86f" compoundref="BpSendFile_8h" startline="65">m_currentFilePathAbsolute</references>
+        <references refid="classBpSendFile_1ad16365d054ff7c8642e6e6909e23d91d" compoundref="BpSendFile_8h" startline="66">m_currentFilePathRelative</references>
+        <references refid="classBpSendFile_1a329a196e5b1a6f6d521c2887e089afa9" compoundref="BpSendFile_8h" startline="67">m_currentFilePathRelativeAsUtf8String</references>
+        <references refid="classBpSendFile_1a93cd14b461c56c03c4e60a7b6ab88279" compoundref="BpSendFile_8h" startline="64">m_currentIfstreamPtr</references>
+        <references refid="classBpSendFile_1a8349a63c08b953e1e37472d25a72f94c" compoundref="BpSendFile_8h" startline="69">m_currentSendFileMetadata</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a94d18e186fe867801ca0d5e3bce7631c" compoundref="BpSendFile_8h" startline="45">BpSendFile::SendFileMetadata::pathLen</references>
+        <references refid="BpSendFile_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSendFile_8cpp" startline="26">subprocess</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a8552b04f8d44e1410423be48f63db654" compoundref="BpSendFile_8cpp" startline="29" endline="33">BpSendFile::SendFileMetadata::ToLittleEndianInplace</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a6f210f9ba75390a0aa13a474cf05e7a2" compoundref="BpSendFile_8cpp" startline="34" endline="38">BpSendFile::SendFileMetadata::ToNativeEndianInplace</references>
+        <references refid="structBpSendFile_1_1SendFileMetadata_1a69526b8b8701d18278b907196407da87" compoundref="BpSendFile_8h" startline="42">BpSendFile::SendFileMetadata::totalFileSize</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BpSourcePattern</label>
+        <link refid="classBpSourcePattern"/>
+      </node>
+      <node id="1">
+        <label>BpSendFile</label>
+        <link refid="classBpSendFile"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BpSourcePattern</label>
+        <link refid="classBpSourcePattern"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_tcpclInductPtr</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_outductManager</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_outductFinalStats</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_inductManager</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_finalDestinationEid</edgelabel>
+          <edgelabel>m_lastPreviousNode</edgelabel>
+          <edgelabel>m_myCustodianEid</edgelabel>
+          <edgelabel>m_myEid</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>OutductManager</label>
+        <link refid="classOutductManager"/>
+      </node>
+      <node id="3">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>InductManager</label>
+        <link refid="classInductManager"/>
+      </node>
+      <node id="1">
+        <label>BpSendFile</label>
+        <link refid="classBpSendFile"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_currentSendFileMetadata</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>BpSendFile::SendFileMetadata</label>
+        <link refid="structBpSendFile_1_1SendFileMetadata"/>
+      </node>
+      <node id="6">
+        <label>OutductFinalStats</label>
+        <link refid="structOutductFinalStats"/>
+      </node>
+      <node id="4">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+      <node id="8">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" line="34" column="1" bodyfile="common/bpcodec/apps/bpsendfile/include/BpSendFile.h" bodystart="34" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classBpSendFile_1a567d5e29df13e4942c81d9c553e4ed12" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>BpSendFile</name></member>
+      <member refid="classBpSendFile_1a5e93f071fe22596b22fd5ff25cdad1fa" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>BpSendFile</name></member>
+      <member refid="classBpSourcePattern_1a14e5f3f966e37f4d17ce12535b0795f1" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>BpSourcePattern</name></member>
+      <member refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>BpSourcePatternThreadFunc</name></member>
+      <member refid="classBpSourcePattern_1a92386efd86951105b652a7971acbd406" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>bundle_userdata_pair_t</name></member>
+      <member refid="classBpSourcePattern_1aca3993057d01fe31d0884590cefc09c2" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>bundleid_payloadsize_pair_t</name></member>
+      <member refid="classBpSendFile_1a6d7c780a9677b9ac0a36ac699d66d732" prot="protected" virt="virtual"><scope>BpSendFile</scope><name>CopyPayload_Step2</name></member>
+      <member refid="classBpSendFile_1ad8219947563d5417842724660da988b7" prot="protected" virt="virtual"><scope>BpSendFile</scope><name>GetNextPayloadLength_Step1</name></member>
+      <member refid="classBpSendFile_1afd3722432c9d91550f0eefe688709a4f" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>GetNumberOfFilesToSend</name></member>
+      <member refid="classBpSourcePattern_1ad24d6a1122cb3b0932ef31bed17d093a" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_allOutductsReady</name></member>
+      <member refid="classBpSourcePattern_1aa51049d6c9a06e1493ca9329a706874e" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_bpSourcePatternThreadPtr</name></member>
+      <member refid="classBpSourcePattern_1ae7d9ffa9cf7ba1621b5daa1991f7c16e" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_bundleCount</name></member>
+      <member refid="classBpSourcePattern_1a2582e0f0bccacb08dfb04450cc47fee4" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_bundleLifetimeMilliseconds</name></member>
+      <member refid="classBpSourcePattern_1a3db81e0968f5dc69568ca0f34ebb6e1b" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_bundlePriority</name></member>
+      <member refid="classBpSourcePattern_1abaac83e06d9284aaf421d9e9109f0a30" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_bundleSendTimeoutSeconds</name></member>
+      <member refid="classBpSourcePattern_1a22f49d342ca728f581c2008bdfacd54c" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_bundleSendTimeoutTimeDuration</name></member>
+      <member refid="classBpSourcePattern_1a75daac470cc003000f373f25d4080202" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_cbheBundleUuidSet</name></member>
+      <member refid="classBpSourcePattern_1a5ade20a00f01c19e86a54a77910c1fc3" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_claRate</name></member>
+      <member refid="classBpSendFile_1adf2b3915b54c64d6b18232b35fbaf86f" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentFilePathAbsolute</name></member>
+      <member refid="classBpSendFile_1ad16365d054ff7c8642e6e6909e23d91d" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentFilePathRelative</name></member>
+      <member refid="classBpSendFile_1a90ae92599ad7cf34e956f484413fbe30" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentFilePathRelativeAsPrintableString</name></member>
+      <member refid="classBpSendFile_1a329a196e5b1a6f6d521c2887e089afa9" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentFilePathRelativeAsUtf8String</name></member>
+      <member refid="classBpSendFile_1a93cd14b461c56c03c4e60a7b6ab88279" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentIfstreamPtr</name></member>
+      <member refid="classBpSourcePattern_1ae0b86bf5fab5d1e70fe34322c6832569" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentlySendingBundleIdSet</name></member>
+      <member refid="classBpSendFile_1a8349a63c08b953e1e37472d25a72f94c" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_currentSendFileMetadata</name></member>
+      <member refid="classBpSourcePattern_1a33baeae43169c8915f2634c252ea197e" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_custodyTransferUseAcs</name></member>
+      <member refid="classBpSourcePattern_1a293851647bfd3fbfbae33e4610167ddb" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_cvCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1ad6d60204a037ee424c3f438e32eb8eda" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_detectedNextCustodianSupportsCteb</name></member>
+      <member refid="classBpSendFile_1afb2030c0697c60b6ce2f17a7b0967092" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_directoryScannerPtr</name></member>
+      <member refid="classBpSourcePattern_1acd6579e2620e404dc053b843aece9062" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_finalDestinationEid</name></member>
+      <member refid="classBpSourcePattern_1a0996adcb870030e05c30fa3082b59de9" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_hopCounts</name></member>
+      <member refid="classBpSourcePattern_1a573a77a84709ab74ba5883db184d93ab" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_inductManager</name></member>
+      <member refid="classBpSendFile_1ab678fbf53928843f86a13a91deb6d748" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_ioService</name></member>
+      <member refid="classBpSendFile_1a3a484bc01376d223bc51520b8ed1b5b8" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classBpSourcePattern_1af58be2e56d0d0489795e9ae70a4285fb" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_isWaitingForRxBundleBeforeNextTx</name></member>
+      <member refid="classBpSourcePattern_1a2ca15662e2ae8679e078b109a98ccde3" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_lastPreviousNode</name></member>
+      <member refid="classBpSourcePattern_1a14dcb85c28aadadb060d0d55f95a0f7a" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_linkIsDown</name></member>
+      <member refid="classBpSendFile_1a64ae6450d90312ea4d34cb2d277a69d1" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>M_MAX_BUNDLE_PAYLOAD_SIZE_BYTES</name></member>
+      <member refid="classBpSourcePattern_1ab1f2969d9b7c9c02ec3cac9e42614a0a" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_mutexBundleUuidSet</name></member>
+      <member refid="classBpSourcePattern_1a81376acbc1a02166ea7bded1553cae8a" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_mutexCtebSet</name></member>
+      <member refid="classBpSourcePattern_1a64f2f0f010181a08a4c875c25bc5176a" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_mutexCurrentlySendingBundleIdSet</name></member>
+      <member refid="classBpSourcePattern_1a5c0f5fd11d105e9886e40b28002ba02a" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_mutexQueueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSourcePattern_1a4eb9bc21e70d46117d2252d309f6b349" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_myCustodianEid</name></member>
+      <member refid="classBpSourcePattern_1abb54ce7d476cf54d3227188bed959b4e" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_myCustodianEidUriString</name></member>
+      <member refid="classBpSourcePattern_1aace92159af95fece0fb37f884030b4cc" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_myCustodianServiceId</name></member>
+      <member refid="classBpSourcePattern_1ac3b778b8e5111ec32469c17aca85e1a4" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_myEid</name></member>
+      <member refid="classBpSourcePattern_1ac4121e9d009bd85d4c490c97d3e26f3e" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_nextBundleId</name></member>
+      <member refid="classBpSourcePattern_1a4564d639f48710e23d17a004b6121aaa" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_numAcsCustodyTransfers</name></member>
+      <member refid="classBpSourcePattern_1a3cf30b0c7d20c8e9ce119153c4df80e8" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_numAcsPacketsReceived</name></member>
+      <member refid="classBpSourcePattern_1a63167706f8ccdaeb6c128fcd93b6c906" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_numRfc5050CustodyTransfers</name></member>
+      <member refid="classBpSourcePattern_1a5918ea451e24872e50305840bbf66940" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_outductFinalStats</name></member>
+      <member refid="classBpSourcePattern_1a15c53cc3ac2fc765c6acc0dc632a2842" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_outductManager</name></member>
+      <member refid="classBpSourcePattern_1a0d457760a6b91cf04cb7ef94f7919e64" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_outstandingCtebCustodyIdsFragmentSet</name></member>
+      <member refid="classBpSourcePattern_1a99640a0f4d34c9c76c799e197d14d2e7" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_queueBundlesThatFailedToSend</name></member>
+      <member refid="classBpSourcePattern_1ae4571a51290212869654a81e8b64e6e3" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_requireRxBundleBeforeNextTx</name></member>
+      <member refid="classBpSourcePattern_1a39319430ced42cef3ca24e48b6285f7e" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_running</name></member>
+      <member refid="classBpSourcePattern_1a1fffb26c167c684deafeeb1bfc10c7c3" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_tcpclInductPtr</name></member>
+      <member refid="classBpSourcePattern_1a79b7d50988c5e06734850ba457c68677" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_tcpclOpportunisticRemoteNodeId</name></member>
+      <member refid="classBpSourcePattern_1a4eb2e676f4e943258e868854f130f142" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_totalNonAdminRecordBpv6BundleBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a6f5aa8c960749cf1b70cc66a8c79d724" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_totalNonAdminRecordBpv6BundlesRx</name></member>
+      <member refid="classBpSourcePattern_1a2c8a5eed06dd39a3395a7c981fd802de" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_totalNonAdminRecordBpv6PayloadBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a6d180303279225fd0c2446106c8e8d09" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_totalNonAdminRecordBpv7BundleBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a608331545467a4700c85395363e8172f" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_totalNonAdminRecordBpv7BundlesRx</name></member>
+      <member refid="classBpSourcePattern_1a0986443735cca1cce14e8bc0b1dc4870" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>m_totalNonAdminRecordBpv7PayloadBytesRx</name></member>
+      <member refid="classBpSourcePattern_1a2fdf4f11bd65c5767e845ae61be7b363" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_useBpVersion7</name></member>
+      <member refid="classBpSourcePattern_1a1795cf65d6e60dcc5cd15f15ac9ddda0" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_useCustodyTransfer</name></member>
+      <member refid="classBpSourcePattern_1aa45d0d7bc2d9146cc090de104514756f" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_useInductForSendingBundles</name></member>
+      <member refid="classBpSourcePattern_1a2429e1076e0b3a62fb0d9e91fce03a09" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_waitingForRxBundleBeforeNextTxConditionVariable</name></member>
+      <member refid="classBpSourcePattern_1a5a268cc274c99d382e01e7da06bdabd0" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>m_waitingForRxBundleBeforeNextTxMutex</name></member>
+      <member refid="classBpSourcePattern_1a31c8bc913bc3e191693f0b7bfc6115ba" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>OnDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classBpSourcePattern_1a4de2005ba91663cc37643636eb4355d7" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>OnFailedBundleVecSendCallback</name></member>
+      <member refid="classBpSourcePattern_1a5a5b49fb4656888d047c072749072b94" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>OnNewOpportunisticLinkCallback</name></member>
+      <member refid="classBpSourcePattern_1a9b10002119a835b2c81353bae36a5876" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>OnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpSourcePattern_1a294f222afa13bd8986865e70f9dbb020" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>OnSuccessfulBundleSendCallback</name></member>
+      <member refid="classBpSourcePattern_1af81631bb710c10b4e36da974ae176e6b" prot="protected" virt="virtual"><scope>BpSendFile</scope><name>ProcessNonAdminRecordBundlePayload</name></member>
+      <member refid="classBpSendFile_1a5808d9db07dcc1e0af20f83254ba45ca" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>Shutdown_NotThreadSafe</name></member>
+      <member refid="classBpSourcePattern_1ae28affe7d1dac701de4f5f434a7c1bc5" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>Start</name></member>
+      <member refid="classBpSourcePattern_1a273ccdd5a290a55e1136bca8de7d9314" prot="public" virt="non-virtual"><scope>BpSendFile</scope><name>Stop</name></member>
+      <member refid="classBpSendFile_1a4d7666c6eb85380fc3a9db4d58bad5bb" prot="protected" virt="virtual"><scope>BpSendFile</scope><name>TryWaitForDataAvailable</name></member>
+      <member refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" prot="private" virt="non-virtual"><scope>BpSendFile</scope><name>WholeRxBundleReadyCallback</name></member>
+      <member refid="classBpSendFile_1af4cc6465af259c9821fefdd5db581c5f" prot="public" virt="virtual"><scope>BpSendFile</scope><name>~BpSendFile</name></member>
+      <member refid="classBpSourcePattern_1abe8d5bb9d434572dd33e3102a985062e" prot="public" virt="virtual"><scope>BpSendFile</scope><name>~BpSourcePattern</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

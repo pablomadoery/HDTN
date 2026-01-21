@@ -1,0 +1,1024 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBundleViewV7" kind="class" language="C++" prot="public">
+    <compoundname>BundleViewV7</compoundname>
+    <includes refid="BundleViewV7_8h" local="no">BundleViewV7.h</includes>
+    <innerclass refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" prot="public">BundleViewV7::Bpv7CanonicalBlockView</innerclass>
+    <innerclass refid="structBundleViewV7_1_1Bpv7PrimaryBlockView" prot="public">BundleViewV7::Bpv7PrimaryBlockView</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classBundleViewV7_1adbc006da8204af705cad9c77ce2cf7d4" prot="public" static="no">
+        <type>std::list&lt; <ref refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" kindref="compound">Bpv7CanonicalBlockView</ref>, <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; <ref refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" kindref="compound">Bpv7CanonicalBlockView</ref> &gt; &gt;</type>
+        <definition>typedef std::list&lt;Bpv7CanonicalBlockView, FreeListAllocator&lt;Bpv7CanonicalBlockView&gt; &gt; BundleViewV7::canonical_block_view_list_t</definition>
+        <argsstring></argsstring>
+        <name>canonical_block_view_list_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="135" column="23" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classBundleViewV7_1a806c9e607b34f0a448586a72594b5bae" prot="public" static="no">
+        <type>std::map&lt; uint64_t, <ref refid="structBpv7BlockConfidentialityBlock" kindref="compound">Bpv7BlockConfidentialityBlock</ref> *, std::less&lt; uint64_t &gt;, <ref refid="classFreeListAllocator" kindref="compound">FreeListAllocator</ref>&lt; std::pair&lt; const uint64_t, <ref refid="structBpv7BlockConfidentialityBlock" kindref="compound">Bpv7BlockConfidentialityBlock</ref> * &gt; &gt; &gt;</type>
+        <definition>typedef std::map&lt;uint64_t, Bpv7BlockConfidentialityBlock*, std::less&lt;uint64_t&gt;, FreeListAllocator&lt;std::pair&lt;const uint64_t, Bpv7BlockConfidentialityBlock*&gt; &gt; &gt; BundleViewV7::encrypted_block_number_to_bcb_map_t</definition>
+        <argsstring></argsstring>
+        <name>encrypted_block_number_to_bcb_map_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="140" column="2" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBundleViewV7_1a7b66cb8e6f58ff1ed60e882706e708fc" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleViewV7::m_nextFreeCanonicalBlockNumberMask</definition>
+        <argsstring></argsstring>
+        <name>m_nextFreeCanonicalBlockNumberMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="130" column="14" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classBundleViewV7_1acea9d72a92d4d63c7dc0118a283b25b1" compoundref="BundleViewV7_8cpp" startline="443" endline="452">FreeBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1aef5477a08b82d8ec3f6398e73691f478" compoundref="BundleViewV7_8cpp" startline="453" endline="473">GetNextFreeCanonicalBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" compoundref="BundleViewV7_8cpp" startline="429" endline="442">ReserveBlockNumber</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" prot="public" static="no" mutable="no">
+        <type><ref refid="structBundleViewV7_1_1Bpv7PrimaryBlockView" kindref="compound">Bpv7PrimaryBlockView</ref></type>
+        <definition>Bpv7PrimaryBlockView BundleViewV7::m_primaryBlockView</definition>
+        <argsstring></argsstring>
+        <name>m_primaryBlockView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="132" column="26" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="BpSecPolicyManager_8cpp_1aef3dd4862da85b09dc126d2693bc838d" compoundref="BpSecPolicyManager_8cpp" startline="377" endline="568">DoFailureEvent</referencedby>
+        <referencedby refid="BpSecPolicyManager_8cpp_1a55238bc37733bb2083f1cf322bac016e" compoundref="BpSecPolicyManager_8cpp" startline="308" endline="375">DoFailureEventSopMissingAtAcceptor</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1afee5c666477329b4570c77860877e7e3" compoundref="BpSecPolicyManager_8cpp" startline="964" endline="979">BpSecPolicyManager::FindPolicyAndProcessOutgoingBundle</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a28c866274e3a6df96d6e5a8af7af9add" compoundref="TestBundleViewV7_8cpp" startline="94" endline="130">GenerateBundle</referencedby>
+        <referencedby refid="BundleStorageManagerMtTests_8cpp_1a5bbea50b81861bfdb4931ce09b90a79d" compoundref="BundleStorageManagerMtTests_8cpp" startline="68" endline="96">GenerateBundleV7</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1aca993029b5ac15b1429a1d41a1935123" compoundref="ZmqStorageInterface_8cpp" startline="2326" endline="2349">ZmqStorageInterface::Impl::GetQueueBundlePriority</referencedby>
+        <referencedby refid="classBundleViewV7_1ac264d80596655a315c463f507cb6f497" compoundref="BundleViewV7_8cpp" startline="323" endline="358">GetSerializationSize</referencedby>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" compoundref="BpSecPolicyManager_8cpp" startline="570" endline="795">BpSecPolicyManager::ProcessReceivedBundle</referencedby>
+        <referencedby refid="classhdtn_1_1RedundantMasker_1ac5d1dcb44ca77ea822d366f55919db3e" compoundref="RedundantMasker_8cpp" startline="7" endline="9">hdtn::RedundantMasker::query</referencedby>
+        <referencedby refid="classhdtn_1_1ShiftingMasker_1a53ff05d1a75a6092cedadc854635d962" compoundref="ShiftingMasker_8cpp" startline="17" endline="20">hdtn::ShiftingMasker::query</referencedby>
+        <referencedby refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" compoundref="BundleViewV7_8cpp" startline="231" endline="322">Render</referencedby>
+        <referencedby refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" compoundref="BundleStorageManagerBase_8cpp" startline="506" endline="658">BundleStorageManagerBase::RestoreFromDisk</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" compoundref="router_8cpp" startline="898" endline="979">Router::Impl::SendBundle</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" compoundref="receive_8cpp" startline="2337" endline="2513">hdtn::Ingress::Impl::SendPing</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" compoundref="BpSecBundleProcessor_8cpp" startline="594" endline="897">BpSecBundleProcessor::TryDecryptBundleByIndividualBcb</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" compoundref="BpSecBundleProcessor_8cpp" startline="1118" endline="1423">BpSecBundleProcessor::TryVerifyBundleIntegrityByIndividualBib</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">BpSourcePattern::WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a01182860bc96db8296ffb8f621c0538a" compoundref="ZmqStorageInterface_8cpp" startline="899" endline="1034">ZmqStorageInterface::Impl::Write</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a02b489c081eeb81f3f78247f6f456549" compoundref="ZmqStorageInterface_8cpp" startline="1050" endline="1059">ZmqStorageInterface::Impl::WriteBundle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1a49380f0f25926142be162c54ae2f628b" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* BundleViewV7::m_applicationDataUnitStartPtr</definition>
+        <argsstring></argsstring>
+        <name>m_applicationDataUnitStartPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="133" column="20" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="133" bodyend="-1"/>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" prot="public" static="no" mutable="no">
+        <type><ref refid="classBundleViewV7_1adbc006da8204af705cad9c77ce2cf7d4" kindref="member">canonical_block_view_list_t</ref></type>
+        <definition>canonical_block_view_list_t BundleViewV7::m_listCanonicalBlockView</definition>
+        <argsstring></argsstring>
+        <name>m_listCanonicalBlockView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="136" column="33" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" compoundref="BundleViewV7_8cpp" startline="360" endline="367">AppendMoveCanonicalBlock</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" compoundref="BundleViewV7_8cpp" startline="474" endline="494">DeleteAllCanonicalBlocksByType</referencedby>
+        <referencedby refid="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" compoundref="BundleViewV7_8cpp" startline="421" endline="428">GetCanonicalBlockByBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1a6024dd4f03646441ecd1ed376164e733" compoundref="BundleViewV7_8cpp" startline="403" endline="409">GetCanonicalBlockCountByType</referencedby>
+        <referencedby refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" compoundref="BundleViewV7_8cpp" startline="413" endline="420">GetCanonicalBlocksByType</referencedby>
+        <referencedby refid="classBundleViewV7_1aef5477a08b82d8ec3f6398e73691f478" compoundref="BundleViewV7_8cpp" startline="453" endline="473">GetNextFreeCanonicalBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1a0e529d85e206936b125921785f6b653e" compoundref="BundleViewV7_8cpp" startline="410" endline="412">GetNumCanonicalBlocks</referencedby>
+        <referencedby refid="classBundleViewV7_1ac264d80596655a315c463f507cb6f497" compoundref="BundleViewV7_8cpp" startline="323" endline="358">GetSerializationSize</referencedby>
+        <referencedby refid="classBundleViewV7_1adc52cce83c2b16b9e314d47817ccfba5" compoundref="BundleViewV7_8cpp" startline="376" endline="388">InsertMoveCanonicalBlockAfterBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1af8442aea88c73af5c7892463bf5630d7" compoundref="BundleViewV7_8cpp" startline="389" endline="401">InsertMoveCanonicalBlockBeforeBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+        <referencedby refid="classBundleViewV7_1a8df3bf5b6cd73c2fa639fd05efb89a0f" compoundref="BundleViewV7_8cpp" startline="368" endline="375">PrependMoveCanonicalBlock</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" compoundref="BpSecPolicyManager_8cpp" startline="908" endline="961">BpSecPolicyManager::ProcessOutgoingBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" compoundref="BundleViewV7_8cpp" startline="231" endline="322">Render</referencedby>
+        <referencedby refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" compoundref="BundleViewV7_8cpp" startline="191" endline="230">RenderInPlace</referencedby>
+        <referencedby refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" compoundref="router_8cpp" startline="898" endline="979">Router::Impl::SendBundle</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" compoundref="receive_8cpp" startline="2337" endline="2513">hdtn::Ingress::Impl::SendPing</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1a4c116b8233e2e96901074277244a0551" prot="public" static="no" mutable="no">
+        <type><ref refid="classBundleViewV7_1a806c9e607b34f0a448586a72594b5bae" kindref="member">encrypted_block_number_to_bcb_map_t</ref></type>
+        <definition>encrypted_block_number_to_bcb_map_t BundleViewV7::m_mapEncryptedBlockNumberToBcbPtr</definition>
+        <argsstring></argsstring>
+        <name>m_mapEncryptedBlockNumberToBcbPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="141" column="41" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="structBpv7CanonicalBlock" kindref="compound">Bpv7CanonicalBlock</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Bpv7CanonicalBlock&gt; BundleViewV7::m_blockNumberToRecycledCanonicalBlockArray[MAX_NUM_BLOCK_TYPE_CODES]</definition>
+        <argsstring>[MAX_NUM_BLOCK_TYPE_CODES]</argsstring>
+        <name>m_blockNumberToRecycledCanonicalBlockArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="144" column="21" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="144" bodyend="-1"/>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" compoundref="BundleViewV7_8cpp" startline="474" endline="494">DeleteAllCanonicalBlocksByType</referencedby>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+        <referencedby refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" compoundref="BundleViewV7_8cpp" startline="231" endline="322">Render</referencedby>
+        <referencedby refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1a86b0abb8a98f2f42eb7e7009c0748753" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="structBpv7CanonicalBlock" kindref="compound">Bpv7CanonicalBlock</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Bpv7CanonicalBlock&gt; BundleViewV7::m_recycledAdminRecord</definition>
+        <argsstring></argsstring>
+        <name>m_recycledAdminRecord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="145" column="21" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="145" bodyend="-1"/>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" compoundref="BundleViewV7_8cpp" startline="474" endline="494">DeleteAllCanonicalBlocksByType</referencedby>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+        <referencedby refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" compoundref="BundleViewV7_8cpp" startline="231" endline="322">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" prot="public" static="no" mutable="no">
+        <type>boost::asio::const_buffer</type>
+        <definition>boost::asio::const_buffer BundleViewV7::m_renderedBundle</definition>
+        <argsstring></argsstring>
+        <name>m_renderedBundle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="147" column="31" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="147" bodyend="-1"/>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBundleViewV7_1a12c4aed910d98b07a4d36858773ca14a" compoundref="BundleViewV7_8cpp" startline="506" endline="511">CopyAndLoadBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+        <referencedby refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">LoadBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">Render</referencedby>
+        <referencedby refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" compoundref="BundleViewV7_8cpp" startline="191" endline="230">RenderInPlace</referencedby>
+        <referencedby refid="classBundleViewV7_1a740ae4fcad8fc6f5b77ebe93f9f898f5" compoundref="BundleViewV7_8cpp" startline="500" endline="505">SwapInAndLoadBundle</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">BpSourcePattern::WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a02b489c081eeb81f3f78247f6f456549" compoundref="ZmqStorageInterface_8cpp" startline="1050" endline="1059">ZmqStorageInterface::Impl::WriteBundle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" prot="public" static="no" mutable="no">
+        <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref></type>
+        <definition>padded_vector_uint8_t BundleViewV7::m_frontBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_frontBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="148" column="27" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="148" bodyend="-1"/>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a7c1011239e2569899427456bf5761db0" compoundref="TestBundleViewV7_8cpp" startline="73" endline="92">ChangeCanonicalBlockAndRender</referencedby>
+        <referencedby refid="classBundleViewV7_1a12c4aed910d98b07a4d36858773ca14a" compoundref="BundleViewV7_8cpp" startline="506" endline="511">CopyAndLoadBundle</referencedby>
+        <referencedby refid="BundleStorageManagerMtTests_8cpp_1a5bbea50b81861bfdb4931ce09b90a79d" compoundref="BundleStorageManagerMtTests_8cpp" startline="68" endline="96">GenerateBundleV7</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1ab2226df1823d56ca552fdfbbb8cf6793" compoundref="TestBundleViewV7_8cpp" startline="35" endline="52">PrependCanonicalBlockAndRender</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a935d4a301a10b335410898e254b898ec" compoundref="TestBundleViewV7_8cpp" startline="53" endline="71">PrependCanonicalBlockAndRender_AllocateOnly</referencedby>
+        <referencedby refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">Render</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" compoundref="router_8cpp" startline="898" endline="979">Router::Impl::SendBundle</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" compoundref="receive_8cpp" startline="2337" endline="2513">hdtn::Ingress::Impl::SendPing</referencedby>
+        <referencedby refid="classBundleViewV7_1a740ae4fcad8fc6f5b77ebe93f9f898f5" compoundref="BundleViewV7_8cpp" startline="500" endline="505">SwapInAndLoadBundle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleViewV7_1ac2f28984359215d37c2f1f963f2356de" prot="public" static="no" mutable="no">
+        <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref></type>
+        <definition>padded_vector_uint8_t BundleViewV7::m_backBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_backBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="149" column="27" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="149" bodyend="-1"/>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">Render</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classBundleViewV7_1a13cade8ecb9c1950ec66d118be71cbcf" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::size_t</type>
+        <definition>constexpr std::size_t BundleViewV7::MAX_NUM_BLOCK_TYPE_CODES</definition>
+        <argsstring></argsstring>
+        <name>MAX_NUM_BLOCK_TYPE_CODES</name>
+        <initializer>= static_cast&lt;std::size_t&gt;(<ref refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a8da06c2ed5808afbaf28f9457caf5f3c" kindref="member">BPV7_BLOCK_TYPE_CODE::RESERVED_MAX_BLOCK_TYPES</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="143" column="34" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="143" bodyend="-1"/>
+        <referencedby refid="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" compoundref="BundleViewV7_8cpp" startline="474" endline="494">DeleteAllCanonicalBlocksByType</referencedby>
+        <referencedby refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" compoundref="BundleViewV7_8cpp" startline="231" endline="322">Render</referencedby>
+        <referencedby refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBundleViewV7_1a6ddc097e762f964b22d756a4633e0621" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT</type>
+        <definition>BundleViewV7::BundleViewV7</definition>
+        <argsstring>()</argsstring>
+        <name>BundleViewV7</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="101" column="20" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a5af1344aed8a8c5cd1060fe02a25f77c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT</type>
+        <definition>BundleViewV7::~BundleViewV7</definition>
+        <argsstring>()</argsstring>
+        <name>~BundleViewV7</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="102" column="20" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT void</type>
+        <definition>void BundleViewV7::AppendMoveCanonicalBlock</definition>
+        <argsstring>(std::unique_ptr&lt; Bpv7CanonicalBlock &gt; &amp;&amp;headerPtr)</argsstring>
+        <name>AppendMoveCanonicalBlock</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structBpv7CanonicalBlock" kindref="compound">Bpv7CanonicalBlock</ref> &gt; &amp;&amp;</type>
+          <declname>headerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="104" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="360" bodyend="367"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a360948fbfd81b513af2863474cec6928" compoundref="BundleViewV7_8h" startline="94">BundleViewV7::Bpv7CanonicalBlockView::dirty</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" compoundref="BundleViewV7_8cpp" startline="429" endline="442">ReserveBlockNumber</references>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a28c866274e3a6df96d6e5a8af7af9add" compoundref="TestBundleViewV7_8cpp" startline="94" endline="130">GenerateBundle</referencedby>
+        <referencedby refid="BundleStorageManagerMtTests_8cpp_1a5bbea50b81861bfdb4931ce09b90a79d" compoundref="BundleStorageManagerMtTests_8cpp" startline="68" endline="96">GenerateBundleV7</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" compoundref="router_8cpp" startline="898" endline="979">Router::Impl::SendBundle</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" compoundref="receive_8cpp" startline="2337" endline="2513">hdtn::Ingress::Impl::SendPing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a8df3bf5b6cd73c2fa639fd05efb89a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT void</type>
+        <definition>void BundleViewV7::PrependMoveCanonicalBlock</definition>
+        <argsstring>(std::unique_ptr&lt; Bpv7CanonicalBlock &gt; &amp;&amp;headerPtr)</argsstring>
+        <name>PrependMoveCanonicalBlock</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structBpv7CanonicalBlock" kindref="compound">Bpv7CanonicalBlock</ref> &gt; &amp;&amp;</type>
+          <declname>headerPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="105" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="368" bodyend="375"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a360948fbfd81b513af2863474cec6928" compoundref="BundleViewV7_8h" startline="94">BundleViewV7::Bpv7CanonicalBlockView::dirty</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" compoundref="BundleViewV7_8cpp" startline="429" endline="442">ReserveBlockNumber</references>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1ab2226df1823d56ca552fdfbbb8cf6793" compoundref="TestBundleViewV7_8cpp" startline="35" endline="52">PrependCanonicalBlockAndRender</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a935d4a301a10b335410898e254b898ec" compoundref="TestBundleViewV7_8cpp" startline="53" endline="71">PrependCanonicalBlockAndRender_AllocateOnly</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1adc52cce83c2b16b9e314d47817ccfba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::InsertMoveCanonicalBlockAfterBlockNumber</definition>
+        <argsstring>(std::unique_ptr&lt; Bpv7CanonicalBlock &gt; &amp;&amp;headerPtr, const uint64_t blockNumber)</argsstring>
+        <name>InsertMoveCanonicalBlockAfterBlockNumber</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structBpv7CanonicalBlock" kindref="compound">Bpv7CanonicalBlock</ref> &gt; &amp;&amp;</type>
+          <declname>headerPtr</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>blockNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="106" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="376" bodyend="388"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a360948fbfd81b513af2863474cec6928" compoundref="BundleViewV7_8h" startline="94">BundleViewV7::Bpv7CanonicalBlockView::dirty</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" compoundref="BundleViewV7_8cpp" startline="429" endline="442">ReserveBlockNumber</references>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1abc37f5148137f8b191e0c92cc4fcae0d" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="987" endline="1739">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1af8442aea88c73af5c7892463bf5630d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::InsertMoveCanonicalBlockBeforeBlockNumber</definition>
+        <argsstring>(std::unique_ptr&lt; Bpv7CanonicalBlock &gt; &amp;&amp;headerPtr, const uint64_t blockNumber)</argsstring>
+        <name>InsertMoveCanonicalBlockBeforeBlockNumber</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structBpv7CanonicalBlock" kindref="compound">Bpv7CanonicalBlock</ref> &gt; &amp;&amp;</type>
+          <declname>headerPtr</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>blockNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="107" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="389" bodyend="401"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a360948fbfd81b513af2863474cec6928" compoundref="BundleViewV7_8h" startline="94">BundleViewV7::Bpv7CanonicalBlockView::dirty</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" compoundref="BundleViewV7_8cpp" startline="429" endline="442">ReserveBlockNumber</references>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1ac264d80596655a315c463f507cb6f497" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::GetSerializationSize</definition>
+        <argsstring>(uint64_t &amp;serializationSize) const</argsstring>
+        <name>GetSerializationSize</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>serializationSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="108" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="323" bodyend="358"/>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1abb6c2abe63fc3e44283622a42b9e0844" compoundref="BundleViewV7_8h" startline="86">BundleViewV7::Bpv7PrimaryBlockView::dirty</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a2c677df2600cc434e61c60df39d8800a" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="249" endline="264">Bpv7CbhePrimaryBlock::GetSerializationSize</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">m_primaryBlockView</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="structBpv7CanonicalBlock_1a6224499818798fc8f4976a1aa8d64171" compoundref="bpv7_8h" startline="366">Bpv7CanonicalBlock::smallestSerializedCanonicalSize</references>
+        <references refid="BundleViewV7_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleViewV7_8cpp" startline="43">subprocess</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a7c1011239e2569899427456bf5761db0" compoundref="TestBundleViewV7_8cpp" startline="73" endline="92">ChangeCanonicalBlockAndRender</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1ab2226df1823d56ca552fdfbbb8cf6793" compoundref="TestBundleViewV7_8cpp" startline="35" endline="52">PrependCanonicalBlockAndRender</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a935d4a301a10b335410898e254b898ec" compoundref="TestBundleViewV7_8cpp" startline="53" endline="71">PrependCanonicalBlockAndRender_AllocateOnly</referencedby>
+        <referencedby refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" compoundref="BundleViewV7_8cpp" startline="191" endline="230">RenderInPlace</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a6024dd4f03646441ecd1ed376164e733" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT std::size_t</type>
+        <definition>std::size_t BundleViewV7::GetCanonicalBlockCountByType</definition>
+        <argsstring>(const BPV7_BLOCK_TYPE_CODE canonicalBlockTypeCode) const</argsstring>
+        <name>GetCanonicalBlockCountByType</name>
+        <param>
+          <type>const <ref refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990" kindref="member">BPV7_BLOCK_TYPE_CODE</ref></type>
+          <declname>canonicalBlockTypeCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="109" column="32" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="403" bodyend="409"/>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleViewV7_1a2e67ebc24fb46189035f9111651f7e93" compoundref="BundleViewV7_8cpp" startline="512" endline="517">IsValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a0e529d85e206936b125921785f6b653e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT std::size_t</type>
+        <definition>std::size_t BundleViewV7::GetNumCanonicalBlocks</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumCanonicalBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="110" column="32" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="410" bodyend="412"/>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT void</type>
+        <definition>void BundleViewV7::GetCanonicalBlocksByType</definition>
+        <argsstring>(const BPV7_BLOCK_TYPE_CODE canonicalBlockTypeCode, std::vector&lt; Bpv7CanonicalBlockView * &gt; &amp;blocks)</argsstring>
+        <name>GetCanonicalBlocksByType</name>
+        <param>
+          <type>const <ref refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990" kindref="member">BPV7_BLOCK_TYPE_CODE</ref></type>
+          <declname>canonicalBlockTypeCode</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" kindref="compound">Bpv7CanonicalBlockView</ref> * &gt; &amp;</type>
+          <declname>blocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="111" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="413" bodyend="420"/>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a7c1011239e2569899427456bf5761db0" compoundref="TestBundleViewV7_8cpp" startline="73" endline="92">ChangeCanonicalBlockAndRender</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1ac33fcb6ff75d6ca681f345562381afcc" compoundref="router_8cpp" startline="652" endline="748">Router::Impl::EgressEventsHandler</referencedby>
+        <referencedby refid="classBundleViewV7_1a106ccb6b25a301e6926ff3c35036d189" compoundref="BundleViewV7_8cpp" startline="519" endline="531">GetPayloadSize</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a6a05b756867b990f3cc18fc56eb81cd8" compoundref="BpSecPolicyManager_8cpp" startline="797" endline="856">BpSecPolicyManager::PopulateTargetArraysForSecuritySource</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" compoundref="BpSecPolicyManager_8cpp" startline="570" endline="795">BpSecPolicyManager::ProcessReceivedBundle</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">BpSourcePattern::WholeRxBundleReadyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT <ref refid="structBundleViewV7_1_1Bpv7CanonicalBlockView" kindref="compound">Bpv7CanonicalBlockView</ref> *</type>
+        <definition>BundleViewV7::Bpv7CanonicalBlockView * BundleViewV7::GetCanonicalBlockByBlockNumber</definition>
+        <argsstring>(const uint64_t blockNumber)</argsstring>
+        <name>GetCanonicalBlockByBlockNumber</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>blockNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="112" column="43" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="421" bodyend="428"/>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <referencedby refid="BpSecPolicyManager_8cpp_1af32c993f843e02ec767e38b7a264155a" compoundref="BpSecPolicyManager_8cpp" startline="288" endline="306">RemoveSopTargetBlock</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" compoundref="BpSecBundleProcessor_8cpp" startline="594" endline="897">BpSecBundleProcessor::TryDecryptBundleByIndividualBcb</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" compoundref="BpSecBundleProcessor_8cpp" startline="1118" endline="1423">BpSecBundleProcessor::TryVerifyBundleIntegrityByIndividualBib</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT void</type>
+        <definition>void BundleViewV7::ReserveBlockNumber</definition>
+        <argsstring>(const uint64_t blockNumber)</argsstring>
+        <name>ReserveBlockNumber</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>blockNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="113" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="429" bodyend="442"/>
+        <references refid="classBundleViewV7_1a7b66cb8e6f58ff1ed60e882706e708fc" compoundref="BundleViewV7_8h" startline="130">m_nextFreeCanonicalBlockNumberMask</references>
+        <referencedby refid="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" compoundref="BundleViewV7_8cpp" startline="360" endline="367">AppendMoveCanonicalBlock</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1afa41f934cc947f8423e619fcf86e2015" compoundref="TestBundleViewV7_8cpp" startline="1190" endline="1208">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleViewV7_1adc52cce83c2b16b9e314d47817ccfba5" compoundref="BundleViewV7_8cpp" startline="376" endline="388">InsertMoveCanonicalBlockAfterBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1af8442aea88c73af5c7892463bf5630d7" compoundref="BundleViewV7_8cpp" startline="389" endline="401">InsertMoveCanonicalBlockBeforeBlockNumber</referencedby>
+        <referencedby refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</referencedby>
+        <referencedby refid="classBundleViewV7_1a8df3bf5b6cd73c2fa639fd05efb89a0f" compoundref="BundleViewV7_8cpp" startline="368" endline="375">PrependMoveCanonicalBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1acea9d72a92d4d63c7dc0118a283b25b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT void</type>
+        <definition>void BundleViewV7::FreeBlockNumber</definition>
+        <argsstring>(const uint64_t blockNumber)</argsstring>
+        <name>FreeBlockNumber</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>blockNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="114" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="443" bodyend="452"/>
+        <references refid="classBundleViewV7_1a7b66cb8e6f58ff1ed60e882706e708fc" compoundref="BundleViewV7_8h" startline="130">m_nextFreeCanonicalBlockNumberMask</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1afa41f934cc947f8423e619fcf86e2015" compoundref="TestBundleViewV7_8cpp" startline="1190" endline="1208">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" compoundref="BundleViewV7_8cpp" startline="474" endline="494">DeleteAllCanonicalBlocksByType</referencedby>
+        <referencedby refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" compoundref="BundleViewV7_8cpp" startline="231" endline="322">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1aef5477a08b82d8ec3f6398e73691f478" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT uint64_t</type>
+        <definition>uint64_t BundleViewV7::GetNextFreeCanonicalBlockNumber</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNextFreeCanonicalBlockNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="115" column="29" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="453" bodyend="473"/>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a7b66cb8e6f58ff1ed60e882706e708fc" compoundref="BundleViewV7_8h" startline="130">m_nextFreeCanonicalBlockNumberMask</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT std::size_t</type>
+        <definition>std::size_t BundleViewV7::DeleteAllCanonicalBlocksByType</definition>
+        <argsstring>(const BPV7_BLOCK_TYPE_CODE canonicalBlockTypeCode)</argsstring>
+        <name>DeleteAllCanonicalBlocksByType</name>
+        <param>
+          <type>const <ref refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990" kindref="member">BPV7_BLOCK_TYPE_CODE</ref></type>
+          <declname>canonicalBlockTypeCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="116" column="32" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="474" bodyend="494"/>
+        <references refid="classBundleViewV7_1acea9d72a92d4d63c7dc0118a283b25b1" compoundref="BundleViewV7_8cpp" startline="443" endline="452">FreeBlockNumber</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" compoundref="BundleViewV7_8h" startline="144">m_blockNumberToRecycledCanonicalBlockArray</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a86b0abb8a98f2f42eb7e7009c0748753" compoundref="BundleViewV7_8h" startline="145">m_recycledAdminRecord</references>
+        <references refid="classBundleViewV7_1a13cade8ecb9c1950ec66d118be71cbcf" compoundref="BundleViewV7_8h" startline="143">MAX_NUM_BLOCK_TYPE_CODES</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1adfdf2f52c76af8b6c2f94da301c8723d" compoundref="TestBundleViewV7_8cpp" startline="363" endline="624">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::LoadBundle</definition>
+        <argsstring>(uint8_t *bundleData, const std::size_t size, const bool skipCrcVerifyInCanonicalBlocks=false, const bool loadPrimaryBlockOnly=false)</argsstring>
+        <name>LoadBundle</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>skipCrcVerifyInCanonicalBlocks</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>loadPrimaryBlockOnly</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="117" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="495" bodyend="499"/>
+        <references refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">m_renderedBundle</references>
+        <references refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1ac33fcb6ff75d6ca681f345562381afcc" compoundref="router_8cpp" startline="652" endline="748">Router::Impl::EgressEventsHandler</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1aca993029b5ac15b1429a1d41a1935123" compoundref="ZmqStorageInterface_8cpp" startline="2326" endline="2349">ZmqStorageInterface::Impl::GetQueueBundlePriority</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" compoundref="BundleStorageManagerBase_8cpp" startline="506" endline="658">BundleStorageManagerBase::RestoreFromDisk</referencedby>
+        <referencedby refid="classBpSourcePattern_1a5d31954fb7525ae575f3c97db48f6caa" compoundref="BpSourcePattern_8cpp" startline="909" endline="1142">BpSourcePattern::WholeRxBundleReadyCallback</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a01182860bc96db8296ffb8f621c0538a" compoundref="ZmqStorageInterface_8cpp" startline="899" endline="1034">ZmqStorageInterface::Impl::Write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a740ae4fcad8fc6f5b77ebe93f9f898f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::SwapInAndLoadBundle</definition>
+        <argsstring>(padded_vector_uint8_t &amp;bundleData, const bool skipCrcVerifyInCanonicalBlocks=false, const bool loadPrimaryBlockOnly=false)</argsstring>
+        <name>SwapInAndLoadBundle</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>skipCrcVerifyInCanonicalBlocks</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>loadPrimaryBlockOnly</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="118" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="500" bodyend="505"/>
+        <references refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</references>
+        <references refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" compoundref="BundleViewV7_8h" startline="148">m_frontBuffer</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">m_renderedBundle</references>
+        <references refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</references>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a12c4aed910d98b07a4d36858773ca14a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::CopyAndLoadBundle</definition>
+        <argsstring>(const uint8_t *bundleData, const std::size_t size, const bool skipCrcVerifyInCanonicalBlocks=false, const bool loadPrimaryBlockOnly=false)</argsstring>
+        <name>CopyAndLoadBundle</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>skipCrcVerifyInCanonicalBlocks</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>loadPrimaryBlockOnly</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="119" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="506" bodyend="511"/>
+        <references refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" compoundref="BundleViewV7_8cpp" startline="57" endline="176">Load</references>
+        <references refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" compoundref="BundleViewV7_8h" startline="148">m_frontBuffer</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">m_renderedBundle</references>
+        <references refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">Reset</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a2e67ebc24fb46189035f9111651f7e93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::IsValid</definition>
+        <argsstring>() const</argsstring>
+        <name>IsValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="120" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="512" bodyend="517"/>
+        <references refid="classBundleViewV7_1a6024dd4f03646441ecd1ed376164e733" compoundref="BundleViewV7_8cpp" startline="403" endline="409">GetCanonicalBlockCountByType</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a106ccb6b25a301e6926ff3c35036d189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::GetPayloadSize</definition>
+        <argsstring>(uint64_t &amp;payloadSizeBytes)</argsstring>
+        <name>GetPayloadSize</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>payloadSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="121" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="519" bodyend="531"/>
+        <references refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" compoundref="BundleViewV7_8cpp" startline="413" endline="420">GetCanonicalBlocksByType</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::Render</definition>
+        <argsstring>(const std::size_t maxBundleSizeBytes)</argsstring>
+        <name>Render</name>
+        <param>
+          <type>const std::size_t</type>
+          <declname>maxBundleSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="122" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="177" bodyend="188"/>
+        <references refid="classBundleViewV7_1ac2f28984359215d37c2f1f963f2356de" compoundref="BundleViewV7_8h" startline="149">m_backBuffer</references>
+        <references refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" compoundref="BundleViewV7_8h" startline="148">m_frontBuffer</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">m_renderedBundle</references>
+        <referencedby refid="TestBpsecDefaultSecurityContexts_8cpp_1a40a390e98674f51ac3a7dd9b977d6e58" compoundref="TestBpsecDefaultSecurityContexts_8cpp" startline="28" endline="519">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a7c1011239e2569899427456bf5761db0" compoundref="TestBundleViewV7_8cpp" startline="73" endline="92">ChangeCanonicalBlockAndRender</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a28c866274e3a6df96d6e5a8af7af9add" compoundref="TestBundleViewV7_8cpp" startline="94" endline="130">GenerateBundle</referencedby>
+        <referencedby refid="BundleStorageManagerMtTests_8cpp_1a5bbea50b81861bfdb4931ce09b90a79d" compoundref="BundleStorageManagerMtTests_8cpp" startline="68" endline="96">GenerateBundleV7</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1ab2226df1823d56ca552fdfbbb8cf6793" compoundref="TestBundleViewV7_8cpp" startline="35" endline="52">PrependCanonicalBlockAndRender</referencedby>
+        <referencedby refid="TestBundleViewV7_8cpp_1a935d4a301a10b335410898e254b898ec" compoundref="TestBundleViewV7_8cpp" startline="53" endline="71">PrependCanonicalBlockAndRender_AllocateOnly</referencedby>
+        <referencedby refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" compoundref="BundleViewV7_8cpp" startline="191" endline="230">RenderInPlace</referencedby>
+        <referencedby refid="classRouter_1_1Impl_1af1444c40cebe9e709db23f0fa2a22d52" compoundref="router_8cpp" startline="898" endline="979">Router::Impl::SendBundle</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" compoundref="receive_8cpp" startline="2337" endline="2513">hdtn::Ingress::Impl::SendPing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool BundleViewV7::RenderInPlace</definition>
+        <argsstring>(const std::size_t paddingLeft)</argsstring>
+        <name>RenderInPlace</name>
+        <param>
+          <type>const std::size_t</type>
+          <declname>paddingLeft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="123" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="191" bodyend="230"/>
+        <references refid="classBundleViewV7_1ac264d80596655a315c463f507cb6f497" compoundref="BundleViewV7_8cpp" startline="323" endline="358">GetSerializationSize</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">m_renderedBundle</references>
+        <references refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">Render</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1aad79ef05655851413ad9bbefb701cb07" compoundref="TestBundleViewV7_8cpp" startline="629" endline="774">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</referencedby>
+        <referencedby refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT void</type>
+        <definition>void BundleViewV7::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="124" column="25" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="533" bodyend="559"/>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1ab2ca5837aa1596666f49819f304d7d2f" compoundref="TestBpSecPolicyManager_8cpp" startline="725" endline="729">if</references>
+        <references refid="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" compoundref="BundleViewV7_8h" startline="144">m_blockNumberToRecycledCanonicalBlockArray</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a13cade8ecb9c1950ec66d118be71cbcf" compoundref="BundleViewV7_8h" startline="143">MAX_NUM_BLOCK_TYPE_CODES</references>
+        <references refid="structBpv7CbhePrimaryBlock_1abba2ecea305994b16e3cd4830fcd4616" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="91" endline="104">Bpv7CbhePrimaryBlock::SetZero</references>
+        <referencedby refid="TestBundleViewV7_8cpp_1a62934555fb1ea93be8d55c435055b4c2" compoundref="TestBundleViewV7_8cpp" startline="132" endline="359">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBundleViewV7_1a12c4aed910d98b07a4d36858773ca14a" compoundref="BundleViewV7_8cpp" startline="506" endline="511">CopyAndLoadBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">LoadBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a740ae4fcad8fc6f5b77ebe93f9f898f5" compoundref="BundleViewV7_8cpp" startline="500" endline="505">SwapInAndLoadBundle</referencedby>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1ac7121aab7ff1f0e7e7d8a2d798ee17c8" compoundref="receive_8cpp" startline="1120" endline="1329">hdtn::Ingress::Impl::ZmqTelemThreadFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_NO_EXPORT bool</type>
+        <definition>bool BundleViewV7::Load</definition>
+        <argsstring>(const bool skipCrcVerifyInCanonicalBlocks, const bool loadPrimaryBlockOnly)</argsstring>
+        <name>Load</name>
+        <param>
+          <type>const bool</type>
+          <declname>skipCrcVerifyInCanonicalBlocks</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>loadPrimaryBlockOnly</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="126" column="28" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="57" bodyend="176"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca47330c484efdc1f575888f59b8643c86">ADMINRECORD</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1a7308ddc6e33b2383e0283e26484ba5f8" compoundref="TestBpSecPolicyManager_8cpp" startline="723">bcbPtr</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a4ddb4b92d87973bd0fc314979deba833">CONFIDENTIALITY</references>
+        <references refid="structBpv7CanonicalBlock_1a2b0a572fb082540b24eb3a02d3162822" compoundref="Bpv7CanonicalBlock_8cpp" startline="278" endline="545">Bpv7CanonicalBlock::DeserializeBpv7</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a1957fc764dd6c24659d06576d99c4bec" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="267" endline="493">Bpv7CbhePrimaryBlock::DeserializeBpv7</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1abb6c2abe63fc3e44283622a42b9e0844" compoundref="BundleViewV7_8h" startline="86">BundleViewV7::Bpv7PrimaryBlockView::dirty</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a360948fbfd81b513af2863474cec6928" compoundref="BundleViewV7_8h" startline="94">BundleViewV7::Bpv7CanonicalBlockView::dirty</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1aefae643a55be35935ff5883a007ba54a" compoundref="BundleViewV7_8h" startline="96">BundleViewV7::Bpv7CanonicalBlockView::isEncrypted</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca4f0a1baefc4f83f233ed5b832a4f8cea">ISFRAGMENT</references>
+        <references refid="classBundleViewV7_1a49380f0f25926142be162c54ae2f628b" compoundref="BundleViewV7_8h" startline="133">m_applicationDataUnitStartPtr</references>
+        <references refid="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" compoundref="BundleViewV7_8h" startline="144">m_blockNumberToRecycledCanonicalBlockArray</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a4c116b8233e2e96901074277244a0551" compoundref="BundleViewV7_8h" startline="141">m_mapEncryptedBlockNumberToBcbPtr</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a86b0abb8a98f2f42eb7e7009c0748753" compoundref="BundleViewV7_8h" startline="145">m_recycledAdminRecord</references>
+        <references refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" compoundref="BundleViewV7_8h" startline="147">m_renderedBundle</references>
+        <references refid="structBpv7AbstractSecurityBlock_1a5505a79365f669b82abb85cfe2c325d7" compoundref="bpv7_8h" startline="558">Bpv7AbstractSecurityBlock::m_securityTargets</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" compoundref="BundleViewV7_8cpp" startline="429" endline="442">ReserveBlockNumber</references>
+        <referencedby refid="classBundleViewV7_1a12c4aed910d98b07a4d36858773ca14a" compoundref="BundleViewV7_8cpp" startline="506" endline="511">CopyAndLoadBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" compoundref="BundleViewV7_8cpp" startline="495" endline="499">LoadBundle</referencedby>
+        <referencedby refid="classBundleViewV7_1a740ae4fcad8fc6f5b77ebe93f9f898f5" compoundref="BundleViewV7_8cpp" startline="500" endline="505">SwapInAndLoadBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_NO_EXPORT bool</type>
+        <definition>bool BundleViewV7::Render</definition>
+        <argsstring>(uint8_t *serialization, uint64_t &amp;sizeSerialized, bool terminateBeforeLastBlock)</argsstring>
+        <name>Render</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>serialization</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>sizeSerialized</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>terminateBeforeLastBlock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/BundleViewV7.h" line="127" column="28" bodyfile="common/bpcodec/src/codec/BundleViewV7.cpp" bodystart="231" bodyend="322"/>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a4278170f91ae5cce8e7d7ca8903f68e8" compoundref="BundleViewV7_8h" startline="85">BundleViewV7::Bpv7PrimaryBlockView::actualSerializedPrimaryBlockPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1abb6c2abe63fc3e44283622a42b9e0844" compoundref="BundleViewV7_8h" startline="86">BundleViewV7::Bpv7PrimaryBlockView::dirty</references>
+        <references refid="classBundleViewV7_1acea9d72a92d4d63c7dc0118a283b25b1" compoundref="BundleViewV7_8cpp" startline="443" endline="452">FreeBlockNumber</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca4f0a1baefc4f83f233ed5b832a4f8cea">ISFRAGMENT</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" compoundref="BundleViewV7_8h" startline="144">m_blockNumberToRecycledCanonicalBlockArray</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a86b0abb8a98f2f42eb7e7009c0748753" compoundref="BundleViewV7_8h" startline="145">m_recycledAdminRecord</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a78b4886899168d651302ae5ae64e3f1c" compoundref="BundleViewV7_8h" startline="95">BundleViewV7::Bpv7CanonicalBlockView::markedForDeletion</references>
+        <references refid="classBundleViewV7_1a13cade8ecb9c1950ec66d118be71cbcf" compoundref="BundleViewV7_8h" startline="143">MAX_NUM_BLOCK_TYPE_CODES</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="structBpv7CbhePrimaryBlock_1ad4a3d3fe446e1e6189c8c3f1487ccccf" compoundref="Bpv7CbhePrimaryBlock_8cpp" startline="108" endline="247">Bpv7CbhePrimaryBlock::SerializeBpv7</references>
+        <references refid="structBpv7CanonicalBlock_1a6224499818798fc8f4976a1aa8d64171" compoundref="bpv7_8h" startline="366">Bpv7CanonicalBlock::smallestSerializedCanonicalSize</references>
+        <references refid="BundleViewV7_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BundleViewV7_8cpp" startline="43">subprocess</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>BundleViewV7</label>
+        <link refid="classBundleViewV7"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_primaryBlockView</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Bpv7CbhePrimaryBlock</label>
+        <link refid="structBpv7CbhePrimaryBlock"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_creationTimestamp</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_destinationEid</edgelabel>
+          <edgelabel>m_reportToEid</edgelabel>
+          <edgelabel>m_sourceNodeId</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BundleViewV7::Bpv7PrimaryBlockView</label>
+        <link refid="structBundleViewV7_1_1Bpv7PrimaryBlockView"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>TimestampUtil::bpv7_creation_timestamp_t</label>
+        <link refid="structTimestampUtil_1_1bpv7__creation__timestamp__t"/>
+      </node>
+      <node id="4">
+        <label>PrimaryBlock</label>
+        <link refid="structPrimaryBlock"/>
+      </node>
+      <node id="6">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpcodec/include/codec/BundleViewV7.h" line="80" column="1" bodyfile="common/bpcodec/include/codec/BundleViewV7.h" bodystart="80" bodyend="150"/>
+    <listofallmembers>
+      <member refid="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>AppendMoveCanonicalBlock</name></member>
+      <member refid="classBundleViewV7_1a6ddc097e762f964b22d756a4633e0621" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>BundleViewV7</name></member>
+      <member refid="classBundleViewV7_1adbc006da8204af705cad9c77ce2cf7d4" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>canonical_block_view_list_t</name></member>
+      <member refid="classBundleViewV7_1a12c4aed910d98b07a4d36858773ca14a" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>CopyAndLoadBundle</name></member>
+      <member refid="classBundleViewV7_1ad43ab4b85de91acb5321d35afa7360f9" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>DeleteAllCanonicalBlocksByType</name></member>
+      <member refid="classBundleViewV7_1a806c9e607b34f0a448586a72594b5bae" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>encrypted_block_number_to_bcb_map_t</name></member>
+      <member refid="classBundleViewV7_1acea9d72a92d4d63c7dc0118a283b25b1" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>FreeBlockNumber</name></member>
+      <member refid="classBundleViewV7_1ac1a3b615c56b902bf92ec8a39c027828" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetCanonicalBlockByBlockNumber</name></member>
+      <member refid="classBundleViewV7_1a6024dd4f03646441ecd1ed376164e733" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetCanonicalBlockCountByType</name></member>
+      <member refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetCanonicalBlocksByType</name></member>
+      <member refid="classBundleViewV7_1aef5477a08b82d8ec3f6398e73691f478" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetNextFreeCanonicalBlockNumber</name></member>
+      <member refid="classBundleViewV7_1a0e529d85e206936b125921785f6b653e" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetNumCanonicalBlocks</name></member>
+      <member refid="classBundleViewV7_1a106ccb6b25a301e6926ff3c35036d189" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetPayloadSize</name></member>
+      <member refid="classBundleViewV7_1ac264d80596655a315c463f507cb6f497" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>GetSerializationSize</name></member>
+      <member refid="classBundleViewV7_1adc52cce83c2b16b9e314d47817ccfba5" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>InsertMoveCanonicalBlockAfterBlockNumber</name></member>
+      <member refid="classBundleViewV7_1af8442aea88c73af5c7892463bf5630d7" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>InsertMoveCanonicalBlockBeforeBlockNumber</name></member>
+      <member refid="classBundleViewV7_1a2e67ebc24fb46189035f9111651f7e93" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>IsValid</name></member>
+      <member refid="classBundleViewV7_1a1064dc770a3dc70d934be198a8d43f3f" prot="private" virt="non-virtual"><scope>BundleViewV7</scope><name>Load</name></member>
+      <member refid="classBundleViewV7_1a2cfccfdd5686674091522501d06cf423" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>LoadBundle</name></member>
+      <member refid="classBundleViewV7_1a49380f0f25926142be162c54ae2f628b" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_applicationDataUnitStartPtr</name></member>
+      <member refid="classBundleViewV7_1ac2f28984359215d37c2f1f963f2356de" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_backBuffer</name></member>
+      <member refid="classBundleViewV7_1a29f226791c48c25a551926822c92ee1c" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_blockNumberToRecycledCanonicalBlockArray</name></member>
+      <member refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_frontBuffer</name></member>
+      <member refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_listCanonicalBlockView</name></member>
+      <member refid="classBundleViewV7_1a4c116b8233e2e96901074277244a0551" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_mapEncryptedBlockNumberToBcbPtr</name></member>
+      <member refid="classBundleViewV7_1a7b66cb8e6f58ff1ed60e882706e708fc" prot="private" virt="non-virtual"><scope>BundleViewV7</scope><name>m_nextFreeCanonicalBlockNumberMask</name></member>
+      <member refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_primaryBlockView</name></member>
+      <member refid="classBundleViewV7_1a86b0abb8a98f2f42eb7e7009c0748753" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_recycledAdminRecord</name></member>
+      <member refid="classBundleViewV7_1ac1a9291861d803b59feaefa6aaf7c26e" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>m_renderedBundle</name></member>
+      <member refid="classBundleViewV7_1a13cade8ecb9c1950ec66d118be71cbcf" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>MAX_NUM_BLOCK_TYPE_CODES</name></member>
+      <member refid="classBundleViewV7_1a8df3bf5b6cd73c2fa639fd05efb89a0f" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>PrependMoveCanonicalBlock</name></member>
+      <member refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>Render</name></member>
+      <member refid="classBundleViewV7_1a6b7861625e7d6ad1065fee82e171eaf0" prot="private" virt="non-virtual"><scope>BundleViewV7</scope><name>Render</name></member>
+      <member refid="classBundleViewV7_1aeb0bc9bc8c08c7589f3e7d2822280aef" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>RenderInPlace</name></member>
+      <member refid="classBundleViewV7_1ae86ae27ecc93efc7ac720d45396c6d00" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>ReserveBlockNumber</name></member>
+      <member refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>Reset</name></member>
+      <member refid="classBundleViewV7_1a740ae4fcad8fc6f5b77ebe93f9f898f5" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>SwapInAndLoadBundle</name></member>
+      <member refid="classBundleViewV7_1a5af1344aed8a8c5cd1060fe02a25f77c" prot="public" virt="non-virtual"><scope>BundleViewV7</scope><name>~BundleViewV7</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

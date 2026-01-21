@@ -1,0 +1,1459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classStcpBundleSource" kind="class" language="C++" prot="public">
+    <compoundname>StcpBundleSource</compoundname>
+    <includes refid="StcpBundleSource_8h" local="no">StcpBundleSource.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classTcpAsyncSender" kindref="compound">TcpAsyncSender</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TcpAsyncSender&gt; StcpBundleSource::m_tcpAsyncSenderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_tcpAsyncSenderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="80" column="21" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a318182d790fcb1b81b73cabb76b5f4c3" prot="private" static="no" mutable="no">
+        <type><ref refid="structTcpAsyncSenderElement_1aee9dd4668b0c79a4e25f709d17d6db70" kindref="member">TcpAsyncSenderElement::OnSuccessfulSendCallbackByIoServiceThread_t</ref></type>
+        <definition>TcpAsyncSenderElement::OnSuccessfulSendCallbackByIoServiceThread_t StcpBundleSource::m_handleTcpSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_handleTcpSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="81" column="72" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" compoundref="StcpBundleSource_8cpp" startline="28" endline="57">StcpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a3e7bd429094eadc9f77847b99497e984" prot="private" static="no" mutable="no">
+        <type><ref refid="structTcpAsyncSenderElement_1aee9dd4668b0c79a4e25f709d17d6db70" kindref="member">TcpAsyncSenderElement::OnSuccessfulSendCallbackByIoServiceThread_t</ref></type>
+        <definition>TcpAsyncSenderElement::OnSuccessfulSendCallbackByIoServiceThread_t StcpBundleSource::m_handleTcpSendKeepAliveCallback</definition>
+        <argsstring></argsstring>
+        <name>m_handleTcpSendKeepAliveCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="82" column="72" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" compoundref="StcpBundleSource_8cpp" startline="28" endline="57">StcpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service StcpBundleSource::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="86" column="29" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" compoundref="StcpBundleSource_8cpp" startline="451" endline="453">DoStcpShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" compoundref="StcpBundleSource_8cpp" startline="287" endline="303">OnResolve</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" compoundref="StcpBundleSource_8cpp" startline="28" endline="57">StcpBundleSource</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a0c49398b7d901c9877c3c6ef5b6cf11a" prot="private" static="no" mutable="no">
+        <type>boost::asio::io_service::work</type>
+        <definition>boost::asio::io_service::work StcpBundleSource::m_work</definition>
+        <argsstring></argsstring>
+        <name>m_work</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="87" column="35" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a5807108c51c803eef63f6693aac0d66b" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::tcp::resolver</type>
+        <definition>boost::asio::ip::tcp::resolver StcpBundleSource::m_resolver</definition>
+        <argsstring></argsstring>
+        <name>m_resolver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="88" column="36" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a2418dcc43e1a0cbaf023f3900eb5fba8" compoundref="StcpBundleSource_8cpp" startline="279" endline="285">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a9338e1173a2f834f15119a0bb83f3708" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer StcpBundleSource::m_needToSendKeepAliveMessageTimer</definition>
+        <argsstring></argsstring>
+        <name>m_needToSendKeepAliveMessageTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="89" column="33" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a978202b0a50c47d95f5cad13d1636f66" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer StcpBundleSource::m_reconnectAfterShutdownTimer</definition>
+        <argsstring></argsstring>
+        <name>m_reconnectAfterShutdownTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="90" column="33" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a2496e710da3f31903ef558465c38927c" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer StcpBundleSource::m_reconnectAfterOnConnectErrorTimer</definition>
+        <argsstring></argsstring>
+        <name>m_reconnectAfterOnConnectErrorTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="91" column="33" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; boost::asio::ip::tcp::socket &gt;</type>
+        <definition>std::shared_ptr&lt;boost::asio::ip::tcp::socket&gt; StcpBundleSource::m_tcpSocketPtr</definition>
+        <argsstring></argsstring>
+        <name>m_tcpSocketPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="92" column="21" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" compoundref="StcpBundleSource_8cpp" startline="340" endline="355">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" compoundref="StcpBundleSource_8cpp" startline="287" endline="303">OnResolve</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3dec4ba879191d35b2b8369104828a13" compoundref="StcpBundleSource_8cpp" startline="400" endline="406">StartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a2c2b96452c3d31b1b1bb2f7181543ba9" prot="private" static="no" mutable="no">
+        <type>boost::asio::ip::tcp::resolver::results_type</type>
+        <definition>boost::asio::ip::tcp::resolver::results_type StcpBundleSource::m_resolverResults</definition>
+        <argsstring></argsstring>
+        <name>m_resolverResults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="93" column="50" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" compoundref="StcpBundleSource_8cpp" startline="340" endline="355">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" compoundref="StcpBundleSource_8cpp" startline="287" endline="303">OnResolve</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a5b9e20b681f53aa5d776adb5e9c381c6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; StcpBundleSource::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="94" column="21" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" compoundref="StcpBundleSource_8cpp" startline="28" endline="57">StcpBundleSource</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a91deb9b87a6a42487a6ac54754bad327" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable StcpBundleSource::m_localConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_localConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="95" column="31" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1aa9cf9892f0d04a70805defd56fcf1037" prot="private" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t StcpBundleSource::M_KEEP_ALIVE_INTERVAL_SECONDS</definition>
+        <argsstring></argsstring>
+        <name>M_KEEP_ALIVE_INTERVAL_SECONDS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="97" column="20" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a93a0d6d0f4a5872b1e26a4a978156bf0" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int StcpBundleSource::MAX_UNACKED</definition>
+        <argsstring></argsstring>
+        <name>MAX_UNACKED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="98" column="24" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a3d479e172dead351fe12285580bcceb4" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable StcpBundleSource::m_bytesToAckByTcpSendCallbackCb</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckByTcpSendCallbackCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="99" column="65" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a67b5f0239697170115bfb65986a57237" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint32_t &gt;</type>
+        <definition>std::vector&lt;uint32_t&gt; StcpBundleSource::m_bytesToAckByTcpSendCallbackCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckByTcpSendCallbackCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="100" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a296a48357bb7b117f9ef06c31ac22b59" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSource::m_readyToForward</definition>
+        <argsstring></argsstring>
+        <name>m_readyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="101" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1ac1d1621f3b0f9528153215fdf47da568" compoundref="StcpBundleSource_8cpp" startline="506" endline="508">ReadyToForward</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a03e0a561b5068d2c1a2bb9ae5b9596c4" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSource::m_stcpShutdownComplete</definition>
+        <argsstring></argsstring>
+        <name>m_stcpShutdownComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="102" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a10775c625c09f9f11978c4a8e3b91e71" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSource::m_dataServedAsKeepAlive</definition>
+        <argsstring></argsstring>
+        <name>m_dataServedAsKeepAlive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="103" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a5865391fc710be3262bafc0560e73502" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSource::m_useLocalConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_useLocalConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="104" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a3c9de291274cc1055f913bd643a74e4e" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t StcpBundleSource::m_tcpReadSomeBuffer[10]</definition>
+        <argsstring>[10]</argsstring>
+        <name>m_tcpReadSomeBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="106" column="13" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a3dec4ba879191d35b2b8369104828a13" compoundref="StcpBundleSource_8cpp" startline="400" endline="406">StartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1aa3bb01919cdd0a8edd3e4b06a6ce8ac0" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref></type>
+        <definition>OnFailedBundleVecSendCallback_t StcpBundleSource::m_onFailedBundleVecSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleVecSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="108" column="37" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a53924ef84a91a3e6a3a9bd9f15562082" compoundref="StcpBundleSource_8cpp" startline="510" endline="512">SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a3bb767056bfa11edc27efe39f2442309" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref></type>
+        <definition>OnFailedBundleZmqSendCallback_t StcpBundleSource::m_onFailedBundleZmqSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleZmqSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="109" column="37" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a86cd6ea8943bee61da364543266f6bb4" compoundref="StcpBundleSource_8cpp" startline="513" endline="515">SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a9f68a00ae7c70c0678512e7cd8ade1d9" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref></type>
+        <definition>OnSuccessfulBundleSendCallback_t StcpBundleSource::m_onSuccessfulBundleSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onSuccessfulBundleSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="110" column="38" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1a12b322dfe5516a62177c2ce52bc0f107" compoundref="StcpBundleSource_8cpp" startline="516" endline="518">SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a8a33eea0697572c2bf622e3c380858da" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref></type>
+        <definition>OnOutductLinkStatusChangedCallback_t StcpBundleSource::m_onOutductLinkStatusChangedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onOutductLinkStatusChangedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="111" column="42" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a6fdc3bff8c5fcc97628379c678b1417d" compoundref="StcpBundleSource_8cpp" startline="519" endline="521">SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1ad9fcd7e0c2348bb9d3806ab60a77b2c3" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t StcpBundleSource::m_userAssignedUuid</definition>
+        <argsstring></argsstring>
+        <name>m_userAssignedUuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="112" column="14" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1aa8e791c192c02c3d6b2b59ddfa883bca" compoundref="StcpBundleSource_8cpp" startline="522" endline="524">SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSource::m_totalBundlesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="115" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1a545bb64e6a664bafd12521023d2c0512" compoundref="StcpBundleSource_8cpp" startline="258" endline="260">GetTotalBundlesSent</referencedby>
+        <referencedby refid="classStcpBundleSource_1a096296bfcdecf3da45c075bf4c15fa0c" compoundref="StcpBundleSource_8cpp" startline="262" endline="264">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSource::m_totalBundlesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="116" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1ab5158398d4632f9b10e83d3708f422f4" compoundref="StcpBundleSource_8cpp" startline="254" endline="256">GetTotalBundlesAcked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a096296bfcdecf3da45c075bf4c15fa0c" compoundref="StcpBundleSource_8cpp" startline="262" endline="264">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSource::m_totalBundleBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="117" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1a997cc3df51b63cfbca0149a08d518d9b" compoundref="StcpBundleSource_8cpp" startline="270" endline="272">GetTotalBundleBytesSent</referencedby>
+        <referencedby refid="classStcpBundleSource_1a8ab027d42d584ac97f74c4256a9f55a4" compoundref="StcpBundleSource_8cpp" startline="274" endline="276">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a867374419e85609b5ffbad900243ce95" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSource::m_totalStcpBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalStcpBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="118" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSource::m_totalBundleBytesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="119" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1ae0f11189af9eb19abc0cf3f7a5218862" compoundref="StcpBundleSource_8cpp" startline="266" endline="268">GetTotalBundleBytesAcked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a8ab027d42d584ac97f74c4256a9f55a4" compoundref="StcpBundleSource_8cpp" startline="274" endline="276">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; StcpBundleSource::m_numTcpReconnectAttempts</definition>
+        <argsstring></argsstring>
+        <name>m_numTcpReconnectAttempts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="120" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+        <referencedby refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" compoundref="StcpBundleSource_8cpp" startline="340" endline="355">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStcpBundleSource_1aa37af4c5ab0569008aa57c39e81e3392" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; StcpBundleSource::m_linkIsUpPhysically</definition>
+        <argsstring></argsstring>
+        <name>m_linkIsUpPhysically</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="121" column="17" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+        <referencedby refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" compoundref="StcpBundleSource_8cpp" startline="526" endline="534">GetTelemetry</referencedby>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classStcpBundleSource_1a9d379adf7ff0e17eb22fab2a7d1d29f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StcpBundleSource::StcpBundleSource</definition>
+        <argsstring>()</argsstring>
+        <name>StcpBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="41" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::OnResolve</definition>
+        <argsstring>(const boost::system::error_code &amp;ec, boost::asio::ip::tcp::resolver::results_type results)</argsstring>
+        <name>OnResolve</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>boost::asio::ip::tcp::resolver::results_type</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="67" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="287" bodyend="303"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" compoundref="StcpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classStcpBundleSource_1a2c2b96452c3d31b1b1bb2f7181543ba9" compoundref="StcpBundleSource_8h" startline="93">m_resolverResults</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <references refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1a2418dcc43e1a0cbaf023f3900eb5fba8" compoundref="StcpBundleSource_8cpp" startline="279" endline="285">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::OnConnect</definition>
+        <argsstring>(const boost::system::error_code &amp;ec)</argsstring>
+        <name>OnConnect</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="68" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="305" bodyend="338"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" compoundref="StcpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classStcpBundleSource_1aa9cf9892f0d04a70805defd56fcf1037" compoundref="StcpBundleSource_8h" startline="97">M_KEEP_ALIVE_INTERVAL_SECONDS</references>
+        <references refid="classStcpBundleSource_1aa37af4c5ab0569008aa57c39e81e3392" compoundref="StcpBundleSource_8h" startline="121">m_linkIsUpPhysically</references>
+        <references refid="classStcpBundleSource_1a9338e1173a2f834f15119a0bb83f3708" compoundref="StcpBundleSource_8h" startline="89">m_needToSendKeepAliveMessageTimer</references>
+        <references refid="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" compoundref="StcpBundleSource_8h" startline="120">m_numTcpReconnectAttempts</references>
+        <references refid="classStcpBundleSource_1aa3bb01919cdd0a8edd3e4b06a6ce8ac0" compoundref="StcpBundleSource_8h" startline="108">m_onFailedBundleVecSendCallback</references>
+        <references refid="classStcpBundleSource_1a3bb767056bfa11edc27efe39f2442309" compoundref="StcpBundleSource_8h" startline="109">m_onFailedBundleZmqSendCallback</references>
+        <references refid="classStcpBundleSource_1a8a33eea0697572c2bf622e3c380858da" compoundref="StcpBundleSource_8h" startline="111">m_onOutductLinkStatusChangedCallback</references>
+        <references refid="classStcpBundleSource_1a296a48357bb7b117f9ef06c31ac22b59" compoundref="StcpBundleSource_8h" startline="101">m_readyToForward</references>
+        <references refid="classStcpBundleSource_1a2496e710da3f31903ef558465c38927c" compoundref="StcpBundleSource_8h" startline="91">m_reconnectAfterOnConnectErrorTimer</references>
+        <references refid="classStcpBundleSource_1a03e0a561b5068d2c1a2bb9ae5b9596c4" compoundref="StcpBundleSource_8h" startline="102">m_stcpShutdownComplete</references>
+        <references refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" compoundref="StcpBundleSource_8h" startline="80">m_tcpAsyncSenderPtr</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <references refid="classStcpBundleSource_1ad9fcd7e0c2348bb9d3806ab60a77b2c3" compoundref="StcpBundleSource_8h" startline="112">m_userAssignedUuid</references>
+        <references refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" compoundref="StcpBundleSource_8cpp" startline="426" endline="449">OnNeedToSendKeepAliveMessage_TimerExpired</references>
+        <references refid="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" compoundref="StcpBundleSource_8cpp" startline="340" endline="355">OnReconnectAfterOnConnectError_TimerExpired</references>
+        <references refid="classStcpBundleSource_1a3dec4ba879191d35b2b8369104828a13" compoundref="StcpBundleSource_8cpp" startline="400" endline="406">StartTcpReceive</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" compoundref="StcpBundleSource_8cpp" startline="340" endline="355">OnReconnectAfterOnConnectError_TimerExpired</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" compoundref="StcpBundleSource_8cpp" startline="287" endline="303">OnResolve</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::OnReconnectAfterOnConnectError_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnReconnectAfterOnConnectError_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="69" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="340" bodyend="355"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" compoundref="StcpBundleSource_8h" startline="120">m_numTcpReconnectAttempts</references>
+        <references refid="classStcpBundleSource_1a2c2b96452c3d31b1b1bb2f7181543ba9" compoundref="StcpBundleSource_8h" startline="93">m_resolverResults</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <references refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::HandleTcpSend</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, TcpAsyncSenderElement *elPtr)</argsstring>
+        <name>HandleTcpSend</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type><ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> *</type>
+          <declname>elPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="70" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="359" bodyend="386"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" compoundref="StcpBundleSource_8cpp" startline="451" endline="453">DoStcpShutdown</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classStcpBundleSource_1a3d479e172dead351fe12285580bcceb4" compoundref="StcpBundleSource_8h" startline="99">m_bytesToAckByTcpSendCallbackCb</references>
+        <references refid="classStcpBundleSource_1a67b5f0239697170115bfb65986a57237" compoundref="StcpBundleSource_8h" startline="100">m_bytesToAckByTcpSendCallbackCbVec</references>
+        <references refid="classStcpBundleSource_1a91deb9b87a6a42487a6ac54754bad327" compoundref="StcpBundleSource_8h" startline="95">m_localConditionVariableAckReceived</references>
+        <references refid="classStcpBundleSource_1a9f68a00ae7c70c0678512e7cd8ade1d9" compoundref="StcpBundleSource_8h" startline="110">m_onSuccessfulBundleSendCallback</references>
+        <references refid="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" compoundref="StcpBundleSource_8h" startline="119">m_totalBundleBytesAcked</references>
+        <references refid="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" compoundref="StcpBundleSource_8h" startline="116">m_totalBundlesAcked</references>
+        <references refid="classStcpBundleSource_1a5865391fc710be3262bafc0560e73502" compoundref="StcpBundleSource_8h" startline="104">m_useLocalConditionVariableAckReceived</references>
+        <references refid="classStcpBundleSource_1ad9fcd7e0c2348bb9d3806ab60a77b2c3" compoundref="StcpBundleSource_8h" startline="112">m_userAssignedUuid</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <references refid="StcpBundleSource_8cpp_1a3f812d134b4c2403eff89a54f3aa7541" compoundref="StcpBundleSource_8cpp" startline="24">RECONNECTION_DELAY_AFTER_SHUTDOWN_SECONDS</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" compoundref="StcpBundleSource_8cpp" startline="28" endline="57">StcpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a54e90e557063e2aef3e5dccc6036bd2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::HandleTcpSendKeepAlive</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, TcpAsyncSenderElement *elPtr)</argsstring>
+        <name>HandleTcpSendKeepAlive</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type><ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> *</type>
+          <declname>elPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="71" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="388" bodyend="398"/>
+        <references refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" compoundref="StcpBundleSource_8cpp" startline="451" endline="453">DoStcpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="StcpBundleSource_8cpp_1a3f812d134b4c2403eff89a54f3aa7541" compoundref="StcpBundleSource_8cpp" startline="24">RECONNECTION_DELAY_AFTER_SHUTDOWN_SECONDS</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" compoundref="StcpBundleSource_8cpp" startline="28" endline="57">StcpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a3dec4ba879191d35b2b8369104828a13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::StartTcpReceive</definition>
+        <argsstring>()</argsstring>
+        <name>StartTcpReceive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="72" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="400" bodyend="406"/>
+        <references refid="classStcpBundleSource_1ad0c84aec0b99e3e066f6d2f4801c8ed0" compoundref="StcpBundleSource_8cpp" startline="407" endline="422">HandleTcpReceiveSome</references>
+        <references refid="classStcpBundleSource_1a3c9de291274cc1055f913bd643a74e4e" compoundref="StcpBundleSource_8h" startline="106">m_tcpReadSomeBuffer</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1ad0c84aec0b99e3e066f6d2f4801c8ed0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::HandleTcpReceiveSome</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytesTransferred)</argsstring>
+        <name>HandleTcpReceiveSome</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="73" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="407" bodyend="422"/>
+        <references refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" compoundref="StcpBundleSource_8cpp" startline="451" endline="453">DoStcpShutdown</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="StcpBundleSource_8cpp_1a3f812d134b4c2403eff89a54f3aa7541" compoundref="StcpBundleSource_8cpp" startline="24">RECONNECTION_DELAY_AFTER_SHUTDOWN_SECONDS</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1a3dec4ba879191d35b2b8369104828a13" compoundref="StcpBundleSource_8cpp" startline="400" endline="406">StartTcpReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::OnNeedToSendKeepAliveMessage_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnNeedToSendKeepAliveMessage_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="75" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="426" bodyend="449"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classStcpBundleSource_1a10775c625c09f9f11978c4a8e3b91e71" compoundref="StcpBundleSource_8h" startline="103">m_dataServedAsKeepAlive</references>
+        <references refid="classStcpBundleSource_1a3e7bd429094eadc9f77847b99497e984" compoundref="StcpBundleSource_8h" startline="82">m_handleTcpSendKeepAliveCallback</references>
+        <references refid="classStcpBundleSource_1aa9cf9892f0d04a70805defd56fcf1037" compoundref="StcpBundleSource_8h" startline="97">M_KEEP_ALIVE_INTERVAL_SECONDS</references>
+        <references refid="classStcpBundleSource_1a9338e1173a2f834f15119a0bb83f3708" compoundref="StcpBundleSource_8h" startline="89">m_needToSendKeepAliveMessageTimer</references>
+        <references refid="structTcpAsyncSenderElement_1abf9fc18b9a3d914d6dd13ba801d81a2e" compoundref="TcpAsyncSender_8h" startline="63">TcpAsyncSenderElement::m_onSuccessfulSendCallbackByIoServiceThreadPtr</references>
+        <references refid="classStcpBundleSource_1a03e0a561b5068d2c1a2bb9ae5b9596c4" compoundref="StcpBundleSource_8h" startline="102">m_stcpShutdownComplete</references>
+        <references refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" compoundref="StcpBundleSource_8h" startline="80">m_tcpAsyncSenderPtr</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::DoStcpShutdown</definition>
+        <argsstring>(unsigned int reconnectionDelaySecondsIfNotZero)</argsstring>
+        <name>DoStcpShutdown</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>reconnectionDelaySecondsIfNotZero</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="76" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="451" bodyend="453"/>
+        <references refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</references>
+        <references refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" compoundref="StcpBundleSource_8h" startline="86">m_ioService</references>
+        <referencedby refid="classStcpBundleSource_1ad0c84aec0b99e3e066f6d2f4801c8ed0" compoundref="StcpBundleSource_8cpp" startline="407" endline="422">HandleTcpReceiveSome</referencedby>
+        <referencedby refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</referencedby>
+        <referencedby refid="classStcpBundleSource_1a54e90e557063e2aef3e5dccc6036bd2a" compoundref="StcpBundleSource_8cpp" startline="388" endline="398">HandleTcpSendKeepAlive</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::DoHandleSocketShutdown</definition>
+        <argsstring>(unsigned int reconnectionDelaySecondsIfNotZero)</argsstring>
+        <name>DoHandleSocketShutdown</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>reconnectionDelaySecondsIfNotZero</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="77" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="455" bodyend="486"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSource_1aa37af4c5ab0569008aa57c39e81e3392" compoundref="StcpBundleSource_8h" startline="121">m_linkIsUpPhysically</references>
+        <references refid="classStcpBundleSource_1a9338e1173a2f834f15119a0bb83f3708" compoundref="StcpBundleSource_8h" startline="89">m_needToSendKeepAliveMessageTimer</references>
+        <references refid="classStcpBundleSource_1a8a33eea0697572c2bf622e3c380858da" compoundref="StcpBundleSource_8h" startline="111">m_onOutductLinkStatusChangedCallback</references>
+        <references refid="classStcpBundleSource_1a296a48357bb7b117f9ef06c31ac22b59" compoundref="StcpBundleSource_8h" startline="101">m_readyToForward</references>
+        <references refid="classStcpBundleSource_1a978202b0a50c47d95f5cad13d1636f66" compoundref="StcpBundleSource_8h" startline="90">m_reconnectAfterShutdownTimer</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <references refid="classStcpBundleSource_1ad9fcd7e0c2348bb9d3806ab60a77b2c3" compoundref="StcpBundleSource_8h" startline="112">m_userAssignedUuid</references>
+        <references refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" compoundref="StcpBundleSource_8cpp" startline="488" endline="504">OnNeedToReconnectAfterShutdown_TimerExpired</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" compoundref="StcpBundleSource_8cpp" startline="451" endline="453">DoStcpShutdown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::OnNeedToReconnectAfterShutdown_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnNeedToReconnectAfterShutdown_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="78" column="29" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="488" bodyend="504"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" compoundref="StcpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" compoundref="StcpBundleSource_8h" startline="120">m_numTcpReconnectAttempts</references>
+        <references refid="classStcpBundleSource_1a2c2b96452c3d31b1b1bb2f7181543ba9" compoundref="StcpBundleSource_8h" startline="93">m_resolverResults</references>
+        <references refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" compoundref="StcpBundleSource_8h" startline="80">m_tcpAsyncSenderPtr</references>
+        <references refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" compoundref="StcpBundleSource_8h" startline="92">m_tcpSocketPtr</references>
+        <references refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" compoundref="StcpBundleSource_8cpp" startline="305" endline="338">OnConnect</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" compoundref="StcpBundleSource_8cpp" startline="455" endline="486">DoHandleSocketShutdown</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT</type>
+        <definition>StcpBundleSource::StcpBundleSource</definition>
+        <argsstring>(const uint16_t desiredKeeAliveIntervalSeconds, const unsigned int maxUnacked=100)</argsstring>
+        <name>StcpBundleSource</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>desiredKeeAliveIntervalSeconds</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>maxUnacked</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="43" column="21" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="28" bodyend="57"/>
+        <references refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" compoundref="StcpBundleSource_8cpp" startline="359" endline="386">HandleTcpSend</references>
+        <references refid="classStcpBundleSource_1a54e90e557063e2aef3e5dccc6036bd2a" compoundref="StcpBundleSource_8cpp" startline="388" endline="398">HandleTcpSendKeepAlive</references>
+        <references refid="classStcpBundleSource_1a318182d790fcb1b81b73cabb76b5f4c3" compoundref="StcpBundleSource_8h" startline="81">m_handleTcpSendCallback</references>
+        <references refid="classStcpBundleSource_1a3e7bd429094eadc9f77847b99497e984" compoundref="StcpBundleSource_8h" startline="82">m_handleTcpSendKeepAliveCallback</references>
+        <references refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" compoundref="StcpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classStcpBundleSource_1a5b9e20b681f53aa5d776adb5e9c381c6" compoundref="StcpBundleSource_8h" startline="94">m_ioServiceThreadPtr</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a9c4a71d356c2fee7cd5b570db29f5575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT</type>
+        <definition>StcpBundleSource::~StcpBundleSource</definition>
+        <argsstring>()</argsstring>
+        <name>~StcpBundleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="45" column="21" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="59" bodyend="61"/>
+        <references refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="46" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="63" bodyend="135"/>
+        <references refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" compoundref="StcpBundleSource_8cpp" startline="451" endline="453">DoStcpShutdown</references>
+        <references refid="classStcpBundleSource_1a096296bfcdecf3da45c075bf4c15fa0c" compoundref="StcpBundleSource_8cpp" startline="262" endline="264">GetTotalBundlesUnacked</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" compoundref="StcpBundleSource_8h" startline="86">m_ioService</references>
+        <references refid="classStcpBundleSource_1a5b9e20b681f53aa5d776adb5e9c381c6" compoundref="StcpBundleSource_8h" startline="94">m_ioServiceThreadPtr</references>
+        <references refid="classStcpBundleSource_1a91deb9b87a6a42487a6ac54754bad327" compoundref="StcpBundleSource_8h" startline="95">m_localConditionVariableAckReceived</references>
+        <references refid="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" compoundref="StcpBundleSource_8h" startline="120">m_numTcpReconnectAttempts</references>
+        <references refid="classStcpBundleSource_1a03e0a561b5068d2c1a2bb9ae5b9596c4" compoundref="StcpBundleSource_8h" startline="102">m_stcpShutdownComplete</references>
+        <references refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" compoundref="StcpBundleSource_8h" startline="80">m_tcpAsyncSenderPtr</references>
+        <references refid="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" compoundref="StcpBundleSource_8h" startline="119">m_totalBundleBytesAcked</references>
+        <references refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" compoundref="StcpBundleSource_8h" startline="117">m_totalBundleBytesSent</references>
+        <references refid="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" compoundref="StcpBundleSource_8h" startline="116">m_totalBundlesAcked</references>
+        <references refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" compoundref="StcpBundleSource_8h" startline="115">m_totalBundlesSent</references>
+        <references refid="classStcpBundleSource_1a867374419e85609b5ffbad900243ce95" compoundref="StcpBundleSource_8h" startline="118">m_totalStcpBytesSent</references>
+        <references refid="classStcpBundleSource_1a5865391fc710be3262bafc0560e73502" compoundref="StcpBundleSource_8h" startline="104">m_useLocalConditionVariableAckReceived</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+        <referencedby refid="classStcpOutduct_1adb899bfad3c4019658af8ffe9b45b825" compoundref="StcpOutduct_8cpp" startline="62" endline="64">StcpOutduct::Stop</referencedby>
+        <referencedby refid="classStcpBundleSource_1a9c4a71d356c2fee7cd5b570db29f5575" compoundref="StcpBundleSource_8cpp" startline="59" endline="61">~StcpBundleSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a2eb8d7029b1c7012ba15dfff3ee7df7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT bool</type>
+        <definition>bool StcpBundleSource::Forward</definition>
+        <argsstring>(const uint8_t *bundleData, const std::size_t size, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="47" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="248" bodyend="251"/>
+        <referencedby refid="classStcpOutduct_1a7fa5005bc458823fec68401371741dca" compoundref="StcpOutduct_8cpp" startline="30" endline="32">StcpOutduct::Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT bool</type>
+        <definition>bool StcpBundleSource::Forward</definition>
+        <argsstring>(zmq::message_t &amp;dataZmq, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>dataZmq</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="48" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="166" bodyend="205"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classStcpBundleSource_1aa9289c86c349fcda24f900c8510ac879" compoundref="StcpBundleSource_8cpp" startline="153" endline="161">GenerateDataUnitHeaderOnly</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classStcpBundleSource_1a3d479e172dead351fe12285580bcceb4" compoundref="StcpBundleSource_8h" startline="99">m_bytesToAckByTcpSendCallbackCb</references>
+        <references refid="classStcpBundleSource_1a67b5f0239697170115bfb65986a57237" compoundref="StcpBundleSource_8h" startline="100">m_bytesToAckByTcpSendCallbackCbVec</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classStcpBundleSource_1a10775c625c09f9f11978c4a8e3b91e71" compoundref="StcpBundleSource_8h" startline="103">m_dataServedAsKeepAlive</references>
+        <references refid="classStcpBundleSource_1a318182d790fcb1b81b73cabb76b5f4c3" compoundref="StcpBundleSource_8h" startline="81">m_handleTcpSendCallback</references>
+        <references refid="structTcpAsyncSenderElement_1abf9fc18b9a3d914d6dd13ba801d81a2e" compoundref="TcpAsyncSender_8h" startline="63">TcpAsyncSenderElement::m_onSuccessfulSendCallbackByIoServiceThreadPtr</references>
+        <references refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" compoundref="StcpBundleSource_8h" startline="80">m_tcpAsyncSenderPtr</references>
+        <references refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" compoundref="StcpBundleSource_8h" startline="117">m_totalBundleBytesSent</references>
+        <references refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" compoundref="StcpBundleSource_8h" startline="115">m_totalBundlesSent</references>
+        <references refid="classStcpBundleSource_1a867374419e85609b5ffbad900243ce95" compoundref="StcpBundleSource_8h" startline="118">m_totalStcpBytesSent</references>
+        <references refid="structTcpAsyncSenderElement_1a35bc1324cf94167d9c586171101a5a23" compoundref="TcpAsyncSender_8h" startline="60">TcpAsyncSenderElement::m_underlyingDataVecHeaders</references>
+        <references refid="structTcpAsyncSenderElement_1adcb4988f4225ca023d285580c32cf77e" compoundref="TcpAsyncSender_8h" startline="62">TcpAsyncSenderElement::m_underlyingDataZmqBundle</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <references refid="classStcpBundleSource_1ac1d1621f3b0f9528153215fdf47da568" compoundref="StcpBundleSource_8cpp" startline="506" endline="508">ReadyToForward</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a79d7fc55242a744cabbb53c8da334115" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT bool</type>
+        <definition>bool StcpBundleSource::Forward</definition>
+        <argsstring>(padded_vector_uint8_t &amp;dataVec, std::vector&lt; uint8_t &gt; &amp;&amp;userData)</argsstring>
+        <name>Forward</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>dataVec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="49" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="207" bodyend="245"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classStcpBundleSource_1aa9289c86c349fcda24f900c8510ac879" compoundref="StcpBundleSource_8cpp" startline="153" endline="161">GenerateDataUnitHeaderOnly</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classStcpBundleSource_1a3d479e172dead351fe12285580bcceb4" compoundref="StcpBundleSource_8h" startline="99">m_bytesToAckByTcpSendCallbackCb</references>
+        <references refid="classStcpBundleSource_1a67b5f0239697170115bfb65986a57237" compoundref="StcpBundleSource_8h" startline="100">m_bytesToAckByTcpSendCallbackCbVec</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classStcpBundleSource_1a10775c625c09f9f11978c4a8e3b91e71" compoundref="StcpBundleSource_8h" startline="103">m_dataServedAsKeepAlive</references>
+        <references refid="classStcpBundleSource_1a318182d790fcb1b81b73cabb76b5f4c3" compoundref="StcpBundleSource_8h" startline="81">m_handleTcpSendCallback</references>
+        <references refid="structTcpAsyncSenderElement_1abf9fc18b9a3d914d6dd13ba801d81a2e" compoundref="TcpAsyncSender_8h" startline="63">TcpAsyncSenderElement::m_onSuccessfulSendCallbackByIoServiceThreadPtr</references>
+        <references refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" compoundref="StcpBundleSource_8h" startline="80">m_tcpAsyncSenderPtr</references>
+        <references refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" compoundref="StcpBundleSource_8h" startline="117">m_totalBundleBytesSent</references>
+        <references refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" compoundref="StcpBundleSource_8h" startline="115">m_totalBundlesSent</references>
+        <references refid="classStcpBundleSource_1a867374419e85609b5ffbad900243ce95" compoundref="StcpBundleSource_8h" startline="118">m_totalStcpBytesSent</references>
+        <references refid="structTcpAsyncSenderElement_1a0f6a7dddc0c80afbf245214bad660acc" compoundref="TcpAsyncSender_8h" startline="61">TcpAsyncSenderElement::m_underlyingDataVecBundle</references>
+        <references refid="structTcpAsyncSenderElement_1a35bc1324cf94167d9c586171101a5a23" compoundref="TcpAsyncSender_8h" startline="60">TcpAsyncSenderElement::m_underlyingDataVecHeaders</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <references refid="classStcpBundleSource_1ac1d1621f3b0f9528153215fdf47da568" compoundref="StcpBundleSource_8cpp" startline="506" endline="508">ReadyToForward</references>
+        <references refid="StcpBundleSource_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="StcpBundleSource_8cpp" startline="26">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1ab5158398d4632f9b10e83d3708f422f4" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STCP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t StcpBundleSource::GetTotalBundlesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="50" column="33" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="254" bodyend="256"/>
+        <references refid="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" compoundref="StcpBundleSource_8h" startline="116">m_totalBundlesAcked</references>
+        <referencedby refid="classStcpOutduct_1a608caf6c2e3791da3c94a8970d22ed2f" compoundref="StcpOutduct_8cpp" startline="65" endline="69">StcpOutduct::GetOutductFinalStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a545bb64e6a664bafd12521023d2c0512" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STCP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t StcpBundleSource::GetTotalBundlesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="51" column="33" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="258" bodyend="260"/>
+        <references refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" compoundref="StcpBundleSource_8h" startline="115">m_totalBundlesSent</references>
+        <referencedby refid="classStcpOutduct_1a608caf6c2e3791da3c94a8970d22ed2f" compoundref="StcpOutduct_8cpp" startline="65" endline="69">StcpOutduct::GetOutductFinalStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a096296bfcdecf3da45c075bf4c15fa0c" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STCP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t StcpBundleSource::GetTotalBundlesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="52" column="33" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="262" bodyend="264"/>
+        <references refid="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" compoundref="StcpBundleSource_8h" startline="116">m_totalBundlesAcked</references>
+        <references refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" compoundref="StcpBundleSource_8h" startline="115">m_totalBundlesSent</references>
+        <referencedby refid="classStcpOutduct_1a4759dd8821e34227147682263f65e0dd" compoundref="StcpOutduct_8cpp" startline="27" endline="29">StcpOutduct::GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" compoundref="StcpBundleSource_8cpp" startline="63" endline="135">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1ae0f11189af9eb19abc0cf3f7a5218862" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STCP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t StcpBundleSource::GetTotalBundleBytesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="53" column="33" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="266" bodyend="268"/>
+        <references refid="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" compoundref="StcpBundleSource_8h" startline="119">m_totalBundleBytesAcked</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a997cc3df51b63cfbca0149a08d518d9b" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STCP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t StcpBundleSource::GetTotalBundleBytesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="54" column="33" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="270" bodyend="272"/>
+        <references refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" compoundref="StcpBundleSource_8h" startline="117">m_totalBundleBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a8ab027d42d584ac97f74c4256a9f55a4" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STCP_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t StcpBundleSource::GetTotalBundleBytesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="55" column="33" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="274" bodyend="276"/>
+        <references refid="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" compoundref="StcpBundleSource_8h" startline="119">m_totalBundleBytesAcked</references>
+        <references refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" compoundref="StcpBundleSource_8h" startline="117">m_totalBundleBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a2418dcc43e1a0cbaf023f3900eb5fba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::Connect</definition>
+        <argsstring>(const std::string &amp;hostname, const std::string &amp;port)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="56" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="279" bodyend="285"/>
+        <references refid="classStcpBundleSource_1a5807108c51c803eef63f6693aac0d66b" compoundref="StcpBundleSource_8h" startline="88">m_resolver</references>
+        <references refid="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" compoundref="StcpBundleSource_8cpp" startline="287" endline="303">OnResolve</references>
+        <referencedby refid="classStcpOutduct_1a4bddd31e8d5342f4c7c56b3041dd61cd" compoundref="StcpOutduct_8cpp" startline="56" endline="58">StcpOutduct::Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1ac1d1621f3b0f9528153215fdf47da568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT bool</type>
+        <definition>bool StcpBundleSource::ReadyToForward</definition>
+        <argsstring>()</argsstring>
+        <name>ReadyToForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="57" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="506" bodyend="508"/>
+        <references refid="classStcpBundleSource_1a296a48357bb7b117f9ef06c31ac22b59" compoundref="StcpBundleSource_8h" startline="101">m_readyToForward</references>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+        <referencedby refid="classStcpOutduct_1a1ddd0f893a4006bde804eb78ee2eef9b" compoundref="StcpOutduct_8cpp" startline="59" endline="61">StcpOutduct::ReadyToForward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a53924ef84a91a3e6a3a9bd9f15562082" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::SetOnFailedBundleVecSendCallback</definition>
+        <argsstring>(const OnFailedBundleVecSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleVecSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="58" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="510" bodyend="512"/>
+        <references refid="classStcpBundleSource_1aa3bb01919cdd0a8edd3e4b06a6ce8ac0" compoundref="StcpBundleSource_8h" startline="108">m_onFailedBundleVecSendCallback</references>
+        <referencedby refid="classStcpOutduct_1afc00878e7a1532987bd59f5fcd4d91f2" compoundref="StcpOutduct_8cpp" startline="40" endline="42">StcpOutduct::SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a86cd6ea8943bee61da364543266f6bb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::SetOnFailedBundleZmqSendCallback</definition>
+        <argsstring>(const OnFailedBundleZmqSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnFailedBundleZmqSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="59" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="513" bodyend="515"/>
+        <references refid="classStcpBundleSource_1a3bb767056bfa11edc27efe39f2442309" compoundref="StcpBundleSource_8h" startline="109">m_onFailedBundleZmqSendCallback</references>
+        <referencedby refid="classStcpOutduct_1a71c77017a5ea6f53d7648b25acfa6734" compoundref="StcpOutduct_8cpp" startline="43" endline="45">StcpOutduct::SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a12b322dfe5516a62177c2ce52bc0f107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::SetOnSuccessfulBundleSendCallback</definition>
+        <argsstring>(const OnSuccessfulBundleSendCallback_t &amp;callback)</argsstring>
+        <name>SetOnSuccessfulBundleSendCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="60" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="516" bodyend="518"/>
+        <references refid="classStcpBundleSource_1a9f68a00ae7c70c0678512e7cd8ade1d9" compoundref="StcpBundleSource_8h" startline="110">m_onSuccessfulBundleSendCallback</references>
+        <referencedby refid="classStcpOutduct_1a7b10a747a0d94a0693a5d44b5ac5614a" compoundref="StcpOutduct_8cpp" startline="46" endline="48">StcpOutduct::SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a6fdc3bff8c5fcc97628379c678b1417d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::SetOnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(const OnOutductLinkStatusChangedCallback_t &amp;callback)</argsstring>
+        <name>SetOnOutductLinkStatusChangedCallback</name>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="61" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="519" bodyend="521"/>
+        <references refid="classStcpBundleSource_1a8a33eea0697572c2bf622e3c380858da" compoundref="StcpBundleSource_8h" startline="111">m_onOutductLinkStatusChangedCallback</references>
+        <referencedby refid="classStcpOutduct_1a0c0482405422eac50e8e0d89386239cc" compoundref="StcpOutduct_8cpp" startline="49" endline="51">StcpOutduct::SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1aa8e791c192c02c3d6b2b59ddfa883bca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::SetUserAssignedUuid</definition>
+        <argsstring>(uint64_t userAssignedUuid)</argsstring>
+        <name>SetUserAssignedUuid</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>userAssignedUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="62" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="522" bodyend="524"/>
+        <references refid="classStcpBundleSource_1ad9fcd7e0c2348bb9d3806ab60a77b2c3" compoundref="StcpBundleSource_8h" startline="112">m_userAssignedUuid</references>
+        <referencedby refid="classStcpOutduct_1a49e3954018874fbe254d24834488925b" compoundref="StcpOutduct_8cpp" startline="52" endline="54">StcpOutduct::SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_EXPORT void</type>
+        <definition>void StcpBundleSource::GetTelemetry</definition>
+        <argsstring>(StcpOutductTelemetry_t &amp;telem) const</argsstring>
+        <name>GetTelemetry</name>
+        <param>
+          <type><ref refid="structStcpOutductTelemetry__t" kindref="compound">StcpOutductTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="63" column="26" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="526" bodyend="534"/>
+        <references refid="classStcpBundleSource_1aa37af4c5ab0569008aa57c39e81e3392" compoundref="StcpBundleSource_8h" startline="121">m_linkIsUpPhysically</references>
+        <references refid="structOutductTelemetry__t_1a9ac823445009088acf7df4ba9d55e773" compoundref="TelemetryDefinitions_8h" startline="336">OutductTelemetry_t::m_linkIsUpPhysically</references>
+        <references refid="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" compoundref="StcpBundleSource_8h" startline="120">m_numTcpReconnectAttempts</references>
+        <references refid="structStcpOutductTelemetry__t_1a96e29c79ad6c077a55863d8217587961" compoundref="TelemetryDefinitions_8h" startline="353">StcpOutductTelemetry_t::m_numTcpReconnectAttempts</references>
+        <references refid="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" compoundref="StcpBundleSource_8h" startline="119">m_totalBundleBytesAcked</references>
+        <references refid="structOutductTelemetry__t_1aa1a904b6804b71b413bdea60126e38c1" compoundref="TelemetryDefinitions_8h" startline="332">OutductTelemetry_t::m_totalBundleBytesAcked</references>
+        <references refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" compoundref="StcpBundleSource_8h" startline="117">m_totalBundleBytesSent</references>
+        <references refid="structOutductTelemetry__t_1a9e32d16d9c482eed5b0e828b067104df" compoundref="TelemetryDefinitions_8h" startline="334">OutductTelemetry_t::m_totalBundleBytesSent</references>
+        <references refid="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" compoundref="StcpBundleSource_8h" startline="116">m_totalBundlesAcked</references>
+        <references refid="structOutductTelemetry__t_1a45241d2505fe58e6532781c6a040b198" compoundref="TelemetryDefinitions_8h" startline="331">OutductTelemetry_t::m_totalBundlesAcked</references>
+        <references refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" compoundref="StcpBundleSource_8h" startline="115">m_totalBundlesSent</references>
+        <references refid="structOutductTelemetry__t_1a5195f83a37144955b554a692d2207ec5" compoundref="TelemetryDefinitions_8h" startline="333">OutductTelemetry_t::m_totalBundlesSent</references>
+        <references refid="classStcpBundleSource_1a867374419e85609b5ffbad900243ce95" compoundref="StcpBundleSource_8h" startline="118">m_totalStcpBytesSent</references>
+        <references refid="structStcpOutductTelemetry__t_1a05d8e177d4830a5b4dd36266ef24eb1a" compoundref="TelemetryDefinitions_8h" startline="352">StcpOutductTelemetry_t::m_totalStcpBytesSent</references>
+        <referencedby refid="classStcpOutduct_1aa0b0db36093cf5d226e5929e7ddc5145" compoundref="StcpOutduct_8cpp" startline="70" endline="75">StcpOutduct::PopulateOutductTelemetry</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classStcpBundleSource_1ad9704d963a483e58b11d74bb53b347ba" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::GenerateDataUnit</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataUnit, const uint8_t *contents, uint32_t sizeContents)</argsstring>
+        <name>GenerateDataUnit</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataUnit</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="65" column="36" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="140" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classStcpBundleSource_1aa9289c86c349fcda24f900c8510ac879" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STCP_LIB_NO_EXPORT void</type>
+        <definition>void StcpBundleSource::GenerateDataUnitHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataUnit, uint32_t sizeContents)</argsstring>
+        <name>GenerateDataUnitHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataUnit</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>sizeContents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/stcp/include/StcpBundleSource.h" line="66" column="36" bodyfile="common/stcp/src/StcpBundleSource.cpp" bodystart="153" bodyend="161"/>
+        <referencedby refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" compoundref="StcpBundleSource_8cpp" startline="166" endline="205">Forward</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>StcpBundleSource</label>
+        <link refid="classStcpBundleSource"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_bytesToAckByTcpSendCallbackCb</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/stcp/include/StcpBundleSource.h" line="39" column="1" bodyfile="common/stcp/include/StcpBundleSource.h" bodystart="39" bodyend="122"/>
+    <listofallmembers>
+      <member refid="classStcpBundleSource_1a2418dcc43e1a0cbaf023f3900eb5fba8" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>Connect</name></member>
+      <member refid="classStcpBundleSource_1ae30b2edcc75c170e512b4de503394572" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>DoHandleSocketShutdown</name></member>
+      <member refid="classStcpBundleSource_1ab7bb43152729dff66f3cd84f32fa4536" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>DoStcpShutdown</name></member>
+      <member refid="classStcpBundleSource_1a2eb8d7029b1c7012ba15dfff3ee7df7e" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>Forward</name></member>
+      <member refid="classStcpBundleSource_1a750b14d7b7196422a72f52afbac98b50" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>Forward</name></member>
+      <member refid="classStcpBundleSource_1a79d7fc55242a744cabbb53c8da334115" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>Forward</name></member>
+      <member refid="classStcpBundleSource_1ad9704d963a483e58b11d74bb53b347ba" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>GenerateDataUnit</name></member>
+      <member refid="classStcpBundleSource_1aa9289c86c349fcda24f900c8510ac879" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>GenerateDataUnitHeaderOnly</name></member>
+      <member refid="classStcpBundleSource_1a8125491410950d9a62c730e7eb992e09" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTelemetry</name></member>
+      <member refid="classStcpBundleSource_1ae0f11189af9eb19abc0cf3f7a5218862" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTotalBundleBytesAcked</name></member>
+      <member refid="classStcpBundleSource_1a997cc3df51b63cfbca0149a08d518d9b" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTotalBundleBytesSent</name></member>
+      <member refid="classStcpBundleSource_1a8ab027d42d584ac97f74c4256a9f55a4" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTotalBundleBytesUnacked</name></member>
+      <member refid="classStcpBundleSource_1ab5158398d4632f9b10e83d3708f422f4" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTotalBundlesAcked</name></member>
+      <member refid="classStcpBundleSource_1a545bb64e6a664bafd12521023d2c0512" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTotalBundlesSent</name></member>
+      <member refid="classStcpBundleSource_1a096296bfcdecf3da45c075bf4c15fa0c" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>GetTotalBundlesUnacked</name></member>
+      <member refid="classStcpBundleSource_1ad0c84aec0b99e3e066f6d2f4801c8ed0" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>HandleTcpReceiveSome</name></member>
+      <member refid="classStcpBundleSource_1a3751e1814dec17e6a1cf5c14680c257b" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>HandleTcpSend</name></member>
+      <member refid="classStcpBundleSource_1a54e90e557063e2aef3e5dccc6036bd2a" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>HandleTcpSendKeepAlive</name></member>
+      <member refid="classStcpBundleSource_1a3d479e172dead351fe12285580bcceb4" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_bytesToAckByTcpSendCallbackCb</name></member>
+      <member refid="classStcpBundleSource_1a67b5f0239697170115bfb65986a57237" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_bytesToAckByTcpSendCallbackCbVec</name></member>
+      <member refid="classStcpBundleSource_1a10775c625c09f9f11978c4a8e3b91e71" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_dataServedAsKeepAlive</name></member>
+      <member refid="classStcpBundleSource_1a318182d790fcb1b81b73cabb76b5f4c3" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_handleTcpSendCallback</name></member>
+      <member refid="classStcpBundleSource_1a3e7bd429094eadc9f77847b99497e984" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_handleTcpSendKeepAliveCallback</name></member>
+      <member refid="classStcpBundleSource_1a0db2299afa61cf0706987ddf2c1fd418" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_ioService</name></member>
+      <member refid="classStcpBundleSource_1a5b9e20b681f53aa5d776adb5e9c381c6" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classStcpBundleSource_1aa9cf9892f0d04a70805defd56fcf1037" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>M_KEEP_ALIVE_INTERVAL_SECONDS</name></member>
+      <member refid="classStcpBundleSource_1aa37af4c5ab0569008aa57c39e81e3392" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_linkIsUpPhysically</name></member>
+      <member refid="classStcpBundleSource_1a91deb9b87a6a42487a6ac54754bad327" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_localConditionVariableAckReceived</name></member>
+      <member refid="classStcpBundleSource_1a9338e1173a2f834f15119a0bb83f3708" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_needToSendKeepAliveMessageTimer</name></member>
+      <member refid="classStcpBundleSource_1af0eb15a7fdb11f78030847703d784dcf" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_numTcpReconnectAttempts</name></member>
+      <member refid="classStcpBundleSource_1aa3bb01919cdd0a8edd3e4b06a6ce8ac0" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_onFailedBundleVecSendCallback</name></member>
+      <member refid="classStcpBundleSource_1a3bb767056bfa11edc27efe39f2442309" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classStcpBundleSource_1a8a33eea0697572c2bf622e3c380858da" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_onOutductLinkStatusChangedCallback</name></member>
+      <member refid="classStcpBundleSource_1a9f68a00ae7c70c0678512e7cd8ade1d9" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_onSuccessfulBundleSendCallback</name></member>
+      <member refid="classStcpBundleSource_1a296a48357bb7b117f9ef06c31ac22b59" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_readyToForward</name></member>
+      <member refid="classStcpBundleSource_1a2496e710da3f31903ef558465c38927c" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_reconnectAfterOnConnectErrorTimer</name></member>
+      <member refid="classStcpBundleSource_1a978202b0a50c47d95f5cad13d1636f66" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_reconnectAfterShutdownTimer</name></member>
+      <member refid="classStcpBundleSource_1a5807108c51c803eef63f6693aac0d66b" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_resolver</name></member>
+      <member refid="classStcpBundleSource_1a2c2b96452c3d31b1b1bb2f7181543ba9" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_resolverResults</name></member>
+      <member refid="classStcpBundleSource_1a03e0a561b5068d2c1a2bb9ae5b9596c4" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_stcpShutdownComplete</name></member>
+      <member refid="classStcpBundleSource_1a09ca4f43f08fab7cbc3d2fead0a153ca" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_tcpAsyncSenderPtr</name></member>
+      <member refid="classStcpBundleSource_1a3c9de291274cc1055f913bd643a74e4e" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_tcpReadSomeBuffer</name></member>
+      <member refid="classStcpBundleSource_1ad5ad281c6709fc8c42a427e43281e9a4" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_tcpSocketPtr</name></member>
+      <member refid="classStcpBundleSource_1a5764b3ce30e68872413af19c55793c03" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_totalBundleBytesAcked</name></member>
+      <member refid="classStcpBundleSource_1a4731fda97ffd34e005fd395593b0ecc4" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_totalBundleBytesSent</name></member>
+      <member refid="classStcpBundleSource_1aa005a6e2aa15ecbb1e4dd4901936baac" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_totalBundlesAcked</name></member>
+      <member refid="classStcpBundleSource_1a553a4a325a086111d8ec8d8d9e877297" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_totalBundlesSent</name></member>
+      <member refid="classStcpBundleSource_1a867374419e85609b5ffbad900243ce95" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_totalStcpBytesSent</name></member>
+      <member refid="classStcpBundleSource_1a5865391fc710be3262bafc0560e73502" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_useLocalConditionVariableAckReceived</name></member>
+      <member refid="classStcpBundleSource_1ad9fcd7e0c2348bb9d3806ab60a77b2c3" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_userAssignedUuid</name></member>
+      <member refid="classStcpBundleSource_1a0c49398b7d901c9877c3c6ef5b6cf11a" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>m_work</name></member>
+      <member refid="classStcpBundleSource_1a93a0d6d0f4a5872b1e26a4a978156bf0" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>MAX_UNACKED</name></member>
+      <member refid="classStcpBundleSource_1acc9455bc755e93963c16d5d03d5828cb" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>OnConnect</name></member>
+      <member refid="classStcpBundleSource_1a2d5c27a52632876eed83d0ba57c1b766" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>OnNeedToReconnectAfterShutdown_TimerExpired</name></member>
+      <member refid="classStcpBundleSource_1a36c27052fb7a5dee47a22b09b9c5b2eb" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>OnNeedToSendKeepAliveMessage_TimerExpired</name></member>
+      <member refid="classStcpBundleSource_1a0b90e1a1f9c59610e8a1bc41611af16b" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>OnReconnectAfterOnConnectError_TimerExpired</name></member>
+      <member refid="classStcpBundleSource_1a0ef8a1987ec238c11c807f49be60a27f" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>OnResolve</name></member>
+      <member refid="classStcpBundleSource_1ac1d1621f3b0f9528153215fdf47da568" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>ReadyToForward</name></member>
+      <member refid="classStcpBundleSource_1a53924ef84a91a3e6a3a9bd9f15562082" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classStcpBundleSource_1a86cd6ea8943bee61da364543266f6bb4" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classStcpBundleSource_1a6fdc3bff8c5fcc97628379c678b1417d" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classStcpBundleSource_1a12b322dfe5516a62177c2ce52bc0f107" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classStcpBundleSource_1aa8e791c192c02c3d6b2b59ddfa883bca" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classStcpBundleSource_1a3dec4ba879191d35b2b8369104828a13" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>StartTcpReceive</name></member>
+      <member refid="classStcpBundleSource_1a9d379adf7ff0e17eb22fab2a7d1d29f3" prot="private" virt="non-virtual"><scope>StcpBundleSource</scope><name>StcpBundleSource</name></member>
+      <member refid="classStcpBundleSource_1a3968f422aabd273dbf0308e1bcb0ac68" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>StcpBundleSource</name></member>
+      <member refid="classStcpBundleSource_1a0912a49e8188495ebed96dc4962ec7b2" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>Stop</name></member>
+      <member refid="classStcpBundleSource_1a9c4a71d356c2fee7cd5b570db29f5575" prot="public" virt="non-virtual"><scope>StcpBundleSource</scope><name>~StcpBundleSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

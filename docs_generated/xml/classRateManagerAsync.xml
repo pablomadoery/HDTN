@@ -1,0 +1,779 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classRateManagerAsync" kind="class" language="C++" prot="public">
+    <compoundname>RateManagerAsync</compoundname>
+    <includes refid="RateManagerAsync_8h" local="no">RateManagerAsync.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classRateManagerAsync_1a1b518a00b787fe068e25842e14a86193" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+        <definition>boost::asio::io_service&amp; RateManagerAsync::m_ioServiceRef</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="42" column="30" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a4444acf0a8c0b61631e962cc16bc1a75" compoundref="RateManagerAsync_8cpp" startline="156" endline="158">NotifyPacketSentFromCallback_ThreadSafe</referencedby>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a3d72296fe66edc341b165663d21c4d24" prot="private" static="no" mutable="no">
+        <type>boost::asio::deadline_timer</type>
+        <definition>boost::asio::deadline_timer RateManagerAsync::m_rateTimer</definition>
+        <argsstring></argsstring>
+        <name>m_rateTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="43" column="33" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a3a0c064b5cb6908f5aaa9bdc93ca509b" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t RateManagerAsync::m_rateBitsPerSec</definition>
+        <argsstring></argsstring>
+        <name>m_rateBitsPerSec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="44" column="14" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a1b2172fe6c0646742f61a09dcc52860d" compoundref="RateManagerAsync_8cpp" startline="44" endline="46">SetRate</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a3c536f0d9a984bef03feb7bb0ac2344e" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t RateManagerAsync::m_maxPacketsBeingSent</definition>
+        <argsstring></argsstring>
+        <name>m_maxPacketsBeingSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="45" column="14" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1adee1e3db3abb5b92573d43f37658bc90" compoundref="RateManagerAsync_8cpp" startline="223" endline="225">HasAvailabilityToSendPacket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a207a69d8f6044a7241908e9b0dc91c30" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable RateManagerAsync::m_bytesToAckByRateCb</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckByRateCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="47" column="65" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a2cfa0a9d65a05a8253850c5f30cfebcc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::size_t &gt;</type>
+        <definition>std::vector&lt;std::size_t&gt; RateManagerAsync::m_bytesToAckByRateCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckByRateCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="48" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a2ff13984c222c18cdc91ebb27fac4818" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::size_t &gt;</type>
+        <definition>std::vector&lt;std::size_t&gt; RateManagerAsync::m_groupingOfBytesToAckByRateVec</definition>
+        <argsstring></argsstring>
+        <name>m_groupingOfBytesToAckByRateVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="49" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a53640311b42d685cd075a17c0b3dfadd" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable RateManagerAsync::m_bytesToAckBySentCallbackCb</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckBySentCallbackCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="50" column="65" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a10dd781fbdbe886f3a7679a3272a59c5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::size_t &gt;</type>
+        <definition>std::vector&lt;std::size_t&gt; RateManagerAsync::m_bytesToAckBySentCallbackCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckBySentCallbackCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="51" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a5851df237de58a41c5c2765ed3ccc16b" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex RateManagerAsync::m_cvMutex</definition>
+        <argsstring></argsstring>
+        <name>m_cvMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="52" column="18" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a5bb067bb77566c82b664ae8f5e3c2da1" compoundref="RateManagerAsync_8cpp" startline="185" endline="205">WaitForAllDequeuedPacketsToFullySend_Blocking</referencedby>
+        <referencedby refid="classRateManagerAsync_1a55ed01f0a700131d294121c3626710d9" compoundref="RateManagerAsync_8cpp" startline="207" endline="221">WaitForAvailabilityToSendPacket_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1aeb8d7b4e524b561d56df049a43891b06" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable RateManagerAsync::m_conditionVariablePacketSent</definition>
+        <argsstring></argsstring>
+        <name>m_conditionVariablePacketSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="53" column="31" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5bb067bb77566c82b664ae8f5e3c2da1" compoundref="RateManagerAsync_8cpp" startline="185" endline="205">WaitForAllDequeuedPacketsToFullySend_Blocking</referencedby>
+        <referencedby refid="classRateManagerAsync_1a55ed01f0a700131d294121c3626710d9" compoundref="RateManagerAsync_8cpp" startline="207" endline="221">WaitForAvailabilityToSendPacket_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a1e5e613bc8ded0404282588051c71783" prot="private" static="no" mutable="no">
+        <type><ref refid="RateManagerAsync_8h_1ab11855bed651cfcc72f99ee492d6fa23" kindref="member">PacketsSentCallback_t</ref></type>
+        <definition>PacketsSentCallback_t RateManagerAsync::m_packetsSentCallback</definition>
+        <argsstring></argsstring>
+        <name>m_packetsSentCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="55" column="27" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9357cbf7bc42745d64ef970a3d85e3dd" compoundref="RateManagerAsync_8cpp" startline="48" endline="50">SetPacketsSentCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t RateManagerAsync::m_totalPacketsSentBySentCallback</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketsSentBySentCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="57" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a6a4fdd89ed2df9161f0894adb17be675" compoundref="RateManagerAsync_8cpp" startline="52" endline="56">GetTotalPacketsCompletelySent</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" compoundref="RateManagerAsync_8cpp" startline="22" endline="33">~RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1aa2bbb6be9479b46fd61c1a8a3497c8fc" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t RateManagerAsync::m_totalBytesSentBySentCallback</definition>
+        <argsstring></argsstring>
+        <name>m_totalBytesSentBySentCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="58" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1af04460d2439dafa6c0c254a8769dd8eb" compoundref="RateManagerAsync_8cpp" startline="66" endline="70">GetTotalBytesCompletelySent</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" compoundref="RateManagerAsync_8cpp" startline="22" endline="33">~RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t RateManagerAsync::m_totalPacketsSentByRate</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketsSentByRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="59" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a6a4fdd89ed2df9161f0894adb17be675" compoundref="RateManagerAsync_8cpp" startline="52" endline="56">GetTotalPacketsCompletelySent</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</referencedby>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" compoundref="RateManagerAsync_8cpp" startline="22" endline="33">~RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a73ba72962b736bd1b9d702e7e72238a1" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t RateManagerAsync::m_totalBytesSentByRate</definition>
+        <argsstring></argsstring>
+        <name>m_totalBytesSentByRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="60" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1af04460d2439dafa6c0c254a8769dd8eb" compoundref="RateManagerAsync_8cpp" startline="66" endline="70">GetTotalBytesCompletelySent</referencedby>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" compoundref="RateManagerAsync_8cpp" startline="22" endline="33">~RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1aff17726ab5c630aee828a9c4e837ee16" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t RateManagerAsync::m_totalPacketsDequeuedForSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalPacketsDequeuedForSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="61" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a6d0e04b282f5bf978b4143dfc856fa99" compoundref="RateManagerAsync_8cpp" startline="58" endline="60">GetTotalPacketsDequeuedForSend</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" compoundref="RateManagerAsync_8cpp" startline="22" endline="33">~RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1afd905a8a075d0f7a5225ec619f9d17b2" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t RateManagerAsync::m_totalBytesDequeuedForSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalBytesDequeuedForSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="62" column="17" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a4e8b9bce48b538b1cb065287786b4964" compoundref="RateManagerAsync_8cpp" startline="72" endline="74">GetTotalBytesDequeuedForSend</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" compoundref="RateManagerAsync_8cpp" startline="22" endline="33">~RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRateManagerAsync_1a312bfc8247d84fe046e4afcfba5625d6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>volatile bool RateManagerAsync::m_rateTimerIsRunning</definition>
+        <argsstring></argsstring>
+        <name>m_rateTimerIsRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="63" column="19" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classRateManagerAsync_1a248c4de5632be23cbc35b5626892d83d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RateManagerAsync::RateManagerAsync</definition>
+        <argsstring>()</argsstring>
+        <name>RateManagerAsync</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="15" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::TryRestartRateTimer</definition>
+        <argsstring>()</argsstring>
+        <name>TryRestartRateTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="39" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="107" bodyend="126"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="classRateManagerAsync_1a207a69d8f6044a7241908e9b0dc91c30" compoundref="RateManagerAsync_8h" startline="47">m_bytesToAckByRateCb</references>
+        <references refid="classRateManagerAsync_1a2cfa0a9d65a05a8253850c5f30cfebcc" compoundref="RateManagerAsync_8h" startline="48">m_bytesToAckByRateCbVec</references>
+        <references refid="classRateManagerAsync_1a2ff13984c222c18cdc91ebb27fac4818" compoundref="RateManagerAsync_8h" startline="49">m_groupingOfBytesToAckByRateVec</references>
+        <references refid="classRateManagerAsync_1a3a0c064b5cb6908f5aaa9bdc93ca509b" compoundref="RateManagerAsync_8h" startline="44">m_rateBitsPerSec</references>
+        <references refid="classRateManagerAsync_1a3d72296fe66edc341b165663d21c4d24" compoundref="RateManagerAsync_8h" startline="43">m_rateTimer</references>
+        <references refid="classRateManagerAsync_1a312bfc8247d84fe046e4afcfba5625d6" compoundref="RateManagerAsync_8h" startline="63">m_rateTimerIsRunning</references>
+        <references refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</references>
+        <referencedby refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" compoundref="RateManagerAsync_8cpp" startline="128" endline="154">OnRate_TimerExpired</referencedby>
+        <referencedby refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" compoundref="RateManagerAsync_8cpp" startline="80" endline="104">SignalNewPacketDequeuedForSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::OnRate_TimerExpired</definition>
+        <argsstring>(const boost::system::error_code &amp;e)</argsstring>
+        <name>OnRate_TimerExpired</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="40" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="128" bodyend="154"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classRateManagerAsync_1aeb8d7b4e524b561d56df049a43891b06" compoundref="RateManagerAsync_8h" startline="53">m_conditionVariablePacketSent</references>
+        <references refid="classRateManagerAsync_1a2ff13984c222c18cdc91ebb27fac4818" compoundref="RateManagerAsync_8h" startline="49">m_groupingOfBytesToAckByRateVec</references>
+        <references refid="classRateManagerAsync_1a1e5e613bc8ded0404282588051c71783" compoundref="RateManagerAsync_8h" startline="55">m_packetsSentCallback</references>
+        <references refid="classRateManagerAsync_1a312bfc8247d84fe046e4afcfba5625d6" compoundref="RateManagerAsync_8h" startline="63">m_rateTimerIsRunning</references>
+        <references refid="classRateManagerAsync_1a73ba72962b736bd1b9d702e7e72238a1" compoundref="RateManagerAsync_8h" startline="60">m_totalBytesSentByRate</references>
+        <references refid="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" compoundref="RateManagerAsync_8h" startline="59">m_totalPacketsSentByRate</references>
+        <references refid="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" compoundref="RateManagerAsync_8h" startline="57">m_totalPacketsSentBySentCallback</references>
+        <references refid="RateManagerAsync_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="RateManagerAsync_8cpp" startline="5">subprocess</references>
+        <references refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</references>
+        <referencedby refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classRateManagerAsync_1ab0e1912bb77720f74195189f6bf274cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>RateManagerAsync::RateManagerAsync</definition>
+        <argsstring>(boost::asio::io_service &amp;ioService, const uint64_t rateBitsPerSec, const uint64_t maxPacketsBeingSent)</argsstring>
+        <name>RateManagerAsync</name>
+        <param>
+          <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref> &amp;</type>
+          <declname>ioService</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>rateBitsPerSec</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxPacketsBeingSent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="17" column="22" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="7" bodyend="20"/>
+        <references refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" compoundref="RateManagerAsync_8cpp" startline="35" endline="43">Reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT</type>
+        <definition>RateManagerAsync::~RateManagerAsync</definition>
+        <argsstring>()</argsstring>
+        <name>~RateManagerAsync</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="18" column="22" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="22" bodyend="33"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classRateManagerAsync_1afd905a8a075d0f7a5225ec619f9d17b2" compoundref="RateManagerAsync_8h" startline="62">m_totalBytesDequeuedForSend</references>
+        <references refid="classRateManagerAsync_1a73ba72962b736bd1b9d702e7e72238a1" compoundref="RateManagerAsync_8h" startline="60">m_totalBytesSentByRate</references>
+        <references refid="classRateManagerAsync_1aa2bbb6be9479b46fd61c1a8a3497c8fc" compoundref="RateManagerAsync_8h" startline="58">m_totalBytesSentBySentCallback</references>
+        <references refid="classRateManagerAsync_1aff17726ab5c630aee828a9c4e837ee16" compoundref="RateManagerAsync_8h" startline="61">m_totalPacketsDequeuedForSend</references>
+        <references refid="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" compoundref="RateManagerAsync_8h" startline="59">m_totalPacketsSentByRate</references>
+        <references refid="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" compoundref="RateManagerAsync_8h" startline="57">m_totalPacketsSentBySentCallback</references>
+        <references refid="RateManagerAsync_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="RateManagerAsync_8cpp" startline="5">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="20" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="35" bodyend="43"/>
+        <references refid="classRateManagerAsync_1a312bfc8247d84fe046e4afcfba5625d6" compoundref="RateManagerAsync_8h" startline="63">m_rateTimerIsRunning</references>
+        <references refid="classRateManagerAsync_1afd905a8a075d0f7a5225ec619f9d17b2" compoundref="RateManagerAsync_8h" startline="62">m_totalBytesDequeuedForSend</references>
+        <references refid="classRateManagerAsync_1a73ba72962b736bd1b9d702e7e72238a1" compoundref="RateManagerAsync_8h" startline="60">m_totalBytesSentByRate</references>
+        <references refid="classRateManagerAsync_1aa2bbb6be9479b46fd61c1a8a3497c8fc" compoundref="RateManagerAsync_8h" startline="58">m_totalBytesSentBySentCallback</references>
+        <references refid="classRateManagerAsync_1aff17726ab5c630aee828a9c4e837ee16" compoundref="RateManagerAsync_8h" startline="61">m_totalPacketsDequeuedForSend</references>
+        <references refid="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" compoundref="RateManagerAsync_8h" startline="59">m_totalPacketsSentByRate</references>
+        <references refid="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" compoundref="RateManagerAsync_8h" startline="57">m_totalPacketsSentBySentCallback</references>
+        <referencedby refid="classRateManagerAsync_1ab0e1912bb77720f74195189f6bf274cc" compoundref="RateManagerAsync_8cpp" startline="7" endline="20">RateManagerAsync</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a6a4fdd89ed2df9161f0894adb17be675" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t RateManagerAsync::GetTotalPacketsCompletelySent</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalPacketsCompletelySent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="22" column="34" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="52" bodyend="56"/>
+        <references refid="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" compoundref="RateManagerAsync_8h" startline="59">m_totalPacketsSentByRate</references>
+        <references refid="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" compoundref="RateManagerAsync_8h" startline="57">m_totalPacketsSentBySentCallback</references>
+        <referencedby refid="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" compoundref="RateManagerAsync_8cpp" startline="62" endline="64">GetTotalPacketsBeingSent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a6d0e04b282f5bf978b4143dfc856fa99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t RateManagerAsync::GetTotalPacketsDequeuedForSend</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalPacketsDequeuedForSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="23" column="34" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="58" bodyend="60"/>
+        <references refid="classRateManagerAsync_1aff17726ab5c630aee828a9c4e837ee16" compoundref="RateManagerAsync_8h" startline="61">m_totalPacketsDequeuedForSend</references>
+        <referencedby refid="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" compoundref="RateManagerAsync_8cpp" startline="62" endline="64">GetTotalPacketsBeingSent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t RateManagerAsync::GetTotalPacketsBeingSent</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalPacketsBeingSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="24" column="34" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="62" bodyend="64"/>
+        <references refid="classRateManagerAsync_1a6a4fdd89ed2df9161f0894adb17be675" compoundref="RateManagerAsync_8cpp" startline="52" endline="56">GetTotalPacketsCompletelySent</references>
+        <references refid="classRateManagerAsync_1a6d0e04b282f5bf978b4143dfc856fa99" compoundref="RateManagerAsync_8cpp" startline="58" endline="60">GetTotalPacketsDequeuedForSend</references>
+        <referencedby refid="classRateManagerAsync_1adee1e3db3abb5b92573d43f37658bc90" compoundref="RateManagerAsync_8cpp" startline="223" endline="225">HasAvailabilityToSendPacket</referencedby>
+        <referencedby refid="classRateManagerAsync_1a5bb067bb77566c82b664ae8f5e3c2da1" compoundref="RateManagerAsync_8cpp" startline="185" endline="205">WaitForAllDequeuedPacketsToFullySend_Blocking</referencedby>
+        <referencedby refid="classRateManagerAsync_1a55ed01f0a700131d294121c3626710d9" compoundref="RateManagerAsync_8cpp" startline="207" endline="221">WaitForAvailabilityToSendPacket_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1af04460d2439dafa6c0c254a8769dd8eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t RateManagerAsync::GetTotalBytesCompletelySent</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalBytesCompletelySent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="25" column="34" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="66" bodyend="70"/>
+        <references refid="classRateManagerAsync_1a73ba72962b736bd1b9d702e7e72238a1" compoundref="RateManagerAsync_8h" startline="60">m_totalBytesSentByRate</references>
+        <references refid="classRateManagerAsync_1aa2bbb6be9479b46fd61c1a8a3497c8fc" compoundref="RateManagerAsync_8h" startline="58">m_totalBytesSentBySentCallback</references>
+        <referencedby refid="classRateManagerAsync_1a1de81305149c160492f7d87a2dace6d8" compoundref="RateManagerAsync_8cpp" startline="76" endline="78">GetTotalBytesBeingSent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a4e8b9bce48b538b1cb065287786b4964" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t RateManagerAsync::GetTotalBytesDequeuedForSend</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalBytesDequeuedForSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="26" column="34" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="72" bodyend="74"/>
+        <references refid="classRateManagerAsync_1afd905a8a075d0f7a5225ec619f9d17b2" compoundref="RateManagerAsync_8h" startline="62">m_totalBytesDequeuedForSend</references>
+        <referencedby refid="classRateManagerAsync_1a1de81305149c160492f7d87a2dace6d8" compoundref="RateManagerAsync_8cpp" startline="76" endline="78">GetTotalBytesBeingSent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a1de81305149c160492f7d87a2dace6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT std::size_t</type>
+        <definition>std::size_t RateManagerAsync::GetTotalBytesBeingSent</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalBytesBeingSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="27" column="34" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="76" bodyend="78"/>
+        <references refid="classRateManagerAsync_1af04460d2439dafa6c0c254a8769dd8eb" compoundref="RateManagerAsync_8cpp" startline="66" endline="70">GetTotalBytesCompletelySent</references>
+        <references refid="classRateManagerAsync_1a4e8b9bce48b538b1cb065287786b4964" compoundref="RateManagerAsync_8cpp" startline="72" endline="74">GetTotalBytesDequeuedForSend</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a5bb067bb77566c82b664ae8f5e3c2da1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::WaitForAllDequeuedPacketsToFullySend_Blocking</definition>
+        <argsstring>(unsigned int timeoutSeconds=1000, bool printStats=false)</argsstring>
+        <name>WaitForAllDequeuedPacketsToFullySend_Blocking</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>timeoutSeconds</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>printStats</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="29" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="185" bodyend="205"/>
+        <references refid="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" compoundref="RateManagerAsync_8cpp" startline="62" endline="64">GetTotalPacketsBeingSent</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classRateManagerAsync_1aeb8d7b4e524b561d56df049a43891b06" compoundref="RateManagerAsync_8h" startline="53">m_conditionVariablePacketSent</references>
+        <references refid="classRateManagerAsync_1a5851df237de58a41c5c2765ed3ccc16b" compoundref="RateManagerAsync_8h" startline="52">m_cvMutex</references>
+        <references refid="RateManagerAsync_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="RateManagerAsync_8cpp" startline="5">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a55ed01f0a700131d294121c3626710d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::WaitForAvailabilityToSendPacket_Blocking</definition>
+        <argsstring>(unsigned int timeoutSeconds=1000)</argsstring>
+        <name>WaitForAvailabilityToSendPacket_Blocking</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>timeoutSeconds</declname>
+          <defval>1000</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="30" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="207" bodyend="221"/>
+        <references refid="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" compoundref="RateManagerAsync_8cpp" startline="62" endline="64">GetTotalPacketsBeingSent</references>
+        <references refid="classRateManagerAsync_1adee1e3db3abb5b92573d43f37658bc90" compoundref="RateManagerAsync_8cpp" startline="223" endline="225">HasAvailabilityToSendPacket</references>
+        <references refid="classRateManagerAsync_1aeb8d7b4e524b561d56df049a43891b06" compoundref="RateManagerAsync_8h" startline="53">m_conditionVariablePacketSent</references>
+        <references refid="classRateManagerAsync_1a5851df237de58a41c5c2765ed3ccc16b" compoundref="RateManagerAsync_8h" startline="52">m_cvMutex</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1adee1e3db3abb5b92573d43f37658bc90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool RateManagerAsync::HasAvailabilityToSendPacket</definition>
+        <argsstring>()</argsstring>
+        <name>HasAvailabilityToSendPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="31" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="223" bodyend="225"/>
+        <references refid="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" compoundref="RateManagerAsync_8cpp" startline="62" endline="64">GetTotalPacketsBeingSent</references>
+        <references refid="classRateManagerAsync_1a3c536f0d9a984bef03feb7bb0ac2344e" compoundref="RateManagerAsync_8h" startline="45">m_maxPacketsBeingSent</references>
+        <referencedby refid="classRateManagerAsync_1a55ed01f0a700131d294121c3626710d9" compoundref="RateManagerAsync_8cpp" startline="207" endline="221">WaitForAvailabilityToSendPacket_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a9357cbf7bc42745d64ef970a3d85e3dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::SetPacketsSentCallback</definition>
+        <argsstring>(const PacketsSentCallback_t &amp;callback)</argsstring>
+        <name>SetPacketsSentCallback</name>
+        <param>
+          <type>const <ref refid="RateManagerAsync_8h_1ab11855bed651cfcc72f99ee492d6fa23" kindref="member">PacketsSentCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="32" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="48" bodyend="50"/>
+        <references refid="classRateManagerAsync_1a1e5e613bc8ded0404282588051c71783" compoundref="RateManagerAsync_8h" startline="55">m_packetsSentCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a1b2172fe6c0646742f61a09dcc52860d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::SetRate</definition>
+        <argsstring>(uint64_t rateBitsPerSec)</argsstring>
+        <name>SetRate</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>rateBitsPerSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="33" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="44" bodyend="46"/>
+        <references refid="classRateManagerAsync_1a3a0c064b5cb6908f5aaa9bdc93ca509b" compoundref="RateManagerAsync_8h" startline="44">m_rateBitsPerSec</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a4444acf0a8c0b61631e962cc16bc1a75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT void</type>
+        <definition>void RateManagerAsync::NotifyPacketSentFromCallback_ThreadSafe</definition>
+        <argsstring>(std::size_t bytes_transferred)</argsstring>
+        <name>NotifyPacketSentFromCallback_ThreadSafe</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="34" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="156" bodyend="158"/>
+        <references refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" compoundref="RateManagerAsync_8cpp" startline="160" endline="183">IoServiceThreadNotifyPacketSentCallback</references>
+        <references refid="classRateManagerAsync_1a1b518a00b787fe068e25842e14a86193" compoundref="RateManagerAsync_8h" startline="42">m_ioServiceRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool RateManagerAsync::IoServiceThreadNotifyPacketSentCallback</definition>
+        <argsstring>(std::size_t bytes_transferred)</argsstring>
+        <name>IoServiceThreadNotifyPacketSentCallback</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="35" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="160" bodyend="183"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classRateManagerAsync_1a53640311b42d685cd075a17c0b3dfadd" compoundref="RateManagerAsync_8h" startline="50">m_bytesToAckBySentCallbackCb</references>
+        <references refid="classRateManagerAsync_1a10dd781fbdbe886f3a7679a3272a59c5" compoundref="RateManagerAsync_8h" startline="51">m_bytesToAckBySentCallbackCbVec</references>
+        <references refid="classRateManagerAsync_1aeb8d7b4e524b561d56df049a43891b06" compoundref="RateManagerAsync_8h" startline="53">m_conditionVariablePacketSent</references>
+        <references refid="classRateManagerAsync_1a1e5e613bc8ded0404282588051c71783" compoundref="RateManagerAsync_8h" startline="55">m_packetsSentCallback</references>
+        <references refid="classRateManagerAsync_1aa2bbb6be9479b46fd61c1a8a3497c8fc" compoundref="RateManagerAsync_8h" startline="58">m_totalBytesSentBySentCallback</references>
+        <references refid="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" compoundref="RateManagerAsync_8h" startline="59">m_totalPacketsSentByRate</references>
+        <references refid="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" compoundref="RateManagerAsync_8h" startline="57">m_totalPacketsSentBySentCallback</references>
+        <references refid="RateManagerAsync_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="RateManagerAsync_8cpp" startline="5">subprocess</references>
+        <referencedby refid="classRateManagerAsync_1a4444acf0a8c0b61631e962cc16bc1a75" compoundref="RateManagerAsync_8cpp" startline="156" endline="158">NotifyPacketSentFromCallback_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HDTN_UTIL_EXPORT bool</type>
+        <definition>bool RateManagerAsync::SignalNewPacketDequeuedForSend</definition>
+        <argsstring>(uint64_t packetSizeBytes)</argsstring>
+        <name>SignalNewPacketDequeuedForSend</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>packetSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/deprecated/RateManagerAsync.h" line="36" column="27" bodyfile="common/util/src/deprecated/RateManagerAsync.cpp" bodystart="80" bodyend="104"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classRateManagerAsync_1a207a69d8f6044a7241908e9b0dc91c30" compoundref="RateManagerAsync_8h" startline="47">m_bytesToAckByRateCb</references>
+        <references refid="classRateManagerAsync_1a2cfa0a9d65a05a8253850c5f30cfebcc" compoundref="RateManagerAsync_8h" startline="48">m_bytesToAckByRateCbVec</references>
+        <references refid="classRateManagerAsync_1a53640311b42d685cd075a17c0b3dfadd" compoundref="RateManagerAsync_8h" startline="50">m_bytesToAckBySentCallbackCb</references>
+        <references refid="classRateManagerAsync_1a10dd781fbdbe886f3a7679a3272a59c5" compoundref="RateManagerAsync_8h" startline="51">m_bytesToAckBySentCallbackCbVec</references>
+        <references refid="classRateManagerAsync_1a1b518a00b787fe068e25842e14a86193" compoundref="RateManagerAsync_8h" startline="42">m_ioServiceRef</references>
+        <references refid="classRateManagerAsync_1aff17726ab5c630aee828a9c4e837ee16" compoundref="RateManagerAsync_8h" startline="61">m_totalPacketsDequeuedForSend</references>
+        <references refid="RateManagerAsync_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="RateManagerAsync_8cpp" startline="5">subprocess</references>
+        <references refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" compoundref="RateManagerAsync_8cpp" startline="107" endline="126">TryRestartRateTimer</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>RateManagerAsync</label>
+        <link refid="classRateManagerAsync"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_bytesToAckByRateCb</edgelabel>
+          <edgelabel>m_bytesToAckBySentCallbackCb</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/util/include/deprecated/RateManagerAsync.h" line="13" column="1" bodyfile="common/util/include/deprecated/RateManagerAsync.h" bodystart="13" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classRateManagerAsync_1a1de81305149c160492f7d87a2dace6d8" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>GetTotalBytesBeingSent</name></member>
+      <member refid="classRateManagerAsync_1af04460d2439dafa6c0c254a8769dd8eb" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>GetTotalBytesCompletelySent</name></member>
+      <member refid="classRateManagerAsync_1a4e8b9bce48b538b1cb065287786b4964" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>GetTotalBytesDequeuedForSend</name></member>
+      <member refid="classRateManagerAsync_1af3b5e8bf9b5604d232e3e34a4f18457a" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>GetTotalPacketsBeingSent</name></member>
+      <member refid="classRateManagerAsync_1a6a4fdd89ed2df9161f0894adb17be675" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>GetTotalPacketsCompletelySent</name></member>
+      <member refid="classRateManagerAsync_1a6d0e04b282f5bf978b4143dfc856fa99" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>GetTotalPacketsDequeuedForSend</name></member>
+      <member refid="classRateManagerAsync_1adee1e3db3abb5b92573d43f37658bc90" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>HasAvailabilityToSendPacket</name></member>
+      <member refid="classRateManagerAsync_1a5d266dede730b34d9b1edd5ef752831e" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>IoServiceThreadNotifyPacketSentCallback</name></member>
+      <member refid="classRateManagerAsync_1a207a69d8f6044a7241908e9b0dc91c30" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_bytesToAckByRateCb</name></member>
+      <member refid="classRateManagerAsync_1a2cfa0a9d65a05a8253850c5f30cfebcc" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_bytesToAckByRateCbVec</name></member>
+      <member refid="classRateManagerAsync_1a53640311b42d685cd075a17c0b3dfadd" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_bytesToAckBySentCallbackCb</name></member>
+      <member refid="classRateManagerAsync_1a10dd781fbdbe886f3a7679a3272a59c5" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_bytesToAckBySentCallbackCbVec</name></member>
+      <member refid="classRateManagerAsync_1aeb8d7b4e524b561d56df049a43891b06" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_conditionVariablePacketSent</name></member>
+      <member refid="classRateManagerAsync_1a5851df237de58a41c5c2765ed3ccc16b" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_cvMutex</name></member>
+      <member refid="classRateManagerAsync_1a2ff13984c222c18cdc91ebb27fac4818" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_groupingOfBytesToAckByRateVec</name></member>
+      <member refid="classRateManagerAsync_1a1b518a00b787fe068e25842e14a86193" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_ioServiceRef</name></member>
+      <member refid="classRateManagerAsync_1a3c536f0d9a984bef03feb7bb0ac2344e" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_maxPacketsBeingSent</name></member>
+      <member refid="classRateManagerAsync_1a1e5e613bc8ded0404282588051c71783" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_packetsSentCallback</name></member>
+      <member refid="classRateManagerAsync_1a3a0c064b5cb6908f5aaa9bdc93ca509b" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_rateBitsPerSec</name></member>
+      <member refid="classRateManagerAsync_1a3d72296fe66edc341b165663d21c4d24" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_rateTimer</name></member>
+      <member refid="classRateManagerAsync_1a312bfc8247d84fe046e4afcfba5625d6" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_rateTimerIsRunning</name></member>
+      <member refid="classRateManagerAsync_1afd905a8a075d0f7a5225ec619f9d17b2" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_totalBytesDequeuedForSend</name></member>
+      <member refid="classRateManagerAsync_1a73ba72962b736bd1b9d702e7e72238a1" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_totalBytesSentByRate</name></member>
+      <member refid="classRateManagerAsync_1aa2bbb6be9479b46fd61c1a8a3497c8fc" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_totalBytesSentBySentCallback</name></member>
+      <member refid="classRateManagerAsync_1aff17726ab5c630aee828a9c4e837ee16" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_totalPacketsDequeuedForSend</name></member>
+      <member refid="classRateManagerAsync_1ae0c81e3bec000be891ebf4c16c5f8fc3" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_totalPacketsSentByRate</name></member>
+      <member refid="classRateManagerAsync_1a06f1d20393f40cd31713d52fe594ce61" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>m_totalPacketsSentBySentCallback</name></member>
+      <member refid="classRateManagerAsync_1a4444acf0a8c0b61631e962cc16bc1a75" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>NotifyPacketSentFromCallback_ThreadSafe</name></member>
+      <member refid="classRateManagerAsync_1a1f69f85947f8f6482a1589c73579b7f9" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>OnRate_TimerExpired</name></member>
+      <member refid="classRateManagerAsync_1a248c4de5632be23cbc35b5626892d83d" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>RateManagerAsync</name></member>
+      <member refid="classRateManagerAsync_1ab0e1912bb77720f74195189f6bf274cc" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>RateManagerAsync</name></member>
+      <member refid="classRateManagerAsync_1af5c3a6a029f504731b479871eead8b59" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>Reset</name></member>
+      <member refid="classRateManagerAsync_1a9357cbf7bc42745d64ef970a3d85e3dd" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>SetPacketsSentCallback</name></member>
+      <member refid="classRateManagerAsync_1a1b2172fe6c0646742f61a09dcc52860d" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>SetRate</name></member>
+      <member refid="classRateManagerAsync_1a2f7d81ebaaa8cdff52c13eb1b15ef82a" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>SignalNewPacketDequeuedForSend</name></member>
+      <member refid="classRateManagerAsync_1a5297d8aacf605b1b98a453cd3f918f34" prot="private" virt="non-virtual"><scope>RateManagerAsync</scope><name>TryRestartRateTimer</name></member>
+      <member refid="classRateManagerAsync_1a5bb067bb77566c82b664ae8f5e3c2da1" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>WaitForAllDequeuedPacketsToFullySend_Blocking</name></member>
+      <member refid="classRateManagerAsync_1a55ed01f0a700131d294121c3626710d9" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>WaitForAvailabilityToSendPacket_Blocking</name></member>
+      <member refid="classRateManagerAsync_1a9fc2f272a264abbe0e8af0caf272e5a0" prot="public" virt="non-virtual"><scope>RateManagerAsync</scope><name>~RateManagerAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

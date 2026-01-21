@@ -1,0 +1,1341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLtpIpcEngine" kind="class" language="C++" prot="public">
+    <compoundname>LtpIpcEngine</compoundname>
+    <basecompoundref refid="classLtpEngine" prot="public" virt="non-virtual">LtpEngine</basecompoundref>
+    <includes refid="LtpIpcEngine_8h" local="no">LtpIpcEngine.h</includes>
+    <innerclass refid="structLtpIpcEngine_1_1IpcControl" prot="public">LtpIpcEngine::IpcControl</innerclass>
+    <innerclass refid="structLtpIpcEngine_1_1IpcPacket" prot="public">LtpIpcEngine::IpcPacket</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLtpIpcEngine_1aa6ddf2dcbf348962f92efe392c6b92d9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; LtpIpcEngine::m_readRemoteTxShmThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_readRemoteTxShmThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="136" column="21" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1afccc7ed2eab9a071ded22e799a76a054" compoundref="LtpIpcEngine_8cpp" startline="185" endline="194">Connect</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a9887367e9ad521b67548b3138b01b4f6" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string LtpIpcEngine::m_myTxSharedMemoryName</definition>
+        <argsstring></argsstring>
+        <name>m_myTxSharedMemoryName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="139" column="23" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="139" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a00b6345bd90355eb724397541445ed52" prot="private" static="no" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t LtpIpcEngine::M_REMOTE_ENGINE_ID</definition>
+        <argsstring></argsstring>
+        <name>M_REMOTE_ENGINE_ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="140" column="20" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="140" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a120bb1dfb97cb935e2f510f08ca85e4b" compoundref="LtpIpcEngine_8cpp" startline="318" endline="377">VerifyIpcPacketReceive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a9fcc191301fea6b09c89fd5ef2647aa0" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::interprocess::shared_memory_object &gt;</type>
+        <definition>std::unique_ptr&lt;boost::interprocess::shared_memory_object&gt; LtpIpcEngine::m_myTxSharedMemoryObjectPtr</definition>
+        <argsstring></argsstring>
+        <name>m_myTxSharedMemoryObjectPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="141" column="21" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a69ca13139035133d4b7dd436a27c7e1d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::interprocess::mapped_region &gt;</type>
+        <definition>std::unique_ptr&lt;boost::interprocess::mapped_region&gt; LtpIpcEngine::m_myTxShmMappedRegionPtr</definition>
+        <argsstring></argsstring>
+        <name>m_myTxShmMappedRegionPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="142" column="21" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="142" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a0df4eb7668d30199828ee8b73c85fb53" prot="private" static="no" mutable="no">
+        <type><ref refid="structLtpIpcEngine_1_1IpcControl" kindref="compound">IpcControl</ref> *</type>
+        <definition>IpcControl* LtpIpcEngine::m_myTxIpcControlPtr</definition>
+        <argsstring></argsstring>
+        <name>m_myTxIpcControlPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="143" column="16" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="143" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a9d805f2b578f5117a150a61b70988644" prot="private" static="no" mutable="no">
+        <type><ref refid="structLtpIpcEngine_1_1IpcPacket" kindref="compound">IpcPacket</ref> *</type>
+        <definition>IpcPacket* LtpIpcEngine::m_myTxIpcPacketCbArray</definition>
+        <argsstring></argsstring>
+        <name>m_myTxIpcPacketCbArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="144" column="15" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="144" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a3a9c19b377af029d2475cc3c7cd87938" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* LtpIpcEngine::m_myTxIpcDataStart</definition>
+        <argsstring></argsstring>
+        <name>m_myTxIpcDataStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="145" column="13" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="145" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1af3c61532b4dcc5a2cf66ca3300b5ed6d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LtpIpcEngine::m_remoteTxSharedMemoryName</definition>
+        <argsstring></argsstring>
+        <name>m_remoteTxSharedMemoryName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="147" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="147" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1afccc7ed2eab9a071ded22e799a76a054" compoundref="LtpIpcEngine_8cpp" startline="185" endline="194">Connect</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a08429bf5ea220021ba859ce462359c3d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::interprocess::shared_memory_object &gt;</type>
+        <definition>std::unique_ptr&lt;boost::interprocess::shared_memory_object&gt; LtpIpcEngine::m_remoteTxSharedMemoryObjectPtr</definition>
+        <argsstring></argsstring>
+        <name>m_remoteTxSharedMemoryObjectPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="148" column="21" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="148" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a7918f7461531e3b26b9812143ebb2440" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::interprocess::mapped_region &gt;</type>
+        <definition>std::unique_ptr&lt;boost::interprocess::mapped_region&gt; LtpIpcEngine::m_remoteTxShmMappedRegionPtr</definition>
+        <argsstring></argsstring>
+        <name>m_remoteTxShmMappedRegionPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="149" column="21" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="149" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a5b6920974695f4ed13ccc61414314c9b" prot="private" static="no" mutable="no">
+        <type><ref refid="structLtpIpcEngine_1_1IpcControl" kindref="compound">IpcControl</ref> *</type>
+        <definition>IpcControl* LtpIpcEngine::m_remoteTxIpcControlPtr</definition>
+        <argsstring></argsstring>
+        <name>m_remoteTxIpcControlPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="150" column="16" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="150" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1aee578f85033d24f0d343b005fafa79e8" compoundref="LtpIpcEngine_8cpp" startline="312" endline="316">PacketInFullyProcessedCallback</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a6efea6bf1587b7e320f9bc94af080c58" prot="private" static="no" mutable="no">
+        <type><ref refid="structLtpIpcEngine_1_1IpcPacket" kindref="compound">IpcPacket</ref> *</type>
+        <definition>IpcPacket* LtpIpcEngine::m_remoteTxIpcPacketCbArray</definition>
+        <argsstring></argsstring>
+        <name>m_remoteTxIpcPacketCbArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="151" column="15" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="151" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a8e8e594611d326e04ad352a768dab31f" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* LtpIpcEngine::m_remoteTxIpcDataStart</definition>
+        <argsstring></argsstring>
+        <name>m_remoteTxIpcDataStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="152" column="13" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="152" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a8d2c64df538e87d0763078459ff824c8" compoundref="LtpIpcEngine_8cpp" startline="476" endline="478">ReadyToSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a27a330478852be0fafa516f4e4eb523c" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int LtpIpcEngine::M_NUM_CIRCULAR_BUFFER_VECTORS</definition>
+        <argsstring></argsstring>
+        <name>M_NUM_CIRCULAR_BUFFER_VECTORS</name>
+        <briefdescription>
+<para>Number of receive buffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="155" column="24" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="155" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; LtpIpcEngine::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+<para>Logger flag, set to False to log a notice on the SINGLE next increment of m_countCircularBufferOverruns. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="162" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="162" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1afccc7ed2eab9a071ded22e799a76a054" compoundref="LtpIpcEngine_8cpp" startline="185" endline="194">Connect</referencedby>
+        <referencedby refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">DoSendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a8d2c64df538e87d0763078459ff824c8" compoundref="LtpIpcEngine_8cpp" startline="476" endline="478">ReadyToSend</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a3423076e226514ba1d8264e0cf74b019" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool LtpIpcEngine::m_isInduct</definition>
+        <argsstring></argsstring>
+        <name>m_isInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="163" column="16" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" compoundref="LtpIpcEngine_8cpp" startline="26" endline="138">LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a044271ba982c7bee65250f13e8d812ac" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; LtpIpcEngine::m_resetInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_resetInProgress</name>
+        <briefdescription>
+<para>Whether an engine reset is currently in progress. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="167" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="167" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a6d0fa5350acfc93fb3f6f4d958c3afff" compoundref="LtpIpcEngine_8cpp" startline="196" endline="203">Reset_ThreadSafe_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1ad888a1841bd5412a2fb4519d191ba48c" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex LtpIpcEngine::m_resetMutex</definition>
+        <argsstring></argsstring>
+        <name>m_resetMutex</name>
+        <briefdescription>
+<para>Engine reset mutex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="169" column="18" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="169" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a6d0fa5350acfc93fb3f6f4d958c3afff" compoundref="LtpIpcEngine_8cpp" startline="196" endline="203">Reset_ThreadSafe_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a59fd3b95b3e5f2897ca71000dca4a27b" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable LtpIpcEngine::m_resetConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_resetConditionVariable</name>
+        <briefdescription>
+<para>Engine reset condition variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="171" column="31" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="171" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a6d0fa5350acfc93fb3f6f4d958c3afff" compoundref="LtpIpcEngine_8cpp" startline="196" endline="203">Reset_ThreadSafe_Blocking</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classLtpIpcEngine_1a35db09847bf53dd652ceae07220f3ac7" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countAsyncSendCalls</definition>
+        <argsstring></argsstring>
+        <name>m_countAsyncSendCalls</name>
+        <briefdescription>
+<para>Total number of initiated send operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="175" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="175" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1abd0ded16395f66881526ef8e9216ff09" compoundref="LtpIpcEngine_8cpp" startline="425" endline="445">SendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a959a436dc6776f5fd8540b25c781e4af" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countAsyncSendCallbackCalls</definition>
+        <argsstring></argsstring>
+        <name>m_countAsyncSendCallbackCalls</name>
+        <briefdescription>
+<para>Total number of send operation completion handler invocations, indicates the number of completed send operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="177" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="177" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1abd0ded16395f66881526ef8e9216ff09" compoundref="LtpIpcEngine_8cpp" startline="425" endline="445">SendPacket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a836cd302a35a82420bb9d4350197dcbe" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countBatchSendCalls</definition>
+        <argsstring></argsstring>
+        <name>m_countBatchSendCalls</name>
+        <briefdescription>
+<para>Total number of initiated batch send operations through m_udpBatchSenderConnected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="179" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="179" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2c7b35edb6b3239fd52cfd1d0ed77a00" compoundref="LtpIpcEngine_8cpp" startline="447" endline="469">SendPackets</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1a39cbcc94b8d1d1ec7e1ad036fd1ea9d5" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countBatchSendCallbackCalls</definition>
+        <argsstring></argsstring>
+        <name>m_countBatchSendCallbackCalls</name>
+        <briefdescription>
+<para>Total number of batch send operation completion handler invocations, indicates the number of completed batch send operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="181" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="181" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2c7b35edb6b3239fd52cfd1d0ed77a00" compoundref="LtpIpcEngine_8cpp" startline="447" endline="469">SendPackets</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1afcbc62a48a61f5630265241e8c33e424" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countBatchUdpPacketsSent</definition>
+        <argsstring></argsstring>
+        <name>m_countBatchUdpPacketsSent</name>
+        <briefdescription>
+<para>Total number of packets actually sent across batch send operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="183" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="183" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2c7b35edb6b3239fd52cfd1d0ed77a00" compoundref="LtpIpcEngine_8cpp" startline="447" endline="469">SendPackets</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1afe9a219c3aedddda83656dea3f2a2746" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countCircularBufferOverruns</definition>
+        <argsstring></argsstring>
+        <name>m_countCircularBufferOverruns</name>
+        <briefdescription>
+<para>Total number of requests attempted to queue a packet for transmission while transmission buffers were full. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="187" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="187" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLtpIpcEngine_1aee0e649e6286556091001c717ce4de75" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; LtpIpcEngine::m_countUdpPacketsReceived</definition>
+        <argsstring></argsstring>
+        <name>m_countUdpPacketsReceived</name>
+        <briefdescription>
+<para>Total number of packets received, includes number of dropped packets due to receive buffers being full. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="189" column="17" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="189" bodyend="-1"/>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLtpIpcEngine_1af30fe98a0bbbfef2f5ba55686f691bdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LtpIpcEngine::LtpIpcEngine</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LtpIpcEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="44" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1aee578f85033d24f0d343b005fafa79e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpIpcEngine::PacketInFullyProcessedCallback</definition>
+        <argsstring>(bool success) override</argsstring>
+        <name>PacketInFullyProcessedCallback</name>
+        <reimplements refid="classLtpEngine_1a0edf399b2bd002c21ebb65b40032f10b">PacketInFullyProcessedCallback</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle the completion of a receive buffer processing operation.</para>
+<para>Invoked by the underlying LTP engine when a received packet is fully processed. Completes the processing by committing the read to the circular index buffer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>success</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the processing was successful. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="106" column="36" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="312" bodyend="316"/>
+        <references refid="classLtpIpcEngine_1a5b6920974695f4ed13ccc61414314c9b" compoundref="LtpIpcEngine_8h" startline="150">m_remoteTxIpcControlPtr</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a3d32098b6d98feafe10455d01065f51e" compoundref="LtpIpcEngine_8h" startline="63">LtpIpcEngine::IpcControl::m_waitUntilNotFull_postHasFreeSpace_semaphore</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1abd0ded16395f66881526ef8e9216ff09" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpIpcEngine::SendPacket</definition>
+        <argsstring>(const std::vector&lt; boost::asio::const_buffer &gt; &amp;constBufferVec, std::shared_ptr&lt; std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &gt; &amp;&amp;underlyingDataToDeleteOnSentCallback, std::shared_ptr&lt; LtpClientServiceDataToSend &gt; &amp;&amp;underlyingCsDataToDeleteOnSentCallback) override</argsstring>
+        <name>SendPacket</name>
+        <reimplements refid="classLtpEngine_1ad518dc5aa6135beac01e9c26c1acd6bc">SendPacket</reimplements>
+        <param>
+          <type>const std::vector&lt; boost::asio::const_buffer &gt; &amp;</type>
+          <declname>constBufferVec</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &gt; &amp;&amp;</type>
+          <declname>underlyingDataToDeleteOnSentCallback</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classLtpClientServiceDataToSend" kindref="compound">LtpClientServiceDataToSend</ref> &gt; &amp;&amp;</type>
+          <declname>underlyingCsDataToDeleteOnSentCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a UDP send operation for a single packet. //TODO: Docs, complete</para>
+<para>Initiates an asynchronous send operation with <ref refid="classLtpUdpEngine_1a06b6d0e12cc8be31fde02873dab7a57c" kindref="member">LtpUdpEngine::HandleUdpSend()</ref> as a completion handler. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>constBufferVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingDataToDeleteOnSentCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingCsDataToDeleteOnSentCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The arguments to underlyingDataToDeleteOnSentCallback and underlyingCsDataToDeleteOnSentCallback are left in a moved-from state. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="116" column="36" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="425" bodyend="445"/>
+        <references refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">DoSendPacket</references>
+        <references refid="classLtpIpcEngine_1a959a436dc6776f5fd8540b25c781e4af" compoundref="LtpIpcEngine_8h" startline="177">m_countAsyncSendCallbackCalls</references>
+        <references refid="classLtpIpcEngine_1a35db09847bf53dd652ceae07220f3ac7" compoundref="LtpIpcEngine_8h" startline="175">m_countAsyncSendCalls</references>
+        <references refid="classLtpEngine_1af468073c4352e673fc27eb14c8736323" compoundref="LtpEngine_8cpp" startline="422" endline="433">LtpEngine::OnSendPacketsSystemCallCompleted_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a2c7b35edb6b3239fd52cfd1d0ed77a00" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpIpcEngine::SendPackets</definition>
+        <argsstring>(std::shared_ptr&lt; std::vector&lt; UdpSendPacketInfo &gt; &gt; &amp;&amp;udpSendPacketInfoVecSharedPtr, const std::size_t numPacketsToSend) override</argsstring>
+        <name>SendPackets</name>
+        <reimplements refid="classLtpEngine_1a9baa2210c16306fd40c21b7e70512fb6">SendPackets</reimplements>
+        <param>
+          <type>std::shared_ptr&lt; std::vector&lt; <ref refid="structUdpSendPacketInfo" kindref="compound">UdpSendPacketInfo</ref> &gt; &gt; &amp;&amp;</type>
+          <declname>udpSendPacketInfoVecSharedPtr</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>numPacketsToSend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a batch UDP send operation. //TODO: Docs, complete</para>
+<para>Stub to make compatible with <ref refid="classLtpEngine" kindref="compound">LtpEngine</ref>, calls DoSendPacket as many times as needed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>constBufferVecs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingDataToDeleteOnSentCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>underlyingCsDataToDeleteOnSentCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="129" column="36" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="447" bodyend="469"/>
+        <references refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" compoundref="LtpIpcEngine_8cpp" startline="381" endline="423">DoSendPacket</references>
+        <references refid="classLtpIpcEngine_1a39cbcc94b8d1d1ec7e1ad036fd1ea9d5" compoundref="LtpIpcEngine_8h" startline="181">m_countBatchSendCallbackCalls</references>
+        <references refid="classLtpIpcEngine_1a836cd302a35a82420bb9d4350197dcbe" compoundref="LtpIpcEngine_8h" startline="179">m_countBatchSendCalls</references>
+        <references refid="classLtpIpcEngine_1afcbc62a48a61f5630265241e8c33e424" compoundref="LtpIpcEngine_8h" startline="183">m_countBatchUdpPacketsSent</references>
+        <references refid="classLtpEngine_1af468073c4352e673fc27eb14c8736323" compoundref="LtpEngine_8cpp" startline="422" endline="433">LtpEngine::OnSendPacketsSystemCallCompleted_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpIpcEngine::DoSendPacket</definition>
+        <argsstring>(const std::vector&lt; boost::asio::const_buffer &gt; &amp;constBufferVec)</argsstring>
+        <name>DoSendPacket</name>
+        <param>
+          <type>const std::vector&lt; boost::asio::const_buffer &gt; &amp;</type>
+          <declname>constBufferVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="131" column="28" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="381" bodyend="423"/>
+        <references refid="structLtpIpcEngine_1_1IpcPacket_1a14623c5cfd6e981bc48cb7552445df10" compoundref="LtpIpcEngine_8h" startline="48">LtpIpcEngine::IpcPacket::bytesTransferred</references>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1ad822b53852fd9c30cb53621894e45bf8" compoundref="LtpIpcEngine_8h" startline="61">LtpIpcEngine::IpcControl::m_bytesPerElement</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1ac65342453dbd64dd11241d8cc24a9ede" compoundref="LtpIpcEngine_8h" startline="66">LtpIpcEngine::IpcControl::m_circularIndexBuffer</references>
+        <references refid="classLtpIpcEngine_1a0df4eb7668d30199828ee8b73c85fb53" compoundref="LtpIpcEngine_8h" startline="143">m_myTxIpcControlPtr</references>
+        <references refid="classLtpIpcEngine_1a3a9c19b377af029d2475cc3c7cd87938" compoundref="LtpIpcEngine_8h" startline="145">m_myTxIpcDataStart</references>
+        <references refid="classLtpIpcEngine_1a9d805f2b578f5117a150a61b70988644" compoundref="LtpIpcEngine_8h" startline="144">m_myTxIpcPacketCbArray</references>
+        <references refid="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" compoundref="LtpIpcEngine_8h" startline="162">m_running</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a31c04d4f504042ba5be5d7cd7135b2a5" compoundref="LtpIpcEngine_8h" startline="64">LtpIpcEngine::IpcControl::m_waitUntilNotEmpty_postHasData_semaphore</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a3d32098b6d98feafe10455d01065f51e" compoundref="LtpIpcEngine_8h" startline="63">LtpIpcEngine::IpcControl::m_waitUntilNotFull_postHasFreeSpace_semaphore</references>
+        <references refid="LtpIpcEngine_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpIpcEngine_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classLtpIpcEngine_1abd0ded16395f66881526ef8e9216ff09" compoundref="LtpIpcEngine_8cpp" startline="425" endline="445">SendPacket</referencedby>
+        <referencedby refid="classLtpIpcEngine_1a2c7b35edb6b3239fd52cfd1d0ed77a00" compoundref="LtpIpcEngine_8cpp" startline="447" endline="469">SendPackets</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT void</type>
+        <definition>void LtpIpcEngine::ReadRemoteTxShmThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>ReadRemoteTxShmThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="133" column="28" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="220" bodyend="310"/>
+        <references refid="structLtpIpcEngine_1_1IpcPacket_1a14623c5cfd6e981bc48cb7552445df10" compoundref="LtpIpcEngine_8h" startline="48">LtpIpcEngine::IpcPacket::bytesTransferred</references>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1ad822b53852fd9c30cb53621894e45bf8" compoundref="LtpIpcEngine_8h" startline="61">LtpIpcEngine::IpcControl::m_bytesPerElement</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1ac65342453dbd64dd11241d8cc24a9ede" compoundref="LtpIpcEngine_8h" startline="66">LtpIpcEngine::IpcControl::m_circularIndexBuffer</references>
+        <references refid="classLtpIpcEngine_1aee0e649e6286556091001c717ce4de75" compoundref="LtpIpcEngine_8h" startline="189">m_countUdpPacketsReceived</references>
+        <references refid="classLtpIpcEngine_1a27a330478852be0fafa516f4e4eb523c" compoundref="LtpIpcEngine_8h" startline="155">M_NUM_CIRCULAR_BUFFER_VECTORS</references>
+        <references refid="classLtpIpcEngine_1a5b6920974695f4ed13ccc61414314c9b" compoundref="LtpIpcEngine_8h" startline="150">m_remoteTxIpcControlPtr</references>
+        <references refid="classLtpIpcEngine_1a8e8e594611d326e04ad352a768dab31f" compoundref="LtpIpcEngine_8h" startline="152">m_remoteTxIpcDataStart</references>
+        <references refid="classLtpIpcEngine_1a6efea6bf1587b7e320f9bc94af080c58" compoundref="LtpIpcEngine_8h" startline="151">m_remoteTxIpcPacketCbArray</references>
+        <references refid="classLtpIpcEngine_1af3c61532b4dcc5a2cf66ca3300b5ed6d" compoundref="LtpIpcEngine_8h" startline="147">m_remoteTxSharedMemoryName</references>
+        <references refid="classLtpIpcEngine_1a08429bf5ea220021ba859ce462359c3d" compoundref="LtpIpcEngine_8h" startline="148">m_remoteTxSharedMemoryObjectPtr</references>
+        <references refid="classLtpIpcEngine_1a7918f7461531e3b26b9812143ebb2440" compoundref="LtpIpcEngine_8h" startline="149">m_remoteTxShmMappedRegionPtr</references>
+        <references refid="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" compoundref="LtpIpcEngine_8h" startline="162">m_running</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a31c04d4f504042ba5be5d7cd7135b2a5" compoundref="LtpIpcEngine_8h" startline="64">LtpIpcEngine::IpcControl::m_waitUntilNotEmpty_postHasData_semaphore</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a3d32098b6d98feafe10455d01065f51e" compoundref="LtpIpcEngine_8h" startline="63">LtpIpcEngine::IpcControl::m_waitUntilNotFull_postHasFreeSpace_semaphore</references>
+        <references refid="classLtpEngine_1ab32abf93dbdfbf50911440699941d721" compoundref="LtpEngine_8cpp" startline="412" endline="416">LtpEngine::PacketIn_ThreadSafe</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="LtpIpcEngine_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpIpcEngine_8cpp" startline="22">subprocess</references>
+        <references refid="classLtpIpcEngine_1a120bb1dfb97cb935e2f510f08ca85e4b" compoundref="LtpIpcEngine_8cpp" startline="318" endline="377">VerifyIpcPacketReceive</references>
+        <referencedby refid="classLtpIpcEngine_1afccc7ed2eab9a071ded22e799a76a054" compoundref="LtpIpcEngine_8cpp" startline="185" endline="194">Connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a120bb1dfb97cb935e2f510f08ca85e4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_NO_EXPORT bool</type>
+        <definition>bool LtpIpcEngine::VerifyIpcPacketReceive</definition>
+        <argsstring>(uint8_t *data, std::size_t bytesTransferred)</argsstring>
+        <name>VerifyIpcPacketReceive</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytesTransferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="134" column="28" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="318" bodyend="377"/>
+        <references refid="LtpIpcEngine_8cpp_1adb115165d36b03811ba9bcb4f583de08" compoundref="LtpIpcEngine_8cpp" startline="24">ENGINE_INDEX</references>
+        <references refid="classLtpRandomNumberGenerator_1a962eee701e277cbc7e5676a68064137d" compoundref="LtpRandomNumberGenerator_8cpp" startline="209" endline="214">LtpRandomNumberGenerator::GetEngineIndexFromRandomSessionNumber</references>
+        <references refid="classLtp_1aacbfed077a29e920efab1d9579acffe9" compoundref="Ltp_8cpp" startline="1650" endline="1693">Ltp::GetMessageDirectionFromSegmentFlags</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classLtpIpcEngine_1a00b6345bd90355eb724397541445ed52" compoundref="LtpIpcEngine_8h" startline="140">M_REMOTE_ENGINE_ID</references>
+        <references refid="Sdnv_8h_1aed9b084e1f882d083c1f235615779f25" compoundref="Sdnv_8cpp" startline="113" endline="124">SdnvDecodeU64</references>
+        <references refid="LtpIpcEngine_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpIpcEngine_8cpp" startline="22">subprocess</references>
+        <references refid="TestCborUint_8cpp_1ab2458bac57f09e186773d28ccf9b674c" compoundref="TestCborUint_8cpp" startline="474">totalBytesDecoded</references>
+        <referencedby refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpIpcEngine::LtpIpcEngine</definition>
+        <argsstring>(const std::string &amp;myTxSharedMemoryName, const uint64_t maxUdpRxPacketSizeBytes, const LtpEngineConfig &amp;ltpRxOrTxCfg)</argsstring>
+        <name>LtpIpcEngine</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>myTxSharedMemoryName</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxUdpRxPacketSizeBytes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structLtpEngineConfig" kindref="compound">LtpEngineConfig</ref> &amp;</type>
+          <declname>ltpRxOrTxCfg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="70" column="20" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="26" bodyend="138"/>
+        <references refid="structLtpEngineConfig_1a0763759a09f2a0119ce2d0658b4a5ced" compoundref="LtpEngineConfig_8h" startline="232">LtpEngineConfig::activeSessionDataOnDiskDirectory</references>
+        <references refid="structLtpEngineConfig_1af2376157350aed7ab80a30f11e0281fb" compoundref="LtpEngineConfig_8h" startline="224">LtpEngineConfig::activeSessionDataOnDiskNewFileDurationMsOrZeroToDisable</references>
+        <references refid="structLtpIpcEngine_1_1IpcPacket_1a14623c5cfd6e981bc48cb7552445df10" compoundref="LtpIpcEngine_8h" startline="48">LtpIpcEngine::IpcPacket::bytesTransferred</references>
+        <references refid="structLtpEngineConfig_1afdfdac47cbc2428cbf3938ab7002d851" compoundref="LtpEngineConfig_8h" startline="205">LtpEngineConfig::delaySendingOfDataSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="structLtpEngineConfig_1a7d24cf72557b24b668aff6736ed88770" compoundref="LtpEngineConfig_8h" startline="198">LtpEngineConfig::delaySendingOfReportSegmentsTimeMsOrZeroToDisable</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpIpcEngine_1a3423076e226514ba1d8264e0cf74b019" compoundref="LtpIpcEngine_8h" startline="163">m_isInduct</references>
+        <references refid="classLtpIpcEngine_1a0df4eb7668d30199828ee8b73c85fb53" compoundref="LtpIpcEngine_8h" startline="143">m_myTxIpcControlPtr</references>
+        <references refid="classLtpIpcEngine_1a3a9c19b377af029d2475cc3c7cd87938" compoundref="LtpIpcEngine_8h" startline="145">m_myTxIpcDataStart</references>
+        <references refid="classLtpIpcEngine_1a9d805f2b578f5117a150a61b70988644" compoundref="LtpIpcEngine_8h" startline="144">m_myTxIpcPacketCbArray</references>
+        <references refid="classLtpIpcEngine_1a9887367e9ad521b67548b3138b01b4f6" compoundref="LtpIpcEngine_8h" startline="139">m_myTxSharedMemoryName</references>
+        <references refid="classLtpIpcEngine_1a9fcc191301fea6b09c89fd5ef2647aa0" compoundref="LtpIpcEngine_8h" startline="141">m_myTxSharedMemoryObjectPtr</references>
+        <references refid="classLtpIpcEngine_1a69ca13139035133d4b7dd436a27c7e1d" compoundref="LtpIpcEngine_8h" startline="142">m_myTxShmMappedRegionPtr</references>
+        <references refid="classLtpIpcEngine_1a27a330478852be0fafa516f4e4eb523c" compoundref="LtpIpcEngine_8h" startline="155">M_NUM_CIRCULAR_BUFFER_VECTORS</references>
+        <references refid="structLtpEngineConfig_1a65262bfda5b82c5e99873ef54d726e26" compoundref="LtpEngineConfig_8h" startline="158">LtpEngineConfig::maxSimultaneousSessions</references>
+        <references refid="structLtpEngineConfig_1a1e47195525407f2e2480ce7655eb2a8f" compoundref="LtpEngineConfig_8h" startline="175">LtpEngineConfig::maxUdpPacketsToSendPerSystemCall</references>
+        <references refid="structLtpEngineConfig_1aabd8c6f6a4c12778745c09dc7a792726" compoundref="LtpEngineConfig_8h" startline="184">LtpEngineConfig::senderPingSecondsOrZeroToDisable</references>
+        <references refid="LtpIpcEngine_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpIpcEngine_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_EXPORT</type>
+        <definition>LtpIpcEngine::~LtpIpcEngine</definition>
+        <argsstring>() override</argsstring>
+        <name>~LtpIpcEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="76" column="28" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="140" bodyend="163"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classLtpIpcEngine_1a35db09847bf53dd652ceae07220f3ac7" compoundref="LtpIpcEngine_8h" startline="175">m_countAsyncSendCalls</references>
+        <references refid="classLtpIpcEngine_1a836cd302a35a82420bb9d4350197dcbe" compoundref="LtpIpcEngine_8h" startline="179">m_countBatchSendCalls</references>
+        <references refid="classLtpIpcEngine_1afcbc62a48a61f5630265241e8c33e424" compoundref="LtpIpcEngine_8h" startline="183">m_countBatchUdpPacketsSent</references>
+        <references refid="classLtpIpcEngine_1afe9a219c3aedddda83656dea3f2a2746" compoundref="LtpIpcEngine_8h" startline="187">m_countCircularBufferOverruns</references>
+        <references refid="classLtpIpcEngine_1aee0e649e6286556091001c717ce4de75" compoundref="LtpIpcEngine_8h" startline="189">m_countUdpPacketsReceived</references>
+        <references refid="classLtpIpcEngine_1a9887367e9ad521b67548b3138b01b4f6" compoundref="LtpIpcEngine_8h" startline="139">m_myTxSharedMemoryName</references>
+        <references refid="classLtpIpcEngine_1a9fcc191301fea6b09c89fd5ef2647aa0" compoundref="LtpIpcEngine_8h" startline="141">m_myTxSharedMemoryObjectPtr</references>
+        <references refid="classLtpIpcEngine_1a69ca13139035133d4b7dd436a27c7e1d" compoundref="LtpIpcEngine_8h" startline="142">m_myTxShmMappedRegionPtr</references>
+        <references refid="classLtpIpcEngine_1af3c61532b4dcc5a2cf66ca3300b5ed6d" compoundref="LtpIpcEngine_8h" startline="147">m_remoteTxSharedMemoryName</references>
+        <references refid="classLtpIpcEngine_1a08429bf5ea220021ba859ce462359c3d" compoundref="LtpIpcEngine_8h" startline="148">m_remoteTxSharedMemoryObjectPtr</references>
+        <references refid="classLtpIpcEngine_1a7918f7461531e3b26b9812143ebb2440" compoundref="LtpIpcEngine_8h" startline="149">m_remoteTxShmMappedRegionPtr</references>
+        <references refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" compoundref="LtpIpcEngine_8cpp" startline="165" endline="183">Stop</references>
+        <references refid="LtpIpcEngine_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpIpcEngine_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1afccc7ed2eab9a071ded22e799a76a054" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpIpcEngine::Connect</definition>
+        <argsstring>(const std::string &amp;remoteTxSharedMemoryName)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>remoteTxSharedMemoryName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="78" column="25" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="185" bodyend="194"/>
+        <references refid="classLtpIpcEngine_1aa6ddf2dcbf348962f92efe392c6b92d9" compoundref="LtpIpcEngine_8h" startline="136">m_readRemoteTxShmThreadPtr</references>
+        <references refid="classLtpIpcEngine_1af3c61532b4dcc5a2cf66ca3300b5ed6d" compoundref="LtpIpcEngine_8h" startline="147">m_remoteTxSharedMemoryName</references>
+        <references refid="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" compoundref="LtpIpcEngine_8h" startline="162">m_running</references>
+        <references refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" compoundref="LtpIpcEngine_8cpp" startline="220" endline="310">ReadRemoteTxShmThreadFunc</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpIpcEngine::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="80" column="25" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="165" bodyend="183"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classLtpIpcEngine_1a0df4eb7668d30199828ee8b73c85fb53" compoundref="LtpIpcEngine_8h" startline="143">m_myTxIpcControlPtr</references>
+        <references refid="classLtpIpcEngine_1aa6ddf2dcbf348962f92efe392c6b92d9" compoundref="LtpIpcEngine_8h" startline="136">m_readRemoteTxShmThreadPtr</references>
+        <references refid="classLtpIpcEngine_1a5b6920974695f4ed13ccc61414314c9b" compoundref="LtpIpcEngine_8h" startline="150">m_remoteTxIpcControlPtr</references>
+        <references refid="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" compoundref="LtpIpcEngine_8h" startline="162">m_running</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a31c04d4f504042ba5be5d7cd7135b2a5" compoundref="LtpIpcEngine_8h" startline="64">LtpIpcEngine::IpcControl::m_waitUntilNotEmpty_postHasData_semaphore</references>
+        <references refid="structLtpIpcEngine_1_1IpcControl_1a3d32098b6d98feafe10455d01065f51e" compoundref="LtpIpcEngine_8h" startline="63">LtpIpcEngine::IpcControl::m_waitUntilNotFull_postHasFreeSpace_semaphore</references>
+        <references refid="LtpIpcEngine_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="LtpIpcEngine_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" compoundref="LtpIpcEngine_8cpp" startline="140" endline="163">~LtpIpcEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a6d0fa5350acfc93fb3f6f4d958c3afff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpIpcEngine::Reset_ThreadSafe_Blocking</definition>
+        <argsstring>()</argsstring>
+        <name>Reset_ThreadSafe_Blocking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate an engine reset (thread-safe).</para>
+<para>Initiates an asynchronous call to <ref refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" kindref="member">LtpIpcEngine::Reset()</ref> to perform a reset. The calling thread blocks until the request is resolved. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="87" column="25" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="196" bodyend="203"/>
+        <references refid="classLtpEngine_1a40ecc6a317c1939ac4a610185f2325a3" compoundref="LtpEngine_8h" startline="1072">LtpEngine::m_ioServiceLtpEngine</references>
+        <references refid="classLtpIpcEngine_1a59fd3b95b3e5f2897ca71000dca4a27b" compoundref="LtpIpcEngine_8h" startline="171">m_resetConditionVariable</references>
+        <references refid="classLtpIpcEngine_1a044271ba982c7bee65250f13e8d812ac" compoundref="LtpIpcEngine_8h" startline="167">m_resetInProgress</references>
+        <references refid="classLtpIpcEngine_1ad888a1841bd5412a2fb4519d191ba48c" compoundref="LtpIpcEngine_8h" startline="169">m_resetMutex</references>
+        <references refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" compoundref="LtpIpcEngine_8cpp" startline="205" endline="218">Reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>LTP_LIB_EXPORT void</type>
+        <definition>void LtpIpcEngine::Reset</definition>
+        <argsstring>() override</argsstring>
+        <name>Reset</name>
+        <reimplements refid="classLtpEngine_1a97feb8f9afbd72c0059d3962a528582b">Reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform engine reset.</para>
+<para>Calls <ref refid="classLtpEngine_1a97feb8f9afbd72c0059d3962a528582b" kindref="member">LtpEngine::Reset()</ref> to reset the underlying LTP engine, then clear tracked stats. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="93" column="33" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="205" bodyend="218"/>
+        <references refid="classLtpIpcEngine_1a959a436dc6776f5fd8540b25c781e4af" compoundref="LtpIpcEngine_8h" startline="177">m_countAsyncSendCallbackCalls</references>
+        <references refid="classLtpIpcEngine_1a35db09847bf53dd652ceae07220f3ac7" compoundref="LtpIpcEngine_8h" startline="175">m_countAsyncSendCalls</references>
+        <references refid="classLtpIpcEngine_1a39cbcc94b8d1d1ec7e1ad036fd1ea9d5" compoundref="LtpIpcEngine_8h" startline="181">m_countBatchSendCallbackCalls</references>
+        <references refid="classLtpIpcEngine_1a836cd302a35a82420bb9d4350197dcbe" compoundref="LtpIpcEngine_8h" startline="179">m_countBatchSendCalls</references>
+        <references refid="classLtpIpcEngine_1afcbc62a48a61f5630265241e8c33e424" compoundref="LtpIpcEngine_8h" startline="183">m_countBatchUdpPacketsSent</references>
+        <references refid="classLtpIpcEngine_1afe9a219c3aedddda83656dea3f2a2746" compoundref="LtpIpcEngine_8h" startline="187">m_countCircularBufferOverruns</references>
+        <references refid="classLtpIpcEngine_1aee0e649e6286556091001c717ce4de75" compoundref="LtpIpcEngine_8h" startline="189">m_countUdpPacketsReceived</references>
+        <references refid="classLtpIpcEngine_1a59fd3b95b3e5f2897ca71000dca4a27b" compoundref="LtpIpcEngine_8h" startline="171">m_resetConditionVariable</references>
+        <references refid="classLtpIpcEngine_1a044271ba982c7bee65250f13e8d812ac" compoundref="LtpIpcEngine_8h" startline="167">m_resetInProgress</references>
+        <references refid="classLtpIpcEngine_1ad888a1841bd5412a2fb4519d191ba48c" compoundref="LtpIpcEngine_8h" startline="169">m_resetMutex</references>
+        <references refid="classLtpEngine_1a97feb8f9afbd72c0059d3962a528582b" compoundref="LtpEngine_8cpp" startline="275" endline="339">LtpEngine::Reset</references>
+        <referencedby refid="classLtpIpcEngine_1a6d0fa5350acfc93fb3f6f4d958c3afff" compoundref="LtpIpcEngine_8cpp" startline="196" endline="203">Reset_ThreadSafe_Blocking</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLtpIpcEngine_1a8d2c64df538e87d0763078459ff824c8" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>LTP_LIB_EXPORT bool</type>
+        <definition>bool LtpIpcEngine::ReadyToSend</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ReadyToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/ltp/include/LtpIpcEngine.h" line="97" column="25" bodyfile="common/ltp/src/LtpIpcEngine.cpp" bodystart="476" bodyend="478"/>
+        <references refid="classLtpIpcEngine_1a8e8e594611d326e04ad352a768dab31f" compoundref="LtpIpcEngine_8h" startline="152">m_remoteTxIpcDataStart</references>
+        <references refid="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" compoundref="LtpIpcEngine_8h" startline="162">m_running</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="2">
+        <label>LtpEngine</label>
+        <link refid="classLtpEngine"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LtpIpcEngine</label>
+        <link refid="classLtpIpcEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>LtpSessionReceiver::LtpSessionReceiverCommonData</label>
+        <link refid="structLtpSessionReceiver_1_1LtpSessionReceiverCommonData"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecyclerRef</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbersRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReportsRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>LtpTimerManager&lt; Ltp::session_id_t, Ltp::hash_session_id_t &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_activeSerialNumberBeingTimed</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Ltp::ltp_extensions_t</label>
+        <link refid="structLtp_1_1ltp__extensions__t"/>
+      </node>
+      <node id="22">
+        <label>LtpIpcEngine::IpcPacket</label>
+        <link refid="structLtpIpcEngine_1_1IpcPacket"/>
+      </node>
+      <node id="13">
+        <label>UserDataRecycler&lt; LtpSessionReceiverRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="18">
+        <label>UserDataRecycler&lt; LtpSessionSenderRecycledDataUniquePtr &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="3">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="6">
+        <label>Ltp</label>
+        <link refid="classLtp"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_dataSegment_clientServiceRawDataWrapper</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_dataSegmentMetadata</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_sessionId</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_headerExtensions</edgelabel>
+          <edgelabel>m_trailerExtensions</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_reportSegment</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>LtpSessionSender::LtpSessionSenderCommonData</label>
+        <link refid="structLtpSessionSender_1_1LtpSessionSenderCommonData"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_csnTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbersRef</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallbackRef</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegmentsRef</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecyclerRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>LtpIpcEngine::IpcControl</label>
+        <link refid="structLtpIpcEngine_1_1IpcControl"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>m_circularIndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LtpRandomNumberGenerator::Rng</label>
+        <link refid="classLtpRandomNumberGenerator_1_1Rng"/>
+      </node>
+      <node id="7">
+        <label>Ltp::client_service_raw_data_t</label>
+        <link refid="structLtp_1_1client__service__raw__data__t"/>
+      </node>
+      <node id="17">
+        <label>LtpTimerManager&lt; uint64_t, std::hash&lt; uint64_t &gt; &gt;</label>
+        <link refid="classLtpTimerManager"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_userDataRecycler</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LtpEngine</label>
+        <link refid="classLtpEngine"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_ltpRxStateMachine</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_ltpSessionReceiverCommonData</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_ltpSessionReceiverRecycler</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_cancelSegmentTimerExpiredCallback</edgelabel>
+          <edgelabel>m_csnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_delayedReceptionReportTimerExpiredCallback</edgelabel>
+          <edgelabel>m_rsnTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfCancelSegments</edgelabel>
+          <edgelabel>m_timeManagerOfCheckpointSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfReportSerialNumbers</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedReceptionReports</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_ltpSessionSenderCommonData</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_delayedDataSegmentsTimerExpiredCallback</edgelabel>
+          <edgelabel>m_timeManagerOfSendingDelayedDataSegments</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_ltpSessionSenderRecycler</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_tokenRateLimiter</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LtpRandomNumberGenerator</label>
+        <link refid="classLtpRandomNumberGenerator"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_rng</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Ltp::data_segment_metadata_t</label>
+        <link refid="structLtp_1_1data__segment__metadata__t"/>
+      </node>
+      <node id="11">
+        <label>Ltp::report_segment_t</label>
+        <link refid="structLtp_1_1report__segment__t"/>
+      </node>
+      <node id="9">
+        <label>Ltp::session_id_t</label>
+        <link refid="structLtp_1_1session__id__t"/>
+      </node>
+      <node id="19">
+        <label>TokenRateLimiter</label>
+        <link refid="classTokenRateLimiter"/>
+      </node>
+      <node id="15">
+        <label>UserDataRecycler&lt; std::vector&lt; uint8_t &gt; &gt;</label>
+        <link refid="classUserDataRecycler"/>
+      </node>
+      <node id="21">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+      <node id="1">
+        <label>LtpIpcEngine</label>
+        <link refid="classLtpIpcEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>m_myTxIpcControlPtr</edgelabel>
+          <edgelabel>m_remoteTxIpcControlPtr</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_myTxIpcPacketCbArray</edgelabel>
+          <edgelabel>m_remoteTxIpcPacketCbArray</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/ltp/include/LtpIpcEngine.h" line="42" column="1" bodyfile="common/ltp/include/LtpIpcEngine.h" bodystart="42" bodyend="190"/>
+    <listofallmembers>
+      <member refid="classLtpEngine_1af37d8503f0f53121ca47c814178ade36" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>CancelAcknowledgementSegmentReceivedCallback</name></member>
+      <member refid="classLtpEngine_1ad7394c450f2e6bdd6a97742e81f4143d" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>CancellationRequest</name></member>
+      <member refid="classLtpEngine_1a28480f01282f829dfbeb364524dca2d1" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>CancellationRequest_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1aa06809e349b0b88d89d34365d8ca1072" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>CancelSegmentReceivedCallback</name></member>
+      <member refid="classLtpEngine_1a0b02d328adf04ed92e2126736c44c201" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>CancelSegmentTimerExpiredCallback</name></member>
+      <member refid="classLtpIpcEngine_1afccc7ed2eab9a071ded22e799a76a054" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>Connect</name></member>
+      <member refid="classLtpEngine_1a2a0acd32a99c179e39419dbc2e6a280b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>DataSegmentReceivedCallback</name></member>
+      <member refid="classLtpEngine_1a296bf9ef7ebefb44dbb7d5c810f9627c" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>DoExternalLinkDownEvent</name></member>
+      <member refid="classLtpIpcEngine_1af3ff5c4ab2fdec3991f9558d52905b97" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>DoSendPacket</name></member>
+      <member refid="classLtpEngine_1a59ca6572b13b413f46a086b67a42ab73" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>DoTransmissionRequest</name></member>
+      <member refid="classLtpEngine_1a915196735c5a2b83d5652f0321608f41" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>EraseRxSession</name></member>
+      <member refid="classLtpEngine_1a9f531b186c99e7e73133e6d81363443b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>EraseTxSession</name></member>
+      <member refid="classLtpEngine_1a91161ddb66cf94e6803426cedf8947fa" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>GetEngineIndex</name></member>
+      <member refid="classLtpEngine_1a4d92e87ddbec73364195aa96ff26943d" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>GetMaxNumberOfSessionsInPipeline</name></member>
+      <member refid="classLtpEngine_1ac85ce5836f8fc5186fc5eb9c8eab7b60" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>GetNextPacketToSend</name></member>
+      <member refid="classLtpEngine_1aa8aa4ba80b62b0b9857b9b7bd400f519" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>InitialTransmissionCompletedCallback</name></member>
+      <member refid="classLtpEngine_1a8022c563b4f840b1e4603b233a603ab3" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpEngine</name></member>
+      <member refid="classLtpEngine_1a757b55af0b037caa9a74c16095eeb5a9" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpEngine</name></member>
+      <member refid="classLtpIpcEngine_1af30fe98a0bbbfef2f5ba55686f691bdc" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpIpcEngine</name></member>
+      <member refid="classLtpIpcEngine_1a2493102716c8c7688f5bc2e0c7aec7ec" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpIpcEngine</name></member>
+      <member refid="classLtpEngine_1a2138197e5a6f9d9b38f710def3e33803" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpSessionReceiverDelaySendReportSegmentTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1a8e0e7d261fc35dc0f40e61b7f9d607ad" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpSessionReceiverReportSegmentTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1ad34c046e00e1f0c8d55d393231647bb9" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpSessionSenderCheckpointTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1aaa3c0efa739f40a101eefe7a51d7a84a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>LtpSessionSenderDelaySendDataSegmentsTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1a78e4b8b8bdce0c126261d8ab5c0adcad" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_cancelSegmentTimerExpiredCallback</name></member>
+      <member refid="classLtpIpcEngine_1a959a436dc6776f5fd8540b25c781e4af" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countAsyncSendCallbackCalls</name></member>
+      <member refid="classLtpIpcEngine_1a35db09847bf53dd652ceae07220f3ac7" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countAsyncSendCalls</name></member>
+      <member refid="classLtpEngine_1afaec1d6368c078f8ab48b70a866163be" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countAsyncSendsLimitedByRate</name></member>
+      <member refid="classLtpIpcEngine_1a39cbcc94b8d1d1ec7e1ad036fd1ea9d5" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countBatchSendCallbackCalls</name></member>
+      <member refid="classLtpIpcEngine_1a836cd302a35a82420bb9d4350197dcbe" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countBatchSendCalls</name></member>
+      <member refid="classLtpIpcEngine_1afcbc62a48a61f5630265241e8c33e424" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countBatchUdpPacketsSent</name></member>
+      <member refid="classLtpIpcEngine_1afe9a219c3aedddda83656dea3f2a2746" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countCircularBufferOverruns</name></member>
+      <member refid="classLtpEngine_1ae8b9956d00992ec381a3dde36052d9e0" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countPacketsThatCompletedOngoingOperations</name></member>
+      <member refid="classLtpEngine_1a1e1b3add6403a97ec1cc088f5bdade75" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countPacketsWithOngoingOperations</name></member>
+      <member refid="classLtpIpcEngine_1aee0e649e6286556091001c717ce4de75" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_countUdpPacketsReceived</name></member>
+      <member refid="classLtpEngine_1a7c7c79a7580bcd72c502e8a730d32998" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_csnTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1a01db332ddb11d654e18d96eb423fbf79" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_deadlineTimerForTimeManagerOfCancelSegments</name></member>
+      <member refid="classLtpEngine_1a7e8d36bbe058ffc310495883967d30f1" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_deadlineTimerForTimeManagerOfCheckpointSerialNumbers</name></member>
+      <member refid="classLtpEngine_1a587a6ffa30188aee9068639934fad8c6" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_deadlineTimerForTimeManagerOfReportSerialNumbers</name></member>
+      <member refid="classLtpEngine_1a1bed3bb97ffdb6c07b491db2c3f7c29a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_deadlineTimerForTimeManagerOfSendingDelayedDataSegments</name></member>
+      <member refid="classLtpEngine_1a02aad8396a542e19c912d93ab3b9122e" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_deadlineTimerForTimeManagerOfSendingDelayedReceptionReports</name></member>
+      <member refid="classLtpEngine_1a48b2556d697e52fce8a52e64d565c0ab" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_DEFAULT_SENDER_PING_SECONDS_OR_ZERO_TO_DISABLE</name></member>
+      <member refid="classLtpEngine_1aae6c812c673eea845fbbec4ed994f67c" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_delayedDataSegmentsTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1a9b74cf66ffbd7e23669a19a140023ad4" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_delayedReceptionReportTimerExpiredCallback</name></member>
+      <member refid="classLtpEngine_1aeebeb1dc56fdb4a548a3c9206c3e9a05" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_delaySendingOfDataSegmentsTime</name></member>
+      <member refid="classLtpEngine_1ab4ffebf799326d7f18c1bef88b7b06dd" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_delaySendingOfReportSegmentsTime</name></member>
+      <member refid="classLtpEngine_1a44cf647370225e22901aee8978f38a5a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_DISK_BUNDLE_ACK_CALLBACK_LIMIT</name></member>
+      <member refid="classLtpEngine_1a753f08d0e7356cc799429d7092606ba3" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_FORCE_32_BIT_RANDOM_NUMBERS</name></member>
+      <member refid="classLtpEngine_1a87eda7cb3546f0b60ea549af16a14d8c" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_greenPartSegmentArrivalCallback</name></member>
+      <member refid="classLtpEngine_1a539bbbcaa442db4d21dc8a76ec1a0fa6" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_HOUSEKEEPING_INTERVAL</name></member>
+      <member refid="classLtpEngine_1a7a36de51e0e337ab70aef03ae362e7b7" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_housekeepingTimer</name></member>
+      <member refid="classLtpEngine_1aacbe13b2f7b0fc6a38f5166eba771726" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_initialTransmissionCompletedCallbackCalledBySender</name></member>
+      <member refid="classLtpEngine_1a191c9e3ab2fd5e87e646e8fae159d544" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_initialTransmissionCompletedCallbackForUser</name></member>
+      <member refid="classLtpEngine_1a40ecc6a317c1939ac4a610185f2325a3" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ioServiceLtpEngine</name></member>
+      <member refid="classLtpEngine_1ab260af19af0efc594a3dd8655e461995" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ioServiceLtpEngineThreadPtr</name></member>
+      <member refid="classLtpIpcEngine_1a3423076e226514ba1d8264e0cf74b019" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_isInduct</name></member>
+      <member refid="classLtpEngine_1a626beb661cc67f018c967b01c21b0aee" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_lastTimeTokensWereRefreshed</name></member>
+      <member refid="classLtpEngine_1af6f259a2bea7fa47b1f516f0f05e9f16" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ltpRxStateMachine</name></member>
+      <member refid="classLtpEngine_1ab979cb1704cd939b76575198efcbd613" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ltpSessionReceiverCommonData</name></member>
+      <member refid="classLtpEngine_1acab1acdaab8c3ba87395378e01a57486" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ltpSessionReceiverRecycler</name></member>
+      <member refid="classLtpEngine_1aebb82f1f4111522c7847ca350d2ece57" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ltpSessionSenderCommonData</name></member>
+      <member refid="classLtpEngine_1a218b8f1cbd3edfe05b62b270e9a9fc49" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ltpSessionSenderRecycler</name></member>
+      <member refid="classLtpEngine_1a4881f67ea6b9929a96216d058dbb94b0" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_ltpSessionsWithWrongClientServiceId</name></member>
+      <member refid="classLtpEngine_1a770dc60afb650c33ae241823d8b93c7a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_mapSessionIdToSessionReceiver</name></member>
+      <member refid="classLtpEngine_1ab4eb4b33b5ebecca76b43f1ba203411b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_mapSessionNumberToSessionSender</name></member>
+      <member refid="classLtpEngine_1ac2f55bb9923a3b13271134ed27c9ba60" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_mapSessionOriginatorEngineIdToLtpSessionRecreationPreventer</name></member>
+      <member refid="classLtpEngine_1a80808792cb1d96b4eb19cc35ea023714" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_MAX_RX_DATA_SEGMENT_HISTORY_OR_ZERO_DISABLE</name></member>
+      <member refid="classLtpEngine_1a3671576c7b55ae6c617ab7c8620ce6ae" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_MAX_SESSIONS_IN_PIPELINE</name></member>
+      <member refid="classLtpEngine_1ae01d9402ccad6a27509dcd49030c2e17" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_MAX_SIMULTANEOUS_SESSIONS</name></member>
+      <member refid="classLtpEngine_1ab7af72361a64ed96f399f09da03aa32f" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_MAX_UDP_PACKETS_TO_SEND_PER_SYSTEM_CALL</name></member>
+      <member refid="classLtpEngine_1a778e5cf037eb3674c32407f83c774afd" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_maxRetriesPerSerialNumber</name></member>
+      <member refid="classLtpEngine_1a8e4ade2ca1e807267eb47d328d013108" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_maxSendRateBitsPerSecOrZeroToDisable</name></member>
+      <member refid="classLtpEngine_1a20a84aa3a78f88da207a7a6b1cdb0744" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_memoryBlockIdsPendingDeletionQueue</name></member>
+      <member refid="classLtpEngine_1acddeea43a261e8663d594b51b3f72f48" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_memoryInFilesPtr</name></member>
+      <member refid="classLtpIpcEngine_1a0df4eb7668d30199828ee8b73c85fb53" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_myTxIpcControlPtr</name></member>
+      <member refid="classLtpIpcEngine_1a3a9c19b377af029d2475cc3c7cd87938" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_myTxIpcDataStart</name></member>
+      <member refid="classLtpIpcEngine_1a9d805f2b578f5117a150a61b70988644" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_myTxIpcPacketCbArray</name></member>
+      <member refid="classLtpIpcEngine_1a9887367e9ad521b67548b3138b01b4f6" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_myTxSharedMemoryName</name></member>
+      <member refid="classLtpIpcEngine_1a9fcc191301fea6b09c89fd5ef2647aa0" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_myTxSharedMemoryObjectPtr</name></member>
+      <member refid="classLtpIpcEngine_1a69ca13139035133d4b7dd436a27c7e1d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_myTxShmMappedRegionPtr</name></member>
+      <member refid="classLtpEngine_1a7f12c3b1a3333376f5416d07d5e8cee4" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_nextPingStartExpiry</name></member>
+      <member refid="classLtpEngine_1a70b26a6b4d5dd528eb561ed0e74beee1" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_notifyEngineThatThisReceiverCompletedDeferredOperationFunction</name></member>
+      <member refid="classLtpEngine_1abe4a3ee31049766391dc9b0f821073ca" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_notifyEngineThatThisReceiverNeedsDeletedCallback</name></member>
+      <member refid="classLtpEngine_1a77a1352e7022be71a1c49bb8bc03c63f" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_notifyEngineThatThisReceiversTimersHasProducibleDataFunction</name></member>
+      <member refid="classLtpEngine_1a1c59361cb3a6638766cfd20def48b8cf" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_notifyEngineThatThisSenderHasProducibleDataFunction</name></member>
+      <member refid="classLtpEngine_1a9c4365784da202f3c81bef186019b2ed" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_notifyEngineThatThisSenderNeedsDeletedCallback</name></member>
+      <member refid="classLtpEngine_1a858c218f7cd639f2882de7a40abd253b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_nowTimeRef</name></member>
+      <member refid="classLtpIpcEngine_1a27a330478852be0fafa516f4e4eb523c" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_NUM_CIRCULAR_BUFFER_VECTORS</name></member>
+      <member refid="classLtpEngine_1a1763e65d50a7c8bf398f26f583802343" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numCheckpointTimerExpiredCallbacksRef</name></member>
+      <member refid="classLtpEngine_1a118775a99920325d3610df81635fcfce" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numDelayedFullyClaimedPrimaryReportSegmentsSentRef</name></member>
+      <member refid="classLtpEngine_1a07cc9142b412ee2276a6b3ce13c46339" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numDelayedFullyClaimedSecondaryReportSegmentsSentRef</name></member>
+      <member refid="classLtpEngine_1a7865d752880e0c9ccca8698e46e42336" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numDelayedPartiallyClaimedPrimaryReportSegmentsSentRef</name></member>
+      <member refid="classLtpEngine_1ac44e7895529da02c5e7945efc12b7f45" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numDelayedPartiallyClaimedSecondaryReportSegmentsSentRef</name></member>
+      <member refid="classLtpEngine_1aef60d5b1702f7056ec0792dd5b4b861f" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numDeletedFullyClaimedPendingReportsRef</name></member>
+      <member refid="classLtpEngine_1a76849a49ef076249f14230a85434ec76" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numDiscretionaryCheckpointsNotResentRef</name></member>
+      <member refid="classLtpEngine_1afc4e2efef914afc93e64c82914be0021" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numEventsTransmissionRequestDiskWritesTooSlow</name></member>
+      <member refid="classLtpEngine_1aa96c52cebe678593e90904420bad57d1" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numGapsFilledByOutOfOrderDataSegmentsRef</name></member>
+      <member refid="classLtpEngine_1ae764858ab2164ae17caffd7b2bf6778e" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numQueuedSendSystemCallsAtomic</name></member>
+      <member refid="classLtpEngine_1a2c366ddcce89f58bddd5117b789abc40" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numReportSegmentsCreatedViaSplitRef</name></member>
+      <member refid="classLtpEngine_1a9a5dd020869dae6b25ad0a71bc65c28e" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numReportSegmentsTooLargeAndNeedingSplitRef</name></member>
+      <member refid="classLtpEngine_1a3198a5091e8c461058b7e810b5789e32" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numReportSegmentsUnableToBeIssuedRef</name></member>
+      <member refid="classLtpEngine_1a95ecb54427055af145d6aa11aecc5fb4" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numReportSegmentTimerExpiredCallbacksRef</name></member>
+      <member refid="classLtpEngine_1af8e0b9091c58b682193f8d82f3a32306" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numRxSessionsCancelledBySender</name></member>
+      <member refid="classLtpEngine_1a89e22b17ea67c8745c91a0db340e85c3" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numStagnantRxSessionsDeleted</name></member>
+      <member refid="classLtpEngine_1a5fdcaa43c182aa129db5ff43a7a0cf1b" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numTxSessionsCancelledByReceiver</name></member>
+      <member refid="classLtpEngine_1aaacad4876ebaf2a0ca609bdb2486b8b9" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_numTxSessionsReturnedToStorage</name></member>
+      <member refid="classLtpEngine_1a2ebcd51be2b66fb114e406158b26db66" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_onFailedBundleVecSendCallback</name></member>
+      <member refid="classLtpEngine_1afca4f2d65055fb34fb2ef792b0b8f199" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classLtpEngine_1a68e352968204b627822827b904c66205" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_onOutductLinkStatusChangedCallback</name></member>
+      <member refid="classLtpEngine_1a9cc5171de4543451da674650cd7cead3" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_onSuccessfulBundleSendCallback</name></member>
+      <member refid="classLtpEngine_1a8025fdd496b37c216b8934416ba40443" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueCancelSegmentTimerInfo</name></member>
+      <member refid="classLtpEngine_1a24835fb42c2bc55bf5aca8cfa81c6a4d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueClosedSessionDataToSend</name></member>
+      <member refid="classLtpEngine_1aaa9cf8f02ee81b02fda6d2da2914976b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueReceiversNeedingDataSent</name></member>
+      <member refid="classLtpEngine_1ae8c4c1abe5cbc791431ddd7fc6061ad8" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueReceiversNeedingDeleted</name></member>
+      <member refid="classLtpEngine_1a5919d721a776b365b9e75cb85ae01bba" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueReceiversNeedingDeletedButUnsafeToDelete</name></member>
+      <member refid="classLtpEngine_1a89012eb50b394a4159bcbc0e98332fb5" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueSendersNeedingDeleted</name></member>
+      <member refid="classLtpEngine_1a888a20fbcd8e450c3526d3820766ec17" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueSendersNeedingFirstPassDataSent</name></member>
+      <member refid="classLtpEngine_1abb1c1450fbcd0093fbf04013b6c8eb2f" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_queueSendersNeedingTimeCriticalDataSent</name></member>
+      <member refid="classLtpEngine_1a0d0f21caddc45fb354b89b5e976fa8b7" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_rateLimitPrecisionInterval</name></member>
+      <member refid="classLtpIpcEngine_1aa6ddf2dcbf348962f92efe392c6b92d9" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_readRemoteTxShmThreadPtr</name></member>
+      <member refid="classLtpEngine_1a5420e2611e9c32fc81923a13295d947b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_receptionSessionCancelledCallback</name></member>
+      <member refid="classLtpEngine_1a4d24c35561dc165841ea248018922e43" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_redPartReceptionCallback</name></member>
+      <member refid="classLtpIpcEngine_1a00b6345bd90355eb724397541445ed52" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_REMOTE_ENGINE_ID</name></member>
+      <member refid="classLtpIpcEngine_1a5b6920974695f4ed13ccc61414314c9b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_remoteTxIpcControlPtr</name></member>
+      <member refid="classLtpIpcEngine_1a8e8e594611d326e04ad352a768dab31f" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_remoteTxIpcDataStart</name></member>
+      <member refid="classLtpIpcEngine_1a6efea6bf1587b7e320f9bc94af080c58" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_remoteTxIpcPacketCbArray</name></member>
+      <member refid="classLtpIpcEngine_1af3c61532b4dcc5a2cf66ca3300b5ed6d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_remoteTxSharedMemoryName</name></member>
+      <member refid="classLtpIpcEngine_1a08429bf5ea220021ba859ce462359c3d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_remoteTxSharedMemoryObjectPtr</name></member>
+      <member refid="classLtpIpcEngine_1a7918f7461531e3b26b9812143ebb2440" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_remoteTxShmMappedRegionPtr</name></member>
+      <member refid="classLtpEngine_1a1628731cd984d96edb779ce8223412a6" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_reservedDeferredReadsVec</name></member>
+      <member refid="classLtpEngine_1a0bd0b77f9e3ed7433185000cdc5e2a30" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_reservedUdpSendPacketInfo</name></member>
+      <member refid="classLtpEngine_1a1e6f0a9d262a77a4a3a97604535c7bef" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_reservedUdpSendPacketInfoIterator</name></member>
+      <member refid="classLtpEngine_1ac6322a939b2a91c9f657ece39b2d8a49" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_reservedUdpSendPacketInfoVecsForBatchSender</name></member>
+      <member refid="classLtpEngine_1afc9973ef3a0ff8c1ca6d4a9ee4381a84" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_reservedUdpSendPacketInfoVecsForBatchSenderIterator</name></member>
+      <member refid="classLtpIpcEngine_1a59fd3b95b3e5f2897ca71000dca4a27b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_resetConditionVariable</name></member>
+      <member refid="classLtpIpcEngine_1a044271ba982c7bee65250f13e8d812ac" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_resetInProgress</name></member>
+      <member refid="classLtpIpcEngine_1ad888a1841bd5412a2fb4519d191ba48c" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_resetMutex</name></member>
+      <member refid="classLtpEngine_1a01945d74a261f5f6b7e2261bbb8d8824" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_rng</name></member>
+      <member refid="classLtpEngine_1a2306001d9ef3a680b2fe780a08e42e3d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_rsnTimerExpiredCallback</name></member>
+      <member refid="classLtpIpcEngine_1ab1eb288158d506a5c99586228ebdf2eb" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_running</name></member>
+      <member refid="classLtpEngine_1a3f7a773ec6000b3416277e3d12bc53c9" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_senderPingSecondsOrZeroToDisable</name></member>
+      <member refid="classLtpEngine_1affef9495ad0a55724376acb984e99764" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_senderPingTimeDuration</name></member>
+      <member refid="classLtpEngine_1a0b6a6d6b9e6cb0d770458bafe45d74e9" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_sessionStartCallback</name></member>
+      <member refid="classLtpEngine_1a30f020b4336faff6dd8a659736f88975" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_stagnantRxSessionTime</name></member>
+      <member refid="classLtpEngine_1a7457bc6003f778dcb1fb8c8ecd02aabe" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>M_THIS_ENGINE_ID</name></member>
+      <member refid="classLtpEngine_1a61c8cc9702991600c537b16bc096ef9d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_timeManagerOfCancelSegments</name></member>
+      <member refid="classLtpEngine_1a1064a87c74a104ee1e190079184903a9" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_timeManagerOfCheckpointSerialNumbers</name></member>
+      <member refid="classLtpEngine_1a0c2097f4932455d69d901bf71ccec43a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_timeManagerOfReportSerialNumbers</name></member>
+      <member refid="classLtpEngine_1aae286fbb5f992e1bd9d4473ff17a0a4f" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_timeManagerOfSendingDelayedDataSegments</name></member>
+      <member refid="classLtpEngine_1aaab78d09cef05e4de5ef2ee0ce93ce05" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_timeManagerOfSendingDelayedReceptionReports</name></member>
+      <member refid="classLtpEngine_1abbdf2f336d93aede874cd00638153c21" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_tokenRateLimiter</name></member>
+      <member refid="classLtpEngine_1ab3d4f07e25268e4d2dfeb7dcfe8bc259" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_tokenRefreshInterval</name></member>
+      <member refid="classLtpEngine_1a56877e2bf6b18ef64ff088d0ced690c8" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_tokenRefreshTimer</name></member>
+      <member refid="classLtpEngine_1a8303b58a75bb9dbf5e02405e98ebc7ef" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_tokenRefreshTimerIsRunning</name></member>
+      <member refid="classLtpEngine_1acfaed5ddbfb81f4a8231ea549ee576f0" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalCancelSegmentsAcknowledged</name></member>
+      <member refid="classLtpEngine_1ae079576b5fbc92cf4305560456ecd7eb" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalCancelSegmentSendRetries</name></member>
+      <member refid="classLtpEngine_1acfd032abbb14553c1286a52db854e29e" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalCancelSegmentsFailedToSend</name></member>
+      <member refid="classLtpEngine_1acc439a7edd94073c12bfe384ad10d32e" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalCancelSegmentsStarted</name></member>
+      <member refid="classLtpEngine_1a69d7c7df39e9c3a70c05018380b64dcd" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalPingRetries</name></member>
+      <member refid="classLtpEngine_1aaccc32aa5044fcccdfebfce9138978d8" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalPingsAcknowledged</name></member>
+      <member refid="classLtpEngine_1aba7405ff7bcce1fb92b81723bef37a42" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalPingsFailedToSend</name></member>
+      <member refid="classLtpEngine_1a9f796012072e7a5cf5eb6ed9c7827932" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalPingsStarted</name></member>
+      <member refid="classLtpEngine_1ad2623f77cb51cc0fc6ec4e4a6c0ca5d0" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalRedDataBytesFailedToSend</name></member>
+      <member refid="classLtpEngine_1a636aab451f26fe2953648351dde9f8c6" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_totalRedDataBytesSuccessfullySent</name></member>
+      <member refid="classLtpEngine_1a8164db07e00631488c20112dd3666f58" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_transmissionRequestServedAsPing</name></member>
+      <member refid="classLtpEngine_1a0078c923cba7f4a1a5da86c7e593153f" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_transmissionSessionCancelledCallback</name></member>
+      <member refid="classLtpEngine_1a560ec05b1dd887af96df8c393eadbd6a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_transmissionSessionCompletedCallback</name></member>
+      <member refid="classLtpEngine_1a10e663c6983196cec9c45c0930b64f1f" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_transmissionToAckReceivedTime</name></member>
+      <member refid="classLtpEngine_1a1ab8427fc03224e6f7d7485d38113c72" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_userAssignedUuid</name></member>
+      <member refid="classLtpEngine_1a8ee9b7bc32559de18fe06089e2a69b74" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_userDataPendingSuccessfulBundleSendCallbackQueue</name></member>
+      <member refid="classLtpEngine_1a25bce42e1428052d1d29b11a5b341181" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>m_workLtpEnginePtr</name></member>
+      <member refid="classLtpEngine_1a7aaa685a99d58448bfe247ffd748bdc8" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>map_session_id_to_session_receiver_t</name></member>
+      <member refid="classLtpEngine_1a75c01774a3effa1d367909255f7ca4db" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>map_session_number_to_session_sender_t</name></member>
+      <member refid="classLtpEngine_1a1bba9bd15386c1cdef43f2b5cb867366" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NotifyEngineThatThisReceiverCompletedDeferredOperation</name></member>
+      <member refid="classLtpEngine_1a2cc0ecca5fff558e70d9c0f37561fa26" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NotifyEngineThatThisReceiverNeedsDeletedCallback</name></member>
+      <member refid="classLtpEngine_1a266462e6c39e53960d786f265e51c3de" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NotifyEngineThatThisReceiversTimersHasProducibleData</name></member>
+      <member refid="classLtpEngine_1abf634874df7b10eb93dc73078515e1e5" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NotifyEngineThatThisSenderHasProducibleData</name></member>
+      <member refid="classLtpEngine_1a2dd4ac5c6064ccabe19f5b24ed25d170" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NotifyEngineThatThisSenderNeedsDeletedCallback</name></member>
+      <member refid="classLtpEngine_1a527be4fce2ec201f40f2c3199ff803e5" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NumActiveReceivers</name></member>
+      <member refid="classLtpEngine_1a0d9a84917c557db610ef934fb05c5cb9" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>NumActiveSenders</name></member>
+      <member refid="classLtpEngine_1ac4e14192c8460e50567775073b8540ef" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>OnDeferredMultiReadCompleted</name></member>
+      <member refid="classLtpEngine_1a680e7fc556d3976aeb2a5ea2ebbba87a" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>OnDeferredReadCompleted</name></member>
+      <member refid="classLtpEngine_1a19ffc0a88adc0bff38f30e61a6c3f724" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>OnHousekeeping_TimerExpired</name></member>
+      <member refid="classLtpEngine_1af468073c4352e673fc27eb14c8736323" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>OnSendPacketsSystemCallCompleted_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1ab241d1335c9216a6f3dbc4d58955b951" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>OnTokenRefresh_TimerExpired</name></member>
+      <member refid="classLtpEngine_1a5db5060baee9b14a5cbb7488cc83a3fb" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>OnTransmissionRequestDataWrittenToDisk</name></member>
+      <member refid="classLtpEngine_1a64bb0494968816f34b5306f2a45c74e5" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>PacketIn</name></member>
+      <member refid="classLtpEngine_1a0f1d4863b86f2d6c6885e25f77d5bc69" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>PacketIn</name></member>
+      <member refid="classLtpEngine_1ab32abf93dbdfbf50911440699941d721" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>PacketIn_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a2a1755c01b72234fff34d175103073e9" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>PacketIn_ThreadSafe</name></member>
+      <member refid="classLtpIpcEngine_1aee578f85033d24f0d343b005fafa79e8" prot="private" virt="virtual"><scope>LtpIpcEngine</scope><name>PacketInFullyProcessedCallback</name></member>
+      <member refid="classLtpEngine_1aa8b227e7e66f397cc811d23e1d323ce1" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>PostExternalLinkDownEvent_ThreadSafe</name></member>
+      <member refid="classLtpIpcEngine_1a35c344ce3f2582ffb51c5b61f524da63" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>ReadRemoteTxShmThreadFunc</name></member>
+      <member refid="classLtpIpcEngine_1a8d2c64df538e87d0763078459ff824c8" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>ReadyToSend</name></member>
+      <member refid="classLtpEngine_1aebae6884d1b239d669cd69bbd64f3546" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>ReportAcknowledgementSegmentReceivedCallback</name></member>
+      <member refid="classLtpEngine_1a644106fe2bdb511cc64bd561bc3d2d13" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>ReportSegmentReceivedCallback</name></member>
+      <member refid="classLtpIpcEngine_1a192b69a879891781cba8d766d65fd602" prot="public" virt="virtual"><scope>LtpIpcEngine</scope><name>Reset</name></member>
+      <member refid="classLtpIpcEngine_1a6d0fa5350acfc93fb3f6f4d958c3afff" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>Reset_ThreadSafe_Blocking</name></member>
+      <member refid="classLtpIpcEngine_1abd0ded16395f66881526ef8e9216ff09" prot="private" virt="virtual"><scope>LtpIpcEngine</scope><name>SendPacket</name></member>
+      <member refid="classLtpIpcEngine_1a2c7b35edb6b3239fd52cfd1d0ed77a00" prot="private" virt="virtual"><scope>LtpIpcEngine</scope><name>SendPackets</name></member>
+      <member refid="classLtpEngine_1a971d1bd8b790709bd4bf23b0dc796046" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetCheckpointEveryNthDataPacketForSenders</name></member>
+      <member refid="classLtpEngine_1a19a1b2b299a2f596b2a7f93f6595283c" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetDeferDelays</name></member>
+      <member refid="classLtpEngine_1af8583ec3de26586c59f69bf1bf539528" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetDeferDelays_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a78364e8c88d84aafa75a6b6ff8f51d5e" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetDelays</name></member>
+      <member refid="classLtpEngine_1a3071c64c76d53530278ca8e4ed2d2020" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetDelays_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1ab61ea92dfeba438b2e4f3c4f455c98d3" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetGreenPartSegmentArrivalCallback</name></member>
+      <member refid="classLtpEngine_1ad8b1d868d0906fb5994a40a9081a5473" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetInitialTransmissionCompletedCallback</name></member>
+      <member refid="classLtpEngine_1afae9b922d32fe829c6ada4c983457799" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetMtuDataSegment</name></member>
+      <member refid="classLtpEngine_1a0ac0e4173a8c54014cb3a0a0ae159f15" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetMtuDataSegment_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a009c7ca31d567ec910e5effe4eadf98a" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetMtuReportSegment</name></member>
+      <member refid="classLtpEngine_1a6df3abcfdb9483420a8c741a722d9fd4" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetMtuReportSegment_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a821b8b38c306d58fbb95d0502805ab7a" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classLtpEngine_1a59076af529936255e27971570f105400" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classLtpEngine_1affa6969c0c3a53ea679816f3ae78ead6" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classLtpEngine_1a6e5d18cc85f6d3922e7e6886c9e1286a" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classLtpEngine_1a60c38194c8ba48ffaf553bcaa78a33a6" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetPing</name></member>
+      <member refid="classLtpEngine_1a1359f7d61a41b77bed11301de8f3abcc" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetPing_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a275c7fe16d2bdf692d1447f371278224" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetPingToDefaultConfig</name></member>
+      <member refid="classLtpEngine_1ad6d546634c7f6b4161d384c623c0aec4" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetPingToDefaultConfig_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1ac4ba9ce09bccb9141c1df926a8d50d9c" prot="protected" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetRate</name></member>
+      <member refid="classLtpEngine_1aeef2662c62f7d21d6fec951aa6984d53" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetRate_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a773bd49c8ec82f41967225938184eac4" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetReceptionSessionCancelledCallback</name></member>
+      <member refid="classLtpEngine_1a31312b9da9693a7a76438219626f38b9" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetRedPartReceptionCallback</name></member>
+      <member refid="classLtpEngine_1a5603105c2cfda6253b35c1506cb3bd8d" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetSessionStartCallback</name></member>
+      <member refid="classLtpEngine_1ada18dcd3df9b464a01d8194b1ebc49fe" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetTransmissionSessionCancelledCallback</name></member>
+      <member refid="classLtpEngine_1ae88cb57be73e00ba89646165f5f520ab" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetTransmissionSessionCompletedCallback</name></member>
+      <member refid="classLtpEngine_1a8ad4bbecb6c499f4f5c17a39956a2060" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classLtpEngine_1addf854bbff231c9617df1e51515cad3d" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>SignalReadyForSend_ThreadSafe</name></member>
+      <member refid="classLtpIpcEngine_1a08a2882b3f399de263143abdae87136c" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>Stop</name></member>
+      <member refid="classLtpEngine_1a246dc8848d370f2e0a84c566df062ef4" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TransmissionRequest</name></member>
+      <member refid="classLtpEngine_1a073f8a94fa4eb6173982658695c192b3" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TransmissionRequest</name></member>
+      <member refid="classLtpEngine_1a556935f33de12e11e3e5062c21d78cdf" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TransmissionRequest</name></member>
+      <member refid="classLtpEngine_1a1d05ac120aa7df8af2e0a0a3be268c84" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TransmissionRequest</name></member>
+      <member refid="classLtpEngine_1a95e0dd55d54d86bea09c180b5f8d4888" prot="public" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TransmissionRequest_ThreadSafe</name></member>
+      <member refid="classLtpEngine_1a399f4e86e23ea5707d50149ed0f8e269" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TryRestartTokenRefreshTimer</name></member>
+      <member refid="classLtpEngine_1ab0cdbd921279eb233547c11ce3e1b88b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TryRestartTokenRefreshTimer</name></member>
+      <member refid="classLtpEngine_1a8bed9c6f580614cf0242cd2cc5dc7a0e" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TryReturnTxSessionDataToUser</name></member>
+      <member refid="classLtpEngine_1a6d32cb9727ee19ffd92c1eaec8c15ee3" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TrySaturateSendPacketPipeline</name></member>
+      <member refid="classLtpEngine_1ae1c081d8f5a1968d7506fb541db7a8ca" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>TrySendPacketIfAvailable</name></member>
+      <member refid="classLtpIpcEngine_1a120bb1dfb97cb935e2f510f08ca85e4b" prot="private" virt="non-virtual"><scope>LtpIpcEngine</scope><name>VerifyIpcPacketReceive</name></member>
+      <member refid="classLtpEngine_1a9b1589f36e14f9d1c9ea721779d401e3" prot="public" virt="virtual"><scope>LtpIpcEngine</scope><name>~LtpEngine</name></member>
+      <member refid="classLtpIpcEngine_1a11602f8ecca3c9b2c84437b7e1d3f0fc" prot="public" virt="virtual"><scope>LtpIpcEngine</scope><name>~LtpIpcEngine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpOverEncapLocalStreamOutduct" kind="class" language="C++" prot="public">
+    <compoundname>BpOverEncapLocalStreamOutduct</compoundname>
+    <basecompoundref refid="classOutduct" prot="public" virt="non-virtual">Outduct</basecompoundref>
+    <includes refid="BpOverEncapLocalStreamOutduct_8h" local="no">BpOverEncapLocalStreamOutduct.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a0c39033633b53187b445a4b8a999c6d0" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service BpOverEncapLocalStreamOutduct::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="74" column="29" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a0fc5a31e93c07ddaea070186e72e4650" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="24" endline="60">BpOverEncapLocalStreamOutduct</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="253" endline="255">TrySendDataIfAvailable_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a8ca037adbfb4d0b9ac8757bc5ba56705" prot="private" static="no" mutable="no">
+        <type>boost::asio::io_service::work</type>
+        <definition>boost::asio::io_service::work BpOverEncapLocalStreamOutduct::m_work</definition>
+        <argsstring></argsstring>
+        <name>m_work</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="75" column="35" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" prot="private" static="no" mutable="no">
+        <type><ref refid="classEncapAsyncDuplexLocalStream" kindref="compound">EncapAsyncDuplexLocalStream</ref></type>
+        <definition>EncapAsyncDuplexLocalStream BpOverEncapLocalStreamOutduct::m_encapAsyncDuplexLocalStream</definition>
+        <argsstring></argsstring>
+        <name>m_encapAsyncDuplexLocalStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="76" column="33" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ae036893c4130b1a88d340e17f464e125" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="104" endline="109">Connect</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="424" endline="440">OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a002fbc79a405b9325515a4cf65e8dc32" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="110" endline="112">ReadyToForward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a268f4d064f4ae8ac6f1c51031eea1e30" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; BpOverEncapLocalStreamOutduct::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="77" column="21" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a0fc5a31e93c07ddaea070186e72e4650" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="24" endline="60">BpOverEncapLocalStreamOutduct</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a073301e6caab0b4fb0829a2d21dca462" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable BpOverEncapLocalStreamOutduct::m_localConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_localConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="78" column="31" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1ab2dd6727490434762c99a1d5c77f60ef" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int BpOverEncapLocalStreamOutduct::MAX_UNACKED</definition>
+        <argsstring></argsstring>
+        <name>MAX_UNACKED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="80" column="24" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1afba70071ce9f99bc683d32deee31141e" prot="private" static="no" mutable="no">
+        <type><ref refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable" kindref="compound">CircularIndexBufferSingleProducerSingleConsumerConfigurable</ref></type>
+        <definition>CircularIndexBufferSingleProducerSingleConsumerConfigurable BpOverEncapLocalStreamOutduct::m_toSendCb</definition>
+        <argsstring></argsstring>
+        <name>m_toSendCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="81" column="65" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a96ed9c8783c713aa86b80ae7257673ea" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::size_t &gt;</type>
+        <definition>std::vector&lt;std::size_t&gt; BpOverEncapLocalStreamOutduct::m_bytesToAckBySendCallbackCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_bytesToAckBySendCallbackCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="82" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a15ac73e8edf8b955f77bc8827ece9d0d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> &gt;</type>
+        <definition>std::vector&lt;TcpAsyncSenderElement&gt; BpOverEncapLocalStreamOutduct::m_tcpAsyncSenderElementsCbVec</definition>
+        <argsstring></argsstring>
+        <name>m_tcpAsyncSenderElementsCbVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="83" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1af33a7a0737f0f0b3d119cda69bee80f1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpOverEncapLocalStreamOutduct::m_writeInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_writeInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="84" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a4f4df9ed51b3fe155c5bb235565c38d1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpOverEncapLocalStreamOutduct::m_sendErrorOccurred</definition>
+        <argsstring></argsstring>
+        <name>m_sendErrorOccurred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="85" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a521ac04a0df7a20dbe01c271b621f9c0" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; BpOverEncapLocalStreamOutduct::m_useLocalConditionVariableAckReceived</definition>
+        <argsstring></argsstring>
+        <name>m_useLocalConditionVariableAckReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="86" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a5fc4c2de431fe3360bcb71731e089eeb" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref></type>
+        <definition>OnFailedBundleVecSendCallback_t BpOverEncapLocalStreamOutduct::m_onFailedBundleVecSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleVecSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="88" column="37" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="219" endline="227">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1abbedbab958b092b5f978fc87b49f5491" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="88" endline="90">SetOnFailedBundleVecSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a9a67c6b1f1b09e499438c1e9a1ab02b7" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref></type>
+        <definition>OnFailedBundleZmqSendCallback_t BpOverEncapLocalStreamOutduct::m_onFailedBundleZmqSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onFailedBundleZmqSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="89" column="37" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="219" endline="227">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afd886b9d95ef5cb5e4dc6b619ca7c351" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="91" endline="93">SetOnFailedBundleZmqSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a4e950977bdf8e898525c4998a80a746c" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref></type>
+        <definition>OnSuccessfulBundleSendCallback_t BpOverEncapLocalStreamOutduct::m_onSuccessfulBundleSendCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onSuccessfulBundleSendCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="90" column="38" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1acf085e1a55221542261e02fcf54c8f86" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="94" endline="96">SetOnSuccessfulBundleSendCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1ac3494c0a6061d541ee59b37c765c6a68" prot="private" static="no" mutable="no">
+        <type><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref></type>
+        <definition>OnOutductLinkStatusChangedCallback_t BpOverEncapLocalStreamOutduct::m_onOutductLinkStatusChangedCallback</definition>
+        <argsstring></argsstring>
+        <name>m_onOutductLinkStatusChangedCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="91" column="42" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a71d936bb55e26efab812782251e0256e" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="415" endline="420">OnLocalStreamConnectionStatusChanged</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ae936a59ed8e86ab5a12c7faabeef9d9a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="97" endline="99">SetOnOutductLinkStatusChangedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1aba418e7c20a8589ed9469d91c7318542" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BpOverEncapLocalStreamOutduct::m_userAssignedUuid</definition>
+        <argsstring></argsstring>
+        <name>m_userAssignedUuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="92" column="14" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="219" endline="227">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a71d936bb55e26efab812782251e0256e" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="415" endline="420">OnLocalStreamConnectionStatusChanged</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1aaa6b4f743762c101722746e9ff8894c0" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="100" endline="102">SetUserAssignedUuid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1ac658067d8948e21a96cb0937ce95260f" prot="private" static="no" mutable="no">
+        <type>const <ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref></type>
+        <definition>const OutductOpportunisticProcessReceivedBundleCallback_t BpOverEncapLocalStreamOutduct::m_outductOpportunisticProcessReceivedBundleCallback</definition>
+        <argsstring></argsstring>
+        <name>m_outductOpportunisticProcessReceivedBundleCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="95" column="63" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="424" endline="440">OnFullEncapPacketReceived</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundlesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="98" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1adc392fd77e3130027dab2e736bd96422" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="71" endline="73">GetTotalBundlesSent</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a6a5305c020573c2bb9b4a0b1661eb9c8" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="65" endline="67">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundlesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="99" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a6a1979b643ee6ce21e971243f5fc9346" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="68" endline="70">GetTotalBundlesAcked</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a6a5305c020573c2bb9b4a0b1661eb9c8" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="65" endline="67">GetTotalBundlesUnacked</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundleBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="100" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac17139e37f1499808e06ea7c5729b28f" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="79" endline="81">GetTotalBundleBytesSent</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ada16494387aa9acbac632b95b251a7bb" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="83" endline="85">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundleBytesAcked</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="101" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a6f668c91572c10105944a8a28cc3d0ea" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="75" endline="77">GetTotalBundleBytesAcked</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ada16494387aa9acbac632b95b251a7bb" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="83" endline="85">GetTotalBundleBytesUnacked</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a699522bf4bee2c41343ce27594d263ae" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundlesFailedToSend</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesFailedToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="102" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="219" endline="227">DoFailedBundleCallback</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1ac41a656957de34ca75101e4a5234c006" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalEncapHeaderBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_totalEncapHeaderBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="103" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1abaf05efe4fa686be822afaf9a10c8c77" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_largestEncapHeaderSizeBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_largestEncapHeaderSizeBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="104" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a60603e2941c0e471e28f5cea73333fd0" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_smallestEncapHeaderSizeBytesSent</definition>
+        <argsstring></argsstring>
+        <name>m_smallestEncapHeaderSizeBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="105" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a7edcff304e7b32cf5dd7e2d248979719" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundleBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="107" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="424" endline="440">OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a7673d3bba7af413dc875735eafe9f8be" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalBundlesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundlesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="108" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="424" endline="440">OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBpOverEncapLocalStreamOutduct_1a96fa6274b91d81275e7d2eefd626d953" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64_t &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; BpOverEncapLocalStreamOutduct::m_totalEncapHeaderBytesReceived</definition>
+        <argsstring></argsstring>
+        <name>m_totalEncapHeaderBytesReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="109" column="17" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="424" endline="440">OnFullEncapPacketReceived</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="119" endline="146">PopulateOutductTelemetry</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a0fc5a31e93c07ddaea070186e72e4650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>BpOverEncapLocalStreamOutduct::BpOverEncapLocalStreamOutduct</definition>
+        <argsstring>(const outduct_element_config_t &amp;outductConfig, const uint64_t outductUuid, const OutductOpportunisticProcessReceivedBundleCallback_t &amp;outductOpportunisticProcessReceivedBundleCallback=OutductOpportunisticProcessReceivedBundleCallback_t())</argsstring>
+        <name>BpOverEncapLocalStreamOutduct</name>
+        <param>
+          <type>const <ref refid="structoutduct__element__config__t" kindref="compound">outduct_element_config_t</ref> &amp;</type>
+          <declname>outductConfig</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>outductUuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref> &amp;</type>
+          <declname>outductOpportunisticProcessReceivedBundleCallback</declname>
+          <defval><ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="37" column="32" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="24" bodyend="60"/>
+        <references refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a96d4cdff8ed57e93e3b3d843cffe3af7">BP</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0c39033633b53187b445a4b8a999c6d0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="74">m_ioService</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a268f4d064f4ae8ac6f1c51031eea1e30" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="77">m_ioServiceThreadPtr</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ae64daf6cee5c19535bb35b7c148bc2f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>BpOverEncapLocalStreamOutduct::~BpOverEncapLocalStreamOutduct</definition>
+        <argsstring>() override</argsstring>
+        <name>~BpOverEncapLocalStreamOutduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="39" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="61" bodyend="63"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::PopulateOutductTelemetry</definition>
+        <argsstring>(std::unique_ptr&lt; OutductTelemetry_t &gt; &amp;outductTelem) override</argsstring>
+        <name>PopulateOutductTelemetry</name>
+        <reimplements refid="classOutduct_1a1131e780e70b9af556eeaacbe8b31d2c">PopulateOutductTelemetry</reimplements>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structOutductTelemetry__t" kindref="compound">OutductTelemetry_t</ref> &gt; &amp;</type>
+          <declname>outductTelem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="40" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="119" bodyend="146"/>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1aec7158ba8374e696496349f883b72290" compoundref="TelemetryDefinitions_8h" startline="452">BpOverEncapLocalStreamOutductTelemetry_t::m_averageEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="76">m_encapAsyncDuplexLocalStream</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1abaf05efe4fa686be822afaf9a10c8c77" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="104">m_largestEncapHeaderSizeBytesSent</references>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1af1315aa41f4b466a7d979997ca2365ee" compoundref="TelemetryDefinitions_8h" startline="450">BpOverEncapLocalStreamOutductTelemetry_t::m_largestEncapHeaderSizeBytesSent</references>
+        <references refid="classOutduct_1a0d1df24d131d3b49340c21f40de169d4" compoundref="Outduct_8h" startline="87">Outduct::m_linkIsUpPerTimeSchedule</references>
+        <references refid="structOutductTelemetry__t_1a9ac823445009088acf7df4ba9d55e773" compoundref="TelemetryDefinitions_8h" startline="336">OutductTelemetry_t::m_linkIsUpPhysically</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a60603e2941c0e471e28f5cea73333fd0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="105">m_smallestEncapHeaderSizeBytesSent</references>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1aac28098ec302d0a0624f051b11f7ab08" compoundref="TelemetryDefinitions_8h" startline="451">BpOverEncapLocalStreamOutductTelemetry_t::m_smallestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="101">m_totalBundleBytesAcked</references>
+        <references refid="structOutductTelemetry__t_1aa1a904b6804b71b413bdea60126e38c1" compoundref="TelemetryDefinitions_8h" startline="332">OutductTelemetry_t::m_totalBundleBytesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a7edcff304e7b32cf5dd7e2d248979719" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="107">m_totalBundleBytesReceived</references>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1a90a8c4aedec416d4d3e4c0e654c5a62f" compoundref="TelemetryDefinitions_8h" startline="455">BpOverEncapLocalStreamOutductTelemetry_t::m_totalBundleBytesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="100">m_totalBundleBytesSent</references>
+        <references refid="structOutductTelemetry__t_1a9e32d16d9c482eed5b0e828b067104df" compoundref="TelemetryDefinitions_8h" startline="334">OutductTelemetry_t::m_totalBundleBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="99">m_totalBundlesAcked</references>
+        <references refid="structOutductTelemetry__t_1a45241d2505fe58e6532781c6a040b198" compoundref="TelemetryDefinitions_8h" startline="331">OutductTelemetry_t::m_totalBundlesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a699522bf4bee2c41343ce27594d263ae" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="102">m_totalBundlesFailedToSend</references>
+        <references refid="structOutductTelemetry__t_1a20f16bdb75ed0860f053feaa37ae63f8" compoundref="TelemetryDefinitions_8h" startline="335">OutductTelemetry_t::m_totalBundlesFailedToSend</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a7673d3bba7af413dc875735eafe9f8be" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="108">m_totalBundlesReceived</references>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1a83c655f4c1ca8473a37e7f427474ca6c" compoundref="TelemetryDefinitions_8h" startline="454">BpOverEncapLocalStreamOutductTelemetry_t::m_totalBundlesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="98">m_totalBundlesSent</references>
+        <references refid="structOutductTelemetry__t_1a5195f83a37144955b554a692d2207ec5" compoundref="TelemetryDefinitions_8h" startline="333">OutductTelemetry_t::m_totalBundlesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a96fa6274b91d81275e7d2eefd626d953" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="109">m_totalEncapHeaderBytesReceived</references>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1a61caaf4d7296ce5e1113c22b83a14fe9" compoundref="TelemetryDefinitions_8h" startline="449">BpOverEncapLocalStreamOutductTelemetry_t::m_totalEncapHeaderBytesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac41a656957de34ca75101e4a5234c006" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="103">m_totalEncapHeaderBytesSent</references>
+        <references refid="structBpOverEncapLocalStreamOutductTelemetry__t_1aec680660b786085d39e773c96f4b6500" compoundref="TelemetryDefinitions_8h" startline="448">BpOverEncapLocalStreamOutductTelemetry_t::m_totalEncapHeaderBytesSent</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ac3dcfc572920001494ac1c731b2bbedf" compoundref="EncapAsyncDuplexLocalStream_8h" startline="573" endline="575">EncapAsyncDuplexLocalStream::ReadyToSend</references>
+        <references refid="TestLtpEngine_8cpp_1a0c7c287c52ef81bc2b96ac534486db6b" compoundref="TestCborUint_8cpp" startline="477">t</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a6a5305c020573c2bb9b4a0b1661eb9c8" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t BpOverEncapLocalStreamOutduct::GetTotalBundlesUnacked</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>GetTotalBundlesUnacked</name>
+        <reimplements refid="classOutduct_1a9050711ddf3b07d2503dadc01b6e05f4">GetTotalBundlesUnacked</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="41" column="52" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="65" bodyend="67"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="99">m_totalBundlesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="98">m_totalBundlesSent</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="150" endline="217">Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a6a1979b643ee6ce21e971243f5fc9346" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t BpOverEncapLocalStreamOutduct::GetTotalBundlesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="42" column="44" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="68" bodyend="70"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="99">m_totalBundlesAcked</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a635fab2991763330cb8e6c632474de58" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="114" endline="118">GetOutductFinalStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1adc392fd77e3130027dab2e736bd96422" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t BpOverEncapLocalStreamOutduct::GetTotalBundlesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundlesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="43" column="44" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="71" bodyend="73"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="98">m_totalBundlesSent</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a635fab2991763330cb8e6c632474de58" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="114" endline="118">GetOutductFinalStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a6f668c91572c10105944a8a28cc3d0ea" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t BpOverEncapLocalStreamOutduct::GetTotalBundleBytesAcked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesAcked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="44" column="44" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="75" bodyend="77"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="101">m_totalBundleBytesAcked</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ac17139e37f1499808e06ea7c5729b28f" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t BpOverEncapLocalStreamOutduct::GetTotalBundleBytesSent</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesSent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="45" column="44" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="79" bodyend="81"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="100">m_totalBundleBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ada16494387aa9acbac632b95b251a7bb" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT std::size_t</type>
+        <definition>std::size_t BpOverEncapLocalStreamOutduct::GetTotalBundleBytesUnacked</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleBytesUnacked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="46" column="44" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="83" bodyend="85"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="101">m_totalBundleBytesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="100">m_totalBundleBytesSent</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a1db20182a692bf2492cb18970717f9f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool BpOverEncapLocalStreamOutduct::Forward</definition>
+        <argsstring>(const uint8_t *bundleData, const std::size_t size, std::vector&lt; uint8_t &gt; &amp;&amp;userData) override</argsstring>
+        <name>Forward</name>
+        <reimplements refid="classOutduct_1a0120999b87ce99c34c9caea80f4ee409">Forward</reimplements>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bundleData</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="47" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="407" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool BpOverEncapLocalStreamOutduct::Forward</definition>
+        <argsstring>(zmq::message_t &amp;movableDataZmq, std::vector&lt; uint8_t &gt; &amp;&amp;userData) override</argsstring>
+        <name>Forward</name>
+        <reimplements refid="classOutduct_1a41bc1487fab85c396274198ba71c2116">Forward</reimplements>
+        <param>
+          <type><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &amp;</type>
+          <declname>movableDataZmq</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="48" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="286" bodyend="344"/>
+        <references refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a96d4cdff8ed57e93e3b3d843cffe3af7">BP</references>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="CcsdsEncapEncode_8h_1aab0da20edc08aa9b37cc275a261542e5" compoundref="CcsdsEncapEncode_8h" startline="35" endline="91">GetCcsdsEncapHeader</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a96ed9c8783c713aa86b80ae7257673ea" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="82">m_bytesToAckBySendCallbackCbVec</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1abaf05efe4fa686be822afaf9a10c8c77" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="104">m_largestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a60603e2941c0e471e28f5cea73333fd0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="105">m_smallestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a15ac73e8edf8b955f77bc8827ece9d0d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="83">m_tcpAsyncSenderElementsCbVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1afba70071ce9f99bc683d32deee31141e" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="81">m_toSendCb</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="100">m_totalBundleBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="98">m_totalBundlesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac41a656957de34ca75101e4a5234c006" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="103">m_totalEncapHeaderBytesSent</references>
+        <references refid="structTcpAsyncSenderElement_1a35bc1324cf94167d9c586171101a5a23" compoundref="TcpAsyncSender_8h" startline="60">TcpAsyncSenderElement::m_underlyingDataVecHeaders</references>
+        <references refid="structTcpAsyncSenderElement_1adcb4988f4225ca023d285580c32cf77e" compoundref="TcpAsyncSender_8h" startline="62">TcpAsyncSenderElement::m_underlyingDataZmqBundle</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a002fbc79a405b9325515a4cf65e8dc32" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="110" endline="112">ReadyToForward</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="253" endline="255">TrySendDataIfAvailable_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a53b2c03d8f779c84af08d68a0daeac62" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool BpOverEncapLocalStreamOutduct::Forward</definition>
+        <argsstring>(padded_vector_uint8_t &amp;movableDataVec, std::vector&lt; uint8_t &gt; &amp;&amp;userData) override</argsstring>
+        <name>Forward</name>
+        <reimplements refid="classOutduct_1ab3f43ac1bbbac6b246f40ced953445ce">Forward</reimplements>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>movableDataVec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;&amp;</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="49" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="346" bodyend="405"/>
+        <references refid="CcsdsEncap_8h_1a791481082c38ed528aa0d768bbad97b5a96d4cdff8ed57e93e3b3d843cffe3af7">BP</references>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a1f1d258b828687b1e9b5d7d9ade0df91" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="35">CIRCULAR_INDEX_BUFFER_FULL</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1ad477740071e1b16f335abd9be4eeb508" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="63" endline="72">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitWrite</references>
+        <references refid="CcsdsEncapEncode_8h_1aab0da20edc08aa9b37cc275a261542e5" compoundref="CcsdsEncapEncode_8h" startline="35" endline="91">GetCcsdsEncapHeader</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1af49c27b17db5f9b85b676c7e2d24b257" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="48" endline="61">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForWrite</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a96ed9c8783c713aa86b80ae7257673ea" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="82">m_bytesToAckBySendCallbackCbVec</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1abaf05efe4fa686be822afaf9a10c8c77" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="104">m_largestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a60603e2941c0e471e28f5cea73333fd0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="105">m_smallestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a15ac73e8edf8b955f77bc8827ece9d0d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="83">m_tcpAsyncSenderElementsCbVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1afba70071ce9f99bc683d32deee31141e" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="81">m_toSendCb</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="100">m_totalBundleBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="98">m_totalBundlesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac41a656957de34ca75101e4a5234c006" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="103">m_totalEncapHeaderBytesSent</references>
+        <references refid="structTcpAsyncSenderElement_1a0f6a7dddc0c80afbf245214bad660acc" compoundref="TcpAsyncSender_8h" startline="61">TcpAsyncSenderElement::m_underlyingDataVecBundle</references>
+        <references refid="structTcpAsyncSenderElement_1a35bc1324cf94167d9c586171101a5a23" compoundref="TcpAsyncSender_8h" startline="60">TcpAsyncSenderElement::m_underlyingDataVecHeaders</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a002fbc79a405b9325515a4cf65e8dc32" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="110" endline="112">ReadyToForward</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="253" endline="255">TrySendDataIfAvailable_ThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1abbedbab958b092b5f978fc87b49f5491" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::SetOnFailedBundleVecSendCallback</definition>
+        <argsstring>(const OnFailedBundleVecSendCallback_t &amp;callback) override</argsstring>
+        <name>SetOnFailedBundleVecSendCallback</name>
+        <reimplements refid="classOutduct_1ac5189e24f0336ff975a25997a02ead5b">SetOnFailedBundleVecSendCallback</reimplements>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="50" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="88" bodyend="90"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a5fc4c2de431fe3360bcb71731e089eeb" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="88">m_onFailedBundleVecSendCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1afd886b9d95ef5cb5e4dc6b619ca7c351" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::SetOnFailedBundleZmqSendCallback</definition>
+        <argsstring>(const OnFailedBundleZmqSendCallback_t &amp;callback) override</argsstring>
+        <name>SetOnFailedBundleZmqSendCallback</name>
+        <reimplements refid="classOutduct_1ab4de323b8d292696aa06d80d361e2a8d">SetOnFailedBundleZmqSendCallback</reimplements>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="51" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="91" bodyend="93"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a9a67c6b1f1b09e499438c1e9a1ab02b7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="89">m_onFailedBundleZmqSendCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1acf085e1a55221542261e02fcf54c8f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::SetOnSuccessfulBundleSendCallback</definition>
+        <argsstring>(const OnSuccessfulBundleSendCallback_t &amp;callback) override</argsstring>
+        <name>SetOnSuccessfulBundleSendCallback</name>
+        <reimplements refid="classOutduct_1a9cfa5ba7b62a34b257499e51a08f3a11">SetOnSuccessfulBundleSendCallback</reimplements>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="52" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="94" bodyend="96"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a4e950977bdf8e898525c4998a80a746c" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="90">m_onSuccessfulBundleSendCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ae936a59ed8e86ab5a12c7faabeef9d9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::SetOnOutductLinkStatusChangedCallback</definition>
+        <argsstring>(const OnOutductLinkStatusChangedCallback_t &amp;callback) override</argsstring>
+        <name>SetOnOutductLinkStatusChangedCallback</name>
+        <reimplements refid="classOutduct_1ac0374d326a1a6f9645273d0b7050022f">SetOnOutductLinkStatusChangedCallback</reimplements>
+        <param>
+          <type>const <ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="53" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="97" bodyend="99"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac3494c0a6061d541ee59b37c765c6a68" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="91">m_onOutductLinkStatusChangedCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1aaa6b4f743762c101722746e9ff8894c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::SetUserAssignedUuid</definition>
+        <argsstring>(uint64_t userAssignedUuid) override</argsstring>
+        <name>SetUserAssignedUuid</name>
+        <reimplements refid="classOutduct_1aa61f9350b2bf904e261c7d412e7e98a1">SetUserAssignedUuid</reimplements>
+        <param>
+          <type>uint64_t</type>
+          <declname>userAssignedUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="54" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="100" bodyend="102"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1aba418e7c20a8589ed9469d91c7318542" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="92">m_userAssignedUuid</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ae036893c4130b1a88d340e17f464e125" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::Connect</definition>
+        <argsstring>() override</argsstring>
+        <name>Connect</name>
+        <reimplements refid="classOutduct_1a8f8acd9649ee6041ff0075e1d93a07bb">Connect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="55" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="104" bodyend="109"/>
+        <references refid="structoutduct__element__config__t_1a84601315e2dd07fa98270749b682075c" compoundref="OutductsConfig_8h" startline="46">outduct_element_config_t::bpEncapLocalSocketOrPipePath</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1adce34ad557ce5b9bea670a0048e19458" compoundref="EncapAsyncDuplexLocalStream_8h" startline="129" endline="137">EncapAsyncDuplexLocalStream::Init</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="76">m_encapAsyncDuplexLocalStream</references>
+        <references refid="classOutduct_1a0c9964b51b922b5b4a4aca549e0a256a" compoundref="Outduct_8h" startline="83">Outduct::m_outductConfig</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a002fbc79a405b9325515a4cf65e8dc32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT bool</type>
+        <definition>bool BpOverEncapLocalStreamOutduct::ReadyToForward</definition>
+        <argsstring>() override</argsstring>
+        <name>ReadyToForward</name>
+        <reimplements refid="classOutduct_1a6b26e4c8d0c5e6f83a1169329b3e34c2">ReadyToForward</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="56" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="110" bodyend="112"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="76">m_encapAsyncDuplexLocalStream</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1ac3dcfc572920001494ac1c731b2bbedf" compoundref="EncapAsyncDuplexLocalStream_8h" startline="573" endline="575">EncapAsyncDuplexLocalStream::ReadyToSend</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::Stop</definition>
+        <argsstring>() override</argsstring>
+        <name>Stop</name>
+        <reimplements refid="classOutduct_1ae5e3c6f5f3dc1ddb58ca1df55c39eb67">Stop</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="57" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="150" bodyend="217"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a6a5305c020573c2bb9b4a0b1661eb9c8" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="65" endline="67">GetTotalBundlesUnacked</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="76">m_encapAsyncDuplexLocalStream</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0c39033633b53187b445a4b8a999c6d0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="74">m_ioService</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a268f4d064f4ae8ac6f1c51031eea1e30" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="77">m_ioServiceThreadPtr</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1abaf05efe4fa686be822afaf9a10c8c77" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="104">m_largestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a073301e6caab0b4fb0829a2d21dca462" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="78">m_localConditionVariableAckReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a60603e2941c0e471e28f5cea73333fd0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="105">m_smallestEncapHeaderSizeBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="101">m_totalBundleBytesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a7edcff304e7b32cf5dd7e2d248979719" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="107">m_totalBundleBytesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="100">m_totalBundleBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="99">m_totalBundlesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a699522bf4bee2c41343ce27594d263ae" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="102">m_totalBundlesFailedToSend</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a7673d3bba7af413dc875735eafe9f8be" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="108">m_totalBundlesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="98">m_totalBundlesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a96fa6274b91d81275e7d2eefd626d953" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="109">m_totalEncapHeaderBytesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac41a656957de34ca75101e4a5234c006" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="103">m_totalEncapHeaderBytesSent</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a521ac04a0df7a20dbe01c271b621f9c0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="86">m_useLocalConditionVariableAckReceived</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1abe15145c3b3eaa2a7dcef0f908c3f736" compoundref="EncapAsyncDuplexLocalStream_8h" startline="91" endline="106">EncapAsyncDuplexLocalStream::Stop</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1ae64daf6cee5c19535bb35b7c148bc2f9" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="61" endline="63">~BpOverEncapLocalStreamOutduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a635fab2991763330cb8e6c632474de58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>OUTDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::GetOutductFinalStats</definition>
+        <argsstring>(OutductFinalStats &amp;finalStats) override</argsstring>
+        <name>GetOutductFinalStats</name>
+        <reimplements refid="classOutduct_1a3a04125580ae4bcbeaef385dd4a8600e">GetOutductFinalStats</reimplements>
+        <param>
+          <type><ref refid="structOutductFinalStats" kindref="compound">OutductFinalStats</ref> &amp;</type>
+          <declname>finalStats</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="58" column="45" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="114" bodyend="118"/>
+        <references refid="structoutduct__element__config__t_1a626dd2558439ddd6ecaa456b25b0f492" compoundref="OutductsConfig_8h" startline="38">outduct_element_config_t::convergenceLayer</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a6a1979b643ee6ce21e971243f5fc9346" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="68" endline="70">GetTotalBundlesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1adc392fd77e3130027dab2e736bd96422" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="71" endline="73">GetTotalBundlesSent</references>
+        <references refid="structOutductFinalStats_1aed117916f7d88c033c47386eaaaee755" compoundref="Outduct_8h" startline="41">OutductFinalStats::m_convergenceLayer</references>
+        <references refid="classOutduct_1a0c9964b51b922b5b4a4aca549e0a256a" compoundref="Outduct_8h" startline="83">Outduct::m_outductConfig</references>
+        <references refid="structOutductFinalStats_1a46230d47b1635a447368f080d9a3a29f" compoundref="Outduct_8h" startline="43">OutductFinalStats::m_totalBundlesAcked</references>
+        <references refid="structOutductFinalStats_1acbf2d3a0cb75cedcbac68b494942264e" compoundref="Outduct_8h" startline="42">OutductFinalStats::m_totalBundlesSent</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::DoFailedBundleCallback</definition>
+        <argsstring>(TcpAsyncSenderElement &amp;el)</argsstring>
+        <name>DoFailedBundleCallback</name>
+        <param>
+          <type><ref refid="structTcpAsyncSenderElement" kindref="compound">TcpAsyncSenderElement</ref> &amp;</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="61" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="219" bodyend="227"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a5fc4c2de431fe3360bcb71731e089eeb" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="88">m_onFailedBundleVecSendCallback</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a9a67c6b1f1b09e499438c1e9a1ab02b7" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="89">m_onFailedBundleZmqSendCallback</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a699522bf4bee2c41343ce27594d263ae" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="102">m_totalBundlesFailedToSend</references>
+        <references refid="structTcpAsyncSenderElement_1a0f6a7dddc0c80afbf245214bad660acc" compoundref="TcpAsyncSender_8h" startline="61">TcpAsyncSenderElement::m_underlyingDataVecBundle</references>
+        <references refid="structTcpAsyncSenderElement_1adcb4988f4225ca023d285580c32cf77e" compoundref="TcpAsyncSender_8h" startline="62">TcpAsyncSenderElement::m_underlyingDataZmqBundle</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1aba418e7c20a8589ed9469d91c7318542" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="92">m_userAssignedUuid</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::TrySendDataIfAvailable_NotThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>TrySendDataIfAvailable_NotThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="62" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="229" bodyend="251"/>
+        <references refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h_1a79cd6e462a182af6a18cd97882f10303" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h" startline="37">CIRCULAR_INDEX_BUFFER_EMPTY</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="structTcpAsyncSenderElement_1a165b02504b19bb6ec031bb52d57af788" compoundref="TcpAsyncSender_8cpp" startline="30" endline="34">TcpAsyncSenderElement::DeallocateBundleMemory</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="219" endline="227">DoFailedBundleCallback</references>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a637cab3bcd65b49b8fa0cd6bcaadad6e" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="74" endline="83">CircularIndexBufferSingleProducerSingleConsumerConfigurable::GetIndexForRead</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a4787d1f36d73ec58a3b1b5318db5503e" compoundref="EncapAsyncDuplexLocalStream_8h" startline="570" endline="572">EncapAsyncDuplexLocalStream::GetStreamHandleRef</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="76">m_encapAsyncDuplexLocalStream</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a4f4df9ed51b3fe155c5bb235565c38d1" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="85">m_sendErrorOccurred</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a15ac73e8edf8b955f77bc8827ece9d0d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="83">m_tcpAsyncSenderElementsCbVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1afba70071ce9f99bc683d32deee31141e" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="81">m_toSendCb</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1af33a7a0737f0f0b3d119cda69bee80f1" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="84">m_writeInProgress</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="253" endline="255">TrySendDataIfAvailable_ThreadSafe</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="257" endline="282">HandleSend</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="253" endline="255">TrySendDataIfAvailable_ThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::TrySendDataIfAvailable_ThreadSafe</definition>
+        <argsstring>()</argsstring>
+        <name>TrySendDataIfAvailable_ThreadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="63" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="253" bodyend="255"/>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0c39033633b53187b445a4b8a999c6d0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="74">m_ioService</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="286" endline="344">Forward</referencedby>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::HandleSend</definition>
+        <argsstring>(const boost::system::error_code &amp;error, std::size_t bytes_transferred, const unsigned int readIndex)</argsstring>
+        <name>HandleSend</name>
+        <param>
+          <type>const boost::system::error_code &amp;</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>readIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="64" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="257" bodyend="282"/>
+        <references refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable_1a0a6a1d52fc5278aefcee86ec5facc3cb" compoundref="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8cpp" startline="85" endline="94">CircularIndexBufferSingleProducerSingleConsumerConfigurable::CommitRead</references>
+        <references refid="structTcpAsyncSenderElement_1a165b02504b19bb6ec031bb52d57af788" compoundref="TcpAsyncSender_8cpp" startline="30" endline="34">TcpAsyncSenderElement::DeallocateBundleMemory</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a96ed9c8783c713aa86b80ae7257673ea" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="82">m_bytesToAckBySendCallbackCbVec</references>
+        <references refid="structTcpAsyncSenderElement_1a47dafdc8e45fa792b42425fee23ad77d" compoundref="TcpAsyncSender_8h" startline="59">TcpAsyncSenderElement::m_constBufferVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a073301e6caab0b4fb0829a2d21dca462" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="78">m_localConditionVariableAckReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a4e950977bdf8e898525c4998a80a746c" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="90">m_onSuccessfulBundleSendCallback</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a4f4df9ed51b3fe155c5bb235565c38d1" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="85">m_sendErrorOccurred</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a15ac73e8edf8b955f77bc8827ece9d0d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="83">m_tcpAsyncSenderElementsCbVec</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1afba70071ce9f99bc683d32deee31141e" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="81">m_toSendCb</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="101">m_totalBundleBytesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="99">m_totalBundlesAcked</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a521ac04a0df7a20dbe01c271b621f9c0" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="86">m_useLocalConditionVariableAckReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1aba418e7c20a8589ed9469d91c7318542" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="92">m_userAssignedUuid</references>
+        <references refid="structTcpAsyncSenderElement_1abd986e4e392debcab102087118a152e8" compoundref="TcpAsyncSender_8h" startline="58">TcpAsyncSenderElement::m_userData</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1af33a7a0737f0f0b3d119cda69bee80f1" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="84">m_writeInProgress</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</references>
+        <referencedby refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="229" endline="251">TrySendDataIfAvailable_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::OnFullEncapPacketReceived</definition>
+        <argsstring>(padded_vector_uint8_t &amp;receivedFullEncapPacket, uint32_t decodedEncapPayloadSize, uint8_t decodedEncapHeaderSize)</argsstring>
+        <name>OnFullEncapPacketReceived</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>receivedFullEncapPacket</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>decodedEncapPayloadSize</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>decodedEncapHeaderSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="66" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="424" bodyend="440"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="76">m_encapAsyncDuplexLocalStream</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac658067d8948e21a96cb0937ce95260f" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="95">m_outductOpportunisticProcessReceivedBundleCallback</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a7edcff304e7b32cf5dd7e2d248979719" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="107">m_totalBundleBytesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a7673d3bba7af413dc875735eafe9f8be" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="108">m_totalBundlesReceived</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1a96fa6274b91d81275e7d2eefd626d953" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="109">m_totalEncapHeaderBytesReceived</references>
+        <references refid="classEncapAsyncDuplexLocalStream_1a02a90c4dfdb396cb9a4d6993549e7484" compoundref="EncapAsyncDuplexLocalStream_8h" startline="382" endline="391">EncapAsyncDuplexLocalStream::StartReadFirstEncapHeaderByte_NotThreadSafe</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a71d936bb55e26efab812782251e0256e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>void BpOverEncapLocalStreamOutduct::OnLocalStreamConnectionStatusChanged</definition>
+        <argsstring>(bool isOnConnectionEvent)</argsstring>
+        <name>OnLocalStreamConnectionStatusChanged</name>
+        <param>
+          <type>bool</type>
+          <declname>isOnConnectionEvent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="68" column="40" bodyfile="common/outduct_manager/src/BpOverEncapLocalStreamOutduct.cpp" bodystart="415" bodyend="420"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1ac3494c0a6061d541ee59b37c765c6a68" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="91">m_onOutductLinkStatusChangedCallback</references>
+        <references refid="classBpOverEncapLocalStreamOutduct_1aba418e7c20a8589ed9469d91c7318542" compoundref="BpOverEncapLocalStreamOutduct_8h" startline="92">m_userAssignedUuid</references>
+        <references refid="BpOverEncapLocalStreamOutduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpOverEncapLocalStreamOutduct_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1ac125dc7a2c6b3836e7b6e3bb34af74d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BpOverEncapLocalStreamOutduct::BpOverEncapLocalStreamOutduct</definition>
+        <argsstring>()</argsstring>
+        <name>BpOverEncapLocalStreamOutduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="71" column="5"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classBpOverEncapLocalStreamOutduct_1a8ffefd9e5201084bf66fb5b555690940" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OUTDUCT_MANAGER_LIB_NO_EXPORT void</type>
+        <definition>static OUTDUCT_MANAGER_LIB_NO_EXPORT void BpOverEncapLocalStreamOutduct::GenerateDataUnitHeaderOnly</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;dataUnit, uint32_t bundleSizeBytes)</argsstring>
+        <name>GenerateDataUnitHeaderOnly</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataUnit</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bundleSizeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="65" column="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Outduct</label>
+        <link refid="classOutduct"/>
+      </node>
+      <node id="1">
+        <label>BpOverEncapLocalStreamOutduct</label>
+        <link refid="classBpOverEncapLocalStreamOutduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Outduct</label>
+        <link refid="classOutduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_outductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>outduct_element_config_t</label>
+        <link refid="structoutduct__element__config__t"/>
+      </node>
+      <node id="5">
+        <label>EncapAsyncDuplexLocalStream</label>
+        <link refid="classEncapAsyncDuplexLocalStream"/>
+      </node>
+      <node id="1">
+        <label>BpOverEncapLocalStreamOutduct</label>
+        <link refid="classBpOverEncapLocalStreamOutduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_toSendCb</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_encapAsyncDuplexLocalStream</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable</label>
+        <link refid="classCircularIndexBufferSingleProducerSingleConsumerConfigurable"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" line="35" column="1" bodyfile="common/outduct_manager/include/BpOverEncapLocalStreamOutduct.h" bodystart="35" bodyend="110"/>
+    <listofallmembers>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a0fc5a31e93c07ddaea070186e72e4650" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>BpOverEncapLocalStreamOutduct</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ac125dc7a2c6b3836e7b6e3bb34af74d0" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>BpOverEncapLocalStreamOutduct</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ae036893c4130b1a88d340e17f464e125" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Connect</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1af27ad7590c0b8548446baca04538d25d" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>DoFailedBundleCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a1db20182a692bf2492cb18970717f9f2" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Forward</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a56b668130ffeee0f51c3c1e13adc632a" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Forward</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a53b2c03d8f779c84af08d68a0daeac62" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Forward</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a8ffefd9e5201084bf66fb5b555690940" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GenerateDataUnitHeaderOnly</name></member>
+      <member refid="classOutduct_1a822ccc9e49c2b46c28523be992e83822" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetAssumedInitiallyDown</name></member>
+      <member refid="classOutduct_1ab11d4cb1320f373b031f7321dc3de42d" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetConvergenceLayerName</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a635fab2991763330cb8e6c632474de58" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetOutductFinalStats</name></member>
+      <member refid="classOutduct_1a7bc56120366e26a39d2b8649142dcf06" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetOutductMaxNumberOfBundlesInPipeline</name></member>
+      <member refid="classOutduct_1af6865ea342bc15c0948bc7e08275c22f" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetOutductMaxSumOfBundleBytesInPipeline</name></member>
+      <member refid="classOutduct_1a8ef969d09fbe27dbb2e554e25d5a30b4" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetOutductNextHopNodeId</name></member>
+      <member refid="classOutduct_1a1f52844d4d3230713f94c9d2379aa76d" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetOutductUuid</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a6f668c91572c10105944a8a28cc3d0ea" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetTotalBundleBytesAcked</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ac17139e37f1499808e06ea7c5729b28f" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetTotalBundleBytesSent</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ada16494387aa9acbac632b95b251a7bb" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetTotalBundleBytesUnacked</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a6a1979b643ee6ce21e971243f5fc9346" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetTotalBundlesAcked</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1adc392fd77e3130027dab2e736bd96422" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetTotalBundlesSent</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a6a5305c020573c2bb9b4a0b1661eb9c8" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>GetTotalBundlesUnacked</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a2b8c2f41741694b3ad6c72a864c63b98" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>HandleSend</name></member>
+      <member refid="classOutduct_1afb77e4e8d7c021633ba11c296e6d676e" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Init</name></member>
+      <member refid="classOutduct_1aa12cdd8dc71db643a05e62c0d22c0679" prot="protected" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_assumedInitiallyDown</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a96ed9c8783c713aa86b80ae7257673ea" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_bytesToAckBySendCallbackCbVec</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ada316bb30472b7c4c961540c9b2109b2" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_encapAsyncDuplexLocalStream</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a0c39033633b53187b445a4b8a999c6d0" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_ioService</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a268f4d064f4ae8ac6f1c51031eea1e30" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1abaf05efe4fa686be822afaf9a10c8c77" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_largestEncapHeaderSizeBytesSent</name></member>
+      <member refid="classOutduct_1a0d1df24d131d3b49340c21f40de169d4" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_linkIsUpPerTimeSchedule</name></member>
+      <member refid="classOutduct_1aeb7df8e552d97667d0a8aa64454d996e" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_linkIsUpPhysically</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a073301e6caab0b4fb0829a2d21dca462" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_localConditionVariableAckReceived</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a5fc4c2de431fe3360bcb71731e089eeb" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_onFailedBundleVecSendCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a9a67c6b1f1b09e499438c1e9a1ab02b7" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_onFailedBundleZmqSendCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ac3494c0a6061d541ee59b37c765c6a68" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_onOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a4e950977bdf8e898525c4998a80a746c" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_onSuccessfulBundleSendCallback</name></member>
+      <member refid="classOutduct_1a0c9964b51b922b5b4a4aca549e0a256a" prot="protected" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_outductConfig</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ac658067d8948e21a96cb0937ce95260f" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_outductOpportunisticProcessReceivedBundleCallback</name></member>
+      <member refid="classOutduct_1a13b66a5a84bb088da54ae6f1a0bfc55b" prot="protected" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_outductUuid</name></member>
+      <member refid="classOutduct_1a21cc7e27c84d9b1a0382c0afa7e4d093" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_physicalLinkStatusIsKnown</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a4f4df9ed51b3fe155c5bb235565c38d1" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_sendErrorOccurred</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a60603e2941c0e471e28f5cea73333fd0" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_smallestEncapHeaderSizeBytesSent</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a15ac73e8edf8b955f77bc8827ece9d0d" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_tcpAsyncSenderElementsCbVec</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1afba70071ce9f99bc683d32deee31141e" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_toSendCb</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ae336d062019d9a5479de5c2fbca78e8d" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundleBytesAcked</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a7edcff304e7b32cf5dd7e2d248979719" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundleBytesReceived</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a45d3e5ce8f6e8b44eac1a34258a32af7" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundleBytesSent</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a0bab68b9239dbb92c10ab3fc2562c2ee" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundlesAcked</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a699522bf4bee2c41343ce27594d263ae" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundlesFailedToSend</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a7673d3bba7af413dc875735eafe9f8be" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundlesReceived</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a89936359ee5c1df0739ca7a4dcc54f25" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalBundlesSent</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a96fa6274b91d81275e7d2eefd626d953" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalEncapHeaderBytesReceived</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ac41a656957de34ca75101e4a5234c006" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_totalEncapHeaderBytesSent</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a521ac04a0df7a20dbe01c271b621f9c0" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_useLocalConditionVariableAckReceived</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1aba418e7c20a8589ed9469d91c7318542" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_userAssignedUuid</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a8ca037adbfb4d0b9ac8757bc5ba56705" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_work</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1af33a7a0737f0f0b3d119cda69bee80f1" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>m_writeInProgress</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ab2dd6727490434762c99a1d5c77f60ef" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>MAX_UNACKED</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ac147c40546c8ee20842224e1747d43bf" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>OnFullEncapPacketReceived</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a71d936bb55e26efab812782251e0256e" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>OnLocalStreamConnectionStatusChanged</name></member>
+      <member refid="classOutduct_1a62fa9d93c24a178124801de79256eb34" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Outduct</name></member>
+      <member refid="classOutduct_1a3d54043e8be71f9783c7695939c2bbc2" prot="public" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Outduct</name></member>
+      <member refid="classOutduct_1aa0e8278a9eea979a89210b51828cd178" prot="protected" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Outduct</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a46c2cd48fbe520bb0dc084b8b7c084f4" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>PopulateOutductTelemetry</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a002fbc79a405b9325515a4cf65e8dc32" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>ReadyToForward</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1abbedbab958b092b5f978fc87b49f5491" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>SetOnFailedBundleVecSendCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1afd886b9d95ef5cb5e4dc6b619ca7c351" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>SetOnFailedBundleZmqSendCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ae936a59ed8e86ab5a12c7faabeef9d9a" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>SetOnOutductLinkStatusChangedCallback</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1acf085e1a55221542261e02fcf54c8f86" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>SetOnSuccessfulBundleSendCallback</name></member>
+      <member refid="classOutduct_1a9b03ca25daf4e025e4b7c39986e7ef4a" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>SetRate</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1aaa6b4f743762c101722746e9ff8894c0" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>SetUserAssignedUuid</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1afb3dd8921a97257148b4850bac9b8d9b" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>Stop</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1add806c5bd961b225768c9aeef7ad0d44" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>TrySendDataIfAvailable_NotThreadSafe</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1a3f5501b2576887eee34753621a3eac8c" prot="private" virt="non-virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>TrySendDataIfAvailable_ThreadSafe</name></member>
+      <member refid="classBpOverEncapLocalStreamOutduct_1ae64daf6cee5c19535bb35b7c148bc2f9" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>~BpOverEncapLocalStreamOutduct</name></member>
+      <member refid="classOutduct_1a4cd9ecce78601099f22abce654010483" prot="public" virt="virtual"><scope>BpOverEncapLocalStreamOutduct</scope><name>~Outduct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="MemoryManagerTree_8cpp" kind="file" language="C++">
+    <compoundname>MemoryManagerTree.cpp</compoundname>
+    <includes refid="MemoryManagerTree_8h" local="yes">MemoryManagerTree.h</includes>
+    <includes local="no">boost/multiprecision/cpp_int.hpp</includes>
+    <includes local="no">boost/multiprecision/detail/bitscan.hpp</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>MemoryManagerTree.h</label>
+        <link refid="MemoryManagerTree_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>boost/multiprecision/cpp_int.hpp</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>boost/multiprecision/detail/bitscan.hpp</label>
+      </node>
+      <node id="5">
+        <label>BundleStorageConfig.h</label>
+        <link refid="BundleStorageConfig_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>module/storage/deprecated/MemoryManagerTree.cpp</label>
+        <link refid="MemoryManagerTree_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="7">
+        <label>storage_lib_export.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MemoryManagerTree_8h" kindref="compound">MemoryManagerTree.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/multiprecision/cpp_int.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/multiprecision/detail/bitscan.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//static<sp/>boost::uint64_t<sp/>g_numLeaves<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classMemoryManagerTree_1abbc7a58962022cbf172661def4f5e951" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" kindref="member">MemoryManagerTree::SetupTree</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>innerNode<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)node;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>=<sp/>UINT64_MAX;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(depth<sp/>&gt;<sp/>1)<sp/>{<sp/></highlight><highlight class="comment">//inner<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childInnerNodes<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)malloc(64<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref><sp/>=<sp/>childInnerNodes;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>64;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" kindref="member">SetupTree</ref>(depth<sp/>-<sp/>1,<sp/>&amp;childInnerNodes[i]);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//depth<sp/>==<sp/>1<sp/>so<sp/>setup<sp/>leaf<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childLeafNodes<sp/>=<sp/>(<ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref>*)malloc(64<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref>));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//g_numLeaves<sp/>+=<sp/>64;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref><sp/>=<sp/>childLeafNodes;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>64;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>childLeafNodes[i].<ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref><sp/>=<sp/>UINT64_MAX;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" kindref="member">MemoryManagerTree::SetupTree</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a11ca03a55706add336c50d81309c9811" kindref="member">SetupTree</ref>(MAX_TREE_DEPTH,<sp/>&amp;<ref refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" kindref="member">m_rootNode</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classMemoryManagerTree_1a4e3e41a9901a5e896759cf9569c530e7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" kindref="member">MemoryManagerTree::FreeTree</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>innerNode<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)node;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(depth<sp/>&gt;<sp/>1)<sp/>{<sp/></highlight><highlight class="comment">//inner<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childInnerNodes<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TestDijkstra_8cpp_1a928218f62d7212291d9bd1c033c9238c" kindref="member">for</ref><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>64;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" kindref="member">FreeTree</ref>(depth<sp/>-<sp/>1,<sp/>&amp;childInnerNodes[i]);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(childInnerNodes);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//depth<sp/>==<sp/>1<sp/>so<sp/>free<sp/>leaf<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childLeafNodes<sp/>=<sp/>(<ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref>*)innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//g_numLeaves<sp/>-=<sp/>64;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(childLeafNodes);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" kindref="member">MemoryManagerTree::FreeTree</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a23d0fb495aa58084d05832291250fd59" kindref="member">FreeTree</ref>(MAX_TREE_DEPTH,<sp/>&amp;<ref refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" kindref="member">m_rootNode</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classMemoryManagerTree_1ab52aa7ecc42bcac3d51c16d850977417" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" kindref="member">MemoryManagerTree::GetAndSetFirstFreeSegmentId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node,<sp/>boost::uint32_t<sp/>*<sp/>segmentId)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>innerNode<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)node;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(depth<sp/>&gt;<sp/>1)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>an<sp/>inner<sp/>node<sp/>that<sp/>has<sp/>children<sp/>that<sp/>are<sp/>also<sp/>inner<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>!=<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//bitmask<sp/>not<sp/>zero<sp/>means<sp/>space<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childInnerNodes<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>firstFreeIndex<sp/>=<sp/>boost::multiprecision::detail::find_lsb&lt;boost::uint64_t&gt;(innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*segmentId<sp/>+=<sp/>firstFreeIndex<sp/>*<sp/>(64<sp/>&lt;&lt;<sp/>((depth<sp/>-<sp/>1)<sp/>*<sp/>6));<sp/></highlight><highlight class="comment">//<sp/>64^depth</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;d&quot;<sp/>&lt;&lt;<sp/>depth<sp/>&lt;&lt;<sp/>&quot;<sp/>i&quot;<sp/>&lt;&lt;<sp/>firstFreeIndex<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>targetChildInnerNode<sp/>=<sp/>&amp;childInnerNodes[firstFreeIndex];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" kindref="member">GetAndSetFirstFreeSegmentId</ref>(depth<sp/>-<sp/>1,<sp/>targetChildInnerNode,<sp/>segmentId);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(targetChildInnerNode-&gt;m_bitMask<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//target<sp/>child<sp/>now<sp/>full,<sp/>so<sp/>mark<sp/>the<sp/>parent&apos;s<sp/>bit<sp/>full<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uint64_t<sp/>mask64<sp/>=<sp/>(((boost::uint64_t)1)<sp/>&lt;&lt;<sp/>firstFreeIndex);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>&amp;=<sp/>~mask64;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//depth<sp/>==<sp/>1<sp/>,<sp/>this<sp/>is<sp/>an<sp/>inner<sp/>node<sp/>that<sp/>has<sp/>children<sp/>that<sp/>are<sp/>leaf<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childLeafNodes<sp/>=<sp/>(<ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref>*)innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>firstFreeIndexInnerNode<sp/>=<sp/>boost::multiprecision::detail::find_lsb&lt;boost::uint64_t&gt;(innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*segmentId<sp/>+=<sp/>firstFreeIndexInnerNode<sp/>*<sp/>64;<sp/></highlight><highlight class="comment">//<sp/>64^1<sp/>where<sp/>1<sp/>is<sp/>depth</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;d&quot;<sp/>&lt;&lt;<sp/>depth<sp/>&lt;&lt;<sp/>&quot;<sp/>i&quot;<sp/>&lt;&lt;<sp/>firstFreeIndexInnerNode<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>targetChildLeafNode<sp/>=<sp/>&amp;childLeafNodes[firstFreeIndexInnerNode];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>firstFreeIndexLeaf<sp/>=<sp/>boost::multiprecision::detail::find_lsb&lt;boost::uint64_t&gt;(targetChildLeafNode-&gt;<ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*segmentId<sp/>+=<sp/>firstFreeIndexLeaf;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;d0<sp/>i&quot;<sp/>&lt;&lt;<sp/>firstFreeIndexLeaf<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uint64_t<sp/>mask64InnerNode<sp/>=<sp/>(((boost::uint64_t)1)<sp/>&lt;&lt;<sp/>firstFreeIndexInnerNode);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uint64_t<sp/>mask64LeafNode<sp/>=<sp/>(((boost::uint64_t)1)<sp/>&lt;&lt;<sp/>firstFreeIndexLeaf);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>targetChildLeafNode-&gt;<ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref><sp/>&amp;=<sp/>~mask64LeafNode;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(targetChildLeafNode-&gt;<ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref><sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//target<sp/>child<sp/>now<sp/>full,<sp/>so<sp/>mark<sp/>the<sp/>parent&apos;s<sp/>bit<sp/>full<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>&amp;=<sp/>~mask64InnerNode;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" refkind="member"><highlight class="normal">boost::uint32_t<sp/><ref refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" kindref="member">MemoryManagerTree::GetAndSetFirstFreeSegmentId</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" kindref="member">m_rootNode</ref>.<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>UINT32_MAX;<sp/></highlight><highlight class="comment">//bitmask<sp/>of<sp/>zero<sp/>means<sp/>full</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::uint32_t<sp/>segmentId<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a647a27d16051347cc7b124bee516ed6f" kindref="member">GetAndSetFirstFreeSegmentId</ref>(MAX_TREE_DEPTH,<sp/>&amp;<ref refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" kindref="member">m_rootNode</ref>,<sp/>&amp;segmentId);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>segmentId;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classMemoryManagerTree_1aa31b66dc02330aebec2734c430be5af6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" kindref="member">MemoryManagerTree::FreeSegmentId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*node,<sp/>boost::uint32_t<sp/>segmentId,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*success)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>innerNode<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)node;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(depth<sp/>&gt;<sp/>1)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>an<sp/>inner<sp/>node<sp/>that<sp/>has<sp/>children<sp/>that<sp/>are<sp/>also<sp/>inner<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>(segmentId<sp/>&gt;&gt;<sp/>(depth<sp/>*<sp/>6))<sp/>&amp;<sp/>63;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uint64_t<sp/>mask64<sp/>=<sp/>(((boost::uint64_t)1)<sp/>&lt;&lt;<sp/>index);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childInnerNodes<sp/>=<sp/>(<ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref>*)innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerInnerNode" kindref="compound">MemoryManagerInnerNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>targetChildInnerNode<sp/>=<sp/>&amp;childInnerNodes[index];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" kindref="member">FreeSegmentId</ref>(depth<sp/>-<sp/>1,<sp/>targetChildInnerNode,<sp/>segmentId,<sp/>success);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//target<sp/>child<sp/>is<sp/>definitely<sp/>not<sp/>full,<sp/>so<sp/>mark<sp/>the<sp/>parent&apos;s<sp/>bit<sp/>not<sp/>full<sp/>(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//0=full,<sp/>1=empty<sp/>or<sp/>partially<sp/>filled<sp/>(not<sp/>full)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>|=<sp/>mask64;<sp/></highlight><highlight class="comment">//set<sp/>bit<sp/>to<sp/>1<sp/>(not<sp/>full)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//depth<sp/>==<sp/>1<sp/>,<sp/>this<sp/>is<sp/>an<sp/>inner<sp/>node<sp/>that<sp/>has<sp/>children<sp/>that<sp/>are<sp/>leaf<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>childLeafNodes<sp/>=<sp/>(<ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref>*)innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a615e39a94a225befe7d031e93814f512" kindref="member">m_childNodes</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indexInnerNode<sp/>=<sp/>(segmentId<sp/>&gt;&gt;<sp/>6)<sp/>&amp;<sp/>63;<sp/></highlight><highlight class="comment">//depth=1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMemoryManagerLeafNode" kindref="compound">MemoryManagerLeafNode</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>targetChildLeafNode<sp/>=<sp/>&amp;childLeafNodes[indexInnerNode];</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indexLeafNode<sp/>=<sp/>segmentId<sp/>&amp;<sp/>63;<sp/></highlight><highlight class="comment">//depth=0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uint64_t<sp/>mask64LeafNode<sp/>=<sp/>(((boost::uint64_t)1)<sp/>&lt;&lt;<sp/>indexLeafNode);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(targetChildLeafNode-&gt;<ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref><sp/>&amp;<sp/>mask64LeafNode)<sp/>{<sp/></highlight><highlight class="comment">//leaf<sp/>bit<sp/>is<sp/>already<sp/>1<sp/>(empty)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*success<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//leaf<sp/>bit<sp/>0<sp/>so<sp/>delete<sp/>it<sp/>by<sp/>setting<sp/>it<sp/>to<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>targetChildLeafNode-&gt;<ref refid="structMemoryManagerLeafNode_1a75ab779dc9cdafbd75fea39be325a313" kindref="member">m_bitMask</ref><sp/>|=<sp/>mask64LeafNode;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//target<sp/>child<sp/>is<sp/>now<sp/>definitely<sp/>not<sp/>full,<sp/>so<sp/>mark<sp/>the<sp/>parent&apos;s<sp/>bit<sp/>not<sp/>full<sp/>(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//0=full,<sp/>1=empty<sp/>or<sp/>partially<sp/>filled<sp/>(not<sp/>full)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uint64_t<sp/>mask64InnerNode<sp/>=<sp/>(((boost::uint64_t)1)<sp/>&lt;&lt;<sp/>indexInnerNode);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>innerNode-&gt;<ref refid="structMemoryManagerInnerNode_1a84a9987af578f98ad8ed11386b744042" kindref="member">m_bitMask</ref><sp/>|=<sp/>mask64InnerNode;<sp/></highlight><highlight class="comment">//set<sp/>bit<sp/>to<sp/>1<sp/>(not<sp/>full)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" kindref="member">MemoryManagerTree::FreeSegmentId</ref>(boost::uint32_t<sp/>segmentId)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMemoryManagerTree_1a25afb5c9a87e3c3ebed012b4b479d3d4" kindref="member">FreeSegmentId</ref>(MAX_TREE_DEPTH,<sp/>&amp;<ref refid="classMemoryManagerTree_1a94b6a52210158107ae8807729861b70e" kindref="member">m_rootNode</ref>,<sp/>segmentId,<sp/>&amp;success);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>success;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="module/storage/deprecated/MemoryManagerTree.cpp"/>
+  </compounddef>
+</doxygen>

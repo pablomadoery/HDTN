@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="IngressAsyncRunner_8h" kind="file" language="C++">
+    <compoundname>IngressAsyncRunner.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">ingress_async_lib_export.h</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="ingress_8cpp" local="yes">module/ingress/src/ingress.cpp</includedby>
+    <includedby refid="IngressAsyncRunner_8cpp" local="yes">module/ingress/src/IngressAsyncRunner.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>atomic</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>ingress_async_lib_export.h</label>
+      </node>
+      <node id="1">
+        <label>module/ingress/include/IngressAsyncRunner.h</label>
+        <link refid="IngressAsyncRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>module/ingress/src/IngressAsyncRunner.cpp</label>
+        <link refid="IngressAsyncRunner_8cpp"/>
+      </node>
+      <node id="1">
+        <label>module/ingress/include/IngressAsyncRunner.h</label>
+        <link refid="IngressAsyncRunner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>module/ingress/src/ingress.cpp</label>
+        <link refid="ingress_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classIngressAsyncRunner" prot="public">IngressAsyncRunner</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>This <ref refid="classIngressAsyncRunner" kindref="compound">IngressAsyncRunner</ref> class is used for launching just the HDTN Ingress module into its own process. The <ref refid="classIngressAsyncRunner" kindref="compound">IngressAsyncRunner</ref> provides a blocking Run function which creates and initializes an Ingress object by processing/using the various command line arguments. <ref refid="classIngressAsyncRunner" kindref="compound">IngressAsyncRunner</ref> is only used when running HDTN in distributed mode in which there is a single process dedicated to Ingress. <ref refid="classIngressAsyncRunner" kindref="compound">IngressAsyncRunner</ref> also provides a signal handler listener to capture Ctrl+C (SIGINT) events for clean termination. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_INGRESS_ASYNC_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_INGRESS_ASYNC_RUNNER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ingress_async_lib_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classIngressAsyncRunner" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classIngressAsyncRunner" kindref="compound">IngressAsyncRunner</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>INGRESS_ASYNC_LIB_EXPORT<sp/><ref refid="classIngressAsyncRunner_1a2ddf4260eeca24c878712e1c19054e18" kindref="member">IngressAsyncRunner</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>INGRESS_ASYNC_LIB_EXPORT<sp/><ref refid="classIngressAsyncRunner_1a2596aa6ae156c71a5eb2b019ea5c5596" kindref="member">~IngressAsyncRunner</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>INGRESS_ASYNC_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classIngressAsyncRunner_1a8ce0bf3063572ee1a9ba212d7cdaa06d" kindref="member">Run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>argv[],<sp/>std::atomic&lt;bool&gt;&amp;<sp/>running,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useSignalHandler);</highlight></codeline>
+<codeline lineno="37" refid="classIngressAsyncRunner_1a3ec83568e4bb93372ef99d4e1faffd33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classIngressAsyncRunner_1a3ec83568e4bb93372ef99d4e1faffd33" kindref="member">m_bundleCountStorage</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classIngressAsyncRunner_1a4643d981d4e0a66b814f544e31107046" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classIngressAsyncRunner_1a4643d981d4e0a66b814f544e31107046" kindref="member">m_bundleCountEgress</ref>;</highlight></codeline>
+<codeline lineno="39" refid="classIngressAsyncRunner_1af5628134bdbf1e2e3990e07ff06dab71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classIngressAsyncRunner_1af5628134bdbf1e2e3990e07ff06dab71" kindref="member">m_bundleCount</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classIngressAsyncRunner_1aa3f40c9425a11177b16e0212792dd602" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classIngressAsyncRunner_1aa3f40c9425a11177b16e0212792dd602" kindref="member">m_bundleData</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>INGRESS_ASYNC_LIB_NO_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIngressAsyncRunner_1a6d296216ad78a07b113e17dd325f8390" kindref="member">MonitorExitKeypressThreadFunction</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classIngressAsyncRunner_1a808e60b1e28e4e2848eb877d9053df28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/><ref refid="classIngressAsyncRunner_1a808e60b1e28e4e2848eb877d9053df28" kindref="member">m_runningFromSigHandler</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//_INGRESS_ASYNC_RUNNER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="module/ingress/include/IngressAsyncRunner.h"/>
+  </compounddef>
+</doxygen>

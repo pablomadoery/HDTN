@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classUdpInduct" kind="class" language="C++" prot="public">
+    <compoundname>UdpInduct</compoundname>
+    <basecompoundref refid="classInduct" prot="public" virt="non-virtual">Induct</basecompoundref>
+    <includes refid="UdpInduct_8h" local="no">UdpInduct.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUdpInduct_1a45c344103f4b8039a64db49969319f5d" prot="private" static="no" mutable="no">
+        <type><ref refid="test__sync_8cpp_1af0835c134db68beb99f0121111982625" kindref="member">boost::asio::io_service</ref></type>
+        <definition>boost::asio::io_service UdpInduct::m_ioService</definition>
+        <argsstring></argsstring>
+        <name>m_ioService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="37" column="29" bodyfile="common/induct_manager/include/UdpInduct.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classUdpInduct_1a77555980249449af0ff0f89ee5acabde" compoundref="UdpInduct_8cpp" startline="59" endline="61">ConnectionReadyToBeDeletedNotificationReceived</referencedby>
+        <referencedby refid="classUdpInduct_1ab490fba7a1bdf76307a638679980f51c" compoundref="UdpInduct_8cpp" startline="24" endline="36">UdpInduct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpInduct_1ad30e5b7dd59ae9ec3d71f4f4b0b0ff53" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; UdpInduct::m_ioServiceThreadPtr</definition>
+        <argsstring></argsstring>
+        <name>m_ioServiceThreadPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="38" column="21" bodyfile="common/induct_manager/include/UdpInduct.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classUdpInduct_1ab490fba7a1bdf76307a638679980f51c" compoundref="UdpInduct_8cpp" startline="24" endline="36">UdpInduct</referencedby>
+        <referencedby refid="classUdpInduct_1a65a7ce3e69dd107ef83a5a1acaf8a691" compoundref="UdpInduct_8cpp" startline="37" endline="50">~UdpInduct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classUdpInduct_1ab593b7e97c126e0e20349f4ed50b3794" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classUdpBundleSink" kindref="compound">UdpBundleSink</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;UdpBundleSink&gt; UdpInduct::m_udpBundleSinkPtr</definition>
+        <argsstring></argsstring>
+        <name>m_udpBundleSinkPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="39" column="21" bodyfile="common/induct_manager/include/UdpInduct.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classUdpInduct_1abd6e9b75adc5e2c1e3cbac80bc2bd95e" compoundref="UdpInduct_8cpp" startline="63" endline="69">PopulateInductTelemetry</referencedby>
+        <referencedby refid="classUdpInduct_1a5a0bb6e8a775170636f255f0b89a5470" compoundref="UdpInduct_8cpp" startline="53" endline="57">RemoveInactiveConnection</referencedby>
+        <referencedby refid="classUdpInduct_1ab490fba7a1bdf76307a638679980f51c" compoundref="UdpInduct_8cpp" startline="24" endline="36">UdpInduct</referencedby>
+        <referencedby refid="classUdpInduct_1a65a7ce3e69dd107ef83a5a1acaf8a691" compoundref="UdpInduct_8cpp" startline="37" endline="50">~UdpInduct</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUdpInduct_1ab490fba7a1bdf76307a638679980f51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>UdpInduct::UdpInduct</definition>
+        <argsstring>(const InductProcessBundleCallback_t &amp;inductProcessBundleCallback, const induct_element_config_t &amp;inductConfig)</argsstring>
+        <name>UdpInduct</name>
+        <param>
+          <type>const <ref refid="Induct_8h_1a86c4fd64e7b8ba210fcb5e112a9877e2" kindref="member">InductProcessBundleCallback_t</ref> &amp;</type>
+          <declname>inductProcessBundleCallback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structinduct__element__config__t" kindref="compound">induct_element_config_t</ref> &amp;</type>
+          <declname>inductConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="29" column="31" bodyfile="common/induct_manager/src/UdpInduct.cpp" bodystart="24" bodyend="36"/>
+        <references refid="structinduct__element__config__t_1a813113ff159d3b7b47efb10a022deb2c" compoundref="InductsConfig_8h" startline="39">induct_element_config_t::boundPort</references>
+        <references refid="classUdpInduct_1a77555980249449af0ff0f89ee5acabde" compoundref="UdpInduct_8cpp" startline="59" endline="61">ConnectionReadyToBeDeletedNotificationReceived</references>
+        <references refid="classInduct_1a557e332763667d6232acbcebcf4b788b" compoundref="Induct_8h" startline="89">Induct::m_inductConfig</references>
+        <references refid="classInduct_1a88863aafd33849d348fbd6d97ffc1092" compoundref="Induct_8h" startline="88">Induct::m_inductProcessBundleCallback</references>
+        <references refid="classUdpInduct_1a45c344103f4b8039a64db49969319f5d" compoundref="UdpInduct_8h" startline="37">m_ioService</references>
+        <references refid="classUdpInduct_1ad30e5b7dd59ae9ec3d71f4f4b0b0ff53" compoundref="UdpInduct_8h" startline="38">m_ioServiceThreadPtr</references>
+        <references refid="classUdpInduct_1ab593b7e97c126e0e20349f4ed50b3794" compoundref="UdpInduct_8h" startline="39">m_udpBundleSinkPtr</references>
+        <references refid="structinduct__element__config__t_1ad07163ef5ab04b8291da29ccbac316b5" compoundref="InductsConfig_8h" startline="41">induct_element_config_t::numRxCircularBufferBytesPerElement</references>
+        <references refid="structinduct__element__config__t_1acd6c7ca4a51e95fdfe80e7c8bf6ae1db" compoundref="InductsConfig_8h" startline="40">induct_element_config_t::numRxCircularBufferElements</references>
+        <references refid="classThreadNamer_1a7183f4cfaab544d17ea279d03ff082cb" compoundref="ThreadNamer_8cpp" startline="121" endline="123">ThreadNamer::SetIoServiceThreadName</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpInduct_1a65a7ce3e69dd107ef83a5a1acaf8a691" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT</type>
+        <definition>UdpInduct::~UdpInduct</definition>
+        <argsstring>() override</argsstring>
+        <name>~UdpInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="30" column="39" bodyfile="common/induct_manager/src/UdpInduct.cpp" bodystart="37" bodyend="50"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classUdpInduct_1ad30e5b7dd59ae9ec3d71f4f4b0b0ff53" compoundref="UdpInduct_8h" startline="38">m_ioServiceThreadPtr</references>
+        <references refid="classUdpInduct_1ab593b7e97c126e0e20349f4ed50b3794" compoundref="UdpInduct_8h" startline="39">m_udpBundleSinkPtr</references>
+        <references refid="UdpInduct_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="UdpInduct_8cpp" startline="22">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classUdpInduct_1abd6e9b75adc5e2c1e3cbac80bc2bd95e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void UdpInduct::PopulateInductTelemetry</definition>
+        <argsstring>(InductTelemetry_t &amp;inductTelem) override</argsstring>
+        <name>PopulateInductTelemetry</name>
+        <reimplements refid="classInduct_1a4b0dc7469558559ec0d99748a61ffde9">PopulateInductTelemetry</reimplements>
+        <param>
+          <type><ref refid="structInductTelemetry__t" kindref="compound">InductTelemetry_t</ref> &amp;</type>
+          <declname>inductTelem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="31" column="44" bodyfile="common/induct_manager/src/UdpInduct.cpp" bodystart="63" bodyend="69"/>
+        <references refid="structInductTelemetry__t_1a29369bf8ac458f4275a8a08a3580a929" compoundref="TelemetryDefinitions_8h" startline="297">InductTelemetry_t::m_convergenceLayer</references>
+        <references refid="structInductTelemetry__t_1aa5e33785eab14435ec678b0bf14d7671" compoundref="TelemetryDefinitions_8h" startline="298">InductTelemetry_t::m_listInductConnections</references>
+        <references refid="classUdpInduct_1ab593b7e97c126e0e20349f4ed50b3794" compoundref="UdpInduct_8h" startline="39">m_udpBundleSinkPtr</references>
+        <references refid="TestLtpEngine_8cpp_1a0c7c287c52ef81bc2b96ac534486db6b" compoundref="TestCborUint_8cpp" startline="477">t</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUdpInduct_1a4b923e7f9285f8b1ae776935f61628f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UdpInduct::UdpInduct</definition>
+        <argsstring>()</argsstring>
+        <name>UdpInduct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="33" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classUdpInduct_1a77555980249449af0ff0f89ee5acabde" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void UdpInduct::ConnectionReadyToBeDeletedNotificationReceived</definition>
+        <argsstring>()</argsstring>
+        <name>ConnectionReadyToBeDeletedNotificationReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="34" column="36" bodyfile="common/induct_manager/src/UdpInduct.cpp" bodystart="59" bodyend="61"/>
+        <references refid="classUdpInduct_1a45c344103f4b8039a64db49969319f5d" compoundref="UdpInduct_8h" startline="37">m_ioService</references>
+        <references refid="classUdpInduct_1a5a0bb6e8a775170636f255f0b89a5470" compoundref="UdpInduct_8cpp" startline="53" endline="57">RemoveInactiveConnection</references>
+        <referencedby refid="classUdpInduct_1ab490fba7a1bdf76307a638679980f51c" compoundref="UdpInduct_8cpp" startline="24" endline="36">UdpInduct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classUdpInduct_1a5a0bb6e8a775170636f255f0b89a5470" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INDUCT_MANAGER_LIB_EXPORT void</type>
+        <definition>void UdpInduct::RemoveInactiveConnection</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveInactiveConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/induct_manager/include/UdpInduct.h" line="35" column="36" bodyfile="common/induct_manager/src/UdpInduct.cpp" bodystart="53" bodyend="57"/>
+        <references refid="classUdpInduct_1ab593b7e97c126e0e20349f4ed50b3794" compoundref="UdpInduct_8h" startline="39">m_udpBundleSinkPtr</references>
+        <referencedby refid="classUdpInduct_1a77555980249449af0ff0f89ee5acabde" compoundref="UdpInduct_8cpp" startline="59" endline="61">ConnectionReadyToBeDeletedNotificationReceived</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+      </node>
+      <node id="1">
+        <label>UdpInduct</label>
+        <link refid="classUdpInduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Induct</label>
+        <link refid="classInduct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_inductConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>UdpInduct</label>
+        <link refid="classUdpInduct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>induct_element_config_t</label>
+        <link refid="structinduct__element__config__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/induct_manager/include/UdpInduct.h" line="27" column="1" bodyfile="common/induct_manager/include/UdpInduct.h" bodystart="27" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classInduct_1ad74c9b440a843473696defb025590a9f" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>BundleSinkNotifyOpportunisticDataAcked_FromIoServiceThread</name></member>
+      <member refid="classInduct_1ae03c890c8d5a0ac0b5e3d71e928329fa" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>BundleSinkTryGetData_FromIoServiceThread</name></member>
+      <member refid="classUdpInduct_1a77555980249449af0ff0f89ee5acabde" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>ConnectionReadyToBeDeletedNotificationReceived</name></member>
+      <member refid="classInduct_1a0cbe038ec6320e7b05110dbc63e847a3" prot="public" virt="non-virtual"><scope>UdpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a17724854b4a473b9a57526cd0dc4f071" prot="public" virt="non-virtual"><scope>UdpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a74322837f4037aec13e5bb937ca5badf" prot="public" virt="non-virtual"><scope>UdpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1a761599f28ca13bb6845eb2f7c69b7dff" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>ForwardOnOpportunisticLink</name></member>
+      <member refid="classInduct_1ae7cbc5d5364a77fc3246b4b346bb658d" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>Induct</name></member>
+      <member refid="classInduct_1a647593fe6c02215c386ebaa63a0d0824" prot="public" virt="non-virtual"><scope>UdpInduct</scope><name>Induct</name></member>
+      <member refid="classInduct_1aaf85eacba6c3124f59a725aab11ebcb6" prot="public" virt="virtual"><scope>UdpInduct</scope><name>Init</name></member>
+      <member refid="classInduct_1a557e332763667d6232acbcebcf4b788b" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>m_inductConfig</name></member>
+      <member refid="classInduct_1a88863aafd33849d348fbd6d97ffc1092" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>m_inductProcessBundleCallback</name></member>
+      <member refid="classUdpInduct_1a45c344103f4b8039a64db49969319f5d" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>m_ioService</name></member>
+      <member refid="classUdpInduct_1ad30e5b7dd59ae9ec3d71f4f4b0b0ff53" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>m_ioServiceThreadPtr</name></member>
+      <member refid="classInduct_1a1e17749fc05146922183f4f4ef32ee86" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>m_mapNodeIdToOpportunisticBundleQueue</name></member>
+      <member refid="classInduct_1a5ac721528b8eaa20a6c9dcaf5adee326" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>m_mapNodeIdToOpportunisticBundleQueueMutex</name></member>
+      <member refid="classInduct_1ae6365d298419e7be494c21e0a13d4758" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>m_onDeletedOpportunisticLinkCallback</name></member>
+      <member refid="classInduct_1ad9a1cef61f590b17dda0481251082f99" prot="protected" virt="non-virtual"><scope>UdpInduct</scope><name>m_onNewOpportunisticLinkCallback</name></member>
+      <member refid="classUdpInduct_1ab593b7e97c126e0e20349f4ed50b3794" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>m_udpBundleSinkPtr</name></member>
+      <member refid="classUdpInduct_1abd6e9b75adc5e2c1e3cbac80bc2bd95e" prot="public" virt="virtual"><scope>UdpInduct</scope><name>PopulateInductTelemetry</name></member>
+      <member refid="classUdpInduct_1a5a0bb6e8a775170636f255f0b89a5470" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>RemoveInactiveConnection</name></member>
+      <member refid="classUdpInduct_1ab490fba7a1bdf76307a638679980f51c" prot="public" virt="non-virtual"><scope>UdpInduct</scope><name>UdpInduct</name></member>
+      <member refid="classUdpInduct_1a4b923e7f9285f8b1ae776935f61628f7" prot="private" virt="non-virtual"><scope>UdpInduct</scope><name>UdpInduct</name></member>
+      <member refid="classInduct_1aad47fefdf9d04f67cef3eb3d5f5ea6db" prot="protected" virt="virtual"><scope>UdpInduct</scope><name>Virtual_PostNotifyBundleReadyToSend_FromIoServiceThread</name></member>
+      <member refid="classInduct_1a178422af7be2fddc07d57292bc4e033c" prot="public" virt="virtual"><scope>UdpInduct</scope><name>~Induct</name></member>
+      <member refid="classUdpInduct_1a65a7ce3e69dd107ef83a5a1acaf8a691" prot="public" virt="virtual"><scope>UdpInduct</scope><name>~UdpInduct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

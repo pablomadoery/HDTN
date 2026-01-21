@@ -1,0 +1,1457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structhdtn_1_1Ingress_1_1Impl" kind="struct" language="C++" prot="public">
+    <compoundname>hdtn::Ingress::Impl</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">boost::noncopyable</basecompoundref>
+    <innerclass refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet" prot="private">hdtn::Ingress::Impl::BundlePipelineAckingSet</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="structhdtn_1_1Ingress_1_1Impl_1ad23c9beffdec2b7d6193d10c2cc76a95" prot="private" static="no">
+        <type>std::unique_ptr&lt; <ref refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet" kindref="compound">BundlePipelineAckingSet</ref> &gt;</type>
+        <definition>typedef std::unique_ptr&lt;BundlePipelineAckingSet&gt; hdtn::Ingress::Impl::BundlePipelineAckingSetPtr</definition>
+        <argsstring></argsstring>
+        <name>BundlePipelineAckingSetPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="162" column="27" bodyfile="module/ingress/src/receive.cpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structhdtn_1_1Ingress_1_1Impl_1ae69272033c8886ce5ea494f3a73a9879" prot="private" static="no">
+        <type>boost::shared_lock&lt; boost::shared_mutex &gt;</type>
+        <definition>typedef boost::shared_lock&lt;boost::shared_mutex&gt; hdtn::Ingress::Impl::ingress_shared_lock_t</definition>
+        <argsstring></argsstring>
+        <name>ingress_shared_lock_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="213" column="30" bodyfile="module/ingress/src/receive.cpp" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structhdtn_1_1Ingress_1_1Impl_1a084b285f85a63af17dbf3cb48d7075d7" prot="private" static="no">
+        <type>boost::unique_lock&lt; boost::shared_mutex &gt;</type>
+        <definition>typedef boost::unique_lock&lt;boost::shared_mutex&gt; hdtn::Ingress::Impl::ingress_exclusive_lock_t</definition>
+        <argsstring></argsstring>
+        <name>ingress_exclusive_lock_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="214" column="30" bodyfile="module/ingress/src/receive.cpp" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ac2cb052b41969a728f12a0d26fc0bba7" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::m_bundleCountStorage</definition>
+        <argsstring></argsstring>
+        <name>m_bundleCountStorage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="106" column="12" bodyfile="module/ingress/src/receive.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a3d1337443f71e9f7e7221a4b1c742f6c" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::m_bundleByteCountStorage</definition>
+        <argsstring></argsstring>
+        <name>m_bundleByteCountStorage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="109" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a370a586ab55cdcbd323681ea39c2c0db" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::m_bundleCountEgress</definition>
+        <argsstring></argsstring>
+        <name>m_bundleCountEgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="110" column="12" bodyfile="module/ingress/src/receive.cpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a4319aa6d69a22cdaa6cfc608aa9c0eac" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t hdtn::Ingress::Impl::m_bundleByteCountEgress</definition>
+        <argsstring></argsstring>
+        <name>m_bundleByteCountEgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="112" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a0744bbee4826e942f2d8f2fc01535ad9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::context_t&gt; hdtn::Ingress::Impl::m_zmqCtxPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqCtxPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="164" column="19" bodyfile="module/ingress/src/receive.cpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ab395264b63006d66a66580082012a792" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqPushSock_boundIngressToConnectingEgressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPushSock_boundIngressToConnectingEgressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="166" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a9327b61b45b8395453e7a1bee31995f9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqPullSock_connectingEgressToBoundIngressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_connectingEgressToBoundIngressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="168" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a6e9fb0d0139d77ef47c91a21f01ca77f" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqPullSock_connectingEgressBundlesOnlyToBoundIngressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_connectingEgressBundlesOnlyToBoundIngressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="170" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a212309153ee0531631f5635d19fbd655" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqPushSock_boundIngressToConnectingStoragePtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPushSock_boundIngressToConnectingStoragePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="172" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a956215d38e908169e46061353ed439d3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqPullSock_connectingStorageToBoundIngressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqPullSock_connectingStorageToBoundIngressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="174" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a453198601ceb724a174b2a1466d7d7db" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqSubSock_boundRouterToConnectingIngressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqSubSock_boundRouterToConnectingIngressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="175" column="19" bodyfile="module/ingress/src/receive.cpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a198a32824e35acd079219ec6a0d290da" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classzmq_1_1socket__t" kindref="compound">zmq::socket_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;zmq::socket_t&gt; hdtn::Ingress::Impl::m_zmqRepSock_connectingTelemToFromBoundIngressPtr</definition>
+        <argsstring></argsstring>
+        <name>m_zmqRepSock_connectingTelemToFromBoundIngressPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="178" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a2f18a40ee56142cb06b67e280ddc9a78" prot="private" static="no" mutable="no">
+        <type><ref refid="classInductManager" kindref="compound">InductManager</ref></type>
+        <definition>InductManager hdtn::Ingress::Impl::m_inductManager</definition>
+        <argsstring></argsstring>
+        <name>m_inductManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="183" column="17" bodyfile="module/ingress/src/receive.cpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a2c86ffd0ea574ab13aa76b499b62af7b" prot="private" static="no" mutable="no">
+        <type><ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref></type>
+        <definition>HdtnConfig hdtn::Ingress::Impl::m_hdtnConfig</definition>
+        <argsstring></argsstring>
+        <name>m_hdtnConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="184" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a5938f68d8a59c1e02c8b6d9922792804" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t hdtn::Ingress::Impl::M_HDTN_EID_CUSTODY</definition>
+        <argsstring></argsstring>
+        <name>M_HDTN_EID_CUSTODY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="185" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ab1b8959e5aa0d90533c34c28da3da0bf" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t hdtn::Ingress::Impl::M_HDTN_EID_SECURITY_SOURCE</definition>
+        <argsstring></argsstring>
+        <name>M_HDTN_EID_SECURITY_SOURCE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="186" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a6de946a4787a4b2264faebaad861f618" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t hdtn::Ingress::Impl::M_HDTN_EID_ECHO</definition>
+        <argsstring></argsstring>
+        <name>M_HDTN_EID_ECHO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="187" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a0e3492a411b15a9e0aded002a33a48c6" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t hdtn::Ingress::Impl::M_HDTN_EID_PING</definition>
+        <argsstring></argsstring>
+        <name>M_HDTN_EID_PING</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="188" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ac9289ea30ac0e28fcacbf1c5b947ade5" prot="private" static="no" mutable="no">
+        <type><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref></type>
+        <definition>cbhe_eid_t hdtn::Ingress::Impl::M_HDTN_EID_TO_ROUTER_BUNDLES</definition>
+        <argsstring></argsstring>
+        <name>M_HDTN_EID_TO_ROUTER_BUNDLES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="189" column="14" bodyfile="module/ingress/src/receive.cpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a4ffcd69fe4ea7e2952c4e25a19061f7b" prot="private" static="no" mutable="no">
+        <type>boost::posix_time::time_duration</type>
+        <definition>boost::posix_time::time_duration hdtn::Ingress::Impl::M_MAX_INGRESS_BUNDLE_WAIT_ON_EGRESS_TIME_DURATION</definition>
+        <argsstring></argsstring>
+        <name>M_MAX_INGRESS_BUNDLE_WAIT_ON_EGRESS_TIME_DURATION</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="191" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1abbf48c0c7491871ad3ff356a10d2b9bc" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; hdtn::Ingress::Impl::m_threadZmqAckReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadZmqAckReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="193" column="19" bodyfile="module/ingress/src/receive.cpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1af79c1caa7f24a7fe86d1960fc921d3e0" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; hdtn::Ingress::Impl::m_threadZmqTelemPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadZmqTelemPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="194" column="19" bodyfile="module/ingress/src/receive.cpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1aef1fe1c5b4c62e13d7a2987447a46fa6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; boost::thread &gt;</type>
+        <definition>std::unique_ptr&lt;boost::thread&gt; hdtn::Ingress::Impl::m_threadTcpclOpportunisticBundlesFromEgressReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>m_threadTcpclOpportunisticBundlesFromEgressReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="196" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1af52c2e8fed2bf19281dacbef5d6e40d2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structhdtn_1_1Ingress_1_1Impl_1ad23c9beffdec2b7d6193d10c2cc76a95" kindref="member">BundlePipelineAckingSetPtr</ref> &gt;</type>
+        <definition>std::vector&lt;BundlePipelineAckingSetPtr&gt; hdtn::Ingress::Impl::m_vectorBundlePipelineAckingSet</definition>
+        <argsstring></argsstring>
+        <name>m_vectorBundlePipelineAckingSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="198" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ab04bb03837f5673ecdf463765247e053" prot="private" static="no" mutable="no">
+        <type><ref refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet" kindref="compound">BundlePipelineAckingSet</ref></type>
+        <definition>BundlePipelineAckingSet hdtn::Ingress::Impl::m_singleStorageBundlePipelineAckingSet</definition>
+        <argsstring></argsstring>
+        <name>m_singleStorageBundlePipelineAckingSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="200" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a12fdb098f8b14cf7798841e014d1bd2d" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, uint64_t &gt;</type>
+        <definition>std::map&lt;uint64_t, uint64_t&gt; hdtn::Ingress::Impl::m_mapNextHopNodeIdToOutductArrayIndex</definition>
+        <argsstring></argsstring>
+        <name>m_mapNextHopNodeIdToOutductArrayIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="202" column="12" bodyfile="module/ingress/src/receive.cpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a78823f7f1d3c9d6cc755aa91eab53370" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, uint64_t &gt;</type>
+        <definition>std::map&lt;uint64_t, uint64_t&gt; hdtn::Ingress::Impl::m_mapFinalDestNodeIdToOutductArrayIndex</definition>
+        <argsstring></argsstring>
+        <name>m_mapFinalDestNodeIdToOutductArrayIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="203" column="12" bodyfile="module/ingress/src/receive.cpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a076765411537992df96ef7bc1ed99454" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref>, uint64_t &gt;</type>
+        <definition>std::map&lt;cbhe_eid_t, uint64_t&gt; hdtn::Ingress::Impl::m_mapFinalDestEidToOutductArrayIndex</definition>
+        <argsstring></argsstring>
+        <name>m_mapFinalDestEidToOutductArrayIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="204" column="12" bodyfile="module/ingress/src/receive.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1aaf3d60bd4cb73c55167ccc3408c5c1ed" prot="private" static="no" mutable="no">
+        <type>boost::shared_mutex</type>
+        <definition>boost::shared_mutex hdtn::Ingress::Impl::m_sharedMutexFinalDestsToOutductArrayIndexMaps</definition>
+        <argsstring></argsstring>
+        <name>m_sharedMutexFinalDestsToOutductArrayIndexMaps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="212" column="23" bodyfile="module/ingress/src/receive.cpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a9071c479a80ac639faa9f5d59c36a5fd" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::m_ingressToEgressZmqSocketMutex</definition>
+        <argsstring></argsstring>
+        <name>m_ingressToEgressZmqSocketMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="218" column="16" bodyfile="module/ingress/src/receive.cpp" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1aff3b499f5d4c8ee1c1b31b256092f4a8" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::m_ingressToStorageZmqSocketMutex</definition>
+        <argsstring></argsstring>
+        <name>m_ingressToStorageZmqSocketMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="219" column="16" bodyfile="module/ingress/src/receive.cpp" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1af183ccbbd2837ef67b9641e40e821873" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t hdtn::Ingress::Impl::m_eventsTooManyInStorageCutThroughQueue</definition>
+        <argsstring></argsstring>
+        <name>m_eventsTooManyInStorageCutThroughQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="220" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a7e53becc3063ab42d2943c1d9392b54a" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t hdtn::Ingress::Impl::m_eventsTooManyInEgressCutThroughQueue</definition>
+        <argsstring></argsstring>
+        <name>m_eventsTooManyInEgressCutThroughQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="221" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ad88f9bcbef556cac541213256454dc8f" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t hdtn::Ingress::Impl::m_eventsTooManyInAllCutThroughQueues</definition>
+        <argsstring></argsstring>
+        <name>m_eventsTooManyInAllCutThroughQueues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="222" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a6336e72a06fb8e8e2e4ae5be5be58266" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; hdtn::Ingress::Impl::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="223" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a075dd56a00ef4c7aa611129a798b073e" prot="private" static="no" mutable="no">
+        <type>std::atomic_uint64_t</type>
+        <definition>std::atomic_uint64_t hdtn::Ingress::Impl::m_nextBundleUniqueIdAtomic</definition>
+        <argsstring></argsstring>
+        <name>m_nextBundleUniqueIdAtomic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="224" column="24" bodyfile="module/ingress/src/receive.cpp" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a58f0ada3c5d88e9c82f759e62cba5cf6" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="classInduct" kindref="compound">Induct</ref> * &gt;</type>
+        <definition>std::map&lt;uint64_t, Induct *&gt; hdtn::Ingress::Impl::m_availableDestOpportunisticNodeIdToTcpclInductMap</definition>
+        <argsstring></argsstring>
+        <name>m_availableDestOpportunisticNodeIdToTcpclInductMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="227" column="7" bodyfile="module/ingress/src/receive.cpp" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ad2b2214623d13f7ff8bb316d30cef5a5" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::m_availableDestOpportunisticNodeIdToTcpclInductMapMutex</definition>
+        <argsstring></argsstring>
+        <name>m_availableDestOpportunisticNodeIdToTcpclInductMapMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="228" column="16" bodyfile="module/ingress/src/receive.cpp" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a5b3047cbd86b410d67c9895b04443ee5" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; hdtn::Ingress::Impl::m_aoctNeedsProcessing</definition>
+        <argsstring></argsstring>
+        <name>m_aoctNeedsProcessing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="232" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1aba6049cfd320e5aa3117e263d60e700a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; hdtn::Ingress::Impl::m_workerThreadStartupInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="235" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a25ef8f918bf70df9370505b59739fbaa" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::m_workerThreadStartupMutex</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="236" column="16" bodyfile="module/ingress/src/receive.cpp" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1aada0cb9cb9a3a40a3e304aecefe01a7c" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable hdtn::Ingress::Impl::m_workerThreadStartupConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_workerThreadStartupConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="237" column="29" bodyfile="module/ingress/src/receive.cpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ade3367f4a29a8af3ccfee58d64a35e99" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; hdtn::Ingress::Impl::m_telemThreadStartupInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_telemThreadStartupInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="240" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1ac237c3da25c198ea8020c11e3aff8d39" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::m_telemThreadStartupMutex</definition>
+        <argsstring></argsstring>
+        <name>m_telemThreadStartupMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="241" column="16" bodyfile="module/ingress/src/receive.cpp" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1aad7a16c465e86e38e861289e01440176" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable hdtn::Ingress::Impl::m_telemThreadStartupConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_telemThreadStartupConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="242" column="29" bodyfile="module/ingress/src/receive.cpp" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a35d5695b094eb89c5a493e939760fe81" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; hdtn::Ingress::Impl::m_inductsFullyLoaded</definition>
+        <argsstring></argsstring>
+        <name>m_inductsFullyLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="245" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a07d057493c80e0019f7bf662f5aeb62a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; hdtn::Ingress::Impl::m_inductsFailedToLoad</definition>
+        <argsstring></argsstring>
+        <name>m_inductsFailedToLoad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="246" column="15" bodyfile="module/ingress/src/receive.cpp" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a9f1aafc4252b344f830e54bcebdd2859" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex hdtn::Ingress::Impl::m_inductsFullyLoadedMutex</definition>
+        <argsstring></argsstring>
+        <name>m_inductsFullyLoadedMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="247" column="16" bodyfile="module/ingress/src/receive.cpp" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a6e51c779aa115470d8a51cd64c997176" prot="private" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable hdtn::Ingress::Impl::m_inductsFullyLoadedConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>m_inductsFullyLoadedConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="248" column="29" bodyfile="module/ingress/src/receive.cpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhdtn_1_1Ingress_1_1Impl_1a53c813c6abe5e6231b38d44eef935ef4" prot="private" static="no" mutable="no">
+        <type><ref refid="classTelemetryServer" kindref="compound">TelemetryServer</ref></type>
+        <definition>TelemetryServer hdtn::Ingress::Impl::m_telemServer</definition>
+        <argsstring></argsstring>
+        <name>m_telemServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="250" column="19" bodyfile="module/ingress/src/receive.cpp" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a647b12820373a3a939ed1cb621a4c714" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hdtn::Ingress::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="70" column="3" bodyfile="module/ingress/src/receive.cpp" bodystart="382" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1acf4a08f1e79920d3adbd77391db8f145" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hdtn::Ingress::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="71" column="3" bodyfile="module/ingress/src/receive.cpp" bodystart="404" bodyend="404"/>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1a3925fc152fc5256fa8ad063869963dec" compoundref="receive_8cpp" startline="409" endline="450">Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a3925fc152fc5256fa8ad063869963dec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="72" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="409" bodyend="450"/>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1acf4a08f1e79920d3adbd77391db8f145" compoundref="receive_8cpp" startline="404" endline="404">~Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a7d13158cdf41a51e74814c48a55e38ee" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::Stopped</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>Stopped</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="73" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="453" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a64e356a2437970859c75b61c0aba5455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::Init</definition>
+        <argsstring>(const HdtnConfig &amp;hdtnConfig, const boost::filesystem::path &amp;bpSecConfigFilePath, const HdtnDistributedConfig &amp;hdtnDistributedConfig, zmq::context_t *hdtnOneProcessZmqInprocContextPtr, const std::string &amp;maskerImpl)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const <ref refid="classHdtnConfig" kindref="compound">HdtnConfig</ref> &amp;</type>
+          <declname>hdtnConfig</declname>
+        </param>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>bpSecConfigFilePath</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classHdtnDistributedConfig" kindref="compound">HdtnDistributedConfig</ref> &amp;</type>
+          <declname>hdtnDistributedConfig</declname>
+        </param>
+        <param>
+          <type><ref refid="classzmq_1_1context__t" kindref="compound">zmq::context_t</ref> *</type>
+          <declname>hdtnOneProcessZmqInprocContextPtr</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>maskerImpl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="74" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="465" bodyend="781"/>
+        <references refid="classBpSecConfig_1aa847ae166df48ec1eb3dd1550fb17dda" compoundref="BpSecConfig_8cpp" startline="808" endline="823">BpSecConfig::CreateFromJsonFilePath</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classHdtnDistributedConfig_1af5ea2bb033e9a60de9592dbd01e23060" compoundref="HdtnDistributedConfig_8h" startline="71">HdtnDistributedConfig::m_zmqRouterAddress</references>
+        <references refid="classhdtn_1_1Masker_1a160649a22e2d254088e36f9b71afddc8" compoundref="Masker_8cpp" startline="13" endline="36">hdtn::Masker::makePointer</references>
+        <references refid="namespacehdtn_1a04ef5c280d70ebe9bbec31beda9ad91e" compoundref="receive_8cpp" startline="66">hdtn::MY_PING_SERVICE_ID</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">ReadZmqAcksThreadFunc</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1ac7121aab7ff1f0e7e7d8a2d798ee17c8" compoundref="receive_8cpp" startline="1120" endline="1329">ZmqTelemThreadFunc</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::ReadZmqAcksThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>ReadZmqAcksThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="81" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="802" bodyend="1114"/>
+        <references refid="structhdtn_1_1EgressAckHdr_1ab8075c1078238e43e4fca7de01868af4" compoundref="message_8hpp" startline="116">hdtn::EgressAckHdr::base</references>
+        <references refid="structhdtn_1_1StorageAckHdr_1a0cf49ac44570999a9a071bc3e42e6bf4" compoundref="message_8hpp" startline="143">hdtn::StorageAckHdr::base</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a8e46d5a087ffb69f76ca061ec8c0eaf0" compoundref="receive_8cpp" startline="285" endline="304">hdtn::Ingress::Impl::BundlePipelineAckingSet::CompareAndPop_ThreadSafe</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1aff22978591b153bcd45485f83d392813" compoundref="message_8hpp" startline="123">hdtn::EgressAckHdr::custodyId</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a8f87f1c76e765fb83b02d65b06e1c9b3" compoundref="message_8hpp" startline="117">hdtn::EgressAckHdr::error</references>
+        <references refid="structhdtn_1_1StorageAckHdr_1a25e7b29a0310965c877aec222d65cb59" compoundref="message_8hpp" startline="144">hdtn::StorageAckHdr::error</references>
+        <references refid="structOutductCapabilityTelemetry__t_1ac2b6a373c853af2d2c2e49f400f02d88" compoundref="TelemetryDefinitions_8h" startline="104">OutductCapabilityTelemetry_t::finalDestinationEidList</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a689c88d24b069c2a5d8f4be1e13d3f44" compoundref="TelemetryDefinitions_8h" startline="105">OutductCapabilityTelemetry_t::finalDestinationNodeIdList</references>
+        <references refid="message_8hpp_1a1abe3d15fda4f4d2e56738eee4d291e1" compoundref="message_8hpp" startline="76">HDTN_MSGTYPE_ALL_OUTDUCT_CAPABILITIES_TELEMETRY</references>
+        <references refid="message_8hpp_1ac3133c133772ed9db0e2ca7065046b2c" compoundref="message_8hpp" startline="74">HDTN_MSGTYPE_EGRESS_ACK_TO_INGRESS</references>
+        <references refid="message_8hpp_1a024d4d44678a92d8f09a0ee1831231d9" compoundref="message_8hpp" startline="75">HDTN_MSGTYPE_STORAGE_ACK_TO_INGRESS</references>
+        <references refid="receive_8cpp_1affb7e4026e7cbefd98584ab8c678512a" compoundref="receive_8cpp" startline="215">ingress_adopt_lock</references>
+        <references refid="structhdtn_1_1StorageAckHdr_1a84f4858f4bf7203f00dbb59c085b942f" compoundref="message_8hpp" startline="148">hdtn::StorageAckHdr::ingressUniqueId</references>
+        <references refid="namespacehdtn_1a815bcdf7b6e3326df2684e3e58dfad3da74e461dabd95b456bf8d60b41e485f24">hdtn::LINK_DOWN</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classhdtn_1_1Ingress_1ace579d59c82bee78659d164cafe6cf93" compoundref="ingress_8h" startline="57">hdtn::Ingress::m_bundleByteCountEgress</references>
+        <references refid="classhdtn_1_1Ingress_1a2efa7939ab9f4c173b4dd946b908b758" compoundref="ingress_8h" startline="55">hdtn::Ingress::m_bundleByteCountStorage</references>
+        <references refid="classhdtn_1_1Ingress_1a8f272b5fd1e3607f10cb7bbe315c0427" compoundref="ingress_8h" startline="56">hdtn::Ingress::m_bundleCountEgress</references>
+        <references refid="classhdtn_1_1Ingress_1a40890e4ae16d5ce284381db5330e9f3a" compoundref="ingress_8h" startline="54">hdtn::Ingress::m_bundleCountStorage</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a9aedae4edb73d8404869749c7a4fadca" compoundref="receive_8cpp" startline="160">hdtn::Ingress::Impl::BundlePipelineAckingSet::m_linkIsUp</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a32a8ddb2f69a093b412edeaf4fd9ba74" compoundref="TelemetryDefinitions_8h" startline="100">OutductCapabilityTelemetry_t::maxBundlesInPipeline</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a452ef93342838797f8b574e46c49bb1d" compoundref="TelemetryDefinitions_8h" startline="101">OutductCapabilityTelemetry_t::maxBundleSizeBytesInPipeline</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a04672bcc8ebd6c638b95bef030ce65b9" compoundref="TelemetryDefinitions_8h" startline="102">OutductCapabilityTelemetry_t::nextHopNodeId</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1afb6a99e8f82c7b82cd9994d583014df5" compoundref="receive_8cpp" startline="375" endline="377">hdtn::Ingress::Impl::BundlePipelineAckingSet::NotifyAll</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1a9c5d72d73fed07785a95581cd60d7053" compoundref="receive_8cpp" startline="2314" endline="2329">OnDeletedOpportunisticLinkCallback</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1a482e5989c03874e73ca3c038446700cc" compoundref="receive_8cpp" startline="2273" endline="2313">OnNewOpportunisticLinkCallback</references>
+        <references refid="structOutductCapabilityTelemetry__t_1a33cd295442b76ca142d75a8e000fb0aa" compoundref="TelemetryDefinitions_8h" startline="99">OutductCapabilityTelemetry_t::outductArrayIndex</references>
+        <references refid="structAllOutductCapabilitiesTelemetry__t_1af2bec1ba32e7338608ec6793360ae09a" compoundref="TelemetryDefinitions_8h" startline="121">AllOutductCapabilitiesTelemetry_t::outductCapabilityTelemetryList</references>
+        <references refid="structhdtn_1_1EgressAckHdr_1a8016614d29446639005a74b31cf7e303" compoundref="message_8hpp" startline="124">hdtn::EgressAckHdr::outductIndex</references>
+        <references refid="structhdtn_1_1StorageAckHdr_1a0f817850b1762be37547d514b1ab1b2d" compoundref="message_8hpp" startline="149">hdtn::StorageAckHdr::outductIndex</references>
+        <references refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" compoundref="zmq_8hpp" startline="289" endline="295">zmq::poll</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="classJsonSerializable_1a1adb23c7bad19b506530ddb773cc64be" compoundref="JsonSerializable_8cpp" startline="225" endline="231">JsonSerializable::SetValuesFromJsonCharArray</references>
+        <references refid="classzmq_1_1message__t_1a95bbb9796582768c847c5223ae03f206" compoundref="zmq_8hpp" startline="568" endline="571">zmq::message_t::size</references>
+        <references refid="namespacehdtn_1ad27d40f89c2305791552a7d9cc5af333" compoundref="receive_8cpp" startline="64">hdtn::STORAGE_MAX_BUNDLES_IN_PIPELINE</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a0ecbd0a7a220f495fd42146089b4ce82" compoundref="receive_8cpp" startline="266" endline="283">hdtn::Ingress::Impl::BundlePipelineAckingSet::Update</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1a8e7dcbda14d06f202cdc836c3e1d480b" compoundref="receive_8cpp" startline="2209" endline="2219">WholeBundleReadyCallback</references>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a64e356a2437970859c75b61c0aba5455" compoundref="receive_8cpp" startline="465" endline="781">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1ac7121aab7ff1f0e7e7d8a2d798ee17c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::ZmqTelemThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>ZmqTelemThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="82" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="1120" bodyend="1329"/>
+        <references refid="classTelemetryRequest_1ae1a036d26e21680efb742ce430913b5a" compoundref="TelemetryServer_8cpp" startline="112" endline="114">TelemetryRequest::Command</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="classBpSecConfig_1a8c2082f6ca6a28aec589e23e8c7d9470" compoundref="BpSecConfig_8cpp" startline="790" endline="806">BpSecConfig::CreateFromJson</references>
+        <references refid="classzmq_1_1message__t_1a15fd381c3e08edc4d5872e9831a96cfd" compoundref="zmq_8hpp" startline="561" endline="561">zmq::message_t::data</references>
+        <references refid="classTelemetryRequest_1adcd760e1058fa0f1bcb6a273f9ed0eda" compoundref="TelemetryServer_8cpp" startline="108" endline="110">TelemetryRequest::Error</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structAllInductTelemetry__t_1a1be705ad3b7676f8e0dc64a72926b72a" compoundref="TelemetryDefinitions_8h" startline="312">AllInductTelemetry_t::m_bundleByteCountEgress</references>
+        <references refid="classhdtn_1_1Ingress_1ace579d59c82bee78659d164cafe6cf93" compoundref="ingress_8h" startline="57">hdtn::Ingress::m_bundleByteCountEgress</references>
+        <references refid="structAllInductTelemetry__t_1a6463d521a412d31dde32c44a45f7b6aa" compoundref="TelemetryDefinitions_8h" startline="313">AllInductTelemetry_t::m_bundleByteCountStorage</references>
+        <references refid="classhdtn_1_1Ingress_1a2efa7939ab9f4c173b4dd946b908b758" compoundref="ingress_8h" startline="55">hdtn::Ingress::m_bundleByteCountStorage</references>
+        <references refid="structAllInductTelemetry__t_1ab511f56254c76e2881d5fc99e8f587f2" compoundref="TelemetryDefinitions_8h" startline="310">AllInductTelemetry_t::m_bundleCountEgress</references>
+        <references refid="classhdtn_1_1Ingress_1a8f272b5fd1e3607f10cb7bbe315c0427" compoundref="ingress_8h" startline="56">hdtn::Ingress::m_bundleCountEgress</references>
+        <references refid="structAllInductTelemetry__t_1a6037b662591af1781dd8f09190b5dd54" compoundref="TelemetryDefinitions_8h" startline="311">AllInductTelemetry_t::m_bundleCountStorage</references>
+        <references refid="classhdtn_1_1Ingress_1a40890e4ae16d5ce284381db5330e9f3a" compoundref="ingress_8h" startline="54">hdtn::Ingress::m_bundleCountStorage</references>
+        <references refid="classTelemetryRequest_1a49fe8aa3043876da68acb6af2261bca4" compoundref="TelemetryServer_8cpp" startline="104" endline="106">TelemetryRequest::More</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" compoundref="zmq_8hpp" startline="289" endline="295">zmq::poll</references>
+        <references refid="classBundleViewV7_1a556b6860c6aa268118ddd97731684452" compoundref="BundleViewV7_8cpp" startline="533" endline="559">BundleViewV7::Reset</references>
+        <references refid="classTelemetryRequest_1a7fe5173243a98949cd6e5f878e61b573" compoundref="TelemetryServer_8cpp" startline="45" endline="52">TelemetryRequest::SendResponse</references>
+        <references refid="classTelemetryRequest_1abe6c5bd66d2a5df3b91cdd725b246f1b" compoundref="TelemetryServer_8cpp" startline="96" endline="102">TelemetryRequest::SendResponseError</references>
+        <references refid="classTelemetryRequest_1a8ced8d3c0d35077f366ad11fa6802a75" compoundref="TelemetryServer_8cpp" startline="81" endline="86">TelemetryRequest::SendResponseSuccess</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="classJsonSerializable_1a762c2815fb637e887df4d9e537f17ba3" compoundref="JsonSerializable_8cpp" startline="124" endline="126">JsonSerializable::ToJson</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a64e356a2437970859c75b61c0aba5455" compoundref="receive_8cpp" startline="465" endline="781">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1adefc07a24121c39690e0f57eea66ada8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::RouterEventHandler</definition>
+        <argsstring>()</argsstring>
+        <name>RouterEventHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="83" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="1409" bodyend="1484"/>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1a2122c84b482c39b5f8b1477a1a366950" compoundref="message_8hpp" startline="167">hdtn::IreleaseChangeHdr::base</references>
+        <references refid="message_8hpp_1a4c334bcce76be3aa69c1d470d4ddeeeb" compoundref="message_8hpp" startline="41">HDTN_MSGTYPE_BUNDLES_FROM_ROUTER</references>
+        <references refid="message_8hpp_1a7a64cc14f371950b5da8bdc1b98d12c5" compoundref="message_8hpp" startline="62">HDTN_MSGTYPE_ILINKDOWN</references>
+        <references refid="message_8hpp_1a1b542b822d0fdbb0ccb2846c418ba8e8" compoundref="message_8hpp" startline="61">HDTN_MSGTYPE_ILINKUP</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a9aedae4edb73d8404869749c7a4fadca" compoundref="receive_8cpp" startline="160">hdtn::Ingress::Impl::BundlePipelineAckingSet::m_linkIsUp</references>
+        <references refid="structhdtn_1_1IreleaseChangeHdr_1aadfa61cfabb015ceba309733ae0e4ea4" compoundref="message_8hpp" startline="169">hdtn::IreleaseChangeHdr::outductArrayIndex</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool hdtn::Ingress::Impl::ProcessPaddedData</definition>
+        <argsstring>(uint8_t *bundleDataBegin, std::size_t bundleCurrentSize, std::unique_ptr&lt; zmq::message_t &gt; &amp;zmqPaddedMessageUnderlyingDataUniquePtr, padded_vector_uint8_t &amp;paddedVecMessageUnderlyingData, const bool usingZmqData, const bool needsProcessing, const bool isSafeToYieldThisThread)</argsstring>
+        <name>ProcessPaddedData</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>bundleDataBegin</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bundleCurrentSize</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref> &gt; &amp;</type>
+          <declname>zmqPaddedMessageUnderlyingDataUniquePtr</declname>
+        </param>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>paddedVecMessageUnderlyingData</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>usingZmqData</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>needsProcessing</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isSafeToYieldThisThread</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="84" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="1486" bodyend="2207"/>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da47330c484efdc1f575888f59b8643c86">ADMINRECORD</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1ad589a60e9480e31de4b403425576247b" compoundref="message_8hpp" startline="100">hdtn::ToEgressHdr::base</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a01dea401deea1583b27f6e9606dd99ea" compoundref="message_8hpp" startline="132">hdtn::ToStorageHdr::base</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a8e46d5a087ffb69f76ca061ec8c0eaf0" compoundref="receive_8cpp" startline="285" endline="304">hdtn::Ingress::Impl::BundlePipelineAckingSet::CompareAndPop_ThreadSafe</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13dad18592631af9d972cc052408d5905441">CUSTODY_REQUESTED</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1ab8978c514204cb4254f6451e60a4c814" compoundref="message_8hpp" startline="107">hdtn::ToEgressHdr::custodyId</references>
+        <references refid="namespacehdtn_1a549b496d6aff5a48a789ed4db8b2fd05" compoundref="EgressAsync_8cpp" startline="776" endline="779">hdtn::CustomCleanupPaddedVecUint8</references>
+        <references refid="namespacehdtn_1a4bc0559220c01b270857fb9102f9f8d6" compoundref="receive_8cpp" startline="792" endline="795">hdtn::CustomCleanupToEgressHdr</references>
+        <references refid="namespacehdtn_1ae265e844174ea345c51ef6a41605f259" compoundref="receive_8cpp" startline="797" endline="800">hdtn::CustomCleanupToStorageHdr</references>
+        <references refid="namespacehdtn_1a70869820d477d514424b499313d159df" compoundref="receive_8cpp" startline="783" endline="786">hdtn::CustomCleanupZmqMessage</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1af8d7f0404347e77bd29b2cbd40489b27" compoundref="message_8hpp" startline="133">hdtn::ToStorageHdr::dontStoreBundle</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aeb4195b868fc952f1da6c3ec5ac63d7a" compoundref="TestBpSecPolicyManager_8cpp" startline="586">errorList</references>
+        <references refid="classBpSecBundleProcessor_1aee788ee986721abcc4d5571b45f5b75c" compoundref="BpSecBundleProcessor_8cpp" startline="1630" endline="1641">BpSecBundleProcessor::ErrorListToString</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a9de8169b8bee2fc3a33ba7283611b059" compoundref="message_8hpp" startline="106">hdtn::ToEgressHdr::finalDestEid</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1ad21033ab9872f76c57bf44bb926a1771" compoundref="message_8hpp" startline="139">hdtn::ToStorageHdr::finalDestEid</references>
+        <references refid="structhdtn_1_1CommonHdr_1a25699a883f9c83724b338ad76571390b" compoundref="message_8hpp" startline="91">hdtn::CommonHdr::flags</references>
+        <references refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" compoundref="Uri_8cpp" startline="24" endline="29">Uri::GetIpnUriString</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a6af6f530643004f6c5f9d8e5e4009d83" compoundref="receive_8cpp" startline="378" endline="380">hdtn::Ingress::Impl::BundlePipelineAckingSet::GetNextHopNodeId</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1af59334a44a57578573a92f4f173d1c13" compoundref="message_8hpp" startline="101">hdtn::ToEgressHdr::hasCustody</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a53676ca33bd6417d37f17e1e90156cd0" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="350" endline="352">Bpv6CbhePrimaryBlock::HasFlagSet</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="message_8hpp_1a7c3837c067a85e203862b74d52416209" compoundref="message_8hpp" startline="40">HDTN_MSGTYPE_BUNDLES_TO_ROUTER</references>
+        <references refid="message_8hpp_1ae6874a400c01932ce536e0dc4af5acc5" compoundref="message_8hpp" startline="34">HDTN_MSGTYPE_EGRESS</references>
+        <references refid="message_8hpp_1a91bd3371a10c4464bd7dee77c0ebfbad" compoundref="message_8hpp" startline="35">HDTN_MSGTYPE_STORE</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a1065014e4ee716e9e4bbd984070e668e">HOP_COUNT</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a8b08b5ca3f18d231984d91a543033ce8" compoundref="message_8hpp" startline="137">hdtn::ToStorageHdr::ingressUniqueId</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1aa73a3568a58c810b3430d0eb286a0e46" compoundref="message_8hpp" startline="134">hdtn::ToStorageHdr::isCustodyOrAdminRecord</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a4fa20e0cac2c0fae664cb8407d46089e" compoundref="message_8hpp" startline="102">hdtn::ToEgressHdr::isCutThroughFromStorage</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv6CanonicalBlock_1ae30c6e82cb623bd6f77d97fa8cfcb171" compoundref="bpv6_8h" startline="187">Bpv6CanonicalBlock::m_blockTypeSpecificDataLength</references>
+        <references refid="structBpv6CanonicalBlock_1addd20445009c8e3c9a5f91516e3a93b3" compoundref="bpv6_8h" startline="188">Bpv6CanonicalBlock::m_blockTypeSpecificDataPtr</references>
+        <references refid="classhdtn_1_1Ingress_1ace579d59c82bee78659d164cafe6cf93" compoundref="ingress_8h" startline="57">hdtn::Ingress::m_bundleByteCountEgress</references>
+        <references refid="classhdtn_1_1Ingress_1a2efa7939ab9f4c173b4dd946b908b758" compoundref="ingress_8h" startline="55">hdtn::Ingress::m_bundleByteCountStorage</references>
+        <references refid="classhdtn_1_1Ingress_1a8f272b5fd1e3607f10cb7bbe315c0427" compoundref="ingress_8h" startline="56">hdtn::Ingress::m_bundleCountEgress</references>
+        <references refid="classhdtn_1_1Ingress_1a40890e4ae16d5ce284381db5330e9f3a" compoundref="ingress_8h" startline="54">hdtn::Ingress::m_bundleCountStorage</references>
+        <references refid="structBpv6CbhePrimaryBlock_1af1e392bfdbeaf03a8d9dbcda4fc154e1" compoundref="bpv6_8h" startline="95">Bpv6CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a0543a2b8132a58a3f60c0d9218fc7aaa" compoundref="bpv6_8h" startline="97">Bpv6CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1a9aedae4edb73d8404869749c7a4fadca" compoundref="receive_8cpp" startline="160">hdtn::Ingress::Impl::BundlePipelineAckingSet::m_linkIsUp</references>
+        <references refid="structBpv7PreviousNodeCanonicalBlock_1a0ed63a5d9a5c7f06ec1f6ba56ccd4141" compoundref="bpv7_8h" startline="438">Bpv7PreviousNodeCanonicalBlock::m_previousNode</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a8dc69443d36b46648ccac48270732335" compoundref="message_8hpp" startline="105">hdtn::ToEgressHdr::nextHopNodeId</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a01224a6340cec9ac7fe7d5e171807b2f" compoundref="message_8hpp" startline="108">hdtn::ToEgressHdr::outductIndex</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a357054b1f8cde4c18357cc1eccd57e0d" compoundref="message_8hpp" startline="138">hdtn::ToStorageHdr::outductIndex</references>
+        <references refid="structPaddedMallocatorConstants_1ae5bfda817fb358581fe657abc176dc98" compoundref="PaddedVectorUint8_8h" startline="32">PaddedMallocatorConstants::PADDING_ELEMENTS_BEFORE</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990ac8a2692003eb48983a08356f22ac783f">PREVIOUS_NODE</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a97caa79f4d4b31be229f7ebf9c22b033">REMOVE_BLOCK_IF_IT_CANT_BE_PROCESSED</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="structcbhe__eid__t_1a55b06071bd9a90713bdc90e42d5bc4b0" compoundref="Cbhe_8cpp" startline="55" endline="58">cbhe_eid_t::Set</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13daecf2a6aabcb0538532ba2a7d0d281557">SINGLETON</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+        <references refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet_1af1d6734fe0afbef380cedc647355f39f" compoundref="receive_8cpp" startline="310" endline="365">hdtn::Ingress::Impl::BundlePipelineAckingSet::WaitForPipelineAvailabilityAndReserve</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a6f1cafc1ce816f5f1306d044e7ae472b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::ReadTcpclOpportunisticBundlesFromEgressThreadFunc</definition>
+        <argsstring>()</argsstring>
+        <name>ReadTcpclOpportunisticBundlesFromEgressThreadFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="90" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="1331" bodyend="1407"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structPaddedMallocatorConstants_1ae5bfda817fb358581fe657abc176dc98" compoundref="PaddedVectorUint8_8h" startline="32">PaddedMallocatorConstants::PADDING_ELEMENTS_BEFORE</references>
+        <references refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" compoundref="zmq_8hpp" startline="289" endline="295">zmq::poll</references>
+        <references refid="classThreadNamer_1ad1372c7c172aae4f654ea92cf73bf953" compoundref="ThreadNamer_8cpp" startline="124" endline="126">ThreadNamer::SetThisThreadName</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="structPaddedMallocatorConstants_1a00b7a786139026204c2d9457fe1f3395" compoundref="PaddedVectorUint8_8h" startline="34">PaddedMallocatorConstants::TOTAL_PADDING_ELEMENTS</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a8e7dcbda14d06f202cdc836c3e1d480b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::WholeBundleReadyCallback</definition>
+        <argsstring>(padded_vector_uint8_t &amp;wholeBundleVec)</argsstring>
+        <name>WholeBundleReadyCallback</name>
+        <param>
+          <type><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref> &amp;</type>
+          <declname>wholeBundleVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="91" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="2209" bodyend="2219"/>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a482e5989c03874e73ca3c038446700cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::OnNewOpportunisticLinkCallback</definition>
+        <argsstring>(const uint64_t remoteNodeId, Induct *thisInductPtr, void *sinkPtr)</argsstring>
+        <name>OnNewOpportunisticLinkCallback</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+          <declname>thisInductPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>sinkPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="92" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="2273" bodyend="2313"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a9c5d72d73fed07785a95581cd60d7053" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::OnDeletedOpportunisticLinkCallback</definition>
+        <argsstring>(const uint64_t remoteNodeId, Induct *thisInductPtr, void *sinkPtrAboutToBeDeleted)</argsstring>
+        <name>OnDeletedOpportunisticLinkCallback</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classInduct" kindref="compound">Induct</ref> *</type>
+          <declname>thisInductPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>sinkPtrAboutToBeDeleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="94" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="2314" bodyend="2329"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <referencedby refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" compoundref="receive_8cpp" startline="802" endline="1114">ReadZmqAcksThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a5b9b4fb2b16613e1f2220552eb004fa2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::SendOpportunisticLinkMessages</definition>
+        <argsstring>(const uint64_t remoteNodeId, bool isAvailable)</argsstring>
+        <name>SendOpportunisticLinkMessages</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isAvailable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="97" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="2221" bodyend="2271"/>
+        <references refid="structhdtn_1_1ToEgressHdr_1ad589a60e9480e31de4b403425576247b" compoundref="message_8hpp" startline="100">hdtn::ToEgressHdr::base</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a01dea401deea1583b27f6e9606dd99ea" compoundref="message_8hpp" startline="132">hdtn::ToStorageHdr::base</references>
+        <references refid="namespacehdtn_1a4bc0559220c01b270857fb9102f9f8d6" compoundref="receive_8cpp" startline="792" endline="795">hdtn::CustomCleanupToEgressHdr</references>
+        <references refid="namespacehdtn_1ae265e844174ea345c51ef6a41605f259" compoundref="receive_8cpp" startline="797" endline="800">hdtn::CustomCleanupToStorageHdr</references>
+        <references refid="structhdtn_1_1ToEgressHdr_1a9de8169b8bee2fc3a33ba7283611b059" compoundref="message_8hpp" startline="106">hdtn::ToEgressHdr::finalDestEid</references>
+        <references refid="message_8hpp_1a1fc005acc93244b3c1bf111043552c3f" compoundref="message_8hpp" startline="36">HDTN_MSGTYPE_EGRESS_ADD_OPPORTUNISTIC_LINK</references>
+        <references refid="message_8hpp_1a68c8097b924c2146c86931559aeb50b2" compoundref="message_8hpp" startline="37">HDTN_MSGTYPE_EGRESS_REMOVE_OPPORTUNISTIC_LINK</references>
+        <references refid="message_8hpp_1a2d123064241a5850b91f290f8176695a" compoundref="message_8hpp" startline="38">HDTN_MSGTYPE_STORAGE_ADD_OPPORTUNISTIC_LINK</references>
+        <references refid="message_8hpp_1a068fd05e5b96123104bfbc2a40d0d06e" compoundref="message_8hpp" startline="39">HDTN_MSGTYPE_STORAGE_REMOVE_OPPORTUNISTIC_LINK</references>
+        <references refid="structhdtn_1_1ToStorageHdr_1a8b08b5ca3f18d231984d91a543033ce8" compoundref="message_8hpp" startline="137">hdtn::ToStorageHdr::ingressUniqueId</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+        <references refid="structhdtn_1_1CommonHdr_1a173831f0a7e9acb65566f243d5a399c1" compoundref="message_8hpp" startline="90">hdtn::CommonHdr::type</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::SendPing</definition>
+        <argsstring>(const uint64_t remoteNodeId, const uint64_t remotePingServiceNumber, const uint64_t bpVersion)</argsstring>
+        <name>SendPing</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remoteNodeId</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>remotePingServiceNumber</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bpVersion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="99" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="2337" bodyend="2513"/>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a51aaa5ee5500f5fc87ac7ef9ad0cb405" compoundref="BundleViewV7_8h" startline="93">BundleViewV7::Bpv7CanonicalBlockView::actualSerializedBlockPtr</references>
+        <references refid="classBundleViewV6_1a70759f50d31f88990d7ca2ed4046825d" compoundref="BundleViewV6_8cpp" startline="219" endline="225">BundleViewV6::AppendMoveCanonicalBlock</references>
+        <references refid="classBundleViewV7_1a2ee39eef80d3e4361690df393936527d" compoundref="BundleViewV7_8cpp" startline="360" endline="367">BundleViewV7::AppendMoveCanonicalBlock</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="namespacehdtn_1a549b496d6aff5a48a789ed4db8b2fd05" compoundref="EgressAsync_8cpp" startline="776" endline="779">hdtn::CustomCleanupPaddedVecUint8</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV6_1_1Bpv6CanonicalBlockView_1a308ce0f2c3b4b6b0ad14f6f6637661fe" compoundref="BundleViewV6_8h" startline="84">BundleViewV6::Bpv6CanonicalBlockView::headerPtr</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpv7CanonicalBlock_1a1841b984116094640351af6cf79946ba" compoundref="bpv7_8h" startline="386">Bpv7CanonicalBlock::m_blockNumber</references>
+        <references refid="structBpv6CanonicalBlock_1a91780d7a09f42cad2dd93e392238d98b" compoundref="bpv6_8h" startline="186">Bpv6CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv7CanonicalBlock_1a770a12675f629dd69c7c1d14464ba708" compoundref="bpv7_8h" startline="387">Bpv7CanonicalBlock::m_blockProcessingControlFlags</references>
+        <references refid="structBpv6CanonicalBlock_1a25c3cd2fd60c1ac80bfc000d014c63a8" compoundref="bpv6_8h" startline="189">Bpv6CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv7CanonicalBlock_1ae440c38f8ace47da7b0b059c1b074fc4" compoundref="bpv7_8h" startline="392">Bpv7CanonicalBlock::m_blockTypeCode</references>
+        <references refid="structBpv6CanonicalBlock_1ae30c6e82cb623bd6f77d97fa8cfcb171" compoundref="bpv6_8h" startline="187">Bpv6CanonicalBlock::m_blockTypeSpecificDataLength</references>
+        <references refid="structBpv6CanonicalBlock_1addd20445009c8e3c9a5f91516e3a93b3" compoundref="bpv6_8h" startline="188">Bpv6CanonicalBlock::m_blockTypeSpecificDataPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1af1e392bfdbeaf03a8d9dbcda4fc154e1" compoundref="bpv6_8h" startline="95">Bpv6CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a286bf33ec9e1229b9353048cea7357e5" compoundref="bpv7_8h" startline="325">Bpv7CbhePrimaryBlock::m_bundleProcessingControlFlags</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a4c11e7204e22c9af2d42b8ba71579717" compoundref="bpv7_8h" startline="335">Bpv7CbhePrimaryBlock::m_crcType</references>
+        <references refid="structBpv7CanonicalBlock_1a88523f11d5dae13761efb28a4a430d9f" compoundref="bpv7_8h" startline="393">Bpv7CanonicalBlock::m_crcType</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a130df13fb7751f88ad07ebaa13d21d0b" compoundref="bpv6_8h" startline="101">Bpv6CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv7CbhePrimaryBlock_1ab902c583d6948751e2a66dd00c0b675e" compoundref="bpv7_8h" startline="329">Bpv7CbhePrimaryBlock::m_creationTimestamp</references>
+        <references refid="structBpv7CanonicalBlock_1a83f08d9f511accaa9f4245085a3790a7" compoundref="bpv7_8h" startline="389">Bpv7CanonicalBlock::m_dataLength</references>
+        <references refid="structBpv7CanonicalBlock_1ae98d0fd4ae507d87a09f28c5bed10a71" compoundref="bpv7_8h" startline="388">Bpv7CanonicalBlock::m_dataPtr</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a0543a2b8132a58a3f60c0d9218fc7aaa" compoundref="bpv6_8h" startline="97">Bpv6CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBundleViewV6_1ac1e7ddd66ff0ac29a6448414ad1a47a4" compoundref="BundleViewV6_8h" startline="132">BundleViewV6::m_frontBuffer</references>
+        <references refid="classBundleViewV7_1adfd5f436c6a666903e43c0b8e17f7a9c" compoundref="BundleViewV7_8h" startline="148">BundleViewV7::m_frontBuffer</references>
+        <references refid="structBpv7HopCountCanonicalBlock_1a9707388359322099414d8c58f98517e4" compoundref="bpv7_8h" startline="481">Bpv7HopCountCanonicalBlock::m_hopCount</references>
+        <references refid="structBpv7HopCountCanonicalBlock_1ac1b69a3d7c7e48fb52213e1bb7be8c89" compoundref="bpv7_8h" startline="480">Bpv7HopCountCanonicalBlock::m_hopLimit</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a51c35115cb162d7b723948c8457469ee" compoundref="bpv7_8h" startline="330">Bpv7CbhePrimaryBlock::m_lifetimeMilliseconds</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a34196d37ac4264398a0bd33d47d92d08" compoundref="bpv6_8h" startline="102">Bpv6CbhePrimaryBlock::m_lifetimeSeconds</references>
+        <references refid="classBundleViewV6_1a58656352ce7cb4ac5ac9b14bcdfb94ca" compoundref="BundleViewV6_8h" startline="125">BundleViewV6::m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">BundleViewV7::m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a065c785975a707ba0507eb2eb0d5bd71" compoundref="bpv7_8h" startline="328">Bpv7CbhePrimaryBlock::m_reportToEid</references>
+        <references refid="structBpv6CbhePrimaryBlock_1ae27c1fbb7ced3160fc20fe0570af0607" compoundref="bpv6_8h" startline="98">Bpv6CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a8395a03fca28c59b45a44b1067a39ff7" compoundref="TimestampUtil_8h" startline="140">TimestampUtil::bpv7_creation_timestamp_t::millisecondsSinceStartOfYear2000</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a67ff8a4f200b1ad1b0c21620543577a6">NO_FLAGS_SET</references>
+        <references refid="bpv7_8h_1aece330c6f4d21d604bb368f99e790a0ca1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da860a24d0e7b2fcadbbb258aad2708ad7">PRIORITY_NORMAL</references>
+        <references refid="bpv7_8h_1aecee817f011a413a297b0ec149c79673a97caa79f4d4b31be229f7ebf9c22b033">REMOVE_BLOCK_IF_IT_CANT_BE_PROCESSED</references>
+        <references refid="classBundleViewV6_1a9de288b6fd509396de9109ea18f4c012" compoundref="BundleViewV6_8cpp" startline="106" endline="117">BundleViewV6::Render</references>
+        <references refid="classBundleViewV7_1a228d1743f7f5a7b1b990ae68ff0a0291" compoundref="BundleViewV7_8cpp" startline="177" endline="188">BundleViewV7::Render</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1a8520a3a9830516384d794d752e4b4b58" compoundref="TimestampUtil_8h" startline="88">TimestampUtil::bpv6_creation_timestamp_t::secondsSinceStartOfYear2000</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1afd6f8b0d3f287d5255b73aff56fca0de" compoundref="TimestampUtil_8h" startline="89">TimestampUtil::bpv6_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a935711417d49e0da59df30409105a926" compoundref="TimestampUtil_8h" startline="141">TimestampUtil::bpv7_creation_timestamp_t::sequenceNumber</references>
+        <references refid="structcbhe__eid__t_1a55b06071bd9a90713bdc90e42d5bc4b0" compoundref="Cbhe_8cpp" startline="55" endline="58">cbhe_eid_t::Set</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1af45583ae6d01a545846724308bda407c" compoundref="BundleViewV6_8cpp" startline="20" endline="22">BundleViewV6::Bpv6PrimaryBlockView::SetManuallyModified</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1a21638f71a78fe7ba9e4f3342adb756b0" compoundref="BundleViewV7_8cpp" startline="45" endline="47">BundleViewV7::Bpv7PrimaryBlockView::SetManuallyModified</references>
+        <references refid="structTimestampUtil_1_1bpv6__creation__timestamp__t_1ad49f581e4812b23e7b97ad1b2e3e465f" compoundref="TimestampUtil_8cpp" startline="340" endline="342">TimestampUtil::bpv6_creation_timestamp_t::SetTimeFromNow</references>
+        <references refid="structTimestampUtil_1_1bpv7__creation__timestamp__t_1a0f624721074822f2cd6deb387fc24d4e" compoundref="TimestampUtil_8cpp" startline="422" endline="424">TimestampUtil::bpv7_creation_timestamp_t::SetTimeFromNow</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13daecf2a6aabcb0538532ba2a7d0d281557">SINGLETON</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="structhdtn_1_1Ingress_1_1Impl_1a0f3cb6128cea991af1149c4dbf6531de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hdtn::Ingress::Impl::ProcessReceivedPingPayload</definition>
+        <argsstring>(const uint8_t *data, const uint64_t size, const uint64_t bpVersion)</argsstring>
+        <name>ProcessReceivedPingPayload</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>bpVersion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/ingress/src/receive.cpp" line="102" column="8" bodyfile="module/ingress/src/receive.cpp" bodystart="2515" bodyend="2536"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structhdtn_1_1ping__data__t_1a8ebd0f55373b9e404ced431dbf2e0cd7" compoundref="receive_8cpp" startline="2334">hdtn::ping_data_t::sendTime</references>
+        <references refid="structhdtn_1_1ping__data__t_1a9154ad7eb1ea802c87a26505462eda55" compoundref="receive_8cpp" startline="2333">hdtn::ping_data_t::sequence</references>
+        <references refid="namespacehdtn_1a3a9f86ed9c4e84f9b7f4208932225624" compoundref="EgressAsync_8cpp" startline="37">hdtn::subprocess</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="1">
+        <label>hdtn::Ingress::Impl</label>
+        <link refid="structhdtn_1_1Ingress_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>OutductsConfig</label>
+        <link refid="classOutductsConfig"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="8">
+        <label>JsonSerializable</label>
+        <link refid="classJsonSerializable"/>
+      </node>
+      <node id="4">
+        <label>InductManager</label>
+        <link refid="classInductManager"/>
+      </node>
+      <node id="3">
+        <label>hdtn::Ingress::Impl::BundlePipelineAckingSet</label>
+        <link refid="structhdtn_1_1Ingress_1_1Impl_1_1BundlePipelineAckingSet"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>TelemetryServer</label>
+        <link refid="classTelemetryServer"/>
+      </node>
+      <node id="7">
+        <label>HdtnConfig</label>
+        <link refid="classHdtnConfig"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_storageConfig</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_inductsConfig</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_outductsConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cbhe_eid_t</label>
+        <link refid="structcbhe__eid__t"/>
+      </node>
+      <node id="9">
+        <label>StorageConfig</label>
+        <link refid="classStorageConfig"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>InductsConfig</label>
+        <link refid="classInductsConfig"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>hdtn::Ingress::Impl</label>
+        <link refid="structhdtn_1_1Ingress_1_1Impl"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_singleStorageBundlePipelineAckingSet</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_inductManager</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_telemServer</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>M_HDTN_EID_CUSTODY</edgelabel>
+          <edgelabel>M_HDTN_EID_ECHO</edgelabel>
+          <edgelabel>M_HDTN_EID_PING</edgelabel>
+          <edgelabel>M_HDTN_EID_SECURITY_SOURCE</edgelabel>
+          <edgelabel>M_HDTN_EID_TO_ROUTER_BUNDLES</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_hdtnConfig</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/ingress/src/receive.cpp" line="68" column="1" bodyfile="module/ingress/src/receive.cpp" bodystart="68" bodyend="256"/>
+    <listofallmembers>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ad23c9beffdec2b7d6193d10c2cc76a95" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>BundlePipelineAckingSetPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a647b12820373a3a939ed1cb621a4c714" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>Impl</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a084b285f85a63af17dbf3cb48d7075d7" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ingress_exclusive_lock_t</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ae69272033c8886ce5ea494f3a73a9879" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ingress_shared_lock_t</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a64e356a2437970859c75b61c0aba5455" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>Init</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a5b3047cbd86b410d67c9895b04443ee5" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_aoctNeedsProcessing</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a58f0ada3c5d88e9c82f759e62cba5cf6" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_availableDestOpportunisticNodeIdToTcpclInductMap</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ad2b2214623d13f7ff8bb316d30cef5a5" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_availableDestOpportunisticNodeIdToTcpclInductMapMutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a4319aa6d69a22cdaa6cfc608aa9c0eac" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_bundleByteCountEgress</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a3d1337443f71e9f7e7221a4b1c742f6c" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_bundleByteCountStorage</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a370a586ab55cdcbd323681ea39c2c0db" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_bundleCountEgress</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ac2cb052b41969a728f12a0d26fc0bba7" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_bundleCountStorage</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ad88f9bcbef556cac541213256454dc8f" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_eventsTooManyInAllCutThroughQueues</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a7e53becc3063ab42d2943c1d9392b54a" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_eventsTooManyInEgressCutThroughQueue</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1af183ccbbd2837ef67b9641e40e821873" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_eventsTooManyInStorageCutThroughQueue</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a5938f68d8a59c1e02c8b6d9922792804" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>M_HDTN_EID_CUSTODY</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a6de946a4787a4b2264faebaad861f618" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>M_HDTN_EID_ECHO</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a0e3492a411b15a9e0aded002a33a48c6" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>M_HDTN_EID_PING</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ab1b8959e5aa0d90533c34c28da3da0bf" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>M_HDTN_EID_SECURITY_SOURCE</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ac9289ea30ac0e28fcacbf1c5b947ade5" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>M_HDTN_EID_TO_ROUTER_BUNDLES</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a2c86ffd0ea574ab13aa76b499b62af7b" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_hdtnConfig</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a2f18a40ee56142cb06b67e280ddc9a78" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_inductManager</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a07d057493c80e0019f7bf662f5aeb62a" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_inductsFailedToLoad</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a35d5695b094eb89c5a493e939760fe81" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_inductsFullyLoaded</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a6e51c779aa115470d8a51cd64c997176" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_inductsFullyLoadedConditionVariable</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a9f1aafc4252b344f830e54bcebdd2859" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_inductsFullyLoadedMutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a9071c479a80ac639faa9f5d59c36a5fd" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_ingressToEgressZmqSocketMutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1aff3b499f5d4c8ee1c1b31b256092f4a8" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_ingressToStorageZmqSocketMutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a076765411537992df96ef7bc1ed99454" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_mapFinalDestEidToOutductArrayIndex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a78823f7f1d3c9d6cc755aa91eab53370" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_mapFinalDestNodeIdToOutductArrayIndex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a12fdb098f8b14cf7798841e014d1bd2d" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_mapNextHopNodeIdToOutductArrayIndex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a4ffcd69fe4ea7e2952c4e25a19061f7b" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>M_MAX_INGRESS_BUNDLE_WAIT_ON_EGRESS_TIME_DURATION</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a075dd56a00ef4c7aa611129a798b073e" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_nextBundleUniqueIdAtomic</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a6336e72a06fb8e8e2e4ae5be5be58266" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_running</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1aaf3d60bd4cb73c55167ccc3408c5c1ed" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_sharedMutexFinalDestsToOutductArrayIndexMaps</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ab04bb03837f5673ecdf463765247e053" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_singleStorageBundlePipelineAckingSet</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a53c813c6abe5e6231b38d44eef935ef4" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_telemServer</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1aad7a16c465e86e38e861289e01440176" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_telemThreadStartupConditionVariable</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ade3367f4a29a8af3ccfee58d64a35e99" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_telemThreadStartupInProgress</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ac237c3da25c198ea8020c11e3aff8d39" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_telemThreadStartupMutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1aef1fe1c5b4c62e13d7a2987447a46fa6" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_threadTcpclOpportunisticBundlesFromEgressReaderPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1abbf48c0c7491871ad3ff356a10d2b9bc" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_threadZmqAckReaderPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1af79c1caa7f24a7fe86d1960fc921d3e0" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_threadZmqTelemPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1af52c2e8fed2bf19281dacbef5d6e40d2" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_vectorBundlePipelineAckingSet</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1aada0cb9cb9a3a40a3e304aecefe01a7c" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_workerThreadStartupConditionVariable</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1aba6049cfd320e5aa3117e263d60e700a" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_workerThreadStartupInProgress</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a25ef8f918bf70df9370505b59739fbaa" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_workerThreadStartupMutex</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a0744bbee4826e942f2d8f2fc01535ad9" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqCtxPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a6e9fb0d0139d77ef47c91a21f01ca77f" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqPullSock_connectingEgressBundlesOnlyToBoundIngressPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a9327b61b45b8395453e7a1bee31995f9" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqPullSock_connectingEgressToBoundIngressPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a956215d38e908169e46061353ed439d3" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqPullSock_connectingStorageToBoundIngressPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ab395264b63006d66a66580082012a792" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqPushSock_boundIngressToConnectingEgressPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a212309153ee0531631f5635d19fbd655" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqPushSock_boundIngressToConnectingStoragePtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a198a32824e35acd079219ec6a0d290da" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqRepSock_connectingTelemToFromBoundIngressPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a453198601ceb724a174b2a1466d7d7db" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>m_zmqSubSock_boundRouterToConnectingIngressPtr</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a9c5d72d73fed07785a95581cd60d7053" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>OnDeletedOpportunisticLinkCallback</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a482e5989c03874e73ca3c038446700cc" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>OnNewOpportunisticLinkCallback</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ae3d3dc7527796273ba825b0861d03980" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ProcessPaddedData</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a0f3cb6128cea991af1149c4dbf6531de" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ProcessReceivedPingPayload</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a6f1cafc1ce816f5f1306d044e7ae472b" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ReadTcpclOpportunisticBundlesFromEgressThreadFunc</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a7b4a6725e879c2dbde114ef0a57e317f" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ReadZmqAcksThreadFunc</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1adefc07a24121c39690e0f57eea66ada8" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>RouterEventHandler</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a5b9b4fb2b16613e1f2220552eb004fa2" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>SendOpportunisticLinkMessages</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a4650c36da7b9ef017e29719551b6fe8f" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>SendPing</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a3925fc152fc5256fa8ad063869963dec" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>Stop</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a7d13158cdf41a51e74814c48a55e38ee" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>Stopped</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1a8e7dcbda14d06f202cdc836c3e1d480b" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>WholeBundleReadyCallback</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1ac7121aab7ff1f0e7e7d8a2d798ee17c8" prot="private" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>ZmqTelemThreadFunc</name></member>
+      <member refid="structhdtn_1_1Ingress_1_1Impl_1acf4a08f1e79920d3adbd77391db8f145" prot="public" virt="non-virtual"><scope>hdtn::Ingress::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

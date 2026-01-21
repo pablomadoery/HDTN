@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classFreeListAllocatorDynamic" kind="class" language="C++" prot="public">
+    <compoundname>FreeListAllocatorDynamic</compoundname>
+    <includes refid="FreeListAllocator_8h" local="no">FreeListAllocator.h</includes>
+    <innerclass refid="unionFreeListAllocatorDynamic_1_1node" prot="private">FreeListAllocatorDynamic::node</innerclass>
+    <innerclass refid="structFreeListAllocatorDynamic_1_1rebind" prot="public">FreeListAllocatorDynamic::rebind</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>std::size_t</type>
+        <declname>MaxInitialListSize</declname>
+        <defname>MaxInitialListSize</defname>
+        <defval>100</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classFreeListAllocatorDynamic_1a251994e2bfd282faa9dd9f10430a556b" prot="public" static="no">
+        <type>T</type>
+        <definition>using FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::value_type =  T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="219" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" prot="public" static="no">
+        <type>std::size_t</type>
+        <definition>using FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::size_type =  std::size_t</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="220" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classFreeListAllocatorDynamic_1a732ae49bbeb38debe7cba4ffd1457fc2" prot="public" static="no">
+        <type>std::true_type</type>
+        <definition>using FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::propagate_on_container_move_assignment =  std::true_type</definition>
+        <argsstring></argsstring>
+        <name>propagate_on_container_move_assignment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="221" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" prot="private" static="no" mutable="no">
+        <type><ref refid="unionFreeListAllocatorDynamic_1_1node" kindref="compound">node</ref> *</type>
+        <definition>node* FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="213" column="10" bodyfile="common/util/include/FreeListAllocator.h" bodystart="213" bodyend="-1"/>
+        <referencedby refid="classFreeListAllocatorDynamic_1adaea705e22379d2f9a8aa1f3fd3cb6cc" compoundref="FreeListAllocator_8h" startline="274" endline="292">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::allocate</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" compoundref="FreeListAllocator_8h" startline="200" endline="209">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::clear</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" compoundref="FreeListAllocator_8h" startline="294" endline="307">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::deallocate</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a180b88867bd242d7096ff1ada5fe566d" compoundref="FreeListAllocator_8h" startline="263" endline="270">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::operator=</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" prot="public" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSize</definition>
+        <argsstring></argsstring>
+        <name>listSize</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="215" column="17" bodyfile="common/util/include/FreeListAllocator.h" bodystart="215" bodyend="-1"/>
+        <referencedby refid="classFreeListAllocatorDynamic_1adaea705e22379d2f9a8aa1f3fd3cb6cc" compoundref="FreeListAllocator_8h" startline="274" endline="292">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::allocate</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" compoundref="FreeListAllocator_8h" startline="200" endline="209">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::clear</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" compoundref="FreeListAllocator_8h" startline="294" endline="307">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::deallocate</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a180b88867bd242d7096ff1ada5fe566d" compoundref="FreeListAllocator_8h" startline="263" endline="270">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" prot="public" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSizeCopy</definition>
+        <argsstring></argsstring>
+        <name>listSizeCopy</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="216" column="17" bodyfile="common/util/include/FreeListAllocator.h" bodystart="216" bodyend="-1"/>
+        <referencedby refid="classFreeListAllocatorDynamic_1a63f52fe599ded0d121f666d01a135665" compoundref="FreeListAllocator_8h" startline="245" endline="247">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::GetCurrentListSizeFromGetAllocatorCopy</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a313ef9ffde66cf9a43f90a7375c4763f" compoundref="FreeListAllocator_8h" startline="257" endline="261">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; std::size_t &gt;</type>
+        <definition>std::shared_ptr&lt;std::size_t&gt; FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::maxListSizePtr</definition>
+        <argsstring></argsstring>
+        <name>maxListSizePtr</name>
+        <initializer>= std::make_shared&lt;std::size_t&gt;(MaxInitialListSize)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="217" column="21" bodyfile="common/util/include/FreeListAllocator.h" bodystart="217" bodyend="-1"/>
+        <referencedby refid="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" compoundref="FreeListAllocator_8h" startline="294" endline="307">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::deallocate</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a49637f72921cfae30325875d67b9d798" compoundref="FreeListAllocator_8h" startline="249" endline="251">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::GetMaxListSize</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1aa766a444ce9819ec33f711af371ff124" compoundref="FreeListAllocator_8h" startline="253" endline="255">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::SetMaxListSizeFromGetAllocatorCopy</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::clear</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="200" column="10" bodyfile="common/util/include/FreeListAllocator.h" bodystart="200" bodyend="209"/>
+        <references refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" compoundref="FreeListAllocator_8h" startline="213">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::list</references>
+        <references refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" compoundref="FreeListAllocator_8h" startline="215">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSize</references>
+        <references refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" compoundref="FreeListAllocator_8h" startline="196">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::node::next</references>
+        <referencedby refid="classFreeListAllocatorDynamic_1a180b88867bd242d7096ff1ada5fe566d" compoundref="FreeListAllocator_8h" startline="263" endline="270">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::operator=</referencedby>
+        <referencedby refid="classFreeListAllocatorDynamic_1a00ceba10963ec05a3c155512b5b5b575" compoundref="FreeListAllocator_8h" startline="272" endline="272">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::~FreeListAllocatorDynamic</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a6dcb6b71c04e2dab18a7ee8788fe6be4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::FreeListAllocatorDynamic</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>FreeListAllocatorDynamic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="225" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="225" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a419223279e75853bf626b77877afc674" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::FreeListAllocatorDynamic</definition>
+        <argsstring>(const FreeListAllocatorDynamic &amp;other) noexcept</argsstring>
+        <name>FreeListAllocatorDynamic</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="226" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="226" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a602d61ab37e64e263dea5b011fe15834" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::FreeListAllocatorDynamic</definition>
+        <argsstring>(const FreeListAllocatorDynamic&lt; U, MaxInitialListSize &gt; &amp;other) noexcept</argsstring>
+        <name>FreeListAllocatorDynamic</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref>&lt; U, MaxInitialListSize &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="230" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="230" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a70792cf191de61f63dd4fabc586c5bbf" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::FreeListAllocatorDynamic</definition>
+        <argsstring>(FreeListAllocatorDynamic &amp;&amp;other) noexcept</argsstring>
+        <name>FreeListAllocatorDynamic</name>
+        <param>
+          <type><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="234" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="234" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a63f52fe599ded0d121f666d01a135665" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::GetCurrentListSizeFromGetAllocatorCopy</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetCurrentListSizeFromGetAllocatorCopy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="245" column="17" bodyfile="common/util/include/FreeListAllocator.h" bodystart="245" bodyend="247"/>
+        <references refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" compoundref="FreeListAllocator_8h" startline="216">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSizeCopy</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a49637f72921cfae30325875d67b9d798" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::GetMaxListSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMaxListSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="249" column="17" bodyfile="common/util/include/FreeListAllocator.h" bodystart="249" bodyend="251"/>
+        <references refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" compoundref="FreeListAllocator_8h" startline="217">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::maxListSizePtr</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1aa766a444ce9819ec33f711af371ff124" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::SetMaxListSizeFromGetAllocatorCopy</definition>
+        <argsstring>(std::size_t newMaxListSize) const</argsstring>
+        <name>SetMaxListSizeFromGetAllocatorCopy</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>newMaxListSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="253" column="10" bodyfile="common/util/include/FreeListAllocator.h" bodystart="253" bodyend="255"/>
+        <references refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" compoundref="FreeListAllocator_8h" startline="217">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::maxListSizePtr</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a313ef9ffde66cf9a43f90a7375c4763f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref> &amp;</type>
+        <definition>FreeListAllocatorDynamic&amp; FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::operator=</definition>
+        <argsstring>(const FreeListAllocatorDynamic &amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="257" column="30" bodyfile="common/util/include/FreeListAllocator.h" bodystart="257" bodyend="261"/>
+        <references refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" compoundref="FreeListAllocator_8h" startline="216">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSizeCopy</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a180b88867bd242d7096ff1ada5fe566d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref> &amp;</type>
+        <definition>FreeListAllocatorDynamic&amp; FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::operator=</definition>
+        <argsstring>(FreeListAllocatorDynamic &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classFreeListAllocatorDynamic" kindref="compound">FreeListAllocatorDynamic</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="263" column="30" bodyfile="common/util/include/FreeListAllocator.h" bodystart="263" bodyend="270"/>
+        <references refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" compoundref="FreeListAllocator_8h" startline="200" endline="209">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::clear</references>
+        <references refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" compoundref="FreeListAllocator_8h" startline="213">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::list</references>
+        <references refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" compoundref="FreeListAllocator_8h" startline="215">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSize</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a00ceba10963ec05a3c155512b5b5b575" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::~FreeListAllocatorDynamic</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>~FreeListAllocatorDynamic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="272" column="5" bodyfile="common/util/include/FreeListAllocator.h" bodystart="272" bodyend="272"/>
+        <references refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" compoundref="FreeListAllocator_8h" startline="200" endline="209">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::clear</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1adaea705e22379d2f9a8aa1f3fd3cb6cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::allocate</definition>
+        <argsstring>(size_type n)</argsstring>
+        <name>allocate</name>
+        <param>
+          <type><ref refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" kindref="member">size_type</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="274" column="7" bodyfile="common/util/include/FreeListAllocator.h" bodystart="274" bodyend="292"/>
+        <references refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" compoundref="FreeListAllocator_8h" startline="213">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::list</references>
+        <references refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" compoundref="FreeListAllocator_8h" startline="215">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSize</references>
+        <references refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" compoundref="FreeListAllocator_8h" startline="196">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::node::next</references>
+      </memberdef>
+      <memberdef kind="function" id="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::deallocate</definition>
+        <argsstring>(T *ptr, size_type n) noexcept</argsstring>
+        <name>deallocate</name>
+        <param>
+          <type>T *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" kindref="member">size_type</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/util/include/FreeListAllocator.h" line="294" column="10" bodyfile="common/util/include/FreeListAllocator.h" bodystart="294" bodyend="307"/>
+        <references refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" compoundref="FreeListAllocator_8h" startline="213">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::list</references>
+        <references refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" compoundref="FreeListAllocator_8h" startline="215">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::listSize</references>
+        <references refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" compoundref="FreeListAllocator_8h" startline="217">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::maxListSizePtr</references>
+        <references refid="unionFreeListAllocatorDynamic_1_1node_1ac0d90c79eaf697a6d9e002d39b10643d" compoundref="FreeListAllocator_8h" startline="196">FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::node::next</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;</label>
+        <link refid="classFreeListAllocatorDynamic"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>FreeListAllocatorDynamic&lt; T, MaxInitialListSize &gt;::node</label>
+        <link refid="unionFreeListAllocatorDynamic_1_1node"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/util/include/FreeListAllocator.h" line="194" column="1" bodyfile="common/util/include/FreeListAllocator.h" bodystart="194" bodyend="313"/>
+    <listofallmembers>
+      <member refid="classFreeListAllocatorDynamic_1adaea705e22379d2f9a8aa1f3fd3cb6cc" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>allocate</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a507117213c27afbe1758c1b10ef578ec" prot="private" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>clear</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a0deb53e23aaa6b127b98e6a7868efa88" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>deallocate</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a6dcb6b71c04e2dab18a7ee8788fe6be4" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>FreeListAllocatorDynamic</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a419223279e75853bf626b77877afc674" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>FreeListAllocatorDynamic</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a602d61ab37e64e263dea5b011fe15834" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>FreeListAllocatorDynamic</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a70792cf191de61f63dd4fabc586c5bbf" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>FreeListAllocatorDynamic</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a63f52fe599ded0d121f666d01a135665" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>GetCurrentListSizeFromGetAllocatorCopy</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a49637f72921cfae30325875d67b9d798" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>GetMaxListSize</name></member>
+      <member refid="classFreeListAllocatorDynamic_1aabc252c38fb326a8960002da73cd39b5" prot="private" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>list</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a9aaf1d5fb0ee146aba719f09a9fe2411" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>listSize</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a8f906b41750b1641392485644a713997" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>listSizeCopy</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a8b2d11e3a5cf8be10c4c80eba7574257" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>maxListSizePtr</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a313ef9ffde66cf9a43f90a7375c4763f" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>operator=</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a180b88867bd242d7096ff1ada5fe566d" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>operator=</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a732ae49bbeb38debe7cba4ffd1457fc2" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>propagate_on_container_move_assignment</name></member>
+      <member refid="classFreeListAllocatorDynamic_1aa766a444ce9819ec33f711af371ff124" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>SetMaxListSizeFromGetAllocatorCopy</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a35a40cce88c342c3282ee3ab6ab04e37" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>size_type</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a251994e2bfd282faa9dd9f10430a556b" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>value_type</name></member>
+      <member refid="classFreeListAllocatorDynamic_1a00ceba10963ec05a3c155512b5b5b575" prot="public" virt="non-virtual"><scope>FreeListAllocatorDynamic</scope><name>~FreeListAllocatorDynamic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

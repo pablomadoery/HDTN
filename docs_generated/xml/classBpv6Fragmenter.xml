@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpv6Fragmenter" kind="class" language="C++" prot="public">
+    <compoundname>Bpv6Fragmenter</compoundname>
+    <includes refid="Bpv6Fragment_8h" local="no">Bpv6Fragment.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classBpv6Fragmenter_1a02a5d2099869fb48bd913f6e3a2b8abb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool Bpv6Fragmenter::Fragment</definition>
+        <argsstring>(BundleViewV6 &amp;orig, uint64_t sz, std::list&lt; BundleViewV6 &gt; &amp;fragments)</argsstring>
+        <name>Fragment</name>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>orig</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>sz</declname>
+        </param>
+        <param>
+          <type>std::list&lt; <ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &gt; &amp;</type>
+          <declname>fragments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fragment bundle into multiple fragments of size sz per RFC5050</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>orig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bundle to fragment </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max payload size for each fragmetn </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragments[out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fragments if successful</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if able to fragment, false otherwise</para>
+</simplesect>
+The original bundle is not modified. sz must be greater than zero and smaller than the length of the payload of the original bundle.</para>
+<para>The payload of the fragmented bundles will be at most sz bytes long. Upon successful fragmentation, there will be at least two fragments. All fragments will have payloads of size sz except for possibly the last fragment.</para>
+<para>The original bundle must not be dirty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6Fragment.h" line="47" column="32" bodyfile="common/bpcodec/src/codec/Bpv6Fragment.cpp" bodystart="137" bodyend="212"/>
+        <references refid="Bpv6Fragment_8cpp_1a4d598cb1d45b26bd41d530f59ad14ed5" compoundref="Bpv6Fragment_8cpp" startline="98" endline="125">AppendBlock</references>
+        <references refid="Bpv6Fragment_8cpp_1a67798f0b5df0a2f77e85cb8365918019" compoundref="Bpv6Fragment_8cpp" startline="61" endline="76">AppendFragmentPayloadBlock</references>
+        <references refid="classBpv6Fragmenter_1a3d6f0394de001d9d8c5b702aedeb1b50" compoundref="Bpv6Fragment_8cpp" startline="133" endline="135">CalcNumFragments</references>
+        <references refid="Bpv6Fragment_8cpp_1a53d183a3580e30dc923e1a5216ab1c67" compoundref="Bpv6Fragment_8cpp" startline="29" endline="40">CopyPrimaryFragment</references>
+        <references refid="classBundleViewV6_1ac6b9fe4d1c2d3f76b02b6feafce88683" compoundref="BundleViewV6_8cpp" startline="295" endline="309">BundleViewV6::GetPayloadSize</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a53676ca33bd6417d37f17e1e90156cd0" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="350" endline="352">Bpv6CbhePrimaryBlock::HasFlagSet</references>
+        <references refid="structBpv6CbhePrimaryBlock_1aeb21a7fc8dcaeb92f5bdfeeb69e6179a" compoundref="Bpv6CbhePrimaryBlock_8cpp" startline="302" endline="304">Bpv6CbhePrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="structBundleViewV6_1_1Bpv6PrimaryBlockView_1a7c77ab0f06868b056502f021b6c0f6c2" compoundref="BundleViewV6_8h" startline="77">BundleViewV6::Bpv6PrimaryBlockView::header</references>
+        <references refid="structBundleViewV6_1_1Bpv6CanonicalBlockView_1a308ce0f2c3b4b6b0ad14f6f6637661fe" compoundref="BundleViewV6_8h" startline="84">BundleViewV6::Bpv6CanonicalBlockView::headerPtr</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="structBpv6CbhePrimaryBlock_1a940a8292fc4f2e44119fde9911956b76" compoundref="bpv6_8h" startline="104">Bpv6CbhePrimaryBlock::m_fragmentOffset</references>
+        <references refid="classBundleViewV6_1a58656352ce7cb4ac5ac9b14bcdfb94ca" compoundref="BundleViewV6_8h" startline="125">BundleViewV6::m_listCanonicalBlockView</references>
+        <references refid="classBundleViewV6_1a8e6414b136116361f0f9ffeefbb6a8db" compoundref="BundleViewV6_8h" startline="121">BundleViewV6::m_primaryBlockView</references>
+        <references refid="classBundleViewV6_1a150b26cc83d82384c8dfc52bd57d5171" compoundref="BundleViewV6_8h" startline="131">BundleViewV6::m_renderedBundle</references>
+        <references refid="structBpv6CbhePrimaryBlock_1abf3c992cc58c24bba77baed2b4cdf9ec" compoundref="bpv6_8h" startline="105">Bpv6CbhePrimaryBlock::m_totalApplicationDataUnitLength</references>
+        <references refid="Bpv6Fragment_8cpp_1a3737a6d6e1b488832b047ab5ad824b72" compoundref="Bpv6Fragment_8cpp" startline="128" endline="131">MustReplicateInAll</references>
+        <references refid="bpv6_8h_1a5b229f58f6b0391577dadbdecba6c13da1fb65f743d8408705ffc15b3503f5a0d">NOFRAGMENT</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="classBundleViewV6_1a9de288b6fd509396de9109ea18f4c012" compoundref="BundleViewV6_8cpp" startline="106" endline="117">BundleViewV6::Render</references>
+        <references refid="Bpv6Fragment_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="Bpv6Fragment_8cpp" startline="26">subprocess</references>
+        <referencedby refid="TestBpv6Fragmentation_8cpp_1a24f3fc1aa868877d9e307a95024ff1e8" compoundref="TestBpv6Fragmentation_8cpp" startline="71" endline="87">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="TestBpv6Fragmentation_8cpp_1a3ee954e90bee6fba62aa3e18c8e11143" compoundref="TestBpv6Fragmentation_8cpp" startline="183" endline="221">BOOST_DATA_TEST_CASE</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a3d02fc64c721f7bbae4883092a3a6728" compoundref="ZmqStorageInterface_8cpp" startline="762" endline="887">ZmqStorageInterface::Impl::ProcessBundleCustody</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a01182860bc96db8296ffb8f621c0538a" compoundref="ZmqStorageInterface_8cpp" startline="899" endline="1034">ZmqStorageInterface::Impl::Write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpv6Fragmenter_1a0d1c5071f95b10e847918597442b870d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT bool</type>
+        <definition>bool Bpv6Fragmenter::Assemble</definition>
+        <argsstring>(std::list&lt; BundleViewV6 &gt; &amp;fragments, BundleViewV6 &amp;bundle)</argsstring>
+        <name>Assemble</name>
+        <param>
+          <type>std::list&lt; <ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &gt; &amp;</type>
+          <declname>fragments</declname>
+        </param>
+        <param>
+          <type><ref refid="classBundleViewV6" kindref="compound">BundleViewV6</ref> &amp;</type>
+          <declname>bundle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assemble multiple fragments into a non-fragmented bundle</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fragments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fragments to assemble </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bundle[out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The assembled bundle</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successfully assembled, false otherwise</para>
+</simplesect>
+The fragment bundles are not modified. All fragments must be present (though may possibly overlap). See RFC5050 for details.</para>
+<para>All fragments must have been fragmented from the same original bundle (allowing for multiple fragmenting sessions). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6Fragment.h" line="63" column="32" bodyfile="common/bpcodec/src/codec/Bpv6Fragment.cpp" bodystart="310" bodyend="362"/>
+        <references refid="Bpv6Fragment_8cpp_1a4d598cb1d45b26bd41d530f59ad14ed5" compoundref="Bpv6Fragment_8cpp" startline="98" endline="125">AppendBlock</references>
+        <references refid="Bpv6Fragment_8cpp_1ab344f1e4397e06133356b319f2597b2f" compoundref="Bpv6Fragment_8cpp" startline="215" endline="262">AssemblePayload</references>
+        <references refid="Bpv6Fragment_8cpp_1aba403abacece626904a09236c9b7b6fb" compoundref="Bpv6Fragment_8cpp" startline="44" endline="55">CopyPrimaryNoFragment</references>
+        <references refid="Bpv6Fragment_8cpp_1a706acdc1a651ae0f8a7cc06620cf4a22" compoundref="Bpv6Fragment_8cpp" startline="80" endline="95">CreatePayloadBlock</references>
+        <references refid="Bpv6Fragment_8cpp_1ae62072f521bd218333eab536316c613a" compoundref="Bpv6Fragment_8cpp" startline="270" endline="279">GetEndFragments</references>
+        <references refid="structBundleViewV6_1_1Bpv6CanonicalBlockView_1a308ce0f2c3b4b6b0ad14f6f6637661fe" compoundref="BundleViewV6_8h" startline="84">BundleViewV6::Bpv6CanonicalBlockView::headerPtr</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classBundleViewV6_1a58656352ce7cb4ac5ac9b14bcdfb94ca" compoundref="BundleViewV6_8h" startline="125">BundleViewV6::m_listCanonicalBlockView</references>
+        <references refid="bpv6_8h_1a9d685151800c2cb7f64b3d25ee9a5132aca8fef80e43c8db749b7c9406d535b1a">PAYLOAD</references>
+        <references refid="classBundleViewV6_1a9de288b6fd509396de9109ea18f4c012" compoundref="BundleViewV6_8cpp" startline="106" endline="117">BundleViewV6::Render</references>
+        <references refid="classBundleViewV6_1a07862f753f57041253e7cb3e4f928b59" compoundref="BundleViewV6_8cpp" startline="312" endline="336">BundleViewV6::Reset</references>
+        <references refid="Bpv6Fragment_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="Bpv6Fragment_8cpp" startline="26">subprocess</references>
+        <references refid="Bpv6Fragment_8cpp_1ad91df52de2a9110fa4ad052894ab584e" compoundref="Bpv6Fragment_8cpp" startline="282" endline="308">Validate</references>
+        <referencedby refid="classBpv6FragmentManager_1a443f0d3bc141af673bcb8276f503d221" compoundref="Bpv6FragmentManager_8cpp" startline="40" endline="89">Bpv6FragmentManager::AddFragmentAndGetComplete</referencedby>
+        <referencedby refid="TestBpv6Fragmentation_8cpp_1a7a910f1626a7d7bd7a4217f2380e5b56" compoundref="TestBpv6Fragmentation_8cpp" startline="634" endline="660">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="TestBpv6Fragmentation_8cpp_1a7a182eb9a238808d864ef4d972a94323" compoundref="TestBpv6Fragmentation_8cpp" startline="586" endline="632">BOOST_DATA_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpv6Fragmenter_1a3d6f0394de001d9d8c5b702aedeb1b50" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPCODEC_EXPORT uint64_t</type>
+        <definition>uint64_t Bpv6Fragmenter::CalcNumFragments</definition>
+        <argsstring>(uint64_t payloadSize, uint64_t fragmentSize)</argsstring>
+        <name>CalcNumFragments</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>payloadSize</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>fragmentSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate number of fragments that would be created by fragmenting at fragmentSize</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>payloadSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the payload </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragmentSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired size of payload in each fragment</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number of fragments that would be created if fragmenting at fragmentSize</para>
+</simplesect>
+Example: CalcNumFragments(80, 40) -&gt; 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpcodec/include/codec/Bpv6Fragment.h" line="75" column="36" bodyfile="common/bpcodec/src/codec/Bpv6Fragment.cpp" bodystart="133" bodyend="135"/>
+        <referencedby refid="TestBpv6Fragmentation_8cpp_1a50e2a0c431dcd7d7fd4158dd47ae0ad1" compoundref="TestBpv6Fragmentation_8cpp" startline="903" endline="911">BOOST_DATA_TEST_CASE</referencedby>
+        <referencedby refid="classBpv6Fragmenter_1a02a5d2099869fb48bd913f6e3a2b8abb" compoundref="Bpv6Fragment_8cpp" startline="137" endline="212">Fragment</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Fragment and assemble Bpv6 bundles </para>
+    </detaileddescription>
+    <location file="common/bpcodec/include/codec/Bpv6Fragment.h" line="25" column="1" bodyfile="common/bpcodec/include/codec/Bpv6Fragment.h" bodystart="25" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classBpv6Fragmenter_1a0d1c5071f95b10e847918597442b870d" prot="public" virt="non-virtual"><scope>Bpv6Fragmenter</scope><name>Assemble</name></member>
+      <member refid="classBpv6Fragmenter_1a3d6f0394de001d9d8c5b702aedeb1b50" prot="public" virt="non-virtual"><scope>Bpv6Fragmenter</scope><name>CalcNumFragments</name></member>
+      <member refid="classBpv6Fragmenter_1a02a5d2099869fb48bd913f6e3a2b8abb" prot="public" virt="non-virtual"><scope>Bpv6Fragmenter</scope><name>Fragment</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

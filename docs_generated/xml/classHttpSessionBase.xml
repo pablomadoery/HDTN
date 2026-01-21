@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classHttpSessionBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>HttpSessionBase</compoundname>
+    <derivedcompoundref refid="classHttpSession" prot="public" virt="non-virtual">HttpSession&lt; PlainHttpSession &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classHttpSession" prot="public" virt="non-virtual">HttpSession&lt; Derived &gt;</derivedcompoundref>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classHttpSessionBase_1a5924d1e5cd0dee5dd9e6614aad621981" prot="protected" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::size_t</type>
+        <definition>constexpr std::size_t HttpSessionBase::QUEUE_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>QUEUE_LIMIT</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="739" column="34" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="739" bodyend="-1"/>
+        <referencedby refid="classHttpSessionBase_1a6435edbee6142da02eb44b0a7b351e01" compoundref="BeastWebsocketServer_8cpp" startline="650" endline="652">QueueIsFull</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classHttpSessionBase_1a6e78d14843ac4001a9d2afa8455a9de5" prot="protected" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="structResponse" kindref="compound">Response</ref> &gt;</type>
+        <definition>std::queue&lt;Response&gt; HttpSessionBase::m_responseQueue</definition>
+        <argsstring></argsstring>
+        <name>m_responseQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="740" column="16" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="740" bodyend="-1"/>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+        <referencedby refid="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" compoundref="BeastWebsocketServer_8cpp" startline="709" endline="735">HandleSendResponseCompleted</referencedby>
+        <referencedby refid="classHttpSessionBase_1a6435edbee6142da02eb44b0a7b351e01" compoundref="BeastWebsocketServer_8cpp" startline="650" endline="652">QueueIsFull</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classHttpSessionBase_1a741a542ac475b35d75bcb9accfc671f0" prot="protected" static="no" mutable="no">
+        <type>boost::beast::flat_buffer</type>
+        <definition>boost::beast::flat_buffer HttpSessionBase::m_flatBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_flatBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="741" column="31" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="741" bodyend="-1"/>
+        <referencedby refid="classHttpSession_1a457cb18263a15f91f749b057b16d2ce4" compoundref="BeastWebsocketServer_8cpp" startline="824" endline="845">HttpSession&lt; Derived &gt;::AsyncReadRequestFromRemoteClient</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classHttpSessionBase_1a385044edc90e5b697b83193c3edee970" prot="protected" static="no" mutable="no">
+        <type><ref refid="BeastWebsocketServer_8cpp_1a5f20285d054284db85eb1214abcb284b" kindref="member">ServerState_ptr</ref></type>
+        <definition>ServerState_ptr HttpSessionBase::m_serverStatePtr</definition>
+        <argsstring></argsstring>
+        <name>m_serverStatePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="742" column="21" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="742" bodyend="-1"/>
+        <referencedby refid="classHttpSession_1a5855d561497a39f886f236b22a6eeae0" compoundref="BeastWebsocketServer_8cpp" startline="768" endline="770">HttpSession&lt; Derived &gt;::DoMakeWebsocketSession</referencedby>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classHttpSessionBase_1ad2b5c65eaafed934cc5fa5a503d74728" prot="protected" static="no" mutable="no">
+        <type>boost::optional&lt; boost::beast::http::request_parser&lt; boost::beast::http::string_body &gt; &gt;</type>
+        <definition>boost::optional&lt;boost::beast::http::request_parser&lt;boost::beast::http::string_body&gt; &gt; HttpSessionBase::m_requestParser</definition>
+        <argsstring></argsstring>
+        <name>m_requestParser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="745" column="21" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="745" bodyend="-1"/>
+        <referencedby refid="classHttpSession_1a457cb18263a15f91f749b057b16d2ce4" compoundref="BeastWebsocketServer_8cpp" startline="824" endline="845">HttpSession&lt; Derived &gt;::AsyncReadRequestFromRemoteClient</referencedby>
+        <referencedby refid="classHttpSession_1a5855d561497a39f886f236b22a6eeae0" compoundref="BeastWebsocketServer_8cpp" startline="768" endline="770">HttpSession&lt; Derived &gt;::DoMakeWebsocketSession</referencedby>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classHttpSessionBase_1a171185c999916b2bed4963176a6b668f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HttpSessionBase::HttpSessionBase</definition>
+        <argsstring>(boost::beast::flat_buffer &amp;&amp;buffer, ServerState_ptr &amp;serverStatePtr)</argsstring>
+        <name>HttpSessionBase</name>
+        <param>
+          <type>boost::beast::flat_buffer &amp;&amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="BeastWebsocketServer_8cpp_1a5f20285d054284db85eb1214abcb284b" kindref="member">ServerState_ptr</ref> &amp;</type>
+          <declname>serverStatePtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="644" column="5" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="644" bodyend="646"/>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a03657409cdb417e8a7a87bedcd76f3f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual HttpSessionBase::~HttpSessionBase</definition>
+        <argsstring>()</argsstring>
+        <name>~HttpSessionBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="647" column="13" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="647" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a04bb700de6639c60abf6efffd311695d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void HttpSessionBase::AsyncReadRequestFromRemoteClient</definition>
+        <argsstring>()=0</argsstring>
+        <name>AsyncReadRequestFromRemoteClient</name>
+        <reimplementedby refid="classHttpSession_1a457cb18263a15f91f749b057b16d2ce4">AsyncReadRequestFromRemoteClient</reimplementedby>
+        <reimplementedby refid="classHttpSession_1a457cb18263a15f91f749b057b16d2ce4">AsyncReadRequestFromRemoteClient</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="659" column="18"/>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+        <referencedby refid="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" compoundref="BeastWebsocketServer_8cpp" startline="709" endline="735">HandleSendResponseCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void HttpSessionBase::HandleReadRequestFromRemoteClientCompleted</definition>
+        <argsstring>(boost::beast::error_code ec, std::size_t bytes_transferred)</argsstring>
+        <name>HandleReadRequestFromRemoteClientCompleted</name>
+        <param>
+          <type>boost::beast::error_code</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="661" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="661" bodyend="705"/>
+        <references refid="classHttpSessionBase_1a04bb700de6639c60abf6efffd311695d">AsyncReadRequestFromRemoteClient</references>
+        <references refid="classHttpSessionBase_1a5b6910f56d17cd9d95c97e55f2f6d42d">AsyncSendResponse</references>
+        <references refid="classHttpSessionBase_1a625a4940dcb44c2fc2ffb52633b881e6">DoEof</references>
+        <references refid="classHttpSessionBase_1a27b8e90f57dbfb32825c63732bf1ddd5">DoMakeWebsocketSession</references>
+        <references refid="BeastWebsocketServer_8cpp_1a646302cd21fcd9f155afc147b1ae2db5" compoundref="BeastWebsocketServer_8cpp" startline="249" endline="306">HandleHttpRequest</references>
+        <references refid="classHttpSessionBase_1ad2b5c65eaafed934cc5fa5a503d74728" compoundref="BeastWebsocketServer_8cpp" startline="745">m_requestParser</references>
+        <references refid="classHttpSessionBase_1a6e78d14843ac4001a9d2afa8455a9de5" compoundref="BeastWebsocketServer_8cpp" startline="740">m_responseQueue</references>
+        <references refid="classHttpSessionBase_1a385044edc90e5b697b83193c3edee970" compoundref="BeastWebsocketServer_8cpp" startline="742">m_serverStatePtr</references>
+        <references refid="BeastWebsocketServer_8cpp_1a0c3408e8f3225f9ba73b66d160c5489b" compoundref="BeastWebsocketServer_8cpp" startline="311" endline="336">PrintFail</references>
+        <references refid="classHttpSessionBase_1a6435edbee6142da02eb44b0a7b351e01" compoundref="BeastWebsocketServer_8cpp" startline="650" endline="652">QueueIsFull</references>
+        <referencedby refid="classHttpSession_1a457cb18263a15f91f749b057b16d2ce4" compoundref="BeastWebsocketServer_8cpp" startline="824" endline="845">HttpSession&lt; Derived &gt;::AsyncReadRequestFromRemoteClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void HttpSessionBase::HandleSendResponseCompleted</definition>
+        <argsstring>(bool close, boost::beast::error_code ec, std::size_t bytes_transferred)</argsstring>
+        <name>HandleSendResponseCompleted</name>
+        <param>
+          <type>bool</type>
+          <declname>close</declname>
+        </param>
+        <param>
+          <type>boost::beast::error_code</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="709" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="709" bodyend="735"/>
+        <references refid="classHttpSessionBase_1a04bb700de6639c60abf6efffd311695d">AsyncReadRequestFromRemoteClient</references>
+        <references refid="classHttpSessionBase_1a5b6910f56d17cd9d95c97e55f2f6d42d">AsyncSendResponse</references>
+        <references refid="classHttpSessionBase_1a625a4940dcb44c2fc2ffb52633b881e6">DoEof</references>
+        <references refid="classHttpSessionBase_1a6e78d14843ac4001a9d2afa8455a9de5" compoundref="BeastWebsocketServer_8cpp" startline="740">m_responseQueue</references>
+        <references refid="BeastWebsocketServer_8cpp_1a0c3408e8f3225f9ba73b66d160c5489b" compoundref="BeastWebsocketServer_8cpp" startline="311" endline="336">PrintFail</references>
+        <references refid="classHttpSessionBase_1a6435edbee6142da02eb44b0a7b351e01" compoundref="BeastWebsocketServer_8cpp" startline="650" endline="652">QueueIsFull</references>
+        <referencedby refid="classHttpSession_1a4eda406ec41a877913db0244c8d52eba" compoundref="BeastWebsocketServer_8cpp" startline="775" endline="809">HttpSession&lt; Derived &gt;::AsyncSendResponse</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classHttpSessionBase_1a6435edbee6142da02eb44b0a7b351e01" prot="protected" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HttpSessionBase::QueueIsFull</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>QueueIsFull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="650" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="650" bodyend="652"/>
+        <references refid="classHttpSessionBase_1a6e78d14843ac4001a9d2afa8455a9de5" compoundref="BeastWebsocketServer_8cpp" startline="740">m_responseQueue</references>
+        <references refid="classHttpSessionBase_1a5924d1e5cd0dee5dd9e6614aad621981" compoundref="BeastWebsocketServer_8cpp" startline="739">QUEUE_LIMIT</references>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+        <referencedby refid="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" compoundref="BeastWebsocketServer_8cpp" startline="709" endline="735">HandleSendResponseCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a625a4940dcb44c2fc2ffb52633b881e6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void HttpSessionBase::DoEof</definition>
+        <argsstring>()=0</argsstring>
+        <name>DoEof</name>
+        <reimplementedby refid="classPlainHttpSession_1ac031036e315ea21eab538e08233f994c">DoEof</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="654" column="18"/>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+        <referencedby refid="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" compoundref="BeastWebsocketServer_8cpp" startline="709" endline="735">HandleSendResponseCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a27b8e90f57dbfb32825c63732bf1ddd5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void HttpSessionBase::DoMakeWebsocketSession</definition>
+        <argsstring>()=0</argsstring>
+        <name>DoMakeWebsocketSession</name>
+        <reimplementedby refid="classHttpSession_1a5855d561497a39f886f236b22a6eeae0">DoMakeWebsocketSession</reimplementedby>
+        <reimplementedby refid="classHttpSession_1a5855d561497a39f886f236b22a6eeae0">DoMakeWebsocketSession</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="655" column="18"/>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1aed12759ee0b79c615f4adad373c0abb6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classHttpSessionBase" kindref="compound">HttpSessionBase</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;HttpSessionBase&gt; HttpSessionBase::GetSharedFromThis</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetSharedFromThis</name>
+        <reimplementedby refid="classHttpSession_1a59c5ec3212d5d589b2180aab130618c7">GetSharedFromThis</reimplementedby>
+        <reimplementedby refid="classHttpSession_1a59c5ec3212d5d589b2180aab130618c7">GetSharedFromThis</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="656" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classHttpSessionBase_1a5b6910f56d17cd9d95c97e55f2f6d42d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void HttpSessionBase::AsyncSendResponse</definition>
+        <argsstring>(Response &amp;response)=0</argsstring>
+        <name>AsyncSendResponse</name>
+        <reimplementedby refid="classHttpSession_1a4eda406ec41a877913db0244c8d52eba">AsyncSendResponse</reimplementedby>
+        <reimplementedby refid="classHttpSession_1a4eda406ec41a877913db0244c8d52eba">AsyncSendResponse</reimplementedby>
+        <param>
+          <type><ref refid="structResponse" kindref="compound">Response</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="657" column="18"/>
+        <referencedby refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" compoundref="BeastWebsocketServer_8cpp" startline="661" endline="705">HandleReadRequestFromRemoteClientCompleted</referencedby>
+        <referencedby refid="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" compoundref="BeastWebsocketServer_8cpp" startline="709" endline="735">HandleSendResponseCompleted</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>HttpSessionBase</label>
+        <link refid="classHttpSessionBase"/>
+      </node>
+      <node id="2">
+        <label>HttpSession&lt; PlainHttpSession &gt;</label>
+        <link refid="classHttpSession"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>HttpSession&lt; Derived &gt;</label>
+        <link refid="classHttpSession"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>PlainHttpSession</label>
+        <link refid="classPlainHttpSession"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="642" column="1" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="642" bodyend="746"/>
+    <listofallmembers>
+      <member refid="classHttpSessionBase_1a04bb700de6639c60abf6efffd311695d" prot="public" virt="pure-virtual"><scope>HttpSessionBase</scope><name>AsyncReadRequestFromRemoteClient</name></member>
+      <member refid="classHttpSessionBase_1a5b6910f56d17cd9d95c97e55f2f6d42d" prot="protected" virt="pure-virtual"><scope>HttpSessionBase</scope><name>AsyncSendResponse</name></member>
+      <member refid="classHttpSessionBase_1a625a4940dcb44c2fc2ffb52633b881e6" prot="protected" virt="pure-virtual"><scope>HttpSessionBase</scope><name>DoEof</name></member>
+      <member refid="classHttpSessionBase_1a27b8e90f57dbfb32825c63732bf1ddd5" prot="protected" virt="pure-virtual"><scope>HttpSessionBase</scope><name>DoMakeWebsocketSession</name></member>
+      <member refid="classHttpSessionBase_1aed12759ee0b79c615f4adad373c0abb6" prot="protected" virt="pure-virtual"><scope>HttpSessionBase</scope><name>GetSharedFromThis</name></member>
+      <member refid="classHttpSessionBase_1a4e3bf977129f3942e969313fc17d7f18" prot="public" virt="non-virtual"><scope>HttpSessionBase</scope><name>HandleReadRequestFromRemoteClientCompleted</name></member>
+      <member refid="classHttpSessionBase_1a3c824d793864304093704c4f7b6332c6" prot="public" virt="non-virtual"><scope>HttpSessionBase</scope><name>HandleSendResponseCompleted</name></member>
+      <member refid="classHttpSessionBase_1a171185c999916b2bed4963176a6b668f" prot="public" virt="non-virtual"><scope>HttpSessionBase</scope><name>HttpSessionBase</name></member>
+      <member refid="classHttpSessionBase_1a741a542ac475b35d75bcb9accfc671f0" prot="protected" virt="non-virtual"><scope>HttpSessionBase</scope><name>m_flatBuffer</name></member>
+      <member refid="classHttpSessionBase_1ad2b5c65eaafed934cc5fa5a503d74728" prot="protected" virt="non-virtual"><scope>HttpSessionBase</scope><name>m_requestParser</name></member>
+      <member refid="classHttpSessionBase_1a6e78d14843ac4001a9d2afa8455a9de5" prot="protected" virt="non-virtual"><scope>HttpSessionBase</scope><name>m_responseQueue</name></member>
+      <member refid="classHttpSessionBase_1a385044edc90e5b697b83193c3edee970" prot="protected" virt="non-virtual"><scope>HttpSessionBase</scope><name>m_serverStatePtr</name></member>
+      <member refid="classHttpSessionBase_1a5924d1e5cd0dee5dd9e6614aad621981" prot="protected" virt="non-virtual"><scope>HttpSessionBase</scope><name>QUEUE_LIMIT</name></member>
+      <member refid="classHttpSessionBase_1a6435edbee6142da02eb44b0a7b351e01" prot="protected" virt="non-virtual"><scope>HttpSessionBase</scope><name>QueueIsFull</name></member>
+      <member refid="classHttpSessionBase_1a03657409cdb417e8a7a87bedcd76f3f2" prot="public" virt="virtual"><scope>HttpSessionBase</scope><name>~HttpSessionBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

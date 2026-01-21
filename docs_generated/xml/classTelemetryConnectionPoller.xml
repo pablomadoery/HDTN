@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTelemetryConnectionPoller" kind="class" language="C++" prot="public">
+    <compoundname>TelemetryConnectionPoller</compoundname>
+    <includes refid="TelemetryConnectionPoller_8h" local="no">TelemetryConnectionPoller.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classTelemetryConnectionPoller_1a0c9a94567a6c1f162d085bdb2ac8e49f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacezmq_1afae32df5376640a84a10f2fd3ba2fee9" kindref="member">zmq::pollitem_t</ref> &gt;</type>
+        <definition>std::vector&lt;zmq::pollitem_t&gt; TelemetryConnectionPoller::m_pollItems</definition>
+        <argsstring></argsstring>
+        <name>m_pollItems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>m_pollItems should not be used directly, but are publicly available for unit testing </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="56" column="21" bodyfile="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classTelemetryConnectionPoller_1a2c71fae286a8f6acd9e362ffdd6476aa" compoundref="TelemetryConnectionPoller_8cpp" startline="25" endline="30">AddConnection</referencedby>
+        <referencedby refid="TelemetryConnectionPollerTests_8cpp_1a0d979065c86908835720005923b9d3b9" compoundref="TelemetryConnectionPollerTests_8cpp" startline="7" endline="15">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTelemetryConnectionPoller_1aee781e15935c034b84cef1246f2cdb7f" compoundref="TelemetryConnectionPoller_8cpp" startline="53" endline="61">FindPollItem</referencedby>
+        <referencedby refid="classTelemetryConnectionPoller_1a9d5c3f3845620623829c99c64fc61819" compoundref="TelemetryConnectionPoller_8cpp" startline="32" endline="42">PollConnections</referencedby>
+        <referencedby refid="classTelemetryConnectionPoller_1a0414ecb4b641cd495824a1b44182d8df" compoundref="TelemetryConnectionPoller_8cpp" startline="63" endline="67">~TelemetryConnectionPoller</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTelemetryConnectionPoller_1acc83c1f5cd87ef1535b15a98ce60537a" prot="private" static="no" mutable="no">
+        <type>std::map&lt; void *, unsigned int &gt;</type>
+        <definition>std::map&lt;void*, unsigned int&gt; TelemetryConnectionPoller::m_connectionHandleToPollItemLocMap</definition>
+        <argsstring></argsstring>
+        <name>m_connectionHandleToPollItemLocMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="59" column="18" bodyfile="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classTelemetryConnectionPoller_1a2c71fae286a8f6acd9e362ffdd6476aa" compoundref="TelemetryConnectionPoller_8cpp" startline="25" endline="30">AddConnection</referencedby>
+        <referencedby refid="classTelemetryConnectionPoller_1aee781e15935c034b84cef1246f2cdb7f" compoundref="TelemetryConnectionPoller_8cpp" startline="53" endline="61">FindPollItem</referencedby>
+        <referencedby refid="classTelemetryConnectionPoller_1a0414ecb4b641cd495824a1b44182d8df" compoundref="TelemetryConnectionPoller_8cpp" startline="63" endline="67">~TelemetryConnectionPoller</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTelemetryConnectionPoller_1a0414ecb4b641cd495824a1b44182d8df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT</type>
+        <definition>TelemetryConnectionPoller::~TelemetryConnectionPoller</definition>
+        <argsstring>()</argsstring>
+        <name>~TelemetryConnectionPoller</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="31" column="26" bodyfile="module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp" bodystart="63" bodyend="67"/>
+        <references refid="classTelemetryConnectionPoller_1acc83c1f5cd87ef1535b15a98ce60537a" compoundref="TelemetryConnectionPoller_8h" startline="59">m_connectionHandleToPollItemLocMap</references>
+        <references refid="classTelemetryConnectionPoller_1a0c9a94567a6c1f162d085bdb2ac8e49f" compoundref="TelemetryConnectionPoller_8h" startline="56">m_pollItems</references>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryConnectionPoller_1a2c71fae286a8f6acd9e362ffdd6476aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT void</type>
+        <definition>void TelemetryConnectionPoller::AddConnection</definition>
+        <argsstring>(TelemetryConnection &amp;connection)</argsstring>
+        <name>AddConnection</name>
+        <param>
+          <type><ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a new connection to the poller <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="37" column="31" bodyfile="module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp" bodystart="25" bodyend="30"/>
+        <references refid="classTelemetryConnection_1a73a303cfdd096e4bb3225b9edcff2495" compoundref="TelemetryConnection_8cpp" startline="131" endline="137">TelemetryConnection::GetSocketHandle</references>
+        <references refid="classTelemetryConnectionPoller_1acc83c1f5cd87ef1535b15a98ce60537a" compoundref="TelemetryConnectionPoller_8h" startline="59">m_connectionHandleToPollItemLocMap</references>
+        <references refid="classTelemetryConnectionPoller_1a0c9a94567a6c1f162d085bdb2ac8e49f" compoundref="TelemetryConnectionPoller_8h" startline="56">m_pollItems</references>
+        <referencedby refid="TelemetryConnectionPollerTests_8cpp_1a0d979065c86908835720005923b9d3b9" compoundref="TelemetryConnectionPollerTests_8cpp" startline="7" endline="15">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a144ec3f8a380e5ae5bde753e4a1011bd" compoundref="TelemetryRunner_8cpp" startline="374" endline="535">TelemetryRunner::Impl::ThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryConnectionPoller_1a9d5c3f3845620623829c99c64fc61819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT bool</type>
+        <definition>bool TelemetryConnectionPoller::PollConnections</definition>
+        <argsstring>(unsigned int timeout)</argsstring>
+        <name>PollConnections</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Polls all connections that have been added to the poller. Utilizes <ref refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" kindref="member">zmq::poll</ref> to multiplex i/o. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the max amount of time PollConnections will block while waiting for new messages </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="45" column="31" bodyfile="module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp" bodystart="32" bodyend="42"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="classTelemetryConnectionPoller_1a0c9a94567a6c1f162d085bdb2ac8e49f" compoundref="TelemetryConnectionPoller_8h" startline="56">m_pollItems</references>
+        <references refid="namespacezmq_1a0327f48fea54a7d17ad6d1e4ef720817" compoundref="zmq_8hpp" startline="289" endline="295">zmq::poll</references>
+        <references refid="TelemetryConnectionPoller_8cpp_1aabb59a9777ae93518ee1210731dcf527" compoundref="TelemetryConnectionPoller_8cpp" startline="22">subprocess</references>
+        <references refid="classzmq_1_1error__t_1ae17eabefc24504776bd9aa8773c604b8" compoundref="zmq_8hpp" startline="279" endline="282">zmq::error_t::what</references>
+        <referencedby refid="TelemetryConnectionPollerTests_8cpp_1a87f0c40ac003fcae2521abfc94de7d4c" compoundref="TelemetryConnectionPollerTests_8cpp" startline="17" endline="34">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a144ec3f8a380e5ae5bde753e4a1011bd" compoundref="TelemetryRunner_8cpp" startline="374" endline="535">TelemetryRunner::Impl::ThreadFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTelemetryConnectionPoller_1a77f66ef8a303322d9d8bf3dc3274a05b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_EXPORT bool</type>
+        <definition>bool TelemetryConnectionPoller::HasNewMessage</definition>
+        <argsstring>(TelemetryConnection &amp;connection)</argsstring>
+        <name>HasNewMessage</name>
+        <param>
+          <type><ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines if a connection has a new message <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the connection to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="51" column="31" bodyfile="module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp" bodystart="44" bodyend="51"/>
+        <references refid="classTelemetryConnectionPoller_1aee781e15935c034b84cef1246f2cdb7f" compoundref="TelemetryConnectionPoller_8cpp" startline="53" endline="61">FindPollItem</references>
+        <referencedby refid="TelemetryConnectionPollerTests_8cpp_1a92f606f3566c8175058cb2041f6796c2" compoundref="TelemetryConnectionPollerTests_8cpp" startline="36" endline="59">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classTelemetryRunner_1_1Impl_1a144ec3f8a380e5ae5bde753e4a1011bd" compoundref="TelemetryRunner_8cpp" startline="374" endline="535">TelemetryRunner::Impl::ThreadFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classTelemetryConnectionPoller_1aee781e15935c034b84cef1246f2cdb7f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TELEM_LIB_NO_EXPORT <ref refid="namespacezmq_1afae32df5376640a84a10f2fd3ba2fee9" kindref="member">zmq::pollitem_t</ref> *</type>
+        <definition>zmq::pollitem_t * TelemetryConnectionPoller::FindPollItem</definition>
+        <argsstring>(TelemetryConnection &amp;connection)</argsstring>
+        <name>FindPollItem</name>
+        <param>
+          <type><ref refid="classTelemetryConnection" kindref="compound">TelemetryConnection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="58" column="45" bodyfile="module/telem_cmd_interface/src/TelemetryConnectionPoller.cpp" bodystart="53" bodyend="61"/>
+        <references refid="classTelemetryConnection_1a73a303cfdd096e4bb3225b9edcff2495" compoundref="TelemetryConnection_8cpp" startline="131" endline="137">TelemetryConnection::GetSocketHandle</references>
+        <references refid="classTelemetryConnectionPoller_1acc83c1f5cd87ef1535b15a98ce60537a" compoundref="TelemetryConnectionPoller_8h" startline="59">m_connectionHandleToPollItemLocMap</references>
+        <references refid="classTelemetryConnectionPoller_1a0c9a94567a6c1f162d085bdb2ac8e49f" compoundref="TelemetryConnectionPoller_8h" startline="56">m_pollItems</references>
+        <referencedby refid="classTelemetryConnectionPoller_1a77f66ef8a303322d9d8bf3dc3274a05b" compoundref="TelemetryConnectionPoller_8cpp" startline="44" endline="51">HasNewMessage</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" line="28" column="1" bodyfile="module/telem_cmd_interface/include/TelemetryConnectionPoller.h" bodystart="29" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classTelemetryConnectionPoller_1a2c71fae286a8f6acd9e362ffdd6476aa" prot="public" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>AddConnection</name></member>
+      <member refid="classTelemetryConnectionPoller_1aee781e15935c034b84cef1246f2cdb7f" prot="private" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>FindPollItem</name></member>
+      <member refid="classTelemetryConnectionPoller_1a77f66ef8a303322d9d8bf3dc3274a05b" prot="public" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>HasNewMessage</name></member>
+      <member refid="classTelemetryConnectionPoller_1acc83c1f5cd87ef1535b15a98ce60537a" prot="private" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>m_connectionHandleToPollItemLocMap</name></member>
+      <member refid="classTelemetryConnectionPoller_1a0c9a94567a6c1f162d085bdb2ac8e49f" prot="public" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>m_pollItems</name></member>
+      <member refid="classTelemetryConnectionPoller_1a9d5c3f3845620623829c99c64fc61819" prot="public" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>PollConnections</name></member>
+      <member refid="classTelemetryConnectionPoller_1a0414ecb4b641cd495824a1b44182d8df" prot="public" virt="non-virtual"><scope>TelemetryConnectionPoller</scope><name>~TelemetryConnectionPoller</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

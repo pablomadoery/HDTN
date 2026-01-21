@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classWebsocketSessionPrivateBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>WebsocketSessionPrivateBase</compoundname>
+    <basecompoundref refid="classWebsocketSessionPublicBase" prot="public" virt="non-virtual">WebsocketSessionPublicBase</basecompoundref>
+    <derivedcompoundref refid="classWebsocketSession" prot="public" virt="non-virtual">WebsocketSession&lt; PlainWebsocketSession &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classWebsocketSession" prot="public" virt="non-virtual">WebsocketSession&lt; Derived &gt;</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classWebsocketSessionPrivateBase_1a1a946ea9531f066f96f57ff0925b0b6c" prot="protected" static="no" mutable="no">
+        <type>boost::beast::flat_buffer</type>
+        <definition>boost::beast::flat_buffer WebsocketSessionPrivateBase::m_flatBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_flatBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="467" column="31" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="467" bodyend="-1"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" compoundref="BeastWebsocketServer_8cpp" startline="382" endline="415">HandleWsReadCompleted</referencedby>
+        <referencedby refid="classWebsocketSession_1a7993d8fee6bd51e98b415c0cff21514f" compoundref="BeastWebsocketServer_8cpp" startline="530" endline="539">WebsocketSession&lt; Derived &gt;::StartAsyncWsRead</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebsocketSessionPrivateBase_1a5dbe83d9dc6088d1160192c1f4398e48" prot="protected" static="no" mutable="no">
+        <type><ref refid="BeastWebsocketServer_8cpp_1a5f20285d054284db85eb1214abcb284b" kindref="member">ServerState_ptr</ref></type>
+        <definition>ServerState_ptr WebsocketSessionPrivateBase::m_serverStatePtr</definition>
+        <argsstring></argsstring>
+        <name>m_serverStatePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="468" column="21" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="468" bodyend="-1"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1a71aa1dd70c724625029ea17134137ad2" compoundref="BeastWebsocketServer_8cpp" startline="355" endline="380">HandleWsAccept</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" compoundref="BeastWebsocketServer_8cpp" startline="382" endline="415">HandleWsReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebsocketSessionPrivateBase_1a811f5d4bb024785380fd776995f6b1c7" prot="protected" static="no" mutable="no">
+        <type>std::queue&lt; std::shared_ptr&lt; std::string &gt; &gt;</type>
+        <definition>std::queue&lt;std::shared_ptr&lt;std::string&gt; &gt; WebsocketSessionPrivateBase::m_queueDataToSend</definition>
+        <argsstring></argsstring>
+        <name>m_queueDataToSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="469" column="16" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="469" bodyend="-1"/>
+        <referencedby refid="classWebsocketSession_1a355b9dfcede2a704d18749791620d469" compoundref="BeastWebsocketServer_8cpp" startline="543" endline="551">WebsocketSession&lt; Derived &gt;::DoSendQueuedElement</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae553369e4d4984e701130975a8c01eb0" compoundref="BeastWebsocketServer_8cpp" startline="417" endline="433">OnSentStringFromQueuedSharedPtr</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" compoundref="BeastWebsocketServer_8cpp" startline="435" endline="442">QueueAndSendTextData_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebsocketSessionPrivateBase_1a1b4fc56d940096ba4690bdf927e4ccdb" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="BeastWebsocketServer_8cpp_1a3e5ba636f968ca173230e82a73f80ce8" kindref="member">shared_lock_t</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;shared_lock_t&gt; WebsocketSessionPrivateBase::m_isOpenSharedLockPtr</definition>
+        <argsstring></argsstring>
+        <name>m_isOpenSharedLockPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="470" column="21" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="470" bodyend="-1"/>
+        <referencedby refid="classWebsocketSession_1a2fe8fd92f54f4cb0575d8c60c5d2cc56" compoundref="BeastWebsocketServer_8cpp" startline="555" endline="563">WebsocketSession&lt; Derived &gt;::DoClose_NotThreadSafe</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1a71aa1dd70c724625029ea17134137ad2" compoundref="BeastWebsocketServer_8cpp" startline="355" endline="380">HandleWsAccept</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" compoundref="BeastWebsocketServer_8cpp" startline="382" endline="415">HandleWsReadCompleted</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1a28f2b9a592eb511cf399ec64c9827b0b" compoundref="BeastWebsocketServer_8cpp" startline="444" endline="449">OnClose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebsocketSessionPrivateBase_1ae706e7106b0da50b12d99bb3fd6f2e9f" prot="protected" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; WebsocketSessionPrivateBase::m_writeInProgress</definition>
+        <argsstring></argsstring>
+        <name>m_writeInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="471" column="17" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="471" bodyend="-1"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae553369e4d4984e701130975a8c01eb0" compoundref="BeastWebsocketServer_8cpp" startline="417" endline="433">OnSentStringFromQueuedSharedPtr</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" compoundref="BeastWebsocketServer_8cpp" startline="435" endline="442">QueueAndSendTextData_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWebsocketSessionPrivateBase_1aeb4e06b82837dd5d7951056185b1f0d0" prot="protected" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; WebsocketSessionPrivateBase::m_sendErrorOccurred</definition>
+        <argsstring></argsstring>
+        <name>m_sendErrorOccurred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="472" column="17" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="472" bodyend="-1"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae553369e4d4984e701130975a8c01eb0" compoundref="BeastWebsocketServer_8cpp" startline="417" endline="433">OnSentStringFromQueuedSharedPtr</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" compoundref="BeastWebsocketServer_8cpp" startline="435" endline="442">QueueAndSendTextData_NotThreadSafe</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a21ab1f42e4c8e546412fa7dbccd66133" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WebsocketSessionPrivateBase::WebsocketSessionPrivateBase</definition>
+        <argsstring>()=delete</argsstring>
+        <name>WebsocketSessionPrivateBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="342" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1ae236a31ce3f1520b45698b55242222c5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>WebsocketSessionPrivateBase::WebsocketSessionPrivateBase</definition>
+        <argsstring>(uint32_t uniqueId, ServerState_ptr &amp;serverStatePtr)</argsstring>
+        <name>WebsocketSessionPrivateBase</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uniqueId</declname>
+        </param>
+        <param>
+          <type><ref refid="BeastWebsocketServer_8cpp_1a5f20285d054284db85eb1214abcb284b" kindref="member">ServerState_ptr</ref> &amp;</type>
+          <declname>serverStatePtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="343" column="5" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="343" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1ae6ab05c1c728b4f217572576b630d85b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classWebsocketSessionPrivateBase" kindref="compound">WebsocketSessionPrivateBase</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;WebsocketSessionPrivateBase&gt; WebsocketSessionPrivateBase::GetSharedFromThis</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetSharedFromThis</name>
+        <reimplementedby refid="classWebsocketSession_1acb81f2cde5c1637fb410f6c55ebbb9a7">GetSharedFromThis</reimplementedby>
+        <reimplementedby refid="classWebsocketSession_1acb81f2cde5c1637fb410f6c55ebbb9a7">GetSharedFromThis</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="463" column="29"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ab469d8f8f1b81a89541f89a544a9413b" compoundref="BeastWebsocketServer_8cpp" startline="457" endline="461">AsyncClose</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ad70ab0ed8082abab1b3ab37ddca0d77e" compoundref="BeastWebsocketServer_8cpp" startline="451" endline="455">AsyncSendTextData</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1a71aa1dd70c724625029ea17134137ad2" compoundref="BeastWebsocketServer_8cpp" startline="355" endline="380">HandleWsAccept</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a3761d12f7c3be7c7cee8320a189af269" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>boost::asio::executor</type>
+        <definition>virtual boost::asio::executor WebsocketSessionPrivateBase::GetWebsocketExecutor</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetWebsocketExecutor</name>
+        <reimplementedby refid="classWebsocketSession_1ad3d697d4dd6e348756ed6dfd2ac52b6e">GetWebsocketExecutor</reimplementedby>
+        <reimplementedby refid="classWebsocketSession_1ad3d697d4dd6e348756ed6dfd2ac52b6e">GetWebsocketExecutor</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="464" column="35"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ab469d8f8f1b81a89541f89a544a9413b" compoundref="BeastWebsocketServer_8cpp" startline="457" endline="461">AsyncClose</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ad70ab0ed8082abab1b3ab37ddca0d77e" compoundref="BeastWebsocketServer_8cpp" startline="451" endline="455">AsyncSendTextData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1aa1b2b076f4c3995ee3bd00e3910bac27" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void WebsocketSessionPrivateBase::DoClose_NotThreadSafe</definition>
+        <argsstring>()=0</argsstring>
+        <name>DoClose_NotThreadSafe</name>
+        <reimplementedby refid="classWebsocketSession_1a2fe8fd92f54f4cb0575d8c60c5d2cc56">DoClose_NotThreadSafe</reimplementedby>
+        <reimplementedby refid="classWebsocketSession_1a2fe8fd92f54f4cb0575d8c60c5d2cc56">DoClose_NotThreadSafe</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="465" column="18"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ab469d8f8f1b81a89541f89a544a9413b" compoundref="BeastWebsocketServer_8cpp" startline="457" endline="461">AsyncClose</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a81d3d8695442a0ec33382025a21ed5b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual WebsocketSessionPrivateBase::~WebsocketSessionPrivateBase</definition>
+        <argsstring>() override</argsstring>
+        <name>~WebsocketSessionPrivateBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="350" column="13" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="350" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1abe9282e4c87450def4246e81c3cd8dce" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void WebsocketSessionPrivateBase::StartAsyncWsRead</definition>
+        <argsstring>()=0</argsstring>
+        <name>StartAsyncWsRead</name>
+        <reimplementedby refid="classWebsocketSession_1a7993d8fee6bd51e98b415c0cff21514f">StartAsyncWsRead</reimplementedby>
+        <reimplementedby refid="classWebsocketSession_1a7993d8fee6bd51e98b415c0cff21514f">StartAsyncWsRead</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="351" column="18"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1a71aa1dd70c724625029ea17134137ad2" compoundref="BeastWebsocketServer_8cpp" startline="355" endline="380">HandleWsAccept</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" compoundref="BeastWebsocketServer_8cpp" startline="382" endline="415">HandleWsReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a6c7da3bf247d9ae4b61bf683feed04a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void WebsocketSessionPrivateBase::DoSendQueuedElement</definition>
+        <argsstring>()=0</argsstring>
+        <name>DoSendQueuedElement</name>
+        <reimplementedby refid="classWebsocketSession_1a355b9dfcede2a704d18749791620d469">DoSendQueuedElement</reimplementedby>
+        <reimplementedby refid="classWebsocketSession_1a355b9dfcede2a704d18749791620d469">DoSendQueuedElement</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="352" column="18"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae553369e4d4984e701130975a8c01eb0" compoundref="BeastWebsocketServer_8cpp" startline="417" endline="433">OnSentStringFromQueuedSharedPtr</referencedby>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" compoundref="BeastWebsocketServer_8cpp" startline="435" endline="442">QueueAndSendTextData_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a1cec0d9fc4260c7608f2b927654ee6b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool WebsocketSessionPrivateBase::WsGotTextData</definition>
+        <argsstring>()=0</argsstring>
+        <name>WsGotTextData</name>
+        <reimplementedby refid="classWebsocketSession_1a81bba042d5ab45eef761e3664f5f4f1b">WsGotTextData</reimplementedby>
+        <reimplementedby refid="classWebsocketSession_1a81bba042d5ab45eef761e3664f5f4f1b">WsGotTextData</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="353" column="18"/>
+        <referencedby refid="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" compoundref="BeastWebsocketServer_8cpp" startline="382" endline="415">HandleWsReadCompleted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a71aa1dd70c724625029ea17134137ad2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebsocketSessionPrivateBase::HandleWsAccept</definition>
+        <argsstring>(boost::beast::error_code ec)</argsstring>
+        <name>HandleWsAccept</name>
+        <param>
+          <type>boost::beast::error_code</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="355" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="355" bodyend="380"/>
+        <references refid="classWebsocketSessionPrivateBase_1ae6ab05c1c728b4f217572576b630d85b">GetSharedFromThis</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classWebsocketSessionPrivateBase_1a1b4fc56d940096ba4690bdf927e4ccdb" compoundref="BeastWebsocketServer_8cpp" startline="470">m_isOpenSharedLockPtr</references>
+        <references refid="classWebsocketSessionPrivateBase_1a5dbe83d9dc6088d1160192c1f4398e48" compoundref="BeastWebsocketServer_8cpp" startline="468">m_serverStatePtr</references>
+        <references refid="classWebsocketSessionPublicBase_1aab1e18e799978fe5933fd9350f7d176c" compoundref="BeastWebsocketServer_8h" startline="62">WebsocketSessionPublicBase::m_uniqueId</references>
+        <references refid="BeastWebsocketServer_8cpp_1a0c3408e8f3225f9ba73b66d160c5489b" compoundref="BeastWebsocketServer_8cpp" startline="311" endline="336">PrintFail</references>
+        <references refid="classWebsocketSessionPrivateBase_1abe9282e4c87450def4246e81c3cd8dce">StartAsyncWsRead</references>
+        <references refid="BeastWebsocketServer_8cpp_1a20c9ef1afea00bef32844713f443ad2c" compoundref="BeastWebsocketServer_8cpp" startline="28">subprocess</references>
+        <referencedby refid="classWebsocketSession_1adf3aa9a65b017b3416b24b08cdbd8edf" compoundref="BeastWebsocketServer_8cpp" startline="506" endline="526">WebsocketSession&lt; Derived &gt;::StartAsyncWsAccept</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebsocketSessionPrivateBase::HandleWsReadCompleted</definition>
+        <argsstring>(boost::beast::error_code ec, std::size_t bytes_transferred)</argsstring>
+        <name>HandleWsReadCompleted</name>
+        <param>
+          <type>boost::beast::error_code</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="382" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="382" bodyend="415"/>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="classWebsocketSessionPrivateBase_1a1a946ea9531f066f96f57ff0925b0b6c" compoundref="BeastWebsocketServer_8cpp" startline="467">m_flatBuffer</references>
+        <references refid="classWebsocketSessionPrivateBase_1a1b4fc56d940096ba4690bdf927e4ccdb" compoundref="BeastWebsocketServer_8cpp" startline="470">m_isOpenSharedLockPtr</references>
+        <references refid="classWebsocketSessionPrivateBase_1a5dbe83d9dc6088d1160192c1f4398e48" compoundref="BeastWebsocketServer_8cpp" startline="468">m_serverStatePtr</references>
+        <references refid="classWebsocketSessionPublicBase_1aab1e18e799978fe5933fd9350f7d176c" compoundref="BeastWebsocketServer_8h" startline="62">WebsocketSessionPublicBase::m_uniqueId</references>
+        <references refid="BeastWebsocketServer_8cpp_1a0c3408e8f3225f9ba73b66d160c5489b" compoundref="BeastWebsocketServer_8cpp" startline="311" endline="336">PrintFail</references>
+        <references refid="classWebsocketSessionPrivateBase_1abe9282e4c87450def4246e81c3cd8dce">StartAsyncWsRead</references>
+        <references refid="BeastWebsocketServer_8cpp_1a20c9ef1afea00bef32844713f443ad2c" compoundref="BeastWebsocketServer_8cpp" startline="28">subprocess</references>
+        <references refid="classWebsocketSessionPrivateBase_1a1cec0d9fc4260c7608f2b927654ee6b2">WsGotTextData</references>
+        <referencedby refid="classWebsocketSession_1a7993d8fee6bd51e98b415c0cff21514f" compoundref="BeastWebsocketServer_8cpp" startline="530" endline="539">WebsocketSession&lt; Derived &gt;::StartAsyncWsRead</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1ae553369e4d4984e701130975a8c01eb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebsocketSessionPrivateBase::OnSentStringFromQueuedSharedPtr</definition>
+        <argsstring>(boost::beast::error_code ec, std::size_t bytes_transferred)</argsstring>
+        <name>OnSentStringFromQueuedSharedPtr</name>
+        <param>
+          <type>boost::beast::error_code</type>
+          <declname>ec</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>bytes_transferred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="417" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="417" bodyend="433"/>
+        <references refid="classWebsocketSessionPrivateBase_1a6c7da3bf247d9ae4b61bf683feed04a6">DoSendQueuedElement</references>
+        <references refid="classWebsocketSessionPrivateBase_1a811f5d4bb024785380fd776995f6b1c7" compoundref="BeastWebsocketServer_8cpp" startline="469">m_queueDataToSend</references>
+        <references refid="classWebsocketSessionPrivateBase_1aeb4e06b82837dd5d7951056185b1f0d0" compoundref="BeastWebsocketServer_8cpp" startline="472">m_sendErrorOccurred</references>
+        <references refid="classWebsocketSessionPrivateBase_1ae706e7106b0da50b12d99bb3fd6f2e9f" compoundref="BeastWebsocketServer_8cpp" startline="471">m_writeInProgress</references>
+        <references refid="BeastWebsocketServer_8cpp_1a0c3408e8f3225f9ba73b66d160c5489b" compoundref="BeastWebsocketServer_8cpp" startline="311" endline="336">PrintFail</references>
+        <referencedby refid="classWebsocketSession_1a355b9dfcede2a704d18749791620d469" compoundref="BeastWebsocketServer_8cpp" startline="543" endline="551">WebsocketSession&lt; Derived &gt;::DoSendQueuedElement</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebsocketSessionPrivateBase::QueueAndSendTextData_NotThreadSafe</definition>
+        <argsstring>(std::shared_ptr&lt; std::string &gt; &amp;stringPtr)</argsstring>
+        <name>QueueAndSendTextData_NotThreadSafe</name>
+        <param>
+          <type>std::shared_ptr&lt; std::string &gt; &amp;</type>
+          <declname>stringPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="435" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="435" bodyend="442"/>
+        <references refid="classWebsocketSessionPrivateBase_1a6c7da3bf247d9ae4b61bf683feed04a6">DoSendQueuedElement</references>
+        <references refid="classWebsocketSessionPrivateBase_1a811f5d4bb024785380fd776995f6b1c7" compoundref="BeastWebsocketServer_8cpp" startline="469">m_queueDataToSend</references>
+        <references refid="classWebsocketSessionPrivateBase_1aeb4e06b82837dd5d7951056185b1f0d0" compoundref="BeastWebsocketServer_8cpp" startline="472">m_sendErrorOccurred</references>
+        <references refid="classWebsocketSessionPrivateBase_1ae706e7106b0da50b12d99bb3fd6f2e9f" compoundref="BeastWebsocketServer_8cpp" startline="471">m_writeInProgress</references>
+        <referencedby refid="classWebsocketSessionPrivateBase_1ad70ab0ed8082abab1b3ab37ddca0d77e" compoundref="BeastWebsocketServer_8cpp" startline="451" endline="455">AsyncSendTextData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1a28f2b9a592eb511cf399ec64c9827b0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebsocketSessionPrivateBase::OnClose</definition>
+        <argsstring>(boost::beast::error_code ec)</argsstring>
+        <name>OnClose</name>
+        <param>
+          <type>boost::beast::error_code</type>
+          <declname>ec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="444" column="10" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="444" bodyend="449"/>
+        <references refid="classWebsocketSessionPrivateBase_1a1b4fc56d940096ba4690bdf927e4ccdb" compoundref="BeastWebsocketServer_8cpp" startline="470">m_isOpenSharedLockPtr</references>
+        <references refid="BeastWebsocketServer_8cpp_1a0c3408e8f3225f9ba73b66d160c5489b" compoundref="BeastWebsocketServer_8cpp" startline="311" endline="336">PrintFail</references>
+        <referencedby refid="classWebsocketSession_1a2fe8fd92f54f4cb0575d8c60c5d2cc56" compoundref="BeastWebsocketServer_8cpp" startline="555" endline="563">WebsocketSession&lt; Derived &gt;::DoClose_NotThreadSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1ad70ab0ed8082abab1b3ab37ddca0d77e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void WebsocketSessionPrivateBase::AsyncSendTextData</definition>
+        <argsstring>(std::shared_ptr&lt; std::string &gt; &amp;&amp;stringPtr) override</argsstring>
+        <name>AsyncSendTextData</name>
+        <reimplements refid="classWebsocketSessionPublicBase_1aa15c26c834db01066f7e3b0c273f4adb">AsyncSendTextData</reimplements>
+        <param>
+          <type>std::shared_ptr&lt; std::string &gt; &amp;&amp;</type>
+          <declname>stringPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="451" column="18" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="451" bodyend="455"/>
+        <references refid="classWebsocketSessionPrivateBase_1ae6ab05c1c728b4f217572576b630d85b">GetSharedFromThis</references>
+        <references refid="classWebsocketSessionPrivateBase_1a3761d12f7c3be7c7cee8320a189af269">GetWebsocketExecutor</references>
+        <references refid="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" compoundref="BeastWebsocketServer_8cpp" startline="435" endline="442">QueueAndSendTextData_NotThreadSafe</references>
+      </memberdef>
+      <memberdef kind="function" id="classWebsocketSessionPrivateBase_1ab469d8f8f1b81a89541f89a544a9413b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void WebsocketSessionPrivateBase::AsyncClose</definition>
+        <argsstring>() override</argsstring>
+        <name>AsyncClose</name>
+        <reimplements refid="classWebsocketSessionPublicBase_1a357badd16072398838e7c33a9c59c680">AsyncClose</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="457" column="18" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="457" bodyend="461"/>
+        <references refid="classWebsocketSessionPrivateBase_1aa1b2b076f4c3995ee3bd00e3910bac27">DoClose_NotThreadSafe</references>
+        <references refid="classWebsocketSessionPrivateBase_1ae6ab05c1c728b4f217572576b630d85b">GetSharedFromThis</references>
+        <references refid="classWebsocketSessionPrivateBase_1a3761d12f7c3be7c7cee8320a189af269">GetWebsocketExecutor</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="4">
+        <label>WebsocketSession&lt; PlainWebsocketSession &gt;</label>
+        <link refid="classWebsocketSession"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>WebsocketSession&lt; Derived &gt;</label>
+        <link refid="classWebsocketSession"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>PlainWebsocketSession</label>
+        <link refid="classPlainWebsocketSession"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>WebsocketSessionPublicBase</label>
+        <link refid="classWebsocketSessionPublicBase"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>WebsocketSessionPrivateBase</label>
+        <link refid="classWebsocketSessionPrivateBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="2">
+        <label>WebsocketSessionPublicBase</label>
+        <link refid="classWebsocketSessionPublicBase"/>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>WebsocketSessionPrivateBase</label>
+        <link refid="classWebsocketSessionPrivateBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" line="340" column="1" bodyfile="module/telem_cmd_interface/src/BeastWebsocketServer.cpp" bodystart="340" bodyend="473"/>
+    <listofallmembers>
+      <member refid="classWebsocketSessionPrivateBase_1ab469d8f8f1b81a89541f89a544a9413b" prot="public" virt="virtual"><scope>WebsocketSessionPrivateBase</scope><name>AsyncClose</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1ad70ab0ed8082abab1b3ab37ddca0d77e" prot="public" virt="virtual"><scope>WebsocketSessionPrivateBase</scope><name>AsyncSendTextData</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1aa1b2b076f4c3995ee3bd00e3910bac27" prot="protected" virt="pure-virtual"><scope>WebsocketSessionPrivateBase</scope><name>DoClose_NotThreadSafe</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a6c7da3bf247d9ae4b61bf683feed04a6" prot="public" virt="pure-virtual"><scope>WebsocketSessionPrivateBase</scope><name>DoSendQueuedElement</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1ae6ab05c1c728b4f217572576b630d85b" prot="protected" virt="pure-virtual"><scope>WebsocketSessionPrivateBase</scope><name>GetSharedFromThis</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a3761d12f7c3be7c7cee8320a189af269" prot="protected" virt="pure-virtual"><scope>WebsocketSessionPrivateBase</scope><name>GetWebsocketExecutor</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a71aa1dd70c724625029ea17134137ad2" prot="public" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>HandleWsAccept</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1af84d6470fdf06cbdf23d533da043ad59" prot="public" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>HandleWsReadCompleted</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a1a946ea9531f066f96f57ff0925b0b6c" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_flatBuffer</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a1b4fc56d940096ba4690bdf927e4ccdb" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_isOpenSharedLockPtr</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a811f5d4bb024785380fd776995f6b1c7" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_queueDataToSend</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1aeb4e06b82837dd5d7951056185b1f0d0" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_sendErrorOccurred</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a5dbe83d9dc6088d1160192c1f4398e48" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_serverStatePtr</name></member>
+      <member refid="classWebsocketSessionPublicBase_1aab1e18e799978fe5933fd9350f7d176c" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_uniqueId</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1ae706e7106b0da50b12d99bb3fd6f2e9f" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>m_writeInProgress</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a28f2b9a592eb511cf399ec64c9827b0b" prot="public" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>OnClose</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1ae553369e4d4984e701130975a8c01eb0" prot="public" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>OnSentStringFromQueuedSharedPtr</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1ae311f21fd202ead22a81d59ed9110ac9" prot="public" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>QueueAndSendTextData_NotThreadSafe</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1abe9282e4c87450def4246e81c3cd8dce" prot="public" virt="pure-virtual"><scope>WebsocketSessionPrivateBase</scope><name>StartAsyncWsRead</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a21ab1f42e4c8e546412fa7dbccd66133" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>WebsocketSessionPrivateBase</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1ae236a31ce3f1520b45698b55242222c5" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>WebsocketSessionPrivateBase</name></member>
+      <member refid="classWebsocketSessionPublicBase_1a342764f3613718eab846bdd42860b9cd" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>WebsocketSessionPublicBase</name></member>
+      <member refid="classWebsocketSessionPublicBase_1ace0211adbf8034f1dd03222294ce7878" prot="protected" virt="non-virtual"><scope>WebsocketSessionPrivateBase</scope><name>WebsocketSessionPublicBase</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a1cec0d9fc4260c7608f2b927654ee6b2" prot="public" virt="pure-virtual"><scope>WebsocketSessionPrivateBase</scope><name>WsGotTextData</name></member>
+      <member refid="classWebsocketSessionPrivateBase_1a81d3d8695442a0ec33382025a21ed5b4" prot="public" virt="virtual"><scope>WebsocketSessionPrivateBase</scope><name>~WebsocketSessionPrivateBase</name></member>
+      <member refid="classWebsocketSessionPublicBase_1a4805d0d9543d5e5b997a2ef789a8a213" prot="public" virt="virtual"><scope>WebsocketSessionPrivateBase</scope><name>~WebsocketSessionPublicBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

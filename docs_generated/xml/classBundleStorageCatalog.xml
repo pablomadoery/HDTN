@@ -1,0 +1,928 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBundleStorageCatalog" kind="class" language="C++" prot="public">
+    <compoundname>BundleStorageCatalog</compoundname>
+    <includes refid="BundleStorageCatalog_8h" local="no">BundleStorageCatalog.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DUPLICATE_EXPIRY_ORDER</name>
+        <enumvalue id="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391ac589858dbe1d06c46544266ae4cd2c6f" prot="public">
+          <name>FIFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391a4787a7e2a00b208cf9f769b3fff22e33" prot="public">
+          <name>FILO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391a99c6aed0dc727f908b54547f31e76508" prot="public">
+          <name>SEQUENCE_NUMBER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="52" column="5" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="52" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" prot="protected" static="no" mutable="no">
+        <type><ref refid="BundleStorageCatalog_8h_1a5f19b603c947a65bcba658696fbd2017" kindref="member">dest_eid_to_priorities_map_t</ref></type>
+        <definition>dest_eid_to_priorities_map_t BundleStorageCatalog::m_destEidToPrioritiesMap</definition>
+        <argsstring></argsstring>
+        <name>m_destEidToPrioritiesMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="94" column="34" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" compoundref="BundleStorageCatalog_8cpp" startline="125" endline="143">AddEntryToAwaitingSend</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a9ed24f716f7bd01e3be1bfc91c731057" compoundref="BundleStorageCatalog_8cpp" startline="332" endline="359">GetExpiredBundleIds</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a1755fe9140168c3f1028a2b921d67f79" compoundref="BundleStorageCatalog_8cpp" startline="361" endline="388">GetStorageExpiringBeforeThresholdTelemetry</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a148cd0537b2a135e4917b0246709ecbb" compoundref="BundleStorageCatalog_8cpp" startline="167" endline="179">PopEntryFromAwaitingSend</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1af728adb5935fb5ee80c2b91788ae21d2" compoundref="BundleStorageCatalog_8cpp" startline="148" endline="164">RemoveEntryFromAwaitingSend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1af9687a0c89cf8a63070606689b06e700" prot="protected" static="no" mutable="no">
+        <type><ref refid="BundleStorageCatalog_8h_1ab76520f1799b8a0c92e374d3d877e8f5" kindref="member">uuid_to_custid_hashmap_t</ref></type>
+        <definition>uuid_to_custid_hashmap_t BundleStorageCatalog::m_uuidToCustodyIdHashMap</definition>
+        <argsstring></argsstring>
+        <name>m_uuidToCustodyIdHashMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="95" column="30" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a9437324ba94a88900eaf3db073676f05" compoundref="BundleStorageCatalog_8cpp" startline="325" endline="327">GetCustodyIdFromUuid</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1a7af8b2ff90e9aeed1f2e58a351e08613" prot="protected" static="no" mutable="no">
+        <type><ref refid="BundleStorageCatalog_8h_1a5ec40f360d201a9828c7d259877ee52b" kindref="member">uuidnofrag_to_custid_hashmap_t</ref></type>
+        <definition>uuidnofrag_to_custid_hashmap_t BundleStorageCatalog::m_uuidNoFragToCustodyIdHashMap</definition>
+        <argsstring></argsstring>
+        <name>m_uuidNoFragToCustodyIdHashMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="96" column="36" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a925d56801823142a1085ff511a6345f2" compoundref="BundleStorageCatalog_8cpp" startline="328" endline="330">GetCustodyIdFromUuid</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" prot="protected" static="no" mutable="no">
+        <type><ref refid="BundleStorageCatalog_8h_1a81aa16be05565cc8fa6e820a17658c6d" kindref="member">custid_to_catalog_entry_hashmap_t</ref></type>
+        <definition>custid_to_catalog_entry_hashmap_t BundleStorageCatalog::m_custodyIdToCatalogEntryHashmap</definition>
+        <argsstring></argsstring>
+        <name>m_custodyIdToCatalogEntryHashmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="97" column="39" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a53c0974a94a9a62c8edbb447d2029cf0" compoundref="BundleStorageCatalog_8cpp" startline="322" endline="324">GetEntryFromCustodyId</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a1755fe9140168c3f1028a2b921d67f79" compoundref="BundleStorageCatalog_8cpp" startline="361" endline="388">GetStorageExpiringBeforeThresholdTelemetry</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aac1065e5486d2bba5a413e095aa42bae" compoundref="BundleStorageCatalog_8cpp" startline="32" endline="77">Insert_OrderBySequence</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1abafa70c5b1f70730450e27d2f9cbf356" compoundref="BundleStorageCatalog_8cpp" startline="229" endline="266">PopEntryFromAwaitingSend</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1a603d5dda11b321ee6dd5c62fb79f621a" prot="protected" static="no" mutable="no">
+        <type><ref refid="BundleStorageCatalog_8h_1a79118a105564919258f0e6a0741cb15e" kindref="member">custid_to_custody_xfer_expiry_bimap_t</ref></type>
+        <definition>custid_to_custody_xfer_expiry_bimap_t BundleStorageCatalog::m_custodyIdToCustodyTransferExpiryBimap</definition>
+        <argsstring></argsstring>
+        <name>m_custodyIdToCustodyTransferExpiryBimap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="98" column="43" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1ab1dc9c8a206e4c8bda220cab49a00a41" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::m_numBundlesInCatalog</definition>
+        <argsstring></argsstring>
+        <name>m_numBundlesInCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="99" column="14" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a6dbfc9353c2508ff82d7105399215f78" compoundref="BundleStorageCatalog_8cpp" startline="390" endline="392">GetNumBundlesInCatalog</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1ac7359bf51a798a12a887a1a4fd63b753" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::m_numBundleBytesInCatalog</definition>
+        <argsstring></argsstring>
+        <name>m_numBundleBytesInCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="100" column="14" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a27a2123ad057a8cdd549d3fbaa789844" compoundref="BundleStorageCatalog_8cpp" startline="393" endline="395">GetNumBundleBytesInCatalog</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1ac50327695e9335a29ccc59f72af8bba0" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::m_totalBundleWriteOperationsToCatalog</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleWriteOperationsToCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="101" column="14" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a630c5471944d466669bd2930a5ab0541" compoundref="BundleStorageCatalog_8cpp" startline="396" endline="398">GetTotalBundleWriteOperationsToCatalog</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1a2ad942145c547782446bc1d854b4e117" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::m_totalBundleByteWriteOperationsToCatalog</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleByteWriteOperationsToCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="102" column="14" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a7b2d0294db7de5c24130509507d5f2aa" compoundref="BundleStorageCatalog_8cpp" startline="399" endline="401">GetTotalBundleByteWriteOperationsToCatalog</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1ac1fa001506b5b2b108880ce6a361cd1a" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::m_totalBundleEraseOperationsFromCatalog</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleEraseOperationsFromCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="103" column="14" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a0aea9fb2657b73825867cb5bf0e7e848" compoundref="BundleStorageCatalog_8cpp" startline="402" endline="404">GetTotalBundleEraseOperationsFromCatalog</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBundleStorageCatalog_1a29103fd2c5033a496e8c587131015b98" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::m_totalBundleByteEraseOperationsFromCatalog</definition>
+        <argsstring></argsstring>
+        <name>m_totalBundleByteEraseOperationsFromCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="104" column="14" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classBundleStorageCatalog_1a98516a46c62d94b64772c68e6d98b67a" compoundref="BundleStorageCatalog_8cpp" startline="405" endline="407">GetTotalBundleByteEraseOperationsFromCatalog</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBundleStorageCatalog_1a6456519796d392c5c235d05380014096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageCatalog::BundleStorageCatalog</definition>
+        <argsstring>()</argsstring>
+        <name>BundleStorageCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="57" column="24" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="20" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a54eda94ab25094e4aaade1c554c7c202" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT</type>
+        <definition>BundleStorageCatalog::~BundleStorageCatalog</definition>
+        <argsstring>()</argsstring>
+        <name>~BundleStorageCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="58" column="24" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::CatalogIncomingBundleForStore</definition>
+        <argsstring>(catalog_entry_t &amp;catalogEntryToTake, const PrimaryBlock &amp;primary, const uint64_t custodyId, const DUPLICATE_EXPIRY_ORDER order)</argsstring>
+        <name>CatalogIncomingBundleForStore</name>
+        <param>
+          <type><ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> &amp;</type>
+          <declname>catalogEntryToTake</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPrimaryBlock" kindref="compound">PrimaryBlock</ref> &amp;</type>
+          <declname>primary</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391" kindref="member">DUPLICATE_EXPIRY_ORDER</ref></type>
+          <declname>order</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="60" column="29" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="91" bodyend="124"/>
+        <references refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" compoundref="BundleStorageCatalog_8cpp" startline="125" endline="143">AddEntryToAwaitingSend</references>
+        <references refid="structcatalog__entry__t_1a391ff41642077c6048b53e34e50fb737" compoundref="CatalogEntry_8h" startline="29">catalog_entry_t::bundleSizeBytes</references>
+        <references refid="structPrimaryBlock_1a2310f9d92c0eee410b4acca3ba44f779">PrimaryBlock::GetCbheBundleUuidFragmentFromPrimary</references>
+        <references refid="structPrimaryBlock_1aef4273982ea4a6cab347a9fad4eb417c">PrimaryBlock::GetCbheBundleUuidNoFragmentFromPrimary</references>
+        <references refid="structPrimaryBlock_1a65f9a7adafcad1b89cb47c2374a02291">PrimaryBlock::HasCustodyFlagSet</references>
+        <references refid="structPrimaryBlock_1a57d3c56650b0429228570aca85b3cbee">PrimaryBlock::HasFragmentationFlagSet</references>
+        <references refid="classHashMap16BitFixedSize_1adc19e37f0b1a7a8f58fb3dc409507bea" compoundref="HashMap16BitFixedSize_8cpp" startline="78" endline="80">HashMap16BitFixedSize&lt; keyType, valueType &gt;::Insert</references>
+        <references refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" compoundref="BundleStorageCatalog_8h" startline="97">m_custodyIdToCatalogEntryHashmap</references>
+        <references refid="classBundleStorageCatalog_1ac7359bf51a798a12a887a1a4fd63b753" compoundref="BundleStorageCatalog_8h" startline="100">m_numBundleBytesInCatalog</references>
+        <references refid="classBundleStorageCatalog_1ab1dc9c8a206e4c8bda220cab49a00a41" compoundref="BundleStorageCatalog_8h" startline="99">m_numBundlesInCatalog</references>
+        <references refid="classBundleStorageCatalog_1a2ad942145c547782446bc1d854b4e117" compoundref="BundleStorageCatalog_8h" startline="102">m_totalBundleByteWriteOperationsToCatalog</references>
+        <references refid="classBundleStorageCatalog_1ac50327695e9335a29ccc59f72af8bba0" compoundref="BundleStorageCatalog_8h" startline="101">m_totalBundleWriteOperationsToCatalog</references>
+        <references refid="classBundleStorageCatalog_1a7af8b2ff90e9aeed1f2e58a351e08613" compoundref="BundleStorageCatalog_8h" startline="96">m_uuidNoFragToCustodyIdHashMap</references>
+        <references refid="classBundleStorageCatalog_1af9687a0c89cf8a63070606689b06e700" compoundref="BundleStorageCatalog_8h" startline="95">m_uuidToCustodyIdHashMap</references>
+        <references refid="structcatalog__entry__t_1a74184cd76181e676ae5baff94abc2314" compoundref="CatalogEntry_8h" startline="30">catalog_entry_t::payloadSizeBytes</references>
+        <references refid="structcatalog__entry__t_1a01a2f6a380d2f445607e2f6449e744d1" compoundref="CatalogEntry_8h" startline="35">catalog_entry_t::ptrUuidKeyInMap</references>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a4aa8d852afbbb852ed6dc51665d08afc" compoundref="TestBundleStorageCatalog_8cpp" startline="270" endline="325">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1ac5bc1c40a5bdbfb4b1850c2c6eec8297" compoundref="BundleStorageManagerBase_8cpp" startline="178" endline="227">BundleStorageManagerBase::PushSegment</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1ac182e845329f88925ee10cd4416feee1" compoundref="BundleStorageManagerBase_8cpp" startline="506" endline="658">BundleStorageManagerBase::RestoreFromDisk</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a148cd0537b2a135e4917b0246709ecbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> *</type>
+        <definition>catalog_entry_t * BundleStorageCatalog::PopEntryFromAwaitingSend</definition>
+        <argsstring>(uint64_t &amp;custodyId, const std::vector&lt; cbhe_eid_t &gt; &amp;availableDestEids)</argsstring>
+        <name>PopEntryFromAwaitingSend</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &gt; &amp;</type>
+          <declname>availableDestEids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="62" column="41" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="167" bodyend="179"/>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <referencedby refid="classBundleStorageCatalog_1aed147ea6b1d12f5fbe5abc377e70d29c" compoundref="BundleStorageCatalog_8cpp" startline="182" endline="199">PopEntryFromAwaitingSend</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1ad2b7303bfc7d64b294a6e5b14b0203a1" compoundref="BundleStorageManagerBase_8cpp" startline="252" endline="264">BundleStorageManagerBase::PopTop</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1aed147ea6b1d12f5fbe5abc377e70d29c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> *</type>
+        <definition>catalog_entry_t * BundleStorageCatalog::PopEntryFromAwaitingSend</definition>
+        <argsstring>(uint64_t &amp;custodyId, const std::vector&lt; uint64_t &gt; &amp;availableDestNodeIds)</argsstring>
+        <name>PopEntryFromAwaitingSend</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint64_t &gt; &amp;</type>
+          <declname>availableDestNodeIds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="63" column="41" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="182" bodyend="199"/>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <references refid="classBundleStorageCatalog_1a148cd0537b2a135e4917b0246709ecbb" compoundref="BundleStorageCatalog_8cpp" startline="167" endline="179">PopEntryFromAwaitingSend</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1ac073217feb56e9afbee3dab308095fa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> *</type>
+        <definition>catalog_entry_t * BundleStorageCatalog::PopEntryFromAwaitingSend</definition>
+        <argsstring>(uint64_t &amp;custodyId, const std::vector&lt; std::pair&lt; cbhe_eid_t, bool &gt; &gt; &amp;availableDests)</argsstring>
+        <name>PopEntryFromAwaitingSend</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref>, bool &gt; &gt; &amp;</type>
+          <declname>availableDests</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="64" column="41" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="202" bodyend="228"/>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <references refid="classBundleStorageCatalog_1a148cd0537b2a135e4917b0246709ecbb" compoundref="BundleStorageCatalog_8cpp" startline="167" endline="179">PopEntryFromAwaitingSend</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::AddEntryToAwaitingSend</definition>
+        <argsstring>(const catalog_entry_t &amp;catalogEntry, const uint64_t custodyId, const DUPLICATE_EXPIRY_ORDER order)</argsstring>
+        <name>AddEntryToAwaitingSend</name>
+        <param>
+          <type>const <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> &amp;</type>
+          <declname>catalogEntry</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391" kindref="member">DUPLICATE_EXPIRY_ORDER</ref></type>
+          <declname>order</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="66" column="29" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="125" bodyend="143"/>
+        <references refid="structcatalog__entry__t_1afefa89c5cc21f34231f173bac1bdb315" compoundref="CatalogEntry_8h" startline="32">catalog_entry_t::destEid</references>
+        <references refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391ac589858dbe1d06c46544266ae4cd2c6f">FIFO</references>
+        <references refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391a4787a7e2a00b208cf9f769b3fff22e33">FILO</references>
+        <references refid="structcatalog__entry__t_1a8f1c9051d68d777d84ae8d82177d8b26" compoundref="CatalogEntry_8cpp" startline="87" endline="89">catalog_entry_t::GetAbsExpiration</references>
+        <references refid="structcatalog__entry__t_1a08532b5cd2824f50e9cd974ff09e3aa0" compoundref="CatalogEntry_8cpp" startline="84" endline="86">catalog_entry_t::GetPriorityIndex</references>
+        <references refid="classBundleStorageCatalog_1ad8bdfb38ca1b6c5ea44075b1a086a174" compoundref="BundleStorageCatalog_8cpp" startline="79" endline="81">Insert_OrderByFifo</references>
+        <references refid="classBundleStorageCatalog_1ad68972c8bf209ec07ed674c63914d0e3" compoundref="BundleStorageCatalog_8cpp" startline="83" endline="85">Insert_OrderByFilo</references>
+        <references refid="classBundleStorageCatalog_1aac1065e5486d2bba5a413e095aa42bae" compoundref="BundleStorageCatalog_8cpp" startline="32" endline="77">Insert_OrderBySequence</references>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <references refid="structcatalog__entry__t_1a6dd4b1f2fcb325b04449d595d2b45b3b" compoundref="CatalogEntry_8h" startline="34">catalog_entry_t::sequence</references>
+        <references refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391a99c6aed0dc727f908b54547f31e76508">SEQUENCE_NUMBER</references>
+        <referencedby refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" compoundref="BundleStorageCatalog_8cpp" startline="91" endline="124">CatalogIncomingBundleForStore</referencedby>
+        <referencedby refid="classBundleStorageCatalog_1a4c91e3878f04037c1a13d1e702702e35" compoundref="BundleStorageCatalog_8cpp" startline="144" endline="147">ReturnEntryToAwaitingSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a4c91e3878f04037c1a13d1e702702e35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::ReturnEntryToAwaitingSend</definition>
+        <argsstring>(const catalog_entry_t &amp;catalogEntry, const uint64_t custodyId)</argsstring>
+        <name>ReturnEntryToAwaitingSend</name>
+        <param>
+          <type>const <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> &amp;</type>
+          <declname>catalogEntry</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="67" column="29" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="144" bodyend="147"/>
+        <references refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" compoundref="BundleStorageCatalog_8cpp" startline="125" endline="143">AddEntryToAwaitingSend</references>
+        <references refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391a4787a7e2a00b208cf9f769b3fff22e33">FILO</references>
+        <referencedby refid="classBundleStorageManagerBase_1a549e78c4f659b9967f9873e72ad6ac2b" compoundref="BundleStorageManagerBase_8cpp" startline="297" endline="302">BundleStorageManagerBase::ReturnCustodyIdToAwaitingSend</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1a655545cf4f5d264d67cf86970bd8950e" compoundref="BundleStorageManagerBase_8cpp" startline="293" endline="295">BundleStorageManagerBase::ReturnTop</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1af728adb5935fb5ee80c2b91788ae21d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::RemoveEntryFromAwaitingSend</definition>
+        <argsstring>(const catalog_entry_t &amp;catalogEntry, const uint64_t custodyId)</argsstring>
+        <name>RemoveEntryFromAwaitingSend</name>
+        <param>
+          <type>const <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> &amp;</type>
+          <declname>catalogEntry</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="68" column="29" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="148" bodyend="164"/>
+        <references refid="structcatalog__entry__t_1afefa89c5cc21f34231f173bac1bdb315" compoundref="CatalogEntry_8h" startline="32">catalog_entry_t::destEid</references>
+        <references refid="classForwardListQueue_1a8a8baed7887e0b65d4cc45a4377f17ae" compoundref="ForwardListQueue_8h" startline="152" endline="154">ForwardListQueue&lt; T, Allocator &gt;::empty</references>
+        <references refid="structcatalog__entry__t_1a8f1c9051d68d777d84ae8d82177d8b26" compoundref="CatalogEntry_8cpp" startline="87" endline="89">catalog_entry_t::GetAbsExpiration</references>
+        <references refid="structcatalog__entry__t_1a08532b5cd2824f50e9cd974ff09e3aa0" compoundref="CatalogEntry_8cpp" startline="84" endline="86">catalog_entry_t::GetPriorityIndex</references>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <references refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</references>
+        <referencedby refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" compoundref="BundleStorageCatalog_8cpp" startline="271" endline="321">Remove</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1af5dd339b13c413f020c142c15cbdd9ed" compoundref="BundleStorageManagerBase_8cpp" startline="425" endline="433">BundleStorageManagerBase::RemoveBundleFromDisk</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT std::pair&lt; bool, uint16_t &gt;</type>
+        <definition>std::pair&lt; bool, uint16_t &gt; BundleStorageCatalog::Remove</definition>
+        <argsstring>(const uint64_t custodyId, bool alsoNeedsRemovedFromAwaitingSend)</argsstring>
+        <name>Remove</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>alsoNeedsRemovedFromAwaitingSend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="69" column="34" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="271" bodyend="321"/>
+        <references refid="structcatalog__entry__t_1a391ff41642077c6048b53e34e50fb737" compoundref="CatalogEntry_8h" startline="29">catalog_entry_t::bundleSizeBytes</references>
+        <references refid="classHashMap16BitFixedSize_1a2d8160df7a898cef1d28ceddcfaa1380" compoundref="HashMap16BitFixedSize_8cpp" startline="126" endline="128">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValueAndRemove</references>
+        <references refid="structcatalog__entry__t_1a566342707c8c960e5f3e496a8e52930b" compoundref="CatalogEntry_8cpp" startline="90" endline="92">catalog_entry_t::HasCustodyAndFragmentation</references>
+        <references refid="structcatalog__entry__t_1a74eef0a7c2456c8fde7dec0d11c666bd" compoundref="CatalogEntry_8cpp" startline="93" endline="95">catalog_entry_t::HasCustodyAndNonFragmentation</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1ab2ca5837aa1596666f49819f304d7d2f" compoundref="TestBpSecPolicyManager_8cpp" startline="725" endline="729">if</references>
+        <references refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" compoundref="BundleStorageCatalog_8h" startline="97">m_custodyIdToCatalogEntryHashmap</references>
+        <references refid="classBundleStorageCatalog_1ac7359bf51a798a12a887a1a4fd63b753" compoundref="BundleStorageCatalog_8h" startline="100">m_numBundleBytesInCatalog</references>
+        <references refid="classBundleStorageCatalog_1ab1dc9c8a206e4c8bda220cab49a00a41" compoundref="BundleStorageCatalog_8h" startline="99">m_numBundlesInCatalog</references>
+        <references refid="classBundleStorageCatalog_1a29103fd2c5033a496e8c587131015b98" compoundref="BundleStorageCatalog_8h" startline="104">m_totalBundleByteEraseOperationsFromCatalog</references>
+        <references refid="classBundleStorageCatalog_1ac1fa001506b5b2b108880ce6a361cd1a" compoundref="BundleStorageCatalog_8h" startline="103">m_totalBundleEraseOperationsFromCatalog</references>
+        <references refid="classBundleStorageCatalog_1a7af8b2ff90e9aeed1f2e58a351e08613" compoundref="BundleStorageCatalog_8h" startline="96">m_uuidNoFragToCustodyIdHashMap</references>
+        <references refid="classBundleStorageCatalog_1af9687a0c89cf8a63070606689b06e700" compoundref="BundleStorageCatalog_8h" startline="95">m_uuidToCustodyIdHashMap</references>
+        <references refid="structcatalog__entry__t_1a01a2f6a380d2f445607e2f6449e744d1" compoundref="CatalogEntry_8h" startline="35">catalog_entry_t::ptrUuidKeyInMap</references>
+        <references refid="classBundleStorageCatalog_1af728adb5935fb5ee80c2b91788ae21d2" compoundref="BundleStorageCatalog_8cpp" startline="148" endline="164">RemoveEntryFromAwaitingSend</references>
+        <referencedby refid="classBundleStorageCatalog_1af728adb5935fb5ee80c2b91788ae21d2" compoundref="BundleStorageCatalog_8cpp" startline="148" endline="164">RemoveEntryFromAwaitingSend</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1a5c41ac3e131be0bcd452bd39ddddcdd1" compoundref="BundleStorageManagerBase_8cpp" startline="452" endline="489">BundleStorageManagerBase::RemoveReadBundleFromDisk</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a53c0974a94a9a62c8edbb447d2029cf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> *</type>
+        <definition>catalog_entry_t * BundleStorageCatalog::GetEntryFromCustodyId</definition>
+        <argsstring>(const uint64_t custodyId)</argsstring>
+        <name>GetEntryFromCustodyId</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="70" column="41" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="322" bodyend="324"/>
+        <references refid="classHashMap16BitFixedSize_1a23fec6dc9d65d538eeb9401a7a21225b" compoundref="HashMap16BitFixedSize_8cpp" startline="160" endline="162">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValuePtr</references>
+        <references refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" compoundref="BundleStorageCatalog_8h" startline="97">m_custodyIdToCatalogEntryHashmap</references>
+        <referencedby refid="classBundleStorageManagerBase_1affc84a95bc757fab6df68c5e714ae2f0" compoundref="BundleStorageManagerBase_8cpp" startline="303" endline="305">BundleStorageManagerBase::GetCatalogEntryPtrFromCustodyId</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1a130995ce392c8db5fac85a3eb853223a" compoundref="BundleStorageManagerBase_8cpp" startline="434" endline="441">BundleStorageManagerBase::RemoveBundleFromDisk</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1a6d165d250105b927ee15b399cd910ea1" compoundref="BundleStorageManagerBase_8cpp" startline="442" endline="448">BundleStorageManagerBase::RemoveReadBundleFromDisk</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1a549e78c4f659b9967f9873e72ad6ac2b" compoundref="BundleStorageManagerBase_8cpp" startline="297" endline="302">BundleStorageManagerBase::ReturnCustodyIdToAwaitingSend</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a9437324ba94a88900eaf3db073676f05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t *</type>
+        <definition>uint64_t * BundleStorageCatalog::GetCustodyIdFromUuid</definition>
+        <argsstring>(const cbhe_bundle_uuid_t &amp;bundleUuid)</argsstring>
+        <name>GetCustodyIdFromUuid</name>
+        <param>
+          <type>const <ref refid="structcbhe__bundle__uuid__t" kindref="compound">cbhe_bundle_uuid_t</ref> &amp;</type>
+          <declname>bundleUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="71" column="34" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="325" bodyend="327"/>
+        <references refid="classHashMap16BitFixedSize_1a23fec6dc9d65d538eeb9401a7a21225b" compoundref="HashMap16BitFixedSize_8cpp" startline="160" endline="162">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValuePtr</references>
+        <references refid="classBundleStorageCatalog_1af9687a0c89cf8a63070606689b06e700" compoundref="BundleStorageCatalog_8h" startline="95">m_uuidToCustodyIdHashMap</references>
+        <referencedby refid="classBundleStorageManagerBase_1a9f944108dba37287497ddf702f70424c" compoundref="BundleStorageManagerBase_8cpp" startline="490" endline="492">BundleStorageManagerBase::GetCustodyIdFromUuid</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a925d56801823142a1085ff511a6345f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t *</type>
+        <definition>uint64_t * BundleStorageCatalog::GetCustodyIdFromUuid</definition>
+        <argsstring>(const cbhe_bundle_uuid_nofragment_t &amp;bundleUuid)</argsstring>
+        <name>GetCustodyIdFromUuid</name>
+        <param>
+          <type>const <ref refid="structcbhe__bundle__uuid__nofragment__t" kindref="compound">cbhe_bundle_uuid_nofragment_t</ref> &amp;</type>
+          <declname>bundleUuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="72" column="34" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="328" bodyend="330"/>
+        <references refid="classHashMap16BitFixedSize_1a23fec6dc9d65d538eeb9401a7a21225b" compoundref="HashMap16BitFixedSize_8cpp" startline="160" endline="162">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValuePtr</references>
+        <references refid="classBundleStorageCatalog_1a7af8b2ff90e9aeed1f2e58a351e08613" compoundref="BundleStorageCatalog_8h" startline="96">m_uuidNoFragToCustodyIdHashMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a9ed24f716f7bd01e3be1bfc91c731057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT void</type>
+        <definition>void BundleStorageCatalog::GetExpiredBundleIds</definition>
+        <argsstring>(const uint64_t expiry, const uint64_t maxNumberToFind, std::vector&lt; uint64_t &gt; &amp;returnedIds)</argsstring>
+        <name>GetExpiredBundleIds</name>
+        <param>
+          <type>const uint64_t</type>
+          <declname>expiry</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>maxNumberToFind</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint64_t &gt; &amp;</type>
+          <declname>returnedIds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="73" column="29" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="332" bodyend="359"/>
+        <references refid="classForwardListQueue_1a0baec318b42b7c1bf77b7bafbca6f719" compoundref="ForwardListQueue_8h" startline="168" endline="170">ForwardListQueue&lt; T, Allocator &gt;::begin</references>
+        <references refid="classForwardListQueue_1a9cffaac67e1e106d21b6efbe54dc4b46" compoundref="ForwardListQueue_8h" startline="172" endline="174">ForwardListQueue&lt; T, Allocator &gt;::end</references>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <references refid="BundleStorageManager_8h_1a7e2d44cd5eb83790a3bc888bdc26477a" compoundref="BundleStorageManager_8h" startline="45">NUMBER_OF_PRIORITIES</references>
+        <references refid="classForwardListQueue_1ac6f4cb34ca7dee8275c54e9487480d96" compoundref="ForwardListQueue_8h" startline="61" endline="70">ForwardListQueue&lt; T, Allocator &gt;::push_back</references>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a4aa8d852afbbb852ed6dc51665d08afc" compoundref="TestBundleStorageCatalog_8cpp" startline="270" endline="325">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1a801e395c6503914a6fcf56c023b239e0" compoundref="BundleStorageManagerBase_8cpp" startline="499" endline="501">BundleStorageManagerBase::GetExpiredBundleIds</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a1755fe9140168c3f1028a2b921d67f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::GetStorageExpiringBeforeThresholdTelemetry</definition>
+        <argsstring>(StorageExpiringBeforeThresholdTelemetry_t &amp;telem)</argsstring>
+        <name>GetStorageExpiringBeforeThresholdTelemetry</name>
+        <param>
+          <type><ref refid="structStorageExpiringBeforeThresholdTelemetry__t" kindref="compound">StorageExpiringBeforeThresholdTelemetry_t</ref> &amp;</type>
+          <declname>telem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="74" column="29" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="361" bodyend="388"/>
+        <references refid="classForwardListQueue_1a0baec318b42b7c1bf77b7bafbca6f719" compoundref="ForwardListQueue_8h" startline="168" endline="170">ForwardListQueue&lt; T, Allocator &gt;::begin</references>
+        <references refid="structcatalog__entry__t_1a391ff41642077c6048b53e34e50fb737" compoundref="CatalogEntry_8h" startline="29">catalog_entry_t::bundleSizeBytes</references>
+        <references refid="classForwardListQueue_1a9cffaac67e1e106d21b6efbe54dc4b46" compoundref="ForwardListQueue_8h" startline="172" endline="174">ForwardListQueue&lt; T, Allocator &gt;::end</references>
+        <references refid="classHashMap16BitFixedSize_1a23fec6dc9d65d538eeb9401a7a21225b" compoundref="HashMap16BitFixedSize_8cpp" startline="160" endline="162">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValuePtr</references>
+        <references refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" compoundref="BundleStorageCatalog_8h" startline="97">m_custodyIdToCatalogEntryHashmap</references>
+        <references refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" compoundref="BundleStorageCatalog_8h" startline="94">m_destEidToPrioritiesMap</references>
+        <references refid="structStorageExpiringBeforeThresholdTelemetry__t_1ae170548862bc5e7ced6646224128a1b8" compoundref="TelemetryDefinitions_8h" startline="92">StorageExpiringBeforeThresholdTelemetry_t::mapNodeIdToExpiringBeforeThresholdCount</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="BundleStorageManager_8h_1a7e2d44cd5eb83790a3bc888bdc26477a" compoundref="BundleStorageManager_8h" startline="45">NUMBER_OF_PRIORITIES</references>
+        <references refid="structStorageExpiringBeforeThresholdTelemetry__t_1a119b2119fdc0a01931f3a2fb782b156d" compoundref="TelemetryDefinitions_8h" startline="89">StorageExpiringBeforeThresholdTelemetry_t::priority</references>
+        <references refid="structStorageExpiringBeforeThresholdTelemetry__t_1af7876df8721d179b3961f7cd78d504f0" compoundref="TelemetryDefinitions_8h" startline="90">StorageExpiringBeforeThresholdTelemetry_t::thresholdSecondsSinceStartOfYear2000</references>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a4aa8d852afbbb852ed6dc51665d08afc" compoundref="TestBundleStorageCatalog_8cpp" startline="270" endline="325">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBundleStorageManagerBase_1aa5c172f74aa6744cae1da9ebbcb29a69" compoundref="BundleStorageManagerBase_8cpp" startline="496" endline="498">BundleStorageManagerBase::GetStorageExpiringBeforeThresholdTelemetry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a6dbfc9353c2508ff82d7105399215f78" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::GetNumBundlesInCatalog</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetNumBundlesInCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="76" column="33" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="390" bodyend="392"/>
+        <references refid="classBundleStorageCatalog_1ab1dc9c8a206e4c8bda220cab49a00a41" compoundref="BundleStorageCatalog_8h" startline="99">m_numBundlesInCatalog</references>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a4aa8d852afbbb852ed6dc51665d08afc" compoundref="TestBundleStorageCatalog_8cpp" startline="270" endline="325">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" compoundref="ZmqStorageInterface_8cpp" startline="1279" endline="1297">ZmqStorageInterface::Impl::SyncTelemetry</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a27a2123ad057a8cdd549d3fbaa789844" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::GetNumBundleBytesInCatalog</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetNumBundleBytesInCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="77" column="33" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="393" bodyend="395"/>
+        <references refid="classBundleStorageCatalog_1ac7359bf51a798a12a887a1a4fd63b753" compoundref="BundleStorageCatalog_8h" startline="100">m_numBundleBytesInCatalog</references>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" compoundref="ZmqStorageInterface_8cpp" startline="1279" endline="1297">ZmqStorageInterface::Impl::SyncTelemetry</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a630c5471944d466669bd2930a5ab0541" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::GetTotalBundleWriteOperationsToCatalog</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleWriteOperationsToCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="79" column="33" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="396" bodyend="398"/>
+        <references refid="classBundleStorageCatalog_1ac50327695e9335a29ccc59f72af8bba0" compoundref="BundleStorageCatalog_8h" startline="101">m_totalBundleWriteOperationsToCatalog</references>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" compoundref="ZmqStorageInterface_8cpp" startline="1279" endline="1297">ZmqStorageInterface::Impl::SyncTelemetry</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a7b2d0294db7de5c24130509507d5f2aa" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::GetTotalBundleByteWriteOperationsToCatalog</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleByteWriteOperationsToCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="80" column="33" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="399" bodyend="401"/>
+        <references refid="classBundleStorageCatalog_1a2ad942145c547782446bc1d854b4e117" compoundref="BundleStorageCatalog_8h" startline="102">m_totalBundleByteWriteOperationsToCatalog</references>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" compoundref="ZmqStorageInterface_8cpp" startline="1279" endline="1297">ZmqStorageInterface::Impl::SyncTelemetry</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a0aea9fb2657b73825867cb5bf0e7e848" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::GetTotalBundleEraseOperationsFromCatalog</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleEraseOperationsFromCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="82" column="33" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="402" bodyend="404"/>
+        <references refid="classBundleStorageCatalog_1ac1fa001506b5b2b108880ce6a361cd1a" compoundref="BundleStorageCatalog_8h" startline="103">m_totalBundleEraseOperationsFromCatalog</references>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" compoundref="ZmqStorageInterface_8cpp" startline="1279" endline="1297">ZmqStorageInterface::Impl::SyncTelemetry</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1a98516a46c62d94b64772c68e6d98b67a" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>STORAGE_LIB_EXPORT uint64_t</type>
+        <definition>uint64_t BundleStorageCatalog::GetTotalBundleByteEraseOperationsFromCatalog</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetTotalBundleByteEraseOperationsFromCatalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="83" column="33" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="405" bodyend="407"/>
+        <references refid="classBundleStorageCatalog_1a29103fd2c5033a496e8c587131015b98" compoundref="BundleStorageCatalog_8h" startline="104">m_totalBundleByteEraseOperationsFromCatalog</references>
+        <referencedby refid="structZmqStorageInterface_1_1Impl_1a5cf990e63bf43aedf7ac7dd14a74c953" compoundref="ZmqStorageInterface_8cpp" startline="1279" endline="1297">ZmqStorageInterface::Impl::SyncTelemetry</referencedby>
+        <referencedby refid="TestBundleStorageCatalog_8cpp_1a9bf2c0db43cd2c548e8447cd420077c9" compoundref="TestBundleStorageCatalog_8cpp" startline="58" endline="258">TestBundleStorage</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBundleStorageCatalog_1abafa70c5b1f70730450e27d2f9cbf356" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT <ref refid="structcatalog__entry__t" kindref="compound">catalog_entry_t</ref> *</type>
+        <definition>catalog_entry_t * BundleStorageCatalog::PopEntryFromAwaitingSend</definition>
+        <argsstring>(uint64_t &amp;custodyId, const std::vector&lt; std::pair&lt; const cbhe_eid_t *, priorities_to_expirations_array_t * &gt; &gt; &amp;destEidPlusPriorityArrayPtrs)</argsstring>
+        <name>PopEntryFromAwaitingSend</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>custodyId</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> *, <ref refid="BundleStorageCatalog_8h_1a2e20b0d44db68416d0a399d439de2f69" kindref="member">priorities_to_expirations_array_t</ref> * &gt; &gt; &amp;</type>
+          <declname>destEidPlusPriorityArrayPtrs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="86" column="44" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="229" bodyend="266"/>
+        <references refid="classForwardListQueue_1a0baec318b42b7c1bf77b7bafbca6f719" compoundref="ForwardListQueue_8h" startline="168" endline="170">ForwardListQueue&lt; T, Allocator &gt;::begin</references>
+        <references refid="classForwardListQueue_1a8a8baed7887e0b65d4cc45a4377f17ae" compoundref="ForwardListQueue_8h" startline="152" endline="154">ForwardListQueue&lt; T, Allocator &gt;::empty</references>
+        <references refid="classForwardListQueue_1af488f9560fb5abf6e5c71bbfb67b7338" compoundref="ForwardListQueue_8h" startline="128" endline="130">ForwardListQueue&lt; T, Allocator &gt;::front</references>
+        <references refid="classHashMap16BitFixedSize_1a23fec6dc9d65d538eeb9401a7a21225b" compoundref="HashMap16BitFixedSize_8cpp" startline="160" endline="162">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValuePtr</references>
+        <references refid="TestCborUint_8cpp_1a784aef30a5f597ed892f45a0f048510d" compoundref="TestCborUint_8cpp" startline="450">j</references>
+        <references refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" compoundref="BundleStorageCatalog_8h" startline="97">m_custodyIdToCatalogEntryHashmap</references>
+        <references refid="BundleStorageManager_8h_1a7e2d44cd5eb83790a3bc888bdc26477a" compoundref="BundleStorageManager_8h" startline="45">NUMBER_OF_PRIORITIES</references>
+        <references refid="classForwardListQueue_1a02c457372e1772a9e45cef14c34e36d0" compoundref="ForwardListQueue_8h" startline="144" endline="146">ForwardListQueue&lt; T, Allocator &gt;::pop</references>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1aac1065e5486d2bba5a413e095aa42bae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::Insert_OrderBySequence</definition>
+        <argsstring>(custids_flist_queue_t &amp;custodyIdFlistQueue, const uint64_t custodyIdToInsert, const uint64_t mySequence)</argsstring>
+        <name>Insert_OrderBySequence</name>
+        <param>
+          <type><ref refid="BundleStorageCatalog_8h_1adb850648f56c873d0e396f44dbde114f" kindref="member">custids_flist_queue_t</ref> &amp;</type>
+          <declname>custodyIdFlistQueue</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyIdToInsert</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>mySequence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="88" column="32" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="32" bodyend="77"/>
+        <references refid="classForwardListQueue_1ae26ed71c621984cf0b39d6b963360f86" compoundref="ForwardListQueue_8h" startline="136" endline="138">ForwardListQueue&lt; T, Allocator &gt;::back</references>
+        <references refid="classForwardListQueue_1a5762741b38c72b9febfe1d6d49811b7c" compoundref="ForwardListQueue_8h" startline="189" endline="191">ForwardListQueue&lt; T, Allocator &gt;::cbefore_begin</references>
+        <references refid="classForwardListQueue_1a9412b977bb5e0c4e298aa9a61474b1fb" compoundref="ForwardListQueue_8h" startline="176" endline="178">ForwardListQueue&lt; T, Allocator &gt;::cbegin</references>
+        <references refid="classForwardListQueue_1a297d00642413c391110adf994483bf65" compoundref="ForwardListQueue_8h" startline="180" endline="182">ForwardListQueue&lt; T, Allocator &gt;::cend</references>
+        <references refid="classForwardListQueue_1a60b0099eb3bcb92ac34c2d62fd657144" compoundref="ForwardListQueue_8h" startline="49" endline="59">ForwardListQueue&lt; T, Allocator &gt;::emplace_back</references>
+        <references refid="classForwardListQueue_1a28d33b66122f70f21fbf88b698707fa1" compoundref="ForwardListQueue_8h" startline="84" endline="90">ForwardListQueue&lt; T, Allocator &gt;::emplace_front</references>
+        <references refid="classForwardListQueue_1a8a8baed7887e0b65d4cc45a4377f17ae" compoundref="ForwardListQueue_8h" startline="152" endline="154">ForwardListQueue&lt; T, Allocator &gt;::empty</references>
+        <references refid="classForwardListQueue_1a1ced8b0f80a9e2abfc183e6cadbd0223" compoundref="ForwardListQueue_8h" startline="193" endline="195">ForwardListQueue&lt; T, Allocator &gt;::get_underlying_container</references>
+        <references refid="classHashMap16BitFixedSize_1a23fec6dc9d65d538eeb9401a7a21225b" compoundref="HashMap16BitFixedSize_8cpp" startline="160" endline="162">HashMap16BitFixedSize&lt; keyType, valueType &gt;::GetValuePtr</references>
+        <references refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" compoundref="BundleStorageCatalog_8h" startline="97">m_custodyIdToCatalogEntryHashmap</references>
+        <references refid="structcatalog__entry__t_1a6dd4b1f2fcb325b04449d595d2b45b3b" compoundref="CatalogEntry_8h" startline="34">catalog_entry_t::sequence</references>
+        <referencedby refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" compoundref="BundleStorageCatalog_8cpp" startline="125" endline="143">AddEntryToAwaitingSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1ad8bdfb38ca1b6c5ea44075b1a086a174" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageCatalog::Insert_OrderByFifo</definition>
+        <argsstring>(custids_flist_queue_t &amp;custodyIdFlistQueue, const uint64_t custodyIdToInsert)</argsstring>
+        <name>Insert_OrderByFifo</name>
+        <param>
+          <type><ref refid="BundleStorageCatalog_8h_1adb850648f56c873d0e396f44dbde114f" kindref="member">custids_flist_queue_t</ref> &amp;</type>
+          <declname>custodyIdFlistQueue</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyIdToInsert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="89" column="32" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="79" bodyend="81"/>
+        <references refid="classForwardListQueue_1a60b0099eb3bcb92ac34c2d62fd657144" compoundref="ForwardListQueue_8h" startline="49" endline="59">ForwardListQueue&lt; T, Allocator &gt;::emplace_back</references>
+        <referencedby refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" compoundref="BundleStorageCatalog_8cpp" startline="125" endline="143">AddEntryToAwaitingSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1ad68972c8bf209ec07ed674c63914d0e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT void</type>
+        <definition>void BundleStorageCatalog::Insert_OrderByFilo</definition>
+        <argsstring>(custids_flist_queue_t &amp;custodyIdFlistQueue, const uint64_t custodyIdToInsert)</argsstring>
+        <name>Insert_OrderByFilo</name>
+        <param>
+          <type><ref refid="BundleStorageCatalog_8h_1adb850648f56c873d0e396f44dbde114f" kindref="member">custids_flist_queue_t</ref> &amp;</type>
+          <declname>custodyIdFlistQueue</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyIdToInsert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="90" column="32" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="83" bodyend="85"/>
+        <references refid="classForwardListQueue_1a28d33b66122f70f21fbf88b698707fa1" compoundref="ForwardListQueue_8h" startline="84" endline="90">ForwardListQueue&lt; T, Allocator &gt;::emplace_front</references>
+        <referencedby refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" compoundref="BundleStorageCatalog_8cpp" startline="125" endline="143">AddEntryToAwaitingSend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBundleStorageCatalog_1ab85da547c6d0c44a81369105ac037e55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STORAGE_LIB_NO_EXPORT bool</type>
+        <definition>bool BundleStorageCatalog::Remove</definition>
+        <argsstring>(custids_flist_queue_t &amp;custodyIdFlistQueue, const uint64_t custodyIdToRemove)</argsstring>
+        <name>Remove</name>
+        <param>
+          <type><ref refid="BundleStorageCatalog_8h_1adb850648f56c873d0e396f44dbde114f" kindref="member">custids_flist_queue_t</ref> &amp;</type>
+          <declname>custodyIdFlistQueue</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>custodyIdToRemove</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module/storage/include/BundleStorageCatalog.h" line="91" column="32" bodyfile="module/storage/src/BundleStorageCatalog.cpp" bodystart="87" bodyend="89"/>
+        <references refid="classForwardListQueue_1aabf316b8a9252935889bfa9c5a3ddec6" compoundref="ForwardListQueue_8h" startline="108" endline="126">ForwardListQueue&lt; T, Allocator &gt;::remove_by_key</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>HashMap16BitFixedSize&lt; cbhe_bundle_uuid_t, uint64_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="4">
+        <label>HashMap16BitFixedSize&lt; uint64_t, catalog_entry_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="3">
+        <label>HashMap16BitFixedSize&lt; cbhe_bundle_uuid_nofragment_t, uint64_t &gt;</label>
+        <link refid="classHashMap16BitFixedSize"/>
+      </node>
+      <node id="1">
+        <label>BundleStorageCatalog</label>
+        <link refid="classBundleStorageCatalog"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_uuidToCustodyIdHashMap</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_uuidNoFragToCustodyIdHashMap</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_custodyIdToCatalogEntryHashmap</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module/storage/include/BundleStorageCatalog.h" line="50" column="1" bodyfile="module/storage/include/BundleStorageCatalog.h" bodystart="50" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classBundleStorageCatalog_1a9de200de6ac7e5a86d575ac1e555896f" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>AddEntryToAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1a6456519796d392c5c235d05380014096" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>BundleStorageCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a2d5db9cbd790e930f661792773deeb66" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>CatalogIncomingBundleForStore</name></member>
+      <member refid="classBundleStorageCatalog_1ae1463e71abf7015d7c33185e377e6391" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>DUPLICATE_EXPIRY_ORDER</name></member>
+      <member refid="classBundleStorageCatalog_1a9437324ba94a88900eaf3db073676f05" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetCustodyIdFromUuid</name></member>
+      <member refid="classBundleStorageCatalog_1a925d56801823142a1085ff511a6345f2" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetCustodyIdFromUuid</name></member>
+      <member refid="classBundleStorageCatalog_1a53c0974a94a9a62c8edbb447d2029cf0" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetEntryFromCustodyId</name></member>
+      <member refid="classBundleStorageCatalog_1a9ed24f716f7bd01e3be1bfc91c731057" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetExpiredBundleIds</name></member>
+      <member refid="classBundleStorageCatalog_1a27a2123ad057a8cdd549d3fbaa789844" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetNumBundleBytesInCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a6dbfc9353c2508ff82d7105399215f78" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetNumBundlesInCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a1755fe9140168c3f1028a2b921d67f79" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetStorageExpiringBeforeThresholdTelemetry</name></member>
+      <member refid="classBundleStorageCatalog_1a98516a46c62d94b64772c68e6d98b67a" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetTotalBundleByteEraseOperationsFromCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a7b2d0294db7de5c24130509507d5f2aa" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetTotalBundleByteWriteOperationsToCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a0aea9fb2657b73825867cb5bf0e7e848" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetTotalBundleEraseOperationsFromCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a630c5471944d466669bd2930a5ab0541" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>GetTotalBundleWriteOperationsToCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1ad8bdfb38ca1b6c5ea44075b1a086a174" prot="private" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>Insert_OrderByFifo</name></member>
+      <member refid="classBundleStorageCatalog_1ad68972c8bf209ec07ed674c63914d0e3" prot="private" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>Insert_OrderByFilo</name></member>
+      <member refid="classBundleStorageCatalog_1aac1065e5486d2bba5a413e095aa42bae" prot="private" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>Insert_OrderBySequence</name></member>
+      <member refid="classBundleStorageCatalog_1a0409a57a347c31ba4593c5f8f938502b" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_custodyIdToCatalogEntryHashmap</name></member>
+      <member refid="classBundleStorageCatalog_1a603d5dda11b321ee6dd5c62fb79f621a" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_custodyIdToCustodyTransferExpiryBimap</name></member>
+      <member refid="classBundleStorageCatalog_1a019fdf8d52dfd0356d7f1aa700d6a41d" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_destEidToPrioritiesMap</name></member>
+      <member refid="classBundleStorageCatalog_1ac7359bf51a798a12a887a1a4fd63b753" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_numBundleBytesInCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1ab1dc9c8a206e4c8bda220cab49a00a41" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_numBundlesInCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a29103fd2c5033a496e8c587131015b98" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_totalBundleByteEraseOperationsFromCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a2ad942145c547782446bc1d854b4e117" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_totalBundleByteWriteOperationsToCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1ac1fa001506b5b2b108880ce6a361cd1a" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_totalBundleEraseOperationsFromCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1ac50327695e9335a29ccc59f72af8bba0" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_totalBundleWriteOperationsToCatalog</name></member>
+      <member refid="classBundleStorageCatalog_1a7af8b2ff90e9aeed1f2e58a351e08613" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_uuidNoFragToCustodyIdHashMap</name></member>
+      <member refid="classBundleStorageCatalog_1af9687a0c89cf8a63070606689b06e700" prot="protected" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>m_uuidToCustodyIdHashMap</name></member>
+      <member refid="classBundleStorageCatalog_1a148cd0537b2a135e4917b0246709ecbb" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>PopEntryFromAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1aed147ea6b1d12f5fbe5abc377e70d29c" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>PopEntryFromAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1ac073217feb56e9afbee3dab308095fa8" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>PopEntryFromAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1abafa70c5b1f70730450e27d2f9cbf356" prot="private" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>PopEntryFromAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1aedc1590ab6cb2a8782fe641944859baa" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>Remove</name></member>
+      <member refid="classBundleStorageCatalog_1ab85da547c6d0c44a81369105ac037e55" prot="private" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>Remove</name></member>
+      <member refid="classBundleStorageCatalog_1af728adb5935fb5ee80c2b91788ae21d2" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>RemoveEntryFromAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1a4c91e3878f04037c1a13d1e702702e35" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>ReturnEntryToAwaitingSend</name></member>
+      <member refid="classBundleStorageCatalog_1a54eda94ab25094e4aaade1c554c7c202" prot="public" virt="non-virtual"><scope>BundleStorageCatalog</scope><name>~BundleStorageCatalog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

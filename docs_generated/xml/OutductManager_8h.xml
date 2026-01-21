@@ -1,0 +1,954 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="OutductManager_8h" kind="file" language="C++">
+    <compoundname>OutductManager.h</compoundname>
+    <includes refid="Outduct_8h" local="yes">Outduct.h</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includes refid="zmq_8hpp" local="no">zmq.hpp</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes refid="bpv6_8h" local="yes">codec/bpv6.h</includes>
+    <includes refid="TcpclBundleSource_8h" local="yes">TcpclBundleSource.h</includes>
+    <includes refid="TelemetryDefinitions_8h" local="yes">TelemetryDefinitions.h</includes>
+    <includes refid="BundleCallbackFunctionDefines_8h" local="yes">BundleCallbackFunctionDefines.h</includes>
+    <includedby refid="BpSinkPattern_8h" local="yes">common/bpcodec/include/app_patterns/BpSinkPattern.h</includedby>
+    <includedby refid="BpSourcePattern_8h" local="yes">common/bpcodec/include/app_patterns/BpSourcePattern.h</includedby>
+    <includedby refid="OutductManager_8cpp" local="yes">common/outduct_manager/src/OutductManager.cpp</includedby>
+    <includedby refid="EgressAsync_8cpp" local="yes">module/egress/src/EgressAsync.cpp</includedby>
+    <incdepgraph>
+      <node id="20">
+        <label>list</label>
+      </node>
+      <node id="64">
+        <label>atomic</label>
+      </node>
+      <node id="45">
+        <label>TimestampUtil.h</label>
+        <link refid="TimestampUtil_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>TcpclBundleSource.h</label>
+        <link refid="TcpclBundleSource_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>iomanip</label>
+      </node>
+      <node id="63">
+        <label>queue</label>
+      </node>
+      <node id="7">
+        <label>OutductsConfig.h</label>
+        <link refid="OutductsConfig_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="34">
+        <label>limits</label>
+      </node>
+      <node id="22">
+        <label>zmq.h</label>
+      </node>
+      <node id="48">
+        <label>codec/PrimaryBlock.h</label>
+        <link refid="PrimaryBlock_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>boost/integer.hpp</label>
+      </node>
+      <node id="65">
+        <label>CircularIndexBufferSingleProducerSingleConsumerConfigurable.h</label>
+        <link refid="CircularIndexBufferSingleProducerSingleConsumerConfigurable_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>cstdint</label>
+      </node>
+      <node id="51">
+        <label>stdint.h</label>
+      </node>
+      <node id="50">
+        <label>stdlib.h</label>
+      </node>
+      <node id="38">
+        <label>telemetry_definitions_export.h</label>
+      </node>
+      <node id="19">
+        <label>config_lib_export.h</label>
+      </node>
+      <node id="23">
+        <label>cassert</label>
+      </node>
+      <node id="42">
+        <label>bpcodec_export.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="37">
+        <label>map</label>
+      </node>
+      <node id="43">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="49">
+        <label>EnumAsFlagsMacro.h</label>
+        <link refid="EnumAsFlagsMacro_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>JsonSerializable.h</label>
+        <link refid="JsonSerializable_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>exception</label>
+      </node>
+      <node id="2">
+        <label>Outduct.h</label>
+        <link refid="Outduct_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>common/outduct_manager/include/OutductManager.h</label>
+        <link refid="OutductManager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>tcpcl_lib_export.h</label>
+      </node>
+      <node id="41">
+        <label>ostream</label>
+      </node>
+      <node id="6">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="16">
+        <label>boost/property_tree/json_parser/error.hpp</label>
+      </node>
+      <node id="59">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="36">
+        <label>TelemetryDefinitions.h</label>
+        <link refid="TelemetryDefinitions_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>boost/config/detail/suffix.hpp</label>
+      </node>
+      <node id="29">
+        <label>BundleCallbackFunctionDefines.h</label>
+        <link refid="BundleCallbackFunctionDefines_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>tuple</label>
+      </node>
+      <node id="9">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="46">
+        <label>ctime</label>
+      </node>
+      <node id="39">
+        <label>codec/Cbhe.h</label>
+        <link refid="Cbhe_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+      <node id="31">
+        <label>PaddedVectorUint8.h</label>
+        <link refid="PaddedVectorUint8_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>new</label>
+      </node>
+      <node id="12">
+        <label>utility</label>
+      </node>
+      <node id="54">
+        <label>array</label>
+      </node>
+      <node id="28">
+        <label>sstream</label>
+      </node>
+      <node id="56">
+        <label>FreeListAllocator.h</label>
+        <link refid="FreeListAllocator_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>cstdlib</label>
+      </node>
+      <node id="62">
+        <label>TcpAsyncSender.h</label>
+        <link refid="TcpAsyncSender_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="18">
+        <label>hdtn_util_export.h</label>
+      </node>
+      <node id="35">
+        <label>iostream</label>
+      </node>
+      <node id="58">
+        <label>TcpclV3BidirectionalLink.h</label>
+        <link refid="TcpclV3BidirectionalLink_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>cstddef</label>
+      </node>
+      <node id="47">
+        <label>boost/date_time.hpp</label>
+      </node>
+      <node id="3">
+        <label>outduct_manager_lib_export.h</label>
+      </node>
+      <node id="44">
+        <label>codec/bpv6.h</label>
+        <link refid="bpv6_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>BidirectionalLink.h</label>
+        <link refid="BidirectionalLink_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>type_traits</label>
+      </node>
+      <node id="10">
+        <label>set</label>
+      </node>
+      <node id="25">
+        <label>algorithm</label>
+      </node>
+      <node id="24">
+        <label>cstring</label>
+      </node>
+      <node id="60">
+        <label>Tcpcl.h</label>
+        <link refid="Tcpcl_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="21">
+        <label>zmq.hpp</label>
+        <link refid="zmq_8hpp"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>FragmentSet.h</label>
+        <link refid="FragmentSet_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="53">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamMain.cpp</label>
+        <link refid="BpSendStreamMain_8cpp"/>
+      </node>
+      <node id="10">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketMain.cpp</label>
+        <link refid="BpReceivePacketMain_8cpp"/>
+      </node>
+      <node id="2">
+        <label>common/bpcodec/include/app_patterns/BpSinkPattern.h</label>
+        <link refid="BpSinkPattern_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>common/bpcodec/apps/bpreceivepacket/include/BpReceivePacket.h</label>
+        <link refid="BpReceivePacket_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStreamRunner.cpp</label>
+        <link refid="BpSendStreamRunner_8cpp"/>
+      </node>
+      <node id="11">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacketRunner.cpp</label>
+        <link refid="BpReceivePacketRunner_8cpp"/>
+      </node>
+      <node id="26">
+        <label>common/bpcodec/include/app_patterns/BpSourcePattern.h</label>
+        <link refid="BpSourcePattern_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>common/bpcodec/apps/bpsendpacket/include/BpSendPacket.h</label>
+        <link refid="BpSendPacket_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>common/outduct_manager/src/OutductManager.cpp</label>
+        <link refid="OutductManager_8cpp"/>
+      </node>
+      <node id="40">
+        <label>common/bpcodec/apps/bping/src/BPingRunner.cpp</label>
+        <link refid="BPingRunner_8cpp"/>
+      </node>
+      <node id="17">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStream.cpp</label>
+        <link refid="BpReceiveStream_8cpp"/>
+      </node>
+      <node id="43">
+        <label>common/bpcodec/apps/bpsendfile/include/BpSendFileRunner.h</label>
+        <link refid="BpSendFileRunner_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacketRunner.cpp</label>
+        <link refid="BpSendPacketRunner_8cpp"/>
+      </node>
+      <node id="34">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncMain.cpp</label>
+        <link refid="BpGenAsyncMain_8cpp"/>
+      </node>
+      <node id="36">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsync.cpp</label>
+        <link refid="BpGenAsync_8cpp"/>
+      </node>
+      <node id="13">
+        <label>common/bpcodec/apps/BpReceiveStream/include/BpReceiveStream.h</label>
+        <link refid="BpReceiveStream_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamRunner.cpp</label>
+        <link refid="BpReceiveStreamRunner_8cpp"/>
+      </node>
+      <node id="39">
+        <label>common/bpcodec/apps/bping/src/BPingMain.cpp</label>
+        <link refid="BPingMain_8cpp"/>
+      </node>
+      <node id="22">
+        <label>common/bpcodec/apps/bpsink/include/BpSinkAsyncRunner.h</label>
+        <link refid="BpSinkAsyncRunner_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>common/bpcodec/apps/bpsendfile/include/BpSendFile.h</label>
+        <link refid="BpSendFile_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>common/bpcodec/apps/bpfiletransfer/include/BpFileTransferRunner.h</label>
+        <link refid="BpFileTransferRunner_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>common/bpcodec/apps/bping/include/BPingRunner.h</label>
+        <link refid="BPingRunner_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>common/bpcodec/src/app_patterns/BpSinkPattern.cpp</label>
+        <link refid="BpSinkPattern_8cpp"/>
+      </node>
+      <node id="15">
+        <label>common/bpcodec/apps/BpReceiveStream/src/BpReceiveStreamMain.cpp</label>
+        <link refid="BpReceiveStreamMain_8cpp"/>
+      </node>
+      <node id="46">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFile.cpp</label>
+        <link refid="BpSendFile_8cpp"/>
+      </node>
+      <node id="1">
+        <label>common/outduct_manager/include/OutductManager.h</label>
+        <link refid="OutductManager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileRunner.cpp</label>
+        <link refid="BpReceiveFileRunner_8cpp"/>
+      </node>
+      <node id="27">
+        <label>common/bpcodec/apps/bpfiletransfer/include/BpFileTransfer.h</label>
+        <link refid="BpFileTransfer_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileRunner.cpp</label>
+        <link refid="BpSendFileRunner_8cpp"/>
+      </node>
+      <node id="20">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsync.cpp</label>
+        <link refid="BpSinkAsync_8cpp"/>
+      </node>
+      <node id="23">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncMain.cpp</label>
+        <link refid="BpSinkAsyncMain_8cpp"/>
+      </node>
+      <node id="21">
+        <label>common/bpcodec/apps/bpsink/BpSinkAsyncRunner.cpp</label>
+        <link refid="BpSinkAsyncRunner_8cpp"/>
+      </node>
+      <node id="12">
+        <label>common/bpcodec/apps/bpreceivepacket/src/BpReceivePacket.cpp</label>
+        <link refid="BpReceivePacket_8cpp"/>
+      </node>
+      <node id="56">
+        <label>common/bpcodec/src/app_patterns/BpSourcePattern.cpp</label>
+        <link refid="BpSourcePattern_8cpp"/>
+      </node>
+      <node id="31">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransfer.cpp</label>
+        <link refid="BpFileTransfer_8cpp"/>
+      </node>
+      <node id="33">
+        <label>common/bpcodec/apps/bpgen/include/BpGenAsyncRunner.h</label>
+        <link refid="BpGenAsyncRunner_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferRunner.cpp</label>
+        <link refid="BpFileTransferRunner_8cpp"/>
+      </node>
+      <node id="4">
+        <label>common/bpcodec/apps/bpreceivefile/include/BpReceiveFileRunner.h</label>
+        <link refid="BpReceiveFileRunner_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>common/bpcodec/apps/bpsendfile/src/BpSendFileMain.cpp</label>
+        <link refid="BpSendFileMain_8cpp"/>
+      </node>
+      <node id="35">
+        <label>common/bpcodec/apps/bpgen/src/BpGenAsyncRunner.cpp</label>
+        <link refid="BpGenAsyncRunner_8cpp"/>
+      </node>
+      <node id="48">
+        <label>common/bpcodec/apps/bpsendpacket/include/BpSendPacketRunner.h</label>
+        <link refid="BpSendPacketRunner_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>common/bpcodec/apps/bpgen/include/BpGenAsync.h</label>
+        <link refid="BpGenAsync_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/bpcodec/apps/bpreceivefile/include/BpReceiveFile.h</label>
+        <link refid="BpReceiveFile_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>common/bpcodec/apps/bpsink/include/BpSinkAsync.h</label>
+        <link refid="BpSinkAsync_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFileMain.cpp</label>
+        <link refid="BpReceiveFileMain_8cpp"/>
+      </node>
+      <node id="18">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacket.cpp</label>
+        <link refid="BpSendPacket_8cpp"/>
+      </node>
+      <node id="49">
+        <label>common/bpcodec/apps/bpsendpacket/src/BpSendPacketMain.cpp</label>
+        <link refid="BpSendPacketMain_8cpp"/>
+      </node>
+      <node id="29">
+        <label>common/bpcodec/apps/bpfiletransfer/src/BpFileTransferMain.cpp</label>
+        <link refid="BpFileTransferMain_8cpp"/>
+      </node>
+      <node id="37">
+        <label>common/bpcodec/apps/bping/include/BPing.h</label>
+        <link refid="BPing_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>common/bpcodec/apps/BpSendStream/include/BpSendStreamRunner.h</label>
+        <link refid="BpSendStreamRunner_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>common/bpcodec/apps/BpSendStream/include/BpSendStream.h</label>
+        <link refid="BpSendStream_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>common/bpcodec/apps/bpreceivefile/src/BpReceiveFile.cpp</label>
+        <link refid="BpReceiveFile_8cpp"/>
+      </node>
+      <node id="58">
+        <label>module/egress/src/EgressAsync.cpp</label>
+        <link refid="EgressAsync_8cpp"/>
+      </node>
+      <node id="14">
+        <label>common/bpcodec/apps/BpReceiveStream/include/BpReceiveStreamRunner.h</label>
+        <link refid="BpReceiveStreamRunner_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>common/bpcodec/test/TestBpSinkPattern.cpp</label>
+        <link refid="TestBpSinkPattern_8cpp"/>
+      </node>
+      <node id="55">
+        <label>common/bpcodec/apps/BpSendStream/src/BpSendStream.cpp</label>
+        <link refid="BpSendStream_8cpp"/>
+      </node>
+      <node id="41">
+        <label>common/bpcodec/apps/bping/src/BPing.cpp</label>
+        <link refid="BPing_8cpp"/>
+      </node>
+      <node id="9">
+        <label>common/bpcodec/apps/bpreceivepacket/include/BpReceivePacketRunner.h</label>
+        <link refid="BpReceivePacketRunner_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classOutductManager" prot="public">OutductManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Brian Tomko <ulink url="mailto:brian.j.tomko@nasa.gov">brian.j.tomko@nasa.gov</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 United States Government as represented by the National Aeronautics and Space Administration. No copyright is claimed in the United States under Title 17, U.S.Code. All Other Rights Reserved.</para>
+</simplesect>
+</para>
+<sect1 id="UdpDelaySimRunner_8cpp_1LICENSE">
+<title>LICENSE</title>
+<para>Released under the NASA Open Source Agreement (NOSA) See LICENSE.md in the source root directory for more information.</para>
+</sect1>
+<sect1 id="UdpDelaySimRunner_8h_1DESCRIPTION">
+<title>DESCRIPTION</title>
+<para>The <ref refid="classOutductManager" kindref="compound">OutductManager</ref> class contains the collection of outducts loaded from a configuration file for the running instance of HDTN. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OUTDUCT_MANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OUTDUCT_MANAGER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Outduct_8h" kindref="compound">Outduct.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="zmq_8hpp" kindref="compound">zmq.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bpv6_8h" kindref="compound">codec/bpv6.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TcpclBundleSource_8h" kindref="compound">TcpclBundleSource.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//for<sp/>OutductOpportunisticProcessReceivedBundleCallback_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TelemetryDefinitions_8h" kindref="compound">TelemetryDefinitions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BundleCallbackFunctionDefines_8h" kindref="compound">BundleCallbackFunctionDefines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classOutductManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classOutductManager" kindref="compound">OutductManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/><ref refid="classOutductManager_1a00081ee604e8b214eaf1c828c17ecb9d" kindref="member">OutductManager</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/><ref refid="classOutductManager_1a695d68f95c677efba575da0935849e4b" kindref="member">~OutductManager</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1a3c5c9ed7187472f24e513379cc95f085" kindref="member">LoadOutductsFromConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classOutductsConfig" kindref="compound">OutductsConfig</ref><sp/>&amp;<sp/>outductsConfig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>myNodeId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>maxUdpRxPacketSizeBytesForAllLtp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>maxOpportunisticRxBundleSizeBytes,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref><sp/>&amp;<sp/>outductOpportunisticProcessReceivedBundleCallback<sp/>=<sp/><ref refid="BundleCallbackFunctionDefines_8h_1aaa9a9e5f3b2e6b94900d8c8a1775548a" kindref="member">OutductOpportunisticProcessReceivedBundleCallback_t</ref>(),</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref><sp/>&amp;<sp/>outductOnFailedBundleVecSendCallback<sp/>=<sp/><ref refid="BundleCallbackFunctionDefines_8h_1a9178ebd987ba8bab89538ebd3a9321dd" kindref="member">OnFailedBundleVecSendCallback_t</ref>(),</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref><sp/>&amp;<sp/>outductOnFailedBundleZmqSendCallback<sp/>=<sp/><ref refid="BundleCallbackFunctionDefines_8h_1ad5d87ea06dd37a86f276fc2ab85f6f47" kindref="member">OnFailedBundleZmqSendCallback_t</ref>(),</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref>&amp;<sp/>onSuccessfulBundleSendCallback<sp/>=<sp/><ref refid="BundleCallbackFunctionDefines_8h_1a0766d8585f259bcfd8de15585382108d" kindref="member">OnSuccessfulBundleSendCallback_t</ref>(),</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref>&amp;<sp/>onOutductLinkStatusChangedCallback<sp/>=<sp/><ref refid="BundleCallbackFunctionDefines_8h_1a46d0f15fa3e02e62c8908f41fbd27e3a" kindref="member">OnOutductLinkStatusChangedCallback_t</ref>());</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1ad64ed646a077f9a435bad74308930a0c" kindref="member">AllReadyToForward</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1a44adbefe58cb9ea2d7f878f814dbd7f5" kindref="member">StopAllOutducts</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/><ref refid="classOutduct" kindref="compound">Outduct</ref><sp/>*<sp/><ref refid="classOutductManager_1ab0c1a61468c967fda590d4d9b63a562f" kindref="member">GetOutductByFinalDestinationEid_ThreadSafe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref><sp/>&amp;<sp/>finalDestEid);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/><ref refid="classOutduct" kindref="compound">Outduct</ref><sp/>*<sp/><ref refid="classOutductManager_1a26d5c9789d459fd56038691bc58cfca8" kindref="member">GetOutductByOutductUuid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>uuid);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1aa101a69def961e4f82cb43781f69599a" kindref="member">Reroute_ThreadSafe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>finalDestNodeId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>newNextHopNodeId);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1af680bf491f7b4aac76366f692b3a9040" kindref="member">GetAllOutductCapabilitiesTelemetry_ThreadSafe</ref>(<ref refid="structAllOutductCapabilitiesTelemetry__t" kindref="compound">AllOutductCapabilitiesTelemetry_t</ref><sp/>&amp;<sp/>allOutductCapabilitiesTelemetry);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/>std::shared_ptr&lt;Outduct&gt;<sp/><ref refid="classOutductManager_1a5f1eef32d3d62816697bae23b6420522" kindref="member">GetOutductSharedPtrByOutductUuid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>uuid);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/><ref refid="classOutduct" kindref="compound">Outduct</ref><sp/>*<sp/><ref refid="classOutductManager_1a0b3d91d32e52d3b20ab3f30c190ecddf" kindref="member">GetOutductByNextHopNodeId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>nextHopNodeId);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1a51f21d2693bdfe0fd6994066be4f0bcf" kindref="member">Forward</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref><sp/>&amp;<sp/>finalDestEid,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>bundleData,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>size,<sp/>std::vector&lt;uint8_t&gt;&amp;&amp;<sp/>userData);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1a51f21d2693bdfe0fd6994066be4f0bcf" kindref="member">Forward</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref><sp/>&amp;<sp/>finalDestEid,<sp/><ref refid="classzmq_1_1message__t" kindref="compound">zmq::message_t</ref><sp/>&amp;<sp/>movableDataZmq,<sp/>std::vector&lt;uint8_t&gt;&amp;&amp;<sp/>userData);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1a51f21d2693bdfe0fd6994066be4f0bcf" kindref="member">Forward</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref><sp/>&amp;<sp/>finalDestEid,<sp/><ref refid="PaddedVectorUint8_8h_1a7b7a183fa264471e0383cef6cde19b86" kindref="member">padded_vector_uint8_t</ref>&amp;<sp/>movableDataVec,<sp/>std::vector&lt;uint8_t&gt;&amp;&amp;<sp/>userData);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>OUTDUCT_MANAGER_LIB_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOutductManager_1ac8f8c475c0dbb34b3519e35a4bc3375f" kindref="member">PopulateAllOutductTelemetry</ref>(<ref refid="structAllOutductTelemetry__t" kindref="compound">AllOutductTelemetry_t</ref>&amp;<sp/>allOutductTelem);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;uint64_t,<sp/>std::shared_ptr&lt;Outduct&gt;<sp/>&gt;<sp/><ref refid="classOutductManager_1ae2eb4547cfba9a9651e11be4eb62cbbf" kindref="member">m_finalDestNodeIdToOutductMap</ref>;</highlight></codeline>
+<codeline lineno="61" refid="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::mutex<sp/><ref refid="classOutductManager_1a215efeba0ff00a1b6a3acc00f976c885" kindref="member">m_finalDestNodeIdToOutductMapMutex</ref>;</highlight></codeline>
+<codeline lineno="62" refid="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;uint64_t,<sp/>std::shared_ptr&lt;Outduct&gt;<sp/>&gt;<sp/><ref refid="classOutductManager_1a08765425ccb35085efeac9d2bc10e125" kindref="member">m_nextHopNodeIdToOutductMap</ref>;</highlight></codeline>
+<codeline lineno="63" refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Outduct&gt;<sp/>&gt;<sp/><ref refid="classOutductManager_1a0fbf971172664bf68a3bdfec7dc996d0" kindref="member">m_outductsVec</ref>;</highlight></codeline>
+<codeline lineno="64" refid="classOutductManager_1ae62c06198f24e3fc36d0997a059c6542" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="classOutductManager_1ae62c06198f24e3fc36d0997a059c6542" kindref="member">m_numEventsTooManyUnackedBundles</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>OUTDUCT_MANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="common/outduct_manager/include/OutductManager.h"/>
+  </compounddef>
+</doxygen>

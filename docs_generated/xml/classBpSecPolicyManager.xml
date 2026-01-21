@@ -1,0 +1,633 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBpSecPolicyManager" kind="class" language="C++" prot="public">
+    <compoundname>BpSecPolicyManager</compoundname>
+    <includes refid="BpSecPolicyManager_8h" local="no">BpSecPolicyManager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBpSecPolicyManager_1a4600fd69a1a190fe2027d1927763da29" prot="private" static="no" mutable="no">
+        <type><ref refid="structBpSecPolicyFilter" kindref="compound">BpSecPolicyFilter</ref></type>
+        <definition>BpSecPolicyFilter BpSecPolicyManager::m_policyFilterSecuritySource</definition>
+        <argsstring></argsstring>
+        <name>m_policyFilterSecuritySource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="174" column="23" bodyfile="common/bpsec/include/BpSecPolicyManager.h" bodystart="174" bodyend="-1"/>
+        <referencedby refid="classBpSecPolicyManager_1a631c9439c1b2f543d843dd4293712587" compoundref="BpSecPolicyManager_8cpp" startline="125" endline="154">CreateOrGetNewPolicy</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1ada1315561d9918be04a5044ceb3709a1" compoundref="BpSecPolicyManager_8cpp" startline="196" endline="216">FindPolicy</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classBpSecPolicyManager_1afb94a08d640f1eb84ec067faa2ab7e0b" prot="public" static="no" mutable="no">
+        <type><ref refid="BpSecConfig_8h_1a7a8b3d853e03697e06650e13aef0523b" kindref="member">BPSEC_SECURITY_FAILURE_PROCESSING_ACTION_MASKS</ref></type>
+        <definition>BPSEC_SECURITY_FAILURE_PROCESSING_ACTION_MASKS BpSecPolicyManager::m_actionMaskSopMissingAtAcceptor</definition>
+        <argsstring></argsstring>
+        <name>m_actionMaskSopMissingAtAcceptor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="176" column="52" bodyfile="common/bpsec/include/BpSecPolicyManager.h" bodystart="176" bodyend="-1"/>
+        <referencedby refid="classBpSecPolicyManager_1a859f290b5f7bd3684f36222e493a2523" compoundref="BpSecPolicyManager_8cpp" startline="981" endline="1221">LoadFromConfig</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" compoundref="BpSecPolicyManager_8cpp" startline="570" endline="795">ProcessReceivedBundle</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBpSecPolicyManager_1a631c9439c1b2f543d843dd4293712587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> *</type>
+        <definition>BpSecPolicy * BpSecPolicyManager::CreateOrGetNewPolicy</definition>
+        <argsstring>(const std::string &amp;securitySourceEidUri, const std::string &amp;bundleSourceEidUri, const std::string &amp;bundleFinalDestEidUri, const BPSEC_ROLE role, bool &amp;isNewPolicy)</argsstring>
+        <name>CreateOrGetNewPolicy</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>securitySourceEidUri</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bundleSourceEidUri</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bundleFinalDestEidUri</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2" kindref="member">BPSEC_ROLE</ref></type>
+          <declname>role</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>isNewPolicy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref>. Eid <ref refid="classUri" kindref="compound">Uri</ref> parameters may be in the following form:<itemizedlist>
+<listitem><para>The fully qualified [node,service] pair.</para>
+</listitem><listitem><para>The node number only (for wildcard service numbers such as &quot;ipn:2.*&quot;).</para>
+</listitem><listitem><para>The &quot;any eid&quot; (for wildcard all such as &quot;ipn:*.*&quot;).</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>securitySourceEidUri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uri to match of the security source field of the Abstract Security Block (ASB). This field should be &quot;ipn:*.*&quot; for a role of &quot;security source&quot; since the ASB won&apos;t exist. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bundleSourceEidUri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uri to match of the bundle source field of the primary block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bundleFinalDestEidUri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uri to match of the bundle destination field of the primary block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>role</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Bpsec role of this policy. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isNewPolicy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On return, this value is set to false if the policy already exists, or true if the policy was newly created </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer of the newly allocated policy that needs modified (does not need deleted, handled internally). NULL if a URI was invalid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="129" column="34" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="125" bodyend="154"/>
+        <references refid="BpSecPolicyManager_8cpp_1a16634a4ce24ae66cb2ab34fb9324c69b" compoundref="BpSecPolicyManager_8cpp" startline="99" endline="124">Internal_AddPolicyFilterToThisFilter</references>
+        <references refid="structBpSecPolicyFilter_1a29c087fdd556f102ccf41e33071b8121" compoundref="BpSecPolicyManager_8h" startline="83">BpSecPolicyFilter::m_policiesByRoleArray</references>
+        <references refid="classBpSecPolicyManager_1a4600fd69a1a190fe2027d1927763da29" compoundref="BpSecPolicyManager_8h" startline="174">m_policyFilterSecuritySource</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2a2b83d0b27415a79c21b734a8d96243fb">RESERVED_MAX_ROLE_TYPES</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a2fb29c67f094d77dda8fc8eb9a942bad" compoundref="TestBpSecPolicyManager_8cpp" startline="25" endline="140">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a859f290b5f7bd3684f36222e493a2523" compoundref="BpSecPolicyManager_8cpp" startline="981" endline="1221">LoadFromConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1ada1315561d9918be04a5044ceb3709a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT const <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> *</type>
+        <definition>const BpSecPolicy * BpSecPolicyManager::FindPolicy</definition>
+        <argsstring>(const cbhe_eid_t &amp;securitySourceEid, const cbhe_eid_t &amp;bundleSourceEid, const cbhe_eid_t &amp;bundleFinalDestEid, const BPSEC_ROLE role) const</argsstring>
+        <name>FindPolicy</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>securitySourceEid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>bundleSourceEid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>bundleFinalDestEid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2" kindref="member">BPSEC_ROLE</ref></type>
+          <declname>role</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds an existing <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> using the fully-qualified eid fields of the bundle. The EID is matched to the most strictest (most fully qualified) set of rules. Lookup shall be performed by a Cascading lookup order:<itemizedlist>
+<listitem><para>The fully qualified [node,service] pair is looked up first for a match.</para>
+</listitem><listitem><para>The node number only is looked up second for a match (for wildcard service numbers such as &quot;ipn:2.*&quot;).</para>
+</listitem><listitem><para>The &quot;any destination flag&quot; is looked up third for a match (for wildcard all such as &quot;ipn:*.*&quot;).</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>securitySourceEid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The eid to match of the security source field of the Abstract Security Block (ASB). This field is a &quot;don&apos;t care&quot; for a role of &quot;security source&quot; if the policy was added properly. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bundleSourceEid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The eid to match of the bundle source field of the primary block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bundleFinalDestEid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The eid to match of the bundle destination field of the primary block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>role</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Bpsec role of this policy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer of the existing policy, or NULL if no policy could be matched. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="148" column="40" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="196" bodyend="216"/>
+        <references refid="BpSecPolicyManager_8cpp_1a576089df9bcb16aa8a0e8f7b76e348a3" compoundref="BpSecPolicyManager_8cpp" startline="179" endline="195">Internal_GetPolicyFilterFromThisFilter</references>
+        <references refid="structBpSecPolicyFilter_1a29c087fdd556f102ccf41e33071b8121" compoundref="BpSecPolicyManager_8h" startline="83">BpSecPolicyFilter::m_policiesByRoleArray</references>
+        <references refid="classBpSecPolicyManager_1a4600fd69a1a190fe2027d1927763da29" compoundref="BpSecPolicyManager_8h" startline="174">m_policyFilterSecuritySource</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2a2b83d0b27415a79c21b734a8d96243fb">RESERVED_MAX_ROLE_TYPES</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a2fb29c67f094d77dda8fc8eb9a942bad" compoundref="TestBpSecPolicyManager_8cpp" startline="25" endline="140">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1add8b11d432d0d7df6d5017ea74f8f153" compoundref="BpSecPolicyManager_8cpp" startline="218" endline="243">FindPolicyWithCacheSupport</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1add8b11d432d0d7df6d5017ea74f8f153" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT const <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> *</type>
+        <definition>const BpSecPolicy * BpSecPolicyManager::FindPolicyWithCacheSupport</definition>
+        <argsstring>(const cbhe_eid_t &amp;securitySourceEid, const cbhe_eid_t &amp;bundleSourceEid, const cbhe_eid_t &amp;bundleFinalDestEid, const BPSEC_ROLE role, PolicySearchCache &amp;searchCache) const</argsstring>
+        <name>FindPolicyWithCacheSupport</name>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>securitySourceEid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>bundleSourceEid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>bundleFinalDestEid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2" kindref="member">BPSEC_ROLE</ref></type>
+          <declname>role</declname>
+        </param>
+        <param>
+          <type><ref refid="structPolicySearchCache" kindref="compound">PolicySearchCache</ref> &amp;</type>
+          <declname>searchCache</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="151" column="40" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="218" bodyend="243"/>
+        <references refid="structPolicySearchCache_1a460f05fb3afe8ed0d01c68a8360233d2" compoundref="BpSecPolicyManager_8h" startline="89">PolicySearchCache::bundleFinalDestEid</references>
+        <references refid="structPolicySearchCache_1a62973ae834eb5aa14118e8fb921e6235" compoundref="BpSecPolicyManager_8h" startline="88">PolicySearchCache::bundleSourceEid</references>
+        <references refid="classBpSecPolicyManager_1ada1315561d9918be04a5044ceb3709a1" compoundref="BpSecPolicyManager_8cpp" startline="196" endline="216">FindPolicy</references>
+        <references refid="structPolicySearchCache_1a13b68e0e627fe2cdcf48e8cc2ad5e639" compoundref="BpSecPolicyManager_8h" startline="92">PolicySearchCache::foundPolicy</references>
+        <references refid="structPolicySearchCache_1add4370c5da88f1cd9c018687d707c16b" compoundref="BpSecPolicyManager_8h" startline="90">PolicySearchCache::role</references>
+        <references refid="structPolicySearchCache_1aade7f88c6f530239efbce8b46c2cecba" compoundref="BpSecPolicyManager_8h" startline="87">PolicySearchCache::securitySourceEid</references>
+        <references refid="structPolicySearchCache_1a0755364bec8d640e775c0461e801db81" compoundref="BpSecPolicyManager_8h" startline="91">PolicySearchCache::wasCacheHit</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a2fb29c67f094d77dda8fc8eb9a942bad" compoundref="TestBpSecPolicyManager_8cpp" startline="25" endline="140">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1afee5c666477329b4570c77860877e7e3" compoundref="BpSecPolicyManager_8cpp" startline="964" endline="979">FindPolicyAndProcessOutgoingBundle</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" compoundref="BpSecPolicyManager_8cpp" startline="570" endline="795">ProcessReceivedBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecPolicyManager::ProcessReceivedBundle</definition>
+        <argsstring>(BundleViewV7 &amp;bv, BpSecPolicyProcessingContext &amp;ctx, BpSecBundleProcessor::BpSecErrorFlist &amp;errorList, const uint64_t myNodeId) const</argsstring>
+        <name>ProcessReceivedBundle</name>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecPolicyProcessingContext" kindref="compound">BpSecPolicyProcessingContext</ref> &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="classBpSecBundleProcessor_1ad9a7e750e4ca8e32937486749f7716cd" kindref="member">BpSecBundleProcessor::BpSecErrorFlist</ref> &amp;</type>
+          <declname>errorList</declname>
+        </param>
+        <param>
+          <type>const uint64_t</type>
+          <declname>myNodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="154" column="27" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="570" bodyend="795"/>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2a4e4f9f10db87aa7c07b61b1ccd21c872">ACCEPTOR</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1a7308ddc6e33b2383e0283e26484ba5f8" compoundref="TestBpSecPolicyManager_8cpp" startline="723">bcbPtr</references>
+        <references refid="structFragmentSet_1_1data__fragment__t_1a01fb4b979f562485bd6154616d41d009" compoundref="FragmentSet_8h" startline="47">FragmentSet::data_fragment_t::beginIndex</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a4ddb4b92d87973bd0fc314979deba833">CONFIDENTIALITY</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1ace75a16911780c51e013f641a3529e3a" compoundref="BpSecBundleProcessor_8h" startline="106">BpSecBundleProcessor::ConfidentialityReceivedParameters::dataEncryptionKey</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a03c0e4b01d85e85fed47f2a11238a293" compoundref="BpSecBundleProcessor_8h" startline="108">BpSecBundleProcessor::ConfidentialityReceivedParameters::dataEncryptionKeyLength</references>
+        <references refid="BpSecPolicyManager_8cpp_1aef3dd4862da85b09dc126d2693bc838d" compoundref="BpSecPolicyManager_8cpp" startline="377" endline="568">DoFailureEvent</references>
+        <references refid="BpSecPolicyManager_8cpp_1a55238bc37733bb2083f1cf322bac016e" compoundref="BpSecPolicyManager_8cpp" startline="308" endline="375">DoFailureEventSopMissingAtAcceptor</references>
+        <references refid="structFragmentSet_1_1data__fragment__t_1adaeafa9aeaa6871cb34cc13c430fb292" compoundref="FragmentSet_8h" startline="49">FragmentSet::data_fragment_t::endIndex</references>
+        <references refid="TestBpSecPolicyManager_8cpp_1aeb4195b868fc952f1da6c3ec5ac63d7a" compoundref="TestBpSecPolicyManager_8cpp" startline="586">errorList</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a7ae6c7c596806ffc786436cdace97d54" compoundref="BpSecBundleProcessor_8h" startline="117">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedAadScopeMask</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1ad70fef54f89cdf1f75960110e5ef9553" compoundref="BpSecBundleProcessor_8h" startline="112">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedIvLength</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a0ff1ee1c32a8ab8c10bca284b4aeeb2f" compoundref="BpSecBundleProcessor_8h" startline="89">BpSecBundleProcessor::IntegrityReceivedParameters::expectedScopeMask</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a92c39b0dee143eb264dc51eeadec91cc" compoundref="BpSecBundleProcessor_8h" startline="93">BpSecBundleProcessor::IntegrityReceivedParameters::expectedTargetBlockTypesMask</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a109427f643342183ac0c212fb452a930" compoundref="BpSecBundleProcessor_8h" startline="121">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedTargetBlockTypesMask</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1aeae84f3d1afb63ed1bffa41f6113b1ca" compoundref="BpSecBundleProcessor_8h" startline="87">BpSecBundleProcessor::IntegrityReceivedParameters::expectedVariant</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1ab3ec905cffe6f3a1e4646ba0f4c2b5e9" compoundref="BpSecBundleProcessor_8h" startline="114">BpSecBundleProcessor::ConfidentialityReceivedParameters::expectedVariant</references>
+        <references refid="classBpSecPolicyManager_1add8b11d432d0d7df6d5017ea74f8f153" compoundref="BpSecPolicyManager_8cpp" startline="218" endline="243">FindPolicyWithCacheSupport</references>
+        <references refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" compoundref="BundleViewV7_8cpp" startline="413" endline="420">BundleViewV7::GetCanonicalBlocksByType</references>
+        <references refid="classUri_1a3e3ad028378a6deceb475bd94f5aaf1e" compoundref="Uri_8cpp" startline="24" endline="29">Uri::GetIpnUriString</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBundleViewV7_1_1Bpv7CanonicalBlockView_1a7af42574867b3660636230bf8623e427" compoundref="BundleViewV7_8h" startline="92">BundleViewV7::Bpv7CanonicalBlockView::headerPtr</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a7747d9d154bb8fa26294801c7c393ae5" compoundref="BpSecBundleProcessor_8h" startline="82">BpSecBundleProcessor::IntegrityReceivedParameters::hmacKey</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a6cc9d2c109015e0ff0a0f9d41b6de551" compoundref="BpSecBundleProcessor_8h" startline="84">BpSecBundleProcessor::IntegrityReceivedParameters::hmacKeyLength</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a9922a31d0eb8cadab61858b5ca94e9df">INTEGRITY</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a5b39212d7820a7ed3db826878802b7c4" compoundref="BpSecBundleProcessor_8h" startline="77">BpSecBundleProcessor::IntegrityReceivedParameters::keyEncryptionKey</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1a2414dae583270f6eea38f7ec369d42b5" compoundref="BpSecBundleProcessor_8h" startline="100">BpSecBundleProcessor::ConfidentialityReceivedParameters::keyEncryptionKey</references>
+        <references refid="structBpSecBundleProcessor_1_1IntegrityReceivedParameters_1a89e349476ae5c2e0a6154969234c0da5" compoundref="BpSecBundleProcessor_8h" startline="79">BpSecBundleProcessor::IntegrityReceivedParameters::keyEncryptionKeyLength</references>
+        <references refid="structBpSecBundleProcessor_1_1ConfidentialityReceivedParameters_1af98fa6d43b7d54b08efc95b1b274fb5b" compoundref="BpSecBundleProcessor_8h" startline="102">BpSecBundleProcessor::ConfidentialityReceivedParameters::keyEncryptionKeyLength</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="TestLtpUdpEngine_8cpp_1a5685bda9d06a5c743bb78b43e8c9709b">LOG_INFO</references>
+        <references refid="Logger_8h_1ad4c967fbafdac1de85adb4771f9856dd" compoundref="Logger_8h" startline="86">LOG_WARNING</references>
+        <references refid="structBpSecPolicy_1a474aedab9fd4ce74ce686f2b3ca3ebd8" compoundref="BpSecPolicyManager_8h" startline="67">BpSecPolicy::m_aadScopeMask</references>
+        <references refid="classBpSecPolicyManager_1afb94a08d640f1eb84ec067faa2ab7e0b" compoundref="BpSecPolicyManager_8h" startline="176">m_actionMaskSopMissingAtAcceptor</references>
+        <references refid="structBpSecPolicy_1aeb47da70aa59c92905461a3c353baeb7" compoundref="BpSecPolicyManager_8h" startline="69">BpSecPolicy::m_bcbBlockTypeTargets</references>
+        <references refid="structBpSecPolicy_1aacd7ac459d772b520068a8142226de58" compoundref="BpSecPolicyManager_8h" startline="59">BpSecPolicy::m_bibBlockTypeTargets</references>
+        <references refid="structBpSecPolicyProcessingContext_1a11a05a943ad92ecf80b61cb5d658abc7" compoundref="BpSecPolicyManager_8h" startline="97">BpSecPolicyProcessingContext::m_bpsecReusableElementsInternal</references>
+        <references refid="structBpSecPolicy_1a3d8f5901fe4b423feaea72cd9e3be47b" compoundref="BpSecPolicyManager_8h" startline="70">BpSecPolicy::m_confidentialityKeyEncryptionKey</references>
+        <references refid="structBpSecPolicy_1a76d6f9566b7b14b725584849a9017b10" compoundref="BpSecPolicyManager_8h" startline="65">BpSecPolicy::m_confidentialityVariant</references>
+        <references refid="structBpSecPolicyProcessingContext_1aa6eb1181ed7c6ade031e342ba6ff1d6c" compoundref="BpSecPolicyManager_8h" startline="100">BpSecPolicyProcessingContext::m_ctxWrapperKeyWrapOps</references>
+        <references refid="structBpSecPolicy_1a5c23378f11fa80770332d371bc51ff15" compoundref="BpSecPolicyManager_8h" startline="71">BpSecPolicy::m_dataEncryptionKey</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="structBpSecPolicy_1a0504e609dfd435076da3b5a2303d8ead" compoundref="BpSecPolicyManager_8h" startline="49">BpSecPolicy::m_doConfidentiality</references>
+        <references refid="structBpSecPolicy_1a438225b55c7d72028dc1085067c423f8" compoundref="BpSecPolicyManager_8h" startline="48">BpSecPolicy::m_doIntegrity</references>
+        <references refid="structBpSecPolicyProcessingContext_1a4c393c4af3501f5d7eec26b9bd21f13c" compoundref="BpSecPolicyManager_8h" startline="99">BpSecPolicyProcessingContext::m_evpCtxWrapper</references>
+        <references refid="structBpSecPolicyProcessingContext_1adf03c84245b13915912cdbf7af8d62e7" compoundref="BpSecPolicyManager_8h" startline="98">BpSecPolicyProcessingContext::m_hmacCtxWrapper</references>
+        <references refid="structBpSecPolicy_1ab3a04a4a9b85be4b5a888cbad2f4a8b5" compoundref="BpSecPolicyManager_8h" startline="61">BpSecPolicy::m_hmacKey</references>
+        <references refid="structBpSecPolicy_1a8b9fe3dae5150c3bb15d7dac10a8d29b" compoundref="BpSecPolicyManager_8h" startline="60">BpSecPolicy::m_hmacKeyEncryptionKey</references>
+        <references refid="structBpSecPolicy_1a00d3ed1d089c2d082f15c48721a2c7ac" compoundref="BpSecPolicyManager_8h" startline="57">BpSecPolicy::m_integrityScopeMask</references>
+        <references refid="structBpSecPolicy_1ab49185bf4a97ca4bee32439bb5041166" compoundref="BpSecPolicyManager_8h" startline="56">BpSecPolicy::m_integrityVariant</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpSecPolicyProcessingContext_1a66cda41d1f02ed8ac877df68948956e3" compoundref="BpSecPolicyManager_8h" startline="105">BpSecPolicyProcessingContext::m_searchCacheBcbAcceptor</references>
+        <references refid="structBpSecPolicyProcessingContext_1a5b953571bcda61a906ba8d6131aae464" compoundref="BpSecPolicyManager_8h" startline="106">BpSecPolicyProcessingContext::m_searchCacheBcbVerifier</references>
+        <references refid="structBpSecPolicyProcessingContext_1a868989b446efdab67d200662628a5763" compoundref="BpSecPolicyManager_8h" startline="107">BpSecPolicyProcessingContext::m_searchCacheBibAcceptor</references>
+        <references refid="structBpSecPolicyProcessingContext_1af07acdcf86a4bc167426a279652c2c0a" compoundref="BpSecPolicyManager_8h" startline="108">BpSecPolicyProcessingContext::m_searchCacheBibVerifier</references>
+        <references refid="structBpv7AbstractSecurityBlock_1acc80b8f7a709aed734f902dab867c394" compoundref="bpv7_8h" startline="561">Bpv7AbstractSecurityBlock::m_securitySource</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="structBpSecPolicyProcessingContext_1a2df948ff9545670d19f99d1f1ee468b4" compoundref="BpSecPolicyManager_8h" startline="104">BpSecPolicyProcessingContext::m_tmpBlocks</references>
+        <references refid="structBpSecPolicy_1a85c8336ac60750de93dc640558621048" compoundref="BpSecPolicyManager_8h" startline="66">BpSecPolicy::m_use12ByteIv</references>
+        <references refid="classBpSecBundleProcessor_1a98418777495110b6d16f9092fff4a321a10d1208b485425756fcc932229386b02">BpSecBundleProcessor::MISSING</references>
+        <references refid="structcbhe__eid__t_1a6e801a89ea9f6b6151c48948e65263ad" compoundref="Cbhe_8h" startline="36">cbhe_eid_t::nodeId</references>
+        <references refid="structcbhe__eid__t_1a367b7503c6033790c6950c167f5131d4" compoundref="Cbhe_8h" startline="37">cbhe_eid_t::serviceId</references>
+        <references refid="BpSecPolicyManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecPolicyManager_8cpp" startline="23">subprocess</references>
+        <references refid="classBpSecBundleProcessor_1aeb036dd7c08006767755e7c3a7a4674e" compoundref="BpSecBundleProcessor_8cpp" startline="594" endline="897">BpSecBundleProcessor::TryDecryptBundleByIndividualBcb</references>
+        <references refid="classBpSecBundleProcessor_1aa90331ee62608ba27e5981c6fac4bae0" compoundref="BpSecBundleProcessor_8cpp" startline="1118" endline="1423">BpSecBundleProcessor::TryVerifyBundleIntegrityByIndividualBib</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2a86a1b7a8a0174e8544b075c7d53529b3">VERIFIER</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a5c7e8352e6126b084d3ab2ef8068b3ea" compoundref="TestBpSecPolicyManager_8cpp" startline="142" endline="204">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1afee5c666477329b4570c77860877e7e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecPolicyManager::FindPolicyAndProcessOutgoingBundle</definition>
+        <argsstring>(BundleViewV7 &amp;bv, BpSecPolicyProcessingContext &amp;ctx, const cbhe_eid_t &amp;thisSecuritySourceEid) const</argsstring>
+        <name>FindPolicyAndProcessOutgoingBundle</name>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecPolicyProcessingContext" kindref="compound">BpSecPolicyProcessingContext</ref> &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>thisSecuritySourceEid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="169" column="27" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="964" bodyend="979"/>
+        <references refid="classBpSecPolicyManager_1add8b11d432d0d7df6d5017ea74f8f153" compoundref="BpSecPolicyManager_8cpp" startline="218" endline="243">FindPolicyWithCacheSupport</references>
+        <references refid="structBundleViewV7_1_1Bpv7PrimaryBlockView_1ad2289d42f4dd47a5812d149dc253dc39" compoundref="BundleViewV7_8h" startline="84">BundleViewV7::Bpv7PrimaryBlockView::header</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a66cc0de620f1a1fcd2762efcc0ded3cc" compoundref="bpv7_8h" startline="326">Bpv7CbhePrimaryBlock::m_destinationEid</references>
+        <references refid="classBundleViewV7_1a6b6d80fa9c10008b5ac74027ba0d27b7" compoundref="BundleViewV7_8h" startline="132">BundleViewV7::m_primaryBlockView</references>
+        <references refid="structBpSecPolicyProcessingContext_1ac6ac60840dffd5c4c21252994d23df5a" compoundref="BpSecPolicyManager_8h" startline="109">BpSecPolicyProcessingContext::m_searchCacheSource</references>
+        <references refid="structBpv7CbhePrimaryBlock_1a981ad54aa6b3f6bc9bf348c8259397c1" compoundref="bpv7_8h" startline="327">Bpv7CbhePrimaryBlock::m_sourceNodeId</references>
+        <references refid="classBpSecPolicyManager_1a6a05b756867b990f3cc18fc56eb81cd8" compoundref="BpSecPolicyManager_8cpp" startline="797" endline="856">PopulateTargetArraysForSecuritySource</references>
+        <references refid="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" compoundref="BpSecPolicyManager_8cpp" startline="908" endline="961">ProcessOutgoingBundle</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2ae60b4854b44ccfb2d92aa6f035171bb4">SOURCE</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a5c7e8352e6126b084d3ab2ef8068b3ea" compoundref="TestBpSecPolicyManager_8cpp" startline="142" endline="204">BOOST_AUTO_TEST_CASE</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1a859f290b5f7bd3684f36222e493a2523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecPolicyManager::LoadFromConfig</definition>
+        <argsstring>(const BpSecConfig &amp;config)</argsstring>
+        <name>LoadFromConfig</name>
+        <param>
+          <type>const <ref refid="classBpSecConfig" kindref="compound">BpSecConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="172" column="27" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="981" bodyend="1221"/>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a8d368451da2eab1875d188c4d335f4fe">A128GCM</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a47bfe8960e664b28982098daf4deb4c4">A256GCM</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2a4e4f9f10db87aa7c07b61b1ccd21c872">ACCEPTOR</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952a4c7e1c7ba29ae15b6a5f9dc67305bbf7">AES_VARIANT</references>
+        <references refid="bpv7_8h_1a927fe77e56337c64645cf790b75b4297a1b54b2e753661a8bfba3d79d1deebdfb">ALL_FLAGS_SET</references>
+        <references refid="bpv7_8h_1a010a470cda51253c80c237da855e6c9ba2768bc2bbfc8e2c22792cb318409629a">CRC32C</references>
+        <references refid="classBpSecPolicyManager_1a631c9439c1b2f543d843dd4293712587" compoundref="BpSecPolicyManager_8cpp" startline="125" endline="154">CreateOrGetNewPolicy</references>
+        <references refid="TestDijkstra_8cpp_1a928218f62d7212291d9bd1c033c9238c" compoundref="TestDijkstra_8cpp" startline="470" endline="477">for</references>
+        <references refid="classBinaryConversions_1a535d9322538164d7b5eae97ad41949f2" compoundref="BinaryConversions_8cpp" startline="69" endline="83">BinaryConversions::HexStringToBytes</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a91073f6e4bcc2824fe7364923f29508f">HMAC_256_256</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523ac0d5599228fa0acc1ada1e4457268455">HMAC_384_384</references>
+        <references refid="Cose_8h_1a9b0a9ff1dd5d090c69852f5868799523a60aaa781b11184373953d05bd6baf7a6">HMAC_512_512</references>
+        <references refid="classFragmentSet_1a9c0950a289cc4e650311ed8b96350eff" compoundref="FragmentSet_8cpp" startline="90" endline="108">FragmentSet::InsertFragment</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952aba21105e68175908c2d392f44658ef72">IV_SIZE_BYTES</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952a08f52b7387f0f904f5c8050e30431f0a">KEY_ENCRYPTION_KEY_FILE</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952ad78f67f143a6aced1314e9fc12421248">KEY_FILE</references>
+        <references refid="classJsonSerializable_1a8c0d2f4adc3eae8076d7b6e763b5e8c9" compoundref="JsonSerializable_8cpp" startline="95" endline="110">JsonSerializable::LoadTextFileIntoString</references>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpSecPolicy_1a474aedab9fd4ce74ce686f2b3ca3ebd8" compoundref="BpSecPolicyManager_8h" startline="67">BpSecPolicy::m_aadScopeMask</references>
+        <references refid="classBpSecPolicyManager_1afb94a08d640f1eb84ec067faa2ab7e0b" compoundref="BpSecPolicyManager_8h" startline="176">m_actionMaskSopMissingAtAcceptor</references>
+        <references refid="classBpSecConfig_1ad31c10c0043f2890956fe013798a3360" compoundref="BpSecConfig_8h" startline="238">BpSecConfig::m_actionMaskSopMissingAtAcceptor</references>
+        <references refid="structBpSecPolicy_1aeb47da70aa59c92905461a3c353baeb7" compoundref="BpSecPolicyManager_8h" startline="69">BpSecPolicy::m_bcbBlockTypeTargets</references>
+        <references refid="structBpSecPolicy_1ae3465e092e9e82e566230f4058d66c9e" compoundref="BpSecPolicyManager_8h" startline="68">BpSecPolicy::m_bcbCrcType</references>
+        <references refid="structBpSecPolicy_1a1aa0c5d2ec00096b1aad8d1a91d831cd" compoundref="BpSecPolicyManager_8h" startline="52">BpSecPolicy::m_bcbTargetsPayloadBlock</references>
+        <references refid="structBpSecPolicy_1aacd7ac459d772b520068a8142226de58" compoundref="BpSecPolicyManager_8h" startline="59">BpSecPolicy::m_bibBlockTypeTargets</references>
+        <references refid="structBpSecPolicy_1a3724820cf831b45e3390203e21fead28" compoundref="BpSecPolicyManager_8h" startline="58">BpSecPolicy::m_bibCrcType</references>
+        <references refid="structBpSecPolicy_1a93c76a4540c5b26588f2220d1dad6ca9" compoundref="BpSecPolicyManager_8h" startline="53">BpSecPolicy::m_bibMustBeEncrypted</references>
+        <references refid="structpolicy__rules__t_1aeb1732526d09c9daf35981636aa5cc30" compoundref="BpSecConfig_8h" startline="173">policy_rules_t::m_bundleFinalDestination</references>
+        <references refid="structpolicy__rules__t_1ac00c85b3bce91f849e10be6b25945dad" compoundref="BpSecConfig_8h" startline="172">policy_rules_t::m_bundleSource</references>
+        <references refid="structBpSecPolicy_1a3d8f5901fe4b423feaea72cd9e3be47b" compoundref="BpSecPolicyManager_8h" startline="70">BpSecPolicy::m_confidentialityKeyEncryptionKey</references>
+        <references refid="structBpSecPolicy_1acb81ea8a56c364371e45e24828fde281" compoundref="BpSecPolicyManager_8h" startline="72">BpSecPolicy::m_confidentialitySecurityFailureEventSetReferencePtr</references>
+        <references refid="structBpSecPolicy_1a76d6f9566b7b14b725584849a9017b10" compoundref="BpSecPolicyManager_8h" startline="65">BpSecPolicy::m_confidentialityVariant</references>
+        <references refid="structBpSecPolicy_1a5c23378f11fa80770332d371bc51ff15" compoundref="BpSecPolicyManager_8h" startline="71">BpSecPolicy::m_dataEncryptionKey</references>
+        <references refid="structBpSecPolicy_1a0504e609dfd435076da3b5a2303d8ead" compoundref="BpSecPolicyManager_8h" startline="49">BpSecPolicy::m_doConfidentiality</references>
+        <references refid="structBpSecPolicy_1a438225b55c7d72028dc1085067c423f8" compoundref="BpSecPolicyManager_8h" startline="48">BpSecPolicy::m_doIntegrity</references>
+        <references refid="structBpSecPolicy_1ab3a04a4a9b85be4b5a888cbad2f4a8b5" compoundref="BpSecPolicyManager_8h" startline="61">BpSecPolicy::m_hmacKey</references>
+        <references refid="structBpSecPolicy_1a8b9fe3dae5150c3bb15d7dac10a8d29b" compoundref="BpSecPolicyManager_8h" startline="60">BpSecPolicy::m_hmacKeyEncryptionKey</references>
+        <references refid="structBpSecPolicy_1a00d3ed1d089c2d082f15c48721a2c7ac" compoundref="BpSecPolicyManager_8h" startline="57">BpSecPolicy::m_integrityScopeMask</references>
+        <references refid="structBpSecPolicy_1ae1a1ef5bb1f0aa4b9ec19a19c03846f0" compoundref="BpSecPolicyManager_8h" startline="62">BpSecPolicy::m_integritySecurityFailureEventSetReferencePtr</references>
+        <references refid="structBpSecPolicy_1ab49185bf4a97ca4bee32439bb5041166" compoundref="BpSecPolicyManager_8h" startline="56">BpSecPolicy::m_integrityVariant</references>
+        <references refid="structsecurity__context__param__t_1abcda0cd81724f3d47128abc5eb933c05" compoundref="BpSecConfig_8h" startline="138">security_context_param_t::m_paramName</references>
+        <references refid="classBpSecConfig_1a3ae4e2a0b722f04f14a6dcf5dc30a937" compoundref="BpSecConfig_8h" startline="236">BpSecConfig::m_policyRulesVector</references>
+        <references refid="structpolicy__rules__t_1ab52fc440f3740f8884220b77be0aef3c" compoundref="BpSecConfig_8h" startline="179">policy_rules_t::m_securityContextParamsVec</references>
+        <references refid="structpolicy__rules__t_1a5e3965d39509d3265add56ecf4ed19bb" compoundref="BpSecConfig_8h" startline="178">policy_rules_t::m_securityFailureEventSetReferencePtr</references>
+        <references refid="structpolicy__rules__t_1a3d01f11c6dab0359e77b924e36a933be" compoundref="BpSecConfig_8h" startline="170">policy_rules_t::m_securityRole</references>
+        <references refid="structpolicy__rules__t_1a4a62723273e2cdb4127d028d54481add" compoundref="BpSecConfig_8h" startline="175">policy_rules_t::m_securityService</references>
+        <references refid="structpolicy__rules__t_1a6e7ca61d188067e4544f8db05ad58c69" compoundref="BpSecConfig_8h" startline="171">policy_rules_t::m_securitySource</references>
+        <references refid="structpolicy__rules__t_1a7ae71c477c60afe496b3b940c1eaaf03" compoundref="BpSecConfig_8h" startline="174">policy_rules_t::m_securityTargetBlockTypes</references>
+        <references refid="structBpSecPolicy_1a85c8336ac60750de93dc640558621048" compoundref="BpSecPolicyManager_8h" startline="66">BpSecPolicy::m_use12ByteIv</references>
+        <references refid="structsecurity__context__param__t_1ac4f180548151b445ebb96110dbed8e85" compoundref="BpSecConfig_8h" startline="140">security_context_param_t::m_valuePath</references>
+        <references refid="structsecurity__context__param__t_1a6f5c567601b9d130ee4363a8a8275fd9" compoundref="BpSecConfig_8h" startline="139">security_context_param_t::m_valueUint</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952a803540a10e31a1078fc6f9f1fee80de7">SCOPE_FLAGS</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952a7a460efe7a25ba36325356a8e4956428">SECURITY_BLOCK_CRC</references>
+        <references refid="BpSecConfig_8h_1af590f0ee789f15c74d1794cb23e2e952aae2bf30ebb2c507ea7265a381f189b5b">SHA_VARIANT</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2ae60b4854b44ccfb2d92aa6f035171bb4">SOURCE</references>
+        <references refid="BpSecPolicyManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecPolicyManager_8cpp" startline="23">subprocess</references>
+        <references refid="structBpSecPolicy_1aca98af1e9e508b8e2779e02d418e1baf" compoundref="BpSecPolicyManager_8cpp" startline="48" endline="85">BpSecPolicy::ValidateAndFinalize</references>
+        <references refid="BpSecPolicyManager_8h_1a1dc08c5cc2402191dd9a6cae1ed131f2a86a1b7a8a0174e8544b075c7d53529b3">VERIFIER</references>
+        <referencedby refid="TestBpSecPolicyManager_8cpp_1a5c7e8352e6126b084d3ab2ef8068b3ea" compoundref="TestBpSecPolicyManager_8cpp" startline="142" endline="204">BOOST_AUTO_TEST_CASE</referencedby>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classBpSecPolicyManager_1a6a05b756867b990f3cc18fc56eb81cd8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecPolicyManager::PopulateTargetArraysForSecuritySource</definition>
+        <argsstring>(BundleViewV7 &amp;bv, BpSecPolicyProcessingContext &amp;ctx, const BpSecPolicy &amp;policy)</argsstring>
+        <name>PopulateTargetArraysForSecuritySource</name>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecPolicyProcessingContext" kindref="compound">BpSecPolicyProcessingContext</ref> &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> &amp;</type>
+          <declname>policy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="157" column="34" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="797" bodyend="856"/>
+        <references refid="structFragmentSet_1_1data__fragment__t_1a01fb4b979f562485bd6154616d41d009" compoundref="FragmentSet_8h" startline="47">FragmentSet::data_fragment_t::beginIndex</references>
+        <references refid="structFragmentSet_1_1data__fragment__t_1adaeafa9aeaa6871cb34cc13c430fb292" compoundref="FragmentSet_8h" startline="49">FragmentSet::data_fragment_t::endIndex</references>
+        <references refid="classBundleViewV7_1a972ab2ec5278ac507da73faee976cf20" compoundref="BundleViewV7_8cpp" startline="413" endline="420">BundleViewV7::GetCanonicalBlocksByType</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a9922a31d0eb8cadab61858b5ca94e9df">INTEGRITY</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="structBpSecPolicy_1aeb47da70aa59c92905461a3c353baeb7" compoundref="BpSecPolicyManager_8h" startline="69">BpSecPolicy::m_bcbBlockTypeTargets</references>
+        <references refid="structBpSecPolicyProcessingContext_1a4768e8b5069d571cebdbe2a0b691f8d1" compoundref="BpSecPolicyManager_8h" startline="103">BpSecPolicyProcessingContext::m_bcbTargetBibBlockNumberPlaceholderIndex</references>
+        <references refid="structBpSecPolicyProcessingContext_1aa8435623246886a4ad727b3c475087c7" compoundref="BpSecPolicyManager_8h" startline="101">BpSecPolicyProcessingContext::m_bcbTargetBlockNumbers</references>
+        <references refid="structBpSecPolicy_1aacd7ac459d772b520068a8142226de58" compoundref="BpSecPolicyManager_8h" startline="59">BpSecPolicy::m_bibBlockTypeTargets</references>
+        <references refid="structBpSecPolicyProcessingContext_1a9991cab51420136635cfba252c0cb6de" compoundref="BpSecPolicyManager_8h" startline="102">BpSecPolicyProcessingContext::m_bibTargetBlockNumbers</references>
+        <references refid="structBpSecPolicy_1a0504e609dfd435076da3b5a2303d8ead" compoundref="BpSecPolicyManager_8h" startline="49">BpSecPolicy::m_doConfidentiality</references>
+        <references refid="structBpSecPolicy_1a438225b55c7d72028dc1085067c423f8" compoundref="BpSecPolicyManager_8h" startline="48">BpSecPolicy::m_doIntegrity</references>
+        <references refid="structBpSecPolicyProcessingContext_1a2df948ff9545670d19f99d1f1ee468b4" compoundref="BpSecPolicyManager_8h" startline="104">BpSecPolicyProcessingContext::m_tmpBlocks</references>
+        <references refid="BpSecPolicyManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecPolicyManager_8cpp" startline="23">subprocess</references>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1afee5c666477329b4570c77860877e7e3" compoundref="BpSecPolicyManager_8cpp" startline="964" endline="979">FindPolicyAndProcessOutgoingBundle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1ae41ff8fba9c9d06c44752f90a9edb9a9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecPolicyManager::PopulateTargetArraysForSecuritySource</definition>
+        <argsstring>(const uint8_t *bpv7BlockTypeToManuallyAssignedBlockNumberLut, BpSecPolicyProcessingContext &amp;ctx, const BpSecPolicy &amp;policy)</argsstring>
+        <name>PopulateTargetArraysForSecuritySource</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>bpv7BlockTypeToManuallyAssignedBlockNumberLut</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecPolicyProcessingContext" kindref="compound">BpSecPolicyProcessingContext</ref> &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> &amp;</type>
+          <declname>policy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="161" column="34" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="858" bodyend="906"/>
+        <references refid="structFragmentSet_1_1data__fragment__t_1a01fb4b979f562485bd6154616d41d009" compoundref="FragmentSet_8h" startline="47">FragmentSet::data_fragment_t::beginIndex</references>
+        <references refid="structFragmentSet_1_1data__fragment__t_1adaeafa9aeaa6871cb34cc13c430fb292" compoundref="FragmentSet_8h" startline="49">FragmentSet::data_fragment_t::endIndex</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a9922a31d0eb8cadab61858b5ca94e9df">INTEGRITY</references>
+        <references refid="Logger_8h_1aa8e857f40fd8d0814f0b0f684f7e9f36" compoundref="Logger_8h" startline="74">LOG_DEBUG</references>
+        <references refid="Logger_8h_1a327f594fbf58ac0f120f7a2d6ffd4c20" compoundref="Logger_8h" startline="98">LOG_FATAL</references>
+        <references refid="structBpSecPolicy_1aeb47da70aa59c92905461a3c353baeb7" compoundref="BpSecPolicyManager_8h" startline="69">BpSecPolicy::m_bcbBlockTypeTargets</references>
+        <references refid="structBpSecPolicyProcessingContext_1a4768e8b5069d571cebdbe2a0b691f8d1" compoundref="BpSecPolicyManager_8h" startline="103">BpSecPolicyProcessingContext::m_bcbTargetBibBlockNumberPlaceholderIndex</references>
+        <references refid="structBpSecPolicyProcessingContext_1aa8435623246886a4ad727b3c475087c7" compoundref="BpSecPolicyManager_8h" startline="101">BpSecPolicyProcessingContext::m_bcbTargetBlockNumbers</references>
+        <references refid="structBpSecPolicy_1aacd7ac459d772b520068a8142226de58" compoundref="BpSecPolicyManager_8h" startline="59">BpSecPolicy::m_bibBlockTypeTargets</references>
+        <references refid="structBpSecPolicyProcessingContext_1a9991cab51420136635cfba252c0cb6de" compoundref="BpSecPolicyManager_8h" startline="102">BpSecPolicyProcessingContext::m_bibTargetBlockNumbers</references>
+        <references refid="structBpSecPolicy_1a0504e609dfd435076da3b5a2303d8ead" compoundref="BpSecPolicyManager_8h" startline="49">BpSecPolicy::m_doConfidentiality</references>
+        <references refid="structBpSecPolicy_1a438225b55c7d72028dc1085067c423f8" compoundref="BpSecPolicyManager_8h" startline="48">BpSecPolicy::m_doIntegrity</references>
+        <references refid="bpv7_8h_1a025393b305d35b199a7f15fa91377990a8da06c2ed5808afbaf28f9457caf5f3c">RESERVED_MAX_BLOCK_TYPES</references>
+        <references refid="BpSecPolicyManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecPolicyManager_8cpp" startline="23">subprocess</references>
+      </memberdef>
+      <memberdef kind="function" id="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BPSEC_LIB_EXPORT bool</type>
+        <definition>bool BpSecPolicyManager::ProcessOutgoingBundle</definition>
+        <argsstring>(BundleViewV7 &amp;bv, BpSecPolicyProcessingContext &amp;ctx, const BpSecPolicy &amp;policy, const cbhe_eid_t &amp;thisSecuritySourceEid)</argsstring>
+        <name>ProcessOutgoingBundle</name>
+        <param>
+          <type><ref refid="classBundleViewV7" kindref="compound">BundleViewV7</ref> &amp;</type>
+          <declname>bv</declname>
+        </param>
+        <param>
+          <type><ref refid="structBpSecPolicyProcessingContext" kindref="compound">BpSecPolicyProcessingContext</ref> &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structBpSecPolicy" kindref="compound">BpSecPolicy</ref> &amp;</type>
+          <declname>policy</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structcbhe__eid__t" kindref="compound">cbhe_eid_t</ref> &amp;</type>
+          <declname>thisSecuritySourceEid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/bpsec/include/BpSecPolicyManager.h" line="166" column="34" bodyfile="common/bpsec/src/BpSecPolicyManager.cpp" bodystart="908" bodyend="961"/>
+        <references refid="Logger_8h_1ade46a197178d2e9b3f78b3ba2781a44c" compoundref="Logger_8h" startline="92">LOG_ERROR</references>
+        <references refid="structBpSecPolicy_1a474aedab9fd4ce74ce686f2b3ca3ebd8" compoundref="BpSecPolicyManager_8h" startline="67">BpSecPolicy::m_aadScopeMask</references>
+        <references refid="structBpSecPolicy_1ae3465e092e9e82e566230f4058d66c9e" compoundref="BpSecPolicyManager_8h" startline="68">BpSecPolicy::m_bcbCrcType</references>
+        <references refid="structBpSecPolicyProcessingContext_1a4768e8b5069d571cebdbe2a0b691f8d1" compoundref="BpSecPolicyManager_8h" startline="103">BpSecPolicyProcessingContext::m_bcbTargetBibBlockNumberPlaceholderIndex</references>
+        <references refid="structBpSecPolicyProcessingContext_1aa8435623246886a4ad727b3c475087c7" compoundref="BpSecPolicyManager_8h" startline="101">BpSecPolicyProcessingContext::m_bcbTargetBlockNumbers</references>
+        <references refid="structBpSecPolicy_1a3724820cf831b45e3390203e21fead28" compoundref="BpSecPolicyManager_8h" startline="58">BpSecPolicy::m_bibCrcType</references>
+        <references refid="structBpSecPolicyProcessingContext_1a9991cab51420136635cfba252c0cb6de" compoundref="BpSecPolicyManager_8h" startline="102">BpSecPolicyProcessingContext::m_bibTargetBlockNumbers</references>
+        <references refid="structBpSecPolicyProcessingContext_1a11a05a943ad92ecf80b61cb5d658abc7" compoundref="BpSecPolicyManager_8h" startline="97">BpSecPolicyProcessingContext::m_bpsecReusableElementsInternal</references>
+        <references refid="structBpSecPolicy_1a3d8f5901fe4b423feaea72cd9e3be47b" compoundref="BpSecPolicyManager_8h" startline="70">BpSecPolicy::m_confidentialityKeyEncryptionKey</references>
+        <references refid="structBpSecPolicy_1a76d6f9566b7b14b725584849a9017b10" compoundref="BpSecPolicyManager_8h" startline="65">BpSecPolicy::m_confidentialityVariant</references>
+        <references refid="structBpSecPolicyProcessingContext_1aa6eb1181ed7c6ade031e342ba6ff1d6c" compoundref="BpSecPolicyManager_8h" startline="100">BpSecPolicyProcessingContext::m_ctxWrapperKeyWrapOps</references>
+        <references refid="structBpSecPolicy_1a5c23378f11fa80770332d371bc51ff15" compoundref="BpSecPolicyManager_8h" startline="71">BpSecPolicy::m_dataEncryptionKey</references>
+        <references refid="structBpSecPolicy_1a0504e609dfd435076da3b5a2303d8ead" compoundref="BpSecPolicyManager_8h" startline="49">BpSecPolicy::m_doConfidentiality</references>
+        <references refid="structBpSecPolicy_1a438225b55c7d72028dc1085067c423f8" compoundref="BpSecPolicyManager_8h" startline="48">BpSecPolicy::m_doIntegrity</references>
+        <references refid="structBpSecPolicyProcessingContext_1a4c393c4af3501f5d7eec26b9bd21f13c" compoundref="BpSecPolicyManager_8h" startline="99">BpSecPolicyProcessingContext::m_evpCtxWrapper</references>
+        <references refid="structBpSecPolicyProcessingContext_1adf03c84245b13915912cdbf7af8d62e7" compoundref="BpSecPolicyManager_8h" startline="98">BpSecPolicyProcessingContext::m_hmacCtxWrapper</references>
+        <references refid="structBpSecPolicy_1ab3a04a4a9b85be4b5a888cbad2f4a8b5" compoundref="BpSecPolicyManager_8h" startline="61">BpSecPolicy::m_hmacKey</references>
+        <references refid="structBpSecPolicy_1a8b9fe3dae5150c3bb15d7dac10a8d29b" compoundref="BpSecPolicyManager_8h" startline="60">BpSecPolicy::m_hmacKeyEncryptionKey</references>
+        <references refid="structInitializationVectorsForOneThread_1aaece35e0ad92b31766daa636dd25ea6f" compoundref="InitializationVectors_8h" startline="67">InitializationVectorsForOneThread::m_initializationVector</references>
+        <references refid="structBpSecPolicy_1a00d3ed1d089c2d082f15c48721a2c7ac" compoundref="BpSecPolicyManager_8h" startline="57">BpSecPolicy::m_integrityScopeMask</references>
+        <references refid="structBpSecPolicy_1ab49185bf4a97ca4bee32439bb5041166" compoundref="BpSecPolicyManager_8h" startline="56">BpSecPolicy::m_integrityVariant</references>
+        <references refid="structBpSecPolicyProcessingContext_1ad908730a6958eb17f520ff6e04816712" compoundref="BpSecPolicyManager_8h" startline="96">BpSecPolicyProcessingContext::m_ivStruct</references>
+        <references refid="classBundleViewV7_1acc2b46b2be43ef9fc587652dac104414" compoundref="BundleViewV7_8h" startline="136">BundleViewV7::m_listCanonicalBlockView</references>
+        <references refid="structBpSecPolicy_1a85c8336ac60750de93dc640558621048" compoundref="BpSecPolicyManager_8h" startline="66">BpSecPolicy::m_use12ByteIv</references>
+        <references refid="structInitializationVectorsForOneThread_1a14c58cc41807705d2afda2a0fb9869dd" compoundref="InitializationVectors_8cpp" startline="103" endline="114">InitializationVectorsForOneThread::SerializeAndIncrement</references>
+        <references refid="BpSecPolicyManager_8cpp_1a59ccd4c7296bab90a626272ed1ab3873" compoundref="BpSecPolicyManager_8cpp" startline="23">subprocess</references>
+        <references refid="classBpSecBundleProcessor_1a94601cc6c5b3887c949c60fc94fc1126" compoundref="BpSecBundleProcessor_8cpp" startline="1425" endline="1628">BpSecBundleProcessor::TryAddBundleIntegrity</references>
+        <references refid="classBpSecBundleProcessor_1a8b46badbd37602cfc03a1d89b47b5daa" compoundref="BpSecBundleProcessor_8cpp" startline="903" endline="1107">BpSecBundleProcessor::TryEncryptBundle</references>
+        <referencedby refid="classBpSourcePattern_1a3518f893ebf59d1710511c517905a2f8" compoundref="BpSourcePattern_8cpp" startline="270" endline="907">BpSourcePattern::BpSourcePatternThreadFunc</referencedby>
+        <referencedby refid="classBpSecPolicyManager_1afee5c666477329b4570c77860877e7e3" compoundref="BpSecPolicyManager_8cpp" startline="964" endline="979">FindPolicyAndProcessOutgoingBundle</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>BpSecPolicyFilter</label>
+        <link refid="structBpSecPolicyFilter"/>
+      </node>
+      <node id="1">
+        <label>BpSecPolicyManager</label>
+        <link refid="classBpSecPolicyManager"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_policyFilterSecuritySource</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="common/bpsec/include/BpSecPolicyManager.h" line="112" column="1" bodyfile="common/bpsec/include/BpSecPolicyManager.h" bodystart="112" bodyend="177"/>
+    <listofallmembers>
+      <member refid="classBpSecPolicyManager_1a631c9439c1b2f543d843dd4293712587" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>CreateOrGetNewPolicy</name></member>
+      <member refid="classBpSecPolicyManager_1ada1315561d9918be04a5044ceb3709a1" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>FindPolicy</name></member>
+      <member refid="classBpSecPolicyManager_1afee5c666477329b4570c77860877e7e3" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>FindPolicyAndProcessOutgoingBundle</name></member>
+      <member refid="classBpSecPolicyManager_1add8b11d432d0d7df6d5017ea74f8f153" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>FindPolicyWithCacheSupport</name></member>
+      <member refid="classBpSecPolicyManager_1a859f290b5f7bd3684f36222e493a2523" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>LoadFromConfig</name></member>
+      <member refid="classBpSecPolicyManager_1afb94a08d640f1eb84ec067faa2ab7e0b" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>m_actionMaskSopMissingAtAcceptor</name></member>
+      <member refid="classBpSecPolicyManager_1a4600fd69a1a190fe2027d1927763da29" prot="private" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>m_policyFilterSecuritySource</name></member>
+      <member refid="classBpSecPolicyManager_1a6a05b756867b990f3cc18fc56eb81cd8" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>PopulateTargetArraysForSecuritySource</name></member>
+      <member refid="classBpSecPolicyManager_1ae41ff8fba9c9d06c44752f90a9edb9a9" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>PopulateTargetArraysForSecuritySource</name></member>
+      <member refid="classBpSecPolicyManager_1ae26eba06666b7b9cd857e232d31875e4" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>ProcessOutgoingBundle</name></member>
+      <member refid="classBpSecPolicyManager_1a180f2d2eea9c28130d26fa6ef103ffd5" prot="public" virt="non-virtual"><scope>BpSecPolicyManager</scope><name>ProcessReceivedBundle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
